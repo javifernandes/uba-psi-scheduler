@@ -48,7 +48,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DEFAULT_CATALOG_URL = 'http://academica.psi.uba.ar/Psi/Ope154_.php';
-const DEFAULT_OUTPUT_DIR = path.resolve(__dirname, '../src/app/uba/psico/oferta/psicoanalisis/materias');
+const DEFAULT_OUTPUT_DIR = path.resolve(
+  __dirname,
+  '../src/app/uba/psicologia/oferta/lic-psicologia/materias'
+);
 
 const parseArgs = (): CliOptions => {
   const args = process.argv.slice(2);

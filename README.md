@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Abrir: `http://localhost:3000/uba/psico/scheduler`
+Abrir: `http://localhost:3000/uba/psicologia/oferta/lic-psicologia/scheduler`
 
 ## Build estático
 
@@ -21,8 +21,8 @@ Genera salida en `out/`.
 
 ## Estructura
 
-- `src/app/uba/psico/oferta/psicologia/materias`: datos JSON de materias.
-- `src/app/uba/psico/scheduler/page.tsx`: entrypoint del scheduler.
+- `src/app/uba/psicologia/oferta/lic-psicologia/materias`: datos JSON de materias.
+- `src/app/uba/psicologia/oferta/lic-psicologia/scheduler/page.tsx`: entrypoint del scheduler.
 - `scripts/scrape-uba-psi-oferta.ts`: scraper para regenerar datos.
 
 ## Deploy (Cloudflare Pages)

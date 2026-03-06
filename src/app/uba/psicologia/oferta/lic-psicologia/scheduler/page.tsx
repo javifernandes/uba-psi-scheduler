@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { PsicologiaScheduler, type SubjectData } from '../oferta/psicologia/psicologia-scheduler';
+import { PsicologiaScheduler, type SubjectData } from '../psicologia-scheduler';
 
 export const metadata: Metadata = {
   title: 'UBA Psicología - Scheduler',
   description: 'Comparador de horarios para materias y cátedras (UBA Psicología).',
 };
 
-const SUBJECTS_DIR = path.join(process.cwd(), 'src/app/uba/psico/oferta/psicologia/materias');
+const SUBJECTS_DIR = path.join(
+  process.cwd(),
+  'src/app/uba/psicologia/oferta/lic-psicologia/materias'
+);
 
 const catedraNumber = (subject: SubjectData) =>
   Number.parseInt(subject.label.match(/Cátedra\s+(\d+)/i)?.[1] || '999999', 10);

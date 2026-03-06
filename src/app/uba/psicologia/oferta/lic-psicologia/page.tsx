@@ -9,7 +9,7 @@ const LegacyPsicologiaOfertaPage = () => {
         </p>
         <Link
           className="mt-4 inline-flex rounded-md bg-[#861f5c] px-4 py-2 text-sm font-medium text-white hover:bg-[#6f194c]"
-          href="/uba/psico/scheduler"
+          href="/uba/psicologia/oferta/lic-psicologia/scheduler"
         >
           Ir al scheduler
         </Link>

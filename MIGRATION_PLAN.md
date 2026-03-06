@@ -13,7 +13,7 @@ Extraer la app `bookops/web/src/app/uba/psico` a un repo independiente, mantener
 1. Instalar dependencias y correr la app local.
 2. Validar rutas:
    - `/`
-   - `/uba/psico/scheduler`
+   - `/uba/psicologia/oferta/lic-psicologia/scheduler`
 3. Validar:
    - carga de materias
    - filtros
@@ -29,7 +29,7 @@ Criterio de done:
 1. Eliminar archivos que no aporten al MVP (por ejemplo páginas legacy si no se usan).
 2. Revisar tests copiados y dejar solo los relevantes al scheduler.
 3. Definir estructura estable:
-   - `src/app/uba/psico/...`
+   - `src/app/uba/psicologia/oferta/lic-psicologia/...`
    - `scripts/` (scraper)
 4. Documentar comandos y flujo de actualización de datos.
 
