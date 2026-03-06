@@ -34,6 +34,7 @@ type SchedulerFiltersPanelProps = {
   materiaInputValue: string;
   onMateriaInputChange: (value: string) => void;
   onMateriaInputKeyDown: (event: ReactKeyboardEvent<HTMLInputElement>) => void;
+  onClearSelectedSubject: () => void;
   groupedSubjectOptions: SubjectGroup[];
   flatSelectableSubjectsLength: number;
   highlightedSubjectIndex: number;
@@ -87,6 +88,7 @@ export const SchedulerFiltersPanel = ({
   materiaInputValue,
   onMateriaInputChange,
   onMateriaInputKeyDown,
+  onClearSelectedSubject,
   groupedSubjectOptions,
   flatSelectableSubjectsLength,
   highlightedSubjectIndex,
@@ -184,6 +186,21 @@ export const SchedulerFiltersPanel = ({
               placeholder="Buscar / Seleccionar Materia"
               className="h-9 w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 text-sm font-medium text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
             />
+            {selectedSubjectId ? (
+              <div className="mt-1 flex justify-end">
+                <button
+                  type="button"
+                  onClick={e => {
+                    e.stopPropagation();
+                    onClearSelectedSubject();
+                  }}
+                  className="rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                  aria-label="Limpiar materia seleccionada"
+                >
+                  Limpiar selección
+                </button>
+              </div>
+            ) : null}
             {isMateriaDropdownOpen ? (
               <div className="absolute left-0 right-0 top-full z-20 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900">
                 <div className="max-h-64 divide-y divide-[#f0e5ec] overflow-auto bg-white dark:divide-zinc-700 dark:bg-zinc-800">

@@ -283,6 +283,10 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               materiaInputValue={materiaInputValue}
               onMateriaInputChange={onMateriaInputChange}
               onMateriaInputKeyDown={onMateriaInputKeyDown}
+              onClearSelectedSubject={() => {
+                captureEvent('scheduler_subject_cleared');
+                setSelectedSubjectId('');
+              }}
               groupedSubjectOptions={groupedSubjectOptions}
               flatSelectableSubjectsLength={flatSelectableSubjects.length}
               highlightedSubjectIndex={highlightedSubjectIndex}

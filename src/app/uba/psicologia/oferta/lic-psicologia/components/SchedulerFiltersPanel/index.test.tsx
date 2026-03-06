@@ -24,6 +24,7 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
   materiaInputValue: subjectOption.label,
   onMateriaInputChange: vi.fn(),
   onMateriaInputKeyDown: vi.fn(),
+  onClearSelectedSubject: vi.fn(),
   groupedSubjectOptions: [{ groupLabel: '(2) Psicología Social', options: [subjectOption] }],
   flatSelectableSubjectsLength: 1,
   highlightedSubjectIndex: 0,
@@ -143,5 +144,20 @@ describe('SchedulerFiltersPanel', () => {
 
     expect(screen.queryByTitle('Teóricos')).not.toBeInTheDocument();
     expect(screen.queryByTitle('Seminarios')).not.toBeInTheDocument();
+  });
+
+  it('permite limpiar la materia seleccionada desde el panel de materia', () => {
+    const onClearSelectedSubject = vi.fn();
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          isMateriaPanelOpen: true,
+          onClearSelectedSubject,
+        })}
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Limpiar materia seleccionada' }));
+    expect(onClearSelectedSubject).toHaveBeenCalledTimes(1);
   });
 });
