@@ -29,7 +29,7 @@ export const useSubjectDropdown = ({
   setSelectedSubjectId,
 }: UseSubjectDropdownParams) => {
   const [isMateriaDropdownOpen, setIsMateriaDropdownOpen] = useState(false);
-  const [materiaInputValue, setMateriaInputValue] = useState(subjects[0]?.label || '');
+  const [materiaInputValue, setMateriaInputValue] = useState(selectedSubjectLabel);
   const [materiaSearch, setMateriaSearch] = useState('');
   const [highlightedSubjectIndex, setHighlightedSubjectIndex] = useState(0);
 

@@ -4,7 +4,14 @@ import { useMemo, useRef, useState } from 'react';
 import { AlertTriangle, ChevronDown, ChevronRight, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { ReservedSlot, SavedElectionDetail } from '../../psicologia-scheduler.types';
-import { dayShort, DAYS, h2m, shortTeacherName, splitAula } from '../../psicologia-scheduler.utils';
+import {
+  dayShort,
+  DAYS,
+  displaySubjectLabel,
+  h2m,
+  shortTeacherName,
+  splitAula,
+} from '../../psicologia-scheduler.utils';
 import { buildSavedConflictOverlay, type SavedConflictOverlayData } from './overlay';
 
 type SavedElectionsPanelProps = {
@@ -248,7 +255,7 @@ export const SavedElectionsPanel = ({
                       <Trash2 size={14} />
                     </button>
                     <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
-                      {item.subject.label}
+                      {displaySubjectLabel(item.subject.label)}
                     </div>
                     {[
                       {

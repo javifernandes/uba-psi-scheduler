@@ -60,6 +60,11 @@ describe('useSchedulerPersistence', () => {
     expect(result.current.selectedSubjectId).toBe('35');
   });
 
+  it('arranca sin materia seleccionada cuando no hay query param m', () => {
+    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    expect(result.current.selectedSubjectId).toBe('');
+  });
+
   it('normaliza enrollments dejando una sola cátedra por código de materia', async () => {
     storage.set(
       ENROLLMENTS_STORAGE_KEY,

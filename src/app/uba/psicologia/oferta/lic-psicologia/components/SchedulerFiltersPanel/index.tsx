@@ -181,7 +181,7 @@ export const SchedulerFiltersPanel = ({
                 e.currentTarget.select();
               }}
               onKeyDown={onMateriaInputKeyDown}
-              placeholder="buscar materia/cátedra/profe"
+              placeholder="Buscar / Seleccionar Materia"
               className="h-9 w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 text-sm font-medium text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
             />
             {isMateriaDropdownOpen ? (
@@ -440,10 +440,10 @@ export const SchedulerFiltersPanel = ({
                   className="h-4 w-4 accent-[#861f5c]"
                 />
                 <span className="inline-flex items-center">
-                  <span className="inline-block w-8 text-left font-semibold tabular-nums">
+                  <span className="inline-block w-7 text-left font-semibold tabular-nums">
                     {venue}
                   </span>
-                  <span className="mx-1">·</span>
+                  <span className="inline-block w-3 text-center leading-none">·</span>
                   <span>{VENUE_LABELS[venue]}</span>
                 </span>
               </label>

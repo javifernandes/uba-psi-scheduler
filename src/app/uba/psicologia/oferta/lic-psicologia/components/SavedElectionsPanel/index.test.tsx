@@ -86,7 +86,7 @@ describe('SavedElectionsPanel', () => {
     const onRemoveSubject = vi.fn();
     render(<SavedElectionsPanel {...createProps({ onRemoveSubject })} />);
 
-    expect(screen.getByText(subject.label)).toBeInTheDocument();
+    expect(screen.getByText('1 · Historia de la Psicología - Cátedra 34 (II)')).toBeInTheDocument();
     expect(screen.getByText('21')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Quitar elección'));
     expect(onRemoveSubject).toHaveBeenCalledWith('34');

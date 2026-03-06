@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { SubjectData } from './psicologia-scheduler.types';
+import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
 import { captureEvent } from '@/lib/posthog';
 import {
   CalendarGrid,
@@ -17,6 +17,7 @@ import {
   useSchedulerSubjectsData,
   useSubjectDropdown,
 } from './hooks';
+import { displayHeaderLabel, displaySubjectLabel } from './psicologia-scheduler.utils';
 export type { SubjectData } from './psicologia-scheduler.types';
 
 type PsicologiaSchedulerProps = {
@@ -30,6 +31,17 @@ const EmptySubjectsState = () => (
     </section>
   </div>
 );
+
+const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
+  id: '',
+  label: '',
+  header: '',
+  teoricos: [],
+  seminarios: [],
+  comisiones: [],
+  teoricoMap: {},
+  seminarioMap: {},
+};
 
 const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   const isFirstSubjectRender = useRef(true);
@@ -90,7 +102,9 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
     () => subjects.filter(subject => enrolledBySubject[subject.id]),
     [subjects, enrolledBySubject]
   );
+  const selectedSubjectForCalendar = selectedSubject ?? EMPTY_SELECTED_SUBJECT;
   const conflictingSubject = useMemo(() => {
+    if (!selectedSubject) return null;
     const currentMateria = materiaCodeBySubjectId[selectedSubject.id];
     if (!currentMateria) return null;
     const conflictId = Object.keys(enrolledBySubject).find(
@@ -99,15 +113,15 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
     );
     if (!conflictId) return null;
     return subjects.find(subject => subject.id === conflictId) || null;
-  }, [enrolledBySubject, materiaCodeBySubjectId, selectedSubject.id, subjects]);
+  }, [enrolledBySubject, materiaCodeBySubjectId, selectedSubject, subjects]);
   const conflictingCatedraLabel =
     conflictingSubject?.label.match(/Cátedra\s+\d+/i)?.[0] || 'cátedra seleccionada';
-  const hasTeoricos = selectedSubject.teoricos.length > 0;
-  const hasSeminarios = selectedSubject.seminarios.length > 0;
+  const hasTeoricos = selectedSubject ? selectedSubject.teoricos.length > 0 : false;
+  const hasSeminarios = selectedSubject ? selectedSubject.seminarios.length > 0 : false;
 
   useEffect(() => {
     setDismissConflictWarning(false);
-  }, [conflictingSubject?.id, selectedSubject.id]);
+  }, [conflictingSubject?.id, selectedSubject?.id]);
 
   useEffect(() => {
     if (!hasTeoricos && showTeoricos) setShowTeoricos(false);
@@ -115,6 +129,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   }, [hasTeoricos, hasSeminarios, showTeoricos, showSeminarios]);
 
   useEffect(() => {
+    if (!selectedSubject) return;
     if (isFirstSubjectRender.current) {
       isFirstSubjectRender.current = false;
       return;
@@ -123,7 +138,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
       subject_id: selectedSubject.id,
       subject_label: selectedSubject.label,
     });
-  }, [selectedSubject.id, selectedSubject.label]);
+  }, [selectedSubject]);
   const {
     isMateriaDropdownOpen,
     setIsMateriaDropdownOpen,
@@ -142,12 +157,12 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   } = useSubjectDropdown({
     subjects,
     selectedSubjectId,
-    selectedSubjectLabel: selectedSubject.label,
+    selectedSubjectLabel: selectedSubject ? displaySubjectLabel(selectedSubject.label) : '',
     setSelectedSubjectId,
   });
   const { enrolledCurrentCommissionId, activeCommission, events, visibleEventSlots } =
     useSchedulerCalendar({
-      selectedSubject,
+      selectedSubject: selectedSubjectForCalendar,
       enrolledBySubject,
       selectedComisiones,
       filteredTeoricos,
@@ -171,7 +186,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
     savedSubjects,
     parsedSubjects,
     enrolledBySubject,
-    selectedSubjectId: selectedSubject.id,
+    selectedSubjectId: selectedSubject?.id || '',
     events,
     hoveredConflictEventId,
   });
@@ -202,7 +217,9 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 text-base font-black">
               Ψ
             </span>
-            <span className="font-bold">{selectedSubject?.header || 'Lic. Psicología UBA'}</span>
+            <span className="font-bold">
+              {selectedSubject ? displayHeaderLabel(selectedSubject.header) : 'Lic. Psicología UBA'}
+            </span>
           </h1>
         </div>
 
@@ -218,7 +235,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               <CalendarGrid
                 visibleEventSlots={visibleEventSlots}
                 activeCommission={activeCommission}
-                selectedSubjectId={selectedSubject.id}
+                selectedSubjectId={selectedSubject?.id || ''}
                 enrolledBySubject={enrolledBySubject}
                 enrolledCurrentCommissionId={enrolledCurrentCommissionId}
                 conflictByEventId={conflictByEventId}
@@ -231,6 +248,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
                 setStackIndexBySlot={setStackIndexBySlot}
                 onToggleEnrollment={commissionId =>
                   setEnrolledBySubject(prev => {
+                    if (!selectedSubject) return prev;
                     const isRemoving = prev[selectedSubject.id] === commissionId;
                     captureEvent('scheduler_enrollment_toggled', {
                       subject_id: selectedSubject.id,
@@ -249,8 +267,12 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
 
           <aside className="flex h-full min-h-0 flex-col gap-2">
             <SchedulerFiltersPanel
-              selectedSubjectLabel={selectedSubject.label}
-              selectedSubjectId={selectedSubject.id}
+              selectedSubjectLabel={
+                selectedSubject
+                  ? displaySubjectLabel(selectedSubject.label)
+                  : 'Buscar / Seleccionar Materia'
+              }
+              selectedSubjectId={selectedSubject?.id || ''}
               isMateriaPanelOpen={isMateriaPanelOpen}
               setIsMateriaPanelOpen={setIsMateriaPanelOpen}
               isMateriaDropdownOpen={isMateriaDropdownOpen}

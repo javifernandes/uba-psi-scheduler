@@ -90,4 +90,24 @@ describe('useSchedulerSubjectsData', () => {
       expect(queriedResult.current.searchedComisiones.map(c => c.id)).toEqual(['12', '63']);
     });
   });
+
+  it('sin materia seleccionada no devuelve comisiones ni sedes activas', async () => {
+    const onSubjectChanged = vi.fn();
+    const { result } = renderHook(() =>
+      useSchedulerSubjectsData(
+        baseParams({
+          selectedSubjectId: '',
+          onSubjectChanged,
+        })
+      )
+    );
+
+    await waitFor(() => {
+      expect(result.current.selectedSubject).toBeNull();
+      expect(result.current.filteredComisiones).toEqual([]);
+      expect(result.current.allVenues).toEqual([]);
+      expect(Array.from(result.current.selectedCommissionIds)).toEqual([]);
+    });
+    expect(onSubjectChanged).toHaveBeenCalledTimes(1);
+  });
 });

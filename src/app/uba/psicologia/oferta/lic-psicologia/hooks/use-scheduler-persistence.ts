@@ -28,12 +28,12 @@ export const useSchedulerPersistence = ({
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => {
     if (!subjects.length) return '';
-    if (typeof window === 'undefined') return subjects[0]?.id || '';
+    if (typeof window === 'undefined') return '';
     const subjectIdFromUrl = new URLSearchParams(window.location.search).get('m');
     if (subjectIdFromUrl && subjects.some(subject => subject.id === subjectIdFromUrl)) {
       return subjectIdFromUrl;
     }
-    return subjects[0]?.id || '';
+    return '';
   });
   const [enrolledBySubject, setEnrolledBySubject] = useState<Record<string, string>>({});
   const [enrollmentsLoaded, setEnrollmentsLoaded] = useState(false);
@@ -86,8 +86,10 @@ export const useSchedulerPersistence = ({
     if (typeof window === 'undefined') return;
     const onPopState = () => {
       const subjectIdFromUrl = new URLSearchParams(window.location.search).get('m');
-      if (!subjectIdFromUrl) return;
-      if (!subjectIdSet.has(subjectIdFromUrl)) return;
+      if (!subjectIdFromUrl || !subjectIdSet.has(subjectIdFromUrl)) {
+        setSelectedSubjectId(prev => (prev === '' ? prev : ''));
+        return;
+      }
       setSelectedSubjectId(prev => (prev === subjectIdFromUrl ? prev : subjectIdFromUrl));
     };
     window.addEventListener('popstate', onPopState);
@@ -96,8 +98,13 @@ export const useSchedulerPersistence = ({
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!selectedSubjectId) return;
     const currentUrl = new URL(window.location.href);
+    if (!selectedSubjectId) {
+      if (!currentUrl.searchParams.has('m')) return;
+      currentUrl.searchParams.delete('m');
+      window.history.replaceState(window.history.state, '', currentUrl.toString());
+      return;
+    }
     const currentSubjectIdInUrl = currentUrl.searchParams.get('m');
     if (currentSubjectIdInUrl === selectedSubjectId) return;
     currentUrl.searchParams.set('m', selectedSubjectId);

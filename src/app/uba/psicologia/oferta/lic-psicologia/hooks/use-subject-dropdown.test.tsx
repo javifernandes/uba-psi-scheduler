@@ -52,8 +52,8 @@ describe('useSubjectDropdown', () => {
     const { result } = renderHook(() => useSubjectDropdown(baseParams()));
 
     expect(result.current.groupedSubjectOptions.map(g => g.groupLabel)).toEqual([
-      '(1) Historia de la Psicología',
-      '(2) Psicología Social',
+      '1 · Historia de la Psicología',
+      '2 · Psicología Social',
     ]);
     expect(result.current.groupedSubjectOptions[1]?.options.map(option => option.id)).toEqual([
       '35',

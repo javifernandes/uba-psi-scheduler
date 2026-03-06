@@ -70,9 +70,15 @@ export const venueCodeFromAula = (aula: string): VenueCode => {
 export const catedraProfessorFromHeader = (header: string) =>
   header.split(' - ').at(-1)?.trim() || '';
 
+export const displaySubjectLabel = (label: string) =>
+  label.replace(/^\((\d+)\)\s*/, '$1 · ');
+
+export const displayHeaderLabel = (header: string) =>
+  header.replace(/-\s*\((\d+)\)\s*/, '- $1 · ');
+
 export const materiaGroupFromLabel = (label: string) => {
   const match = label.match(/^\((\d+)\)\s*(.*?)\s*-\s*Cátedra/i);
-  if (match) return { key: match[1], label: `(${match[1]}) ${match[2].trim()}` };
+  if (match) return { key: match[1], label: `${match[1]} · ${match[2].trim()}` };
   const fallback = label.split('- Cátedra')[0]?.trim() || label;
   return { key: fallback, label: fallback };
 };

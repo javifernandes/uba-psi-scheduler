@@ -22,7 +22,7 @@ type UseSchedulerSubjectsDataParams = {
 
 type UseSchedulerSubjectsDataResult = {
   parsedSubjects: ParsedSubject[];
-  selectedSubject: ParsedSubject;
+  selectedSubject: ParsedSubject | null;
   allVenues: VenueCode[];
   selectedVenues: Set<VenueCode>;
   setSelectedVenues: Dispatch<SetStateAction<Set<VenueCode>>>;
@@ -48,13 +48,13 @@ export const useSchedulerSubjectsData = ({
 
   const parsedSubjects = useMemo(() => subjects.map(parseSubject), [subjects]);
   const selectedSubject = useMemo(
-    () => parsedSubjects.find(subject => subject.id === selectedSubjectId) || parsedSubjects[0]!,
+    () => parsedSubjects.find(subject => subject.id === selectedSubjectId) || null,
     [selectedSubjectId, parsedSubjects]
   );
 
-  const teoricos = selectedSubject.teoricos || [];
-  const seminarios = selectedSubject.seminarios || [];
-  const comisiones = selectedSubject.comisiones || [];
+  const teoricos = selectedSubject?.teoricos || [];
+  const seminarios = selectedSubject?.seminarios || [];
+  const comisiones = selectedSubject?.comisiones || [];
 
   const allVenues = useMemo(() => {
     const found = new Set<VenueCode>();

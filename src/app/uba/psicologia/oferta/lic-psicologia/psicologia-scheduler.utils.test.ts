@@ -5,6 +5,8 @@ import {
   commissionSummaryLabel,
   catedraProfessorFromHeader,
   dayShort,
+  displayHeaderLabel,
+  displaySubjectLabel,
   h2m,
   m2h,
   materiaCodeFromLabel,
@@ -79,13 +81,19 @@ describe('psicologia-scheduler.utils', () => {
   it('resuelve metadatos de labels/header y códigos', () => {
     expect(materiaGroupFromLabel(subjectData.label)).toEqual({
       key: '16',
-      label: '(16) Psicoanálisis Freud',
+      label: '16 · Psicoanálisis Freud',
     });
     expect(materiaCodeFromLabel(subjectData.label)).toBe('16');
     expect(catedraFragmentFromLabel(subjectData.label)).toBe('Cátedra 50 (II)');
     expect(catedraNumberFromLabel(subjectData.label)).toBe(50);
     expect(catedraProfessorFromHeader(subjectData.header)).toBe('Laznik');
     expect(dayShort('miercoles')).toBe('Mié');
+    expect(displaySubjectLabel(subjectData.label)).toBe(
+      '16 · Psicoanálisis Freud - Cátedra 50 (II)'
+    );
+    expect(
+      displayHeaderLabel('Psicología UBA - (1) Historia de la Psicología - Cátedra 34 - II - Ibarra')
+    ).toBe('Psicología UBA - 1 · Historia de la Psicología - Cátedra 34 - II - Ibarra');
   });
 
   it('resuelve sedes/split/title y resumen de comisión', () => {
