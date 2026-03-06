@@ -22,16 +22,15 @@ type PsicologiaSchedulerProps = {
   subjects: SubjectData[];
 };
 
-export const PsicologiaScheduler = ({ subjects }: PsicologiaSchedulerProps) => {
-  if (!subjects.length) {
-    return (
-      <div className="box-border min-h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4 dark:bg-[radial-gradient(circle_at_0%_0%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#231725_0%,transparent_35%),#0f0b12] md:px-5">
-        <section className="mx-auto w-full max-w-[980px] rounded-xl border border-[#ead9e2] bg-white p-6 text-sm text-[#4f1237] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
-          No hay materias cargadas. Ejecutá el scraper para generar JSONs en la carpeta de materias.
-        </section>
-      </div>
-    );
-  }
+const EmptySubjectsState = () => (
+  <div className="box-border min-h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4 dark:bg-[radial-gradient(circle_at_0%_0%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#231725_0%,transparent_35%),#0f0b12] md:px-5">
+    <section className="mx-auto w-full max-w-[980px] rounded-xl border border-[#ead9e2] bg-white p-6 text-sm text-[#4f1237] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
+      No hay materias cargadas. Ejecutá el scraper para generar JSONs en la carpeta de materias.
+    </section>
+  </div>
+);
+
+const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
   const [showSeminarios, setShowSeminarios] = useState(false);
@@ -301,4 +300,9 @@ export const PsicologiaScheduler = ({ subjects }: PsicologiaSchedulerProps) => {
       </section>
     </div>
   );
+};
+
+export const PsicologiaScheduler = ({ subjects }: PsicologiaSchedulerProps) => {
+  if (!subjects.length) return <EmptySubjectsState />;
+  return <PsicologiaSchedulerContent subjects={subjects} />;
 };
