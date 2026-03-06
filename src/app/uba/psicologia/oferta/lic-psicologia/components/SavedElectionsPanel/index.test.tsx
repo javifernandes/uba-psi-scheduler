@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { SavedElectionsPanel } from './index';
 import type { SavedElectionDetail, SubjectData } from '../../psicologia-scheduler.types';
 
@@ -61,10 +61,6 @@ const createProps = (overrides: Partial<Parameters<typeof SavedElectionsPanel>[0
 });
 
 describe('SavedElectionsPanel', () => {
-  afterEach(() => {
-    vi.unstubAllGlobals();
-  });
-
   it('muestra estado vacío cuando está abierto sin elecciones', () => {
     render(<SavedElectionsPanel {...createProps({ savedElectionDetails: [] })} />);
     expect(screen.getByText('Sin elecciones guardadas.')).toBeInTheDocument();
@@ -88,22 +84,22 @@ describe('SavedElectionsPanel', () => {
   });
 
   it('renderiza elección y permite quitar materia', () => {
-    vi.stubGlobal('confirm', vi.fn(() => true));
     const onRemoveSubject = vi.fn();
     render(<SavedElectionsPanel {...createProps({ onRemoveSubject })} />);
 
     expect(screen.getByText('1 · Historia de la Psicología - Cátedra 34 (II)')).toBeInTheDocument();
     expect(screen.getByText('21')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Quitar elección'));
+    fireEvent.click(screen.getByRole('button', { name: 'Quitar materia' }));
     expect(onRemoveSubject).toHaveBeenCalledWith('34');
   });
 
   it('permite borrar todas las elecciones con confirmación', () => {
-    vi.stubGlobal('confirm', vi.fn(() => true));
     const onRemoveAllSubjects = vi.fn();
     render(<SavedElectionsPanel {...createProps({ onRemoveAllSubjects })} />);
 
     fireEvent.click(screen.getByLabelText('Quitar todas las elecciones'));
+    fireEvent.click(screen.getByRole('button', { name: 'Borrar todo' }));
     expect(onRemoveAllSubjects).toHaveBeenCalledTimes(1);
   });
 });

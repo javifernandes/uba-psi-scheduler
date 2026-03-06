@@ -112,12 +112,12 @@ export const CalendarEventCard = ({
       key={slotKey}
       role="button"
       tabIndex={0}
-      onMouseEnter={() => {
-        onCardMouseEnter();
+      onMouseEnter={eventMouse => {
+        onCardMouseEnter(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(true);
       }}
-      onMouseLeave={() => {
-        onCardMouseLeave();
+      onMouseLeave={eventMouse => {
+        onCardMouseLeave(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(false);
       }}
       onClick={onCardClick}

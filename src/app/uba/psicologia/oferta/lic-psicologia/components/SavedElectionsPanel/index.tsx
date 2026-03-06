@@ -3,6 +3,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { AlertTriangle, ChevronDown, ChevronRight, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import type { ReservedSlot, SavedElectionDetail } from '../../psicologia-scheduler.types';
 import {
   dayShort,
@@ -40,6 +41,9 @@ export const SavedElectionsPanel = ({
   onRemoveAllSubjects,
 }: SavedElectionsPanelProps) => {
   const [hoveredSavedConflictSlotId, setHoveredSavedConflictSlotId] = useState<string | null>(null);
+  const [pendingDelete, setPendingDelete] = useState<
+    { type: 'single'; subjectId: string } | { type: 'all' } | null
+  >(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const slotRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const hasSavedElections = savedElectionDetails.length > 0;
@@ -123,16 +127,20 @@ export const SavedElectionsPanel = ({
   }, [hoveredSavedConflictSlotId, savedConflictDetailsBySlot, savedSlotsForConflictAnalysis]);
 
   return (
-    <article
-      onClick={onOpenPanel}
-      className={cn(
-        'order-5 relative overflow-visible rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-3 pt-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:border-zinc-700 dark:bg-zinc-900/95',
-        isOpen && 'flex min-h-0 flex-col xl:h-full',
-        !isOpen && 'cursor-pointer',
-        isOpen ? 'pb-3' : 'pb-1.5'
-      )}
-    >
-      <div className="mb-2 flex cursor-pointer items-center justify-between" onClick={onToggleOpen}>
+    <>
+      <article
+        onClick={onOpenPanel}
+        className={cn(
+          'order-5 relative overflow-visible rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-3 pt-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:border-zinc-700 dark:bg-zinc-900/95',
+          isOpen && 'flex min-h-0 flex-col xl:h-full',
+          !isOpen && 'cursor-pointer',
+          isOpen ? 'pb-3' : 'pb-1.5'
+        )}
+      >
+        <div
+          className="mb-2 flex cursor-pointer items-center justify-between"
+          onClick={onToggleOpen}
+        >
         <h2 className="text-sm font-semibold text-[#5a1740] dark:text-zinc-100">Mis elecciones</h2>
         <div className="flex items-center gap-2">
           {isOpen && hasSavedElections ? (
@@ -140,15 +148,7 @@ export const SavedElectionsPanel = ({
               type="button"
               onClick={e => {
                 e.stopPropagation();
-                if (
-                  typeof window !== 'undefined' &&
-                  !window.confirm(
-                    '¿Borrar todas las materias guardadas?\n\nEsta acción no se puede deshacer.'
-                  )
-                ) {
-                  return;
-                }
-                onRemoveAllSubjects();
+                setPendingDelete({ type: 'all' });
               }}
               className="text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
               aria-label="Quitar todas las elecciones"
@@ -174,9 +174,9 @@ export const SavedElectionsPanel = ({
             {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
           </button>
         </div>
-      </div>
-      {isOpen ? (
-        <div ref={panelRef} className="relative min-h-0 overflow-visible xl:flex-1">
+        </div>
+        {isOpen ? (
+          <div ref={panelRef} className="relative min-h-0 overflow-visible xl:flex-1">
           {savedConflictOverlay ? (
             <>
               <svg
@@ -247,9 +247,9 @@ export const SavedElectionsPanel = ({
               </div>
             </>
           ) : null}
-          <div className="pr-1 xl:h-full xl:overflow-auto">
-            <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
-              {savedElectionDetails.map(item => {
+            <div className="pr-1 xl:h-full xl:overflow-auto">
+              <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
+                {savedElectionDetails.map(item => {
                 const commissionRoom = splitAula(item.commission.aula);
                 const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
                 const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
@@ -272,16 +272,9 @@ export const SavedElectionsPanel = ({
                   <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
                     <button
                       type="button"
-                      onClick={() => {
-                        if (
-                          typeof window !== 'undefined' &&
-                          !window.confirm(
-                            '¿Quitar esta materia guardada?\n\nEsta acción no se puede deshacer.'
-                          )
-                        ) {
-                          return;
-                        }
-                        onRemoveSubject(item.subject.id);
+                      onClick={event => {
+                        event.stopPropagation();
+                        setPendingDelete({ type: 'single', subjectId: item.subject.id });
                       }}
                       className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
                       aria-label="Quitar elección"
@@ -405,10 +398,28 @@ export const SavedElectionsPanel = ({
                   Sin elecciones guardadas.
                 </div>
               ) : null}
+              </div>
             </div>
           </div>
-        </div>
-      ) : null}
-    </article>
+        ) : null}
+      </article>
+      <ConfirmDialog
+        open={Boolean(pendingDelete)}
+        title={
+          pendingDelete?.type === 'all'
+            ? '¿Borrar todas las materias guardadas?'
+            : '¿Quitar esta materia guardada?'
+        }
+        description="Esta acción no se puede deshacer."
+        confirmLabel={pendingDelete?.type === 'all' ? 'Borrar todo' : 'Quitar materia'}
+        onCancel={() => setPendingDelete(null)}
+        onConfirm={() => {
+          if (!pendingDelete) return;
+          if (pendingDelete.type === 'all') onRemoveAllSubjects();
+          if (pendingDelete.type === 'single') onRemoveSubject(pendingDelete.subjectId);
+          setPendingDelete(null);
+        }}
+      />
+    </>
   );
 };
