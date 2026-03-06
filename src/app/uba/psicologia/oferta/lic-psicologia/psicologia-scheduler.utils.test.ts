@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildEnrollmentsExportPayload,
+  ENROLLMENTS_EXPORT_TYPE,
   catedraFragmentFromLabel,
   catedraNumberFromLabel,
   commissionSummaryLabel,
@@ -11,8 +13,10 @@ import {
   m2h,
   materiaCodeFromLabel,
   materiaGroupFromLabel,
+  mapProjectionEnrollmentsToSubjectMap,
   matchesCommissionQuery,
   overlapRange,
+  parseEnrollmentsImportPayload,
   parseSubject,
   rangesOverlap,
   sameRecord,
@@ -42,6 +46,15 @@ const subjectOnlyTeoricoObligData: SubjectData = {
   teoricos: ['V|martes|18:00|19:30|China, Norma Nancy|HY-014|'],
   seminarios: [],
   comisiones: ['14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|'],
+};
+
+const secondarySubjectData: SubjectData = {
+  id: '36',
+  label: '(2) Psicología Social - Cátedra 36 (II)',
+  header: 'Psicología UBA - (2) Psicología Social - Cátedra 36 - II - Zubieta',
+  teoricos: [],
+  seminarios: [],
+  comisiones: ['9|jueves|16:15|19:30|Fazzito, Lorena Laura|II|IN-208|'],
 };
 
 describe('psicologia-scheduler.utils', () => {
@@ -141,5 +154,44 @@ describe('psicologia-scheduler.utils', () => {
     expect(sameSetValues(new Set(['IN']), new Set(['HY']))).toBe(false);
     expect(sameRecord({ a: '1', b: '2' }, { b: '2', a: '1' })).toBe(true);
     expect(sameRecord({ a: '1' }, { a: '2' })).toBe(false);
+  });
+
+  it('serializa y parsea export/import de elecciones con versionado', () => {
+    const payload = buildEnrollmentsExportPayload(
+      [{ catedra: 36, comision: 9 }],
+      '2026-01'
+    );
+    const parsed = parseEnrollmentsImportPayload(JSON.stringify(payload));
+
+    expect(parsed.version).toBe(1);
+    expect(parsed.type).toBe(ENROLLMENTS_EXPORT_TYPE);
+    expect(parsed.period).toBe('2026-01');
+    expect(parsed.enrollments).toEqual([{ catedra: 36, comision: 9 }]);
+    expect(() => parseEnrollmentsImportPayload('no-json')).toThrow(/JSON válido/);
+    expect(() =>
+      parseEnrollmentsImportPayload(
+        JSON.stringify({
+          version: 99,
+          enrollments: {},
+        })
+      )
+    ).toThrow(/no soportada/);
+  });
+
+  it('mapea proyección importada a elecciones por subject id', () => {
+    const mapped = mapProjectionEnrollmentsToSubjectMap(
+      [
+        { catedra: 36, comision: 9 },
+        { catedra: 999, comision: 1 },
+        { catedra: 36, comision: 999 },
+      ],
+      [subjectData, secondarySubjectData]
+    );
+
+    expect(mapped.mappedBySubject).toEqual({
+      '36': '9',
+    });
+    expect(mapped.mapped).toHaveLength(1);
+    expect(mapped.rejected).toHaveLength(2);
   });
 });

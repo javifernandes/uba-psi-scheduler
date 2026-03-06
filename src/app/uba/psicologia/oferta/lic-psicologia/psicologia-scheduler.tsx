@@ -18,11 +18,28 @@ import {
   useSchedulerSubjectsData,
   useSubjectDropdown,
 } from './hooks';
-import { displayHeaderLabel, displaySubjectLabel } from './psicologia-scheduler.utils';
+import {
+  buildEnrollmentsExportPayload,
+  catedraNumberFromLabel,
+  displayHeaderLabel,
+  displaySubjectLabel,
+  type EnrollmentProjectionMappedEntry,
+  type EnrollmentProjectionRejectedEntry,
+  mapProjectionEnrollmentsToSubjectMap,
+  parseEnrollmentsImportPayload,
+} from './psicologia-scheduler.utils';
 export type { SubjectData } from './psicologia-scheduler.types';
 
 type PsicologiaSchedulerProps = {
   subjects: SubjectData[];
+};
+
+type ImportPreviewData = {
+  period: string;
+  totalEntries: number;
+  mapped: EnrollmentProjectionMappedEntry[];
+  rejected: EnrollmentProjectionRejectedEntry[];
+  mappedBySubject: Record<string, string>;
 };
 
 const EmptySubjectsState = () => (
@@ -392,6 +409,78 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
                     return {};
                   })
                 }
+                onExportSelections={() => {
+                  if (typeof window === 'undefined') return;
+                  const period = (() => {
+                    const now = new Date();
+                    const year = now.getFullYear();
+                    const term = now.getMonth() < 7 ? '01' : '02';
+                    return `${year}-${term}`;
+                  })();
+                  const projectedEnrollments = Object.entries(enrolledBySubject).reduce<
+                    Array<{ catedra: number; comision: number | string }>
+                  >((acc, [subjectId, commissionId]) => {
+                    const subject = subjects.find(item => item.id === subjectId);
+                    if (!subject) return acc;
+                    const catedra = catedraNumberFromLabel(subject.label);
+                    if (!Number.isFinite(catedra)) return acc;
+                    acc.push({
+                      catedra,
+                      comision: /^\d+$/.test(commissionId)
+                        ? Number.parseInt(commissionId, 10)
+                        : commissionId,
+                    });
+                    return acc;
+                  }, []);
+                  const payload = buildEnrollmentsExportPayload(projectedEnrollments, period);
+                  const blob = new Blob([JSON.stringify(payload, null, 2)], {
+                    type: 'application/json',
+                  });
+                  const url = URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  const timestamp = new Date()
+                    .toISOString()
+                    .replace(/[:]/g, '-')
+                    .replace(/\..+$/, '');
+                  link.href = url;
+                  link.download = `uba-psi-elecciones-v${payload.version}-${timestamp}.json`;
+                  document.body.appendChild(link);
+                  link.click();
+                  link.remove();
+                  URL.revokeObjectURL(url);
+                  captureEvent('scheduler_saved_subjects_exported', {
+                    total_subjects: Object.keys(enrolledBySubject).length,
+                  });
+                }}
+                onImportSelections={async file => {
+                  const raw = await file.text();
+                  const parsed = parseEnrollmentsImportPayload(raw);
+                  const mapped = mapProjectionEnrollmentsToSubjectMap(parsed.enrollments, subjects);
+                  const preview: ImportPreviewData = {
+                    period: parsed.period,
+                    totalEntries: parsed.enrollments.length,
+                    mapped: mapped.mapped,
+                    rejected: mapped.rejected,
+                    mappedBySubject: mapped.mappedBySubject,
+                  };
+                  return preview;
+                }}
+                onApplyImportSelections={async preview => {
+                  if (
+                    preview.totalEntries > 0 &&
+                    Object.keys(preview.mappedBySubject).length === 0
+                  ) {
+                    throw new Error(
+                      'No se pudo mapear ninguna elección. Verificá que el archivo corresponda a esta oferta/carrera.'
+                    );
+                  }
+                  setEnrolledBySubject(preview.mappedBySubject);
+                  captureEvent('scheduler_saved_subjects_imported', {
+                    imported_subjects: preview.totalEntries,
+                    applied_subjects: Object.keys(preview.mappedBySubject).length,
+                    rejected_subjects: preview.rejected.length,
+                  });
+                }}
               />
             </div>
           </aside>

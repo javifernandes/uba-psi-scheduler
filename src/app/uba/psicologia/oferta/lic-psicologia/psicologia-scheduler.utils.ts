@@ -111,6 +111,163 @@ export const slotKeyForEvent = (event: CalendarEvent) =>
   `${event.dia}|${event.inicio}|${event.fin}`;
 
 export const ENROLLMENTS_STORAGE_KEY = 'uba_psico_planner_v1';
+export const ENROLLMENTS_EXPORT_VERSION = 1;
+export const ENROLLMENTS_EXPORT_TYPE = 'enrollments-projection';
+
+export type EnrollmentProjectionEntry = {
+  catedra: number;
+  comision: number | string;
+};
+
+export type EnrollmentsExportPayload = {
+  version: number;
+  type: string;
+  exportedAt: string;
+  period: string;
+  enrollments: EnrollmentProjectionEntry[];
+};
+
+export type EnrollmentProjectionMappedEntry = {
+  catedra: number;
+  comision: string;
+  subjectId: string;
+  subjectLabel: string;
+};
+
+export type EnrollmentProjectionRejectedEntry = {
+  catedra: number;
+  comision: string;
+  reason: 'catedra_no_encontrada' | 'comision_no_encontrada';
+};
+
+export const buildEnrollmentsExportPayload = (
+  enrollments: EnrollmentProjectionEntry[],
+  period: string
+): EnrollmentsExportPayload => ({
+  version: ENROLLMENTS_EXPORT_VERSION,
+  type: ENROLLMENTS_EXPORT_TYPE,
+  exportedAt: new Date().toISOString(),
+  period,
+  enrollments,
+});
+
+export const parseEnrollmentsImportPayload = (raw: string): EnrollmentsExportPayload => {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    throw new Error('El archivo no es un JSON válido.');
+  }
+  if (!parsed || typeof parsed !== 'object') {
+    throw new Error('Formato inválido: el contenido debe ser un objeto JSON.');
+  }
+  const payload = parsed as Partial<EnrollmentsExportPayload>;
+  if (typeof payload.version !== 'number') {
+    throw new Error('Formato inválido: falta `version`.');
+  }
+  if (payload.version !== ENROLLMENTS_EXPORT_VERSION) {
+    throw new Error(
+      `Versión de archivo no soportada (${payload.version}). Esperada: ${ENROLLMENTS_EXPORT_VERSION}.`
+    );
+  }
+  if (payload.type !== ENROLLMENTS_EXPORT_TYPE) {
+    throw new Error(`Tipo de archivo no soportado (${payload.type || 'desconocido'}).`);
+  }
+  if (!Array.isArray(payload.enrollments)) {
+    throw new Error('Formato inválido: falta `enrollments`.');
+  }
+  const enrollments = payload.enrollments.reduce<EnrollmentProjectionEntry[]>((acc, item) => {
+    if (!item || typeof item !== 'object') return acc;
+    const catedra = Number((item as EnrollmentProjectionEntry).catedra);
+    const comision = (item as EnrollmentProjectionEntry).comision;
+    if (!Number.isFinite(catedra)) return acc;
+    if (typeof comision !== 'number' && typeof comision !== 'string') return acc;
+    acc.push({
+      catedra,
+      comision,
+    });
+    return acc;
+  }, []);
+  return {
+    version: payload.version,
+    type: payload.type,
+    exportedAt: typeof payload.exportedAt === 'string' ? payload.exportedAt : '',
+    period: typeof payload.period === 'string' ? payload.period : '',
+    enrollments,
+  };
+};
+
+export const mapProjectionEnrollmentsToSubjectMap = (
+  enrollments: EnrollmentProjectionEntry[],
+  subjects: SubjectData[]
+) => {
+  const subjectIdByCatedra = Object.fromEntries(
+    subjects.map(subject => [catedraNumberFromLabel(subject.label), subject.id])
+  ) as Record<number, string>;
+  const commissionIdsBySubjectId = Object.fromEntries(
+    subjects.map(subject => [
+      subject.id,
+      new Set(subject.comisiones.map(row => row.split('|')[0]?.trim() || '')),
+    ])
+  ) as Record<string, Set<string>>;
+  const nextBySubject: Record<string, string> = {};
+  const mapped: EnrollmentProjectionMappedEntry[] = [];
+  const rejected: EnrollmentProjectionRejectedEntry[] = [];
+  const subjectIdByMateriaCode: Record<string, string> = {};
+
+  enrollments.forEach(enrollment => {
+    const subjectId = subjectIdByCatedra[enrollment.catedra];
+    if (!subjectId) {
+      rejected.push({
+        catedra: enrollment.catedra,
+        comision: String(enrollment.comision).trim(),
+        reason: 'catedra_no_encontrada',
+      });
+      return;
+    }
+    const commissionId = String(enrollment.comision).trim();
+    if (!commissionId) {
+      rejected.push({
+        catedra: enrollment.catedra,
+        comision: '',
+        reason: 'comision_no_encontrada',
+      });
+      return;
+    }
+    const allowedCommissions = commissionIdsBySubjectId[subjectId];
+    if (!allowedCommissions || !allowedCommissions.has(commissionId)) {
+      rejected.push({
+        catedra: enrollment.catedra,
+        comision: commissionId,
+        reason: 'comision_no_encontrada',
+      });
+      return;
+    }
+    const subject = subjects.find(item => item.id === subjectId);
+    if (!subject) return;
+    const materiaCode = materiaCodeFromLabel(subject.label);
+    const existingSubjectId = subjectIdByMateriaCode[materiaCode];
+    if (existingSubjectId) {
+      delete nextBySubject[existingSubjectId];
+      const previousIndex = mapped.findIndex(item => item.subjectId === existingSubjectId);
+      if (previousIndex >= 0) mapped.splice(previousIndex, 1);
+    }
+    subjectIdByMateriaCode[materiaCode] = subjectId;
+    nextBySubject[subjectId] = commissionId;
+    mapped.push({
+      catedra: enrollment.catedra,
+      comision: commissionId,
+      subjectId,
+      subjectLabel: subject.label,
+    });
+  });
+
+  return {
+    mappedBySubject: nextBySubject,
+    mapped,
+    rejected,
+  };
+};
 
 export const materiaCodeFromLabel = (label: string) => label.match(/^\((\d+)\)/)?.[1] || label;
 
