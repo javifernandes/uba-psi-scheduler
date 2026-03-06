@@ -1,0 +1,26 @@
+{
+  "id": "24-psicoanalisis-escuela-francesa-c122-ii",
+  "label": "(24) Psicoanálisis: Escuela Francesa - Cátedra 122 (II)",
+  "header": "Psicología UBA - (24) Psicoanálisis: Escuela Francesa - Cátedra 122 - II - Muñoz",
+  "teoricos": [
+    "I|miercoles|11:00|12:30|Smith, Maria Celeste|IN-114|",
+    "II|jueves|19:45|21:15|Muñoz, Pablo Diego|IN-103|",
+    "III|viernes|14:30|16:00|Spinelli, Fabian Alberto|IN-520|"
+  ],
+  "seminarios": [
+    "A|sabado|09:30|11:00|Rodriguez, Patricia Monica||Talleres de Lectura- Optativo- Virtual",
+    "B|miercoles|18:00|19:30|Surmani Alfonsin, Florencia|IN-122|Talleres de Lectura- Presencial-Optativo"
+  ],
+  "comisiones": [
+    "1|miercoles|09:15|10:45|Cosentino, Maximiliano Ariel|I|IN-214|",
+    "2|viernes|16:15|17:45|Rodríguez, Lucas|III|IN-124|",
+    "3|jueves|18:00|19:30|Ibelli, Marianella|II|IN-122|",
+    "4|miercoles|09:15|10:45|Misrahi, Claris Miriam|I|IN-126|",
+    "5|jueves|18:00|19:30|Igartua, Lucas|II|IN-109|",
+    "6|viernes|12:45|14:15|Miari, Antonella Silvana|III|IN-110|",
+    "7|miercoles|12:45|14:15|Amendolia, Florencia|I|IN-126|",
+    "8|miercoles|19:45|21:15|Bonoris, Bruno|II|IN-125|",
+    "9|viernes|12:45|14:15|Cuomo, Karina|III|IN-109|",
+    "10|miercoles|19:45|21:15|Cuomo, Karina|II|IN-313|"
+  ]
+}

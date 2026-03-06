@@ -1,0 +1,30 @@
+{
+  "id": "10350-procesos-psicologicos-basicos-c545-ii",
+  "label": "(10350) Procesos Psicológicos Básicos - Cátedra 545 (II)",
+  "header": "Psicología UBA - (10350) Procesos Psicológicos Básicos - Cátedra 545 - II - Bur",
+  "teoricos": [
+    "I|martes|18:00|21:15|Bur, Felix Ricardo|HY-005|Dicta junto a Martín Larripa",
+    "II|viernes|14:30|17:45|Alcover, Silvina Mariela|HY-005|",
+    "III|jueves|09:15|12:30|Mayol, Juan De La Cruz|HY-005|Dicta junto a Laura Martinez Frontera",
+    "IV|lunes|13:00|16:45|Pábago, Gustavo Marcelo|SI-017|San Isidro Dicta junto a Laura Martinez Frontera"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|viernes|18:00|19:30|Ottolina, Victoria|II|HY-012|",
+    "2|jueves|07:30|09:00|Montes Quintián, Mariano|III|HY-013|",
+    "3|martes|09:15|10:45|Cirami, Lautaro|III|IN-421|",
+    "4|viernes|12:45|14:15|Ottolina, Victoria|II|HY-025|",
+    "5|martes|21:30|23:00|Zaldarriaga, Hernán Ezequiel|I|HY-025|",
+    "6|miercoles|11:00|12:30|Repetto, Guido|III|IN-433|",
+    "7|martes|16:15|17:45|Cirami, Lautaro|I|HY-022|",
+    "8|miercoles|09:15|10:45|Repetto, Guido|III|IN-433|",
+    "9|viernes|12:45|14:15|Cornejo, Romina Alejandra|II|HY-026|",
+    "10|viernes|18:00|19:30|Montes Quintián, Mariano|II|HY-013|",
+    "11|sabado|11:00|12:30|Zaldarriaga, Hernán Ezequiel|I|HY-013|",
+    "12|martes|21:30|23:00|Carbonetti, Yael Tamara|I|HY-004|",
+    "13|martes|09:15|10:45|Carbonetti, Yael Tamara|III|HY-012|",
+    "14|jueves|12:45|14:15|Cornejo, Romina Alejandra|III|HY-015|",
+    "50|lunes|09:00|10:45|Salerno, Elisabet Mara|IV|SI-017|San Isidro",
+    "51|lunes|11:00|12:45|Salerno, Elisabet Mara|IV|SI-017|San Isidro"
+  ]
+}

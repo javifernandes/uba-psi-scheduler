@@ -1,0 +1,36 @@
+{
+  "id": "pp-pp-area-clinica-variantes-en-la-consulta-ambulatoria-c128",
+  "label": "P.P.: P.P.: Área Clínica: Variantes en la Consulta Ambulatoria - Cátedra 128",
+  "header": "Psicología UBA - P.P.: P.P.: Área Clínica: Variantes en la Consulta Ambulatoria - Cátedra 128 - Prof. Revale",
+  "teoricos": [
+    "I|sabado|12:45|14:15|Revale, Guido|IN-207|Los alumnos deberán optar por alguno de los dos espacios de articulación teorico",
+    "II|lunes|18:00|19:30|Maidana, Miriam|IN-420|Los alumnos deberán optar por alguno de los dos espacios de articulación teorico"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|sabado|09:30|13:30|Maidana, Miriam|||Hospital Borda (Guardia) Ramon Carrillo 375, CABA",
+    "2|domingo|08:30|12:30|Zapata, David Alejandro|||Hospital Borda (Guardia)Ramon Carrillo 375,CABA",
+    "3|sabado|09:30|13:30|Capdevielle, Juan Pablo|||Hospital Alvear (Guardia) Av. Warnes 2630",
+    "4|domingo|14:00|18:00|Revale, Guido|||Hospital Alvear (Guardia) Av. Warnes 2630",
+    "5|martes|09:00|13:00|Rodriguez, Rafael Osvaldo|||Hospital Durand (Consult Ext y Servicio de VIH) Diaz Velez 5044, CaBA",
+    "6|martes|17:00|21:00|Revale, Guido|||Dispositivo Acercate (Territorio) Ministerio de Salud) Monasterio 480, CABA",
+    "7|jueves|17:00|21:00|Revale, Guido|||Dispositivo Acercate (Territorio) (Ministerio de Salud) Monasterio 480, CABA",
+    "8|miercoles|09:00|13:00|Capdevielle, Juan Pablo|||Hospital Piñero -Toxicología (grupos, admisiones) Av. Varela 1301, CABA",
+    "9|martes|08:30|12:30|Maidana, Miriam|||Hospital Fernandez Toxicología Cerviño 3356 CABA",
+    "10|martes|08:30|12:30|Capdevielle, Juan Pablo|||Hospital Alvarez - Htal. de día Adicciones - Dr. Juan Felipe Aranguren 2701",
+    "11|miercoles|13:00|17:00|Maidana, Miriam|||Hospital Alvear (Consultorios Externos) Av. Warnes 2630",
+    "12|miercoles|09:30|13:30|Caina Atento, Agustin|||Hosp de Salud Mental",
+    "13|miercoles|19:00|23:00|Guercovich, Johanna|||Htal Vicente Lopez, Yrigoyen 1757. Florida. Vicente López-. GUARDIA",
+    "14|viernes|08:30|12:30|Caina Atento, Agustin|||Hospital del trauma (cirugia bariárica) Bailen 2060 - Malvinas Argent - Bs As",
+    "15|sabado|09:00|13:00|Bossi, Marilina|||Clínica de psicopatología (Adm, psicodiag. y eval. neurocog.) Av.Indep.1400 CABA",
+    "16|lunes|09:00|13:00|Maidana, Miriam|||Htal. Eduardo Oller (Admisión) Av. 844 2100 San Francisco Solano, Bs. As",
+    "17|viernes|14:00|18:00|Maidana, Miriam|||Htal. Eduardo Oller (Guardia) Av. 844 2100 San Francisco Solano, Bs. As",
+    "18|lunes|19:00|23:00|Saravia, Delicia Noemi|||AABRA (Adm. y supervisión) Mansilla 3520. CABA",
+    "19|miercoles|18:00|22:00|Capdevielle, Juan Pablo|||Instituto Ulloa (Espacio similar a Cámara Gesell) Pueyrredón 510 1",
+    "20|jueves|09:30|13:30|Capdevielle, Juan Pablo|||Instituto Ulloa (Espacio similar a Cámara Gesell) Pueyrredón 510 1",
+    "21|martes|16:00|20:00|Giachino, Verónica Marta|||AAbra Lanus- Ituzaingo 1247, Lanus- Admisiones",
+    "22|jueves|19:00|23:00|Rodriguez, Rafael Osvaldo|||Espacio de atención al suicidio (Super. y análisis Cdad. de la Paz 3214 1C CABA",
+    "23|viernes|15:00|19:00|Ruiz, Maria Cecilia|||Causa Clínica (Adm y análisis de casos) Niños/as y adol. Sarmiento 3475. CABA",
+    "24|lunes|18:00|22:00|Ruiz, Maria Cecilia|||Causa Clínica (Adm y presentación de casos) Adultos. Sarmiento 3475. CABA"
+  ]
+}

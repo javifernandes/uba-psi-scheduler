@@ -1,0 +1,20 @@
+{
+  "id": "psicologia-de-la-personalidad-c860",
+  "label": "Psicología de la Personalidad - Cátedra 860",
+  "header": "Psicología UBA - Psicología de la Personalidad - Cátedra 860 - Prof. Garay",
+  "teoricos": [
+    "I|viernes|11:00|12:30|Garay, Cristian Javier|IN-103|",
+    "II|viernes|18:00|19:30|Celleri, Milagros|IN-510|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|viernes|09:15|10:45|Lopez, Pilar|I|IN-125|",
+    "2|viernes|12:45|14:15|Lopez, Pilar|I|IN-125|",
+    "3|viernes|09:15|10:45|Klajner, Florencia|I|IN-217|",
+    "4|viernes|12:45|14:15|Klajner, Florencia|I|IN-217|",
+    "5|viernes|12:45|14:15|Donatti, Sofia|I|IN-216|",
+    "6|viernes|14:30|16:00|Donatti, Sofia|I|IN-216|",
+    "7|jueves|18:00|19:30|Innocenti, Maria|II|IN-323|",
+    "8|jueves|19:45|21:15|Innocenti, Maria|II|IN-323|"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "teoria-y-tecnica-de-exploracion-y-diagnostico-psicologico-modulo-ii-c42-ii",
+  "label": "Teoría y Técnica de Exploración y Diagnóstico Psicológico Módulo II - Cátedra 42 (II)",
+  "header": "Psicología UBA - Teoría y Técnica de Exploración y Diagnóstico Psicológico Módulo II - Cátedra 42 - II - Vinue",
+  "teoricos": [
+    "I|lunes|18:00|19:30|Ibañez, Maria Alejandra|HY-005|",
+    "II|miercoles|11:00|12:30|Zotta, Maria Gabriela|IN-103|",
+    "III|jueves|12:45|14:15|Vinue, Maria Andrea|IN-520|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|lunes|14:30|17:45|Grisolia, Erika Valeria|I|HY-025|",
+    "2|martes|18:00|21:15|Cabariti, Celia Sabina|I|IN-124|",
+    "3|miercoles|07:30|10:45|Vintiss, Mariela Vanina|II|IN-110|",
+    "4|sabado|09:15|12:30|Haslop Miles, Jorge Augusto Ra|I|IN-106|",
+    "5|viernes|09:15|12:30|Valenti, Mariana Cecilia|II|IN-211|",
+    "6|jueves|09:15|12:30|Naser, Isabel Azucena|III|IN-212|",
+    "7|jueves|14:30|17:45|Beltran Simo, Laura|III|IN-421|",
+    "8|lunes|19:45|23:00|Justet, Fernando|I|HY-011|",
+    "9|jueves|18:00|21:15|Del Rio, Fernando|I|IN-110|",
+    "10|lunes|19:45|23:00|Mazzei, Nicolas Jonatan|I|HY-030|",
+    "11|miercoles|12:45|16:00|Eguidazu, Sandra Noemi|III|IN-434|",
+    "12|jueves|14:30|17:45|Sgromo, Fabiana|III|IN-122|",
+    "13|jueves|09:15|12:30|Sgromo, Fabiana|III|IN-124|",
+    "14|miercoles|19:45|23:00|Fernandez Loyarte, Milagros|I|IN-322|",
+    "15|lunes|19:45|23:00|Vintiss, Mariela Vanina|I|HY-032|",
+    "16|martes|18:00|21:15|Del Rio, Fernando|I|IN-209|",
+    "17|viernes|09:15|12:30|Susterman, Julieta Paula|II|IN-209|",
+    "50|martes|09:00|12:45|Pietramala, Karina Paola|III|SI-023|San Isidro"
+  ]
+}

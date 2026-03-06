@@ -1,0 +1,41 @@
+{
+  "id": "36-psicologia-juridica-c769-ii",
+  "label": "(36) Psicología Jurídica - Cátedra 769 (II)",
+  "header": "Psicología UBA - (36) Psicología Jurídica - Cátedra 769 - II - Puhl",
+  "teoricos": [
+    "I|martes|14:30|16:00|Izcurdia, María De Los Ángeles|HY-029|",
+    "II|martes|18:00|19:30|Llull Casado, Veronica Gabriel|HY-029|",
+    "III|miercoles|09:15|10:45|Rodriguez, Jose Antonio|HY-029|",
+    "IV|jueves|09:15|10:45|Laursen, Gustavo Matias|HY-029|",
+    "V|miercoles|16:15|17:45|Dabul, Karina Sandra|HY-022|",
+    "VI|jueves|18:00|19:30|De La Iglesia, Matilde Aida|HY-022|",
+    "VII|lunes|18:00|19:30|Puhl, Stella Maris|HY-015|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|miercoles|18:00|19:30|Ortiz, Mariana Blanca|V|HY-004|",
+    "2|lunes|16:15|17:45|Muñoz, Adriana Beatriz|VII|HY-027|",
+    "3|lunes|19:45|21:15|Muñoz, Adriana Beatriz|VII|HY-029|",
+    "4|martes|16:15|17:45|Milan, Sandra|I|HY-027|",
+    "5|martes|19:45|21:15|Ferrari, Santiago|II|HY-026|",
+    "6|martes|16:15|17:45|Ferrari, Santiago|I|HY-024|",
+    "7|jueves|07:30|09:00|Cobo, Stella|IV|HY-010|",
+    "8|jueves|11:00|12:30|Buzarquis, Ayelen Abel|IV|HY-004|",
+    "9|martes|19:45|21:15|Palestrini, Gabriela Paola|II|HY-031|",
+    "10|jueves|11:00|12:30|Molins, Maria Constanza|IV|HY-030|",
+    "11|miercoles|07:30|09:00|Gauto, Jazmin|III|HY-024|",
+    "12|miercoles|11:00|12:30|Gauto, Jazmin|III|HY-004|",
+    "13|martes|16:15|17:45|Profesor a designar|I|HY-011|",
+    "14|martes|19:45|21:15|Assis, Miguel|II|HY-027|",
+    "15|miercoles|11:00|12:30|Ortiz, Mariana Blanca|III|IN-212|",
+    "16|jueves|19:45|21:15|Palestrini, Gabriela Paola|VI|HY-031|",
+    "17|jueves|19:45|21:15|Gomez, Claudia Edith|VI|HY-015|",
+    "18|lunes|19:45|21:15|Assis, Miguel|VII|HY-031|",
+    "19|miercoles|14:30|16:00|Cobo, Stella|V|HY-011|",
+    "20|miercoles|14:30|16:00|Cruz, Maria Alejandra|V|HY-027|",
+    "21|jueves|14:30|16:00|Buzarquis, Ayelen Abel|I|HY-026|",
+    "22|sabado|11:00|12:30|Profesor a designar|II|HY-011|",
+    "23|miercoles|18:00|19:30|Molins, Maria Constanza|V|IN-219|",
+    "24|jueves|16:15|17:45|Gomez, Claudia Edith|VI|HY-031|"
+  ]
+}

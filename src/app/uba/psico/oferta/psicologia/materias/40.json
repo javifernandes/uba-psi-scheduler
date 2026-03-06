@@ -1,0 +1,33 @@
+{
+  "id": "7-psicologia-del-trabajo-c40-i",
+  "label": "(7) Psicología del Trabajo - Cátedra 40 (I)",
+  "header": "Psicología UBA - (7) Psicología del Trabajo - Cátedra 40 - I - Ferrari",
+  "teoricos": [
+    "I|miercoles|09:15|10:45|Napoli, Maria Laura|HY-022|",
+    "II|jueves|16:15|17:45|Ferrari, Liliana Edith|IN-510|",
+    "III|martes|19:45|21:15|Santarsiero, Maria Marta|IN-207|",
+    "IV|jueves|11:00|12:45|SALADINO, JAVIER|SI-003|San Isidro",
+    "V|lunes|18:00|19:30|Córdoba, Esteban Hernán|IN-106|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|lunes|19:45|21:15|Dominguez, Ezequiel Martin|V|IN-126|",
+    "2|martes|18:00|19:30|Baghino, Diego Sebastián|III|IN-123|",
+    "3|martes|21:30|23:00|Baghino, Diego Sebastián|III|IN-123|",
+    "4|miercoles|11:00|12:30|Solís, María Cecilia|I|HY-030|",
+    "5|miercoles|11:00|12:30|Cortelletti, María Lorena|I|HY-032|",
+    "6|lunes|19:45|21:15|Cirami, Lautaro|V|IN-121|",
+    "7|sabado|11:00|12:30|Copa, Lara Agustina|IV|HY-026|",
+    "8|miercoles|07:30|09:00|Cortelletti, María Lorena|I|HY-013|",
+    "9|martes|18:00|19:30|Cirami, Lautaro|III|IN-434|",
+    "10|lunes|19:45|21:15|Duarte, Jacqueline Clara|V|IN-218|",
+    "11|lunes|16:15|17:45|Batista Teliz, Andrea Karina|V|IN-443|",
+    "12|jueves|14:30|16:00|Gomez Pawelek, Jeremias|II|IN-205|",
+    "13|jueves|14:30|16:00|Dominguez, Ezequiel Martin|II|IN-209|",
+    "14|jueves|14:30|16:00|Solís, María Cecilia|II|IN-434|",
+    "15|miercoles|11:00|12:30|Gómez Pawelek, Jeremías|I|HY-026|",
+    "16|jueves|18:00|19:30|Batista Teliz, Andrea Karina|II|IN-213|",
+    "17|martes|18:00|19:30|Duarte, Jacqueline Clara|III|IN-122|",
+    "50|jueves|09:00|10:45|Copa, Lara Agustina|IV|SI-003|San Isidro"
+  ]
+}

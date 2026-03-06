@@ -1,0 +1,24 @@
+{
+  "id": "pp-pp-area-clinica-psicologia-perinatal-c721",
+  "label": "P.P.: P.P.: Área Clínica: Psicología Perinatal - Cátedra 721",
+  "header": "Psicología UBA - P.P.: P.P.: Área Clínica: Psicología Perinatal - Cátedra 721 - Galindez",
+  "teoricos": [
+    "I|martes|18:00|19:30|Galindez, Elena Teresa|HY-012|FACULTAD Presencial Obligatorio"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|miercoles|14:00|18:00|Galindez, Elena Teresa|I||H.Ana Goitia - L. V. Lopez 1737 - Avellaneda",
+    "2|martes|09:00|13:00|Diaz, Aldana Belen|I||F.Hospitalaria - Cramer 4601 CABA",
+    "3|miercoles|08:30|12:30|Galli, Miryam Alejandra|I||H. Ana Goitia - L. V. Lopez 1737 Avellaneda",
+    "4|martes|08:30|12:30|Mansilla, Mariela Luz|I||H. Ana Goitia - L. V. Lopez 1737 Avellaneda",
+    "5|viernes|09:00|13:00|Lucero, Aurora Graciela|I||Ciipme-Pte. Perón 2158-CABA",
+    "6|lunes|08:00|12:00|Hauser, Maria Paulina|I||H. Ana Goitia - L. V. Lopez 1737 - Avellaneda",
+    "7|lunes|10:00|14:00|Galindez, Elena Teresa|I||H. Ana Goitia - L. V. Lopez 1737. Avellaneda",
+    "8|viernes|10:00|14:00|Carballo, Rita Maria Gabriela|I||H. de Morón- Dr. Rodolfo Monte 848. Morón",
+    "9|lunes|08:30|12:30|Mercado, Andrea Patricia|I||Htal. Mi Pueblo-El Progreso 240. Fcio. Varela",
+    "10|martes|09:00|13:00|Poletti, Irina|I||F. Hospitalaria. Cramer 4601 CABA",
+    "11|miercoles|08:30|12:30|Aranda, Soledad|I||Htal. Zerboni. Moreno 90. San A. de Areco",
+    "12|lunes|08:00|12:00|Ottaviano, Paula|I||Htal. A.Goitia. V. Lopez 1737 Avellaneda",
+    "13|lunes|08:30|12:30|Panizza, Maria Martha|I||Htal. S. Isidro. Diego Palma 505. San Isidro"
+  ]
+}

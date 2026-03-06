@@ -1,0 +1,38 @@
+{
+  "id": "1-historia-de-la-psicologia-c118-i",
+  "label": "(1) Historia de la Psicología - Cátedra 118 (I)",
+  "header": "Psicología UBA - (1) Historia de la Psicología - Cátedra 118 - I - Borinsky",
+  "teoricos": [
+    "I|lunes|11:00|12:30|Borinsky, Marcela Patricia|HY-005|",
+    "II|martes|12:45|14:15|Vallejo, Mauro Sebastian|IN-510|",
+    "III|jueves|19:45|21:15|Pavesi, Pablo Emilio|IN-520|"
+  ],
+  "seminarios": [
+    "A|lunes|09:15|10:45|Borinsky, Marcela Patricia|HY-005|Historia del movimiento psicoanalítico. Freud, Jung y los sueños",
+    "B|martes|11:00|12:30|Sanfelippo, Luis Cesar|IN-106|Historia del psicoanálisis a la luz del trauma",
+    "C|lunes|18:00|19:30|Dagfal, Alejandro Antonio|IN-207|Psicología y Psicoanálisis: historia de una relación complicada",
+    "D|jueves|18:00|19:45|Pavesi, Pablo Emilio|IN-106|Saber, poder, sujeto. Michel Foucault y la geneaología de la subjetividad",
+    "E|martes|14:30|16:00|Macchioli, Florencia Adriana|IN-101|La familia como objeto de intervencion psi",
+    "F|jueves|12:45|14:15|Scholten, Hernan Santiago Ezeq|IN-106|Entre el individuo y la población. La analítica del poder en M. Foucault."
+  ],
+  "comisiones": [
+    "1|lunes|07:30|09:00|Cardaci, Gabriela Victoria|I - A|HY-012|",
+    "2|martes|09:15|10:45|Mendl, Sebastian|II - B|IN-216|",
+    "3|jueves|12:45|14:15|Klein, Tamara Lis|II - E|IN-107|",
+    "4|martes|16:15|17:45|Abeijon, Matias Federico|II - E|IN-411|",
+    "5|jueves|16:15|17:45|Carreno, Sebastian|III - D|IN-204|",
+    "6|jueves|21:30|23:00|Carreno, Sebastian|III - D|IN-110|",
+    "7|martes|19:45|21:15|Zengotita, Alonso|III - D|IN-110|",
+    "8|lunes|09:15|10:45|Cardaci, Gabriela Victoria|I - B|HY-012|",
+    "9|sabado|12:45|14:15|Zengotita, Alonso|III - C|IN-109|",
+    "10|martes|09:15|10:45|Ni, Mónica|II - B|IN-210|",
+    "11|lunes|16:15|17:45|Moukarzel, Maria Laura|III - C|IN-302|",
+    "12|martes|11:00|12:30|Mendl, Sebastian|II - F|IN-207|",
+    "13|lunes|12:45|14:15|Briolotti, Ana Soledad|I - A|HY-004|",
+    "14|lunes|19:45|21:15|Moukarzel, Maria Laura|III - C|IN-434|",
+    "15|jueves|14:30|16:00|Abeijon, Matias Federico|II - F|IN-433|",
+    "16|martes|16:15|17:45|Ni, Mónica|II - E|IN-123|",
+    "17|lunes|14:30|16:00|Briolotti, Ana Soledad|I - A|HY-027|",
+    "18|jueves|11:00|12:30|Klein, Tamara Lis|I - F|IN-121|"
+  ]
+}
