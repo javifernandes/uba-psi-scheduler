@@ -22,3 +22,12 @@ export const eventTypeClass = (type: CalendarEvent['tipo']) => {
   if (type === 'teo') return 'bg-[#0f766e]/90';
   return 'bg-[#d97706]/90';
 };
+
+export const externalEventAccentClass = (type: CalendarEvent['tipo']) => {
+  if (type === 'prac') return 'bg-[#861f5c]';
+  if (type === 'teo') return 'bg-[#0f766e]';
+  return 'bg-[#d97706]';
+};
+
+export const externalEventCardClass =
+  'border border-[#d8bfd0] bg-[#f6eef3] text-[#5a1740] shadow-[0_1px_2px_rgba(90,23,64,0.08)]';

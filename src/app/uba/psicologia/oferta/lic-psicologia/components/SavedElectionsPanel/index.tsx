@@ -124,7 +124,7 @@ export const SavedElectionsPanel = ({
       onClick={onOpenPanel}
       className={cn(
         'order-5 relative overflow-visible rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-3 pt-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:border-zinc-700 dark:bg-zinc-900/95',
-        isOpen && 'flex h-full min-h-0 flex-col',
+        isOpen && 'flex min-h-0 flex-col xl:h-full',
         !isOpen && 'cursor-pointer',
         isOpen ? 'pb-3' : 'pb-1.5'
       )}
@@ -151,7 +151,7 @@ export const SavedElectionsPanel = ({
         </div>
       </div>
       {isOpen ? (
-        <div ref={panelRef} className="relative min-h-0 flex-1 overflow-visible">
+        <div ref={panelRef} className="relative min-h-0 overflow-visible xl:flex-1">
           {savedConflictOverlay ? (
             <>
               <svg
@@ -222,7 +222,7 @@ export const SavedElectionsPanel = ({
               </div>
             </>
           ) : null}
-          <div className="h-full overflow-auto pr-1">
+          <div className="pr-1 xl:h-full xl:overflow-auto">
             <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
               {savedElectionDetails.map(item => {
                 const commissionRoom = splitAula(item.commission.aula);

@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { eventTypeClass, roomTextClass, timeTextClass, venuePrefixClass } from './styles';
+import {
+  eventTypeClass,
+  externalEventAccentClass,
+  externalEventCardClass,
+  roomTextClass,
+  timeTextClass,
+  venuePrefixClass,
+} from './styles';
 
 describe('CalendarGrid/styles', () => {
   it('eventTypeClass mapea el tipo al fondo esperado', () => {
@@ -24,5 +31,12 @@ describe('CalendarGrid/styles', () => {
     expect(venuePrefixClass('prac')).toBe('text-[#e8b4d7]');
     expect(venuePrefixClass('teo')).toBe('text-[#163d39]');
     expect(venuePrefixClass('sem')).toBe('text-[#8d5722]');
+  });
+
+  it('estilos de eventos externos mantienen fondo unificado y acento por tipo', () => {
+    expect(externalEventCardClass).toContain('bg-[#f6eef3]');
+    expect(externalEventAccentClass('prac')).toBe('bg-[#861f5c]');
+    expect(externalEventAccentClass('teo')).toBe('bg-[#0f766e]');
+    expect(externalEventAccentClass('sem')).toBe('bg-[#d97706]');
   });
 });

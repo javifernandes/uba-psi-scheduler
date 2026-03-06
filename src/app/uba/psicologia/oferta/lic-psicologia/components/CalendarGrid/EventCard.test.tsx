@@ -33,6 +33,19 @@ const slot: VisibleEventSlot = {
   },
 };
 
+const externalSlot: VisibleEventSlot = {
+  ...slot,
+  slotKey: 'jueves|09:15|10:45',
+  event: {
+    ...slot.event,
+    id: 'ext-36-prac-1',
+    title: '1 - Ferrari',
+    sourceSubjectId: '36',
+    sourceSubjectLabel: '(2) Psicología Social - Cátedra 36 (II)',
+    isExternal: true,
+  },
+};
+
 const interactionHandlers = {
   onCardMouseEnter: vi.fn(),
   onCardMouseLeave: vi.fn(),
@@ -143,5 +156,29 @@ describe('CalendarEventCard', () => {
     expect(screen.getByText('!')).toBeInTheDocument();
     expect(screen.getByText('Conflicto de horario')).toBeInTheDocument();
     expect(screen.getByText('★')).toBeInTheDocument();
+  });
+
+  it('en eventos externos muestra layout simplificado por materia/cátedra y sede', () => {
+    render(
+      <CalendarEventCard
+        slot={externalSlot}
+        activeCommission={null}
+        selectedSubjectId="34"
+        enrolledBySubject={{ '36': '21' }}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText('Psicología Social')).toBeInTheDocument();
+    expect(screen.getByText('Cátedra 36 (II)')).toBeInTheDocument();
+    expect(screen.getByText('IN')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Guardar o quitar esta comisión elegida')).not.toBeInTheDocument();
   });
 });

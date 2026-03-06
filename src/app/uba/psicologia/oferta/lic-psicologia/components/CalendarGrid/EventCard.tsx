@@ -1,7 +1,8 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
 import type { Comision, ReservedSlot } from '../../psicologia-scheduler.types';
-import { eventTypeClass } from './styles';
+import { displaySubjectLabel } from '../../psicologia-scheduler.utils';
+import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
 import type { VisibleEventSlot } from './types';
 import { CardRoom } from './CardRoom';
 import { CardTime } from './CardTime';
@@ -24,6 +25,21 @@ type CalendarEventCardProps = {
   setPinnedCommissionId: Dispatch<SetStateAction<string | null>>;
   setStackIndexBySlot: Dispatch<SetStateAction<Record<string, number>>>;
   onToggleEnrollment: (commissionId: string) => void;
+};
+
+const externalSubjectParts = (subjectLabel: string) => {
+  const normalized = displaySubjectLabel(subjectLabel);
+  const matched = normalized.match(/^(.*?)(?:\s+-\s+(Cátedra.*))$/i);
+  if (!matched) {
+    return {
+      subject: normalized.replace(/^\d+\s*·\s*/, '').trim(),
+      catedra: '',
+    };
+  }
+  return {
+    subject: matched[1]?.replace(/^\d+\s*·\s*/, '').trim() || normalized,
+    catedra: matched[2]?.trim() || '',
+  };
 };
 
 export const CalendarEventCard = ({
@@ -83,6 +99,7 @@ export const CalendarEventCard = ({
     setStackIndexBySlot,
     onToggleEnrollment,
   });
+  const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
 
   return (
     <div
@@ -95,8 +112,8 @@ export const CalendarEventCard = ({
       onKeyDown={onCardKeyDown}
       className={cn(
         'group absolute rounded-md text-left text-[10.5px] font-medium text-white shadow-sm transition-[opacity,filter,color,transform] duration-200 ease-in-out',
-        eventTypeClass(event.tipo),
-        event.isExternal && 'saturate-50 brightness-90 opacity-75 ring-1 ring-white/20',
+        event.isExternal ? externalEventCardClass : eventTypeClass(event.tipo),
+        event.isExternal && 'text-[#5a1740]',
         hasConflict && 'ring-2 ring-amber-300/85 shadow-[0_0_0_1px_rgba(180,83,9,0.35)]',
         shouldDim &&
           'opacity-20 grayscale blur-[0.3px] dark:opacity-45 dark:grayscale-0 dark:brightness-75',
@@ -115,7 +132,7 @@ export const CalendarEventCard = ({
         eventId={event.id}
         eventConflicts={eventConflicts}
       />
-      {canSaveFromCard ? (
+      {canSaveFromCard && !event.isExternal ? (
         <button
           type="button"
           onClick={onSaveButtonClick}
@@ -135,32 +152,68 @@ export const CalendarEventCard = ({
         onPrevClick={onStackPrevClick}
         onNextClick={onStackNextClick}
       />
-      <CardTime
-        value={event.inicio}
-        type={event.tipo}
-        position="top"
-        hidden={!isActive || hideText}
-      />
-      <CardTitle
-        code={titleParts.code}
-        label={titleParts.label}
-        type={event.tipo}
-        canWrap={canWrapLabel}
-        wrapStyle={titleWrapStyle}
-        hidden={hideText}
-      />
-      <CardTime
-        value={event.fin}
-        type={event.tipo}
-        position="bottom"
-        hidden={!isActive || hideText}
-      />
-      <CardRoom
-        prefix={aulaParts.prefix}
-        room={aulaParts.room}
-        type={event.tipo}
-        hidden={hideText}
-      />
+      {event.isExternal && externalParts ? (
+        <>
+          <span
+            className={cn(
+              'absolute inset-y-0 left-0 w-2 rounded-l-md',
+              externalEventAccentClass(event.tipo)
+            )}
+          />
+          <span
+            className={cn(
+              'absolute inset-y-0 left-3 right-2 flex min-w-0 flex-col justify-center',
+              hideText && 'opacity-0'
+            )}
+          >
+            <span className="truncate text-[11px] font-bold leading-tight text-[#5a1740]">
+              {externalParts.subject}
+            </span>
+            {externalParts.catedra ? (
+              <span className="truncate text-[10px] font-medium text-[#9a6f89]">
+                {externalParts.catedra}
+              </span>
+            ) : null}
+          </span>
+          <span
+            className={cn(
+              'absolute bottom-0.5 right-2 text-[10px] font-black tracking-wide text-[#9a6f89]',
+              hideText && 'opacity-0'
+            )}
+          >
+            {aulaParts.prefix}
+          </span>
+        </>
+      ) : (
+        <>
+          <CardTime
+            value={event.inicio}
+            type={event.tipo}
+            position="top"
+            hidden={!isActive || hideText}
+          />
+          <CardTitle
+            code={titleParts.code}
+            label={titleParts.label}
+            type={event.tipo}
+            canWrap={canWrapLabel}
+            wrapStyle={titleWrapStyle}
+            hidden={hideText}
+          />
+          <CardTime
+            value={event.fin}
+            type={event.tipo}
+            position="bottom"
+            hidden={!isActive || hideText}
+          />
+          <CardRoom
+            prefix={aulaParts.prefix}
+            room={aulaParts.room}
+            type={event.tipo}
+            hidden={hideText}
+          />
+        </>
+      )}
     </div>
   );
 };

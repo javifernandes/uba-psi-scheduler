@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
 import { captureEvent } from '@/lib/posthog';
+import { cn } from '@/lib/utils';
 import {
   CalendarGrid,
   SavedElectionsPanel,
@@ -265,7 +266,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
             </div>
           </div>
 
-          <aside className="flex h-full min-h-0 flex-col gap-2">
+          <aside className="grid min-h-0 gap-2 md:grid-cols-2 xl:flex xl:h-full xl:flex-col">
             <SchedulerFiltersPanel
               selectedSubjectLabel={
                 selectedSubject
@@ -351,7 +352,10 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               }}
             />
             <div
-              className={isEleccionesPanelOpen ? 'order-5 min-h-0 flex-1' : 'order-5 min-h-0'}
+              className={cn(
+                'order-5 min-h-0 md:col-span-2',
+                isEleccionesPanelOpen && 'xl:flex-1'
+              )}
             >
               <SavedElectionsPanel
                 isOpen={isEleccionesPanelOpen}
