@@ -144,7 +144,7 @@ export const SavedElectionsPanel = ({
         </div>
       </div>
       {isOpen ? (
-        <div ref={panelRef} className="relative min-h-0 flex-1 overflow-auto pr-1">
+        <div ref={panelRef} className="relative min-h-0 flex-1 overflow-visible">
           {savedConflictOverlay ? (
             <>
               <svg
@@ -215,153 +215,155 @@ export const SavedElectionsPanel = ({
               </div>
             </>
           ) : null}
-          <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
-            {savedElectionDetails.map(item => {
-              const commissionRoom = splitAula(item.commission.aula);
-              const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
-              const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
-              const commissionConflictKey = `${item.subject.id}|prac|${item.commission.id}`;
-              const teoricoConflictKey = item.teorico
-                ? `${item.subject.id}|teo|${item.teorico.id}`
-                : null;
-              const seminarioConflictKey = item.seminario
-                ? `${item.subject.id}|sem|${item.seminario.id}`
-                : null;
-              const commissionConflictDetails =
-                savedConflictDetailsBySlot[commissionConflictKey] || [];
-              const teoricoConflictDetails = teoricoConflictKey
-                ? savedConflictDetailsBySlot[teoricoConflictKey] || []
-                : [];
-              const seminarioConflictDetails = seminarioConflictKey
-                ? savedConflictDetailsBySlot[seminarioConflictKey] || []
-                : [];
-              return (
-                <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
-                  <button
-                    type="button"
-                    onClick={() => onRemoveSubject(item.subject.id)}
-                    className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
-                    aria-label="Quitar elección"
-                    title="Quitar elección"
-                  >
-                    <Trash2 size={14} />
-                  </button>
-                  <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
-                    {item.subject.label}
+          <div className="h-full overflow-auto pr-1">
+            <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
+              {savedElectionDetails.map(item => {
+                const commissionRoom = splitAula(item.commission.aula);
+                const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
+                const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
+                const commissionConflictKey = `${item.subject.id}|prac|${item.commission.id}`;
+                const teoricoConflictKey = item.teorico
+                  ? `${item.subject.id}|teo|${item.teorico.id}`
+                  : null;
+                const seminarioConflictKey = item.seminario
+                  ? `${item.subject.id}|sem|${item.seminario.id}`
+                  : null;
+                const commissionConflictDetails =
+                  savedConflictDetailsBySlot[commissionConflictKey] || [];
+                const teoricoConflictDetails = teoricoConflictKey
+                  ? savedConflictDetailsBySlot[teoricoConflictKey] || []
+                  : [];
+                const seminarioConflictDetails = seminarioConflictKey
+                  ? savedConflictDetailsBySlot[seminarioConflictKey] || []
+                  : [];
+                return (
+                  <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
+                    <button
+                      type="button"
+                      onClick={() => onRemoveSubject(item.subject.id)}
+                      className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
+                      aria-label="Quitar elección"
+                      title="Quitar elección"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                    <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
+                      {item.subject.label}
+                    </div>
+                    {[
+                      {
+                        kind: 'prac' as const,
+                        key: commissionConflictKey,
+                        code: item.commission.id,
+                        profesor: item.commission.profesor,
+                        dia: item.commission.dia,
+                        inicio: item.commission.inicio,
+                        fin: item.commission.fin,
+                        venue: commissionRoom.prefix,
+                        hasConflicts: commissionConflictDetails.length > 0,
+                      },
+                      ...(item.teorico
+                        ? [
+                            {
+                              kind: 'teo' as const,
+                              key: teoricoConflictKey!,
+                              code: item.teorico.id,
+                              profesor: item.teorico.profesor,
+                              dia: item.teorico.dia,
+                              inicio: item.teorico.inicio,
+                              fin: item.teorico.fin,
+                              venue: teoricoRoom?.prefix || '',
+                              hasConflicts: teoricoConflictDetails.length > 0,
+                            },
+                          ]
+                        : []),
+                      ...(item.seminario
+                        ? [
+                            {
+                              kind: 'sem' as const,
+                              key: seminarioConflictKey!,
+                              code: item.seminario.id,
+                              profesor: item.seminario.profesor,
+                              dia: item.seminario.dia,
+                              inicio: item.seminario.inicio,
+                              fin: item.seminario.fin,
+                              venue: seminarioRoom?.prefix || '',
+                              hasConflicts: seminarioConflictDetails.length > 0,
+                            },
+                          ]
+                        : []),
+                    ]
+                      .sort((a, b) => {
+                        const dayDiff = DAYS.indexOf(a.dia) - DAYS.indexOf(b.dia);
+                        if (dayDiff !== 0) return dayDiff;
+                        const timeDiff = h2m(a.inicio) - h2m(b.inicio);
+                        if (timeDiff !== 0) return timeDiff;
+                        return h2m(a.fin) - h2m(b.fin);
+                      })
+                      .map((part, index) => {
+                        const colorClass =
+                          part.kind === 'prac'
+                            ? 'text-[#861f5c]'
+                            : part.kind === 'teo'
+                              ? 'text-[#0f766e]'
+                              : 'text-[#d97706]';
+                        return (
+                          <div
+                            key={part.key}
+                            ref={node => {
+                              slotRefs.current[part.key] = node;
+                            }}
+                            onMouseEnter={() => {
+                              if (!part.hasConflicts) return;
+                              setHoveredSavedConflictSlotId(part.key);
+                            }}
+                            onMouseLeave={() => {
+                              if (hoveredSavedConflictSlotId === part.key)
+                                setHoveredSavedConflictSlotId(null);
+                            }}
+                            className={cn(
+                              'relative grid grid-cols-[34px_1fr_1fr_32px] items-center gap-x-2 rounded px-1 py-0.5 text-[13px] transition-colors',
+                              index === 0 ? 'mt-1' : 'mt-0.5',
+                              alwaysConflictingSavedSlotIds.has(part.key) &&
+                                'bg-amber-50/80 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/15 dark:ring-amber-300/35',
+                              highlightedConflictSlotIds.has(part.key) &&
+                                'bg-amber-100/70 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/20 dark:ring-amber-300/40'
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                'w-[34px] text-center font-semibold tabular-nums',
+                                colorClass
+                              )}
+                            >
+                              {part.code}
+                            </span>
+                            <span className={cn('truncate text-[15px] font-semibold', colorClass)}>
+                              {shortTeacherName(part.profesor, 24)}
+                            </span>
+                            <span className="whitespace-nowrap text-[15px] font-medium tabular-nums text-[#6f5866] dark:text-zinc-300">
+                              {dayShort(part.dia)} {part.inicio} {part.fin}
+                            </span>
+                            <span
+                              className={cn(
+                                'w-[32px] text-right text-[15px] font-semibold tabular-nums',
+                                colorClass
+                              )}
+                            >
+                              {part.venue}
+                            </span>
+                          </div>
+                        );
+                      })}
                   </div>
-                  {[
-                    {
-                      kind: 'prac' as const,
-                      key: commissionConflictKey,
-                      code: item.commission.id,
-                      profesor: item.commission.profesor,
-                      dia: item.commission.dia,
-                      inicio: item.commission.inicio,
-                      fin: item.commission.fin,
-                      venue: commissionRoom.prefix,
-                      hasConflicts: commissionConflictDetails.length > 0,
-                    },
-                    ...(item.teorico
-                      ? [
-                          {
-                            kind: 'teo' as const,
-                            key: teoricoConflictKey!,
-                            code: item.teorico.id,
-                            profesor: item.teorico.profesor,
-                            dia: item.teorico.dia,
-                            inicio: item.teorico.inicio,
-                            fin: item.teorico.fin,
-                            venue: teoricoRoom?.prefix || '',
-                            hasConflicts: teoricoConflictDetails.length > 0,
-                          },
-                        ]
-                      : []),
-                    ...(item.seminario
-                      ? [
-                          {
-                            kind: 'sem' as const,
-                            key: seminarioConflictKey!,
-                            code: item.seminario.id,
-                            profesor: item.seminario.profesor,
-                            dia: item.seminario.dia,
-                            inicio: item.seminario.inicio,
-                            fin: item.seminario.fin,
-                            venue: seminarioRoom?.prefix || '',
-                            hasConflicts: seminarioConflictDetails.length > 0,
-                          },
-                        ]
-                      : []),
-                  ]
-                    .sort((a, b) => {
-                      const dayDiff = DAYS.indexOf(a.dia) - DAYS.indexOf(b.dia);
-                      if (dayDiff !== 0) return dayDiff;
-                      const timeDiff = h2m(a.inicio) - h2m(b.inicio);
-                      if (timeDiff !== 0) return timeDiff;
-                      return h2m(a.fin) - h2m(b.fin);
-                    })
-                    .map((part, index) => {
-                      const colorClass =
-                        part.kind === 'prac'
-                          ? 'text-[#861f5c]'
-                          : part.kind === 'teo'
-                            ? 'text-[#0f766e]'
-                            : 'text-[#d97706]';
-                      return (
-                        <div
-                          key={part.key}
-                          ref={node => {
-                            slotRefs.current[part.key] = node;
-                          }}
-                          onMouseEnter={() => {
-                            if (!part.hasConflicts) return;
-                            setHoveredSavedConflictSlotId(part.key);
-                          }}
-                          onMouseLeave={() => {
-                            if (hoveredSavedConflictSlotId === part.key)
-                              setHoveredSavedConflictSlotId(null);
-                          }}
-                          className={cn(
-                            'relative grid grid-cols-[34px_1fr_1fr_32px] items-center gap-x-2 rounded px-1 py-0.5 text-[13px] transition-colors',
-                            index === 0 ? 'mt-1' : 'mt-0.5',
-                            alwaysConflictingSavedSlotIds.has(part.key) &&
-                              'bg-amber-50/80 ring-1 ring-amber-300/70 dark:bg-amber-500/15 dark:ring-amber-300/35',
-                            highlightedConflictSlotIds.has(part.key) &&
-                              'bg-amber-100/70 ring-1 ring-amber-300/70 dark:bg-amber-500/20 dark:ring-amber-300/40'
-                          )}
-                        >
-                          <span
-                            className={cn(
-                              'w-[34px] text-center font-semibold tabular-nums',
-                              colorClass
-                            )}
-                          >
-                            {part.code}
-                          </span>
-                          <span className={cn('truncate text-[15px] font-semibold', colorClass)}>
-                            {shortTeacherName(part.profesor, 24)}
-                          </span>
-                          <span className="whitespace-nowrap text-[15px] font-medium tabular-nums text-[#6f5866] dark:text-zinc-300">
-                            {dayShort(part.dia)} {part.inicio} {part.fin}
-                          </span>
-                          <span
-                            className={cn(
-                              'w-[32px] text-right text-[15px] font-semibold tabular-nums',
-                              colorClass
-                            )}
-                          >
-                            {part.venue}
-                          </span>
-                        </div>
-                      );
-                    })}
+                );
+              })}
+              {!savedElectionDetails.length ? (
+                <div className="text-xs text-[#7c6272] dark:text-zinc-400">
+                  Sin elecciones guardadas.
                 </div>
-              );
-            })}
-            {!savedElectionDetails.length ? (
-              <div className="text-xs text-[#7c6272] dark:text-zinc-400">
-                Sin elecciones guardadas.
-              </div>
-            ) : null}
+              ) : null}
+            </div>
           </div>
         </div>
       ) : null}
