@@ -259,8 +259,12 @@ export const useSchedulerCalendar = ({
         ? slotEvents.findIndex(
             ev =>
               ev.linkedCommissionId === activeCommission.id ||
-              ev.linkedTeoricoId === activeCommission.teoricoId ||
-              ev.linkedSeminarioId === activeCommission.seminarioId
+              (ev.linkedTeoricoId &&
+                activeCommission.teoricoId &&
+                ev.linkedTeoricoId === activeCommission.teoricoId) ||
+              (ev.linkedSeminarioId &&
+                activeCommission.seminarioId &&
+                ev.linkedSeminarioId === activeCommission.seminarioId)
           )
         : -1;
       const enrolledMatchIndex =
@@ -269,8 +273,12 @@ export const useSchedulerCalendar = ({
               ev =>
                 ev.sourceSubjectId === selectedSubject.id &&
                 (ev.linkedCommissionId === enrolledCurrentCommission.id ||
-                  ev.linkedTeoricoId === enrolledCurrentCommission.teoricoId ||
-                  ev.linkedSeminarioId === enrolledCurrentCommission.seminarioId)
+                  (ev.linkedTeoricoId &&
+                    enrolledCurrentCommission.teoricoId &&
+                    ev.linkedTeoricoId === enrolledCurrentCommission.teoricoId) ||
+                  (ev.linkedSeminarioId &&
+                    enrolledCurrentCommission.seminarioId &&
+                    ev.linkedSeminarioId === enrolledCurrentCommission.seminarioId))
             )
           : -1;
       const safeIndex =

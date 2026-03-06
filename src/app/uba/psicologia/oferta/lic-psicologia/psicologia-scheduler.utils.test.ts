@@ -33,6 +33,15 @@ const subjectData: SubjectData = {
   comisiones: ['63|martes|07:30|09:00|BLANK, Sofia|III - B|IN-123|'],
 };
 
+const subjectOnlyTeoricoObligData: SubjectData = {
+  id: '48',
+  label: '(15) Neurofisiología - Cátedra 48 (I)',
+  header: 'Psicología UBA - (15) Neurofisiología - Cátedra 48 - I - China',
+  teoricos: ['V|martes|18:00|19:30|China, Norma Nancy|HY-014|'],
+  seminarios: [],
+  comisiones: ['14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|'],
+};
+
 describe('psicologia-scheduler.utils', () => {
   it('convierte horas y calcula overlap', () => {
     expect(h2m('14:30')).toBe(870);
@@ -57,6 +66,14 @@ describe('psicologia-scheduler.utils', () => {
       aula: 'IN-123',
     });
     expect(parsed.seminarioMap.B?.profesor).toContain('Battaglia');
+  });
+
+  it('parsea oblig con solo teórico sin inyectar seminario indefinido', () => {
+    const parsed = parseSubject(subjectOnlyTeoricoObligData);
+    expect(parsed.comisiones[0]).toMatchObject({
+      teoricoId: 'V',
+      seminarioId: '',
+    });
   });
 
   it('resuelve metadatos de labels/header y códigos', () => {

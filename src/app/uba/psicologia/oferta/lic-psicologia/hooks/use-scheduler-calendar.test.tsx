@@ -31,6 +31,21 @@ const subjectBData: SubjectData = {
 const subjectA = parseSubject(subjectAData);
 const subjectB = parseSubject(subjectBData);
 
+const subjectOnlyTeoricoData: SubjectData = {
+  id: 's48',
+  label: '(15) Neurofisiología - Cátedra 48 (I)',
+  header: 'header',
+  teoricos: [
+    'V|martes|18:00|19:30|China, Norma Nancy|HY-014|',
+    'I|martes|18:00|19:30|Otro Teorico|IN-101|',
+  ],
+  seminarios: ['A|jueves|08:00|09:00|Sem Uno|IN-111|'],
+  comisiones: [
+    '14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|',
+    '99|martes|18:00|19:30|Comision Superpuesta|I - A|IN-301|',
+  ],
+};
+
 type HookParams = Parameters<typeof useSchedulerCalendar>[0];
 
 const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
@@ -185,6 +200,34 @@ describe('useSchedulerCalendar', () => {
 
     expect(visibleBySlot(result.current)['lunes|09:00|10:30']).toEqual({
       eventId: 'prac-2',
+      stackSize: 2,
+      stackIndex: 1,
+    });
+  });
+
+  it('en hover de comisión sin seminario prioriza el teórico vinculado y no un evento no relacionado del mismo slot', () => {
+    const subject = parseSubject(subjectOnlyTeoricoData);
+
+    const { result } = renderHook(() =>
+      useSchedulerCalendar({
+        selectedSubject: subject,
+        enrolledBySubject: {},
+        selectedComisiones: subject.comisiones,
+        filteredTeoricos: subject.teoricos,
+        filteredSeminarios: subject.seminarios,
+        parsedSubjects: [subject],
+        showComisiones: true,
+        showTeoricos: false,
+        showSeminarios: false,
+        showOtherSubjects: false,
+        hoveredCommissionId: '14',
+        pinnedCommissionId: null,
+        stackIndexBySlot: {},
+      })
+    );
+
+    expect(visibleBySlot(result.current)['martes|18:00|19:30']).toEqual({
+      eventId: 'teo-V',
       stackSize: 2,
       stackIndex: 1,
     });
