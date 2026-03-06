@@ -7,6 +7,8 @@ import { CalendarGridBase } from './GridBase';
 import { CalendarLegend } from './Legend';
 import type { CalendarGridProps } from './types';
 
+const EMPTY_CELL_CLEAR_GRACE_MS = 160;
+
 export const CalendarGrid = ({
   visibleEventSlots,
   activeCommission,
@@ -39,10 +41,22 @@ export const CalendarGrid = ({
       >
         <CalendarGridBase
           onEmptyCellEnter={() => {
-            if (hoveredCommissionId !== null) setHoveredCommissionId(null);
-            if (hoveredConflictEventId !== null) setHoveredConflictEventId(null);
-            if (pinnedCommissionId !== null) setPinnedCommissionId(null);
-            if (showCalendarOnlyTimes) setShowCalendarOnlyTimes(false);
+            const previousHoveredCommissionId = hoveredCommissionId;
+            const previousHoveredConflictEventId = hoveredConflictEventId;
+            window.setTimeout(() => {
+              if (previousHoveredCommissionId !== null) {
+                setHoveredCommissionId(prev =>
+                  prev === previousHoveredCommissionId ? null : prev
+                );
+              }
+              if (previousHoveredConflictEventId !== null) {
+                setHoveredConflictEventId(prev =>
+                  prev === previousHoveredConflictEventId ? null : prev
+                );
+              }
+              if (pinnedCommissionId !== null) setPinnedCommissionId(null);
+              if (showCalendarOnlyTimes) setShowCalendarOnlyTimes(false);
+            }, EMPTY_CELL_CLEAR_GRACE_MS);
           }}
         />
 

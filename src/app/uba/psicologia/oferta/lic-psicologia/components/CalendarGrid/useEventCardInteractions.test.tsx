@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useEventCardInteractions } from './useEventCardInteractions';
 import type { VisibleEventSlot } from './types';
 
@@ -55,6 +55,14 @@ const applySetter = <T,>(setter: ReturnType<typeof vi.fn>, prev: T): T => {
 };
 
 describe('useEventCardInteractions', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('maneja hover/mouseleave con conflicto y respeta external', () => {
     const setHoveredConflictEventId = vi.fn();
     const setHoveredCommissionId = vi.fn();
@@ -76,8 +84,11 @@ describe('useEventCardInteractions', () => {
     expect(setHoveredCommissionId).toHaveBeenCalledWith('21');
 
     result.current.onCardMouseLeave({} as never);
-    expect(setHoveredCommissionId).toHaveBeenLastCalledWith(null);
-    expect(setHoveredConflictEventId).toHaveBeenLastCalledWith(null);
+    expect(setHoveredCommissionId).toHaveBeenCalledTimes(1);
+    expect(setHoveredConflictEventId).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(200);
+    expect(applySetter<string | null>(setHoveredCommissionId, '21')).toBeNull();
+    expect(applySetter<string | null>(setHoveredConflictEventId, 'prac-21')).toBeNull();
 
     const { result: externalResult } = renderHook(() =>
       useEventCardInteractions({
@@ -157,5 +168,28 @@ describe('useEventCardInteractions', () => {
     result.current.onStackNextClick({ stopPropagation: stopPropagationNext } as never);
     expect(stopPropagationNext).toHaveBeenCalled();
     expect(setHoveredCommissionId).toHaveBeenLastCalledWith('9');
+  });
+
+  it('no limpia hover si durante el grace period ya entró a otra comisión', () => {
+    const setHoveredConflictEventId = vi.fn();
+    const setHoveredCommissionId = vi.fn();
+    const { result } = renderHook(() =>
+      useEventCardInteractions({
+        slot: makeSlot(),
+        hasConflict: true,
+        hoveredConflictEventId: 'prac-21',
+        setHoveredConflictEventId,
+        setHoveredCommissionId,
+        setPinnedCommissionId: vi.fn(),
+        setStackIndexBySlot: vi.fn(),
+        onToggleEnrollment: vi.fn(),
+      })
+    );
+
+    result.current.onCardMouseLeave({} as never);
+    vi.advanceTimersByTime(200);
+
+    expect(applySetter<string | null>(setHoveredCommissionId, '9')).toBe('9');
+    expect(applySetter<string | null>(setHoveredConflictEventId, 'prac-9')).toBe('prac-9');
   });
 });

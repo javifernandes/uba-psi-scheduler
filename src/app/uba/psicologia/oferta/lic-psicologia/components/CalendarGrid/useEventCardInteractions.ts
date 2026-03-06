@@ -1,6 +1,8 @@
 import type { KeyboardEventHandler, MouseEventHandler, Dispatch, SetStateAction } from 'react';
 import type { VisibleEventSlot } from './types';
 
+const HOVER_LEAVE_GRACE_MS = 160;
+
 type UseEventCardInteractionsParams = {
   slot: VisibleEventSlot;
   hasConflict: boolean;
@@ -38,8 +40,13 @@ export const useEventCardInteractions = ({
   };
 
   const onCardMouseLeave: MouseEventHandler<HTMLDivElement> = () => {
-    setHoveredCommissionId(null);
-    if (hoveredConflictEventId === event.id) setHoveredConflictEventId(null);
+    const commissionId = event.linkedCommissionId || null;
+    window.setTimeout(() => {
+      if (commissionId) {
+        setHoveredCommissionId(prev => (prev === commissionId ? null : prev));
+      }
+      setHoveredConflictEventId(prev => (prev === event.id ? null : prev));
+    }, HOVER_LEAVE_GRACE_MS);
   };
 
   const onCardClick: MouseEventHandler<HTMLDivElement> = () => {

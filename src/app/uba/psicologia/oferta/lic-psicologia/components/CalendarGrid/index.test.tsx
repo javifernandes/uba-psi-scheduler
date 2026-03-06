@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CalendarGrid } from './index';
 import type { VisibleEventSlot } from './types';
 
@@ -35,6 +35,14 @@ const slotB: VisibleEventSlot = {
 };
 
 describe('CalendarGrid', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('renderiza leyenda y una EventCard por slot visible', () => {
     render(
       <CalendarGrid
@@ -86,8 +94,9 @@ describe('CalendarGrid', () => {
 
     const emptyCell = container.querySelector('div.border-l.border-t') as Element;
     fireEvent.mouseEnter(emptyCell);
-    expect(setHoveredCommissionId).toHaveBeenCalledWith(null);
-    expect(setHoveredConflictEventId).toHaveBeenCalledWith(null);
+    vi.advanceTimersByTime(200);
+    expect(setHoveredCommissionId).toHaveBeenCalled();
+    expect(setHoveredConflictEventId).toHaveBeenCalled();
     expect(setPinnedCommissionId).toHaveBeenCalledWith(null);
   });
 });
