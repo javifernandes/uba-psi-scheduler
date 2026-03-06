@@ -1,7 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { SubjectData } from './psicologia-scheduler.types';
+import { captureEvent } from '@/lib/posthog';
 import {
   CalendarGrid,
   SavedElectionsPanel,
@@ -31,6 +32,7 @@ const EmptySubjectsState = () => (
 );
 
 const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
+  const isFirstSubjectRender = useRef(true);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
   const [showSeminarios, setShowSeminarios] = useState(false);
@@ -104,6 +106,17 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   useEffect(() => {
     setDismissConflictWarning(false);
   }, [conflictingSubject?.id, selectedSubject.id]);
+
+  useEffect(() => {
+    if (isFirstSubjectRender.current) {
+      isFirstSubjectRender.current = false;
+      return;
+    }
+    captureEvent('scheduler_subject_changed', {
+      subject_id: selectedSubject.id,
+      subject_label: selectedSubject.label,
+    });
+  }, [selectedSubject.id, selectedSubject.label]);
   const {
     isMateriaDropdownOpen,
     setIsMateriaDropdownOpen,
@@ -211,6 +224,12 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
                 setStackIndexBySlot={setStackIndexBySlot}
                 onToggleEnrollment={commissionId =>
                   setEnrolledBySubject(prev => {
+                    const isRemoving = prev[selectedSubject.id] === commissionId;
+                    captureEvent('scheduler_enrollment_toggled', {
+                      subject_id: selectedSubject.id,
+                      commission_id: commissionId,
+                      action: isRemoving ? 'remove' : 'set',
+                    });
                     if (prev[selectedSubject.id] === commissionId) {
                       return applyEnrollmentRule(prev, selectedSubject.id, undefined);
                     }
@@ -245,8 +264,17 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               setIsSedesPanelOpen={setIsSedesPanelOpen}
               allVenues={allVenues}
               selectedVenues={selectedVenues}
-              toggleVenue={toggleVenue}
-              setOnlyVenue={setOnlyVenue}
+              toggleVenue={venue => {
+                captureEvent('scheduler_venue_toggled', {
+                  venue,
+                  selected_before: selectedVenues.has(venue),
+                });
+                toggleVenue(venue);
+              }}
+              setOnlyVenue={venue => {
+                captureEvent('scheduler_venue_set_only', { venue });
+                setOnlyVenue(venue);
+              }}
               isMostrarPanelOpen={isMostrarPanelOpen}
               setIsMostrarPanelOpen={setIsMostrarPanelOpen}
               showComisiones={showComisiones}
@@ -257,20 +285,39 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               setShowSeminarios={setShowSeminarios}
               showOtherSubjects={showOtherSubjects}
               setShowOtherSubjects={setShowOtherSubjects}
-              setOnlyContent={setOnlyContent}
+              setOnlyContent={contentType => {
+                captureEvent('scheduler_content_set_only', { content_type: contentType });
+                setOnlyContent(contentType);
+              }}
               isComisionesPanelOpen={isComisionesPanelOpen}
               setIsComisionesPanelOpen={setIsComisionesPanelOpen}
               selectedComisionesLength={selectedComisiones.length}
               filteredComisionesLength={filteredComisiones.length}
               isCommissionDropdownOpen={isCommissionDropdownOpen}
               setIsCommissionDropdownOpen={setIsCommissionDropdownOpen}
-              selectAllVisible={selectAllVisible}
-              clearVisible={clearVisible}
+              selectAllVisible={() => {
+                captureEvent('scheduler_commissions_select_all_visible', {
+                  visible_count: searchedComisiones.length,
+                });
+                selectAllVisible();
+              }}
+              clearVisible={() => {
+                captureEvent('scheduler_commissions_clear_visible', {
+                  visible_count: searchedComisiones.length,
+                });
+                clearVisible();
+              }}
               commissionQuery={commissionQuery}
               setCommissionQuery={setCommissionQuery}
               searchedComisiones={searchedComisiones}
               selectedCommissionIds={selectedCommissionIds}
-              toggleCommission={toggleCommission}
+              toggleCommission={commissionId => {
+                captureEvent('scheduler_commission_toggled', {
+                  commission_id: commissionId,
+                  selected_before: selectedCommissionIds.has(commissionId),
+                });
+                toggleCommission(commissionId);
+              }}
             />
             <div
               className={isEleccionesPanelOpen ? 'order-5 min-h-0 flex-1' : 'order-5 min-h-0'}
@@ -288,6 +335,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
                 onToggleOpen={() => setIsEleccionesPanelOpen(v => !v)}
                 onRemoveSubject={subjectId =>
                   setEnrolledBySubject(prev => {
+                    captureEvent('scheduler_saved_subject_removed', { subject_id: subjectId });
                     const next = { ...prev };
                     delete next[subjectId];
                     return next;

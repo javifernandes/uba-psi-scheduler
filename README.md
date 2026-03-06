@@ -11,6 +11,17 @@ npm run dev
 
 Abrir: `http://localhost:3000/uba/psicologia/oferta/lic-psicologia/scheduler`
 
+## Analytics (PostHog)
+
+La integración de PostHog es opcional y funciona solo si configurás variables públicas.
+
+1. Copiá `.env.example` a `.env.local`.
+2. Completá:
+   - `NEXT_PUBLIC_POSTHOG_KEY`
+   - `NEXT_PUBLIC_POSTHOG_HOST` (default: `https://us.i.posthog.com`)
+
+Sin `NEXT_PUBLIC_POSTHOG_KEY`, la app no envía eventos.
+
 ## Build estático
 
 ```bash

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { PostHogProvider } from '@/components/analytics/posthog-provider';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 
@@ -11,10 +12,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="es">
     <body>
-      <ThemeProvider>
-        {children}
-        <ThemeToggle />
-      </ThemeProvider>
+      <PostHogProvider>
+        <ThemeProvider>
+          {children}
+          <ThemeToggle />
+        </ThemeProvider>
+      </PostHogProvider>
     </body>
   </html>
 );
