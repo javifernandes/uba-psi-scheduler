@@ -25,3 +25,9 @@ export type CalendarGridProps = {
   setStackIndexBySlot: Dispatch<SetStateAction<Record<string, number>>>;
   onToggleEnrollment: (commissionId: string) => void;
 };
+
+export type CalendarEventCardHoverControls = {
+  showCalendarOnlyTimes: boolean;
+  onCalendarOnlyExternalEnter: () => void;
+  onCalendarOnlyExternalLeave: () => void;
+};

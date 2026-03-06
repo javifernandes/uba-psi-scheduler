@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { hourRows } from '../../psicologia-scheduler.utils';
 import { CalendarEventCard } from './EventCard';
 import { CalendarGridBase } from './GridBase';
@@ -26,11 +26,25 @@ export const CalendarGrid = ({
   onToggleEnrollment,
 }: CalendarGridProps) => {
   const [showCalendarOnlyTimes, setShowCalendarOnlyTimes] = useState(false);
+  const externalHoverCountRef = useRef(0);
 
   useEffect(() => {
     if (!selectedSubjectId) return;
     if (showCalendarOnlyTimes) setShowCalendarOnlyTimes(false);
+    externalHoverCountRef.current = 0;
   }, [selectedSubjectId, showCalendarOnlyTimes]);
+
+  const onCalendarOnlyExternalEnter = () => {
+    externalHoverCountRef.current += 1;
+    if (!showCalendarOnlyTimes) setShowCalendarOnlyTimes(true);
+  };
+
+  const onCalendarOnlyExternalLeave = () => {
+    window.setTimeout(() => {
+      externalHoverCountRef.current = Math.max(0, externalHoverCountRef.current - 1);
+      if (externalHoverCountRef.current === 0) setShowCalendarOnlyTimes(false);
+    }, EMPTY_CELL_CLEAR_GRACE_MS);
+  };
 
   return (
     <>
@@ -55,7 +69,9 @@ export const CalendarGrid = ({
                 );
               }
               if (pinnedCommissionId !== null) setPinnedCommissionId(null);
-              if (showCalendarOnlyTimes) setShowCalendarOnlyTimes(false);
+              setShowCalendarOnlyTimes(prev =>
+                externalHoverCountRef.current === 0 ? false : prev
+              );
             }, EMPTY_CELL_CLEAR_GRACE_MS);
           }}
         />
@@ -67,7 +83,8 @@ export const CalendarGrid = ({
             activeCommission={activeCommission}
             selectedSubjectId={selectedSubjectId}
             showCalendarOnlyTimes={showCalendarOnlyTimes}
-            setShowCalendarOnlyTimes={setShowCalendarOnlyTimes}
+            onCalendarOnlyExternalEnter={onCalendarOnlyExternalEnter}
+            onCalendarOnlyExternalLeave={onCalendarOnlyExternalLeave}
             enrolledBySubject={enrolledBySubject}
             enrolledCurrentCommissionId={enrolledCurrentCommissionId}
             conflictByEventId={conflictByEventId}

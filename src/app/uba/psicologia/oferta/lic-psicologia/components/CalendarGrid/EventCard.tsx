@@ -17,7 +17,8 @@ type CalendarEventCardProps = {
   activeCommission: Comision | null;
   selectedSubjectId: string;
   showCalendarOnlyTimes: boolean;
-  setShowCalendarOnlyTimes: Dispatch<SetStateAction<boolean>>;
+  onCalendarOnlyExternalEnter: () => void;
+  onCalendarOnlyExternalLeave: () => void;
   enrolledBySubject: Record<string, string>;
   enrolledCurrentCommissionId?: string;
   conflictByEventId: Record<string, ReservedSlot[]>;
@@ -49,7 +50,8 @@ export const CalendarEventCard = ({
   activeCommission,
   selectedSubjectId,
   showCalendarOnlyTimes,
-  setShowCalendarOnlyTimes,
+  onCalendarOnlyExternalEnter,
+  onCalendarOnlyExternalLeave,
   enrolledBySubject,
   enrolledCurrentCommissionId,
   conflictByEventId,
@@ -114,11 +116,11 @@ export const CalendarEventCard = ({
       tabIndex={0}
       onMouseEnter={eventMouse => {
         onCardMouseEnter(eventMouse);
-        if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(true);
+        if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalEnter();
       }}
       onMouseLeave={eventMouse => {
         onCardMouseLeave(eventMouse);
-        if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(false);
+        if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalLeave();
       }}
       onClick={onCardClick}
       onKeyDown={onCardKeyDown}
