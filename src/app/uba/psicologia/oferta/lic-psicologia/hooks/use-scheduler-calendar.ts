@@ -96,7 +96,7 @@ const pushCommissionBundle = ({
   options?: EventOptions;
 }) => {
   pushEvent(buildPracEvent(subject, commission, options));
-  const teorico = subject.teoricoMap[commission.teoricoId];
+  const teorico = commission.teoricoId ? subject.teoricoMap[commission.teoricoId] : undefined;
   if (teorico) {
     pushEvent(
       buildTeoEvent(subject, teorico, {
@@ -106,7 +106,9 @@ const pushCommissionBundle = ({
       })
     );
   }
-  const seminario = subject.seminarioMap[commission.seminarioId];
+  const seminario = commission.seminarioId
+    ? subject.seminarioMap[commission.seminarioId]
+    : undefined;
   if (seminario) {
     pushEvent(
       buildSemEvent(subject, seminario, {
@@ -152,11 +154,15 @@ export const useSchedulerCalendar = ({
     const built: CalendarEvent[] = [];
     const seenEventIds = new Set<string>();
     const linkedCommissionByTeoricoId = Object.fromEntries(
-      selectedComisiones.map(commission => [commission.teoricoId, commission.id])
-    );
+      selectedComisiones
+        .filter(commission => commission.teoricoId)
+        .map(commission => [commission.teoricoId, commission.id])
+    ) as Record<string, string>;
     const linkedCommissionBySeminarioId = Object.fromEntries(
-      selectedComisiones.map(commission => [commission.seminarioId, commission.id])
-    );
+      selectedComisiones
+        .filter(commission => commission.seminarioId)
+        .map(commission => [commission.seminarioId, commission.id])
+    ) as Record<string, string>;
 
     const pushEvent = (event: CalendarEvent) => {
       if (seenEventIds.has(event.id)) return;

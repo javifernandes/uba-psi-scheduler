@@ -18,8 +18,8 @@ export type Seminario = BaseSlot;
 
 export type Comision = BaseSlot & {
   oblig: string;
-  teoricoId: string;
-  seminarioId: string;
+  teoricoId?: string;
+  seminarioId?: string;
 };
 
 export type CalendarEvent = {

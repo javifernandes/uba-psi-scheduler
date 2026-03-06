@@ -41,8 +41,10 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
   setIsMostrarPanelOpen: vi.fn(),
   showComisiones: true,
   setShowComisiones: vi.fn(),
+  hasTeoricos: true,
   showTeoricos: false,
   setShowTeoricos: vi.fn(),
+  hasSeminarios: true,
   showSeminarios: false,
   setShowSeminarios: vi.fn(),
   showOtherSubjects: true,
@@ -127,5 +129,19 @@ describe('SchedulerFiltersPanel', () => {
     expect(clearVisible).toHaveBeenCalledTimes(1);
     expect(setCommissionQuery).toHaveBeenCalled();
     expect(toggleCommission).toHaveBeenCalledWith('1');
+  });
+
+  it('oculta controles de Teóricos/Seminarios cuando la cátedra no los tiene', () => {
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          hasTeoricos: false,
+          hasSeminarios: false,
+        })}
+      />
+    );
+
+    expect(screen.queryByTitle('Teóricos')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Seminarios')).not.toBeInTheDocument();
   });
 });

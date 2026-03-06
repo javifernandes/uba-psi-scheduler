@@ -51,8 +51,10 @@ type SchedulerFiltersPanelProps = {
   setIsMostrarPanelOpen: Dispatch<SetStateAction<boolean>>;
   showComisiones: boolean;
   setShowComisiones: Dispatch<SetStateAction<boolean>>;
+  hasTeoricos: boolean;
   showTeoricos: boolean;
   setShowTeoricos: Dispatch<SetStateAction<boolean>>;
+  hasSeminarios: boolean;
   showSeminarios: boolean;
   setShowSeminarios: Dispatch<SetStateAction<boolean>>;
   showOtherSubjects: boolean;
@@ -102,8 +104,10 @@ export const SchedulerFiltersPanel = ({
   setIsMostrarPanelOpen,
   showComisiones,
   setShowComisiones,
+  hasTeoricos,
   showTeoricos,
   setShowTeoricos,
+  hasSeminarios,
   showSeminarios,
   setShowSeminarios,
   showOtherSubjects,
@@ -486,42 +490,46 @@ export const SchedulerFiltersPanel = ({
                       : 'bg-zinc-400 opacity-45 hover:bg-[#861f5c]/65 hover:opacity-90 dark:bg-zinc-600'
                   )}
                 />
-                <button
-                  type="button"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setShowTeoricos(v => !v);
-                  }}
-                  onDoubleClick={e => {
-                    e.stopPropagation();
-                    setOnlyContent('teoricos');
-                  }}
-                  title="Teóricos"
-                  className={cn(
-                    'h-2.5 w-2.5 rounded-full transition',
-                    showTeoricos
-                      ? 'bg-[#0f766e] opacity-100'
-                      : 'bg-zinc-400 opacity-45 hover:bg-[#0f766e]/65 hover:opacity-90 dark:bg-zinc-600'
-                  )}
-                />
-                <button
-                  type="button"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setShowSeminarios(v => !v);
-                  }}
-                  onDoubleClick={e => {
-                    e.stopPropagation();
-                    setOnlyContent('seminarios');
-                  }}
-                  title="Seminarios"
-                  className={cn(
-                    'h-2.5 w-2.5 rounded-full transition',
-                    showSeminarios
-                      ? 'bg-[#d97706] opacity-100'
-                      : 'bg-zinc-400 opacity-45 hover:bg-[#d97706]/65 hover:opacity-90 dark:bg-zinc-600'
-                  )}
-                />
+                {hasTeoricos ? (
+                  <button
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setShowTeoricos(v => !v);
+                    }}
+                    onDoubleClick={e => {
+                      e.stopPropagation();
+                      setOnlyContent('teoricos');
+                    }}
+                    title="Teóricos"
+                    className={cn(
+                      'h-2.5 w-2.5 rounded-full transition',
+                      showTeoricos
+                        ? 'bg-[#0f766e] opacity-100'
+                        : 'bg-zinc-400 opacity-45 hover:bg-[#0f766e]/65 hover:opacity-90 dark:bg-zinc-600'
+                    )}
+                  />
+                ) : null}
+                {hasSeminarios ? (
+                  <button
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setShowSeminarios(v => !v);
+                    }}
+                    onDoubleClick={e => {
+                      e.stopPropagation();
+                      setOnlyContent('seminarios');
+                    }}
+                    title="Seminarios"
+                    className={cn(
+                      'h-2.5 w-2.5 rounded-full transition',
+                      showSeminarios
+                        ? 'bg-[#d97706] opacity-100'
+                        : 'bg-zinc-400 opacity-45 hover:bg-[#d97706]/65 hover:opacity-90 dark:bg-zinc-600'
+                    )}
+                  />
+                ) : null}
                 <button
                   type="button"
                   onClick={e => {
@@ -571,34 +579,38 @@ export const SchedulerFiltersPanel = ({
               />
               Comisiones
             </button>
-            <button
-              type="button"
-              onClick={() => setShowTeoricos(v => !v)}
-              className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
-              title="Mostrar/Ocultar teóricos"
-            >
-              <span
-                className={cn(
-                  'h-2.5 w-2.5 rounded-full',
-                  showTeoricos ? 'bg-[#0f766e]' : 'bg-zinc-400 dark:bg-zinc-500'
-                )}
-              />
-              Teóricos
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowSeminarios(v => !v)}
-              className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
-              title="Mostrar/Ocultar seminarios"
-            >
-              <span
-                className={cn(
-                  'h-2.5 w-2.5 rounded-full',
-                  showSeminarios ? 'bg-[#d97706]' : 'bg-zinc-400 dark:bg-zinc-500'
-                )}
-              />
-              Seminarios
-            </button>
+            {hasTeoricos ? (
+              <button
+                type="button"
+                onClick={() => setShowTeoricos(v => !v)}
+                className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
+                title="Mostrar/Ocultar teóricos"
+              >
+                <span
+                  className={cn(
+                    'h-2.5 w-2.5 rounded-full',
+                    showTeoricos ? 'bg-[#0f766e]' : 'bg-zinc-400 dark:bg-zinc-500'
+                  )}
+                />
+                Teóricos
+              </button>
+            ) : null}
+            {hasSeminarios ? (
+              <button
+                type="button"
+                onClick={() => setShowSeminarios(v => !v)}
+                className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
+                title="Mostrar/Ocultar seminarios"
+              >
+                <span
+                  className={cn(
+                    'h-2.5 w-2.5 rounded-full',
+                    showSeminarios ? 'bg-[#d97706]' : 'bg-zinc-400 dark:bg-zinc-500'
+                  )}
+                />
+                Seminarios
+              </button>
+            ) : null}
             <button
               type="button"
               onClick={() => setShowOtherSubjects(v => !v)}

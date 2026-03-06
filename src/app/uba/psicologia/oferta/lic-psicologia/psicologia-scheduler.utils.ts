@@ -40,8 +40,11 @@ const parseRows = <T>(lines: string[], mapper: (parts: string[]) => T): T[] =>
   lines.map(line => line.split('|')).map(mapper);
 
 const parseOblig = (oblig: string) => {
-  const [teoricoId = '', seminarioId = ''] = oblig.split('-').map(part => part.trim());
-  return { teoricoId, seminarioId };
+  const [rawTeoricoId, rawSeminarioId] = oblig.split('-').map(part => part.trim());
+  return {
+    teoricoId: rawTeoricoId || undefined,
+    seminarioId: rawSeminarioId || undefined,
+  };
 };
 
 export const h2m = (hhmm: string) => {

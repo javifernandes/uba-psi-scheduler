@@ -102,10 +102,17 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   }, [enrolledBySubject, materiaCodeBySubjectId, selectedSubject.id, subjects]);
   const conflictingCatedraLabel =
     conflictingSubject?.label.match(/Cátedra\s+\d+/i)?.[0] || 'cátedra seleccionada';
+  const hasTeoricos = selectedSubject.teoricos.length > 0;
+  const hasSeminarios = selectedSubject.seminarios.length > 0;
 
   useEffect(() => {
     setDismissConflictWarning(false);
   }, [conflictingSubject?.id, selectedSubject.id]);
+
+  useEffect(() => {
+    if (!hasTeoricos && showTeoricos) setShowTeoricos(false);
+    if (!hasSeminarios && showSeminarios) setShowSeminarios(false);
+  }, [hasTeoricos, hasSeminarios, showTeoricos, showSeminarios]);
 
   useEffect(() => {
     if (isFirstSubjectRender.current) {
@@ -279,8 +286,10 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               setIsMostrarPanelOpen={setIsMostrarPanelOpen}
               showComisiones={showComisiones}
               setShowComisiones={setShowComisiones}
+              hasTeoricos={hasTeoricos}
               showTeoricos={showTeoricos}
               setShowTeoricos={setShowTeoricos}
+              hasSeminarios={hasSeminarios}
               showSeminarios={showSeminarios}
               setShowSeminarios={setShowSeminarios}
               showOtherSubjects={showOtherSubjects}

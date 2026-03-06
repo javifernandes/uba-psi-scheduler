@@ -36,8 +36,8 @@ export const useSchedulerConflicts = ({
       built.push({
         subject,
         commission: c,
-        teorico: parsed.teoricoMap[c.teoricoId],
-        seminario: parsed.seminarioMap[c.seminarioId],
+        teorico: c.teoricoId ? parsed.teoricoMap[c.teoricoId] : undefined,
+        seminario: c.seminarioId ? parsed.seminarioMap[c.seminarioId] : undefined,
       });
     });
     return built;
@@ -138,7 +138,7 @@ export const useSchedulerConflicts = ({
           end: c.fin,
           title: `${c.id} - ${shortTeacherName(c.profesor, 30)}`,
         });
-        const t = subject.teoricoMap[c.teoricoId];
+        const t = c.teoricoId ? subject.teoricoMap[c.teoricoId] : undefined;
         if (t) {
           reserved.push({
             slotId: `${subject.id}|teo|${t.id}`,
@@ -150,7 +150,7 @@ export const useSchedulerConflicts = ({
             title: `${t.id} - ${shortTeacherName(t.profesor, 30)}`,
           });
         }
-        const s = subject.seminarioMap[c.seminarioId];
+        const s = c.seminarioId ? subject.seminarioMap[c.seminarioId] : undefined;
         if (s) {
           reserved.push({
             slotId: `${subject.id}|sem|${s.id}`,

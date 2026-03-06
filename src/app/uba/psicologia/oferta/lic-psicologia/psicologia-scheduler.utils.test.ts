@@ -72,7 +72,7 @@ describe('psicologia-scheduler.utils', () => {
     const parsed = parseSubject(subjectOnlyTeoricoObligData);
     expect(parsed.comisiones[0]).toMatchObject({
       teoricoId: 'V',
-      seminarioId: '',
+      seminarioId: undefined,
     });
   });
 
