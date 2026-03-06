@@ -37,6 +37,7 @@ export const useSchedulerPersistence = ({
   });
   const [enrolledBySubject, setEnrolledBySubject] = useState<Record<string, string>>({});
   const [enrollmentsLoaded, setEnrollmentsLoaded] = useState(false);
+  const [enrollmentsHydrated, setEnrollmentsHydrated] = useState(false);
 
   const subjectIdSet = useMemo(() => new Set(subjects.map(subject => subject.id)), [subjects]);
   const materiaCodeBySubjectId = useMemo(
@@ -113,6 +114,8 @@ export const useSchedulerPersistence = ({
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (enrollmentsHydrated) return;
+    if (!subjects.length) return;
     try {
       const raw = window.localStorage.getItem(ENROLLMENTS_STORAGE_KEY);
       if (!raw) return;
@@ -124,9 +127,10 @@ export const useSchedulerPersistence = ({
     } catch {
       // no-op
     } finally {
+      setEnrollmentsHydrated(true);
       setEnrollmentsLoaded(true);
     }
-  }, []);
+  }, [subjects, enrollmentsHydrated, normalizeEnrollmentMap]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

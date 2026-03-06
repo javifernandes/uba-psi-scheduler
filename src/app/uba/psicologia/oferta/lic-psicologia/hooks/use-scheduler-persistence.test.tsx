@@ -102,4 +102,28 @@ describe('useSchedulerPersistence', () => {
       expect(storage.get(ENROLLMENTS_STORAGE_KEY)).toBe(JSON.stringify({ '60': '3' }));
     });
   });
+
+  it('hidrata enrollments cuando subjects llega después del primer render', async () => {
+    storage.set(
+      ENROLLMENTS_STORAGE_KEY,
+      JSON.stringify({
+        '35': '4',
+      })
+    );
+
+    const { result, rerender } = renderHook(
+      ({ data }: { data: SubjectData[] }) => useSchedulerPersistence({ subjects: data }),
+      {
+        initialProps: { data: [] },
+      }
+    );
+
+    expect(result.current.enrolledBySubject).toEqual({});
+
+    rerender({ data: subjects });
+
+    await waitFor(() => {
+      expect(result.current.enrolledBySubject).toEqual({ '35': '4' });
+    });
+  });
 });

@@ -24,6 +24,7 @@ type SavedElectionsPanelProps = {
   onOpenPanel: () => void;
   onToggleOpen: () => void;
   onRemoveSubject: (subjectId: string) => void;
+  onRemoveAllSubjects: () => void;
 };
 
 export const SavedElectionsPanel = ({
@@ -36,10 +37,12 @@ export const SavedElectionsPanel = ({
   onOpenPanel,
   onToggleOpen,
   onRemoveSubject,
+  onRemoveAllSubjects,
 }: SavedElectionsPanelProps) => {
   const [hoveredSavedConflictSlotId, setHoveredSavedConflictSlotId] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const slotRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const hasSavedElections = savedElectionDetails.length > 0;
 
   const savedSlotsForConflictAnalysis = useMemo(() => {
     const savedSlots: Array<{
@@ -132,6 +135,28 @@ export const SavedElectionsPanel = ({
       <div className="mb-2 flex cursor-pointer items-center justify-between" onClick={onToggleOpen}>
         <h2 className="text-sm font-semibold text-[#5a1740] dark:text-zinc-100">Mis elecciones</h2>
         <div className="flex items-center gap-2">
+          {isOpen && hasSavedElections ? (
+            <button
+              type="button"
+              onClick={e => {
+                e.stopPropagation();
+                if (
+                  typeof window !== 'undefined' &&
+                  !window.confirm(
+                    '¿Borrar todas las materias guardadas?\n\nEsta acción no se puede deshacer.'
+                  )
+                ) {
+                  return;
+                }
+                onRemoveAllSubjects();
+              }}
+              className="text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
+              aria-label="Quitar todas las elecciones"
+              title="Quitar todas las elecciones"
+            >
+              <Trash2 size={14} />
+            </button>
+          ) : null}
           {!isOpen ? (
             <span className="text-[11px] text-[#9f8695] dark:text-zinc-400">
               {savedSubjectsCount}
@@ -247,7 +272,17 @@ export const SavedElectionsPanel = ({
                   <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
                     <button
                       type="button"
-                      onClick={() => onRemoveSubject(item.subject.id)}
+                      onClick={() => {
+                        if (
+                          typeof window !== 'undefined' &&
+                          !window.confirm(
+                            '¿Quitar esta materia guardada?\n\nEsta acción no se puede deshacer.'
+                          )
+                        ) {
+                          return;
+                        }
+                        onRemoveSubject(item.subject.id);
+                      }}
                       className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
                       aria-label="Quitar elección"
                       title="Quitar elección"

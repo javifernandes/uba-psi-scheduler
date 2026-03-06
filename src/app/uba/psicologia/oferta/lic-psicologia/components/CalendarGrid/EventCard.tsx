@@ -16,6 +16,8 @@ type CalendarEventCardProps = {
   slot: VisibleEventSlot;
   activeCommission: Comision | null;
   selectedSubjectId: string;
+  showCalendarOnlyTimes: boolean;
+  setShowCalendarOnlyTimes: Dispatch<SetStateAction<boolean>>;
   enrolledBySubject: Record<string, string>;
   enrolledCurrentCommissionId?: string;
   conflictByEventId: Record<string, ReservedSlot[]>;
@@ -46,6 +48,8 @@ export const CalendarEventCard = ({
   slot,
   activeCommission,
   selectedSubjectId,
+  showCalendarOnlyTimes,
+  setShowCalendarOnlyTimes,
   enrolledBySubject,
   enrolledCurrentCommissionId,
   conflictByEventId,
@@ -57,6 +61,8 @@ export const CalendarEventCard = ({
   onToggleEnrollment,
 }: CalendarEventCardProps) => {
   const { slotKey, event, stackSize } = slot;
+  const isCalendarOnlyMode = !selectedSubjectId;
+  const showExternalTimes = event.isExternal && isCalendarOnlyMode && showCalendarOnlyTimes;
   const {
     aulaParts,
     titleParts,
@@ -106,8 +112,14 @@ export const CalendarEventCard = ({
       key={slotKey}
       role="button"
       tabIndex={0}
-      onMouseEnter={onCardMouseEnter}
-      onMouseLeave={onCardMouseLeave}
+      onMouseEnter={() => {
+        onCardMouseEnter();
+        if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(true);
+      }}
+      onMouseLeave={() => {
+        onCardMouseLeave();
+        if (event.isExternal && isCalendarOnlyMode) setShowCalendarOnlyTimes(false);
+      }}
       onClick={onCardClick}
       onKeyDown={onCardKeyDown}
       className={cn(
@@ -162,19 +174,42 @@ export const CalendarEventCard = ({
           />
           <span
             className={cn(
-              'absolute inset-y-0 left-3 right-2 flex min-w-0 flex-col justify-center',
+              'absolute left-4 right-10 flex min-w-0 flex-col items-start justify-center',
+              showExternalTimes ? 'top-5 bottom-5' : 'inset-y-1',
               hideText && 'opacity-0'
             )}
           >
-            <span className="truncate text-[11px] font-bold leading-tight text-[#5a1740]">
+            <span className="block w-full truncate text-[11px] font-bold leading-tight text-[#5a1740]">
               {externalParts.subject}
             </span>
             {externalParts.catedra ? (
-              <span className="truncate text-[10px] font-medium text-[#9a6f89]">
+              <span
+                className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]"
+              >
                 {externalParts.catedra}
               </span>
             ) : null}
           </span>
+          {showExternalTimes ? (
+            <>
+              <span
+                className={cn(
+                  'absolute left-4 top-1 text-[10px] font-semibold leading-none tabular-nums text-[#9a6f89]',
+                  hideText && 'opacity-0'
+                )}
+              >
+                {event.inicio}
+              </span>
+              <span
+                className={cn(
+                  'absolute bottom-1 left-4 text-[10px] font-semibold leading-none tabular-nums text-[#9a6f89]',
+                  hideText && 'opacity-0'
+                )}
+              >
+                {event.fin}
+              </span>
+            </>
+          ) : null}
           <span
             className={cn(
               'absolute bottom-0.5 right-2 text-[10px] font-black tracking-wide text-[#9a6f89]',

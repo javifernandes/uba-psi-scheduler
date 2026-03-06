@@ -129,6 +129,8 @@ export const SchedulerFiltersPanel = ({
   selectedCommissionIds,
   toggleCommission,
 }: SchedulerFiltersPanelProps) => {
+  const canToggleOtherSubjects = Boolean(selectedSubjectId);
+
   return (
     <>
       <article
@@ -547,24 +549,26 @@ export const SchedulerFiltersPanel = ({
                     )}
                   />
                 ) : null}
-                <button
-                  type="button"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setShowOtherSubjects(v => !v);
-                  }}
-                  onDoubleClick={e => {
-                    e.stopPropagation();
-                    setOnlyContent('otras');
-                  }}
-                  title="Otras materias"
-                  className={cn(
-                    'h-2.5 w-2.5 rounded-full transition',
-                    showOtherSubjects
-                      ? 'bg-zinc-600 opacity-100 dark:bg-zinc-300'
-                      : 'bg-zinc-400 opacity-45 hover:bg-zinc-500 hover:opacity-90 dark:bg-zinc-600'
-                  )}
-                />
+                {canToggleOtherSubjects ? (
+                  <button
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setShowOtherSubjects(v => !v);
+                    }}
+                    onDoubleClick={e => {
+                      e.stopPropagation();
+                      setOnlyContent('otras');
+                    }}
+                    title="Otras materias"
+                    className={cn(
+                      'h-2.5 w-2.5 rounded-full transition',
+                      showOtherSubjects
+                        ? 'bg-zinc-600 opacity-100 dark:bg-zinc-300'
+                        : 'bg-zinc-400 opacity-45 hover:bg-zinc-500 hover:opacity-90 dark:bg-zinc-600'
+                    )}
+                  />
+                ) : null}
               </span>
             ) : null}
             <button
@@ -628,22 +632,24 @@ export const SchedulerFiltersPanel = ({
                 Seminarios
               </button>
             ) : null}
-            <button
-              type="button"
-              onClick={() => setShowOtherSubjects(v => !v)}
-              className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
-              title="Mostrar/Ocultar elecciones de otras materias"
-            >
-              <span
-                className={cn(
-                  'h-2.5 w-2.5 rounded-full',
-                  showOtherSubjects
-                    ? 'bg-zinc-600 dark:bg-zinc-300'
-                    : 'bg-zinc-400/60 dark:bg-zinc-600'
-                )}
-              />
-              Otras materias
-            </button>
+            {canToggleOtherSubjects ? (
+              <button
+                type="button"
+                onClick={() => setShowOtherSubjects(v => !v)}
+                className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
+                title="Mostrar/Ocultar elecciones de otras materias"
+              >
+                <span
+                  className={cn(
+                    'h-2.5 w-2.5 rounded-full',
+                    showOtherSubjects
+                      ? 'bg-zinc-600 dark:bg-zinc-300'
+                      : 'bg-zinc-400/60 dark:bg-zinc-600'
+                  )}
+                />
+                Otras materias
+              </button>
+            ) : null}
           </div>
         ) : null}
       </article>

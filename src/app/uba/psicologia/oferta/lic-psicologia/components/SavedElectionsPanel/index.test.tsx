@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { SavedElectionsPanel } from './index';
 import type { SavedElectionDetail, SubjectData } from '../../psicologia-scheduler.types';
 
@@ -56,10 +56,15 @@ const createProps = (overrides: Partial<Parameters<typeof SavedElectionsPanel>[0
   onOpenPanel: vi.fn(),
   onToggleOpen: vi.fn(),
   onRemoveSubject: vi.fn(),
+  onRemoveAllSubjects: vi.fn(),
   ...overrides,
 });
 
 describe('SavedElectionsPanel', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('muestra estado vacío cuando está abierto sin elecciones', () => {
     render(<SavedElectionsPanel {...createProps({ savedElectionDetails: [] })} />);
     expect(screen.getByText('Sin elecciones guardadas.')).toBeInTheDocument();
@@ -83,6 +88,7 @@ describe('SavedElectionsPanel', () => {
   });
 
   it('renderiza elección y permite quitar materia', () => {
+    vi.stubGlobal('confirm', vi.fn(() => true));
     const onRemoveSubject = vi.fn();
     render(<SavedElectionsPanel {...createProps({ onRemoveSubject })} />);
 
@@ -90,5 +96,14 @@ describe('SavedElectionsPanel', () => {
     expect(screen.getByText('21')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Quitar elección'));
     expect(onRemoveSubject).toHaveBeenCalledWith('34');
+  });
+
+  it('permite borrar todas las elecciones con confirmación', () => {
+    vi.stubGlobal('confirm', vi.fn(() => true));
+    const onRemoveAllSubjects = vi.fn();
+    render(<SavedElectionsPanel {...createProps({ onRemoveAllSubjects })} />);
+
+    fireEvent.click(screen.getByLabelText('Quitar todas las elecciones'));
+    expect(onRemoveAllSubjects).toHaveBeenCalledTimes(1);
   });
 });

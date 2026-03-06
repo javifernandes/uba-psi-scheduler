@@ -160,4 +160,18 @@ describe('SchedulerFiltersPanel', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Limpiar materia seleccionada' }));
     expect(onClearSelectedSubject).toHaveBeenCalledTimes(1);
   });
+
+  it('oculta "Otras materias" cuando no hay materia/cátedra seleccionada', () => {
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          selectedSubjectId: '',
+          isMostrarPanelOpen: true,
+        })}
+      />
+    );
+
+    expect(screen.queryByTitle('Mostrar/Ocultar elecciones de otras materias')).not.toBeInTheDocument();
+    expect(screen.queryByText('Otras materias')).not.toBeInTheDocument();
+  });
 });

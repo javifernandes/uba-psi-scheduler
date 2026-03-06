@@ -130,6 +130,11 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   }, [hasTeoricos, hasSeminarios, showTeoricos, showSeminarios]);
 
   useEffect(() => {
+    if (selectedSubject) return;
+    if (!showOtherSubjects) setShowOtherSubjects(true);
+  }, [selectedSubject, showOtherSubjects]);
+
+  useEffect(() => {
     if (!selectedSubject) return;
     if (isFirstSubjectRender.current) {
       isFirstSubjectRender.current = false;
@@ -378,6 +383,13 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
                     const next = { ...prev };
                     delete next[subjectId];
                     return next;
+                  })
+                }
+                onRemoveAllSubjects={() =>
+                  setEnrolledBySubject(prev => {
+                    const removed_count = Object.keys(prev).length;
+                    captureEvent('scheduler_saved_subjects_cleared', { removed_count });
+                    return {};
                   })
                 }
               />

@@ -88,6 +88,8 @@ describe('CalendarEventCard', () => {
         slot={slot}
         activeCommission={null}
         selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        setShowCalendarOnlyTimes={vi.fn()}
         enrolledBySubject={{}}
         enrolledCurrentCommissionId={undefined}
         conflictByEventId={{}}
@@ -141,6 +143,8 @@ describe('CalendarEventCard', () => {
         slot={slot}
         activeCommission={null}
         selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        setShowCalendarOnlyTimes={vi.fn()}
         enrolledBySubject={{}}
         enrolledCurrentCommissionId={undefined}
         conflictByEventId={{}}
@@ -164,6 +168,8 @@ describe('CalendarEventCard', () => {
         slot={externalSlot}
         activeCommission={null}
         selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        setShowCalendarOnlyTimes={vi.fn()}
         enrolledBySubject={{ '36': '21' }}
         enrolledCurrentCommissionId={undefined}
         conflictByEventId={{}}
@@ -180,5 +186,31 @@ describe('CalendarEventCard', () => {
     expect(screen.getByText('Cátedra 36 (II)')).toBeInTheDocument();
     expect(screen.getByText('IN')).toBeInTheDocument();
     expect(screen.queryByLabelText('Guardar o quitar esta comisión elegida')).not.toBeInTheDocument();
+    expect(screen.queryByText('09:15')).not.toBeInTheDocument();
+    expect(screen.queryByText('10:45')).not.toBeInTheDocument();
+  });
+
+  it('en modo mi calendario muestra horas en eventos externos', () => {
+    render(
+      <CalendarEventCard
+        slot={externalSlot}
+        activeCommission={null}
+        selectedSubjectId=""
+        showCalendarOnlyTimes={true}
+        setShowCalendarOnlyTimes={vi.fn()}
+        enrolledBySubject={{ '36': '21' }}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText('14:30')).toBeInTheDocument();
+    expect(screen.getByText('16:00')).toBeInTheDocument();
   });
 });
