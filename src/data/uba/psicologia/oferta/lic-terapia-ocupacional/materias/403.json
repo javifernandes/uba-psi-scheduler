@@ -1,0 +1,14 @@
+{
+  "id": "anatomia-c403",
+  "label": "Anatomía - Cátedra 403",
+  "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Anatomía - Cátedra 403 - Verna",
+  "teoricos": [
+    "I|jueves|17:00|19:00|Verna, Maria Fernanda|SI-018|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|viernes|19:00|22:00|Cappetta, Elida Patricia|I|SI-LAB|LABORATORIO CURAI",
+    "2|jueves|19:00|22:00|Barreiro, Guillermina|I|SI-LAB|LABORATORIO CURAI",
+    "3|lunes|19:00|22:00|Profesor a designar|I|SI-LAB|LABORATORIO CURAI"
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "code": "PS",
+    "slug": "lic-psicologia",
+    "label": "Licenciatura en Psicología",
+    "subjects": 146
+  },
+  {
+    "code": "PR",
+    "slug": "profesorado-psicologia",
+    "label": "Profesorado en Psicología",
+    "subjects": 4
+  },
+  {
+    "code": "LM",
+    "slug": "lic-musicoterapia",
+    "label": "Licenciatura en Musicoterapia",
+    "subjects": 42
+  },
+  {
+    "code": "TE",
+    "slug": "lic-terapia-ocupacional",
+    "label": "Licenciatura en Terapia Ocupacional",
+    "subjects": 29
+  }
+]

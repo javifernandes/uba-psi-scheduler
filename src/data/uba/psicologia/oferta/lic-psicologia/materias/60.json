@@ -1,0 +1,36 @@
+{
+  "id": "27-estadistica-c60-i",
+  "label": "(27) Estadística - Cátedra 60 (I)",
+  "header": "Psicología UBA - Licenciatura en Psicología - (27) Estadística - Cátedra 60 - I - Galibert",
+  "teoricos": [
+    "I|martes|09:15|10:45|Galibert, María Silvia||Virtual",
+    "II|martes|12:45|14:15|Galibert, Maria Silvia||Virtual",
+    "III|martes|18:00|19:30|Selvatici, Laura||Virtual",
+    "IV|miercoles|13:00|15:00|Abal, Facundo Juan Pablo||Virtual"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|lunes|07:30|10:45|De Sanctis, Florencia|I|HY-025|",
+    "2|lunes|18:00|21:15|De Sanctis, Florencia|III|HY-021|",
+    "3|jueves|11:00|14:15|Ursino, Damian|II|HY-021|",
+    "4|jueves|07:30|10:45|Becerra, Luciana|I|HY-021|",
+    "5|viernes|09:15|12:30|Silvestre, Ingrid Lorena|I|HY-021|",
+    "6|lunes|12:45|16:00|Triay, Eliana Elizabeth|IV|HY-015|",
+    "7|miercoles|12:45|16:00|López, Silvina|II|IN-216|",
+    "8|jueves|14:30|17:45|Rodil Martinez, Alfredo|IV|HY-021|",
+    "9|sabado|09:15|12:30|Fernandez, Patricia Ester|I|HY-021|",
+    "10|jueves|18:00|21:15|Londra, Franco Germán|III|HY-021|",
+    "11|jueves|09:15|12:30|Dorrego, Gisele Nauali|III|HY-011|",
+    "12|lunes|11:00|14:15|Montero, Mariana|II|HY-021|",
+    "13|martes|14:30|17:45|Dorrego, Gisele Nauali|III|IN-321|",
+    "14|viernes|12:45|16:00|Claramunt, Maria Ines|II|IN-121|",
+    "15|miercoles|16:15|19:30|García Domench, María Laura|IV|HY-021|",
+    "16|miercoles|14:30|17:45|Auné, Sofía Esmeralda|II|IN-210|",
+    "17|lunes|09:15|12:30|Claramunt, María Inés|I|IN-452|",
+    "18|lunes|18:00|21:15|Montero, Mariana|III|IN-110|",
+    "19|viernes|18:00|21:15|Auné, Sofía Esmeralda|III|HY-021|",
+    "50|miercoles|09:00|12:45|Ortiz, Sofía Soledad|IV|SI-023|San Isidro",
+    "51|miercoles|15:00|18:45|Repetto, Ana|IV|SI-024|San Isidro",
+    "52|lunes|09:00|12:45|Repetto, Ana|IV|SI-003|San Isidro"
+  ]
+}

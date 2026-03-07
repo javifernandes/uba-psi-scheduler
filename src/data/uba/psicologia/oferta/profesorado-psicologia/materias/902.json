@@ -1,0 +1,20 @@
+{
+  "id": "didactica-general-c902",
+  "label": "Didáctica General - Cátedra 902",
+  "header": "Psicología UBA - Profesorado en Psicología - Didáctica General - Cátedra 902 - Molinari",
+  "teoricos": [
+    "I|jueves|12:15|13:45|Molinari, Andrea Judith|EC-037|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|jueves|09:00|12:00|García, María Virginia|I|EC-026|",
+    "2|jueves|09:00|12:00|Juvenal, Maria Alejandra|I|EC-025|",
+    "3|jueves|14:00|17:00|Reisin, Gabriela Maia|I|SI-028|",
+    "4|viernes|14:30|17:30|Cordero, Carlos Mauricio|I|HY-026|",
+    "5|viernes|18:00|21:15|De Marco, Luciano Rodolfo|I|HY-024|",
+    "6|viernes|19:45|23:00|Urrutia, Juan Pablo|I|HY-030|",
+    "7|jueves|09:00|12:00|Osorio, Natalia|I|EC-028|",
+    "8|sabado|09:15|12:30|Blardoni, Mariana|I|IN-452|",
+    "9|jueves|14:00|17:00|Tokman, Ariel|I|EC-032|"
+  ]
+}

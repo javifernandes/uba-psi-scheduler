@@ -1,0 +1,33 @@
+{
+  "id": "10351-psicologia-del-aprendizaje-c546-i",
+  "label": "(10351) Psicología del Aprendizaje - Cátedra 546 (I)",
+  "header": "Psicología UBA - Licenciatura en Psicología - (10351) Psicología del Aprendizaje - Cátedra 546 - I - Barreiro",
+  "teoricos": [
+    "I|lunes|09:15|12:30|Barreiro, Alicia Viviana|IN-201|",
+    "II|lunes|14:30|17:45|Martinez, Mauricio Sebastian|IN-MAY|",
+    "III|lunes|18:00|21:15|Clemente, Fernando Daniel|IN-520|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|martes|11:00|12:30|Panizzo, Alejandra Carolina|I|IN-114|",
+    "2|martes|09:15|10:45|Panizzo, Alejandra Carolina|I|IN-114|",
+    "3|viernes|07:30|09:00|Robles Lopez, Nicolas|I|IN-311|",
+    "4|viernes|09:15|10:45|Robles Lopez, Nicolas|I|IN-311|",
+    "5|viernes|12:45|14:15|Lorefice, Pilar|II|IN-108|",
+    "6|lunes|16:15|17:45|Sales, Leandro Hipolito Jose|III|IN-114|",
+    "7|lunes|14:30|16:00|Sales, Leandro Hipolito Jose|I|IN-114|",
+    "8|martes|18:00|19:30|Rouger, Manuela|III|IN-125|",
+    "9|martes|19:45|21:15|Rouger, Manuela|III|IN-125|",
+    "10|miercoles|12:45|14:15|D´avirro, Maria Julieta|II|IN-124|",
+    "11|jueves|09:15|10:45|Sancho Parsekian, Sofía Micael|I|IN-218|",
+    "12|sabado|11:00|12:30|Guggiari Simonian, Martina Bel|III|IN-121|",
+    "13|jueves|11:00|12:30|Sancho Parsekian, Sofía Micael|I|IN-218|",
+    "14|martes|12:45|14:15|Pivarc, Paula|II|IN-420|",
+    "15|lunes|11:00|12:30|Guggiari Simonian, Martina Bel|II|IN-124|",
+    "16|viernes|18:00|19:30|Carreno, Sebastian|III|IN-213|",
+    "17|viernes|19:45|21:15|Carreno, Sebastian|III|IN-213|",
+    "18|martes|14:30|16:00|Pivarc, Paula|II|IN-420|",
+    "19|miercoles|14:30|16:00|D´avirro, Maria Julieta|II|IN-124|",
+    "20|viernes|14:30|16:00|Lorefice, Pilar|II|IN-204|"
+  ]
+}

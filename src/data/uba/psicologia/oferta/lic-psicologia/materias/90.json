@@ -1,0 +1,24 @@
+{
+  "id": "biologia-del-comportamiento-c90",
+  "label": "Biología del Comportamiento - Cátedra 90",
+  "header": "Psicología UBA - Licenciatura en Psicología - Biología del Comportamiento - Cátedra 90 - Prof. Muzio",
+  "teoricos": [
+    "I|jueves|19:45|21:15|Muzio, Ruben Nestor|HY-022|",
+    "II|jueves|16:15|17:45|Gabelli, Fabian Marcelo|IN-201|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|martes|09:15|10:45|Daneri, Maria Florencia|I|IN-217|",
+    "2|martes|11:00|12:30|Daneri, Maria Florencia|II|IN-217|",
+    "3|martes|18:00|19:30|Dzik, Marina Victoria|I|IN-441|",
+    "4|martes|19:45|21:15|Dzik, Marina Victoria|I|IN-441|",
+    "5|miercoles|18:00|19:30|Rodriguez, Mariano|I|IN-320|",
+    "6|miercoles|19:45|21:15|Rodriguez, Mariano|I|IN-320|",
+    "7|jueves|09:15|10:45|Fosacheca, Sandro|II|IN-420|",
+    "8|jueves|11:00|12:30|Fosacheca, Sandro|II|IN-420|",
+    "9|jueves|12:45|14:15|Fernandez, Rocio Candela|II|IN-204|",
+    "10|jueves|14:30|16:00|Fernandez, Rocio Candela|II|IN-208|",
+    "11|martes|12:45|14:15|Calleja, Nicolas|II|IN-216|",
+    "12|martes|14:30|16:00|Calleja, Nicolas|II|IN-216|"
+  ]
+}

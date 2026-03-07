@@ -32,6 +32,8 @@ export type { SubjectData } from './psicologia-scheduler.types';
 
 type PsicologiaSchedulerProps = {
   subjects: SubjectData[];
+  careerLabel?: string;
+  storageKey?: string;
 };
 
 type ImportPreviewData = {
@@ -61,7 +63,11 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
   seminarioMap: {},
 };
 
-const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
+const PsicologiaSchedulerContent = ({
+  subjects,
+  careerLabel = 'Lic. Psicología UBA',
+  storageKey,
+}: PsicologiaSchedulerProps) => {
   const isFirstSubjectRender = useRef(true);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
@@ -87,7 +93,10 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
     setEnrolledBySubject,
     materiaCodeBySubjectId,
     applyEnrollmentRule,
-  } = useSchedulerPersistence({ subjects });
+  } = useSchedulerPersistence({
+    subjects,
+    storageKey: storageKey || 'uba_psico_planner_v1',
+  });
 
   const resetSelectionState = useCallback(() => {
     setHoveredCommissionId(null);
@@ -241,7 +250,7 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
               Ψ
             </span>
             <span className="font-bold">
-              {selectedSubject ? displayHeaderLabel(selectedSubject.header) : 'Lic. Psicología UBA'}
+              {selectedSubject ? displayHeaderLabel(selectedSubject.header) : careerLabel}
             </span>
           </h1>
         </div>
@@ -490,7 +499,8 @@ const PsicologiaSchedulerContent = ({ subjects }: PsicologiaSchedulerProps) => {
   );
 };
 
-export const PsicologiaScheduler = ({ subjects }: PsicologiaSchedulerProps) => {
+export const PsicologiaScheduler = (props: PsicologiaSchedulerProps) => {
+  const { subjects } = props;
   if (!subjects.length) return <EmptySubjectsState />;
-  return <PsicologiaSchedulerContent subjects={subjects} />;
+  return <PsicologiaSchedulerContent {...props} />;
 };

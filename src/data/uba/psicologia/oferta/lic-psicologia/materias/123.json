@@ -1,0 +1,38 @@
+{
+  "id": "15-neurofisiologia-c123-ii",
+  "label": "(15) Neurofisiología - Cátedra 123 (II)",
+  "header": "Psicología UBA - Licenciatura en Psicología - (15) Neurofisiología - Cátedra 123 - II - Kufa",
+  "teoricos": [
+    "I|martes|11:00|12:30|Sanchez Negrete, Maria Gabriel|HY-005|",
+    "II|miercoles|18:00|19:30|Squillace, Mario Rodolfo|HY-005|",
+    "III|miercoles|12:45|14:15|Kufa, Maria Del Pilar|HY-005|",
+    "IV|jueves|19:00|20:45|Brun, Jorge Cristian|SI-021|San Isidro"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|jueves|09:15|10:45|Daneri, Maria Florencia|I|IN-530|",
+    "2|jueves|11:00|12:30|Daneri, Maria Florencia|I|IN-530|",
+    "3|miercoles|19:45|21:15|Ferrelli, Ignacio|II|HY-026|",
+    "4|miercoles|14:30|16:00|Diven Arguello, Camila|III|HY-030|",
+    "5|miercoles|21:30|23:00|Ferrelli, Ignacio|II|HY-026|",
+    "6|miercoles|19:45|21:15|Mailing, Ingrid|II|HY-029|",
+    "7|martes|09:15|10:45|Andreau, Jorge Mario|I|HY-025|",
+    "8|martes|12:45|14:15|Andreau, Jorge Mario|I|HY-025|",
+    "9|miercoles|16:15|17:45|Diven Arguello, Camila|III|HY-013|",
+    "10|miercoles|21:30|23:00|Mailing, Ingrid|II|HY-029|",
+    "11|martes|12:45|14:15|Dzik, Marina Victoria|I|HY-010|",
+    "12|martes|09:15|10:45|Dzik, Marina Victoria|I|HY-010|",
+    "13|miercoles|09:15|10:45|Gonzalez, Rocio|III|IN-443|",
+    "14|miercoles|11:00|12:30|Gonzalez, Rocio|III|IN-443|",
+    "15|sabado|09:15|10:45|Sánchez, Federico Jose|II|IN-433|",
+    "16|miercoles|16:15|17:45|Gallo, Martina|II|HY-010|",
+    "17|miercoles|11:00|12:30|Díaz, Rocío Alejandra|III|HY-025|",
+    "18|miercoles|14:30|16:00|Díaz, Rocío Alejandra|III|HY-010|",
+    "19|miercoles|19:45|21:15|Gallo, Martina|II|HY-030|",
+    "20|miercoles|11:00|12:30|Sánchez, Federico Jose|III|HY-024|",
+    "21|miercoles|19:45|21:15|Barmak, Sofia|II|IN-302|",
+    "22|martes|18:00|19:30|Barmak, Sofia|II|HY-004|",
+    "50|jueves|15:00|16:45|Casal, Aldana Agustina|IV|SI-016|San Isidro",
+    "51|jueves|17:00|18:45|Casal, Aldana Agustina|IV|SI-012|San Isidro"
+  ]
+}

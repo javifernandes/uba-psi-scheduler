@@ -1,0 +1,41 @@
+{
+  "id": "15-neurofisiologia-c48-i",
+  "label": "(15) Neurofisiología - Cátedra 48 (I)",
+  "header": "Psicología UBA - Licenciatura en Psicología - (15) Neurofisiología - Cátedra 48 - I - China",
+  "teoricos": [
+    "I|martes|12:45|14:15|Margulis, Laura Emilce|IN-201|",
+    "II|jueves|12:45|14:15|Martinez Cuitiño Carricaburo,|IN-510|",
+    "III|miercoles|09:15|10:45|China, Norma Nancy|IN-201|",
+    "IV|martes|16:15|17:45|China, Norma Nancy|HY-014|",
+    "V|martes|18:00|19:30|China, Norma Nancy|HY-014|"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|lunes|12:45|14:15|Marín, Verónica|IV|IN-207|",
+    "2|lunes|11:00|12:30|Marín, Verónica|I|IN-207|",
+    "3|lunes|16:15|17:45|Pastorini Gayol, Paola Susana|IV|IN-434|",
+    "4|lunes|14:30|16:00|Pastorini Gayol, Paola Susana|IV|IN-434|",
+    "5|miercoles|11:00|12:30|Obarrio, Catalina|III|IN-530|",
+    "6|miercoles|12:45|14:15|Obarrio, Catalina|IV|IN-530|",
+    "7|lunes|19:45|21:15|Barbalarga, Sabrina Anahí|V|IN-213|",
+    "8|jueves|19:45|21:15|Palermo, Cecilia|V|IN-431|",
+    "9|jueves|09:15|10:45|Bacigalupe, Lucía|II|IN-451|",
+    "10|jueves|11:00|12:30|Bacigalupe, Lucía|II|IN-451|",
+    "11|jueves|14:30|16:00|Taboada Novillo, Néstor Camilo|II|IN-530|",
+    "12|martes|18:00|19:30|Martínez, Gisela Paola|IV|IN-107|",
+    "13|viernes|11:00|12:30|Terpiluk, Verónica Sandra|III|IN-302|",
+    "14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|",
+    "15|martes|09:15|10:45|Difalcis, Micaela|I|HY-023|",
+    "16|jueves|18:00|19:30|Palermo, Cecilia|V|IN-433|",
+    "17|lunes|09:15|10:45|Squillace, Mario Rodolfo|III|IN-440|",
+    "18|lunes|11:00|12:30|Squillace, Mario Rodolfo|III|IN-440|",
+    "19|martes|11:00|12:30|Difalcis, Micaela|I|HY-023|",
+    "20|lunes|18:00|19:30|Barbalarga, Sabrina Anahí|V|IN-210|",
+    "21|jueves|16:15|17:45|Taboada Novillo, Néstor Camilo|IV|IN-530|",
+    "22|miercoles|11:00|12:30|Abrevaya, Sofia|III|HY-011|",
+    "23|miercoles|12:45|14:15|Abrevaya, Sofia|I|HY-011|",
+    "24|sabado|11:00|12:30|García, Adriana Verónica|V|IN-207|",
+    "25|martes|16:15|17:45|Martínez, Gisela Paola|V|IN-444|",
+    "26|viernes|09:15|10:45|Terpiluk, Veronica Sandra|III|IN-302|"
+  ]
+}

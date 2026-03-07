@@ -4,6 +4,8 @@ import { useSchedulerPersistence } from './use-scheduler-persistence';
 import type { SubjectData } from '../psicologia-scheduler.types';
 import { ENROLLMENTS_STORAGE_KEY } from '../psicologia-scheduler.utils';
 
+const TEST_STORAGE_KEY = ENROLLMENTS_STORAGE_KEY;
+
 const subjects: SubjectData[] = [
   {
     id: '34',
@@ -56,12 +58,16 @@ describe('useSchedulerPersistence', () => {
 
   it('toma materia desde query param m cuando existe y es válida', () => {
     window.history.replaceState(null, '', '/?m=35');
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, storageKey: TEST_STORAGE_KEY })
+    );
     expect(result.current.selectedSubjectId).toBe('35');
   });
 
   it('arranca sin materia seleccionada cuando no hay query param m', () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, storageKey: TEST_STORAGE_KEY })
+    );
     expect(result.current.selectedSubjectId).toBe('');
   });
 
@@ -74,7 +80,9 @@ describe('useSchedulerPersistence', () => {
         unknown: 'x',
       })
     );
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, storageKey: TEST_STORAGE_KEY })
+    );
 
     await waitFor(() => {
       expect(result.current.enrolledBySubject).toEqual({ '35': '4' });
@@ -82,7 +90,9 @@ describe('useSchedulerPersistence', () => {
   });
 
   it('applyEnrollmentRule reemplaza selección previa de la misma materia y permite limpiar', () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, storageKey: TEST_STORAGE_KEY })
+    );
 
     const replaced = result.current.applyEnrollmentRule({ '34': '21', '60': '7' }, '35', '4');
     expect(replaced).toEqual({ '35': '4', '60': '7' });
@@ -92,7 +102,9 @@ describe('useSchedulerPersistence', () => {
   });
 
   it('persiste en localStorage cambios de enrolledBySubject', async () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, storageKey: TEST_STORAGE_KEY })
+    );
 
     await act(async () => {
       result.current.setEnrolledBySubject({ '60': '3' });
@@ -112,7 +124,8 @@ describe('useSchedulerPersistence', () => {
     );
 
     const { result, rerender } = renderHook(
-      ({ data }: { data: SubjectData[] }) => useSchedulerPersistence({ subjects: data }),
+      ({ data }: { data: SubjectData[] }) =>
+        useSchedulerPersistence({ subjects: data, storageKey: TEST_STORAGE_KEY }),
       {
         initialProps: { data: [] },
       }

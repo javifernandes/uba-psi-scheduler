@@ -1,0 +1,20 @@
+{
+  "id": "practica-profesional-modulo-ii-area-educacional-c333",
+  "label": "Práctica Profesional. Módulo II: Area Educacional - Cátedra 333",
+  "header": "Psicología UBA - Licenciatura en Musicoterapia - Práctica Profesional. Módulo II: Area Educacional - Cátedra 333 - Prof. Paladino",
+  "teoricos": [
+    "I|miercoles|19:00|21:00|Paladino, Paola Karina|AV-029|Sede Avellaneda"
+  ],
+  "seminarios": [],
+  "comisiones": [
+    "1|martes|08:30|12:30|Morello, Romina Victoria|I||ESCUELA EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+    "2|miercoles|08:30|12:30|Morello, Romina Victoria|I||ESCUELA EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+    "3|martes|13:00|17:00|Martinez, Eduardo|I||Instituto Piedra Libre. Educ. Esp. Achega 3515. Villa Urquiza. CABA",
+    "4|jueves|13:00|17:00|Morello, Romina Victoria|I||ESCUELA DE EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+    "5|martes|13:00|17:00|Carella, Ana Laura|I||Inst Educ Crear Manuela Pedraza 5239 Caba",
+    "6|jueves|08:00|12:00|Carella, Ana Laura|I||Inst Educ Crear Manuela Pedraza 5239 Caba",
+    "7|miercoles|09:00|13:00|Martinez, Eduardo|I||Instituto de Educ. Esp. F.Dolto. Alv. Jonte 321. Ramos Mejía.La Matanza",
+    "8|jueves|13:00|17:00|Martinez, Eduardo|I||Instituto de Educ. Esp. F. Doltó Al. Jonte321 Ramos Mejía. La Matanza.",
+    "9|jueves|13:00|17:00|Martinez, Eduardo|I||Instituto Piedra Libre. Educ. Esp. Achega 3515. Caba"
+  ]
+}

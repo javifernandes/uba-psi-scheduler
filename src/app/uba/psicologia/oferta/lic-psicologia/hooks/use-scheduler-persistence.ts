@@ -8,6 +8,7 @@ import {
 
 type UseSchedulerPersistenceParams = {
   subjects: SubjectData[];
+  storageKey: string;
 };
 
 type UseSchedulerPersistenceResult = {
@@ -25,6 +26,7 @@ type UseSchedulerPersistenceResult = {
 
 export const useSchedulerPersistence = ({
   subjects,
+  storageKey,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => {
     if (!subjects.length) return '';
@@ -117,7 +119,7 @@ export const useSchedulerPersistence = ({
     if (enrollmentsHydrated) return;
     if (!subjects.length) return;
     try {
-      const raw = window.localStorage.getItem(ENROLLMENTS_STORAGE_KEY);
+      const raw = window.localStorage.getItem(storageKey || ENROLLMENTS_STORAGE_KEY);
       if (!raw) return;
       const parsed = JSON.parse(raw) as Record<string, string>;
       if (parsed && typeof parsed === 'object') {
@@ -130,13 +132,13 @@ export const useSchedulerPersistence = ({
       setEnrollmentsHydrated(true);
       setEnrollmentsLoaded(true);
     }
-  }, [subjects, enrollmentsHydrated, normalizeEnrollmentMap]);
+  }, [subjects, enrollmentsHydrated, normalizeEnrollmentMap, storageKey]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!enrollmentsLoaded) return;
-    window.localStorage.setItem(ENROLLMENTS_STORAGE_KEY, JSON.stringify(enrolledBySubject));
-  }, [enrolledBySubject, enrollmentsLoaded]);
+    window.localStorage.setItem(storageKey || ENROLLMENTS_STORAGE_KEY, JSON.stringify(enrolledBySubject));
+  }, [enrolledBySubject, enrollmentsLoaded, storageKey]);
 
   return {
     selectedSubjectId,
