@@ -2,6 +2,11 @@ import type { KeyboardEventHandler, MouseEventHandler, Dispatch, SetStateAction 
 import type { VisibleEventSlot } from './types';
 
 const HOVER_LEAVE_GRACE_MS = 160;
+const HOVER_LOCKED_TOUR_STEP_ID = 'calendar-overview';
+
+const isHoverLockedByTour = () =>
+  typeof window !== 'undefined' &&
+  window.document.body.dataset.schedulerTourStep === HOVER_LOCKED_TOUR_STEP_ID;
 
 type UseEventCardInteractionsParams = {
   slot: VisibleEventSlot;
@@ -34,12 +39,14 @@ export const useEventCardInteractions = ({
   };
 
   const onCardMouseEnter: MouseEventHandler<HTMLDivElement> = () => {
+    if (isHoverLockedByTour()) return;
     if (event.isExternal) return;
     if (hasConflict) setHoveredConflictEventId(event.id);
     if (event.linkedCommissionId) setHoveredCommissionId(event.linkedCommissionId);
   };
 
   const onCardMouseLeave: MouseEventHandler<HTMLDivElement> = () => {
+    if (isHoverLockedByTour()) return;
     const commissionId = event.linkedCommissionId || null;
     window.setTimeout(() => {
       if (commissionId) {

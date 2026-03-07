@@ -166,6 +166,8 @@ export const SchedulerFiltersPanel = ({
           !isMateriaPanelOpen && 'cursor-pointer',
           isMateriaPanelOpen ? 'pb-3' : 'pb-1.5'
         )}
+        data-tour="subject-panel"
+        data-testid="subject-panel"
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
@@ -215,6 +217,8 @@ export const SchedulerFiltersPanel = ({
               onKeyDown={onMateriaInputKeyDown}
               placeholder="Buscar / Seleccionar Materia (ESC para cancelar)"
               className="h-9 w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 text-sm font-medium text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
+              data-tour="subject-input"
+              data-testid="subject-input"
             />
             {selectedSubjectId ? (
               <div className="mt-1 flex justify-end">
@@ -226,13 +230,19 @@ export const SchedulerFiltersPanel = ({
                   }}
                   className="rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                   aria-label="Limpiar materia seleccionada"
+                  data-tour="clear-selected-subject"
+                  data-testid="clear-selected-subject"
                 >
                   Limpiar selección
                 </button>
               </div>
             ) : null}
             {isMateriaDropdownOpen ? (
-              <div className="absolute left-0 right-0 top-full z-20 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900">
+              <div
+                className="absolute left-0 right-0 top-full z-20 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900"
+                data-tour="subject-dropdown"
+                data-testid="subject-dropdown"
+              >
                 <div
                   ref={materiaOptionsRef}
                   className="max-h-[30rem] divide-y divide-[#f0e5ec] overflow-auto bg-white dark:divide-zinc-700 dark:bg-zinc-800"
@@ -287,6 +297,9 @@ export const SchedulerFiltersPanel = ({
                                   (selectedSubjectId === subject.id || isHighlighted) &&
                                     'bg-[#f8eaf1] ring-1 ring-inset ring-[#e4cad7] dark:bg-zinc-700 dark:ring-zinc-600'
                                 )}
+                                data-tour="subject-option"
+                                data-testid="subject-option"
+                                data-subject-id={subject.id}
                               >
                                 <div className="pl-4 text-[12px] font-semibold text-[#6d5162] dark:text-zinc-300">
                                   {catedraFragmentFromLabel(subject.label)} ·{' '}
@@ -433,6 +446,8 @@ export const SchedulerFiltersPanel = ({
           !isSedesPanelOpen && 'cursor-pointer',
           isSedesPanelOpen ? 'pb-3' : 'pb-1.5'
         )}
+        data-tour="venue-filters-panel"
+        data-testid="venue-filters-panel"
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
@@ -518,6 +533,8 @@ export const SchedulerFiltersPanel = ({
           !isMostrarPanelOpen && 'cursor-pointer',
           isMostrarPanelOpen ? 'pb-3' : 'pb-1.5'
         )}
+        data-tour="content-filters-panel"
+        data-testid="content-filters-panel"
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
@@ -629,6 +646,7 @@ export const SchedulerFiltersPanel = ({
               onClick={() => setShowComisiones(v => !v)}
               className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
               title="Mostrar/Ocultar comisiones"
+              data-tour="content-toggle-comisiones"
             >
               <span
                 className={cn(
@@ -644,6 +662,7 @@ export const SchedulerFiltersPanel = ({
                 onClick={() => setShowTeoricos(v => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar teóricos"
+                data-tour="content-toggle-teoricos"
               >
                 <span
                   className={cn(
@@ -660,6 +679,7 @@ export const SchedulerFiltersPanel = ({
                 onClick={() => setShowSeminarios(v => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar seminarios"
+                data-tour="content-toggle-seminarios"
               >
                 <span
                   className={cn(
@@ -676,6 +696,8 @@ export const SchedulerFiltersPanel = ({
                 onClick={() => setShowOtherSubjects(v => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar elecciones de otras materias"
+                data-tour="content-toggle-other-subjects"
+                data-testid="content-toggle-other-subjects"
               >
                 <span
                   className={cn(

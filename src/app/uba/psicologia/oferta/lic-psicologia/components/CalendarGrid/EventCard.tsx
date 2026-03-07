@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
 import type { Comision, ReservedSlot } from '../../psicologia-scheduler.types';
 import { displaySubjectLabel } from '../../psicologia-scheduler.utils';
@@ -64,6 +64,25 @@ export const CalendarEventCard = ({
   onToggleEnrollment,
 }: CalendarEventCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [tourStepId, setTourStepId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const readTourStep = () => window.document.body.dataset.schedulerTourStep || null;
+    setTourStepId(readTourStep());
+    const onStepChange = (event: Event) => {
+      const customEvent = event as CustomEvent<{ stepId?: string | null }>;
+      setTourStepId(customEvent.detail?.stepId || null);
+    };
+    window.addEventListener('scheduler-tour-step-change', onStepChange as EventListener);
+    return () =>
+      window.removeEventListener('scheduler-tour-step-change', onStepChange as EventListener);
+  }, []);
+
+  const hoverEffectsLocked = tourStepId === 'calendar-overview';
+  const hideSaveButtonForTourStep = tourStepId === 'hover-commission';
+  const forceShowSaveButtonForTourStep = tourStepId === 'save-commission';
+
   const { slotKey, event, stackSize } = slot;
   const isCalendarOnlyMode = !selectedSubjectId;
   const showExternalTimes = event.isExternal && isCalendarOnlyMode && showCalendarOnlyTimes;
@@ -128,7 +147,8 @@ export const CalendarEventCard = ({
       onClick={onCardClick}
       onKeyDown={onCardKeyDown}
       className={cn(
-        'group absolute rounded-md text-left text-[10.5px] font-medium text-white shadow-sm transition-[opacity,filter,color,transform] duration-200 ease-in-out',
+        'absolute rounded-md text-left text-[10.5px] font-medium text-white shadow-sm transition-[opacity,filter,color,transform] duration-200 ease-in-out',
+        !hoverEffectsLocked && 'group',
         event.isExternal ? externalEventCardClass : eventTypeClass(event.tipo),
         event.isExternal && 'text-[#5a1740]',
         hasConflict && 'ring-2 ring-amber-300/85 shadow-[0_0_0_1px_rgba(180,83,9,0.35)]',
@@ -138,6 +158,18 @@ export const CalendarEventCard = ({
         isActive && 'ring-2 ring-[#fbe7f3] dark:ring-zinc-200/70'
       )}
       style={layoutStyle}
+      data-tour-card={!event.isExternal && event.tipo === 'prac' ? 'internal-commission' : 'event-card'}
+      data-tour-card-kind={
+        event.isExternal ? 'external' : event.tipo === 'prac' ? 'internal-commission' : 'internal-linked'
+      }
+      data-tour-internal={!event.isExternal ? 'true' : 'false'}
+      data-testid="calendar-event-card"
+      data-event-id={event.id}
+      data-event-type={event.tipo}
+      data-subject-id={event.sourceSubjectId}
+      data-commission-id={event.linkedCommissionId || ''}
+      data-is-external={event.isExternal ? 'true' : 'false'}
+      data-stack-size={String(stackSize)}
     >
       {hasConflict ? (
         <span className="pointer-events-none absolute left-1/2 top-0.5 z-20 -translate-x-1/2 rounded bg-amber-300/90 px-1 text-[8px] font-black uppercase tracking-wide text-amber-950 shadow-sm">
@@ -151,7 +183,7 @@ export const CalendarEventCard = ({
         eventConflicts={eventConflicts}
         anchorRef={cardRef}
       />
-      {canSaveFromCard && !event.isExternal ? (
+      {canSaveFromCard && !event.isExternal && !hideSaveButtonForTourStep ? (
         <button
           type="button"
           onClick={onSaveButtonClick}
@@ -159,9 +191,14 @@ export const CalendarEventCard = ({
             'absolute bottom-1 left-1/2 z-10 -translate-x-1/2 rounded px-1.5 py-0.5 text-[10px] leading-none transition-opacity duration-150',
             isSavedFromCard
               ? 'bg-[#fff1b5]/90 text-[#5a1740] opacity-100'
-              : 'bg-black/25 text-white/90 opacity-0 group-hover:opacity-100'
+              : forceShowSaveButtonForTourStep
+                ? 'bg-black/25 text-white/90 opacity-100'
+                : 'bg-black/25 text-white/90 opacity-0 group-hover:opacity-100'
           )}
           aria-label="Guardar o quitar esta comisión elegida"
+          data-tour="event-save-toggle"
+          data-testid="event-save-toggle"
+          data-commission-id={event.linkedCommissionId || ''}
         >
           {isSavedFromCard ? '★' : '☆'}
         </button>
@@ -170,6 +207,8 @@ export const CalendarEventCard = ({
         stackSize={stackSize}
         onPrevClick={onStackPrevClick}
         onNextClick={onStackNextClick}
+        hoverEffectsLocked={hoverEffectsLocked}
+        isExternal={Boolean(event.isExternal)}
       />
       {event.isExternal && externalParts ? (
         <>

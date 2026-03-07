@@ -4,3 +4,4 @@ export { useSchedulerFiltersActions } from './use-scheduler-filters-actions';
 export { useSchedulerPersistence } from './use-scheduler-persistence';
 export { useSchedulerSubjectsData } from './use-scheduler-subjects-data';
 export { useSubjectDropdown } from './use-subject-dropdown';
+export { useSchedulerTour } from './use-scheduler-tour';

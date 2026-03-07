@@ -61,6 +61,7 @@ describe('useEventCardInteractions', () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    delete document.body.dataset.schedulerTourStep;
   });
 
   it('maneja hover/mouseleave con conflicto y respeta external', () => {
@@ -191,5 +192,31 @@ describe('useEventCardInteractions', () => {
 
     expect(applySetter<string | null>(setHoveredCommissionId, '9')).toBe('9');
     expect(applySetter<string | null>(setHoveredConflictEventId, 'prac-9')).toBe('prac-9');
+  });
+
+  it('bloquea hover durante el paso de overview del tour', () => {
+    document.body.dataset.schedulerTourStep = 'calendar-overview';
+    const setHoveredConflictEventId = vi.fn();
+    const setHoveredCommissionId = vi.fn();
+    const { result } = renderHook(() =>
+      useEventCardInteractions({
+        slot: makeSlot(),
+        hasConflict: true,
+        hoveredConflictEventId: null,
+        setHoveredConflictEventId,
+        setHoveredCommissionId,
+        setPinnedCommissionId: vi.fn(),
+        setStackIndexBySlot: vi.fn(),
+        onToggleEnrollment: vi.fn(),
+      })
+    );
+
+    result.current.onCardMouseEnter({} as never);
+    result.current.onCardMouseLeave({} as never);
+    vi.advanceTimersByTime(220);
+
+    expect(setHoveredConflictEventId).not.toHaveBeenCalled();
+    expect(setHoveredCommissionId).not.toHaveBeenCalled();
+    delete document.body.dataset.schedulerTourStep;
   });
 });

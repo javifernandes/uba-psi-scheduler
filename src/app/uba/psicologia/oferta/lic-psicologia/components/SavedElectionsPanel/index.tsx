@@ -195,6 +195,8 @@ export const SavedElectionsPanel = ({
           !isOpen && 'cursor-pointer',
           isOpen ? 'pb-3' : 'pb-1.5'
         )}
+        data-tour="saved-elections-panel"
+        data-testid="saved-elections-panel"
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
@@ -215,6 +217,8 @@ export const SavedElectionsPanel = ({
                 className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] disabled:cursor-not-allowed disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                 aria-label="Exportar elecciones"
                 title="Exportar elecciones"
+                data-tour="saved-elections-export"
+                data-testid="saved-elections-export"
               >
                 <Download size={12} />
                 Exportar
@@ -231,6 +235,8 @@ export const SavedElectionsPanel = ({
                 className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                 aria-label="Importar elecciones"
                 title="Importar elecciones"
+                data-tour="saved-elections-import"
+                data-testid="saved-elections-import"
               >
                 <Upload size={12} />
                 Importar

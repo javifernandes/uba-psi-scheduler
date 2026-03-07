@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import { CircleHelp } from 'lucide-react';
 import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
 import { captureEvent } from '@/lib/posthog';
 import { cn } from '@/lib/utils';
@@ -17,6 +18,7 @@ import {
   useSchedulerFiltersActions,
   useSchedulerPersistence,
   useSchedulerSubjectsData,
+  useSchedulerTour,
   useSubjectDropdown,
 } from './hooks';
 import {
@@ -241,6 +243,13 @@ const PsicologiaSchedulerContent = ({
     selectedSubjectLabel: selectedSubject ? displaySubjectLabel(selectedSubject.label) : '',
     setSelectedSubjectId,
   });
+  const { startTour } = useSchedulerTour({
+    setIsMateriaPanelOpen,
+    setIsMateriaDropdownOpen,
+    setIsEleccionesPanelOpen,
+    setIsMostrarPanelOpen,
+    setIsSedesPanelOpen,
+  });
   const { enrolledCurrentCommissionId, activeCommission, events, visibleEventSlots } =
     useSchedulerCalendar({
       selectedSubject: selectedSubjectForCalendar,
@@ -291,28 +300,47 @@ const PsicologiaSchedulerContent = ({
   });
 
   return (
-    <div className="box-border h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4 dark:bg-[radial-gradient(circle_at_0%_0%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#231725_0%,transparent_35%),#0f0b12] md:px-5">
+    <div
+      className="box-border h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4 dark:bg-[radial-gradient(circle_at_0%_0%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#231725_0%,transparent_35%),#0f0b12] md:px-5"
+      data-tour="scheduler-root"
+      data-testid="scheduler-root"
+    >
       <section className="mx-auto flex h-full w-full max-w-[1800px] min-h-0 flex-col gap-2">
         <div className="rounded-2xl bg-[#861f5c] px-4 py-2 shadow-sm">
-          <h1 className="flex items-center gap-3 text-lg tracking-tight text-white md:text-xl">
-            <Link
-              href="/"
-              className="rounded-md border border-white/25 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white hover:bg-white/15"
+          <div className="flex items-center justify-between gap-2">
+            <h1 className="flex items-center gap-3 text-lg tracking-tight text-white md:text-xl">
+              <Link
+                href="/"
+                className="rounded-md border border-white/25 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white hover:bg-white/15"
+              >
+                ← Volver
+              </Link>
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 text-base font-black">
+                Ψ
+              </span>
+              <span className="font-bold">
+                {selectedSubject ? displayHeaderLabel(selectedSubject.header) : careerLabel}
+              </span>
+            </h1>
+            <button
+              type="button"
+              onClick={() => startTour(true)}
+              className="inline-flex items-center gap-1 rounded-md border border-white/25 bg-white/10 px-2 py-1 text-[11px] font-semibold text-white hover:bg-white/15"
+              aria-label="Mostrar tour guiado"
+              data-tour="tour-help-button"
             >
-              ← Volver
-            </Link>
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 text-base font-black">
-              Ψ
-            </span>
-            <span className="font-bold">
-              {selectedSubject ? displayHeaderLabel(selectedSubject.header) : careerLabel}
-            </span>
-          </h1>
+              <CircleHelp size={13} />
+              Tour
+            </button>
+          </div>
         </div>
 
         <div className="grid min-h-0 flex-1 gap-3 xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-2">
           <div className="min-h-0 xl:pr-1">
-            <div className="relative h-full overflow-auto rounded-xl border border-[#e8d8e1] bg-white/90 dark:border-zinc-700 dark:bg-zinc-900/80">
+            <div
+              className="relative h-full overflow-auto rounded-xl border border-[#e8d8e1] bg-white/90 dark:border-zinc-700 dark:bg-zinc-900/80"
+              data-tour="calendar-grid"
+            >
               {conflictingSubject && !dismissConflictWarning ? (
                 <WarningBanner
                   catedraLabel={conflictingCatedraLabel}

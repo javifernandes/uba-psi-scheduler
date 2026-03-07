@@ -52,6 +52,8 @@ export const CalendarGrid = ({
       <div
         className="relative grid min-w-[920px] grid-cols-[72px_repeat(7,minmax(0,1fr))]"
         style={{ gridTemplateRows: `42px repeat(${hourRows.length}, 48px)` }}
+        data-tour="calendar-grid-layout"
+        data-testid="calendar-grid-layout"
       >
         <CalendarGridBase
           onEmptyCellEnter={() => {
