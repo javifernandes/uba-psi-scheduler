@@ -273,16 +273,16 @@
 .shepherd-element.uba-psi-tour[data-popper-placement^='left'] .shepherd-arrow::before,
 .shepherd-element.uba-psi-tour[data-popper-placement^='right'] .shepherd-arrow::before {
   background: #fff8fc !important;
-  border: none !important;
-  box-shadow: 0 0 0 1px #d7b8c9 !important;
+  border: 1px solid #d7b8c9 !important;
+  box-shadow: none !important;
 }
 
 .shepherd-element.uba-psi-tour .shepherd-arrow {
-  z-index: 1 !important;
+  z-index: -1 !important;
 }
 
 .shepherd-element.uba-psi-tour .shepherd-arrow::before {
-  z-index: 1 !important;
+  z-index: -1 !important;
 }
 
 /* Keep specific tour cards crisp above blur overlay. */
