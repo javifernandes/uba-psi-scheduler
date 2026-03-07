@@ -1,12 +1,22 @@
 import { useCallback, useEffect, useRef } from 'react';
-import Shepherd from 'shepherd.js';
+import Shepherd, { type Tour } from 'shepherd.js';
 
 const TOUR_SEEN_STORAGE_KEY = 'uba_psico_scheduler_tour_seen_v1';
+const TOUR_ACTIVE_STORAGE_KEY = 'uba_psico_scheduler_tour_active_v1';
+const TOUR_BACKUP_STORAGE_KEY = 'uba_psico_scheduler_tour_backup_v1';
 const AUTO_START_DELAY_MS = 360;
 const TOUR_FOCUS_ATTR = 'data-tour-focus';
 const TOUR_FOCUS_VALUE = 'active';
+const TOUR_UNBLUR_ATTR = 'data-tour-unblur';
+const TOUR_UNBLUR_VALUE = 'active';
+const TOUR_TARGET_TEMP_POSITION_ATTR = 'data-tour-temp-position';
+const TOUR_TARGET_TEMP_Z_ATTR = 'data-tour-temp-z';
 
 type UseSchedulerTourParams = {
+  selectedSubjectId: string;
+  setSelectedSubjectId: (value: string) => void;
+  enrolledBySubject: Record<string, string>;
+  setEnrolledBySubject: (value: Record<string, string>) => void;
   setIsMateriaPanelOpen: (value: boolean) => void;
   setIsMateriaDropdownOpen: (value: boolean) => void;
   setIsEleccionesPanelOpen: (value: boolean) => void;
@@ -23,13 +33,19 @@ const getFocusedCardSelector = `[${TOUR_FOCUS_ATTR}="${TOUR_FOCUS_VALUE}"]`;
 const getFocusedSaveButtonSelector = `${getFocusedCardSelector} ${getSaveButtonSelector}`;
 
 export const useSchedulerTour = ({
+  selectedSubjectId,
+  setSelectedSubjectId,
+  enrolledBySubject,
+  setEnrolledBySubject,
   setIsMateriaPanelOpen,
   setIsMateriaDropdownOpen,
   setIsEleccionesPanelOpen,
   setIsMostrarPanelOpen,
   setIsSedesPanelOpen,
 }: UseSchedulerTourParams) => {
-  const tourRef = useRef<Shepherd.Tour | null>(null);
+  const tourRef = useRef<Tour | null>(null);
+  const tourStatePreparedRef = useRef(false);
+  const autoStartTimeoutRef = useRef<number | null>(null);
 
   const setBodyTourStep = useCallback((stepId: string | null) => {
     if (typeof window === 'undefined') return;
@@ -95,6 +111,45 @@ export const useSchedulerTour = ({
     });
   }, []);
 
+  const clearUnblurCards = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    window.document.querySelectorAll(`[${TOUR_UNBLUR_ATTR}="${TOUR_UNBLUR_VALUE}"]`).forEach(node => {
+      node.removeAttribute(TOUR_UNBLUR_ATTR);
+    });
+  }, []);
+
+  const clearSpotlightTargetLayering = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    window.document
+      .querySelectorAll<HTMLElement>(`.shepherd-target.shepherd-enabled[${TOUR_TARGET_TEMP_Z_ATTR}="1"]`)
+      .forEach(node => {
+        node.style.removeProperty('z-index');
+        node.removeAttribute(TOUR_TARGET_TEMP_Z_ATTR);
+      });
+    window.document
+      .querySelectorAll<HTMLElement>(
+        `.shepherd-target.shepherd-enabled[${TOUR_TARGET_TEMP_POSITION_ATTR}="1"]`
+      )
+      .forEach(node => {
+        node.style.removeProperty('position');
+        node.removeAttribute(TOUR_TARGET_TEMP_POSITION_ATTR);
+      });
+  }, []);
+
+  const applySpotlightTargetLayering = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    clearSpotlightTargetLayering();
+    window.document.querySelectorAll<HTMLElement>('.shepherd-target.shepherd-enabled').forEach(node => {
+      const computedPosition = window.getComputedStyle(node).position;
+      if (computedPosition === 'static') {
+        node.style.position = 'relative';
+        node.setAttribute(TOUR_TARGET_TEMP_POSITION_ATTR, '1');
+      }
+      node.style.zIndex = '10015';
+      node.setAttribute(TOUR_TARGET_TEMP_Z_ATTR, '1');
+    });
+  }, [clearSpotlightTargetLayering]);
+
   const chooseCentralCard = useCallback(() => {
     if (typeof window === 'undefined') return null;
     const doc = window.document;
@@ -145,10 +200,86 @@ export const useSchedulerTour = ({
     return true;
   }, [chooseCentralCard, clearFocusedCard]);
 
+  const highlightFocusedAndRelatedCards = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    clearUnblurCards();
+    const focusedCard = window.document.querySelector<HTMLElement>(getFocusedCardSelector);
+    if (!focusedCard) return;
+    focusedCard.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE);
+    const commissionId = focusedCard.dataset.commissionId;
+    if (!commissionId) return;
+    window.document
+      .querySelectorAll<HTMLElement>(
+        `[data-tour-internal="true"][data-commission-id="${commissionId}"]`
+      )
+      .forEach(node => node.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE));
+  }, [clearUnblurCards]);
+
   const markTourAsSeen = useCallback(() => {
     if (typeof window === 'undefined') return;
     window.localStorage.setItem(TOUR_SEEN_STORAGE_KEY, '1');
   }, []);
+
+  const buildBackupSnapshot = useCallback(
+    () =>
+      JSON.stringify({
+        selectedSubjectId,
+        enrolledBySubject,
+      }),
+    [enrolledBySubject, selectedSubjectId]
+  );
+
+  const restoreFromBackup = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    const raw = window.localStorage.getItem(TOUR_BACKUP_STORAGE_KEY);
+    if (!raw) return;
+    try {
+      const parsed = JSON.parse(raw) as {
+        selectedSubjectId?: string;
+        enrolledBySubject?: Record<string, string>;
+      };
+      setSelectedSubjectId(parsed.selectedSubjectId || '');
+      setEnrolledBySubject(parsed.enrolledBySubject || {});
+    } catch {
+      // no-op
+    } finally {
+      window.localStorage.removeItem(TOUR_BACKUP_STORAGE_KEY);
+      window.localStorage.removeItem(TOUR_ACTIVE_STORAGE_KEY);
+      tourStatePreparedRef.current = false;
+    }
+  }, [setEnrolledBySubject, setSelectedSubjectId]);
+
+  const prepareTourStateForRun = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    if (tourStatePreparedRef.current) return;
+    window.localStorage.setItem(TOUR_BACKUP_STORAGE_KEY, buildBackupSnapshot());
+    window.localStorage.setItem(TOUR_ACTIVE_STORAGE_KEY, '1');
+    tourStatePreparedRef.current = true;
+    setSelectedSubjectId('');
+    setEnrolledBySubject({});
+  }, [buildBackupSnapshot, setEnrolledBySubject, setSelectedSubjectId]);
+
+  const reinforceSubjectStepOpenState = useCallback(() => {
+    setIsMateriaPanelOpen(true);
+    setIsMateriaDropdownOpen(true);
+    if (typeof window === 'undefined') return;
+    const focusInput = () => {
+      const input = window.document.querySelector<HTMLInputElement>('[data-tour="subject-input"]');
+      input?.focus();
+      input?.click();
+    };
+    focusInput();
+    window.setTimeout(() => {
+      setIsMateriaPanelOpen(true);
+      setIsMateriaDropdownOpen(true);
+      focusInput();
+    }, 40);
+    window.setTimeout(() => {
+      setIsMateriaPanelOpen(true);
+      setIsMateriaDropdownOpen(true);
+      focusInput();
+    }, 140);
+  }, [setIsMateriaDropdownOpen, setIsMateriaPanelOpen]);
 
   const destroyTour = useCallback(() => {
     if (!tourRef.current) return;
@@ -160,9 +291,14 @@ export const useSchedulerTour = ({
   const startTour = useCallback(
     (force = false) => {
       if (typeof window === 'undefined') return;
+      if (autoStartTimeoutRef.current !== null) {
+        window.clearTimeout(autoStartTimeoutRef.current);
+        autoStartTimeoutRef.current = null;
+      }
       if (!force && window.localStorage.getItem(TOUR_SEEN_STORAGE_KEY) === '1') return;
 
       destroyTour();
+      tourStatePreparedRef.current = false;
 
       const tour = new Shepherd.Tour({
         useModalOverlay: true,
@@ -189,22 +325,38 @@ export const useSchedulerTour = ({
       tour.on('complete', () => {
         setBodyTourStep(null);
         clearFocusedCard();
+        clearUnblurCards();
+        clearSpotlightTargetLayering();
+        restoreFromBackup();
       });
       tour.on('cancel', markTourAsSeen);
       tour.on('cancel', () => {
         setBodyTourStep(null);
         clearFocusedCard();
+        clearUnblurCards();
+        clearSpotlightTargetLayering();
+        restoreFromBackup();
       });
       tour.on('show', () => {
         const currentStep = tour.getCurrentStep() as { id?: string } | null;
-        setBodyTourStep(currentStep?.id || null);
+        const stepId = currentStep?.id || null;
+        setBodyTourStep(stepId);
+        if (stepId === 'hover-commission' || stepId === 'save-commission') {
+          if (!window.document.querySelector(getFocusedCardSelector)) {
+            focusCentralCard();
+          }
+          highlightFocusedAndRelatedCards();
+        } else {
+          clearUnblurCards();
+        }
+        applySpotlightTargetLayering();
       });
 
       tour.addSteps([
         {
           id: 'welcome',
-          title: 'Bienvenido al scheduler',
-          text: 'Aqui podras visualizar oferta academica y armar tu propuesta de inscripcion.',
+          title: 'Bienvenido al planificador',
+          text: 'Aqui podras visualizar la oferta academica y armar tu propuesta de inscripcion.\n\nHagamos un recorrido posible para entender como ver las opciones de una materia y elegirla.',
           buttons: [
             {
               text: 'Saltar',
@@ -213,19 +365,25 @@ export const useSchedulerTour = ({
             },
             {
               text: 'Comenzar',
-              action: () => tour.next(),
+              action: () => {
+                prepareTourStateForRun();
+                tour.next();
+              },
             },
           ],
         },
         {
           id: 'select-subject',
           title: 'Paso 1: elegir catedra',
-          text: 'Busca y selecciona una catedra para ver disponibilidad en calendario.',
+          text: 'Busca y selecciona una catedra para ver su disponibilidad en calendario.',
           attachTo: { element: '[data-tour="subject-panel"]', on: 'left' },
           beforeShowPromise: async () => {
-            setIsMateriaPanelOpen(true);
-            setIsMateriaDropdownOpen(true);
-            await waitForSelector('[data-tour="subject-dropdown"]');
+            setBodyTourStep('select-subject');
+            reinforceSubjectStepOpenState();
+            await new Promise(resolve => window.setTimeout(resolve, 120));
+          },
+          when: {
+            show: () => reinforceSubjectStepOpenState(),
           },
           extraHighlights: ['[data-tour="subject-input"]', '[data-tour="subject-dropdown"]'],
           buttons: [
@@ -235,7 +393,10 @@ export const useSchedulerTour = ({
               action: () => tour.cancel(),
             },
           ],
-          advanceOn: { selector: getSubjectOptionSelector, event: 'click' },
+          advanceOn: {
+            selector: `${getSubjectOptionSelector}, ${getSubjectOptionSelector} *`,
+            event: 'click',
+          },
         },
         {
           id: 'calendar-overview',
@@ -245,6 +406,7 @@ export const useSchedulerTour = ({
           beforeShowPromise: async () => {
             await waitForAnySelector([getCommissionCardSelector, getInternalEventSelector]);
             focusCentralCard();
+            highlightFocusedAndRelatedCards();
           },
         },
         {
@@ -273,12 +435,13 @@ export const useSchedulerTour = ({
           id: 'save-commission',
           title: 'Paso 4: guarda una eleccion',
           text: 'Dentro de esta tarjeta, usa la estrella (abajo) para elegir esta comision y guardarla.',
-          attachTo: { element: getFocusedCardSelector, on: 'right' },
+          attachTo: { element: getFocusedCardSelector, on: 'top' },
           beforeShowPromise: async () => {
             await waitForAnySelector([getCommissionCardSelector, getInternalEventSelector]);
             if (!window.document.querySelector(getFocusedCardSelector)) {
               focusCentralCard();
             }
+            highlightFocusedAndRelatedCards();
             await waitForSelector(getFocusedSaveButtonSelector, 1800);
           },
           showOn: () => Boolean(window.document.querySelector(getFocusedCardSelector)),
@@ -304,7 +467,7 @@ export const useSchedulerTour = ({
           id: 'export',
           title: 'Paso 6: exportar/importar',
           text: 'Exporta tus elecciones para guardar un backup o compartirlo e importarlo luego.',
-          attachTo: { element: '[data-tour="saved-elections-export"]', on: 'bottom' },
+          attachTo: { element: '[data-tour="saved-elections-export"]', on: 'top' },
           extraHighlights: ['[data-tour="saved-elections-panel"]'],
           beforeShowPromise: async () => {
             setIsEleccionesPanelOpen(true);
@@ -333,7 +496,7 @@ export const useSchedulerTour = ({
           id: 'clear-subject',
           title: 'Paso 9: modo calendario',
           text: 'Limpia la materia seleccionada para solo ver las comisiones que seleccionaste sin otras opciones.',
-          attachTo: { element: getClearSubjectSelector, on: 'left' },
+          attachTo: { element: getClearSubjectSelector, on: 'left-start' },
           showOn: () => Boolean(window.document.querySelector(getClearSubjectSelector)),
           buttons: [
             {
@@ -365,28 +528,66 @@ export const useSchedulerTour = ({
       destroyTour,
       markTourAsSeen,
       clearFocusedCard,
+      clearUnblurCards,
+      clearSpotlightTargetLayering,
+      applySpotlightTargetLayering,
+      highlightFocusedAndRelatedCards,
       focusCentralCard,
+      buildBackupSnapshot,
+      prepareTourStateForRun,
+      reinforceSubjectStepOpenState,
       setBodyTourStep,
+      setEnrolledBySubject,
       setIsEleccionesPanelOpen,
       setIsMateriaDropdownOpen,
       setIsMateriaPanelOpen,
       setIsMostrarPanelOpen,
       setIsSedesPanelOpen,
+      setSelectedSubjectId,
+      restoreFromBackup,
       waitForAnySelector,
       waitForSelector,
     ]
   );
 
-  useEffect(() => () => destroyTour(), [destroyTour]);
+  useEffect(
+    () => () => {
+      destroyTour();
+      clearSpotlightTargetLayering();
+    },
+    [clearSpotlightTargetLayering, destroyTour]
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.localStorage.getItem(TOUR_ACTIVE_STORAGE_KEY) !== '1') return;
+    restoreFromBackup();
+  }, [restoreFromBackup]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.localStorage.getItem(TOUR_SEEN_STORAGE_KEY) === '1') return;
-    const timeoutId = window.setTimeout(() => {
+    autoStartTimeoutRef.current = window.setTimeout(() => {
+      autoStartTimeoutRef.current = null;
+      if (tourRef.current) return;
       startTour(false);
     }, AUTO_START_DELAY_MS);
-    return () => window.clearTimeout(timeoutId);
+    return () => {
+      if (autoStartTimeoutRef.current !== null) {
+        window.clearTimeout(autoStartTimeoutRef.current);
+        autoStartTimeoutRef.current = null;
+      }
+    };
   }, [startTour]);
+
+  useEffect(() => {
+    const tour = tourRef.current;
+    if (!tour) return;
+    if (!selectedSubjectId) return;
+    const currentStep = tour.getCurrentStep() as { id?: string } | null;
+    if (currentStep?.id !== 'select-subject') return;
+    tour.next();
+  }, [selectedSubjectId]);
 
   return { startTour };
 };

@@ -134,9 +134,25 @@ export const SchedulerFiltersPanel = ({
   const canToggleOtherSubjects = Boolean(selectedSubjectId);
   const materiaOptionsRef = useRef<HTMLDivElement | null>(null);
   const [showMateriaScrollHint, setShowMateriaScrollHint] = useState(false);
+  const [isTourSelectingSubject, setIsTourSelectingSubject] = useState(false);
+  const isMateriaDropdownVisible = isMateriaDropdownOpen || isTourSelectingSubject;
 
   useEffect(() => {
-    if (!isMateriaDropdownOpen) {
+    if (typeof window === 'undefined') return;
+    const syncTourStep = () => {
+      setIsTourSelectingSubject(window.document.body.dataset.schedulerTourStep === 'select-subject');
+    };
+    syncTourStep();
+    const observer = new MutationObserver(syncTourStep);
+    observer.observe(window.document.body, {
+      attributes: true,
+      attributeFilter: ['data-scheduler-tour-step'],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isMateriaDropdownVisible) {
       setShowMateriaScrollHint(false);
       return;
     }
@@ -153,7 +169,7 @@ export const SchedulerFiltersPanel = ({
       node.removeEventListener('scroll', updateHint);
       window.removeEventListener('resize', updateHint);
     };
-  }, [isMateriaDropdownOpen, groupedSubjectOptions]);
+  }, [isMateriaDropdownVisible, groupedSubjectOptions]);
 
   return (
     <>
@@ -163,6 +179,7 @@ export const SchedulerFiltersPanel = ({
         }}
         className={cn(
           'order-1 relative rounded-xl border border-[#ead9e2] bg-white px-3 pt-3 dark:border-zinc-700 dark:bg-zinc-900',
+          isMateriaDropdownVisible && 'z-40',
           !isMateriaPanelOpen && 'cursor-pointer',
           isMateriaPanelOpen ? 'pb-3' : 'pb-1.5'
         )}
@@ -237,9 +254,12 @@ export const SchedulerFiltersPanel = ({
                 </button>
               </div>
             ) : null}
-            {isMateriaDropdownOpen ? (
+            {isMateriaDropdownVisible ? (
               <div
-                className="absolute left-0 right-0 top-full z-20 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900"
+                className={cn(
+                  'z-50 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900',
+                  isTourSelectingSubject ? 'relative left-0 right-0 top-0' : 'absolute left-0 right-0 top-full'
+                )}
                 data-tour="subject-dropdown"
                 data-testid="subject-dropdown"
               >

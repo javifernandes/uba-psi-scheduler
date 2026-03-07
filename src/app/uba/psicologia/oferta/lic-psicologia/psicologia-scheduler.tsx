@@ -244,6 +244,10 @@ const PsicologiaSchedulerContent = ({
     setSelectedSubjectId,
   });
   const { startTour } = useSchedulerTour({
+    selectedSubjectId,
+    setSelectedSubjectId,
+    enrolledBySubject,
+    setEnrolledBySubject,
     setIsMateriaPanelOpen,
     setIsMateriaDropdownOpen,
     setIsEleccionesPanelOpen,

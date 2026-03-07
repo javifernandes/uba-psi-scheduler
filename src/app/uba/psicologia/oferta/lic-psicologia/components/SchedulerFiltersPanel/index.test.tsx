@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { SchedulerFiltersPanel } from './index';
 import type { SubjectData } from '../../psicologia-scheduler.types';
@@ -192,5 +192,48 @@ describe('SchedulerFiltersPanel', () => {
 
     expect(screen.queryByTitle('Mostrar/Ocultar elecciones de otras materias')).not.toBeInTheDocument();
     expect(screen.queryByText('Otras materias')).not.toBeInTheDocument();
+  });
+
+  it('cuando el dropdown de materia está abierto eleva el panel para superponerse a los demás', () => {
+    const { container } = render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          isMateriaPanelOpen: true,
+          isMateriaDropdownOpen: true,
+        })}
+      />
+    );
+
+    const panel = screen.getByTestId('subject-panel');
+    const dropdown = screen.getByTestId('subject-dropdown');
+    expect(panel.className).toContain('z-40');
+    expect(dropdown.className).toContain('z-50');
+    expect(container).toContainElement(dropdown);
+  });
+
+  it('durante paso select-subject del tour mantiene visible el dropdown aunque estado local esté cerrado', async () => {
+    const { queryByTestId } = render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          isMateriaPanelOpen: true,
+          isMateriaDropdownOpen: false,
+        })}
+      />
+    );
+
+    expect(queryByTestId('subject-dropdown')).not.toBeInTheDocument();
+
+    act(() => {
+      document.body.dataset.schedulerTourStep = 'select-subject';
+      document.body.setAttribute('data-scheduler-tour-step', 'select-subject');
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId('subject-dropdown')).toBeInTheDocument();
+    });
+
+    act(() => {
+      delete document.body.dataset.schedulerTourStep;
+    });
   });
 });

@@ -99,6 +99,7 @@ export const useSubjectDropdown = ({
     if (!isMateriaDropdownOpen) return;
 
     const onMouseDown = (event: MouseEvent) => {
+      if (document.body.dataset.schedulerTourStep === 'select-subject') return;
       const target = event.target as Node;
       if (!materiaDropdownRef.current?.contains(target)) setIsMateriaDropdownOpen(false);
     };

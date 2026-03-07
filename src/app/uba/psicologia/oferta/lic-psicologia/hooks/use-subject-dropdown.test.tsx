@@ -1,5 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSubjectDropdown } from './use-subject-dropdown';
 import type { SubjectData } from '../psicologia-scheduler.types';
 
@@ -46,6 +46,10 @@ describe('useSubjectDropdown', () => {
       cb(0);
       return 0;
     });
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it('agrupa por materia y ordena por código de materia y número de cátedra', () => {
@@ -142,4 +146,28 @@ describe('useSubjectDropdown', () => {
       expect(result.current.isMateriaDropdownOpen).toBe(false);
     });
   });
+
+  it('durante el paso select-subject del tour ignora click fuera para no cerrar dropdown', async () => {
+    document.body.dataset.schedulerTourStep = 'select-subject';
+    const { result } = renderHook(() => useSubjectDropdown(baseParams()));
+
+    act(() => {
+      result.current.setIsMateriaDropdownOpen(true);
+    });
+
+    await waitFor(() => {
+      expect(result.current.isMateriaDropdownOpen).toBe(true);
+    });
+
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    });
+
+    await waitFor(() => {
+      expect(result.current.isMateriaDropdownOpen).toBe(true);
+    });
+
+    delete document.body.dataset.schedulerTourStep;
+  });
+
 });
