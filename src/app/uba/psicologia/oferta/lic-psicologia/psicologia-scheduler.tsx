@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
 import { captureEvent } from '@/lib/posthog';
 import { cn } from '@/lib/utils';
@@ -33,6 +34,7 @@ export type { SubjectData } from './psicologia-scheduler.types';
 type PsicologiaSchedulerProps = {
   subjects: SubjectData[];
   careerLabel?: string;
+  careerSlug?: string;
   storageKey?: string;
 };
 
@@ -66,6 +68,7 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
 const PsicologiaSchedulerContent = ({
   subjects,
   careerLabel = 'Lic. Psicología UBA',
+  careerSlug = 'lic-psicologia',
   storageKey,
 }: PsicologiaSchedulerProps) => {
   const isFirstSubjectRender = useRef(true);
@@ -85,6 +88,8 @@ const PsicologiaSchedulerContent = ({
   const [pinnedCommissionId, setPinnedCommissionId] = useState<string | null>(null);
   const [stackIndexBySlot, setStackIndexBySlot] = useState<Record<string, number>>({});
   const [dismissConflictWarning, setDismissConflictWarning] = useState(false);
+  const previousCommissionDropdownOpenRef = useRef(isCommissionDropdownOpen);
+  const commissionQueryTelemetryTimeoutRef = useRef<number | null>(null);
 
   const {
     selectedSubjectId,
@@ -122,6 +127,7 @@ const PsicologiaSchedulerContent = ({
   } = useSchedulerSubjectsData({
     subjects,
     selectedSubjectId,
+    enrolledBySubject,
     commissionQuery,
     onSubjectChanged: resetSelectionState,
   });
@@ -171,6 +177,49 @@ const PsicologiaSchedulerContent = ({
       subject_label: selectedSubject.label,
     });
   }, [selectedSubject]);
+
+  useEffect(() => {
+    const wasOpen = previousCommissionDropdownOpenRef.current;
+    if (!wasOpen && isCommissionDropdownOpen) {
+      captureEvent('scheduler_commission_dropdown_opened', {
+        career_slug: careerSlug,
+        selected_subject_id: selectedSubject?.id || '',
+        visible_count: searchedComisiones.length,
+      });
+    }
+    if (wasOpen && !isCommissionDropdownOpen) {
+      captureEvent('scheduler_commission_dropdown_closed', {
+        career_slug: careerSlug,
+        had_query: commissionQuery.trim().length > 0,
+        query_length: commissionQuery.trim().length,
+      });
+    }
+    previousCommissionDropdownOpenRef.current = isCommissionDropdownOpen;
+  }, [careerSlug, commissionQuery, isCommissionDropdownOpen, searchedComisiones.length, selectedSubject?.id]);
+
+  useEffect(() => {
+    if (commissionQueryTelemetryTimeoutRef.current) {
+      window.clearTimeout(commissionQueryTelemetryTimeoutRef.current);
+      commissionQueryTelemetryTimeoutRef.current = null;
+    }
+    const query = commissionQuery.trim();
+    if (query.length < 2) return;
+    commissionQueryTelemetryTimeoutRef.current = window.setTimeout(() => {
+      captureEvent('scheduler_commission_query_changed', {
+        career_slug: careerSlug,
+        selected_subject_id: selectedSubject?.id || '',
+        query_length: query.length,
+        result_count: searchedComisiones.length,
+      });
+      commissionQueryTelemetryTimeoutRef.current = null;
+    }, 400);
+    return () => {
+      if (commissionQueryTelemetryTimeoutRef.current) {
+        window.clearTimeout(commissionQueryTelemetryTimeoutRef.current);
+        commissionQueryTelemetryTimeoutRef.current = null;
+      }
+    };
+  }, [careerSlug, commissionQuery, searchedComisiones.length, selectedSubject?.id]);
   const {
     isMateriaDropdownOpen,
     setIsMateriaDropdownOpen,
@@ -245,7 +294,13 @@ const PsicologiaSchedulerContent = ({
     <div className="box-border h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4 dark:bg-[radial-gradient(circle_at_0%_0%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#231725_0%,transparent_35%),#0f0b12] md:px-5">
       <section className="mx-auto flex h-full w-full max-w-[1800px] min-h-0 flex-col gap-2">
         <div className="rounded-2xl bg-[#861f5c] px-4 py-2 shadow-sm">
-          <h1 className="flex items-center gap-2 text-lg tracking-tight text-white md:text-xl">
+          <h1 className="flex items-center gap-3 text-lg tracking-tight text-white md:text-xl">
+            <Link
+              href="/"
+              className="rounded-md border border-white/25 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white hover:bg-white/15"
+            >
+              ← Volver
+            </Link>
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 text-base font-black">
               Ψ
             </span>
@@ -330,14 +385,22 @@ const PsicologiaSchedulerContent = ({
               allVenues={allVenues}
               selectedVenues={selectedVenues}
               toggleVenue={venue => {
+                const selectedBefore = selectedVenues.has(venue);
                 captureEvent('scheduler_venue_toggled', {
+                  career_slug: careerSlug,
+                  selected_subject_id: selectedSubject?.id || '',
                   venue,
-                  selected_before: selectedVenues.has(venue),
+                  selected_before: selectedBefore,
+                  selected_after: !selectedBefore,
                 });
                 toggleVenue(venue);
               }}
               setOnlyVenue={venue => {
-                captureEvent('scheduler_venue_set_only', { venue });
+                captureEvent('scheduler_venue_set_only', {
+                  career_slug: careerSlug,
+                  selected_subject_id: selectedSubject?.id || '',
+                  venue,
+                });
                 setOnlyVenue(venue);
               }}
               isMostrarPanelOpen={isMostrarPanelOpen}

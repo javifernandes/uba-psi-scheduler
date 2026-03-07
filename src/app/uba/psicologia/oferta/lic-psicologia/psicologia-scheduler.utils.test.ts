@@ -22,10 +22,12 @@ import {
   sameRecord,
   sameSetValues,
   shortTeacherName,
+  sortVenueCodes,
   slotKeyForEvent,
   sortComisiones,
   splitAula,
   splitEventTitle,
+  venueLabel,
   venueCodeFromAula,
 } from './psicologia-scheduler.utils';
 import type { SubjectData } from './psicologia-scheduler.types';
@@ -112,7 +114,8 @@ describe('psicologia-scheduler.utils', () => {
   it('resuelve sedes/split/title y resumen de comisión', () => {
     expect(venueCodeFromAula('IN-123')).toBe('IN');
     expect(venueCodeFromAula('HY-005')).toBe('HY');
-    expect(venueCodeFromAula('ZZ-1')).toBe('OTRO');
+    expect(venueCodeFromAula('ZZ-1')).toBe('ZZ');
+    expect(venueCodeFromAula('AV 028')).toBe('AV');
     expect(splitAula('IN-123')).toEqual({ prefix: 'IN', room: '123' });
     expect(splitEventTitle('63 - BLANK Sofia')).toEqual({
       code: '63',
@@ -134,6 +137,18 @@ describe('psicologia-scheduler.utils', () => {
         sourceSubjectLabel: subjectData.label,
       })
     ).toBe('martes|07:30|09:00');
+  });
+
+  it('resuelve label y orden de sedes conocidas/desconocidas', () => {
+    expect(venueLabel('IN')).toBe('Independencia');
+    expect(venueLabel('AV')).toBe('Sede AV');
+    expect(sortVenueCodes(['SI', 'AV', 'IN', 'OTRO', 'HY'])).toEqual([
+      'IN',
+      'HY',
+      'SI',
+      'AV',
+      'OTRO',
+    ]);
   });
 
   it('normaliza nombres, query matching, orden de comisiones y comparadores', () => {

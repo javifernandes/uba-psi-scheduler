@@ -11,6 +11,7 @@ import { ConflictBubble } from './ConflictBubble';
 import { StackSwitcher } from './StackSwitcher';
 import { useCalendarEventCardState } from './useCalendarEventCardState';
 import { useEventCardInteractions } from './useEventCardInteractions';
+import { useRef } from 'react';
 
 type CalendarEventCardProps = {
   slot: VisibleEventSlot;
@@ -62,6 +63,7 @@ export const CalendarEventCard = ({
   setStackIndexBySlot,
   onToggleEnrollment,
 }: CalendarEventCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const { slotKey, event, stackSize } = slot;
   const isCalendarOnlyMode = !selectedSubjectId;
   const showExternalTimes = event.isExternal && isCalendarOnlyMode && showCalendarOnlyTimes;
@@ -111,6 +113,7 @@ export const CalendarEventCard = ({
 
   return (
     <div
+      ref={cardRef}
       key={slotKey}
       role="button"
       tabIndex={0}
@@ -137,14 +140,16 @@ export const CalendarEventCard = ({
       style={layoutStyle}
     >
       {hasConflict ? (
-        <span className="pointer-events-none absolute left-1 top-0.5 z-20 rounded bg-amber-300/90 px-1 text-[8px] font-black uppercase tracking-wide text-amber-950 shadow-sm">
+        <span className="pointer-events-none absolute left-1/2 top-0.5 z-20 -translate-x-1/2 rounded bg-amber-300/90 px-1 text-[8px] font-black uppercase tracking-wide text-amber-950 shadow-sm">
           !
         </span>
       ) : null}
       <ConflictBubble
         show={showConflictBubble}
         eventId={event.id}
+        eventType={event.tipo}
         eventConflicts={eventConflicts}
+        anchorRef={cardRef}
       />
       {canSaveFromCard && !event.isExternal ? (
         <button

@@ -523,7 +523,7 @@ export const SavedElectionsPanel = ({
       />
       {isImportDialogOpen ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-3"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white/20 px-3 backdrop-blur-[2px] dark:bg-black/30"
           role="presentation"
           onClick={() => {
             if (isImportLoading || isImportApplying) return;
@@ -534,7 +534,7 @@ export const SavedElectionsPanel = ({
             role="dialog"
             aria-modal="true"
             aria-label="Importar elecciones"
-            className="w-full max-w-2xl rounded-xl border border-[#d7b8c9] bg-[#fff8fc] p-4 shadow-xl dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full max-w-2xl rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-4 py-5 shadow-xl dark:border-zinc-700 dark:bg-zinc-900"
             onClick={event => event.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-3">

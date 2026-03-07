@@ -1,6 +1,6 @@
 export type Day = 'lunes' | 'martes' | 'miercoles' | 'jueves' | 'viernes' | 'sabado' | 'domingo';
 
-export type VenueCode = 'IN' | 'SI' | 'HY' | 'OTRO';
+export type VenueCode = string;
 export type EventType = 'prac' | 'teo' | 'sem';
 
 type BaseSlot = {
@@ -69,8 +69,11 @@ export type ReservedSlot = {
   slotId: string;
   subjectId: string;
   subjectLabel: string;
+  slotKind: 'Comisión' | 'Teórico' | 'Seminario';
+  slotCode: string;
+  venue: string;
   day: Day;
   start: string;
   end: string;
-  title: string;
+  title?: string;
 };

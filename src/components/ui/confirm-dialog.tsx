@@ -35,7 +35,7 @@ export const ConfirmDialog = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-3"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white/20 px-3 backdrop-blur-[2px] dark:bg-black/30"
       role="presentation"
       onClick={onCancel}
     >
@@ -44,7 +44,7 @@ export const ConfirmDialog = ({
         aria-modal="true"
         aria-label={title}
         className={cn(
-          'w-full max-w-md rounded-xl border border-[#d7b8c9] bg-[#fff8fc] p-4 shadow-xl',
+          'w-full max-w-md rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-4 py-5 shadow-xl',
           'dark:border-zinc-700 dark:bg-zinc-900'
         )}
         onClick={event => event.stopPropagation()}

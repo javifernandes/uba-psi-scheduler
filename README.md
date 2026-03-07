@@ -53,8 +53,7 @@ Salida (por defecto):
 ## Estructura
 
 - `src/data/uba/psicologia/oferta`: datasets scrapeados por carrera (nuevo).
-- `src/app/uba/psicologia/oferta/lic-psicologia/materias`: dataset actual usado por la UI hoy.
-- `src/app/uba/psicologia/oferta/lic-psicologia/scheduler/page.tsx`: entrypoint del scheduler.
+- `src/app/uba/psicologia/oferta/[career]/scheduler/page.tsx`: entrypoint del scheduler por carrera.
 - `scripts/scrape-uba-psi-oferta.ts`: scraper para regenerar datos.
 
 ## Deploy (Cloudflare Pages)

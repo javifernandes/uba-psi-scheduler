@@ -24,6 +24,14 @@ const subjects: SubjectData[] = [
     seminarios: ['A|jueves|09:15|10:45|Falcone|IN-510|'],
     comisiones: ['1|jueves|11:00|12:30|Boisselier|I - A|IN-125|'],
   },
+  {
+    id: '298',
+    label: 'Neurofisiopatología - Cátedra 298',
+    header: 'h298',
+    teoricos: [],
+    seminarios: [],
+    comisiones: ['14|sabado|09:15|10:45|Politis|V|AV 028|'],
+  },
 ];
 
 type HookParams = Parameters<typeof useSchedulerSubjectsData>[0];
@@ -31,6 +39,7 @@ type HookParams = Parameters<typeof useSchedulerSubjectsData>[0];
 const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
   subjects,
   selectedSubjectId: '50',
+  enrolledBySubject: {},
   commissionQuery: '',
   onSubjectChanged: vi.fn(),
   ...overrides,
@@ -109,5 +118,20 @@ describe('useSchedulerSubjectsData', () => {
       expect(Array.from(result.current.selectedCommissionIds)).toEqual([]);
     });
     expect(onSubjectChanged).toHaveBeenCalledTimes(1);
+  });
+
+  it('incluye sedes dinámicas de materias externas guardadas', async () => {
+    const { result } = renderHook(() =>
+      useSchedulerSubjectsData(
+        baseParams({
+          selectedSubjectId: '',
+          enrolledBySubject: { '34': '1', '298': '14' },
+        })
+      )
+    );
+
+    await waitFor(() => {
+      expect(result.current.allVenues).toEqual(['IN', 'HY', 'AV']);
+    });
   });
 });

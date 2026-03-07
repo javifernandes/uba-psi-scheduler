@@ -9,6 +9,7 @@ import {
   matchesCommissionQuery,
   parseSubject,
   sameSetValues,
+  sortVenueCodes,
   sortComisiones,
   venueCodeFromAula,
 } from '../psicologia-scheduler.utils';
@@ -16,6 +17,7 @@ import {
 type UseSchedulerSubjectsDataParams = {
   subjects: SubjectData[];
   selectedSubjectId: string;
+  enrolledBySubject: Record<string, string>;
   commissionQuery: string;
   onSubjectChanged: () => void;
 };
@@ -38,6 +40,7 @@ type UseSchedulerSubjectsDataResult = {
 export const useSchedulerSubjectsData = ({
   subjects,
   selectedSubjectId,
+  enrolledBySubject,
   commissionQuery,
   onSubjectChanged,
 }: UseSchedulerSubjectsDataParams): UseSchedulerSubjectsDataResult => {
@@ -58,11 +61,28 @@ export const useSchedulerSubjectsData = ({
 
   const allVenues = useMemo(() => {
     const found = new Set<VenueCode>();
-    [...teoricos, ...seminarios, ...comisiones].forEach(item =>
-      found.add(venueCodeFromAula(item.aula))
-    );
-    return (['IN', 'HY', 'SI', 'OTRO'] as VenueCode[]).filter(code => found.has(code));
-  }, [teoricos, seminarios, comisiones]);
+    [...teoricos, ...seminarios, ...comisiones].forEach(item => {
+      found.add(venueCodeFromAula(item.aula));
+    });
+    parsedSubjects
+      .filter(subject => subject.id !== selectedSubjectId)
+      .forEach(subject => {
+        const enrolledCommissionId = enrolledBySubject[subject.id];
+        if (!enrolledCommissionId) return;
+        const enrolledCommission = subject.comisiones.find(item => item.id === enrolledCommissionId);
+        if (!enrolledCommission) return;
+        found.add(venueCodeFromAula(enrolledCommission.aula));
+        if (enrolledCommission.teoricoId) {
+          const teorico = subject.teoricoMap[enrolledCommission.teoricoId];
+          if (teorico) found.add(venueCodeFromAula(teorico.aula));
+        }
+        if (enrolledCommission.seminarioId) {
+          const seminario = subject.seminarioMap[enrolledCommission.seminarioId];
+          if (seminario) found.add(venueCodeFromAula(seminario.aula));
+        }
+      });
+    return sortVenueCodes(found);
+  }, [comisiones, enrolledBySubject, parsedSubjects, selectedSubjectId, seminarios, teoricos]);
 
   useEffect(() => {
     setSelectedVenues(prev => {

@@ -29,11 +29,32 @@ export const DAY_LABELS: Record<Day, string> = {
   domingo: 'Domingo',
 };
 
-export const VENUE_LABELS: Record<VenueCode, string> = {
+export const VENUE_LABELS: Record<string, string> = {
   IN: 'Independencia',
   SI: 'San Isidro',
   HY: 'Anexo Hipólito Yrigoyen',
-  OTRO: 'Otra/No informada',
+  ND: 'No informada',
+  OTRO: 'No informada',
+};
+
+const KNOWN_VENUE_ORDER = ['IN', 'HY', 'SI'] as const;
+
+export const venueLabel = (code: VenueCode) => VENUE_LABELS[code] || `Sede ${code}`;
+export const venueBadgeCode = (code: VenueCode) => (code === 'OTRO' ? 'N/D' : code);
+
+export const sortVenueCodes = (venues: Iterable<VenueCode>) => {
+  const unique = Array.from(new Set(Array.from(venues).map(code => code.trim().toUpperCase())));
+  const rank = (code: VenueCode) => {
+    if (code === 'ND' || code === 'OTRO') return 99;
+    const knownIndex = KNOWN_VENUE_ORDER.indexOf(code as (typeof KNOWN_VENUE_ORDER)[number]);
+    if (knownIndex >= 0) return knownIndex;
+    return 50;
+  };
+  return unique.sort((a, b) => {
+    const rankDiff = rank(a) - rank(b);
+    if (rankDiff !== 0) return rankDiff;
+    return a.localeCompare(b, 'es');
+  });
 };
 
 const parseRows = <T>(lines: string[], mapper: (parts: string[]) => T): T[] =>
@@ -61,10 +82,10 @@ export const overlapRange = (fromA: string, toA: string, fromB: string, toB: str
 });
 
 export const venueCodeFromAula = (aula: string): VenueCode => {
-  if (aula.startsWith('IN-')) return 'IN';
-  if (aula.startsWith('SI-')) return 'SI';
-  if (aula.startsWith('HY-')) return 'HY';
-  return 'OTRO';
+  const normalized = aula.trim().toUpperCase();
+  const matchedPrefix = normalized.match(/^([A-Z]{2,5})(?:\b|[-\s/])/)?.[1];
+  if (!matchedPrefix) return 'ND';
+  return matchedPrefix;
 };
 
 export const catedraProfessorFromHeader = (header: string) =>

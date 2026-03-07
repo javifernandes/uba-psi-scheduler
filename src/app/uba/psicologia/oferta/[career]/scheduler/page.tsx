@@ -29,6 +29,7 @@ const CareerSchedulerPage = async ({ params }: PageProps) => {
     <PsicologiaScheduler
       subjects={subjects}
       careerLabel={career.label}
+      careerSlug={career.slug}
       storageKey={`uba_psico_planner_v2:${career.slug}`}
     />
   );

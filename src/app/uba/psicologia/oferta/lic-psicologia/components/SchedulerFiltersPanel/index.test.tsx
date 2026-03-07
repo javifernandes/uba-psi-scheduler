@@ -123,7 +123,7 @@ describe('SchedulerFiltersPanel', () => {
 
     fireEvent.click(screen.getByLabelText('Seleccionar todo'));
     fireEvent.click(screen.getByLabelText('Limpiar'));
-    fireEvent.change(screen.getByPlaceholderText('profe o día'), { target: { value: 'lunes' } });
+    fireEvent.change(screen.getByPlaceholderText('Profesor o día'), { target: { value: 'lunes' } });
     fireEvent.click(screen.getByRole('checkbox'));
 
     expect(selectAllVisible).toHaveBeenCalledTimes(1);
@@ -159,6 +159,25 @@ describe('SchedulerFiltersPanel', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Limpiar materia seleccionada' }));
     expect(onClearSelectedSubject).toHaveBeenCalledTimes(1);
+  });
+
+  it('al enfocar materia limpia el texto seleccionado y muestra placeholder con ESC', () => {
+    const onMateriaInputChange = vi.fn();
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          isMateriaPanelOpen: true,
+          onMateriaInputChange,
+        })}
+      />
+    );
+
+    const input = screen.getByPlaceholderText(
+      'Buscar / Seleccionar Materia (ESC para cancelar)'
+    );
+    fireEvent.focus(input);
+
+    expect(onMateriaInputChange).toHaveBeenCalledWith('');
   });
 
   it('oculta "Otras materias" cuando no hay materia/cátedra seleccionada', () => {

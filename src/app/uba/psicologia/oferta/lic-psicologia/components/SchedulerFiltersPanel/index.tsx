@@ -6,6 +6,7 @@ import type {
   MutableRefObject,
   SetStateAction,
 } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Comision, SubjectData, VenueCode } from '../../psicologia-scheduler.types';
@@ -13,7 +14,8 @@ import {
   catedraFragmentFromLabel,
   catedraProfessorFromHeader,
   commissionSummaryLabel,
-  VENUE_LABELS,
+  venueBadgeCode,
+  venueLabel,
 } from '../../psicologia-scheduler.utils';
 import { collapsedComisionesSummary, collapsedMateriaSummary } from './summaries';
 
@@ -130,6 +132,28 @@ export const SchedulerFiltersPanel = ({
   toggleCommission,
 }: SchedulerFiltersPanelProps) => {
   const canToggleOtherSubjects = Boolean(selectedSubjectId);
+  const materiaOptionsRef = useRef<HTMLDivElement | null>(null);
+  const [showMateriaScrollHint, setShowMateriaScrollHint] = useState(false);
+
+  useEffect(() => {
+    if (!isMateriaDropdownOpen) {
+      setShowMateriaScrollHint(false);
+      return;
+    }
+    const node = materiaOptionsRef.current;
+    if (!node) return;
+    const updateHint = () => {
+      const hasMoreBelow = node.scrollTop + node.clientHeight < node.scrollHeight - 4;
+      setShowMateriaScrollHint(hasMoreBelow);
+    };
+    updateHint();
+    node.addEventListener('scroll', updateHint, { passive: true });
+    window.addEventListener('resize', updateHint);
+    return () => {
+      node.removeEventListener('scroll', updateHint);
+      window.removeEventListener('resize', updateHint);
+    };
+  }, [isMateriaDropdownOpen, groupedSubjectOptions]);
 
   return (
     <>
@@ -178,14 +202,18 @@ export const SchedulerFiltersPanel = ({
               onChange={e => onMateriaInputChange(e.target.value)}
               onFocus={e => {
                 setIsMateriaDropdownOpen(true);
-                e.currentTarget.select();
+                if (selectedSubjectId && materiaInputValue.trim().length > 0) {
+                  onMateriaInputChange('');
+                }
               }}
               onClick={e => {
                 setIsMateriaDropdownOpen(true);
-                e.currentTarget.select();
+                if (selectedSubjectId && materiaInputValue.trim().length > 0) {
+                  onMateriaInputChange('');
+                }
               }}
               onKeyDown={onMateriaInputKeyDown}
-              placeholder="Buscar / Seleccionar Materia"
+              placeholder="Buscar / Seleccionar Materia (ESC para cancelar)"
               className="h-9 w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 text-sm font-medium text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
             />
             {selectedSubjectId ? (
@@ -205,7 +233,10 @@ export const SchedulerFiltersPanel = ({
             ) : null}
             {isMateriaDropdownOpen ? (
               <div className="absolute left-0 right-0 top-full z-20 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900">
-                <div className="max-h-64 divide-y divide-[#f0e5ec] overflow-auto bg-white dark:divide-zinc-700 dark:bg-zinc-800">
+                <div
+                  ref={materiaOptionsRef}
+                  className="max-h-[30rem] divide-y divide-[#f0e5ec] overflow-auto bg-white dark:divide-zinc-700 dark:bg-zinc-800"
+                >
                   {(() => {
                     let optionIndex = -1;
                     return groupedSubjectOptions.map(group => (
@@ -213,7 +244,7 @@ export const SchedulerFiltersPanel = ({
                         key={group.groupLabel}
                         className="border-b border-[#f0e5ec] last:border-b-0 dark:border-zinc-700"
                       >
-                        <div className="px-2 py-1.5 text-[12px] font-bold text-[#6d5162] dark:text-zinc-200">
+                        <div className="px-5 pb-1.5 pt-2 text-[14px] font-bold text-[#4f1237] dark:text-zinc-100">
                           {group.groupLabel}
                         </div>
                         <div className="divide-y divide-[#f5ebf1] dark:divide-zinc-700/70">
@@ -252,14 +283,16 @@ export const SchedulerFiltersPanel = ({
                                   }
                                 }}
                                 className={cn(
-                                  'w-full px-4 py-2 text-left hover:bg-[#fdf4f8] dark:hover:bg-zinc-700/60',
+                                  'w-full px-5 py-3 text-left hover:bg-[#fdf4f8] dark:hover:bg-zinc-700/60',
                                   (selectedSubjectId === subject.id || isHighlighted) &&
                                     'bg-[#f8eaf1] ring-1 ring-inset ring-[#e4cad7] dark:bg-zinc-700 dark:ring-zinc-600'
                                 )}
                               >
-                                <div className="text-xs font-semibold text-[#4f1237] dark:text-zinc-100">
-                                  {catedraFragmentFromLabel(subject.label)} -{' '}
-                                  {catedraProfessorFromHeader(subject.header)}
+                                <div className="pl-4 text-[12px] font-semibold text-[#6d5162] dark:text-zinc-300">
+                                  {catedraFragmentFromLabel(subject.label)} ·{' '}
+                                  <span className="font-medium text-[#8b6f80] dark:text-zinc-400">
+                                    {catedraProfessorFromHeader(subject.header)}
+                                  </span>
                                 </div>
                               </button>
                             );
@@ -274,6 +307,11 @@ export const SchedulerFiltersPanel = ({
                     </div>
                   ) : null}
                 </div>
+                {showMateriaScrollHint ? (
+                  <div className="pt-1 text-center text-[10px] font-medium text-[#9f8695] dark:text-zinc-400">
+                    ↓ Hay más opciones abajo
+                  </div>
+                ) : null}
               </div>
             ) : null}
           </div>
@@ -347,7 +385,7 @@ export const SchedulerFiltersPanel = ({
                     type="text"
                     value={commissionQuery}
                     onChange={e => setCommissionQuery(e.target.value)}
-                    placeholder="profe o día"
+                    placeholder="Profesor o día"
                     className="ml-1 h-7 min-w-0 flex-1 rounded border border-[#d7b8c9] bg-white px-2 text-[11px] text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
                   />
                 </div>
@@ -418,7 +456,7 @@ export const SchedulerFiltersPanel = ({
                         e.stopPropagation();
                         setOnlyVenue(venue);
                       }}
-                      title={VENUE_LABELS[venue]}
+                      title={venueLabel(venue)}
                       className={cn(
                         'rounded px-1.5 py-0.5 text-[10px] font-semibold transition',
                         active
@@ -426,7 +464,7 @@ export const SchedulerFiltersPanel = ({
                           : 'bg-zinc-200/70 text-zinc-500 opacity-60 hover:opacity-90 dark:bg-zinc-700 dark:text-zinc-400'
                       )}
                     >
-                      {venue}
+                      {venueBadgeCode(venue)}
                     </button>
                   );
                 })}
@@ -459,11 +497,11 @@ export const SchedulerFiltersPanel = ({
                   className="h-4 w-4 accent-[#861f5c]"
                 />
                 <span className="inline-flex items-center">
-                  <span className="inline-block w-7 text-left font-semibold tabular-nums">
-                    {venue}
+                  <span className="inline-block min-w-[2.25rem] text-left font-semibold tabular-nums">
+                    {venueBadgeCode(venue)}
                   </span>
                   <span className="inline-block w-3 text-center leading-none">·</span>
-                  <span>{VENUE_LABELS[venue]}</span>
+                  <span className="break-words">{venueLabel(venue)}</span>
                 </span>
               </label>
             ))}
