@@ -38,7 +38,7 @@ test.describe('Tour - Paso 1', () => {
 
     // Debe permitir seleccionar una opción durante el paso 1.
     await subjectOptions.first().click();
-    await expect(page.getByText('Paso 2: lectura general')).toBeVisible();
+    await expect(page.getByText('Paso 2: oferta academica')).toBeVisible();
   });
 
   test('con estado previo persiste paso 1 usable y abierto', async ({ page }) => {

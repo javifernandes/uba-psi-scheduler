@@ -250,14 +250,19 @@
 }
 
 .shepherd-element.uba-psi-tour .shepherd-button.shepherd-button-secondary {
-  background: #fff !important;
-  border-color: #d7b8c9 !important;
+  background: transparent !important;
+  border-color: transparent !important;
   color: #5a1740 !important;
+  padding: 0.15rem 0 !important;
+  border-radius: 0 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
 }
 
 .shepherd-element.uba-psi-tour .shepherd-button.shepherd-button-secondary:not(:disabled):hover {
-  background: #fdf1f7 !important;
+  background: transparent !important;
   color: #5a1740 !important;
+  opacity: 0.8 !important;
 }
 
 .shepherd-element.uba-psi-tour .shepherd-cancel-icon {

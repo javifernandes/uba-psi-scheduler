@@ -309,7 +309,7 @@ export const useSchedulerTour = ({
           scrollTo: { behavior: 'smooth', block: 'center' },
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
@@ -359,7 +359,7 @@ export const useSchedulerTour = ({
           text: 'Aqui podras visualizar la oferta academica y armar tu propuesta de inscripcion.\n\nHagamos un recorrido posible para entender como ver las opciones de una materia y elegirla.',
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
@@ -388,7 +388,7 @@ export const useSchedulerTour = ({
           extraHighlights: ['[data-tour="subject-input"]', '[data-tour="subject-dropdown"]'],
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
@@ -400,8 +400,8 @@ export const useSchedulerTour = ({
         },
         {
           id: 'calendar-overview',
-          title: 'Paso 2: lectura general',
-          text: 'Aca veras las comisiones de la catedra seleccionada.',
+          title: 'Paso 2: oferta academica',
+          text: 'Aca veras la oferta de comisiones y horarios de la catedra seleccionada. Ademas, si tienes alguna materia ya guardada tambien se vera para poder identificar conflictos.',
           attachTo: { element: '[data-tour="calendar-grid"]', on: 'top' },
           beforeShowPromise: async () => {
             await waitForAnySelector([getCommissionCardSelector, getInternalEventSelector]);
@@ -412,7 +412,7 @@ export const useSchedulerTour = ({
         {
           id: 'hover-commission',
           title: 'Paso 3: explora una comision',
-          text: 'Acerca el mouse sobre una tarjeta interna para ver detalles y bloques asociados. Cuando lo hayas visto, usa "Siguiente".',
+          text: 'Acerca el mouse sobre una oferta de comision para ver detalles y bloques asociados. Cuando lo hayas visto, usa "Siguiente".',
           attachTo: { element: getFocusedCardSelector, on: 'right' },
           beforeShowPromise: async () => {
             await waitForAnySelector([getCommissionCardSelector, getInternalEventSelector]);
@@ -421,7 +421,7 @@ export const useSchedulerTour = ({
           showOn: () => Boolean(window.document.querySelector(getFocusedCardSelector)),
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
@@ -433,7 +433,7 @@ export const useSchedulerTour = ({
         },
         {
           id: 'save-commission',
-          title: 'Paso 4: guarda una eleccion',
+          title: 'Paso 4: elegir una comision',
           text: 'Dentro de esta tarjeta, usa la estrella (abajo) para elegir esta comision y guardarla.',
           attachTo: { element: getFocusedCardSelector, on: 'top' },
           beforeShowPromise: async () => {
@@ -447,7 +447,7 @@ export const useSchedulerTour = ({
           showOn: () => Boolean(window.document.querySelector(getFocusedCardSelector)),
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
@@ -457,7 +457,7 @@ export const useSchedulerTour = ({
         {
           id: 'saved-panel',
           title: 'Paso 5: Mis elecciones',
-          text: 'Tu seleccion aparece aca. Puedes revisarla y quitarla cuando quieras.',
+          text: 'Aca veras la lista de materias/comisiones que elegiste hasta ahora. Este es tu estado de propuesta de inscripcion.',
           attachTo: { element: '[data-tour="saved-elections-panel"]', on: 'left' },
           beforeShowPromise: async () => {
             setIsEleccionesPanelOpen(true);
@@ -466,7 +466,7 @@ export const useSchedulerTour = ({
         {
           id: 'export',
           title: 'Paso 6: exportar/importar',
-          text: 'Exporta tus elecciones para guardar un backup o compartirlo e importarlo luego.',
+          text: 'Exporta tus elecciones para guardar un backup e importarlo luego. Opcionalmente puedes compartir esta informacion con otros o volver a importarla mas tarde. Esto te permitira probar varias alternativas de cursada, empezar de cero y luego volver a una propuesta.',
           attachTo: { element: '[data-tour="saved-elections-export"]', on: 'top' },
           extraHighlights: ['[data-tour="saved-elections-panel"]'],
           beforeShowPromise: async () => {
@@ -486,7 +486,7 @@ export const useSchedulerTour = ({
         {
           id: 'venue-filters',
           title: 'Paso 8: sedes',
-          text: 'Filtra por sedes para comparar opciones de cursada.',
+          text: 'Filtra lo que se ve en el calendario por sedes para comparar opciones de cursada.',
           attachTo: { element: '[data-tour="venue-filters-panel"]', on: 'left' },
           beforeShowPromise: async () => {
             setIsSedesPanelOpen(true);
@@ -500,7 +500,7 @@ export const useSchedulerTour = ({
           showOn: () => Boolean(window.document.querySelector(getClearSubjectSelector)),
           buttons: [
             {
-              text: 'Saltar',
+              text: 'Cancelar y salir del tour',
               classes: 'shepherd-button-secondary',
               action: () => tour.cancel(),
             },
