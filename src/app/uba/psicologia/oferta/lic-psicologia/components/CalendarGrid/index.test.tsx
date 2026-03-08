@@ -56,6 +56,10 @@ describe('CalendarGrid', () => {
         setHoveredConflictEventId={vi.fn()}
         hoveredCommissionId={null}
         setHoveredCommissionId={vi.fn()}
+        hoveredLinkedTeoricoId={null}
+        setHoveredLinkedTeoricoId={vi.fn()}
+        hoveredLinkedSeminarioId={null}
+        setHoveredLinkedSeminarioId={vi.fn()}
         pinnedCommissionId={null}
         setPinnedCommissionId={vi.fn()}
         setStackIndexBySlot={vi.fn()}
@@ -72,6 +76,8 @@ describe('CalendarGrid', () => {
   it('en celda vacía limpia hover/conflict/pin solo cuando están activos', () => {
     const setHoveredConflictEventId = vi.fn();
     const setHoveredCommissionId = vi.fn();
+    const setHoveredLinkedTeoricoId = vi.fn();
+    const setHoveredLinkedSeminarioId = vi.fn();
     const setPinnedCommissionId = vi.fn();
     const { container } = render(
       <CalendarGrid
@@ -85,6 +91,10 @@ describe('CalendarGrid', () => {
         setHoveredConflictEventId={setHoveredConflictEventId}
         hoveredCommissionId="1"
         setHoveredCommissionId={setHoveredCommissionId}
+        hoveredLinkedTeoricoId="T1"
+        setHoveredLinkedTeoricoId={setHoveredLinkedTeoricoId}
+        hoveredLinkedSeminarioId="S1"
+        setHoveredLinkedSeminarioId={setHoveredLinkedSeminarioId}
         pinnedCommissionId="1"
         setPinnedCommissionId={setPinnedCommissionId}
         setStackIndexBySlot={vi.fn()}
@@ -96,6 +106,8 @@ describe('CalendarGrid', () => {
     fireEvent.mouseEnter(emptyCell);
     vi.advanceTimersByTime(200);
     expect(setHoveredCommissionId).toHaveBeenCalled();
+    expect(setHoveredLinkedTeoricoId).toHaveBeenCalled();
+    expect(setHoveredLinkedSeminarioId).toHaveBeenCalled();
     expect(setHoveredConflictEventId).toHaveBeenCalled();
     expect(setPinnedCommissionId).toHaveBeenCalledWith(null);
   });

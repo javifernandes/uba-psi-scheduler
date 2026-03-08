@@ -20,6 +20,10 @@ export type CalendarGridProps = {
   setHoveredConflictEventId: Dispatch<SetStateAction<string | null>>;
   hoveredCommissionId: string | null;
   setHoveredCommissionId: Dispatch<SetStateAction<string | null>>;
+  hoveredLinkedTeoricoId: string | null;
+  setHoveredLinkedTeoricoId: Dispatch<SetStateAction<string | null>>;
+  hoveredLinkedSeminarioId: string | null;
+  setHoveredLinkedSeminarioId: Dispatch<SetStateAction<string | null>>;
   pinnedCommissionId: string | null;
   setPinnedCommissionId: Dispatch<SetStateAction<string | null>>;
   setStackIndexBySlot: Dispatch<SetStateAction<Record<string, number>>>;

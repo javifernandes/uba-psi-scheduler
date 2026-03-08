@@ -31,6 +31,7 @@ export type CalendarEvent = {
   aula: string;
   title: string;
   linkedCommissionId?: string;
+  linkedCommissionIds?: string[];
   linkedTeoricoId?: string;
   linkedSeminarioId?: string;
   sourceSubjectId: string;

@@ -87,6 +87,8 @@ const PsicologiaSchedulerContent = ({
   const [isCommissionDropdownOpen, setIsCommissionDropdownOpen] = useState(false);
   const [commissionQuery, setCommissionQuery] = useState('');
   const [hoveredCommissionId, setHoveredCommissionId] = useState<string | null>(null);
+  const [hoveredLinkedTeoricoId, setHoveredLinkedTeoricoId] = useState<string | null>(null);
+  const [hoveredLinkedSeminarioId, setHoveredLinkedSeminarioId] = useState<string | null>(null);
   const [hoveredConflictEventId, setHoveredConflictEventId] = useState<string | null>(null);
   const [pinnedCommissionId, setPinnedCommissionId] = useState<string | null>(null);
   const [stackIndexBySlot, setStackIndexBySlot] = useState<Record<string, number>>({});
@@ -108,6 +110,8 @@ const PsicologiaSchedulerContent = ({
 
   const resetSelectionState = useCallback(() => {
     setHoveredCommissionId(null);
+    setHoveredLinkedTeoricoId(null);
+    setHoveredLinkedSeminarioId(null);
     setHoveredConflictEventId(null);
     setPinnedCommissionId(null);
     setStackIndexBySlot({});
@@ -268,6 +272,8 @@ const PsicologiaSchedulerContent = ({
       showSeminarios,
       showOtherSubjects,
       hoveredCommissionId,
+      hoveredLinkedTeoricoId,
+      hoveredLinkedSeminarioId,
       pinnedCommissionId,
       stackIndexBySlot,
     });
@@ -364,6 +370,10 @@ const PsicologiaSchedulerContent = ({
                 setHoveredConflictEventId={setHoveredConflictEventId}
                 hoveredCommissionId={hoveredCommissionId}
                 setHoveredCommissionId={setHoveredCommissionId}
+                hoveredLinkedTeoricoId={hoveredLinkedTeoricoId}
+                setHoveredLinkedTeoricoId={setHoveredLinkedTeoricoId}
+                hoveredLinkedSeminarioId={hoveredLinkedSeminarioId}
+                setHoveredLinkedSeminarioId={setHoveredLinkedSeminarioId}
                 pinnedCommissionId={pinnedCommissionId}
                 setPinnedCommissionId={setPinnedCommissionId}
                 setStackIndexBySlot={setStackIndexBySlot}

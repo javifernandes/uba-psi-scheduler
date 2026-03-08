@@ -26,6 +26,8 @@ type CalendarEventCardProps = {
   hoveredConflictEventId: string | null;
   setHoveredConflictEventId: Dispatch<SetStateAction<string | null>>;
   setHoveredCommissionId: Dispatch<SetStateAction<string | null>>;
+  setHoveredLinkedTeoricoId: Dispatch<SetStateAction<string | null>>;
+  setHoveredLinkedSeminarioId: Dispatch<SetStateAction<string | null>>;
   setPinnedCommissionId: Dispatch<SetStateAction<string | null>>;
   setStackIndexBySlot: Dispatch<SetStateAction<Record<string, number>>>;
   onToggleEnrollment: (commissionId: string) => void;
@@ -59,6 +61,8 @@ export const CalendarEventCard = ({
   hoveredConflictEventId,
   setHoveredConflictEventId,
   setHoveredCommissionId,
+  setHoveredLinkedTeoricoId,
+  setHoveredLinkedSeminarioId,
   setPinnedCommissionId,
   setStackIndexBySlot,
   onToggleEnrollment,
@@ -124,6 +128,8 @@ export const CalendarEventCard = ({
     hoveredConflictEventId,
     setHoveredConflictEventId,
     setHoveredCommissionId,
+    setHoveredLinkedTeoricoId,
+    setHoveredLinkedSeminarioId,
     setPinnedCommissionId,
     setStackIndexBySlot,
     onToggleEnrollment,

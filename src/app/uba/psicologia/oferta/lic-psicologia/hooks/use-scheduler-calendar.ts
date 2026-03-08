@@ -1,6 +1,10 @@
 import { useMemo } from 'react';
 import type { CalendarEvent, ParsedSubject } from '../psicologia-scheduler.types';
-import { shortTeacherName, slotKeyForEvent } from '../psicologia-scheduler.utils';
+import {
+  buildLinkedCommissionIdsMap,
+  shortTeacherName,
+  slotKeyForEvent,
+} from '../psicologia-scheduler.utils';
 
 type UseSchedulerCalendarParams = {
   selectedSubject: ParsedSubject;
@@ -14,6 +18,8 @@ type UseSchedulerCalendarParams = {
   showSeminarios: boolean;
   showOtherSubjects: boolean;
   hoveredCommissionId: string | null;
+  hoveredLinkedTeoricoId: string | null;
+  hoveredLinkedSeminarioId: string | null;
   pinnedCommissionId: string | null;
   stackIndexBySlot: Record<string, number>;
 };
@@ -24,6 +30,7 @@ type EventOptions = {
   idPrefix?: string;
   isExternal?: boolean;
   linkedCommissionId?: string;
+  linkedCommissionIds?: string[];
 };
 
 const buildTitle = (id: string, profesor: string) => `${id} - ${shortTeacherName(profesor)}`;
@@ -41,6 +48,7 @@ const buildPracEvent = (
   aula: commission.aula,
   title: buildTitle(commission.id, commission.profesor),
   linkedCommissionId: options.linkedCommissionId || commission.id,
+  linkedCommissionIds: [options.linkedCommissionId || commission.id],
   sourceSubjectId: subject.id,
   sourceSubjectLabel: subject.label,
   isExternal: options.isExternal,
@@ -60,6 +68,7 @@ const buildTeoEvent = (
   title: buildTitle(teorico.id, teorico.profesor),
   linkedTeoricoId: options.linkedTeoricoId || teorico.id,
   linkedCommissionId: options.linkedCommissionId,
+  linkedCommissionIds: options.linkedCommissionIds,
   sourceSubjectId: subject.id,
   sourceSubjectLabel: subject.label,
   isExternal: options.isExternal,
@@ -79,6 +88,7 @@ const buildSemEvent = (
   title: buildTitle(seminario.id, seminario.profesor),
   linkedSeminarioId: options.linkedSeminarioId || seminario.id,
   linkedCommissionId: options.linkedCommissionId,
+  linkedCommissionIds: options.linkedCommissionIds,
   sourceSubjectId: subject.id,
   sourceSubjectLabel: subject.label,
   isExternal: options.isExternal,
@@ -132,6 +142,8 @@ export const useSchedulerCalendar = ({
   showSeminarios,
   showOtherSubjects,
   hoveredCommissionId,
+  hoveredLinkedTeoricoId,
+  hoveredLinkedSeminarioId,
   pinnedCommissionId,
   stackIndexBySlot,
 }: UseSchedulerCalendarParams) => {
@@ -153,16 +165,14 @@ export const useSchedulerCalendar = ({
   const events = useMemo<CalendarEvent[]>(() => {
     const built: CalendarEvent[] = [];
     const seenEventIds = new Set<string>();
-    const linkedCommissionByTeoricoId = Object.fromEntries(
-      selectedComisiones
-        .filter(commission => commission.teoricoId)
-        .map(commission => [commission.teoricoId, commission.id])
-    ) as Record<string, string>;
-    const linkedCommissionBySeminarioId = Object.fromEntries(
-      selectedComisiones
-        .filter(commission => commission.seminarioId)
-        .map(commission => [commission.seminarioId, commission.id])
-    ) as Record<string, string>;
+    const linkedCommissionIdsByTeoricoId = buildLinkedCommissionIdsMap(
+      selectedComisiones,
+      'teoricoId'
+    );
+    const linkedCommissionIdsBySeminarioId = buildLinkedCommissionIdsMap(
+      selectedComisiones,
+      'seminarioId'
+    );
 
     const pushEvent = (event: CalendarEvent) => {
       if (seenEventIds.has(event.id)) return;
@@ -180,7 +190,7 @@ export const useSchedulerCalendar = ({
       filteredTeoricos.forEach(teorico => {
         pushEvent(
           buildTeoEvent(selectedSubject, teorico, {
-            linkedCommissionId: linkedCommissionByTeoricoId[teorico.id],
+            linkedCommissionIds: linkedCommissionIdsByTeoricoId[teorico.id],
           })
         );
       });
@@ -190,9 +200,25 @@ export const useSchedulerCalendar = ({
       filteredSeminarios.forEach(seminario => {
         pushEvent(
           buildSemEvent(selectedSubject, seminario, {
-            linkedCommissionId: linkedCommissionBySeminarioId[seminario.id],
+            linkedCommissionIds: linkedCommissionIdsBySeminarioId[seminario.id],
           })
         );
+      });
+    }
+
+    if (hoveredLinkedTeoricoId) {
+      (linkedCommissionIdsByTeoricoId[hoveredLinkedTeoricoId] || []).forEach(commissionId => {
+        const linkedCommission = selectedComisiones.find(c => c.id === commissionId);
+        if (!linkedCommission) return;
+        pushEvent(buildPracEvent(selectedSubject, linkedCommission));
+      });
+    }
+
+    if (hoveredLinkedSeminarioId) {
+      (linkedCommissionIdsBySeminarioId[hoveredLinkedSeminarioId] || []).forEach(commissionId => {
+        const linkedCommission = selectedComisiones.find(c => c.id === commissionId);
+        if (!linkedCommission) return;
+        pushEvent(buildPracEvent(selectedSubject, linkedCommission));
       });
     }
 
@@ -244,6 +270,8 @@ export const useSchedulerCalendar = ({
     showTeoricos,
     showSeminarios,
     showOtherSubjects,
+    hoveredLinkedTeoricoId,
+    hoveredLinkedSeminarioId,
     activeCommission,
     enrolledCurrentCommission,
   ]);

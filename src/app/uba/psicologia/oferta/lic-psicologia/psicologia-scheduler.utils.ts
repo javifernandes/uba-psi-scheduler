@@ -326,6 +326,18 @@ export const sortComisiones = (comisiones: Comision[]) =>
     return h2m(a.inicio) - h2m(b.inicio);
   });
 
+export const buildLinkedCommissionIdsMap = (
+  comisiones: Comision[],
+  linkedBy: 'teoricoId' | 'seminarioId'
+) =>
+  comisiones.reduce<Record<string, string[]>>((acc, commission) => {
+    const linkedId = commission[linkedBy];
+    if (!linkedId) return acc;
+    const current = acc[linkedId] || [];
+    acc[linkedId] = [...current, commission.id];
+    return acc;
+  }, {});
+
 export const parseSubject = (subject: SubjectData): ParsedSubject => {
   const teoricos = parseRows<Teorico>(subject.teoricos, parts => ({
     id: parts[0],

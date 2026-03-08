@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   buildEnrollmentsExportPayload,
   ENROLLMENTS_EXPORT_TYPE,
+  buildLinkedCommissionIdsMap,
   catedraFragmentFromLabel,
   catedraNumberFromLabel,
   commissionSummaryLabel,
@@ -208,5 +209,27 @@ describe('psicologia-scheduler.utils', () => {
     });
     expect(mapped.mapped).toHaveLength(1);
     expect(mapped.rejected).toHaveLength(2);
+  });
+
+  it('agrupa todas las comisiones asociadas a un mismo teórico o seminario', () => {
+    const parsed = parseSubject({
+      id: 'shared',
+      label: '(99) Materia de prueba - Cátedra 1 (I)',
+      header: 'header',
+      teoricos: ['T1|lunes|08:00|09:00|Docente T1|IN-100|'],
+      seminarios: ['S1|martes|08:00|09:00|Docente S1|IN-101|'],
+      comisiones: [
+        '11|miercoles|08:00|09:00|Com A|T1 - S1|IN-201|',
+        '12|miercoles|09:00|10:00|Com B|T1 - S1|IN-202|',
+        '13|jueves|08:00|09:00|Com C|T1|IN-203|',
+      ],
+    });
+
+    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'teoricoId')).toEqual({
+      T1: ['11', '12', '13'],
+    });
+    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'seminarioId')).toEqual({
+      S1: ['11', '12'],
+    });
   });
 });

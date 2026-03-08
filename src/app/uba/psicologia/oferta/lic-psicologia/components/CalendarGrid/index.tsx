@@ -20,6 +20,10 @@ export const CalendarGrid = ({
   setHoveredConflictEventId,
   hoveredCommissionId,
   setHoveredCommissionId,
+  hoveredLinkedTeoricoId,
+  setHoveredLinkedTeoricoId,
+  hoveredLinkedSeminarioId,
+  setHoveredLinkedSeminarioId,
   pinnedCommissionId,
   setPinnedCommissionId,
   setStackIndexBySlot,
@@ -58,11 +62,23 @@ export const CalendarGrid = ({
         <CalendarGridBase
           onEmptyCellEnter={() => {
             const previousHoveredCommissionId = hoveredCommissionId;
+            const previousHoveredLinkedTeoricoId = hoveredLinkedTeoricoId;
+            const previousHoveredLinkedSeminarioId = hoveredLinkedSeminarioId;
             const previousHoveredConflictEventId = hoveredConflictEventId;
             window.setTimeout(() => {
               if (previousHoveredCommissionId !== null) {
                 setHoveredCommissionId(prev =>
                   prev === previousHoveredCommissionId ? null : prev
+                );
+              }
+              if (previousHoveredLinkedTeoricoId !== null) {
+                setHoveredLinkedTeoricoId(prev =>
+                  prev === previousHoveredLinkedTeoricoId ? null : prev
+                );
+              }
+              if (previousHoveredLinkedSeminarioId !== null) {
+                setHoveredLinkedSeminarioId(prev =>
+                  prev === previousHoveredLinkedSeminarioId ? null : prev
                 );
               }
               if (previousHoveredConflictEventId !== null) {
@@ -93,6 +109,8 @@ export const CalendarGrid = ({
             hoveredConflictEventId={hoveredConflictEventId}
             setHoveredConflictEventId={setHoveredConflictEventId}
             setHoveredCommissionId={setHoveredCommissionId}
+            setHoveredLinkedTeoricoId={setHoveredLinkedTeoricoId}
+            setHoveredLinkedSeminarioId={setHoveredLinkedSeminarioId}
             setPinnedCommissionId={setPinnedCommissionId}
             setStackIndexBySlot={setStackIndexBySlot}
             onToggleEnrollment={onToggleEnrollment}

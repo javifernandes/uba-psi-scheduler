@@ -45,6 +45,28 @@ const subjectOnlyTeoricoData: SubjectData = {
     '99|martes|18:00|19:30|Comision Superpuesta|I - A|IN-301|',
   ],
 };
+const subjectSharedTeoricoData: SubjectData = {
+  id: 's-shared',
+  label: '(20) Materia Shared - Cátedra 20 (I)',
+  header: 'header',
+  teoricos: ['T1|miercoles|10:00|11:30|Teorico Compartido|IN-701|'],
+  seminarios: [],
+  comisiones: [
+    '31|lunes|07:00|08:30|Comision A|T1|IN-711|',
+    '32|martes|07:00|08:30|Comision B|T1|IN-712|',
+  ],
+};
+const subjectSharedSeminarioData: SubjectData = {
+  id: 's-shared-sem',
+  label: '(21) Materia Shared Sem - Cátedra 21 (I)',
+  header: 'header',
+  teoricos: ['T2|jueves|11:00|12:30|Teorico Asociado|IN-721|'],
+  seminarios: ['S1|jueves|11:00|12:30|Seminario Compartido|IN-722|'],
+  comisiones: [
+    '41|lunes|08:00|09:30|Comision S A|T2 - S1|IN-731|',
+    '42|martes|08:00|09:30|Comision S B|T2 - S1|IN-732|',
+  ],
+};
 
 type HookParams = Parameters<typeof useSchedulerCalendar>[0];
 
@@ -60,6 +82,8 @@ const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
   showSeminarios: false,
   showOtherSubjects: false,
   hoveredCommissionId: null,
+  hoveredLinkedTeoricoId: null,
+  hoveredLinkedSeminarioId: null,
   pinnedCommissionId: null,
   stackIndexBySlot: {},
   ...overrides,
@@ -221,6 +245,8 @@ describe('useSchedulerCalendar', () => {
         showSeminarios: false,
         showOtherSubjects: false,
         hoveredCommissionId: '14',
+        hoveredLinkedTeoricoId: null,
+        hoveredLinkedSeminarioId: null,
         pinnedCommissionId: null,
         stackIndexBySlot: {},
       })
@@ -231,5 +257,56 @@ describe('useSchedulerCalendar', () => {
       stackSize: 2,
       stackIndex: 1,
     });
+  });
+
+  it('en hover de teórico muestra todas las comisiones asociadas aunque comisiones esté apagado', () => {
+    const subject = parseSubject(subjectSharedTeoricoData);
+    const { result } = renderHook(() =>
+      useSchedulerCalendar({
+        selectedSubject: subject,
+        enrolledBySubject: {},
+        selectedComisiones: subject.comisiones,
+        filteredTeoricos: subject.teoricos,
+        filteredSeminarios: subject.seminarios,
+        parsedSubjects: [subject],
+        showComisiones: false,
+        showTeoricos: true,
+        showSeminarios: false,
+        showOtherSubjects: false,
+        hoveredCommissionId: null,
+        hoveredLinkedTeoricoId: 'T1',
+        hoveredLinkedSeminarioId: null,
+        pinnedCommissionId: null,
+        stackIndexBySlot: {},
+      })
+    );
+
+    expect(eventIds(result.current)).toEqual(['teo-T1', 'prac-31', 'prac-32']);
+  });
+
+  it('en hover de seminario muestra solo sus comisiones directas y no teóricos transitivos', () => {
+    const subject = parseSubject(subjectSharedSeminarioData);
+    const { result } = renderHook(() =>
+      useSchedulerCalendar({
+        selectedSubject: subject,
+        enrolledBySubject: {},
+        selectedComisiones: subject.comisiones,
+        filteredTeoricos: subject.teoricos,
+        filteredSeminarios: subject.seminarios,
+        parsedSubjects: [subject],
+        showComisiones: false,
+        showTeoricos: false,
+        showSeminarios: true,
+        showOtherSubjects: false,
+        hoveredCommissionId: null,
+        hoveredLinkedTeoricoId: null,
+        hoveredLinkedSeminarioId: 'S1',
+        pinnedCommissionId: null,
+        stackIndexBySlot: {},
+      })
+    );
+
+    expect(eventIds(result.current)).toEqual(['sem-S1', 'prac-41', 'prac-42']);
+    expect(result.current.events.some(event => event.id === 'teo-T2')).toBe(false);
   });
 });

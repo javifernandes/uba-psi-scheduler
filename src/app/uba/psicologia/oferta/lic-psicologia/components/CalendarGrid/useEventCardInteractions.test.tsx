@@ -67,6 +67,8 @@ describe('useEventCardInteractions', () => {
   it('maneja hover/mouseleave con conflicto y respeta external', () => {
     const setHoveredConflictEventId = vi.fn();
     const setHoveredCommissionId = vi.fn();
+    const setHoveredLinkedTeoricoId = vi.fn();
+    const setHoveredLinkedSeminarioId = vi.fn();
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
@@ -74,6 +76,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: 'prac-21',
         setHoveredConflictEventId,
         setHoveredCommissionId,
+        setHoveredLinkedTeoricoId,
+        setHoveredLinkedSeminarioId,
         setPinnedCommissionId: vi.fn(),
         setStackIndexBySlot: vi.fn(),
         onToggleEnrollment: vi.fn(),
@@ -100,6 +104,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: null,
         setHoveredConflictEventId,
         setHoveredCommissionId,
+        setHoveredLinkedTeoricoId,
+        setHoveredLinkedSeminarioId,
         setPinnedCommissionId: vi.fn(),
         setStackIndexBySlot: vi.fn(),
         onToggleEnrollment: vi.fn(),
@@ -122,6 +128,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: null,
         setHoveredConflictEventId: vi.fn(),
         setHoveredCommissionId: vi.fn(),
+        setHoveredLinkedTeoricoId: vi.fn(),
+        setHoveredLinkedSeminarioId: vi.fn(),
         setPinnedCommissionId,
         setStackIndexBySlot: vi.fn(),
         onToggleEnrollment,
@@ -151,6 +159,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: null,
         setHoveredConflictEventId: vi.fn(),
         setHoveredCommissionId,
+        setHoveredLinkedTeoricoId: vi.fn(),
+        setHoveredLinkedSeminarioId: vi.fn(),
         setPinnedCommissionId: vi.fn(),
         setStackIndexBySlot,
         onToggleEnrollment: vi.fn(),
@@ -181,6 +191,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: 'prac-21',
         setHoveredConflictEventId,
         setHoveredCommissionId,
+        setHoveredLinkedTeoricoId: vi.fn(),
+        setHoveredLinkedSeminarioId: vi.fn(),
         setPinnedCommissionId: vi.fn(),
         setStackIndexBySlot: vi.fn(),
         onToggleEnrollment: vi.fn(),
@@ -205,6 +217,8 @@ describe('useEventCardInteractions', () => {
         hoveredConflictEventId: null,
         setHoveredConflictEventId,
         setHoveredCommissionId,
+        setHoveredLinkedTeoricoId: vi.fn(),
+        setHoveredLinkedSeminarioId: vi.fn(),
         setPinnedCommissionId: vi.fn(),
         setStackIndexBySlot: vi.fn(),
         onToggleEnrollment: vi.fn(),
@@ -218,5 +232,39 @@ describe('useEventCardInteractions', () => {
     expect(setHoveredConflictEventId).not.toHaveBeenCalled();
     expect(setHoveredCommissionId).not.toHaveBeenCalled();
     delete document.body.dataset.schedulerTourStep;
+  });
+
+  it('en hover de teórico activa el vínculo por teórico en vez de una sola comisión', () => {
+    const setHoveredCommissionId = vi.fn();
+    const setHoveredLinkedTeoricoId = vi.fn();
+    const setHoveredLinkedSeminarioId = vi.fn();
+    const { result } = renderHook(() =>
+      useEventCardInteractions({
+        slot: makeSlot({
+          event: {
+            ...makeSlot().event,
+            tipo: 'teo',
+            id: 'teo-T1',
+            linkedCommissionId: undefined,
+            linkedCommissionIds: ['21', '9'],
+            linkedTeoricoId: 'T1',
+          },
+        }),
+        hasConflict: false,
+        hoveredConflictEventId: null,
+        setHoveredConflictEventId: vi.fn(),
+        setHoveredCommissionId,
+        setHoveredLinkedTeoricoId,
+        setHoveredLinkedSeminarioId,
+        setPinnedCommissionId: vi.fn(),
+        setStackIndexBySlot: vi.fn(),
+        onToggleEnrollment: vi.fn(),
+      })
+    );
+
+    result.current.onCardMouseEnter({} as never);
+    expect(setHoveredCommissionId).toHaveBeenCalledWith(null);
+    expect(setHoveredLinkedTeoricoId).toHaveBeenCalledWith('T1');
+    expect(setHoveredLinkedSeminarioId).toHaveBeenCalledWith(null);
   });
 });
