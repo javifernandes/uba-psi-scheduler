@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef } from "react";
 import Shepherd, { type Tour } from "shepherd.js";
-import { usePostHog } from "posthog-js/react";
-import { DisplaySurveyType } from "posthog-js";
-import useApplicationException from "./use-application-exception";
 import useSurvey from "./use-survey";
 import SURVEYS from "@/surveys";
-import { useWaitForAnySelector, useWaitForSelector } from "@/hooks/dom/use-wait-for-selector";
+import {
+  useWaitForAnySelector,
+  useWaitForSelector,
+} from "@/hooks/dom/use-wait-for-selector";
 import { useEventDispatcher } from "@/hooks/dom/use-dispatch-event";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { wait } from "@/utils/promises/wait";
@@ -62,16 +62,19 @@ export const useSchedulerTour = ({
   );
   const storage = useLocalStorage();
 
-  const setBodyTourStep = useCallback((stepId: string | null) => {
-    if (typeof window === "undefined") return;
-    if (stepId) {
-      window.document.body.dataset.schedulerTourStep = stepId;
-      dispatchTourStepChanged({ stepId });
-      return;
-    }
-    delete window.document.body.dataset.schedulerTourStep;
-    dispatchTourStepChanged({ stepId: null });
-  }, [dispatchTourStepChanged]);
+  const setBodyTourStep = useCallback(
+    (stepId: string | null) => {
+      if (typeof window === "undefined") return;
+      if (stepId) {
+        window.document.body.dataset.schedulerTourStep = stepId;
+        dispatchTourStepChanged({ stepId });
+        return;
+      }
+      delete window.document.body.dataset.schedulerTourStep;
+      dispatchTourStepChanged({ stepId: null });
+    },
+    [dispatchTourStepChanged],
+  );
 
   const clearFocusedCard = useCallback(() => {
     if (typeof window === "undefined") return;
@@ -244,7 +247,12 @@ export const useSchedulerTour = ({
     tourStatePreparedRef.current = true;
     setSelectedSubjectId("");
     setEnrolledBySubject({});
-  }, [buildBackupSnapshot, setEnrolledBySubject, setSelectedSubjectId, storage]);
+  }, [
+    buildBackupSnapshot,
+    setEnrolledBySubject,
+    setSelectedSubjectId,
+    storage,
+  ]);
 
   const reinforceSubjectStepOpenState = useCallback(() => {
     setIsMateriaPanelOpen(true);
@@ -292,8 +300,7 @@ export const useSchedulerTour = ({
         window.clearTimeout(autoStartTimeoutRef.current);
         autoStartTimeoutRef.current = null;
       }
-      if (!force && storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1")
-        return;
+      if (!force && storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
 
       destroyTour();
       tourStatePreparedRef.current = false;
@@ -568,17 +575,12 @@ export const useSchedulerTour = ({
       applySpotlightTargetLayering,
       highlightFocusedAndRelatedCards,
       focusCentralCard,
-      buildBackupSnapshot,
       prepareTourStateForRun,
       reinforceSubjectStepOpenState,
       setBodyTourStep,
-      setEnrolledBySubject,
       setIsEleccionesPanelOpen,
-      setIsMateriaDropdownOpen,
-      setIsMateriaPanelOpen,
       setIsMostrarPanelOpen,
       setIsSedesPanelOpen,
-      setSelectedSubjectId,
       restoreFromBackup,
       waitForAnySelector,
       waitForSelector,

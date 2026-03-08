@@ -1,4 +1,11 @@
-import { useEffect, useMemo, useState, type Dispatch, type SetStateAction } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 import type {
   Comision,
   ParsedSubject,
@@ -48,6 +55,13 @@ export const useSchedulerSubjectsData = ({
     new Set<VenueCode>(['IN', 'SI', 'HY'])
   );
   const [selectedCommissionIds, setSelectedCommissionIds] = useState<Set<string>>(new Set());
+  const onSubjectChangedRef = useRef(onSubjectChanged);
+  const allVenuesRef = useRef<VenueCode[]>([]);
+  const comisionesRef = useRef<Comision[]>([]);
+
+  useEffect(() => {
+    onSubjectChangedRef.current = onSubjectChanged;
+  }, [onSubjectChanged]);
 
   const parsedSubjects = useMemo(() => subjects.map(parseSubject), [subjects]);
   const selectedSubject = useMemo(
@@ -55,9 +69,9 @@ export const useSchedulerSubjectsData = ({
     [selectedSubjectId, parsedSubjects]
   );
 
-  const teoricos = selectedSubject?.teoricos || [];
-  const seminarios = selectedSubject?.seminarios || [];
-  const comisiones = selectedSubject?.comisiones || [];
+  const teoricos = useMemo(() => selectedSubject?.teoricos || [], [selectedSubject]);
+  const seminarios = useMemo(() => selectedSubject?.seminarios || [], [selectedSubject]);
+  const comisiones = useMemo(() => selectedSubject?.comisiones || [], [selectedSubject]);
 
   const allVenues = useMemo(() => {
     const found = new Set<VenueCode>();
@@ -85,15 +99,20 @@ export const useSchedulerSubjectsData = ({
   }, [comisiones, enrolledBySubject, parsedSubjects, selectedSubjectId, seminarios, teoricos]);
 
   useEffect(() => {
+    allVenuesRef.current = allVenues;
+    comisionesRef.current = comisiones;
+  }, [allVenues, comisiones]);
+
+  useEffect(() => {
     setSelectedVenues(prev => {
-      const next = new Set(allVenues);
+      const next = new Set(allVenuesRef.current);
       return sameSetValues(prev, next) ? prev : next;
     });
     setSelectedCommissionIds(prev => {
-      const next = new Set(comisiones.map(c => c.id));
+      const next = new Set(comisionesRef.current.map(c => c.id));
       return sameSetValues(prev, next) ? prev : next;
     });
-    onSubjectChanged();
+    onSubjectChangedRef.current();
   }, [selectedSubjectId]);
 
   const filteredComisiones = useMemo(

@@ -15,7 +15,7 @@ const useSurvey = () => {
       posthog.onSurveysLoaded((surveys, context) => {
         if (context?.error) {
           logger.error({
-            error_type: "posthog_surveys_loaded_error",
+            error_type: "survey_load_error",
             context: { error: context.error },
           });
           return;

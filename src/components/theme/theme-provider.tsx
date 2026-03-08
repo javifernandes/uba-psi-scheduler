@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useLocalStorage } from '@/hooks/use-local-storage';
 
 type Theme = 'light' | 'dark';
 
@@ -13,10 +14,11 @@ const STORAGE_KEY = 'uba-psi-scheduler-theme';
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const storage = useLocalStorage();
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
+    const stored = storage.getItem(STORAGE_KEY);
     if (stored === 'light' || stored === 'dark') {
       setTheme(stored);
       return;
@@ -24,7 +26,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
     }
-  }, []);
+  }, [storage]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -33,8 +35,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     } else {
       root.classList.remove('dark');
     }
-    window.localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+    storage.setItem(STORAGE_KEY, theme);
+  }, [storage, theme]);
 
   return (
     <ThemeContext.Provider

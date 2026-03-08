@@ -3,6 +3,7 @@
 import { MonitorSmartphone, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useLocalStorage } from '@/hooks/use-local-storage';
 
 const MOBILE_WARNING_DISMISSED_KEY = 'uba_psi_mobile_warning_dismissed_v1';
 
@@ -11,6 +12,7 @@ type MobileDesktopWarningProps = {
 };
 
 export const MobileDesktopWarning = ({ className }: MobileDesktopWarningProps) => {
+  const storage = useLocalStorage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export const MobileDesktopWarning = ({ className }: MobileDesktopWarningProps) =
 
     const mediaQuery = window.matchMedia('(max-width: 1023px)');
     const updateVisibility = () => {
-      const dismissed = window.localStorage.getItem(MOBILE_WARNING_DISMISSED_KEY) === '1';
+      const dismissed = storage.getItem(MOBILE_WARNING_DISMISSED_KEY) === '1';
       setIsVisible(mediaQuery.matches && !dismissed);
     };
 
@@ -28,7 +30,7 @@ export const MobileDesktopWarning = ({ className }: MobileDesktopWarningProps) =
     return () => {
       mediaQuery.removeEventListener('change', updateVisibility);
     };
-  }, []);
+  }, [storage]);
 
   if (!isVisible) return null;
 
@@ -50,7 +52,7 @@ export const MobileDesktopWarning = ({ className }: MobileDesktopWarningProps) =
         <button
           type="button"
           onClick={() => {
-            window.localStorage.setItem(MOBILE_WARNING_DISMISSED_KEY, '1');
+            storage.setItem(MOBILE_WARNING_DISMISSED_KEY, '1');
             setIsVisible(false);
           }}
           className="rounded-md p-1 text-amber-900/80 transition hover:bg-amber-100 dark:text-amber-100/80 dark:hover:bg-amber-900/50"
