@@ -5,6 +5,10 @@ import { DisplaySurveyType } from "posthog-js";
 import useApplicationException from "./use-application-exception";
 import useSurvey from "./use-survey";
 import SURVEYS from "@/surveys";
+import { useWaitForAnySelector, useWaitForSelector } from "@/hooks/dom/use-wait-for-selector";
+import { useEventDispatcher } from "@/hooks/dom/use-dispatch-event";
+import { useLocalStorage } from "@/hooks/use-local-storage";
+import { wait } from "@/utils/promises/wait";
 
 const TOUR_SEEN_STORAGE_KEY = "uba_psico_scheduler_tour_seen_v1";
 const TOUR_ACTIVE_STORAGE_KEY = "uba_psico_scheduler_tour_active_v1";
@@ -51,70 +55,23 @@ export const useSchedulerTour = ({
   const tourRef = useRef<Tour | null>(null);
   const tourStatePreparedRef = useRef(false);
   const autoStartTimeoutRef = useRef<number | null>(null);
+  const waitForSelector = useWaitForSelector();
+  const waitForAnySelector = useWaitForAnySelector();
+  const dispatchTourStepChanged = useEventDispatcher<{ stepId: string | null }>(
+    "scheduler-tour-step-change",
+  );
+  const storage = useLocalStorage();
 
   const setBodyTourStep = useCallback((stepId: string | null) => {
     if (typeof window === "undefined") return;
     if (stepId) {
       window.document.body.dataset.schedulerTourStep = stepId;
-      window.dispatchEvent(
-        new CustomEvent("scheduler-tour-step-change", {
-          detail: { stepId },
-        }),
-      );
+      dispatchTourStepChanged({ stepId });
       return;
     }
     delete window.document.body.dataset.schedulerTourStep;
-    window.dispatchEvent(
-      new CustomEvent("scheduler-tour-step-change", {
-        detail: { stepId: null },
-      }),
-    );
-  }, []);
-
-  const waitForSelector = useCallback((selector: string, timeoutMs = 4500) => {
-    if (typeof window === "undefined") return Promise.resolve();
-    return new Promise<void>((resolve) => {
-      if (window.document.querySelector(selector)) {
-        resolve();
-        return;
-      }
-      const startedAt = Date.now();
-      const intervalId = window.setInterval(() => {
-        const hasTarget = Boolean(window.document.querySelector(selector));
-        const didTimeout = Date.now() - startedAt >= timeoutMs;
-        if (hasTarget || didTimeout) {
-          window.clearInterval(intervalId);
-          resolve();
-        }
-      }, 80);
-    });
-  }, []);
-
-  const waitForAnySelector = useCallback(
-    (selectors: string[], timeoutMs = 7000) => {
-      if (typeof window === "undefined") return Promise.resolve();
-      return new Promise<void>((resolve) => {
-        if (
-          selectors.some((selector) => window.document.querySelector(selector))
-        ) {
-          resolve();
-          return;
-        }
-        const startedAt = Date.now();
-        const intervalId = window.setInterval(() => {
-          const hasTarget = selectors.some((selector) =>
-            window.document.querySelector(selector),
-          );
-          const didTimeout = Date.now() - startedAt >= timeoutMs;
-          if (hasTarget || didTimeout) {
-            window.clearInterval(intervalId);
-            resolve();
-          }
-        }, 80);
-      });
-    },
-    [],
-  );
+    dispatchTourStepChanged({ stepId: null });
+  }, [dispatchTourStepChanged]);
 
   const clearFocusedCard = useCallback(() => {
     if (typeof window === "undefined") return;
@@ -249,9 +206,8 @@ export const useSchedulerTour = ({
   }, [clearUnblurCards]);
 
   const markTourAsSeen = useCallback(() => {
-    if (typeof window === "undefined") return;
-    window.localStorage.setItem(TOUR_SEEN_STORAGE_KEY, "1");
-  }, []);
+    storage.setItem(TOUR_SEEN_STORAGE_KEY, "1");
+  }, [storage]);
 
   const buildBackupSnapshot = useCallback(
     () =>
@@ -263,8 +219,7 @@ export const useSchedulerTour = ({
   );
 
   const restoreFromBackup = useCallback(() => {
-    if (typeof window === "undefined") return;
-    const raw = window.localStorage.getItem(TOUR_BACKUP_STORAGE_KEY);
+    const raw = storage.getItem(TOUR_BACKUP_STORAGE_KEY);
     if (!raw) return;
     try {
       const parsed = JSON.parse(raw) as {
@@ -276,21 +231,20 @@ export const useSchedulerTour = ({
     } catch {
       // no-op
     } finally {
-      window.localStorage.removeItem(TOUR_BACKUP_STORAGE_KEY);
-      window.localStorage.removeItem(TOUR_ACTIVE_STORAGE_KEY);
+      storage.removeItem(TOUR_BACKUP_STORAGE_KEY);
+      storage.removeItem(TOUR_ACTIVE_STORAGE_KEY);
       tourStatePreparedRef.current = false;
     }
-  }, [setEnrolledBySubject, setSelectedSubjectId]);
+  }, [setEnrolledBySubject, setSelectedSubjectId, storage]);
 
   const prepareTourStateForRun = useCallback(() => {
-    if (typeof window === "undefined") return;
     if (tourStatePreparedRef.current) return;
-    window.localStorage.setItem(TOUR_BACKUP_STORAGE_KEY, buildBackupSnapshot());
-    window.localStorage.setItem(TOUR_ACTIVE_STORAGE_KEY, "1");
+    storage.setItem(TOUR_BACKUP_STORAGE_KEY, buildBackupSnapshot());
+    storage.setItem(TOUR_ACTIVE_STORAGE_KEY, "1");
     tourStatePreparedRef.current = true;
     setSelectedSubjectId("");
     setEnrolledBySubject({});
-  }, [buildBackupSnapshot, setEnrolledBySubject, setSelectedSubjectId]);
+  }, [buildBackupSnapshot, setEnrolledBySubject, setSelectedSubjectId, storage]);
 
   const reinforceSubjectStepOpenState = useCallback(() => {
     setIsMateriaPanelOpen(true);
@@ -338,7 +292,7 @@ export const useSchedulerTour = ({
         window.clearTimeout(autoStartTimeoutRef.current);
         autoStartTimeoutRef.current = null;
       }
-      if (!force && window.localStorage.getItem(TOUR_SEEN_STORAGE_KEY) === "1")
+      if (!force && storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1")
         return;
 
       destroyTour();
@@ -373,7 +327,7 @@ export const useSchedulerTour = ({
         clearSpotlightTargetLayering();
         restoreFromBackup();
 
-        onTourClosed({ status: "complete" });
+        onTourClosed();
       });
       tour.on("cancel", markTourAsSeen);
       tour.on("cancel", () => {
@@ -384,7 +338,7 @@ export const useSchedulerTour = ({
         restoreFromBackup();
 
         // survey
-        onTourClosed({ status: "cancel" });
+        onTourClosed();
       });
       tour.on("show", () => {
         const currentStep = tour.getCurrentStep() as { id?: string } | null;
@@ -429,7 +383,7 @@ export const useSchedulerTour = ({
           beforeShowPromise: async () => {
             setBodyTourStep("select-subject");
             reinforceSubjectStepOpenState();
-            await new Promise((resolve) => window.setTimeout(resolve, 120));
+            await wait(120);
           },
           when: {
             show: () => reinforceSubjectStepOpenState(),
@@ -456,10 +410,9 @@ export const useSchedulerTour = ({
           text: "Aca veras la oferta de comisiones y horarios de la catedra seleccionada. Ademas, si tienes alguna materia ya guardada tambien se vera para poder identificar conflictos.",
           attachTo: { element: '[data-tour="calendar-grid"]', on: "top" },
           beforeShowPromise: async () => {
-            await waitForAnySelector([
-              getCommissionCardSelector,
-              getInternalEventSelector,
-            ]);
+            await waitForAnySelector({
+              selectors: [getCommissionCardSelector, getInternalEventSelector],
+            });
             focusCentralCard();
             highlightFocusedAndRelatedCards();
           },
@@ -470,10 +423,9 @@ export const useSchedulerTour = ({
           text: 'Acerca el mouse sobre una oferta de comision para ver detalles y bloques asociados. Cuando lo hayas visto, usa "Siguiente".',
           attachTo: { element: getFocusedCardSelector, on: "right" },
           beforeShowPromise: async () => {
-            await waitForAnySelector([
-              getCommissionCardSelector,
-              getInternalEventSelector,
-            ]);
+            await waitForAnySelector({
+              selectors: [getCommissionCardSelector, getInternalEventSelector],
+            });
             focusCentralCard();
           },
           showOn: () =>
@@ -496,15 +448,17 @@ export const useSchedulerTour = ({
           text: "Dentro de esta tarjeta, usa la estrella (abajo) para elegir esta comision y guardarla.",
           attachTo: { element: getFocusedCardSelector, on: "top" },
           beforeShowPromise: async () => {
-            await waitForAnySelector([
-              getCommissionCardSelector,
-              getInternalEventSelector,
-            ]);
+            await waitForAnySelector({
+              selectors: [getCommissionCardSelector, getInternalEventSelector],
+            });
             if (!window.document.querySelector(getFocusedCardSelector)) {
               focusCentralCard();
             }
             highlightFocusedAndRelatedCards();
-            await waitForSelector(getFocusedSaveButtonSelector, 1800);
+            await waitForSelector({
+              selector: getFocusedSaveButtonSelector,
+              timeoutMs: 1800,
+            });
           },
           showOn: () =>
             Boolean(window.document.querySelector(getFocusedCardSelector)),
@@ -628,6 +582,7 @@ export const useSchedulerTour = ({
       restoreFromBackup,
       waitForAnySelector,
       waitForSelector,
+      storage,
       onTourClosed,
     ],
   );
@@ -642,13 +597,13 @@ export const useSchedulerTour = ({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.localStorage.getItem(TOUR_ACTIVE_STORAGE_KEY) !== "1") return;
+    if (storage.getItem(TOUR_ACTIVE_STORAGE_KEY) !== "1") return;
     restoreFromBackup();
-  }, [restoreFromBackup]);
+  }, [restoreFromBackup, storage]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.localStorage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
+    if (storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
     autoStartTimeoutRef.current = window.setTimeout(() => {
       autoStartTimeoutRef.current = null;
       if (tourRef.current) return;
@@ -660,7 +615,7 @@ export const useSchedulerTour = ({
         autoStartTimeoutRef.current = null;
       }
     };
-  }, [startTour]);
+  }, [startTour, storage]);
 
   useEffect(() => {
     const tour = tourRef.current;
