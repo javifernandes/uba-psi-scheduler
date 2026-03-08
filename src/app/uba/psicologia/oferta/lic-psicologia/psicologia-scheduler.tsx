@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { CircleHelp } from 'lucide-react';
 import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
+import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
 import { captureEvent } from '@/lib/posthog';
 import { cn } from '@/lib/utils';
 import {
@@ -338,6 +339,7 @@ const PsicologiaSchedulerContent = ({
             </button>
           </div>
         </div>
+        <MobileDesktopWarning />
 
         <div className="grid min-h-0 flex-1 gap-3 xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-2">
           <div className="min-h-0 xl:pr-1">
