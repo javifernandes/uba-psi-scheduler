@@ -7,12 +7,14 @@ import {
   type SetStateAction,
 } from "react";
 import type { SubjectData } from "../scheduler.types";
+import { ENROLLMENTS_STORAGE_KEY, sameRecord } from "../scheduler.utils";
 import {
-  ENROLLMENTS_STORAGE_KEY,
-  materiaCodeFromLabel,
-  sameRecord,
-} from "../scheduler.utils";
-import { useLocalStorage } from "@/hooks/use-local-storage";
+  applyEnrollmentRule as applyEnrollmentRuleDomain,
+  normalizeEnrollmentMap,
+} from "@/domain/enrollment";
+import { indexMaterias } from "@/domain/materia";
+import { useQueryParamState } from "@/hooks/browser/use-query-param-state";
+import { useLocalPersistence } from "@/hooks/use-local-persistence";
 
 type UseSchedulerPersistenceParams = {
   subjects: SubjectData[];
@@ -36,11 +38,11 @@ export const useSchedulerPersistence = ({
   subjects,
   storageKey,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
-  const storage = useLocalStorage();
+  const localPersistence = useLocalPersistence();
   const persistenceKey = storageKey || ENROLLMENTS_STORAGE_KEY;
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => {
-    if (!subjects.length) return "";
     if (typeof window === "undefined") return "";
+    if (!subjects.length) return "";
     const subjectIdFromUrl = new URLSearchParams(window.location.search).get(
       "m",
     );
@@ -63,34 +65,8 @@ export const useSchedulerPersistence = ({
     [subjects],
   );
   const materiaCodeBySubjectId = useMemo(
-    () =>
-      Object.fromEntries(
-        subjects.map((subject) => [
-          subject.id,
-          materiaCodeFromLabel(subject.label),
-        ]),
-      ) as Record<string, string>,
+    () => indexMaterias(subjects),
     [subjects],
-  );
-
-  const normalizeEnrollmentMap = useCallback(
-    (raw: Record<string, string>) => {
-      const normalized: Record<string, string> = {};
-      const byMateria: Record<string, string> = {};
-      Object.entries(raw).forEach(([subjectId, commissionId]) => {
-        const materiaCode = materiaCodeBySubjectId[subjectId];
-        if (!materiaCode) return;
-        byMateria[materiaCode] = subjectId;
-        normalized[subjectId] = commissionId;
-      });
-      Object.keys(normalized).forEach((subjectId) => {
-        const materiaCode = materiaCodeBySubjectId[subjectId];
-        if (!materiaCode) return;
-        if (byMateria[materiaCode] !== subjectId) delete normalized[subjectId];
-      });
-      return normalized;
-    },
-    [materiaCodeBySubjectId],
   );
 
   const applyEnrollmentRule = useCallback(
@@ -98,97 +74,57 @@ export const useSchedulerPersistence = ({
       prev: Record<string, string>,
       targetSubjectId: string,
       commissionId: string | undefined,
-    ) => {
-      const next = { ...prev };
-      if (!commissionId) {
-        delete next[targetSubjectId];
-        return next;
-      }
-      const targetMateriaCode = materiaCodeBySubjectId[targetSubjectId];
-      Object.keys(next).forEach((subjectId) => {
-        if (materiaCodeBySubjectId[subjectId] === targetMateriaCode)
-          delete next[subjectId];
-      });
-      next[targetSubjectId] = commissionId;
-      return next;
-    },
+    ) =>
+      applyEnrollmentRuleDomain(
+        prev,
+        targetSubjectId,
+        commissionId,
+        materiaCodeBySubjectId,
+      ),
     [materiaCodeBySubjectId],
   );
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const onPopState = () => {
-      const subjectIdFromUrl = new URLSearchParams(window.location.search).get(
-        "m",
-      );
-      if (!subjectIdFromUrl || !subjectIdSet.has(subjectIdFromUrl)) {
-        setSelectedSubjectId((prev) => (prev === "" ? prev : ""));
-        return;
-      }
-      setSelectedSubjectId((prev) =>
-        prev === subjectIdFromUrl ? prev : subjectIdFromUrl,
-      );
-    };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, [subjectIdSet]);
+  const parseSubjectIdFromQuery = useCallback(
+    (rawValue: string | null) =>
+      rawValue && subjectIdSet.has(rawValue) ? rawValue : "",
+    [subjectIdSet],
+  );
+
+  useQueryParamState({
+    key: "m",
+    value: selectedSubjectId,
+    setValue: setSelectedSubjectId,
+    parseFromQuery: parseSubjectIdFromQuery,
+    serializeToQuery: (value) => (value ? value : null),
+  });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const currentUrl = new URL(window.location.href);
-    if (!selectedSubjectId) {
-      if (!currentUrl.searchParams.has("m")) return;
-      currentUrl.searchParams.delete("m");
-      window.history.replaceState(
-        window.history.state,
-        "",
-        currentUrl.toString(),
-      );
-      return;
-    }
-    const currentSubjectIdInUrl = currentUrl.searchParams.get("m");
-    if (currentSubjectIdInUrl === selectedSubjectId) return;
-    currentUrl.searchParams.set("m", selectedSubjectId);
-    window.history.replaceState(
-      window.history.state,
-      "",
-      currentUrl.toString(),
-    );
-  }, [selectedSubjectId]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
     if (enrollmentsHydrated) return;
     if (!subjects.length) return;
-    try {
-      const raw = storage.getItem(persistenceKey);
-      if (!raw) return;
-      const parsed = JSON.parse(raw) as Record<string, string>;
-      if (parsed && typeof parsed === "object") {
-        const normalized = normalizeEnrollmentMap(parsed);
-        setEnrolledBySubject((prev) =>
-          sameRecord(prev, normalized) ? prev : normalized,
-        );
-      }
-    } catch {
-      // no-op
-    } finally {
-      setEnrollmentsHydrated(true);
-      setEnrollmentsLoaded(true);
-    }
+    const normalized = localPersistence.readJSON<
+      Record<string, string>,
+      Record<string, string>
+    >(persistenceKey, {
+      defaultValue: {},
+      normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),
+    });
+    setEnrolledBySubject((prev) =>
+      sameRecord(prev, normalized) ? prev : normalized,
+    );
+    setEnrollmentsHydrated(true);
+    setEnrollmentsLoaded(true);
   }, [
     subjects,
     enrollmentsHydrated,
-    normalizeEnrollmentMap,
+    localPersistence,
+    materiaCodeBySubjectId,
     persistenceKey,
-    storage,
   ]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     if (!enrollmentsLoaded) return;
-    storage.setItem(persistenceKey, JSON.stringify(enrolledBySubject));
-  }, [enrolledBySubject, enrollmentsLoaded, persistenceKey, storage]);
+    localPersistence.writeJSON(persistenceKey, enrolledBySubject);
+  }, [enrolledBySubject, enrollmentsLoaded, localPersistence, persistenceKey]);
 
   return {
     selectedSubjectId,
