@@ -1,36 +1,30 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Link from 'next/link';
-import { CircleHelp } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useState, type ComponentProps } from 'react';
 import type { ParsedSubject, SubjectData } from './scheduler.types';
 import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
-import { captureEvent } from '@/lib/posthog';
-import { cn } from '@/lib/utils';
 import {
   CalendarGrid,
   SavedElectionsPanel,
+  SchedulerCalendarSection,
+  SchedulerHeader,
   SchedulerFiltersPanel,
-  WarningBanner,
+  SchedulerRightPanel,
 } from './components';
 import {
   useSchedulerCalendar,
+  useSchedulerCallbacks,
   useSchedulerConflicts,
   useSchedulerFiltersActions,
   useSchedulerPersistence,
   useSchedulerSubjectsData,
+  useSchedulerTelemetryEffects,
   useSchedulerTour,
   useSubjectDropdown,
 } from './hooks';
 import {
-  buildEnrollmentsExportPayload,
-  catedraNumberFromLabel,
   displayHeaderLabel,
   displaySubjectLabel,
-  type EnrollmentProjectionMappedEntry,
-  type EnrollmentProjectionRejectedEntry,
-  mapProjectionEnrollmentsToSubjectMap,
-  parseEnrollmentsImportPayload,
 } from './scheduler.utils';
 export type { SubjectData } from './scheduler.types';
 
@@ -39,14 +33,6 @@ type SchedulerProps = {
   careerLabel?: string;
   careerSlug?: string;
   storageKey?: string;
-};
-
-type ImportPreviewData = {
-  period: string;
-  totalEntries: number;
-  mapped: EnrollmentProjectionMappedEntry[];
-  rejected: EnrollmentProjectionRejectedEntry[];
-  mappedBySubject: Record<string, string>;
 };
 
 const EmptySubjectsState = () => (
@@ -74,7 +60,6 @@ const SchedulerContent = ({
   careerSlug = 'lic-psicologia',
   storageKey,
 }: SchedulerProps) => {
-  const isFirstSubjectRender = useRef(true);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
   const [showSeminarios, setShowSeminarios] = useState(false);
@@ -93,8 +78,6 @@ const SchedulerContent = ({
   const [pinnedCommissionId, setPinnedCommissionId] = useState<string | null>(null);
   const [stackIndexBySlot, setStackIndexBySlot] = useState<Record<string, number>>({});
   const [dismissConflictWarning, setDismissConflictWarning] = useState(false);
-  const previousCommissionDropdownOpenRef = useRef(isCommissionDropdownOpen);
-  const commissionQueryTelemetryTimeoutRef = useRef<number | null>(null);
 
   const {
     selectedSubjectId,
@@ -173,60 +156,13 @@ const SchedulerContent = ({
     if (!showOtherSubjects) setShowOtherSubjects(true);
   }, [selectedSubject, showOtherSubjects]);
 
-  useEffect(() => {
-    if (!selectedSubject) return;
-    if (isFirstSubjectRender.current) {
-      isFirstSubjectRender.current = false;
-      return;
-    }
-    captureEvent('scheduler_subject_changed', {
-      subject_id: selectedSubject.id,
-      subject_label: selectedSubject.label,
-    });
-  }, [selectedSubject]);
-
-  useEffect(() => {
-    const wasOpen = previousCommissionDropdownOpenRef.current;
-    if (!wasOpen && isCommissionDropdownOpen) {
-      captureEvent('scheduler_commission_dropdown_opened', {
-        career_slug: careerSlug,
-        selected_subject_id: selectedSubject?.id || '',
-        visible_count: searchedComisiones.length,
-      });
-    }
-    if (wasOpen && !isCommissionDropdownOpen) {
-      captureEvent('scheduler_commission_dropdown_closed', {
-        career_slug: careerSlug,
-        had_query: commissionQuery.trim().length > 0,
-        query_length: commissionQuery.trim().length,
-      });
-    }
-    previousCommissionDropdownOpenRef.current = isCommissionDropdownOpen;
-  }, [careerSlug, commissionQuery, isCommissionDropdownOpen, searchedComisiones.length, selectedSubject?.id]);
-
-  useEffect(() => {
-    if (commissionQueryTelemetryTimeoutRef.current) {
-      window.clearTimeout(commissionQueryTelemetryTimeoutRef.current);
-      commissionQueryTelemetryTimeoutRef.current = null;
-    }
-    const query = commissionQuery.trim();
-    if (query.length < 2) return;
-    commissionQueryTelemetryTimeoutRef.current = window.setTimeout(() => {
-      captureEvent('scheduler_commission_query_changed', {
-        career_slug: careerSlug,
-        selected_subject_id: selectedSubject?.id || '',
-        query_length: query.length,
-        result_count: searchedComisiones.length,
-      });
-      commissionQueryTelemetryTimeoutRef.current = null;
-    }, 400);
-    return () => {
-      if (commissionQueryTelemetryTimeoutRef.current) {
-        window.clearTimeout(commissionQueryTelemetryTimeoutRef.current);
-        commissionQueryTelemetryTimeoutRef.current = null;
-      }
-    };
-  }, [careerSlug, commissionQuery, searchedComisiones.length, selectedSubject?.id]);
+  useSchedulerTelemetryEffects({
+    careerSlug,
+    selectedSubject,
+    isCommissionDropdownOpen,
+    commissionQuery,
+    searchedComisionesLength: searchedComisiones.length,
+  });
   const {
     isMateriaDropdownOpen,
     setIsMateriaDropdownOpen,
@@ -309,6 +245,133 @@ const SchedulerContent = ({
     setPinnedCommissionId,
     setHoveredCommissionId,
   });
+  const {
+    onToggleEnrollment,
+    onClearSelectedSubject,
+    onToggleVenue,
+    onSetOnlyVenue,
+    onSetOnlyContent,
+    onSelectAllVisible,
+    onClearVisible,
+    onToggleCommission,
+    onRemoveSavedSubject,
+    onRemoveAllSavedSubjects,
+    onExportSelections,
+    onImportSelections,
+    onApplyImportSelections,
+  } = useSchedulerCallbacks({
+    selectedSubject,
+    careerSlug,
+    selectedVenues,
+    searchedComisiones,
+    selectedCommissionIds,
+    subjects,
+    enrolledBySubject,
+    applyEnrollmentRule,
+    setSelectedSubjectId,
+    setEnrolledBySubject,
+    toggleVenue,
+    setOnlyVenue,
+    setOnlyContent,
+    selectAllVisible,
+    clearVisible,
+    toggleCommission,
+  });
+  const schedulerTitle = selectedSubject ? displayHeaderLabel(selectedSubject.header) : careerLabel;
+
+  const filtersPanelProps: ComponentProps<typeof SchedulerFiltersPanel> = {
+    selectedSubjectLabel: selectedSubject
+      ? displaySubjectLabel(selectedSubject.label)
+      : 'Buscar / Seleccionar Materia',
+    selectedSubjectId: selectedSubject?.id || '',
+    isMateriaPanelOpen,
+    setIsMateriaPanelOpen,
+    isMateriaDropdownOpen,
+    setIsMateriaDropdownOpen,
+    materiaDropdownRef,
+    materiaInputRef,
+    materiaInputValue,
+    onMateriaInputChange,
+    onMateriaInputKeyDown,
+    onClearSelectedSubject,
+    groupedSubjectOptions,
+    flatSelectableSubjectsLength: flatSelectableSubjects.length,
+    highlightedSubjectIndex,
+    setHighlightedSubjectIndex,
+    selectSubject,
+    focusOptionByIndex,
+    optionRefs,
+    isSedesPanelOpen,
+    setIsSedesPanelOpen,
+    allVenues,
+    selectedVenues,
+    toggleVenue: onToggleVenue,
+    setOnlyVenue: onSetOnlyVenue,
+    isMostrarPanelOpen,
+    setIsMostrarPanelOpen,
+    showComisiones,
+    setShowComisiones,
+    hasTeoricos,
+    showTeoricos,
+    setShowTeoricos,
+    hasSeminarios,
+    showSeminarios,
+    setShowSeminarios,
+    showOtherSubjects,
+    setShowOtherSubjects,
+    setOnlyContent: onSetOnlyContent,
+    isComisionesPanelOpen,
+    setIsComisionesPanelOpen,
+    selectedComisionesLength: selectedComisiones.length,
+    filteredComisionesLength: filteredComisiones.length,
+    isCommissionDropdownOpen,
+    setIsCommissionDropdownOpen,
+    selectAllVisible: onSelectAllVisible,
+    clearVisible: onClearVisible,
+    commissionQuery,
+    setCommissionQuery,
+    searchedComisiones,
+    selectedCommissionIds,
+    toggleCommission: onToggleCommission,
+  };
+
+  const savedElectionsPanelProps: ComponentProps<typeof SavedElectionsPanel> = {
+    isOpen: isEleccionesPanelOpen,
+    savedSubjectsCount: savedSubjects.length,
+    savedElectionDetails,
+    savedConflictDetailsBySlot,
+    alwaysConflictingSavedSlotIds,
+    highlightedConflictSlotIds,
+    onOpenPanel: () => {
+      if (!isEleccionesPanelOpen) setIsEleccionesPanelOpen(true);
+    },
+    onToggleOpen: () => setIsEleccionesPanelOpen(v => !v),
+    onRemoveSubject: onRemoveSavedSubject,
+    onRemoveAllSubjects: onRemoveAllSavedSubjects,
+    onExportSelections: onExportSelections,
+    onImportSelections: onImportSelections,
+    onApplyImportSelections: onApplyImportSelections,
+  };
+  const calendarGridProps: ComponentProps<typeof CalendarGrid> = {
+    visibleEventSlots,
+    activeCommission,
+    selectedSubjectId: selectedSubject?.id || '',
+    enrolledBySubject,
+    enrolledCurrentCommissionId,
+    conflictByEventId,
+    hoveredConflictEventId,
+    setHoveredConflictEventId,
+    hoveredCommissionId,
+    setHoveredCommissionId,
+    hoveredLinkedTeoricoId,
+    setHoveredLinkedTeoricoId,
+    hoveredLinkedSeminarioId,
+    setHoveredLinkedSeminarioId,
+    pinnedCommissionId,
+    setPinnedCommissionId,
+    setStackIndexBySlot,
+    onToggleEnrollment,
+  };
 
   return (
     <div
@@ -317,289 +380,22 @@ const SchedulerContent = ({
       data-testid="scheduler-root"
     >
       <section className="mx-auto flex h-full w-full max-w-[1800px] min-h-0 flex-col gap-2">
-        <div className="rounded-2xl bg-[#861f5c] px-4 py-2 shadow-sm">
-          <div className="flex items-center justify-between gap-2">
-            <h1 className="flex items-center gap-3 text-lg tracking-tight text-white md:text-xl">
-              <Link
-                href="/"
-                className="rounded-md border border-white/25 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white hover:bg-white/15"
-              >
-                ← Volver
-              </Link>
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 text-base font-black">
-                Ψ
-              </span>
-              <span className="font-bold">
-                {selectedSubject ? displayHeaderLabel(selectedSubject.header) : careerLabel}
-              </span>
-            </h1>
-            <button
-              type="button"
-              onClick={() => startTour(true)}
-              className="inline-flex items-center gap-1 rounded-md border border-white/25 bg-white/10 px-2 py-1 text-[11px] font-semibold text-white hover:bg-white/15"
-              aria-label="Mostrar tour guiado"
-              data-tour="tour-help-button"
-            >
-              <CircleHelp size={13} />
-              Tour
-            </button>
-          </div>
-        </div>
+        <SchedulerHeader title={schedulerTitle} onStartTour={() => startTour(true)} />
         <MobileDesktopWarning />
 
         <div className="grid min-h-0 flex-1 gap-3 xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-2">
-          <div className="min-h-0 xl:pr-1">
-            <div
-              className="relative h-full overflow-auto rounded-xl border border-[#e8d8e1] bg-white/90 dark:border-zinc-700 dark:bg-zinc-900/80"
-              data-tour="calendar-grid"
-            >
-              {conflictingSubject && !dismissConflictWarning ? (
-                <WarningBanner
-                  catedraLabel={conflictingCatedraLabel}
-                  onDismiss={() => setDismissConflictWarning(true)}
-                />
-              ) : null}
-              <CalendarGrid
-                visibleEventSlots={visibleEventSlots}
-                activeCommission={activeCommission}
-                selectedSubjectId={selectedSubject?.id || ''}
-                enrolledBySubject={enrolledBySubject}
-                enrolledCurrentCommissionId={enrolledCurrentCommissionId}
-                conflictByEventId={conflictByEventId}
-                hoveredConflictEventId={hoveredConflictEventId}
-                setHoveredConflictEventId={setHoveredConflictEventId}
-                hoveredCommissionId={hoveredCommissionId}
-                setHoveredCommissionId={setHoveredCommissionId}
-                hoveredLinkedTeoricoId={hoveredLinkedTeoricoId}
-                setHoveredLinkedTeoricoId={setHoveredLinkedTeoricoId}
-                hoveredLinkedSeminarioId={hoveredLinkedSeminarioId}
-                setHoveredLinkedSeminarioId={setHoveredLinkedSeminarioId}
-                pinnedCommissionId={pinnedCommissionId}
-                setPinnedCommissionId={setPinnedCommissionId}
-                setStackIndexBySlot={setStackIndexBySlot}
-                onToggleEnrollment={commissionId =>
-                  setEnrolledBySubject(prev => {
-                    if (!selectedSubject) return prev;
-                    const isRemoving = prev[selectedSubject.id] === commissionId;
-                    captureEvent('scheduler_enrollment_toggled', {
-                      subject_id: selectedSubject.id,
-                      commission_id: commissionId,
-                      action: isRemoving ? 'remove' : 'set',
-                    });
-                    if (prev[selectedSubject.id] === commissionId) {
-                      return applyEnrollmentRule(prev, selectedSubject.id, undefined);
-                    }
-                    return applyEnrollmentRule(prev, selectedSubject.id, commissionId);
-                  })
-                }
-              />
-            </div>
-          </div>
+          <SchedulerCalendarSection
+            showConflictWarning={Boolean(conflictingSubject && !dismissConflictWarning)}
+            conflictCatedraLabel={conflictingCatedraLabel}
+            onDismissConflictWarning={() => setDismissConflictWarning(true)}
+            calendarGridProps={calendarGridProps}
+          />
 
-          <aside className="grid min-h-0 gap-2 md:grid-cols-2 xl:flex xl:h-full xl:flex-col">
-            <SchedulerFiltersPanel
-              selectedSubjectLabel={
-                selectedSubject
-                  ? displaySubjectLabel(selectedSubject.label)
-                  : 'Buscar / Seleccionar Materia'
-              }
-              selectedSubjectId={selectedSubject?.id || ''}
-              isMateriaPanelOpen={isMateriaPanelOpen}
-              setIsMateriaPanelOpen={setIsMateriaPanelOpen}
-              isMateriaDropdownOpen={isMateriaDropdownOpen}
-              setIsMateriaDropdownOpen={setIsMateriaDropdownOpen}
-              materiaDropdownRef={materiaDropdownRef}
-              materiaInputRef={materiaInputRef}
-              materiaInputValue={materiaInputValue}
-              onMateriaInputChange={onMateriaInputChange}
-              onMateriaInputKeyDown={onMateriaInputKeyDown}
-              onClearSelectedSubject={() => {
-                captureEvent('scheduler_subject_cleared');
-                setSelectedSubjectId('');
-              }}
-              groupedSubjectOptions={groupedSubjectOptions}
-              flatSelectableSubjectsLength={flatSelectableSubjects.length}
-              highlightedSubjectIndex={highlightedSubjectIndex}
-              setHighlightedSubjectIndex={setHighlightedSubjectIndex}
-              selectSubject={selectSubject}
-              focusOptionByIndex={focusOptionByIndex}
-              optionRefs={optionRefs}
-              isSedesPanelOpen={isSedesPanelOpen}
-              setIsSedesPanelOpen={setIsSedesPanelOpen}
-              allVenues={allVenues}
-              selectedVenues={selectedVenues}
-              toggleVenue={venue => {
-                const selectedBefore = selectedVenues.has(venue);
-                captureEvent('scheduler_venue_toggled', {
-                  career_slug: careerSlug,
-                  selected_subject_id: selectedSubject?.id || '',
-                  venue,
-                  selected_before: selectedBefore,
-                  selected_after: !selectedBefore,
-                });
-                toggleVenue(venue);
-              }}
-              setOnlyVenue={venue => {
-                captureEvent('scheduler_venue_set_only', {
-                  career_slug: careerSlug,
-                  selected_subject_id: selectedSubject?.id || '',
-                  venue,
-                });
-                setOnlyVenue(venue);
-              }}
-              isMostrarPanelOpen={isMostrarPanelOpen}
-              setIsMostrarPanelOpen={setIsMostrarPanelOpen}
-              showComisiones={showComisiones}
-              setShowComisiones={setShowComisiones}
-              hasTeoricos={hasTeoricos}
-              showTeoricos={showTeoricos}
-              setShowTeoricos={setShowTeoricos}
-              hasSeminarios={hasSeminarios}
-              showSeminarios={showSeminarios}
-              setShowSeminarios={setShowSeminarios}
-              showOtherSubjects={showOtherSubjects}
-              setShowOtherSubjects={setShowOtherSubjects}
-              setOnlyContent={contentType => {
-                captureEvent('scheduler_content_set_only', { content_type: contentType });
-                setOnlyContent(contentType);
-              }}
-              isComisionesPanelOpen={isComisionesPanelOpen}
-              setIsComisionesPanelOpen={setIsComisionesPanelOpen}
-              selectedComisionesLength={selectedComisiones.length}
-              filteredComisionesLength={filteredComisiones.length}
-              isCommissionDropdownOpen={isCommissionDropdownOpen}
-              setIsCommissionDropdownOpen={setIsCommissionDropdownOpen}
-              selectAllVisible={() => {
-                captureEvent('scheduler_commissions_select_all_visible', {
-                  visible_count: searchedComisiones.length,
-                });
-                selectAllVisible();
-              }}
-              clearVisible={() => {
-                captureEvent('scheduler_commissions_clear_visible', {
-                  visible_count: searchedComisiones.length,
-                });
-                clearVisible();
-              }}
-              commissionQuery={commissionQuery}
-              setCommissionQuery={setCommissionQuery}
-              searchedComisiones={searchedComisiones}
-              selectedCommissionIds={selectedCommissionIds}
-              toggleCommission={commissionId => {
-                captureEvent('scheduler_commission_toggled', {
-                  commission_id: commissionId,
-                  selected_before: selectedCommissionIds.has(commissionId),
-                });
-                toggleCommission(commissionId);
-              }}
-            />
-            <div
-              className={cn(
-                'order-5 min-h-0 md:col-span-2',
-                isEleccionesPanelOpen && 'xl:flex-1'
-              )}
-            >
-              <SavedElectionsPanel
-                isOpen={isEleccionesPanelOpen}
-                savedSubjectsCount={savedSubjects.length}
-                savedElectionDetails={savedElectionDetails}
-                savedConflictDetailsBySlot={savedConflictDetailsBySlot}
-                alwaysConflictingSavedSlotIds={alwaysConflictingSavedSlotIds}
-                highlightedConflictSlotIds={highlightedConflictSlotIds}
-                onOpenPanel={() => {
-                  if (!isEleccionesPanelOpen) setIsEleccionesPanelOpen(true);
-                }}
-                onToggleOpen={() => setIsEleccionesPanelOpen(v => !v)}
-                onRemoveSubject={subjectId =>
-                  setEnrolledBySubject(prev => {
-                    captureEvent('scheduler_saved_subject_removed', { subject_id: subjectId });
-                    const next = { ...prev };
-                    delete next[subjectId];
-                    return next;
-                  })
-                }
-                onRemoveAllSubjects={() =>
-                  setEnrolledBySubject(prev => {
-                    const removed_count = Object.keys(prev).length;
-                    captureEvent('scheduler_saved_subjects_cleared', { removed_count });
-                    return {};
-                  })
-                }
-                onExportSelections={() => {
-                  if (typeof window === 'undefined') return;
-                  const period = (() => {
-                    const now = new Date();
-                    const year = now.getFullYear();
-                    const term = now.getMonth() < 7 ? '01' : '02';
-                    return `${year}-${term}`;
-                  })();
-                  const projectedEnrollments = Object.entries(enrolledBySubject).reduce<
-                    Array<{ catedra: number; comision: number | string }>
-                  >((acc, [subjectId, commissionId]) => {
-                    const subject = subjects.find(item => item.id === subjectId);
-                    if (!subject) return acc;
-                    const catedra = catedraNumberFromLabel(subject.label);
-                    if (!Number.isFinite(catedra)) return acc;
-                    acc.push({
-                      catedra,
-                      comision: /^\d+$/.test(commissionId)
-                        ? Number.parseInt(commissionId, 10)
-                        : commissionId,
-                    });
-                    return acc;
-                  }, []);
-                  const payload = buildEnrollmentsExportPayload(projectedEnrollments, period);
-                  const blob = new Blob([JSON.stringify(payload, null, 2)], {
-                    type: 'application/json',
-                  });
-                  const url = URL.createObjectURL(blob);
-                  const link = document.createElement('a');
-                  const timestamp = new Date()
-                    .toISOString()
-                    .replace(/[:]/g, '-')
-                    .replace(/\..+$/, '');
-                  link.href = url;
-                  link.download = `uba-psi-elecciones-v${payload.version}-${timestamp}.json`;
-                  document.body.appendChild(link);
-                  link.click();
-                  link.remove();
-                  URL.revokeObjectURL(url);
-                  captureEvent('scheduler_saved_subjects_exported', {
-                    total_subjects: Object.keys(enrolledBySubject).length,
-                  });
-                }}
-                onImportSelections={async file => {
-                  const raw = await file.text();
-                  const parsed = parseEnrollmentsImportPayload(raw);
-                  const mapped = mapProjectionEnrollmentsToSubjectMap(parsed.enrollments, subjects);
-                  const preview: ImportPreviewData = {
-                    period: parsed.period,
-                    totalEntries: parsed.enrollments.length,
-                    mapped: mapped.mapped,
-                    rejected: mapped.rejected,
-                    mappedBySubject: mapped.mappedBySubject,
-                  };
-                  return preview;
-                }}
-                onApplyImportSelections={async preview => {
-                  if (
-                    preview.totalEntries > 0 &&
-                    Object.keys(preview.mappedBySubject).length === 0
-                  ) {
-                    throw new Error(
-                      'No se pudo mapear ninguna elección. Verificá que el archivo corresponda a esta oferta/carrera.'
-                    );
-                  }
-                  setEnrolledBySubject(preview.mappedBySubject);
-                  captureEvent('scheduler_saved_subjects_imported', {
-                    imported_subjects: preview.totalEntries,
-                    applied_subjects: Object.keys(preview.mappedBySubject).length,
-                    rejected_subjects: preview.rejected.length,
-                  });
-                }}
-              />
-            </div>
-          </aside>
+          <SchedulerRightPanel
+            isEleccionesPanelOpen={isEleccionesPanelOpen}
+            filtersPanelProps={filtersPanelProps}
+            savedElectionsPanelProps={savedElectionsPanelProps}
+          />
         </div>
       </section>
     </div>
