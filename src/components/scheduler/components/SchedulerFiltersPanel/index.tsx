@@ -159,6 +159,13 @@ export const SchedulerFiltersPanel = ({
     };
   }, [isMateriaDropdownVisible, groupedSubjectOptions]);
 
+  useEffect(() => {
+    if (!isTourSelectingSubject) return;
+    const node = materiaOptionsRef.current;
+    if (!node) return;
+    node.scrollTop = 0;
+  }, [isTourSelectingSubject, groupedSubjectOptions]);
+
   return (
     <>
       <article
@@ -246,7 +253,7 @@ export const SchedulerFiltersPanel = ({
               <div
                 className={cn(
                   'z-50 mt-1 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 shadow-md dark:border-zinc-700 dark:bg-zinc-900',
-                  isTourSelectingSubject ? 'relative left-0 right-0 top-0' : 'absolute left-0 right-0 top-full'
+                  'absolute left-0 right-0 top-full'
                 )}
                 data-tour="subject-dropdown"
                 data-testid="subject-dropdown"

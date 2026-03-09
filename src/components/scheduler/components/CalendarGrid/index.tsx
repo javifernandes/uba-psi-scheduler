@@ -52,7 +52,6 @@ export const CalendarGrid = ({
 
   return (
     <>
-      <CalendarLegend />
       <div
         className="relative grid min-w-[920px] grid-cols-[72px_repeat(7,minmax(0,1fr))]"
         style={{ gridTemplateRows: `42px repeat(${hourRows.length}, 48px)` }}
@@ -117,6 +116,7 @@ export const CalendarGrid = ({
           />
         ))}
       </div>
+      <CalendarLegend />
     </>
   );
 };

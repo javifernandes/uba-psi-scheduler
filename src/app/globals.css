@@ -35,19 +35,19 @@
 }
 
 @layer components {
-  .shepherd-enabled {
-    overflow: hidden;
-  }
-
   .shepherd-modal-overlay-container {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     background: rgba(255, 248, 252, 0.28);
   }
 
-  .shepherd-modal-overlay-container.shepherd-modal-is-visible path {
-    fill: rgba(76, 32, 58, 0.18);
-  }
+.shepherd-modal-overlay-container.shepherd-modal-is-visible path {
+  fill: rgba(76, 32, 58, 0.18);
+}
+
+body[data-scheduler-tour-step='select-subject'] .shepherd-modal-overlay-container {
+  pointer-events: none !important;
+}
 
   .dark .shepherd-modal-overlay-container {
     background: rgba(15, 15, 18, 0.3);

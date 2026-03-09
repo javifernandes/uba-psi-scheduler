@@ -8,7 +8,6 @@ import {
 } from "@/hooks/dom/use-wait-for-selector";
 import { useSetSchedulerTourStep } from "@/hooks/dom/use-scheduler-tour-step";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { wait } from "@/utils/promises/wait";
 
 const TOUR_SEEN_STORAGE_KEY = "uba_psico_scheduler_tour_seen_v1";
 const TOUR_ACTIVE_STORAGE_KEY = "uba_psico_scheduler_tour_active_v1";
@@ -53,6 +52,8 @@ export const useSchedulerTour = ({
   setIsSedesPanelOpen,
 }: UseSchedulerTourParams) => {
   const tourRef = useRef<Tour | null>(null);
+  const suppressSurveyOnCancelRef = useRef(false);
+  const previousSelectedSubjectIdRef = useRef(selectedSubjectId);
   const tourStatePreparedRef = useRef(false);
   const autoStartTimeoutRef = useRef<number | null>(null);
   const waitForSelector = useWaitForSelector();
@@ -264,7 +265,9 @@ export const useSchedulerTour = ({
 
   const destroyTour = useCallback(() => {
     if (!tourRef.current) return;
+    suppressSurveyOnCancelRef.current = true;
     tourRef.current.cancel();
+    suppressSurveyOnCancelRef.current = false;
     tourRef.current = null;
     setBodyTourStep(null);
   }, [setBodyTourStep]);
@@ -291,7 +294,9 @@ export const useSchedulerTour = ({
 
       const tour = new Shepherd.Tour({
         useModalOverlay: true,
+        keyboardNavigation: false,
         defaultStepOptions: {
+          exitOnEsc: false,
           cancelIcon: { enabled: true },
           classes: "uba-psi-tour",
           canClickTarget: true,
@@ -317,7 +322,6 @@ export const useSchedulerTour = ({
         clearUnblurCards();
         clearSpotlightTargetLayering();
         restoreFromBackup();
-
         onTourClosed();
       });
       tour.on("cancel", markTourAsSeen);
@@ -327,8 +331,7 @@ export const useSchedulerTour = ({
         clearUnblurCards();
         clearSpotlightTargetLayering();
         restoreFromBackup();
-
-        // survey
+        if (suppressSurveyOnCancelRef.current) return;
         onTourClosed();
       });
       tour.on("show", () => {
@@ -374,12 +377,16 @@ export const useSchedulerTour = ({
           beforeShowPromise: async () => {
             setBodyTourStep("select-subject");
             reinforceSubjectStepOpenState();
-            await wait(120);
+            await waitForSelector({
+              selector: '[data-tour="subject-dropdown"]',
+              timeoutMs: 2000,
+            });
           },
           when: {
             show: () => reinforceSubjectStepOpenState(),
           },
           extraHighlights: [
+            '[data-tour="subject-panel"]',
             '[data-tour="subject-input"]',
             '[data-tour="subject-dropdown"]',
           ],
@@ -588,6 +595,19 @@ export const useSchedulerTour = ({
   }, [restoreFromBackup, storage]);
 
   useEffect(() => {
+    const previousSelectedSubjectId = previousSelectedSubjectIdRef.current;
+    previousSelectedSubjectIdRef.current = selectedSubjectId;
+    if (typeof window === "undefined") return;
+    const tour = tourRef.current;
+    if (!tour) return;
+    if (!selectedSubjectId) return;
+    if (selectedSubjectId === previousSelectedSubjectId) return;
+    const currentStep = tour.getCurrentStep() as { id?: string } | null;
+    if (currentStep?.id !== "select-subject") return;
+    tour.next();
+  }, [selectedSubjectId]);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
     if (storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
     autoStartTimeoutRef.current = window.setTimeout(() => {
@@ -602,15 +622,6 @@ export const useSchedulerTour = ({
       }
     };
   }, [startTour, storage]);
-
-  useEffect(() => {
-    const tour = tourRef.current;
-    if (!tour) return;
-    if (!selectedSubjectId) return;
-    const currentStep = tour.getCurrentStep() as { id?: string } | null;
-    if (currentStep?.id !== "select-subject") return;
-    tour.next();
-  }, [selectedSubjectId]);
 
   return { startTour };
 };

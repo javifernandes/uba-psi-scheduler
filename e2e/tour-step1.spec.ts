@@ -59,4 +59,40 @@ test.describe('Tour - Paso 1', () => {
       })
       .toBeGreaterThan(1);
   });
+
+  test('no avanza al paso 2 sin elegir cátedra en paso 1', async ({ page }) => {
+    await page.goto('/oferta/lic-psicologia');
+
+    await page.getByRole('button', { name: 'Tour' }).click();
+    await expect(page.getByText('Bienvenido al planificador')).toBeVisible();
+    await page.getByRole('button', { name: 'Comenzar' }).click();
+
+    await expect(page.getByText('Paso 1: elegir catedra')).toBeVisible();
+    await expect(page.getByTestId('subject-dropdown')).toBeVisible();
+
+    await page.waitForTimeout(1600);
+
+    await expect(page.getByText('Paso 1: elegir catedra')).toBeVisible();
+    await expect(page.getByText('Paso 2: oferta academica')).not.toBeVisible();
+    await expect
+      .poll(async () => page.evaluate(() => document.body.dataset.schedulerTourStep))
+      .toBe('select-subject');
+  });
+
+  test('flechas del teclado no deben navegar pasos del tour', async ({ page }) => {
+    await page.goto('/oferta/lic-psicologia');
+
+    await page.getByRole('button', { name: 'Tour' }).click();
+    await expect(page.getByText('Bienvenido al planificador')).toBeVisible();
+    await page.getByRole('button', { name: 'Comenzar' }).click();
+
+    await expect(page.getByText('Paso 1: elegir catedra')).toBeVisible();
+    await expect(page.getByTestId('subject-input')).toBeVisible();
+
+    await page.keyboard.press('ArrowRight');
+    await page.keyboard.press('ArrowLeft');
+
+    await expect(page.getByText('Paso 1: elegir catedra')).toBeVisible();
+    await expect(page.getByText('Paso 2: oferta academica')).not.toBeVisible();
+  });
 });
