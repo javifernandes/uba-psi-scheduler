@@ -6,7 +6,7 @@ test.describe('Tour - Paso 1', () => {
   });
 
   test('abre dropdown de catedras al iniciar el recorrido', async ({ page }) => {
-    await page.goto('/uba/psicologia/oferta/lic-psicologia/scheduler');
+    await page.goto('/oferta/lic-psicologia');
 
     await page.getByRole('button', { name: 'Tour' }).click();
 
@@ -44,10 +44,10 @@ test.describe('Tour - Paso 1', () => {
   test('con estado previo persiste paso 1 usable y abierto', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem('uba_psico_scheduler_tour_seen_v1', '1');
-      localStorage.setItem('uba_psico_planner_v1', JSON.stringify({ random_subject: '999' }));
+      localStorage.setItem('uba_psico_planner_v2:lic-psicologia', JSON.stringify({ random_subject: '999' }));
     });
 
-    await page.goto('/uba/psicologia/oferta/lic-psicologia/scheduler');
+    await page.goto('/oferta/lic-psicologia');
     await page.getByRole('button', { name: 'Tour' }).click();
     await page.getByRole('button', { name: 'Comenzar' }).click();
 

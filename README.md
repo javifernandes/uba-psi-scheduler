@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Abrir: `http://localhost:3000/uba/psicologia/oferta/lic-psicologia/scheduler`
+Abrir: `http://localhost:3000/oferta/lic-psicologia`
 
 ## Analytics (PostHog)
 
@@ -53,7 +53,8 @@ Salida (por defecto):
 ## Estructura
 
 - `src/data/uba/psicologia/oferta`: datasets scrapeados por carrera (nuevo).
-- `src/app/uba/psicologia/oferta/[career]/scheduler/page.tsx`: entrypoint del scheduler por carrera.
+- `src/app/oferta/[career]/page.tsx`: entrypoint del scheduler por carrera.
+- `src/components/scheduler/*`: módulo UI/estado del scheduler.
 - `scripts/scrape-uba-psi-oferta.ts`: scraper para regenerar datos.
 
 ## Deploy (Cloudflare Pages)

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PsicologiaScheduler } from '@/app/uba/psicologia/oferta/lic-psicologia/psicologia-scheduler';
+import { PsicologiaScheduler } from '@/components/scheduler/psicologia-scheduler';
 import { loadCareers, loadSubjectsForCareer } from '@/lib/uba-careers';
 
 type PageProps = {
@@ -19,7 +19,7 @@ export const generateStaticParams = async () => {
   return careers.map(career => ({ career: career.slug }));
 };
 
-const CareerSchedulerPage = async ({ params }: PageProps) => {
+const CareerOfferPage = async ({ params }: PageProps) => {
   const careers = await loadCareers();
   const career = careers.find(item => item.slug === params.career);
   if (!career) return notFound();
@@ -35,4 +35,4 @@ const CareerSchedulerPage = async ({ params }: PageProps) => {
   );
 };
 
-export default CareerSchedulerPage;
+export default CareerOfferPage;
