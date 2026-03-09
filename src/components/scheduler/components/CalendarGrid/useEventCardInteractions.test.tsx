@@ -61,7 +61,6 @@ describe('useEventCardInteractions', () => {
 
   afterEach(() => {
     vi.useRealTimers();
-    delete document.body.dataset.schedulerTourStep;
   });
 
   it('maneja hover/mouseleave con conflicto y respeta external', () => {
@@ -72,6 +71,7 @@ describe('useEventCardInteractions', () => {
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
+        hoverEffectsLocked: false,
         hasConflict: true,
         hoveredConflictEventId: 'prac-21',
         setHoveredConflictEventId,
@@ -100,6 +100,7 @@ describe('useEventCardInteractions', () => {
         slot: makeSlot({
           event: { ...makeSlot().event, isExternal: true },
         }),
+        hoverEffectsLocked: false,
         hasConflict: true,
         hoveredConflictEventId: null,
         setHoveredConflictEventId,
@@ -124,6 +125,7 @@ describe('useEventCardInteractions', () => {
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
+        hoverEffectsLocked: false,
         hasConflict: false,
         hoveredConflictEventId: null,
         setHoveredConflictEventId: vi.fn(),
@@ -155,6 +157,7 @@ describe('useEventCardInteractions', () => {
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
+        hoverEffectsLocked: false,
         hasConflict: false,
         hoveredConflictEventId: null,
         setHoveredConflictEventId: vi.fn(),
@@ -187,6 +190,7 @@ describe('useEventCardInteractions', () => {
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
+        hoverEffectsLocked: false,
         hasConflict: true,
         hoveredConflictEventId: 'prac-21',
         setHoveredConflictEventId,
@@ -206,13 +210,13 @@ describe('useEventCardInteractions', () => {
     expect(applySetter<string | null>(setHoveredConflictEventId, 'prac-9')).toBe('prac-9');
   });
 
-  it('bloquea hover durante el paso de overview del tour', () => {
-    document.body.dataset.schedulerTourStep = 'calendar-overview';
+  it('bloquea hover cuando el tour lockea interacciones de hover', () => {
     const setHoveredConflictEventId = vi.fn();
     const setHoveredCommissionId = vi.fn();
     const { result } = renderHook(() =>
       useEventCardInteractions({
         slot: makeSlot(),
+        hoverEffectsLocked: true,
         hasConflict: true,
         hoveredConflictEventId: null,
         setHoveredConflictEventId,
@@ -231,7 +235,6 @@ describe('useEventCardInteractions', () => {
 
     expect(setHoveredConflictEventId).not.toHaveBeenCalled();
     expect(setHoveredCommissionId).not.toHaveBeenCalled();
-    delete document.body.dataset.schedulerTourStep;
   });
 
   it('en hover de teórico activa el vínculo por teórico en vez de una sola comisión', () => {
@@ -250,6 +253,7 @@ describe('useEventCardInteractions', () => {
             linkedTeoricoId: 'T1',
           },
         }),
+        hoverEffectsLocked: false,
         hasConflict: false,
         hoveredConflictEventId: null,
         setHoveredConflictEventId: vi.fn(),

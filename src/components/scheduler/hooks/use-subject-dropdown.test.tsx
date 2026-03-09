@@ -2,6 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSubjectDropdown } from './use-subject-dropdown';
 import type { SubjectData } from '../scheduler.types';
+import { setSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 const subjects: SubjectData[] = [
   {
@@ -50,6 +51,7 @@ describe('useSubjectDropdown', () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    delete document.body.dataset.schedulerTourStep;
   });
 
   it('agrupa por materia y ordena por código de materia y número de cátedra', () => {
@@ -148,7 +150,7 @@ describe('useSubjectDropdown', () => {
   });
 
   it('durante el paso select-subject del tour ignora click fuera para no cerrar dropdown', async () => {
-    document.body.dataset.schedulerTourStep = 'select-subject';
+    setSchedulerTourStep('select-subject');
     const { result } = renderHook(() => useSubjectDropdown(baseParams()));
 
     act(() => {
@@ -167,7 +169,6 @@ describe('useSubjectDropdown', () => {
       expect(result.current.isMateriaDropdownOpen).toBe(true);
     });
 
-    delete document.body.dataset.schedulerTourStep;
   });
 
 });

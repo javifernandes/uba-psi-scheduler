@@ -9,6 +9,7 @@ import type {
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 import type { Comision, SubjectData, VenueCode } from '../../scheduler.types';
 import {
   catedraFragmentFromLabel,
@@ -132,24 +133,11 @@ export const SchedulerFiltersPanel = ({
   toggleCommission,
 }: SchedulerFiltersPanelProps) => {
   const canToggleOtherSubjects = Boolean(selectedSubjectId);
+  const { tourStepId } = useSchedulerTourStep();
   const materiaOptionsRef = useRef<HTMLDivElement | null>(null);
   const [showMateriaScrollHint, setShowMateriaScrollHint] = useState(false);
-  const [isTourSelectingSubject, setIsTourSelectingSubject] = useState(false);
+  const isTourSelectingSubject = tourStepId === 'select-subject';
   const isMateriaDropdownVisible = isMateriaDropdownOpen || isTourSelectingSubject;
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const syncTourStep = () => {
-      setIsTourSelectingSubject(window.document.body.dataset.schedulerTourStep === 'select-subject');
-    };
-    syncTourStep();
-    const observer = new MutationObserver(syncTourStep);
-    observer.observe(window.document.body, {
-      attributes: true,
-      attributeFilter: ['data-scheduler-tour-step'],
-    });
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!isMateriaDropdownVisible) {

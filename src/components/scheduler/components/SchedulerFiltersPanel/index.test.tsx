@@ -1,7 +1,8 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { SchedulerFiltersPanel } from './index';
 import type { SubjectData } from '../../scheduler.types';
+import { setSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 const subjectOption: SubjectData = {
   id: '35',
@@ -81,6 +82,10 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
 });
 
 describe('SchedulerFiltersPanel', () => {
+  afterEach(() => {
+    delete document.body.dataset.schedulerTourStep;
+  });
+
   it('en modo sedes colapsado permite toggle y set-only por doble click', () => {
     const toggleVenue = vi.fn();
     const setOnlyVenue = vi.fn();
@@ -224,8 +229,7 @@ describe('SchedulerFiltersPanel', () => {
     expect(queryByTestId('subject-dropdown')).not.toBeInTheDocument();
 
     act(() => {
-      document.body.dataset.schedulerTourStep = 'select-subject';
-      document.body.setAttribute('data-scheduler-tour-step', 'select-subject');
+      setSchedulerTourStep('select-subject');
     });
 
     await waitFor(() => {
@@ -233,7 +237,7 @@ describe('SchedulerFiltersPanel', () => {
     });
 
     act(() => {
-      delete document.body.dataset.schedulerTourStep;
+      setSchedulerTourStep(null);
     });
   });
 });

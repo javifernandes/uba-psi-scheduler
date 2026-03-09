@@ -6,7 +6,7 @@ import {
   useWaitForAnySelector,
   useWaitForSelector,
 } from "@/hooks/dom/use-wait-for-selector";
-import { useEventDispatcher } from "@/hooks/dom/use-dispatch-event";
+import { useSetSchedulerTourStep } from "@/hooks/dom/use-scheduler-tour-step";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { wait } from "@/utils/promises/wait";
 
@@ -57,24 +57,8 @@ export const useSchedulerTour = ({
   const autoStartTimeoutRef = useRef<number | null>(null);
   const waitForSelector = useWaitForSelector();
   const waitForAnySelector = useWaitForAnySelector();
-  const dispatchTourStepChanged = useEventDispatcher<{ stepId: string | null }>(
-    "scheduler-tour-step-change",
-  );
+  const setBodyTourStep = useSetSchedulerTourStep();
   const storage = useLocalStorage();
-
-  const setBodyTourStep = useCallback(
-    (stepId: string | null) => {
-      if (typeof window === "undefined") return;
-      if (stepId) {
-        window.document.body.dataset.schedulerTourStep = stepId;
-        dispatchTourStepChanged({ stepId });
-        return;
-      }
-      delete window.document.body.dataset.schedulerTourStep;
-      dispatchTourStepChanged({ stepId: null });
-    },
-    [dispatchTourStepChanged],
-  );
 
   const clearFocusedCard = useCallback(() => {
     if (typeof window === "undefined") return;

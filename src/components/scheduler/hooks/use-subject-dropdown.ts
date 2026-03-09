@@ -9,6 +9,7 @@ import {
 } from 'react';
 import type { SubjectData } from '../scheduler.types';
 import { catedraNumberFromLabel, materiaGroupFromLabel } from '../scheduler.utils';
+import { useSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 export type SubjectGroup = {
   groupLabel: string;
@@ -28,6 +29,7 @@ export const useSubjectDropdown = ({
   selectedSubjectLabel,
   setSelectedSubjectId,
 }: UseSubjectDropdownParams) => {
+  const { tourStepId } = useSchedulerTourStep();
   const [isMateriaDropdownOpen, setIsMateriaDropdownOpen] = useState(false);
   const [materiaInputValue, setMateriaInputValue] = useState(selectedSubjectLabel);
   const [materiaSearch, setMateriaSearch] = useState('');
@@ -99,7 +101,7 @@ export const useSubjectDropdown = ({
     if (!isMateriaDropdownOpen) return;
 
     const onMouseDown = (event: MouseEvent) => {
-      if (document.body.dataset.schedulerTourStep === 'select-subject') return;
+      if (tourStepId === 'select-subject') return;
       const target = event.target as Node;
       if (!materiaDropdownRef.current?.contains(target)) setIsMateriaDropdownOpen(false);
     };
@@ -114,7 +116,7 @@ export const useSubjectDropdown = ({
       document.removeEventListener('mousedown', onMouseDown);
       document.removeEventListener('keydown', onKeyDown);
     };
-  }, [isMateriaDropdownOpen]);
+  }, [isMateriaDropdownOpen, tourStepId]);
 
   const selectSubject = (subjectId: string) => {
     setSelectedSubjectId(subjectId);

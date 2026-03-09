@@ -1,4 +1,4 @@
-import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import { displaySubjectLabel } from '../../scheduler.utils';
@@ -12,6 +12,7 @@ import { StackSwitcher } from './StackSwitcher';
 import { useCalendarEventCardState } from './useCalendarEventCardState';
 import { useEventCardInteractions } from './useEventCardInteractions';
 import { useRef } from 'react';
+import { useSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 type CalendarEventCardProps = {
   slot: VisibleEventSlot;
@@ -68,20 +69,7 @@ export const CalendarEventCard = ({
   onToggleEnrollment,
 }: CalendarEventCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [tourStepId, setTourStepId] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const readTourStep = () => window.document.body.dataset.schedulerTourStep || null;
-    setTourStepId(readTourStep());
-    const onStepChange = (event: Event) => {
-      const customEvent = event as CustomEvent<{ stepId?: string | null }>;
-      setTourStepId(customEvent.detail?.stepId || null);
-    };
-    window.addEventListener('scheduler-tour-step-change', onStepChange as EventListener);
-    return () =>
-      window.removeEventListener('scheduler-tour-step-change', onStepChange as EventListener);
-  }, []);
+  const { tourStepId } = useSchedulerTourStep();
 
   const hoverEffectsLocked = tourStepId === 'calendar-overview';
   const hideSaveButtonForTourStep = tourStepId === 'hover-commission';
@@ -124,6 +112,7 @@ export const CalendarEventCard = ({
     onStackNextClick,
   } = useEventCardInteractions({
     slot,
+    hoverEffectsLocked,
     hasConflict,
     hoveredConflictEventId,
     setHoveredConflictEventId,
