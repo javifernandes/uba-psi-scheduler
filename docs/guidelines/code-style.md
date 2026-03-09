@@ -13,6 +13,8 @@
 - Keep state close to where it is used.
 - Extract presentational subcomponents when a component gets too large.
 - Prefer explicit prop names over implicit object spreading.
+- Keep components light on behavior logic; move non-trivial interaction logic to hooks.
+- For common interaction patterns (keyboard navigation, selection flows, etc.), prefer reusable hooks with generic names/intent.
 
 ## UI/CSS
 
@@ -24,3 +26,9 @@
 
 - Use `@/` alias for shared imports under `src/`.
 - Keep feature-local imports relative when they belong to the same subtree.
+
+## Domain Logic
+
+- Keep business/data transformations as pure functions.
+- Avoid embedding business rules directly in components/hooks when they can live as pure domain helpers.
+- Place domain helpers under `src/model/` whenever they represent domain rules or derived business data.
