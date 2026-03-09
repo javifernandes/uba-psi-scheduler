@@ -1,11 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  type Dispatch,
-  type SetStateAction,
-} from "react";
+import { useMemo, type Dispatch, type SetStateAction } from "react";
 import type { SubjectData } from "../scheduler.types";
 import { ENROLLMENTS_STORAGE_KEY, sameRecord } from "../scheduler.utils";
 import {
@@ -14,11 +7,10 @@ import {
 } from "@/domain/enrollment";
 import { indexMaterias } from "@/domain/materia";
 import { useQueryParamState } from "@/hooks/browser/use-query-param-state";
-import { useLocalPersistence } from "@/hooks/use-local-persistence";
+import { useLocalStorageState } from "@/hooks/use-local-storage-state";
 
 type UseSchedulerPersistenceParams = {
   subjects: SubjectData[];
-  storageKey: string;
 };
 
 type UseSchedulerPersistenceResult = {
@@ -36,30 +28,7 @@ type UseSchedulerPersistenceResult = {
 
 export const useSchedulerPersistence = ({
   subjects,
-  storageKey,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
-  const localPersistence = useLocalPersistence();
-  const persistenceKey = storageKey || ENROLLMENTS_STORAGE_KEY;
-  const [selectedSubjectId, setSelectedSubjectId] = useState(() => {
-    if (typeof window === "undefined") return "";
-    if (!subjects.length) return "";
-    const subjectIdFromUrl = new URLSearchParams(window.location.search).get(
-      "m",
-    );
-    if (
-      subjectIdFromUrl &&
-      subjects.some((subject) => subject.id === subjectIdFromUrl)
-    ) {
-      return subjectIdFromUrl;
-    }
-    return "";
-  });
-  const [enrolledBySubject, setEnrolledBySubject] = useState<
-    Record<string, string>
-  >({});
-  const [enrollmentsLoaded, setEnrollmentsLoaded] = useState(false);
-  const [enrollmentsHydrated, setEnrollmentsHydrated] = useState(false);
-
   const subjectIdSet = useMemo(
     () => new Set(subjects.map((subject) => subject.id)),
     [subjects],
@@ -68,63 +37,40 @@ export const useSchedulerPersistence = ({
     () => indexMaterias(subjects),
     [subjects],
   );
-
-  const applyEnrollmentRule = useCallback(
-    (
-      prev: Record<string, string>,
-      targetSubjectId: string,
-      commissionId: string | undefined,
-    ) =>
-      applyEnrollmentRuleDomain(
-        prev,
-        targetSubjectId,
-        commissionId,
-        materiaCodeBySubjectId,
-      ),
-    [materiaCodeBySubjectId],
+  const subjectsSignature = useMemo(
+    () => subjects.map((subject) => `${subject.id}:${subject.label}`).join("|"),
+    [subjects],
   );
 
-  const parseSubjectIdFromQuery = useCallback(
-    (rawValue: string | null) =>
-      rawValue && subjectIdSet.has(rawValue) ? rawValue : "",
-    [subjectIdSet],
-  );
-
-  useQueryParamState({
+  const [selectedSubjectId, setSelectedSubjectId] = useQueryParamState({
     key: "m",
-    value: selectedSubjectId,
-    setValue: setSelectedSubjectId,
-    parseFromQuery: parseSubjectIdFromQuery,
+    parseFromQuery: (rawValue) =>
+      rawValue && subjectIdSet.has(rawValue) ? rawValue : "",
     serializeToQuery: (value) => (value ? value : null),
   });
 
-  useEffect(() => {
-    if (enrollmentsHydrated) return;
-    if (!subjects.length) return;
-    const normalized = localPersistence.readJSON<
-      Record<string, string>,
-      Record<string, string>
-    >(persistenceKey, {
-      defaultValue: {},
-      normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),
-    });
-    setEnrolledBySubject((prev) =>
-      sameRecord(prev, normalized) ? prev : normalized,
-    );
-    setEnrollmentsHydrated(true);
-    setEnrollmentsLoaded(true);
-  }, [
-    subjects,
-    enrollmentsHydrated,
-    localPersistence,
-    materiaCodeBySubjectId,
-    persistenceKey,
-  ]);
+  const [enrolledBySubject, setEnrolledBySubject] = useLocalStorageState<
+    Record<string, string>
+  >({
+    key: ENROLLMENTS_STORAGE_KEY,
+    defaultValue: {},
+    enabled: subjects.length > 0,
+    normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),
+    isEqual: sameRecord,
+    readVersion: subjectsSignature,
+  });
 
-  useEffect(() => {
-    if (!enrollmentsLoaded) return;
-    localPersistence.writeJSON(persistenceKey, enrolledBySubject);
-  }, [enrolledBySubject, enrollmentsLoaded, localPersistence, persistenceKey]);
+  const applyEnrollmentRule = (
+    prev: Record<string, string>,
+    targetSubjectId: string,
+    commissionId: string | undefined,
+  ) =>
+    applyEnrollmentRuleDomain(
+      prev,
+      targetSubjectId,
+      commissionId,
+      materiaCodeBySubjectId,
+    );
 
   return {
     selectedSubjectId,

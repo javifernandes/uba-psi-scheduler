@@ -32,7 +32,6 @@ type SchedulerProps = {
   subjects: SubjectData[];
   careerLabel?: string;
   careerSlug?: string;
-  storageKey?: string;
 };
 
 const EmptySubjectsState = () => (
@@ -58,7 +57,6 @@ const SchedulerContent = ({
   subjects,
   careerLabel = 'Lic. Psicología UBA',
   careerSlug = 'lic-psicologia',
-  storageKey,
 }: SchedulerProps) => {
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
@@ -88,7 +86,6 @@ const SchedulerContent = ({
     applyEnrollmentRule,
   } = useSchedulerPersistence({
     subjects,
-    storageKey: storageKey || 'uba_psico_planner_v1',
   });
 
   const resetSelectionState = useCallback(() => {
