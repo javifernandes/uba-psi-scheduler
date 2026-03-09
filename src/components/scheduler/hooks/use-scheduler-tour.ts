@@ -7,7 +7,8 @@ import {
   useWaitForSelector,
 } from "@/hooks/dom/use-wait-for-selector";
 import { useSetSchedulerTourStep } from "@/hooks/dom/use-scheduler-tour-step";
-import { useLocalStorage } from "@/hooks/use-local-storage";
+import { useLocalStorageFlagState } from "@/hooks/use-local-storage-flag-state";
+import { useLocalStorageStringState } from "@/hooks/use-local-storage-string-state";
 
 const TOUR_SEEN_STORAGE_KEY = "uba_psico_scheduler_tour_seen_v1";
 const TOUR_ACTIVE_STORAGE_KEY = "uba_psico_scheduler_tour_active_v1";
@@ -72,10 +73,24 @@ export const useSchedulerTour = ({
   const subjectStepReinforceTimeoutsRef = useRef<number[]>([]);
   const tourStatePreparedRef = useRef(false);
   const autoStartTimeoutRef = useRef<number | null>(null);
+  const didCheckPendingRestoreRef = useRef(false);
   const waitForSelector = useWaitForSelector();
   const waitForAnySelector = useWaitForAnySelector();
   const setBodyTourStep = useSetSchedulerTourStep();
-  const storage = useLocalStorage();
+  const [hasTourSeen, setHasTourSeen] = useLocalStorageFlagState({
+    key: TOUR_SEEN_STORAGE_KEY,
+  });
+  const [isTourActive, setIsTourActive] = useLocalStorageFlagState({
+    key: TOUR_ACTIVE_STORAGE_KEY,
+  });
+  const [tourBackupRaw, setTourBackupRaw] = useLocalStorageStringState({
+    key: TOUR_BACKUP_STORAGE_KEY,
+  });
+  const tourBackupRawRef = useRef<string | null>(tourBackupRaw);
+
+  useEffect(() => {
+    tourBackupRawRef.current = tourBackupRaw;
+  }, [tourBackupRaw]);
 
   const clearFocusedCard = useCallback(() => {
     runOnDocument((doc) => {
@@ -195,8 +210,8 @@ export const useSchedulerTour = ({
   }, [clearUnblurCards]);
 
   const markTourAsSeen = useCallback(() => {
-    storage.setItem(TOUR_SEEN_STORAGE_KEY, "1");
-  }, [storage]);
+    setHasTourSeen(true);
+  }, [setHasTourSeen]);
 
   const buildBackupSnapshot = useCallback(
     () =>
@@ -208,10 +223,10 @@ export const useSchedulerTour = ({
   );
 
   const restoreFromBackup = useCallback(() => {
-    const raw = storage.getItem(TOUR_BACKUP_STORAGE_KEY);
-    if (!raw) return;
+    const backupRaw = tourBackupRawRef.current;
+    if (!backupRaw) return;
     try {
-      const parsed = JSON.parse(raw) as {
+      const parsed = JSON.parse(backupRaw) as {
         selectedSubjectId?: string;
         enrolledBySubject?: Record<string, string>;
       };
@@ -220,24 +235,33 @@ export const useSchedulerTour = ({
     } catch {
       // no-op
     } finally {
-      storage.removeItem(TOUR_BACKUP_STORAGE_KEY);
-      storage.removeItem(TOUR_ACTIVE_STORAGE_KEY);
+      tourBackupRawRef.current = null;
+      setTourBackupRaw(null);
+      setIsTourActive(false);
       tourStatePreparedRef.current = false;
     }
-  }, [setEnrolledBySubject, setSelectedSubjectId, storage]);
+  }, [
+    setEnrolledBySubject,
+    setIsTourActive,
+    setSelectedSubjectId,
+    setTourBackupRaw,
+  ]);
 
   const prepareTourStateForRun = useCallback(() => {
     if (tourStatePreparedRef.current) return;
-    storage.setItem(TOUR_BACKUP_STORAGE_KEY, buildBackupSnapshot());
-    storage.setItem(TOUR_ACTIVE_STORAGE_KEY, "1");
+    const nextBackupRaw = buildBackupSnapshot();
+    tourBackupRawRef.current = nextBackupRaw;
+    setTourBackupRaw(nextBackupRaw);
+    setIsTourActive(true);
     tourStatePreparedRef.current = true;
     setSelectedSubjectId("");
     setEnrolledBySubject({});
   }, [
     buildBackupSnapshot,
     setEnrolledBySubject,
+    setIsTourActive,
     setSelectedSubjectId,
-    storage,
+    setTourBackupRaw,
   ]);
 
   const reinforceSubjectStepOpenState = useCallback(() => {
@@ -292,7 +316,7 @@ export const useSchedulerTour = ({
         window.clearTimeout(autoStartTimeoutRef.current);
         autoStartTimeoutRef.current = null;
       }
-      if (!force && storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
+      if (!force && hasTourSeen) return;
 
       destroyTour();
       tourStatePreparedRef.current = false;
@@ -580,7 +604,7 @@ export const useSchedulerTour = ({
       restoreFromBackup,
       waitForAnySelector,
       waitForSelector,
-      storage,
+      hasTourSeen,
       onTourClosed,
     ],
   );
@@ -595,9 +619,11 @@ export const useSchedulerTour = ({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (storage.getItem(TOUR_ACTIVE_STORAGE_KEY) !== "1") return;
+    if (didCheckPendingRestoreRef.current) return;
+    didCheckPendingRestoreRef.current = true;
+    if (!isTourActive) return;
     restoreFromBackup();
-  }, [restoreFromBackup, storage]);
+  }, [isTourActive, restoreFromBackup]);
 
   useEffect(() => {
     const previousSelectedSubjectId = previousSelectedSubjectIdRef.current;
@@ -614,7 +640,7 @@ export const useSchedulerTour = ({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (storage.getItem(TOUR_SEEN_STORAGE_KEY) === "1") return;
+    if (hasTourSeen) return;
     autoStartTimeoutRef.current = window.setTimeout(() => {
       autoStartTimeoutRef.current = null;
       if (tourRef.current) return;
@@ -626,7 +652,7 @@ export const useSchedulerTour = ({
         autoStartTimeoutRef.current = null;
       }
     };
-  }, [startTour, storage]);
+  }, [hasTourSeen, startTour]);
 
   return { startTour };
 };

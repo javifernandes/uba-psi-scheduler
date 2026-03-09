@@ -1,4 +1,4 @@
-import { useMemo, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import type { SubjectData } from "../scheduler.types";
 import { ENROLLMENTS_STORAGE_KEY, sameRecord } from "../scheduler.utils";
 import {
@@ -29,23 +29,15 @@ type UseSchedulerPersistenceResult = {
 export const useSchedulerPersistence = ({
   subjects,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
-  const subjectIdSet = useMemo(
-    () => new Set(subjects.map((subject) => subject.id)),
-    [subjects],
-  );
-  const materiaCodeBySubjectId = useMemo(
-    () => indexMaterias(subjects),
-    [subjects],
-  );
-  const subjectsSignature = useMemo(
-    () => subjects.map((subject) => `${subject.id}:${subject.label}`).join("|"),
-    [subjects],
-  );
+  const subjectIdSet = new Set(subjects.map((subject) => subject.id));
+  const materiaCodeBySubjectId = indexMaterias(subjects);
+  const rehydrateToken = subjects
+    .map((subject) => `${subject.id}:${subject.label}`)
+    .join("|");
 
   const [selectedSubjectId, setSelectedSubjectId] = useQueryParamState({
     key: "m",
-    parseFromQuery: (rawValue) =>
-      rawValue && subjectIdSet.has(rawValue) ? rawValue : "",
+    parseFromQuery: (raw) => (raw && subjectIdSet.has(raw) ? raw : ""),
     serializeToQuery: (value) => (value ? value : null),
   });
 
@@ -53,24 +45,12 @@ export const useSchedulerPersistence = ({
     Record<string, string>
   >({
     key: ENROLLMENTS_STORAGE_KEY,
-    defaultValue: {},
+    defaultValue: EMPTY_ENROLLMENTS,
     enabled: subjects.length > 0,
     normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),
     isEqual: sameRecord,
-    readVersion: subjectsSignature,
+    rehydrateToken,
   });
-
-  const applyEnrollmentRule = (
-    prev: Record<string, string>,
-    targetSubjectId: string,
-    commissionId: string | undefined,
-  ) =>
-    applyEnrollmentRuleDomain(
-      prev,
-      targetSubjectId,
-      commissionId,
-      materiaCodeBySubjectId,
-    );
 
   return {
     selectedSubjectId,
@@ -78,6 +58,19 @@ export const useSchedulerPersistence = ({
     enrolledBySubject,
     setEnrolledBySubject,
     materiaCodeBySubjectId,
-    applyEnrollmentRule,
+
+    applyEnrollmentRule: (
+      prev: Record<string, string>,
+      targetSubjectId: string,
+      commissionId: string | undefined,
+    ) =>
+      applyEnrollmentRuleDomain(
+        prev,
+        targetSubjectId,
+        commissionId,
+        materiaCodeBySubjectId,
+      ),
   };
 };
+
+const EMPTY_ENROLLMENTS: Record<string, string> = {};

@@ -13,7 +13,7 @@ type UseLocalStorageStateParams<TValue> = {
   enabled?: boolean;
   normalize?: (value: TValue) => TValue;
   isEqual?: (a: TValue, b: TValue) => boolean;
-  readVersion?: string | number;
+  rehydrateToken?: string | number;
 };
 
 type UseLocalStorageStateResult<TValue> = [
@@ -32,7 +32,7 @@ export const useLocalStorageState = <TValue>({
   enabled = true,
   normalize,
   isEqual = defaultIsEqual,
-  readVersion,
+  rehydrateToken,
 }: UseLocalStorageStateParams<TValue>): UseLocalStorageStateResult<TValue> => {
   const localPersistence = useLocalPersistence();
   const defaultValueRef = useRef(defaultValue);
@@ -60,7 +60,8 @@ export const useLocalStorageState = <TValue>({
 
     setValue(prev => (isEqualRef.current(prev, hydratedValue) ? prev : hydratedValue));
     setIsHydrated(true);
-  }, [enabled, key, localPersistence, readVersion]);
+    // rehydrateToken lets callers explicitly re-read storage when external domain context changes.
+  }, [enabled, key, localPersistence, rehydrateToken]);
 
   useEffect(() => {
     if (!enabled || !isHydrated) return;
