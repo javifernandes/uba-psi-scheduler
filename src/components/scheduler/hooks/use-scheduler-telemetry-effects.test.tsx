@@ -30,7 +30,7 @@ describe('useSchedulerTelemetryEffects', () => {
           searchedComisionesLength: 0,
         }),
       {
-        initialProps: { selectedSubjectId: null },
+        initialProps: { selectedSubjectId: null as string | null },
       }
     );
 

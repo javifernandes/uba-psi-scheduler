@@ -26,7 +26,9 @@ export const useLocalPersistence = () => {
 
   const writeJSON = useCallback(
     <TValue, TStored = TValue>(key: string, value: TValue, options?: WriteJSONOptions<TValue, TStored>) => {
-      const encoded = options?.serialize ? options.serialize(value) : (value as TStored);
+      const encoded = options?.serialize
+        ? options.serialize(value)
+        : (value as unknown as TStored);
       storage.setJSON<TStored>(key, encoded);
     },
     [storage]

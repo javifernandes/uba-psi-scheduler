@@ -35,7 +35,7 @@ describe('useEventListener', () => {
           eventName: 'demo',
           listener: active === 'first' ? first : second,
         }),
-      { initialProps: { active: 'first' as const } }
+      { initialProps: { active: 'first' } }
     );
 
     target.dispatchEvent(new Event('demo'));

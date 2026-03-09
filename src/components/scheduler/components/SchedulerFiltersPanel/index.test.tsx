@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { SchedulerFiltersPanel } from './index';
-import type { SubjectData } from '../../scheduler.types';
+import type { Comision, SubjectData } from '../../scheduler.types';
 import { setSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 const subjectOption: SubjectData = {
@@ -12,6 +12,21 @@ const subjectOption: SubjectData = {
   seminarios: [],
   comisiones: [],
 };
+
+const searchedComisiones: Comision[] = [
+  {
+    id: '1',
+    dia: 'lunes',
+    inicio: '09:00',
+    fin: '10:30',
+    profesor: 'Comision Uno',
+    oblig: 'I - A',
+    teoricoId: 'I',
+    seminarioId: 'A',
+    aula: 'IN-101',
+    observ: '',
+  },
+];
 
 const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>[0]> = {}) => ({
   selectedSubjectLabel: subjectOption.label,
@@ -62,20 +77,7 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
   clearVisible: vi.fn(),
   commissionQuery: '',
   setCommissionQuery: vi.fn(),
-  searchedComisiones: [
-    {
-      id: '1',
-      dia: 'lunes',
-      inicio: '09:00',
-      fin: '10:30',
-      profesor: 'Comision Uno',
-      oblig: 'I - A',
-      teoricoId: 'I',
-      seminarioId: 'A',
-      aula: 'IN-101',
-      observ: '',
-    },
-  ],
+  searchedComisiones,
   selectedCommissionIds: new Set(['1']),
   toggleCommission: vi.fn(),
   ...overrides,

@@ -321,11 +321,10 @@ export const useSchedulerTour = ({
       destroyTour();
       tourStatePreparedRef.current = false;
 
-      const tour = new Shepherd.Tour({
+      const tour: Tour = new Shepherd.Tour({
         useModalOverlay: true,
         keyboardNavigation: false,
         defaultStepOptions: {
-          exitOnEsc: false,
           cancelIcon: { enabled: true },
           classes: "uba-psi-tour",
           canClickTarget: true,
@@ -334,11 +333,15 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
             {
               text: "Siguiente",
-              action: () => tour.next(),
+              action: (): void => {
+                tour.next();
+              },
             },
           ],
         },
@@ -387,11 +390,13 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
             {
               text: "Comenzar",
-              action: () => {
+              action: (): void => {
                 prepareTourStateForRun();
                 tour.next();
               },
@@ -423,7 +428,9 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
           ],
           advanceOn: {
@@ -461,11 +468,15 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
             {
               text: "Siguiente",
-              action: () => tour.next(),
+              action: (): void => {
+                tour.next();
+              },
             },
           ],
         },
@@ -493,7 +504,9 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
           ],
           advanceOn: { selector: getFocusedSaveButtonSelector, event: "click" },
@@ -564,7 +577,9 @@ export const useSchedulerTour = ({
             {
               text: "Cancelar y salir del tour",
               classes: "shepherd-button-secondary",
-              action: () => tour.cancel(),
+              action: (): void => {
+                tour.cancel();
+              },
             },
           ],
           advanceOn: { selector: getClearSubjectSelector, event: "click" },
@@ -577,7 +592,9 @@ export const useSchedulerTour = ({
           buttons: [
             {
               text: "Cerrar",
-              action: () => tour.complete(),
+              action: (): void => {
+                tour.complete();
+              },
             },
           ],
         },

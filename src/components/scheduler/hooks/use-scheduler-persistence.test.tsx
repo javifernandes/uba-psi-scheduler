@@ -115,7 +115,7 @@ describe('useSchedulerPersistence', () => {
       ({ data }: { data: SubjectData[] }) =>
         useSchedulerPersistence({ subjects: data }),
       {
-        initialProps: { data: [] },
+        initialProps: { data: [] as SubjectData[] },
       }
     );
 

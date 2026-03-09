@@ -47,7 +47,7 @@ type SchedulerFiltersPanelProps = {
   optionRefs: MutableRefObject<Record<string, HTMLButtonElement | null>>;
   isSedesPanelOpen: boolean;
   setIsSedesPanelOpen: Dispatch<SetStateAction<boolean>>;
-  allVenues: VenueCode[];
+  allVenues: readonly VenueCode[];
   selectedVenues: Set<VenueCode>;
   toggleVenue: (venue: VenueCode) => void;
   setOnlyVenue: (venue: VenueCode) => void;
