@@ -39,6 +39,21 @@ const getSaveButtonSelector = '[data-tour="event-save-toggle"]';
 const getClearSubjectSelector = '[data-tour="clear-selected-subject"]';
 const getFocusedCardSelector = `[${TOUR_FOCUS_ATTR}="${TOUR_FOCUS_VALUE}"]`;
 const getFocusedSaveButtonSelector = `${getFocusedCardSelector} ${getSaveButtonSelector}`;
+const SUBJECT_STEP_REINFORCE_DELAYS_MS = [0, 40, 140] as const;
+
+const runOnWindow = (fn: (win: Window) => void) => {
+  if (typeof window === "undefined") return;
+  fn(window);
+};
+
+const runOnDocument = (fn: (doc: Document, win: Window) => void) => {
+  runOnWindow((win) => fn(win.document, win));
+};
+
+const readFromWindow = <T,>(fn: (win: Window) => T, fallback: T): T => {
+  if (typeof window === "undefined") return fallback;
+  return fn(window);
+};
 
 export const useSchedulerTour = ({
   selectedSubjectId,
@@ -54,6 +69,7 @@ export const useSchedulerTour = ({
   const tourRef = useRef<Tour | null>(null);
   const suppressSurveyOnCancelRef = useRef(false);
   const previousSelectedSubjectIdRef = useRef(selectedSubjectId);
+  const subjectStepReinforceTimeoutsRef = useRef<number[]>([]);
   const tourStatePreparedRef = useRef(false);
   const autoStartTimeoutRef = useRef<number | null>(null);
   const waitForSelector = useWaitForSelector();
@@ -62,48 +78,45 @@ export const useSchedulerTour = ({
   const storage = useLocalStorage();
 
   const clearFocusedCard = useCallback(() => {
-    if (typeof window === "undefined") return;
-    window.document.querySelectorAll(getFocusedCardSelector).forEach((node) => {
-      node.removeAttribute(TOUR_FOCUS_ATTR);
+    runOnDocument((doc) => {
+      doc.querySelectorAll(getFocusedCardSelector).forEach((node) => {
+        node.removeAttribute(TOUR_FOCUS_ATTR);
+      });
     });
   }, []);
 
   const clearUnblurCards = useCallback(() => {
-    if (typeof window === "undefined") return;
-    window.document
-      .querySelectorAll(`[${TOUR_UNBLUR_ATTR}="${TOUR_UNBLUR_VALUE}"]`)
-      .forEach((node) => {
+    runOnDocument((doc) => {
+      doc.querySelectorAll(`[${TOUR_UNBLUR_ATTR}="${TOUR_UNBLUR_VALUE}"]`).forEach((node) => {
         node.removeAttribute(TOUR_UNBLUR_ATTR);
       });
+    });
   }, []);
 
   const clearSpotlightTargetLayering = useCallback(() => {
-    if (typeof window === "undefined") return;
-    window.document
-      .querySelectorAll<HTMLElement>(
+    runOnDocument((doc) => {
+      doc.querySelectorAll<HTMLElement>(
         `.shepherd-target.shepherd-enabled[${TOUR_TARGET_TEMP_Z_ATTR}="1"]`,
       )
       .forEach((node) => {
         node.style.removeProperty("z-index");
         node.removeAttribute(TOUR_TARGET_TEMP_Z_ATTR);
       });
-    window.document
-      .querySelectorAll<HTMLElement>(
+      doc.querySelectorAll<HTMLElement>(
         `.shepherd-target.shepherd-enabled[${TOUR_TARGET_TEMP_POSITION_ATTR}="1"]`,
       )
       .forEach((node) => {
         node.style.removeProperty("position");
         node.removeAttribute(TOUR_TARGET_TEMP_POSITION_ATTR);
       });
+    });
   }, []);
 
   const applySpotlightTargetLayering = useCallback(() => {
-    if (typeof window === "undefined") return;
-    clearSpotlightTargetLayering();
-    window.document
-      .querySelectorAll<HTMLElement>(".shepherd-target.shepherd-enabled")
-      .forEach((node) => {
-        const computedPosition = window.getComputedStyle(node).position;
+    runOnDocument((doc, win) => {
+      clearSpotlightTargetLayering();
+      doc.querySelectorAll<HTMLElement>(".shepherd-target.shepherd-enabled").forEach((node) => {
+        const computedPosition = win.getComputedStyle(node).position;
         if (computedPosition === "static") {
           node.style.position = "relative";
           node.setAttribute(TOUR_TARGET_TEMP_POSITION_ATTR, "1");
@@ -111,60 +124,53 @@ export const useSchedulerTour = ({
         node.style.zIndex = "10015";
         node.setAttribute(TOUR_TARGET_TEMP_Z_ATTR, "1");
       });
+    });
   }, [clearSpotlightTargetLayering]);
 
-  const chooseCentralCard = useCallback(() => {
-    if (typeof window === "undefined") return null;
-    const doc = window.document;
-    const preferredCards = Array.from(
-      doc.querySelectorAll<HTMLElement>(
-        '[data-tour-card-kind="internal-commission"]',
-      ),
-    );
-    const fallbackCards = Array.from(
-      doc.querySelectorAll<HTMLElement>(getInternalEventSelector),
-    );
-    const cards = preferredCards.length ? preferredCards : fallbackCards;
-    if (!cards.length) return null;
+  const chooseCentralCard = useCallback(
+    () =>
+      readFromWindow((win) => {
+        const doc = win.document;
+        const preferredCards = Array.from(
+          doc.querySelectorAll<HTMLElement>('[data-tour-card-kind="internal-commission"]'),
+        );
+        const fallbackCards = Array.from(
+          doc.querySelectorAll<HTMLElement>(getInternalEventSelector),
+        );
+        const cards = preferredCards.length ? preferredCards : fallbackCards;
+        if (!cards.length) return null;
 
-    const calendarNode = doc.querySelector<HTMLElement>(
-      '[data-tour="calendar-grid-layout"]',
-    );
-    const calendarRect = calendarNode?.getBoundingClientRect();
-    const targetX = calendarRect
-      ? calendarRect.left + calendarRect.width / 2
-      : window.innerWidth / 2;
-    const targetY = calendarRect
-      ? calendarRect.top + calendarRect.height / 2
-      : window.innerHeight / 2;
+        const calendarNode = doc.querySelector<HTMLElement>('[data-tour="calendar-grid-layout"]');
+        const calendarRect = calendarNode?.getBoundingClientRect();
+        const targetX = calendarRect ? calendarRect.left + calendarRect.width / 2 : win.innerWidth / 2;
+        const targetY =
+          calendarRect ? calendarRect.top + calendarRect.height / 2 : win.innerHeight / 2;
 
-    const scored = cards
-      .map((card) => {
-        const rect = card.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = cx - targetX;
-        const dy = cy - targetY;
-        const distance = Math.hypot(dx, dy);
-        const sizeBoost = Math.min((rect.width * rect.height) / 1200, 18);
-        const stackSize = Number.parseInt(card.dataset.stackSize || "1", 10);
-        const rightBiasPenalty = dx < 0 ? Math.min(Math.abs(dx) * 0.12, 22) : 0;
-        const lowerBiasPenalty = dy < 0 ? Math.min(Math.abs(dy) * 0.1, 18) : 0;
-        const stackedSlotBoost = stackSize > 1 ? 16 : 0;
-        return {
-          card,
-          score:
-            distance +
-            rightBiasPenalty +
-            lowerBiasPenalty -
-            sizeBoost -
-            stackedSlotBoost,
-        };
-      })
-      .sort((a, b) => a.score - b.score);
+        const scored = cards
+          .map((card) => {
+            const rect = card.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = cx - targetX;
+            const dy = cy - targetY;
+            const distance = Math.hypot(dx, dy);
+            const sizeBoost = Math.min((rect.width * rect.height) / 1200, 18);
+            const stackSize = Number.parseInt(card.dataset.stackSize || "1", 10);
+            const rightBiasPenalty = dx < 0 ? Math.min(Math.abs(dx) * 0.12, 22) : 0;
+            const lowerBiasPenalty = dy < 0 ? Math.min(Math.abs(dy) * 0.1, 18) : 0;
+            const stackedSlotBoost = stackSize > 1 ? 16 : 0;
+            return {
+              card,
+              score:
+                distance + rightBiasPenalty + lowerBiasPenalty - sizeBoost - stackedSlotBoost,
+            };
+          })
+          .sort((a, b) => a.score - b.score);
 
-    return scored[0]?.card || null;
-  }, []);
+        return scored[0]?.card || null;
+      }, null),
+    [],
+  );
 
   const focusCentralCard = useCallback(() => {
     clearFocusedCard();
@@ -175,22 +181,17 @@ export const useSchedulerTour = ({
   }, [chooseCentralCard, clearFocusedCard]);
 
   const highlightFocusedAndRelatedCards = useCallback(() => {
-    if (typeof window === "undefined") return;
-    clearUnblurCards();
-    const focusedCard = window.document.querySelector<HTMLElement>(
-      getFocusedCardSelector,
-    );
-    if (!focusedCard) return;
-    focusedCard.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE);
-    const commissionId = focusedCard.dataset.commissionId;
-    if (!commissionId) return;
-    window.document
-      .querySelectorAll<HTMLElement>(
-        `[data-tour-internal="true"][data-commission-id="${commissionId}"]`,
-      )
-      .forEach((node) =>
-        node.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE),
-      );
+    runOnDocument((doc) => {
+      clearUnblurCards();
+      const focusedCard = doc.querySelector<HTMLElement>(getFocusedCardSelector);
+      if (!focusedCard) return;
+      focusedCard.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE);
+      const commissionId = focusedCard.dataset.commissionId;
+      if (!commissionId) return;
+      doc
+        .querySelectorAll<HTMLElement>(`[data-tour-internal="true"][data-commission-id="${commissionId}"]`)
+        .forEach((node) => node.setAttribute(TOUR_UNBLUR_ATTR, TOUR_UNBLUR_VALUE));
+    });
   }, [clearUnblurCards]);
 
   const markTourAsSeen = useCallback(() => {
@@ -240,30 +241,34 @@ export const useSchedulerTour = ({
   ]);
 
   const reinforceSubjectStepOpenState = useCallback(() => {
-    setIsMateriaPanelOpen(true);
-    setIsMateriaDropdownOpen(true);
-    if (typeof window === "undefined") return;
-    const focusInput = () => {
-      const input = window.document.querySelector<HTMLInputElement>(
-        '[data-tour="subject-input"]',
-      );
-      input?.focus();
-      input?.click();
-    };
-    focusInput();
-    window.setTimeout(() => {
-      setIsMateriaPanelOpen(true);
-      setIsMateriaDropdownOpen(true);
-      focusInput();
-    }, 40);
-    window.setTimeout(() => {
-      setIsMateriaPanelOpen(true);
-      setIsMateriaDropdownOpen(true);
-      focusInput();
-    }, 140);
+    runOnWindow((win) => {
+      subjectStepReinforceTimeoutsRef.current.forEach((timeoutId) => win.clearTimeout(timeoutId));
+      subjectStepReinforceTimeoutsRef.current = [];
+
+      const ensureOpenAndFocus = () => {
+        setIsMateriaPanelOpen(true);
+        setIsMateriaDropdownOpen(true);
+        const input = win.document.querySelector<HTMLInputElement>('[data-tour="subject-input"]');
+        input?.focus();
+        input?.click();
+      };
+
+      SUBJECT_STEP_REINFORCE_DELAYS_MS.forEach((delayMs) => {
+        if (delayMs === 0) {
+          ensureOpenAndFocus();
+          return;
+        }
+        const timeoutId = win.setTimeout(ensureOpenAndFocus, delayMs);
+        subjectStepReinforceTimeoutsRef.current.push(timeoutId);
+      });
+    });
   }, [setIsMateriaDropdownOpen, setIsMateriaPanelOpen]);
 
   const destroyTour = useCallback(() => {
+    runOnWindow((win) => {
+      subjectStepReinforceTimeoutsRef.current.forEach((timeoutId) => win.clearTimeout(timeoutId));
+      subjectStepReinforceTimeoutsRef.current = [];
+    });
     if (!tourRef.current) return;
     suppressSurveyOnCancelRef.current = true;
     tourRef.current.cancel();
