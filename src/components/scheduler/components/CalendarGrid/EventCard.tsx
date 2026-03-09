@@ -1,7 +1,7 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
-import type { Comision, ReservedSlot } from '../../psicologia-scheduler.types';
-import { displaySubjectLabel } from '../../psicologia-scheduler.utils';
+import type { Comision, ReservedSlot } from '../../scheduler.types';
+import { displaySubjectLabel } from '../../scheduler.utils';
 import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
 import type { VisibleEventSlot } from './types';
 import { CardRoom } from './CardRoom';

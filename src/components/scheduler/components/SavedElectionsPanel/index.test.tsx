@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { SavedElectionsPanel } from './index';
-import type { SavedElectionDetail, SubjectData } from '../../psicologia-scheduler.types';
+import type { SavedElectionDetail, SubjectData } from '../../scheduler.types';
 
 const subject: SubjectData = {
   id: '34',

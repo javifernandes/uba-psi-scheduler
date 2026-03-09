@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { useSchedulerFiltersActions } from './use-scheduler-filters-actions';
-import type { VenueCode } from '../psicologia-scheduler.types';
+import type { VenueCode } from '../scheduler.types';
 
 function applyStateSetter<T>(setter: (next: T | ((prev: T) => T)) => void, prev: T) {
   const calls = vi.mocked(setter).mock.calls;

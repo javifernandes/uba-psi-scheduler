@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import type { CalendarEvent, ParsedSubject } from '../psicologia-scheduler.types';
+import type { CalendarEvent, ParsedSubject } from '../scheduler.types';
 import {
   buildLinkedCommissionIdsMap,
   shortTeacherName,
   slotKeyForEvent,
-} from '../psicologia-scheduler.utils';
+} from '../scheduler.utils';
 
 type UseSchedulerCalendarParams = {
   selectedSubject: ParsedSubject;

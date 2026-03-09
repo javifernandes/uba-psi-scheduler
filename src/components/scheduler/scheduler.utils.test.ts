@@ -30,8 +30,8 @@ import {
   splitEventTitle,
   venueLabel,
   venueCodeFromAula,
-} from './psicologia-scheduler.utils';
-import type { SubjectData } from './psicologia-scheduler.types';
+} from './scheduler.utils';
+import type { SubjectData } from './scheduler.types';
 
 const subjectData: SubjectData = {
   id: '50',
@@ -60,7 +60,7 @@ const secondarySubjectData: SubjectData = {
   comisiones: ['9|jueves|16:15|19:30|Fazzito, Lorena Laura|II|IN-208|'],
 };
 
-describe('psicologia-scheduler.utils', () => {
+describe('scheduler.utils', () => {
   it('convierte horas y calcula overlap', () => {
     expect(h2m('14:30')).toBe(870);
     expect(m2h(870)).toBe('14:30');

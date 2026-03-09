@@ -1,5 +1,5 @@
-import type { ReservedSlot, SavedElectionDetail } from '../../psicologia-scheduler.types';
-import { overlapRange } from '../../psicologia-scheduler.utils';
+import type { ReservedSlot, SavedElectionDetail } from '../../scheduler.types';
+import { overlapRange } from '../../scheduler.utils';
 
 type SavedSlotForConflict = {
   slotId: string;

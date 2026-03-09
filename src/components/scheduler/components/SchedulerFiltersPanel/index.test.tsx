@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { SchedulerFiltersPanel } from './index';
-import type { SubjectData } from '../../psicologia-scheduler.types';
+import type { SubjectData } from '../../scheduler.types';
 
 const subjectOption: SubjectData = {
   id: '35',

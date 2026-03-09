@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
-import type { ReservedSlot, SavedElectionDetail } from '../../psicologia-scheduler.types';
+import type { ReservedSlot, SavedElectionDetail } from '../../scheduler.types';
 import {
   dayShort,
   DAYS,
@@ -20,7 +20,7 @@ import {
   h2m,
   shortTeacherName,
   splitAula,
-} from '../../psicologia-scheduler.utils';
+} from '../../scheduler.utils';
 import { buildSavedConflictOverlay, type SavedConflictOverlayData } from './overlay';
 
 type SavedElectionsPanelProps = {

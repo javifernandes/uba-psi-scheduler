@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import type { Comision, ReservedSlot } from '../../psicologia-scheduler.types';
+import type { Comision, ReservedSlot } from '../../scheduler.types';
 import {
   DAYS,
   h2m,
@@ -9,7 +9,7 @@ import {
   splitEventTitle,
   startHour,
   timeColumnWidthPx,
-} from '../../psicologia-scheduler.utils';
+} from '../../scheduler.utils';
 import type { VisibleEventSlot } from './types';
 
 type UseCalendarEventCardStateParams = {

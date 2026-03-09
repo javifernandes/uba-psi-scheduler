@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import type { CalendarEvent } from '../../psicologia-scheduler.types';
+import type { CalendarEvent } from '../../scheduler.types';
 import { timeTextClass } from './styles';
 
 type CardTimeProps = {

@@ -1,4 +1,4 @@
-import { DAYS, DAY_LABELS, hourRows } from '../../psicologia-scheduler.utils';
+import { DAYS, DAY_LABELS, hourRows } from '../../scheduler.utils';
 
 type CalendarGridBaseProps = {
   onEmptyCellEnter: () => void;

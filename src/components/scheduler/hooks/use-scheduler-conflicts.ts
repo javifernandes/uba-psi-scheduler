@@ -5,8 +5,8 @@ import type {
   ReservedSlot,
   SavedElectionDetail,
   SubjectData,
-} from '../psicologia-scheduler.types';
-import { rangesOverlap, shortTeacherName, splitAula } from '../psicologia-scheduler.utils';
+} from '../scheduler.types';
+import { rangesOverlap, shortTeacherName, splitAula } from '../scheduler.utils';
 
 type UseSchedulerConflictsParams = {
   savedSubjects: SubjectData[];

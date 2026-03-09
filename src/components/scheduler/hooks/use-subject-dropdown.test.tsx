@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSubjectDropdown } from './use-subject-dropdown';
-import type { SubjectData } from '../psicologia-scheduler.types';
+import type { SubjectData } from '../scheduler.types';
 
 const subjects: SubjectData[] = [
   {

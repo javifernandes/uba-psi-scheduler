@@ -1,8 +1,8 @@
 import { useLayoutEffect, useMemo, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { AlertTriangle } from 'lucide-react';
-import type { ReservedSlot } from '../../psicologia-scheduler.types';
-import { catedraFragmentFromLabel, dayShort, h2m } from '../../psicologia-scheduler.utils';
+import type { ReservedSlot } from '../../scheduler.types';
+import { catedraFragmentFromLabel, dayShort, h2m } from '../../scheduler.utils';
 
 type ConflictBubbleProps = {
   show: boolean;

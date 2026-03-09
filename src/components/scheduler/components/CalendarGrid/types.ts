@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import type { CalendarEvent, Comision, ReservedSlot } from '../../psicologia-scheduler.types';
+import type { CalendarEvent, Comision, ReservedSlot } from '../../scheduler.types';
 
 export type VisibleEventSlot = {
   slotKey: string;

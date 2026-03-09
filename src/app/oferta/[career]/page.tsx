@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PsicologiaScheduler } from '@/components/scheduler/psicologia-scheduler';
+import { Scheduler } from '@/components/scheduler/scheduler';
 import { loadCareers, loadSubjectsForCareer } from '@/lib/uba-careers';
 
 type PageProps = {
@@ -26,7 +26,7 @@ const CareerOfferPage = async ({ params }: PageProps) => {
 
   const subjects = await loadSubjectsForCareer(career.slug);
   return (
-    <PsicologiaScheduler
+    <Scheduler
       subjects={subjects}
       careerLabel={career.label}
       careerSlug={career.slug}

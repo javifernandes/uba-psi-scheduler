@@ -7,8 +7,8 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type SetStateAction,
 } from 'react';
-import type { SubjectData } from '../psicologia-scheduler.types';
-import { catedraNumberFromLabel, materiaGroupFromLabel } from '../psicologia-scheduler.utils';
+import type { SubjectData } from '../scheduler.types';
+import { catedraNumberFromLabel, materiaGroupFromLabel } from '../scheduler.utils';
 
 export type SubjectGroup = {
   groupLabel: string;

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { CalendarGridBase } from './GridBase';
-import { DAYS, DAY_LABELS, hourRows } from '../../psicologia-scheduler.utils';
+import { DAYS, DAY_LABELS, hourRows } from '../../scheduler.utils';
 
 describe('CalendarGridBase', () => {
   it('renderiza encabezados de días y filas horarias', () => {

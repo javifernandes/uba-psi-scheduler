@@ -11,7 +11,7 @@ import type {
   ParsedSubject,
   SubjectData,
   VenueCode,
-} from '../psicologia-scheduler.types';
+} from '../scheduler.types';
 import {
   matchesCommissionQuery,
   parseSubject,
@@ -19,7 +19,7 @@ import {
   sortVenueCodes,
   sortComisiones,
   venueCodeFromAula,
-} from '../psicologia-scheduler.utils';
+} from '../scheduler.utils';
 
 type UseSchedulerSubjectsDataParams = {
   subjects: SubjectData[];

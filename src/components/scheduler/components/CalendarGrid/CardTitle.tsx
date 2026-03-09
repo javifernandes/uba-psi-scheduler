@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
-import type { CalendarEvent } from '../../psicologia-scheduler.types';
+import type { CalendarEvent } from '../../scheduler.types';
 import { venuePrefixClass } from './styles';
 
 type CardTitleProps = {

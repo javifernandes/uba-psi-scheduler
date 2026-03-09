@@ -9,14 +9,14 @@ import type {
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { Comision, SubjectData, VenueCode } from '../../psicologia-scheduler.types';
+import type { Comision, SubjectData, VenueCode } from '../../scheduler.types';
 import {
   catedraFragmentFromLabel,
   catedraProfessorFromHeader,
   commissionSummaryLabel,
   venueBadgeCode,
   venueLabel,
-} from '../../psicologia-scheduler.utils';
+} from '../../scheduler.utils';
 import { collapsedComisionesSummary, collapsedMateriaSummary } from './summaries';
 
 type SubjectGroup = {

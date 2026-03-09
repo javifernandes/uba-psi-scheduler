@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { hourRows } from '../../psicologia-scheduler.utils';
+import { hourRows } from '../../scheduler.utils';
 import { CalendarEventCard } from './EventCard';
 import { CalendarGridBase } from './GridBase';
 import { CalendarLegend } from './Legend';

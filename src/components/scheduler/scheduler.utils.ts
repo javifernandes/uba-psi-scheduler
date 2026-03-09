@@ -7,7 +7,7 @@ import type {
   SubjectData,
   Teorico,
   VenueCode,
-} from './psicologia-scheduler.types';
+} from './scheduler.types';
 
 export const DAYS: Day[] = [
   'lunes',

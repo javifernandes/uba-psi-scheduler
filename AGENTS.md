@@ -11,8 +11,10 @@ Before making changes in this repository, read and follow:
 
 1. Prefer keeping this repository lightweight.
 2. Avoid introducing backend/runtime complexity unless explicitly needed.
-3. Keep routes, naming, and docs aligned with the current taxonomy:
-   - `uba` = universidad
-   - `psicologia` = facultad
-   - `oferta` = funcionalidad
-   - `lic-psicologia` = carrera
+3. Keep routes, naming, and docs aligned with the current app shape:
+   - `/` = home
+   - `/oferta/[career]` = scheduler por carrera
+   - `src/components/scheduler/*` = módulo principal del scheduler
+4. Refactors are expected to be full migrations by default:
+   - Do not leave temporary aliases, compatibility exports, or backward-compatible imports unless the user explicitly requests it.
+   - Remove deprecated paths/usages in the same refactor pass.

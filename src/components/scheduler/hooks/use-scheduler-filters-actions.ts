@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import type { Comision, VenueCode } from '../psicologia-scheduler.types';
+import type { Comision, VenueCode } from '../scheduler.types';
 
 type UseSchedulerFiltersActionsParams = {
   searchedComisiones: Comision[];

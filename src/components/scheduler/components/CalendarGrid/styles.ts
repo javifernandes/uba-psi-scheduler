@@ -1,4 +1,4 @@
-import type { CalendarEvent } from '../../psicologia-scheduler.types';
+import type { CalendarEvent } from '../../scheduler.types';
 
 export const venuePrefixClass = (type: CalendarEvent['tipo']) => {
   if (type === 'prac') return 'text-[#e8b4d7]';

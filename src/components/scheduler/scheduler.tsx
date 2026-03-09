@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { CircleHelp } from 'lucide-react';
-import type { ParsedSubject, SubjectData } from './psicologia-scheduler.types';
+import type { ParsedSubject, SubjectData } from './scheduler.types';
 import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
 import { captureEvent } from '@/lib/posthog';
 import { cn } from '@/lib/utils';
@@ -31,10 +31,10 @@ import {
   type EnrollmentProjectionRejectedEntry,
   mapProjectionEnrollmentsToSubjectMap,
   parseEnrollmentsImportPayload,
-} from './psicologia-scheduler.utils';
-export type { SubjectData } from './psicologia-scheduler.types';
+} from './scheduler.utils';
+export type { SubjectData } from './scheduler.types';
 
-type PsicologiaSchedulerProps = {
+type SchedulerProps = {
   subjects: SubjectData[];
   careerLabel?: string;
   careerSlug?: string;
@@ -68,12 +68,12 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
   seminarioMap: {},
 };
 
-const PsicologiaSchedulerContent = ({
+const SchedulerContent = ({
   subjects,
   careerLabel = 'Lic. Psicología UBA',
   careerSlug = 'lic-psicologia',
   storageKey,
-}: PsicologiaSchedulerProps) => {
+}: SchedulerProps) => {
   const isFirstSubjectRender = useRef(true);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
@@ -606,8 +606,8 @@ const PsicologiaSchedulerContent = ({
   );
 };
 
-export const PsicologiaScheduler = (props: PsicologiaSchedulerProps) => {
+export const Scheduler = (props: SchedulerProps) => {
   const { subjects } = props;
   if (!subjects.length) return <EmptySubjectsState />;
-  return <PsicologiaSchedulerContent {...props} />;
+  return <SchedulerContent {...props} />;
 };

@@ -1,8 +1,8 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSchedulerPersistence } from './use-scheduler-persistence';
-import type { SubjectData } from '../psicologia-scheduler.types';
-import { ENROLLMENTS_STORAGE_KEY } from '../psicologia-scheduler.utils';
+import type { SubjectData } from '../scheduler.types';
+import { ENROLLMENTS_STORAGE_KEY } from '../scheduler.utils';
 
 const TEST_STORAGE_KEY = ENROLLMENTS_STORAGE_KEY;
 

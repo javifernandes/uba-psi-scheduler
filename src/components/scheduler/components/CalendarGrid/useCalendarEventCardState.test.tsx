@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { useCalendarEventCardState } from './useCalendarEventCardState';
-import type { Comision } from '../../psicologia-scheduler.types';
+import type { Comision } from '../../scheduler.types';
 import type { VisibleEventSlot } from './types';
 
 const activeCommission: Comision = {

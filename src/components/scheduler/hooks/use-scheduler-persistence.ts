@@ -6,12 +6,12 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
-import type { SubjectData } from "../psicologia-scheduler.types";
+import type { SubjectData } from "../scheduler.types";
 import {
   ENROLLMENTS_STORAGE_KEY,
   materiaCodeFromLabel,
   sameRecord,
-} from "../psicologia-scheduler.utils";
+} from "../scheduler.utils";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 
 type UseSchedulerPersistenceParams = {

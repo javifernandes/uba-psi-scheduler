@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { useSchedulerCalendar } from './use-scheduler-calendar';
-import { parseSubject } from '../psicologia-scheduler.utils';
-import type { ParsedSubject, SubjectData } from '../psicologia-scheduler.types';
+import { parseSubject } from '../scheduler.utils';
+import type { ParsedSubject, SubjectData } from '../scheduler.types';
 
 const subjectAData: SubjectData = {
   id: 's1',
