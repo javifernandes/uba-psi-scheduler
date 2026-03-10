@@ -8,7 +8,9 @@
 
 ## Directory model
 
-- `src/app/uba/psicologia/oferta/lic-psicologia/*`: scheduler domain
+- `src/app/oferta/[career]/page.tsx`: route entrypoint del scheduler por carrera
+- `src/components/scheduler/*`: scheduler domain (UI + hooks + utils)
+- `src/domain/*`: reglas puras de negocio y transformaciones de datos del scheduler
 - `src/components/*`: shared UI or cross-route components
 - `src/lib/*`: shared low-level utilities
 - `scripts/*`: data ingestion and maintenance scripts

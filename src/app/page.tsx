@@ -27,7 +27,7 @@ const HomePage = async () => {
             <Link
               key={career.slug}
               className="group inline-flex min-h-20 items-center justify-between rounded-2xl border border-[#dcbfd0] bg-gradient-to-br from-[#fff8fc] to-[#fff0f6] px-5 py-4 text-base font-bold text-[#5a1740] shadow-sm transition hover:-translate-y-0.5 hover:border-[#c791af] hover:shadow-md dark:border-zinc-600 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-500 dark:hover:from-zinc-700 dark:hover:to-zinc-800"
-              href={`/uba/psicologia/oferta/${career.slug}/scheduler`}
+              href={`/oferta/${career.slug}`}
             >
               <span className="pr-3">{career.label}</span>
               <span className="rounded-full bg-[#861f5c]/10 px-2.5 py-1 text-xs font-bold text-[#7d2457] dark:bg-zinc-700 dark:text-zinc-200">

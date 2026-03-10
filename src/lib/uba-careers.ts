@@ -1,6 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import type { SubjectData } from '@/app/uba/psicologia/oferta/lic-psicologia/psicologia-scheduler';
+import type { SubjectData } from '@/components/scheduler/scheduler.types';
 
 export type CareerMeta = {
   code: string;
@@ -40,4 +40,3 @@ export const loadSubjectsForCareer = async (careerSlug: string): Promise<Subject
     return [];
   }
 };
-

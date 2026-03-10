@@ -8,7 +8,7 @@ const REPO_URL = 'https://github.com/javifernandes/uba-psi-scheduler';
 
 export const SiteFooter = () => {
   const pathname = usePathname();
-  const isSchedulerRoute = pathname.includes('/scheduler');
+  const isSchedulerRoute = pathname.startsWith('/oferta/');
   if (isSchedulerRoute) return null;
 
   return (
