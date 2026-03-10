@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState, type ComponentProps } from 'react';
 import type { ParsedSubject, SubjectData } from './scheduler.types';
 import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
+import type { PeriodId } from '@/lib/period';
+import { useAppStore } from '@/store/app-store';
 import {
   CalendarGrid,
   SavedElectionsPanel,
@@ -30,6 +32,7 @@ export type { SubjectData } from './scheduler.types';
 
 type SchedulerProps = {
   subjects: SubjectData[];
+  period: PeriodId;
   careerLabel?: string;
   careerSlug?: string;
 };
@@ -55,9 +58,11 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
 
 const SchedulerContent = ({
   subjects,
+  period,
   careerLabel = 'Lic. Psicología UBA',
   careerSlug = 'lic-psicologia',
 }: SchedulerProps) => {
+  const currentPeriod = useAppStore(state => state.currentPeriod);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
   const [showSeminarios, setShowSeminarios] = useState(false);
@@ -86,6 +91,8 @@ const SchedulerContent = ({
     applyEnrollmentRule,
   } = useSchedulerPersistence({
     subjects,
+    period: currentPeriod || period,
+    careerSlug,
   });
 
   const resetSelectionState = useCallback(() => {
@@ -258,6 +265,7 @@ const SchedulerContent = ({
     onApplyImportSelections,
   } = useSchedulerCallbacks({
     selectedSubject,
+    currentPeriod: currentPeriod || period,
     careerSlug,
     selectedVenues,
     searchedComisiones,
@@ -400,7 +408,33 @@ const SchedulerContent = ({
 };
 
 export const Scheduler = (props: SchedulerProps) => {
-  const { subjects } = props;
-  if (!subjects.length) return <EmptySubjectsState />;
-  return <SchedulerContent {...props} />;
+  const { subjects, careerLabel = 'Lic. Psicología UBA', careerSlug = 'lic-psicologia', period } = props;
+  const bootstrapOffer = useAppStore(state => state.bootstrapOffer);
+  const storeSubjects = useAppStore(state => state.subjects);
+  const storeCareerSlug = useAppStore(state => state.currentCareerSlug);
+  const storePeriod = useAppStore(state => state.currentPeriod);
+
+  useEffect(() => {
+    bootstrapOffer({
+      period,
+      careerSlug,
+      careerLabel,
+      subjects,
+    });
+  }, [bootstrapOffer, careerLabel, careerSlug, period, subjects]);
+
+  const effectiveSubjects =
+    storeCareerSlug === careerSlug && storePeriod === period && storeSubjects.length
+      ? storeSubjects
+      : subjects;
+  if (!effectiveSubjects.length) return <EmptySubjectsState />;
+
+  return (
+    <SchedulerContent
+      subjects={effectiveSubjects}
+      careerLabel={careerLabel}
+      careerSlug={careerSlug}
+      period={period}
+    />
+  );
 };

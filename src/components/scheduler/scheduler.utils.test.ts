@@ -10,6 +10,7 @@ import {
   dayShort,
   displayHeaderLabel,
   displaySubjectLabel,
+  enrollmentStorageKeyForScope,
   h2m,
   m2h,
   materiaCodeFromLabel,
@@ -192,6 +193,9 @@ describe('scheduler.utils', () => {
         })
       )
     ).toThrow(/no soportada/);
+    expect(enrollmentStorageKeyForScope('lic-psicologia', '2026-01')).toBe(
+      'uba_psico_planner_v1:lic-psicologia:2026-01'
+    );
   });
 
   it('mapea proyección importada a elecciones por subject id', () => {

@@ -20,6 +20,7 @@ type ImportPreviewData = {
 
 type UseSchedulerCallbacksParams = {
   selectedSubject: { id: string } | null;
+  currentPeriod: string;
   careerSlug: string;
   selectedVenues: Set<VenueCode>;
   searchedComisiones: Comision[];
@@ -43,6 +44,7 @@ type UseSchedulerCallbacksParams = {
 
 export const useSchedulerCallbacks = ({
   selectedSubject,
+  currentPeriod,
   careerSlug,
   selectedVenues,
   searchedComisiones,
@@ -165,12 +167,6 @@ export const useSchedulerCallbacks = ({
 
   const onExportSelections = useCallback(() => {
     if (typeof window === 'undefined') return;
-    const period = (() => {
-      const now = new Date();
-      const year = now.getFullYear();
-      const term = now.getMonth() < 7 ? '01' : '02';
-      return `${year}-${term}`;
-    })();
     const projectedEnrollments = Object.entries(enrolledBySubject).reduce<
       Array<{ catedra: number; comision: number | string }>
     >((acc, [subjectId, commissionId]) => {
@@ -184,7 +180,7 @@ export const useSchedulerCallbacks = ({
       });
       return acc;
     }, []);
-    const payload = buildEnrollmentsExportPayload(projectedEnrollments, period);
+    const payload = buildEnrollmentsExportPayload(projectedEnrollments, currentPeriod);
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
       type: 'application/json',
     });
@@ -200,7 +196,7 @@ export const useSchedulerCallbacks = ({
     captureEvent('scheduler_saved_subjects_exported', {
       total_subjects: Object.keys(enrolledBySubject).length,
     });
-  }, [enrolledBySubject, subjects]);
+  }, [currentPeriod, enrolledBySubject, subjects]);
 
   const onImportSelections = useCallback(
     async (file: File): Promise<ImportPreviewData> => {

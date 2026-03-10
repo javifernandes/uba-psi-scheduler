@@ -131,9 +131,12 @@ export const splitEventTitle = (title: string) => {
 export const slotKeyForEvent = (event: CalendarEvent) =>
   `${event.dia}|${event.inicio}|${event.fin}`;
 
-export const ENROLLMENTS_STORAGE_KEY = 'uba_psico_planner_v1';
+export const ENROLLMENTS_STORAGE_KEY_PREFIX = 'uba_psico_planner_v1';
 export const ENROLLMENTS_EXPORT_VERSION = 1;
 export const ENROLLMENTS_EXPORT_TYPE = 'enrollments-projection';
+
+export const enrollmentStorageKeyForScope = (careerSlug: string, period: string) =>
+  `${ENROLLMENTS_STORAGE_KEY_PREFIX}:${careerSlug}:${period}`;
 
 export type EnrollmentProjectionEntry = {
   catedra: number;
