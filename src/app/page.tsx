@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
+import { CURRENT_PERIOD } from '@/lib/current-period';
 import { loadCareers } from '@/lib/uba-careers';
 
 const HomePage = async () => {
-  const careers = await loadCareers();
+  const careers = await loadCareers(CURRENT_PERIOD);
 
   return (
     <main className="h-full bg-[radial-gradient(circle_at_10%_10%,#f8dde7_0%,transparent_35%),radial-gradient(circle_at_90%_15%,#f6ebce_0%,transparent_28%),radial-gradient(circle_at_50%_100%,#f7e7f3_0%,transparent_35%),#faf5f7] px-5 py-10 dark:bg-[radial-gradient(circle_at_10%_10%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_90%_15%,#4f3e1f_0%,transparent_28%),radial-gradient(circle_at_50%_100%,#2a1e33_0%,transparent_35%),#0f0b12]">
@@ -27,7 +28,7 @@ const HomePage = async () => {
             <Link
               key={career.slug}
               className="group inline-flex min-h-20 items-center justify-between rounded-2xl border border-[#dcbfd0] bg-gradient-to-br from-[#fff8fc] to-[#fff0f6] px-5 py-4 text-base font-bold text-[#5a1740] shadow-sm transition hover:-translate-y-0.5 hover:border-[#c791af] hover:shadow-md dark:border-zinc-600 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-500 dark:hover:from-zinc-700 dark:hover:to-zinc-800"
-              href={`/oferta/${career.slug}`}
+              href={`/oferta/${career.slug}/${CURRENT_PERIOD}`}
             >
               <span className="pr-3">{career.label}</span>
               <span className="rounded-full bg-[#861f5c]/10 px-2.5 py-1 text-xs font-bold text-[#7d2457] dark:bg-zinc-700 dark:text-zinc-200">

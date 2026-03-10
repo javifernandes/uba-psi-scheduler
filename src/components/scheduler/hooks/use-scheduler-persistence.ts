@@ -1,6 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import type { SubjectData } from "../scheduler.types";
-import { ENROLLMENTS_STORAGE_KEY, sameRecord } from "../scheduler.utils";
+import { enrollmentStorageKeyForScope, sameRecord } from "../scheduler.utils";
 import {
   applyEnrollmentRule as applyEnrollmentRuleDomain,
   normalizeEnrollmentMap,
@@ -11,6 +11,8 @@ import { useLocalStorageState } from "@/hooks/use-local-storage-state";
 
 type UseSchedulerPersistenceParams = {
   subjects: SubjectData[];
+  period: string;
+  careerSlug: string;
 };
 
 type UseSchedulerPersistenceResult = {
@@ -28,12 +30,15 @@ type UseSchedulerPersistenceResult = {
 
 export const useSchedulerPersistence = ({
   subjects,
+  period,
+  careerSlug,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
   const subjectIdSet = new Set(subjects.map((subject) => subject.id));
   const materiaCodeBySubjectId = indexMaterias(subjects);
   const rehydrateToken = subjects
     .map((subject) => `${subject.id}:${subject.label}`)
     .join("|");
+  const storageKey = enrollmentStorageKeyForScope(careerSlug, period);
 
   const [selectedSubjectId, setSelectedSubjectId] = useQueryParamState({
     key: "m",
@@ -44,7 +49,7 @@ export const useSchedulerPersistence = ({
   const [enrolledBySubject, setEnrolledBySubject] = useLocalStorageState<
     Record<string, string>
   >({
-    key: ENROLLMENTS_STORAGE_KEY,
+    key: storageKey,
     defaultValue: EMPTY_ENROLLMENTS,
     enabled: subjects.length > 0,
     normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),

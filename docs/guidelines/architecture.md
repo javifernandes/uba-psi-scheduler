@@ -8,7 +8,8 @@
 
 ## Directory model
 
-- `src/app/oferta/[career]/page.tsx`: route entrypoint del scheduler por carrera
+- `src/app/oferta/[career]/[period]/page.tsx`: route entrypoint canónico del scheduler
+- `src/app/oferta/[career]/page.tsx`: alias route que redirige al período actual
 - `src/components/scheduler/*`: scheduler domain (UI + hooks + utils)
 - `src/domain/*`: reglas puras de negocio y transformaciones de datos del scheduler
 - `src/components/*`: shared UI or cross-route components

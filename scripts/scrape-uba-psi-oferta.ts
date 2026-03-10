@@ -52,9 +52,12 @@ type CareerConfig = {
 
 type CliOptions = {
   outputDir: string;
+  period?: PeriodId;
   limit?: number;
   careers: CareerConfig[];
 };
+
+type PeriodId = `${number}-01` | `${number}-02`;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -79,6 +82,7 @@ const careerByToken = new Map<string, CareerConfig>(
 const parseArgs = (): CliOptions => {
   const args = process.argv.slice(2);
   let outputDir = DEFAULT_OUTPUT_DIR;
+  let period: PeriodId | undefined;
   let limit: number | undefined;
   let careerTokens: string[] = CAREERS.map(career => career.code);
 
@@ -91,6 +95,15 @@ const parseArgs = (): CliOptions => {
     }
     if (arg === '--limit' && args[i + 1]) {
       limit = Number.parseInt(args[i + 1], 10);
+      i += 1;
+      continue;
+    }
+    if (arg === '--period' && args[i + 1]) {
+      const normalized = normalizePeriod(args[i + 1]);
+      if (!normalized) {
+        throw new Error('Período inválido en --period. Usá formato YYYY-01 o YYYY-02.');
+      }
+      period = normalized;
       i += 1;
       continue;
     }
@@ -117,7 +130,7 @@ const parseArgs = (): CliOptions => {
     );
   }
 
-  return { outputDir, limit, careers };
+  return { outputDir, period, limit, careers };
 };
 
 const decodeEntities = (value: string) =>
@@ -151,6 +164,28 @@ const slugify = (value: string) =>
     .replaceAll(/\s+/g, '-')
     .replaceAll(/-+/g, '-')
     .replaceAll(/^-|-$/g, '');
+
+const normalizePeriod = (value: string): PeriodId | null => {
+  const trimmed = value.trim();
+  const exactMatch = trimmed.match(/^(\d{4})-(01|02)$/);
+  if (exactMatch?.[1] && exactMatch?.[2]) {
+    return `${exactMatch[1]}-${exactMatch[2]}` as PeriodId;
+  }
+  const flexibleMatch = trimmed.match(/^(\d{4})\s*[-/]\s*([12]|0[12])$/);
+  if (!flexibleMatch?.[1] || !flexibleMatch?.[2]) return null;
+  const term = flexibleMatch[2] === '2' || flexibleMatch[2] === '02' ? '02' : '01';
+  return `${flexibleMatch[1]}-${term}` as PeriodId;
+};
+
+const periodFromCatalogHtml = (html: string): PeriodId | null => {
+  const explicitMatch = html.match(/Horarios\s+a\s+cursos\s*(\d{4})\s*\/\s*([12])/i);
+  if (explicitMatch?.[1] && explicitMatch?.[2]) {
+    return normalizePeriod(`${explicitMatch[1]}-${explicitMatch[2]}`);
+  }
+  const fallbackMatch = html.match(/(\d{4})\s*\/\s*([12])/);
+  if (!fallbackMatch?.[1] || !fallbackMatch?.[2]) return null;
+  return normalizePeriod(`${fallbackMatch[1]}-${fallbackMatch[2]}`);
+};
 
 const normalizeDay = (value: string) => {
   const day = normalizeKey(value);
@@ -340,6 +375,15 @@ const main = async () => {
 
   console.log(`Abriendo catálogo: ${DEFAULT_CATALOG_URL}`);
   const catalogHtml = await fetchHtml(DEFAULT_CATALOG_URL);
+  const detectedPeriod = periodFromCatalogHtml(catalogHtml);
+  const resolvedPeriod = options.period || detectedPeriod;
+  if (!resolvedPeriod) {
+    throw new Error(
+      'No se pudo inferir el período desde el catálogo. Ejecutá de nuevo con --period YYYY-01 o YYYY-02.'
+    );
+  }
+  const outputDir = path.join(options.outputDir, resolvedPeriod);
+  console.log(`Período detectado: ${detectedPeriod || 'desconocido'} · período usado: ${resolvedPeriod}`);
 
   const careersFromCatalog: CatalogCareer[] = options.careers.map(career => {
     const panelHtml = extractPanelHtml(catalogHtml, career.code);
@@ -414,7 +458,7 @@ const main = async () => {
       await sleep(100);
     }
 
-    const careerDir = path.join(options.outputDir, career.slug, 'materias');
+    const careerDir = path.join(outputDir, career.slug, 'materias');
     await fs.mkdir(careerDir, { recursive: true });
     const existing = await fs.readdir(careerDir).catch(() => [] as string[]);
     await Promise.all(
@@ -440,14 +484,14 @@ const main = async () => {
     console.log(`OK [${career.code}] ${career.slug}: ${subjects.length} materias.`);
   }
 
-  await fs.mkdir(options.outputDir, { recursive: true });
+  await fs.mkdir(outputDir, { recursive: true });
   await fs.writeFile(
-    path.join(options.outputDir, 'careers.generated.json'),
+    path.join(outputDir, 'careers.generated.json'),
     `${JSON.stringify(outSummary, null, 2)}\n`,
     'utf8'
   );
 
-  console.log(`\nSalida generada en: ${options.outputDir}`);
+  console.log(`\nSalida generada en: ${outputDir}`);
 };
 
 main().catch(error => {

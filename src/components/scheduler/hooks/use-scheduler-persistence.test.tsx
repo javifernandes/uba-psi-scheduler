@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSchedulerPersistence } from './use-scheduler-persistence';
 import type { SubjectData } from '../scheduler.types';
-import { ENROLLMENTS_STORAGE_KEY } from '../scheduler.utils';
+import { enrollmentStorageKeyForScope } from '../scheduler.utils';
 
 const subjects: SubjectData[] = [
   {
@@ -30,6 +30,9 @@ const subjects: SubjectData[] = [
     comisiones: [],
   },
 ];
+const TEST_PERIOD = '2026-01';
+const TEST_CAREER = 'lic-psicologia';
+const TEST_STORAGE_KEY = enrollmentStorageKeyForScope(TEST_CAREER, TEST_PERIOD);
 
 describe('useSchedulerPersistence', () => {
   let storage: Map<string, string>;
@@ -56,25 +59,31 @@ describe('useSchedulerPersistence', () => {
 
   it('toma materia desde query param m cuando existe y es válida', () => {
     window.history.replaceState(null, '', '/?m=35');
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
+    );
     expect(result.current.selectedSubjectId).toBe('35');
   });
 
   it('arranca sin materia seleccionada cuando no hay query param m', () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
+    );
     expect(result.current.selectedSubjectId).toBe('');
   });
 
   it('normaliza enrollments dejando una sola cátedra por código de materia', async () => {
     storage.set(
-      ENROLLMENTS_STORAGE_KEY,
+      TEST_STORAGE_KEY,
       JSON.stringify({
         '34': '21',
         '35': '4',
         unknown: 'x',
       })
     );
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
+    );
 
     await waitFor(() => {
       expect(result.current.enrolledBySubject).toEqual({ '35': '4' });
@@ -82,7 +91,9 @@ describe('useSchedulerPersistence', () => {
   });
 
   it('applyEnrollmentRule reemplaza selección previa de la misma materia y permite limpiar', () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
+    );
 
     const replaced = result.current.applyEnrollmentRule({ '34': '21', '60': '7' }, '35', '4');
     expect(replaced).toEqual({ '35': '4', '60': '7' });
@@ -92,20 +103,22 @@ describe('useSchedulerPersistence', () => {
   });
 
   it('persiste en localStorage cambios de enrolledBySubject', async () => {
-    const { result } = renderHook(() => useSchedulerPersistence({ subjects }));
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
+    );
 
     await act(async () => {
       result.current.setEnrolledBySubject({ '60': '3' });
     });
 
     await waitFor(() => {
-      expect(storage.get(ENROLLMENTS_STORAGE_KEY)).toBe(JSON.stringify({ '60': '3' }));
+      expect(storage.get(TEST_STORAGE_KEY)).toBe(JSON.stringify({ '60': '3' }));
     });
   });
 
   it('hidrata enrollments cuando subjects llega después del primer render', async () => {
     storage.set(
-      ENROLLMENTS_STORAGE_KEY,
+      TEST_STORAGE_KEY,
       JSON.stringify({
         '35': '4',
       })
@@ -113,7 +126,11 @@ describe('useSchedulerPersistence', () => {
 
     const { result, rerender } = renderHook(
       ({ data }: { data: SubjectData[] }) =>
-        useSchedulerPersistence({ subjects: data }),
+        useSchedulerPersistence({
+          subjects: data,
+          period: TEST_PERIOD,
+          careerSlug: TEST_CAREER,
+        }),
       {
         initialProps: { data: [] as SubjectData[] },
       }

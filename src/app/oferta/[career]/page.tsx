@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Scheduler } from '@/components/scheduler/scheduler';
-import { loadCareers, loadSubjectsForCareer } from '@/lib/uba-careers';
+import { notFound, redirect } from 'next/navigation';
+import { CURRENT_PERIOD } from '@/lib/current-period';
+import { loadCareers } from '@/lib/uba-careers';
 
 type PageProps = {
   params: {
@@ -15,23 +15,15 @@ export const metadata: Metadata = {
 };
 
 export const generateStaticParams = async () => {
-  const careers = await loadCareers();
+  const careers = await loadCareers(CURRENT_PERIOD);
   return careers.map(career => ({ career: career.slug }));
 };
 
 const CareerOfferPage = async ({ params }: PageProps) => {
-  const careers = await loadCareers();
+  const careers = await loadCareers(CURRENT_PERIOD);
   const career = careers.find(item => item.slug === params.career);
   if (!career) return notFound();
-
-  const subjects = await loadSubjectsForCareer(career.slug);
-  return (
-    <Scheduler
-      subjects={subjects}
-      careerLabel={career.label}
-      careerSlug={career.slug}
-    />
-  );
+  redirect(`/oferta/${career.slug}/${CURRENT_PERIOD}`);
 };
 
 export default CareerOfferPage;
