@@ -2,6 +2,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { SavedElectionsPanel } from './index';
 import type { SavedElectionDetail, SubjectData } from '../../scheduler.types';
+import { useSavedElectionsViewModel } from '../../hooks/use-saved-elections-view-model';
+
+vi.mock('../../hooks/use-saved-elections-view-model', () => ({
+  useSavedElectionsViewModel: vi.fn(),
+}));
 
 const subject: SubjectData = {
   id: '34',
@@ -48,15 +53,20 @@ const savedDetail: SavedElectionDetail = {
 
 const createProps = (overrides: Partial<Parameters<typeof SavedElectionsPanel>[0]> = {}) => ({
   isOpen: true,
-  savedSubjectsCount: 1,
   savedElectionDetails: [savedDetail],
   savedConflictDetailsBySlot: {},
   alwaysConflictingSavedSlotIds: new Set<string>(),
   highlightedConflictSlotIds: new Set<string>(),
   onOpenPanel: vi.fn(),
   onToggleOpen: vi.fn(),
-  onRemoveSubject: vi.fn(),
-  onRemoveAllSubjects: vi.fn(),
+  ...overrides,
+});
+
+const createViewModel = (
+  overrides: Partial<ReturnType<typeof useSavedElectionsViewModel>> = {}
+) => ({
+  onRemoveSavedSubject: vi.fn(),
+  onRemoveAllSavedSubjects: vi.fn(),
   onExportSelections: vi.fn(),
   onImportSelections: vi.fn(async () => ({
     period: '2026-01',
@@ -80,17 +90,19 @@ const createProps = (overrides: Partial<Parameters<typeof SavedElectionsPanel>[0
 
 describe('SavedElectionsPanel', () => {
   it('muestra estado vacío cuando está abierto sin elecciones', () => {
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(createViewModel());
     render(<SavedElectionsPanel {...createProps({ savedElectionDetails: [] })} />);
     expect(screen.getByText('Sin elecciones guardadas.')).toBeInTheDocument();
   });
 
   it('en colapsado muestra contador y ejecuta onOpenPanel al clickear el contenedor', () => {
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(createViewModel());
     const onOpenPanel = vi.fn();
     render(
       <SavedElectionsPanel
         {...createProps({
           isOpen: false,
-          savedSubjectsCount: 3,
+          savedElectionDetails: [savedDetail, savedDetail, savedDetail],
           onOpenPanel,
         })}
       />
@@ -102,23 +114,29 @@ describe('SavedElectionsPanel', () => {
   });
 
   it('renderiza elección y permite quitar materia', () => {
-    const onRemoveSubject = vi.fn();
-    render(<SavedElectionsPanel {...createProps({ onRemoveSubject })} />);
+    const onRemoveSavedSubject = vi.fn();
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(
+      createViewModel({ onRemoveSavedSubject })
+    );
+    render(<SavedElectionsPanel {...createProps()} />);
 
     expect(screen.getByText('1 · Historia de la Psicología - Cátedra 34 (II)')).toBeInTheDocument();
     expect(screen.getByText('21')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Quitar elección'));
     fireEvent.click(screen.getByRole('button', { name: 'Quitar materia' }));
-    expect(onRemoveSubject).toHaveBeenCalledWith('34');
+    expect(onRemoveSavedSubject).toHaveBeenCalledWith('34');
   });
 
   it('permite borrar todas las elecciones con confirmación', () => {
-    const onRemoveAllSubjects = vi.fn();
-    render(<SavedElectionsPanel {...createProps({ onRemoveAllSubjects })} />);
+    const onRemoveAllSavedSubjects = vi.fn();
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(
+      createViewModel({ onRemoveAllSavedSubjects })
+    );
+    render(<SavedElectionsPanel {...createProps()} />);
 
     fireEvent.click(screen.getByLabelText('Quitar todas las elecciones'));
     fireEvent.click(screen.getByRole('button', { name: 'Borrar todo' }));
-    expect(onRemoveAllSubjects).toHaveBeenCalledTimes(1);
+    expect(onRemoveAllSavedSubjects).toHaveBeenCalledTimes(1);
   });
 
   it('ejecuta export e import desde el flujo modal', async () => {
@@ -140,21 +158,22 @@ describe('SavedElectionsPanel', () => {
       },
     }));
     const onApplyImportSelections = vi.fn(async () => {});
-    render(
-      <SavedElectionsPanel
-        {...createProps({
-          onExportSelections,
-          onImportSelections,
-          onApplyImportSelections,
-        })}
-      />
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(
+      createViewModel({
+        onExportSelections,
+        onImportSelections,
+        onApplyImportSelections,
+      })
     );
+    render(<SavedElectionsPanel {...createProps()} />);
 
     fireEvent.click(screen.getByLabelText('Exportar elecciones'));
     expect(onExportSelections).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByLabelText('Importar elecciones'));
-    const file = new File([JSON.stringify({ version: 1 })], 'plan.json', { type: 'application/json' });
+    const file = new File([JSON.stringify({ version: 1 })], 'plan.json', {
+      type: 'application/json',
+    });
     const dialog = screen.getByRole('dialog', { name: 'Importar elecciones' });
     const input = dialog.querySelector('input[type="file"]') as HTMLInputElement;
     fireEvent.change(input, { target: { files: [file] } });

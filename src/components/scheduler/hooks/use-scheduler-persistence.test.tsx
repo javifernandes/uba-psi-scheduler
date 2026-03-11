@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSchedulerPersistence } from './use-scheduler-persistence';
 import type { SubjectData } from '../scheduler.types';
 import { enrollmentStorageKeyForScope } from '../scheduler.utils';
+import { useAppStore } from '@/store/app-store';
 
 const subjects: SubjectData[] = [
   {
@@ -38,6 +39,7 @@ describe('useSchedulerPersistence', () => {
   let storage: Map<string, string>;
 
   beforeEach(() => {
+    useAppStore.setState({ enrolledBySubject: {} });
     storage = new Map<string, string>();
     vi.stubGlobal('localStorage', {
       getItem: vi.fn((key: string) => storage.get(key) ?? null),
@@ -53,23 +55,28 @@ describe('useSchedulerPersistence', () => {
   });
 
   afterEach(() => {
+    useAppStore.setState({ enrolledBySubject: {} });
     vi.unstubAllGlobals();
     vi.restoreAllMocks();
   });
 
-  it('toma materia desde query param m cuando existe y es válida', () => {
+  it('toma materia desde query param m cuando existe y es válida', async () => {
     window.history.replaceState(null, '', '/?m=35');
     const { result } = renderHook(() =>
       useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
     );
-    expect(result.current.selectedSubjectId).toBe('35');
+    await waitFor(() => {
+      expect(result.current.selectedSubjectId).toBe('35');
+    });
   });
 
-  it('arranca sin materia seleccionada cuando no hay query param m', () => {
+  it('arranca sin materia seleccionada cuando no hay query param m', async () => {
     const { result } = renderHook(() =>
       useSchedulerPersistence({ subjects, period: TEST_PERIOD, careerSlug: TEST_CAREER })
     );
-    expect(result.current.selectedSubjectId).toBe('');
+    await waitFor(() => {
+      expect(result.current.selectedSubjectId).toBe('');
+    });
   });
 
   it('normaliza enrollments dejando una sola cátedra por código de materia', async () => {

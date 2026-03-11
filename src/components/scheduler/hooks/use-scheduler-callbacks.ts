@@ -1,32 +1,13 @@
 import { useCallback, type Dispatch, type SetStateAction } from 'react';
 import { captureEvent } from '@/lib/posthog';
-import type { Comision, SubjectData, VenueCode } from '../scheduler.types';
-import {
-  buildEnrollmentsExportPayload,
-  catedraNumberFromLabel,
-  mapProjectionEnrollmentsToSubjectMap,
-  parseEnrollmentsImportPayload,
-  type EnrollmentProjectionMappedEntry,
-  type EnrollmentProjectionRejectedEntry,
-} from '../scheduler.utils';
-
-type ImportPreviewData = {
-  period: string;
-  totalEntries: number;
-  mapped: EnrollmentProjectionMappedEntry[];
-  rejected: EnrollmentProjectionRejectedEntry[];
-  mappedBySubject: Record<string, string>;
-};
+import type { Comision, VenueCode } from '../scheduler.types';
 
 type UseSchedulerCallbacksParams = {
   selectedSubject: { id: string } | null;
-  currentPeriod: string;
   careerSlug: string;
   selectedVenues: Set<VenueCode>;
   searchedComisiones: Comision[];
   selectedCommissionIds: Set<string>;
-  subjects: SubjectData[];
-  enrolledBySubject: Record<string, string>;
   applyEnrollmentRule: (
     prev: Record<string, string>,
     targetSubjectId: string,
@@ -44,13 +25,10 @@ type UseSchedulerCallbacksParams = {
 
 export const useSchedulerCallbacks = ({
   selectedSubject,
-  currentPeriod,
   careerSlug,
   selectedVenues,
   searchedComisiones,
   selectedCommissionIds,
-  subjects,
-  enrolledBySubject,
   applyEnrollmentRule,
   setSelectedSubjectId,
   setEnrolledBySubject,
@@ -63,7 +41,7 @@ export const useSchedulerCallbacks = ({
 }: UseSchedulerCallbacksParams) => {
   const onToggleEnrollment = useCallback(
     (commissionId: string) => {
-      setEnrolledBySubject(prev => {
+      setEnrolledBySubject((prev) => {
         if (!selectedSubject) return prev;
         const isRemoving = prev[selectedSubject.id] === commissionId;
         captureEvent('scheduler_enrollment_toggled', {
@@ -145,92 +123,6 @@ export const useSchedulerCallbacks = ({
     [selectedCommissionIds, toggleCommission]
   );
 
-  const onRemoveSavedSubject = useCallback(
-    (subjectId: string) => {
-      setEnrolledBySubject(prev => {
-        captureEvent('scheduler_saved_subject_removed', { subject_id: subjectId });
-        const next = { ...prev };
-        delete next[subjectId];
-        return next;
-      });
-    },
-    [setEnrolledBySubject]
-  );
-
-  const onRemoveAllSavedSubjects = useCallback(() => {
-    setEnrolledBySubject(prev => {
-      const removed_count = Object.keys(prev).length;
-      captureEvent('scheduler_saved_subjects_cleared', { removed_count });
-      return {};
-    });
-  }, [setEnrolledBySubject]);
-
-  const onExportSelections = useCallback(() => {
-    if (typeof window === 'undefined') return;
-    const projectedEnrollments = Object.entries(enrolledBySubject).reduce<
-      Array<{ catedra: number; comision: number | string }>
-    >((acc, [subjectId, commissionId]) => {
-      const subject = subjects.find(item => item.id === subjectId);
-      if (!subject) return acc;
-      const catedra = catedraNumberFromLabel(subject.label);
-      if (!Number.isFinite(catedra)) return acc;
-      acc.push({
-        catedra,
-        comision: /^\d+$/.test(commissionId) ? Number.parseInt(commissionId, 10) : commissionId,
-      });
-      return acc;
-    }, []);
-    const payload = buildEnrollmentsExportPayload(projectedEnrollments, currentPeriod);
-    const blob = new Blob([JSON.stringify(payload, null, 2)], {
-      type: 'application/json',
-    });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    const timestamp = new Date().toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
-    link.href = url;
-    link.download = `uba-psi-elecciones-v${payload.version}-${timestamp}.json`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-    captureEvent('scheduler_saved_subjects_exported', {
-      total_subjects: Object.keys(enrolledBySubject).length,
-    });
-  }, [currentPeriod, enrolledBySubject, subjects]);
-
-  const onImportSelections = useCallback(
-    async (file: File): Promise<ImportPreviewData> => {
-      const raw = await file.text();
-      const parsed = parseEnrollmentsImportPayload(raw);
-      const mapped = mapProjectionEnrollmentsToSubjectMap(parsed.enrollments, subjects);
-      return {
-        period: parsed.period,
-        totalEntries: parsed.enrollments.length,
-        mapped: mapped.mapped,
-        rejected: mapped.rejected,
-        mappedBySubject: mapped.mappedBySubject,
-      };
-    },
-    [subjects]
-  );
-
-  const onApplyImportSelections = useCallback(
-    async (preview: ImportPreviewData) => {
-      if (preview.totalEntries > 0 && Object.keys(preview.mappedBySubject).length === 0) {
-        throw new Error(
-          'No se pudo mapear ninguna elección. Verificá que el archivo corresponda a esta oferta/carrera.'
-        );
-      }
-      setEnrolledBySubject(preview.mappedBySubject);
-      captureEvent('scheduler_saved_subjects_imported', {
-        imported_subjects: preview.totalEntries,
-        applied_subjects: Object.keys(preview.mappedBySubject).length,
-        rejected_subjects: preview.rejected.length,
-      });
-    },
-    [setEnrolledBySubject]
-  );
-
   return {
     onToggleEnrollment,
     onClearSelectedSubject,
@@ -240,10 +132,5 @@ export const useSchedulerCallbacks = ({
     onSelectAllVisible,
     onClearVisible,
     onToggleCommission,
-    onRemoveSavedSubject,
-    onRemoveAllSavedSubjects,
-    onExportSelections,
-    onImportSelections,
-    onApplyImportSelections,
   };
 };

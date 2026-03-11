@@ -22,55 +22,35 @@ import {
   splitAula,
 } from '../../scheduler.utils';
 import { buildSavedConflictOverlay, type SavedConflictOverlayData } from './overlay';
+import { useSavedElectionsViewModel } from '../../hooks/use-saved-elections-view-model';
+import type { SavedElectionsImportPreview } from '@/domain/saved-elections';
 
 type SavedElectionsPanelProps = {
   isOpen: boolean;
-  savedSubjectsCount: number;
   savedElectionDetails: SavedElectionDetail[];
   savedConflictDetailsBySlot: Record<string, ReservedSlot[]>;
   alwaysConflictingSavedSlotIds: Set<string>;
   highlightedConflictSlotIds: Set<string>;
   onOpenPanel: () => void;
   onToggleOpen: () => void;
-  onRemoveSubject: (subjectId: string) => void;
-  onRemoveAllSubjects: () => void;
-  onExportSelections: () => void;
-  onImportSelections: (file: File) => Promise<ImportPreviewData>;
-  onApplyImportSelections: (preview: ImportPreviewData) => Promise<void>;
-};
-
-type ImportPreviewData = {
-  period: string;
-  totalEntries: number;
-  mapped: Array<{
-    catedra: number;
-    comision: string;
-    subjectId: string;
-    subjectLabel: string;
-  }>;
-  rejected: Array<{
-    catedra: number;
-    comision: string;
-    reason: 'catedra_no_encontrada' | 'comision_no_encontrada';
-  }>;
-  mappedBySubject: Record<string, string>;
 };
 
 export const SavedElectionsPanel = ({
   isOpen,
-  savedSubjectsCount,
   savedElectionDetails,
   savedConflictDetailsBySlot,
   alwaysConflictingSavedSlotIds,
   highlightedConflictSlotIds,
   onOpenPanel,
   onToggleOpen,
-  onRemoveSubject,
-  onRemoveAllSubjects,
-  onExportSelections,
-  onImportSelections,
-  onApplyImportSelections,
 }: SavedElectionsPanelProps) => {
+  const {
+    onRemoveSavedSubject,
+    onRemoveAllSavedSubjects,
+    onExportSelections,
+    onImportSelections,
+    onApplyImportSelections,
+  } = useSavedElectionsViewModel();
   const [hoveredSavedConflictSlotId, setHoveredSavedConflictSlotId] = useState<string | null>(null);
   const [pendingDelete, setPendingDelete] = useState<
     { type: 'single'; subjectId: string } | { type: 'all' } | null
@@ -80,10 +60,11 @@ export const SavedElectionsPanel = ({
   const [isImportLoading, setIsImportLoading] = useState(false);
   const [isImportApplying, setIsImportApplying] = useState(false);
   const [importError, setImportError] = useState<string | null>(null);
-  const [importPreview, setImportPreview] = useState<ImportPreviewData | null>(null);
+  const [importPreview, setImportPreview] = useState<SavedElectionsImportPreview | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const slotRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const importModalInputRef = useRef<HTMLInputElement | null>(null);
+  const savedSubjectsCount = savedElectionDetails.length;
   const hasSavedElections = savedElectionDetails.length > 0;
 
   const importReasonLabel = (reason: 'catedra_no_encontrada' | 'comision_no_encontrada') =>
@@ -117,7 +98,7 @@ export const SavedElectionsPanel = ({
       end: string;
       title: string;
     }> = [];
-    savedElectionDetails.forEach(item => {
+    savedElectionDetails.forEach((item) => {
       savedSlots.push({
         slotId: `${item.subject.id}|prac|${item.commission.id}`,
         subjectId: item.subject.id,
@@ -161,8 +142,8 @@ export const SavedElectionsPanel = ({
     if (!panel || !hoveredSlotNode || !conflictDetails.length) return null;
 
     const panelRect = panel.getBoundingClientRect();
-    const slotCenters = [hoveredSavedConflictSlotId, ...conflictDetails.map(item => item.slotId)]
-      .map(slotId => {
+    const slotCenters = [hoveredSavedConflictSlotId, ...conflictDetails.map((item) => item.slotId)]
+      .map((slotId) => {
         const node = slotRefs.current[slotId];
         if (!node) return null;
         const rect = node.getBoundingClientRect();
@@ -172,7 +153,7 @@ export const SavedElectionsPanel = ({
     if (!slotCenters.length) return null;
 
     const hoveredSlot = savedSlotsForConflictAnalysis.find(
-      slot => slot.slotId === hoveredSavedConflictSlotId
+      (slot) => slot.slotId === hoveredSavedConflictSlotId
     );
     if (!hoveredSlot) return null;
 
@@ -202,79 +183,81 @@ export const SavedElectionsPanel = ({
           className="mb-2 flex cursor-pointer items-center justify-between"
           onClick={onToggleOpen}
         >
-        <h2 className="text-sm font-semibold text-[#5a1740] dark:text-zinc-100">Mis elecciones</h2>
-        <div className="flex items-center gap-2">
-          {isOpen ? (
-            <>
+          <h2 className="text-sm font-semibold text-[#5a1740] dark:text-zinc-100">
+            Mis elecciones
+          </h2>
+          <div className="flex items-center gap-2">
+            {isOpen ? (
+              <>
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    onExportSelections();
+                  }}
+                  disabled={!hasSavedElections}
+                  className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] disabled:cursor-not-allowed disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                  aria-label="Exportar elecciones"
+                  title="Exportar elecciones"
+                  data-tour="saved-elections-export"
+                  data-testid="saved-elections-export"
+                >
+                  <Download size={12} />
+                  Exportar
+                </button>
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setImportError(null);
+                    setImportPreview(null);
+                    setIsImportDialogOpen(true);
+                  }}
+                  className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                  aria-label="Importar elecciones"
+                  title="Importar elecciones"
+                  data-tour="saved-elections-import"
+                  data-testid="saved-elections-import"
+                >
+                  <Upload size={12} />
+                  Importar
+                </button>
+              </>
+            ) : null}
+            {isOpen && hasSavedElections ? (
               <button
                 type="button"
-                onClick={event => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  onExportSelections();
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setPendingDelete({ type: 'all' });
                 }}
-                disabled={!hasSavedElections}
-                className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] disabled:cursor-not-allowed disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="Exportar elecciones"
-                title="Exportar elecciones"
-                data-tour="saved-elections-export"
-                data-testid="saved-elections-export"
+                className="text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
+                aria-label="Quitar todas las elecciones"
+                title="Quitar todas las elecciones"
               >
-                <Download size={12} />
-                Exportar
+                <Trash2 size={14} />
               </button>
-              <button
-                type="button"
-                onClick={event => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  setImportError(null);
-                  setImportPreview(null);
-                  setIsImportDialogOpen(true);
-                }}
-                className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-[#8a6a7d] hover:bg-[#f4e8ef] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="Importar elecciones"
-                title="Importar elecciones"
-                data-tour="saved-elections-import"
-                data-testid="saved-elections-import"
-              >
-                <Upload size={12} />
-                Importar
-              </button>
-            </>
-          ) : null}
-          {isOpen && hasSavedElections ? (
+            ) : null}
+            {!isOpen ? (
+              <span className="text-[11px] text-[#9f8695] dark:text-zinc-400">
+                {savedSubjectsCount}
+              </span>
+            ) : null}
             <button
               type="button"
-              onClick={e => {
-                e.preventDefault();
+              onClick={(e) => {
                 e.stopPropagation();
-                setPendingDelete({ type: 'all' });
+                onToggleOpen();
               }}
-              className="text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
-              aria-label="Quitar todas las elecciones"
-              title="Quitar todas las elecciones"
+              className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
+              aria-label="Expandir o colapsar Mis elecciones"
             >
-              <Trash2 size={14} />
+              {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
             </button>
-          ) : null}
-          {!isOpen ? (
-            <span className="text-[11px] text-[#9f8695] dark:text-zinc-400">
-              {savedSubjectsCount}
-            </span>
-          ) : null}
-          <button
-            type="button"
-            onClick={e => {
-              e.stopPropagation();
-              onToggleOpen();
-            }}
-            className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
-            aria-label="Expandir o colapsar Mis elecciones"
-          >
-            {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          </button>
-        </div>
+          </div>
         </div>
         {isOpen && importFeedback ? (
           <div className="mb-2 rounded-md border border-[#e9d5e2] bg-white/70 px-2 py-1 text-[11px] text-[#6f5866] dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-300">
@@ -283,228 +266,231 @@ export const SavedElectionsPanel = ({
         ) : null}
         {isOpen ? (
           <div ref={panelRef} className="relative min-h-0 overflow-visible xl:flex-1">
-          {savedConflictOverlay ? (
-            <>
-              <svg
-                className="pointer-events-none absolute inset-0 z-10 overflow-visible"
-                width="100%"
-                height="100%"
-                viewBox={`0 0 ${Math.max(1, panelRef.current?.clientWidth || 1)} ${Math.max(1, panelRef.current?.clientHeight || 1)}`}
-                preserveAspectRatio="none"
-                style={{ overflow: 'visible' }}
-              >
-                {savedConflictOverlay.segments.length > 1 ? (
+            {savedConflictOverlay ? (
+              <>
+                <svg
+                  className="pointer-events-none absolute inset-0 z-10 overflow-visible"
+                  width="100%"
+                  height="100%"
+                  viewBox={`0 0 ${Math.max(1, panelRef.current?.clientWidth || 1)} ${Math.max(1, panelRef.current?.clientHeight || 1)}`}
+                  preserveAspectRatio="none"
+                  style={{ overflow: 'visible' }}
+                >
+                  {savedConflictOverlay.segments.length > 1 ? (
+                    <path
+                      d={`M ${savedConflictOverlay.trunkX} ${Math.min(...savedConflictOverlay.segments.map((item) => item.y))} L ${savedConflictOverlay.trunkX} ${Math.max(...savedConflictOverlay.segments.map((item) => item.y))}`}
+                      fill="none"
+                      stroke="rgba(252, 211, 77, 0.7)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  ) : null}
+                  {savedConflictOverlay.segments.map((segment) => (
+                    <path
+                      key={`saved-conflict-segment-${segment.slotId}`}
+                      d={`M ${savedConflictOverlay.branchStartX} ${segment.y} L ${savedConflictOverlay.trunkX} ${segment.y}`}
+                      fill="none"
+                      stroke="rgba(252, 211, 77, 0.7)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  ))}
                   <path
-                    d={`M ${savedConflictOverlay.trunkX} ${Math.min(...savedConflictOverlay.segments.map(item => item.y))} L ${savedConflictOverlay.trunkX} ${Math.max(...savedConflictOverlay.segments.map(item => item.y))}`}
+                    d={`M ${savedConflictOverlay.trunkX} ${savedConflictOverlay.bubbleAnchorY} L ${savedConflictOverlay.bubbleLeft + savedConflictOverlay.bubbleWidth} ${savedConflictOverlay.bubbleAnchorY}`}
                     fill="none"
                     stroke="rgba(252, 211, 77, 0.7)"
                     strokeWidth="2"
                     strokeLinecap="round"
                   />
-                ) : null}
-                {savedConflictOverlay.segments.map(segment => (
-                  <path
-                    key={`saved-conflict-segment-${segment.slotId}`}
-                    d={`M ${savedConflictOverlay.branchStartX} ${segment.y} L ${savedConflictOverlay.trunkX} ${segment.y}`}
-                    fill="none"
-                    stroke="rgba(252, 211, 77, 0.7)"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                ))}
-                <path
-                  d={`M ${savedConflictOverlay.trunkX} ${savedConflictOverlay.bubbleAnchorY} L ${savedConflictOverlay.bubbleLeft + savedConflictOverlay.bubbleWidth} ${savedConflictOverlay.bubbleAnchorY}`}
-                  fill="none"
-                  stroke="rgba(252, 211, 77, 0.7)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div
-                className="pointer-events-none absolute z-20 rounded-md border border-amber-300/80 bg-amber-100/90 px-3 py-2 text-[12px] font-medium text-amber-950 shadow-md backdrop-blur-sm dark:border-amber-400/50 dark:bg-amber-500/25 dark:text-amber-100"
-                style={{
-                  left: `${savedConflictOverlay.bubbleLeft}px`,
-                  top: `${savedConflictOverlay.bubbleTop}px`,
-                  width: `${savedConflictOverlay.bubbleWidth}px`,
-                  minHeight: `${savedConflictOverlay.bubbleHeight}px`,
-                }}
-              >
-                <div className="mb-1 inline-flex items-center gap-1 text-[13px] font-bold">
-                  <AlertTriangle size={14} />
-                  <span>Conflicto guardado</span>
-                </div>
-                {savedConflictOverlay.conflicts.slice(0, 3).map(conflict => (
-                  <div
-                    key={`saved-conflict-bubble-${conflict.slotId}`}
-                    className="mt-1.5 leading-tight"
-                  >
-                    <div className="truncate font-semibold">{conflict.subjectLabel}</div>
-                    <div className="truncate opacity-95">{conflict.title}</div>
-                    <div className="text-[11px] opacity-85">
-                      Solapa: {dayShort(conflict.day)} {conflict.overlapStart} {conflict.overlapEnd}
+                </svg>
+                <div
+                  className="pointer-events-none absolute z-20 rounded-md border border-amber-300/80 bg-amber-100/90 px-3 py-2 text-[12px] font-medium text-amber-950 shadow-md backdrop-blur-sm dark:border-amber-400/50 dark:bg-amber-500/25 dark:text-amber-100"
+                  style={{
+                    left: `${savedConflictOverlay.bubbleLeft}px`,
+                    top: `${savedConflictOverlay.bubbleTop}px`,
+                    width: `${savedConflictOverlay.bubbleWidth}px`,
+                    minHeight: `${savedConflictOverlay.bubbleHeight}px`,
+                  }}
+                >
+                  <div className="mb-1 inline-flex items-center gap-1 text-[13px] font-bold">
+                    <AlertTriangle size={14} />
+                    <span>Conflicto guardado</span>
+                  </div>
+                  {savedConflictOverlay.conflicts.slice(0, 3).map((conflict) => (
+                    <div
+                      key={`saved-conflict-bubble-${conflict.slotId}`}
+                      className="mt-1.5 leading-tight"
+                    >
+                      <div className="truncate font-semibold">{conflict.subjectLabel}</div>
+                      <div className="truncate opacity-95">{conflict.title}</div>
+                      <div className="text-[11px] opacity-85">
+                        Solapa: {dayShort(conflict.day)} {conflict.overlapStart}{' '}
+                        {conflict.overlapEnd}
+                      </div>
                     </div>
-                  </div>
-                ))}
-                {savedConflictOverlay.conflicts.length > 3 ? (
-                  <div className="mt-1 text-[11px] font-semibold">
-                    +{savedConflictOverlay.conflicts.length - 3} más
-                  </div>
-                ) : null}
-              </div>
-            </>
-          ) : null}
+                  ))}
+                  {savedConflictOverlay.conflicts.length > 3 ? (
+                    <div className="mt-1 text-[11px] font-semibold">
+                      +{savedConflictOverlay.conflicts.length - 3} más
+                    </div>
+                  ) : null}
+                </div>
+              </>
+            ) : null}
             <div className="pr-1 xl:h-full xl:overflow-auto">
               <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
-                {savedElectionDetails.map(item => {
-                const commissionRoom = splitAula(item.commission.aula);
-                const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
-                const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
-                const commissionConflictKey = `${item.subject.id}|prac|${item.commission.id}`;
-                const teoricoConflictKey = item.teorico
-                  ? `${item.subject.id}|teo|${item.teorico.id}`
-                  : null;
-                const seminarioConflictKey = item.seminario
-                  ? `${item.subject.id}|sem|${item.seminario.id}`
-                  : null;
-                const commissionConflictDetails =
-                  savedConflictDetailsBySlot[commissionConflictKey] || [];
-                const teoricoConflictDetails = teoricoConflictKey
-                  ? savedConflictDetailsBySlot[teoricoConflictKey] || []
-                  : [];
-                const seminarioConflictDetails = seminarioConflictKey
-                  ? savedConflictDetailsBySlot[seminarioConflictKey] || []
-                  : [];
-                return (
-                  <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
-                    <button
-                      type="button"
-                      onClick={event => {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        setPendingDelete({ type: 'single', subjectId: item.subject.id });
-                      }}
-                      className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
-                      aria-label="Quitar elección"
-                      title="Quitar elección"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                    <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
-                      {displaySubjectLabel(item.subject.label)}
+                {savedElectionDetails.map((item) => {
+                  const commissionRoom = splitAula(item.commission.aula);
+                  const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
+                  const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
+                  const commissionConflictKey = `${item.subject.id}|prac|${item.commission.id}`;
+                  const teoricoConflictKey = item.teorico
+                    ? `${item.subject.id}|teo|${item.teorico.id}`
+                    : null;
+                  const seminarioConflictKey = item.seminario
+                    ? `${item.subject.id}|sem|${item.seminario.id}`
+                    : null;
+                  const commissionConflictDetails =
+                    savedConflictDetailsBySlot[commissionConflictKey] || [];
+                  const teoricoConflictDetails = teoricoConflictKey
+                    ? savedConflictDetailsBySlot[teoricoConflictKey] || []
+                    : [];
+                  const seminarioConflictDetails = seminarioConflictKey
+                    ? savedConflictDetailsBySlot[seminarioConflictKey] || []
+                    : [];
+                  return (
+                    <div key={`saved-${item.subject.id}`} className="relative py-2 text-sm">
+                      <button
+                        type="button"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          event.stopPropagation();
+                          setPendingDelete({ type: 'single', subjectId: item.subject.id });
+                        }}
+                        className="absolute right-0 top-2 text-[#9f8695] hover:text-[#5a1740] dark:text-zinc-400 dark:hover:text-zinc-200"
+                        aria-label="Quitar elección"
+                        title="Quitar elección"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                      <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
+                        {displaySubjectLabel(item.subject.label)}
+                      </div>
+                      {[
+                        {
+                          kind: 'prac' as const,
+                          key: commissionConflictKey,
+                          code: item.commission.id,
+                          profesor: item.commission.profesor,
+                          dia: item.commission.dia,
+                          inicio: item.commission.inicio,
+                          fin: item.commission.fin,
+                          venue: commissionRoom.prefix,
+                          hasConflicts: commissionConflictDetails.length > 0,
+                        },
+                        ...(item.teorico
+                          ? [
+                              {
+                                kind: 'teo' as const,
+                                key: teoricoConflictKey!,
+                                code: item.teorico.id,
+                                profesor: item.teorico.profesor,
+                                dia: item.teorico.dia,
+                                inicio: item.teorico.inicio,
+                                fin: item.teorico.fin,
+                                venue: teoricoRoom?.prefix || '',
+                                hasConflicts: teoricoConflictDetails.length > 0,
+                              },
+                            ]
+                          : []),
+                        ...(item.seminario
+                          ? [
+                              {
+                                kind: 'sem' as const,
+                                key: seminarioConflictKey!,
+                                code: item.seminario.id,
+                                profesor: item.seminario.profesor,
+                                dia: item.seminario.dia,
+                                inicio: item.seminario.inicio,
+                                fin: item.seminario.fin,
+                                venue: seminarioRoom?.prefix || '',
+                                hasConflicts: seminarioConflictDetails.length > 0,
+                              },
+                            ]
+                          : []),
+                      ]
+                        .sort((a, b) => {
+                          const dayDiff = DAYS.indexOf(a.dia) - DAYS.indexOf(b.dia);
+                          if (dayDiff !== 0) return dayDiff;
+                          const timeDiff = h2m(a.inicio) - h2m(b.inicio);
+                          if (timeDiff !== 0) return timeDiff;
+                          return h2m(a.fin) - h2m(b.fin);
+                        })
+                        .map((part, index) => {
+                          const colorClass =
+                            part.kind === 'prac'
+                              ? 'text-[#861f5c]'
+                              : part.kind === 'teo'
+                                ? 'text-[#0f766e]'
+                                : 'text-[#d97706]';
+                          return (
+                            <div
+                              key={part.key}
+                              ref={(node) => {
+                                slotRefs.current[part.key] = node;
+                              }}
+                              onMouseEnter={() => {
+                                if (!part.hasConflicts) return;
+                                setHoveredSavedConflictSlotId(part.key);
+                              }}
+                              onMouseLeave={() => {
+                                if (hoveredSavedConflictSlotId === part.key)
+                                  setHoveredSavedConflictSlotId(null);
+                              }}
+                              className={cn(
+                                'relative grid grid-cols-[34px_1fr_1fr_32px] items-center gap-x-2 rounded px-1 py-0.5 text-[13px] transition-colors',
+                                index === 0 ? 'mt-1' : 'mt-0.5',
+                                alwaysConflictingSavedSlotIds.has(part.key) &&
+                                  'bg-amber-50/80 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/15 dark:ring-amber-300/35',
+                                highlightedConflictSlotIds.has(part.key) &&
+                                  'bg-amber-100/70 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/20 dark:ring-amber-300/40'
+                              )}
+                            >
+                              <span
+                                className={cn(
+                                  'w-[34px] text-center font-semibold tabular-nums',
+                                  colorClass
+                                )}
+                              >
+                                {part.code}
+                              </span>
+                              <span
+                                className={cn('truncate text-[15px] font-semibold', colorClass)}
+                              >
+                                {shortTeacherName(part.profesor, 24)}
+                              </span>
+                              <span className="whitespace-nowrap text-[15px] font-medium tabular-nums text-[#6f5866] dark:text-zinc-300">
+                                {dayShort(part.dia)} {part.inicio} {part.fin}
+                              </span>
+                              <span
+                                className={cn(
+                                  'w-[32px] text-right text-[15px] font-semibold tabular-nums',
+                                  colorClass
+                                )}
+                              >
+                                {part.venue}
+                              </span>
+                            </div>
+                          );
+                        })}
                     </div>
-                    {[
-                      {
-                        kind: 'prac' as const,
-                        key: commissionConflictKey,
-                        code: item.commission.id,
-                        profesor: item.commission.profesor,
-                        dia: item.commission.dia,
-                        inicio: item.commission.inicio,
-                        fin: item.commission.fin,
-                        venue: commissionRoom.prefix,
-                        hasConflicts: commissionConflictDetails.length > 0,
-                      },
-                      ...(item.teorico
-                        ? [
-                            {
-                              kind: 'teo' as const,
-                              key: teoricoConflictKey!,
-                              code: item.teorico.id,
-                              profesor: item.teorico.profesor,
-                              dia: item.teorico.dia,
-                              inicio: item.teorico.inicio,
-                              fin: item.teorico.fin,
-                              venue: teoricoRoom?.prefix || '',
-                              hasConflicts: teoricoConflictDetails.length > 0,
-                            },
-                          ]
-                        : []),
-                      ...(item.seminario
-                        ? [
-                            {
-                              kind: 'sem' as const,
-                              key: seminarioConflictKey!,
-                              code: item.seminario.id,
-                              profesor: item.seminario.profesor,
-                              dia: item.seminario.dia,
-                              inicio: item.seminario.inicio,
-                              fin: item.seminario.fin,
-                              venue: seminarioRoom?.prefix || '',
-                              hasConflicts: seminarioConflictDetails.length > 0,
-                            },
-                          ]
-                        : []),
-                    ]
-                      .sort((a, b) => {
-                        const dayDiff = DAYS.indexOf(a.dia) - DAYS.indexOf(b.dia);
-                        if (dayDiff !== 0) return dayDiff;
-                        const timeDiff = h2m(a.inicio) - h2m(b.inicio);
-                        if (timeDiff !== 0) return timeDiff;
-                        return h2m(a.fin) - h2m(b.fin);
-                      })
-                      .map((part, index) => {
-                        const colorClass =
-                          part.kind === 'prac'
-                            ? 'text-[#861f5c]'
-                            : part.kind === 'teo'
-                              ? 'text-[#0f766e]'
-                              : 'text-[#d97706]';
-                        return (
-                          <div
-                            key={part.key}
-                            ref={node => {
-                              slotRefs.current[part.key] = node;
-                            }}
-                            onMouseEnter={() => {
-                              if (!part.hasConflicts) return;
-                              setHoveredSavedConflictSlotId(part.key);
-                            }}
-                            onMouseLeave={() => {
-                              if (hoveredSavedConflictSlotId === part.key)
-                                setHoveredSavedConflictSlotId(null);
-                            }}
-                            className={cn(
-                              'relative grid grid-cols-[34px_1fr_1fr_32px] items-center gap-x-2 rounded px-1 py-0.5 text-[13px] transition-colors',
-                              index === 0 ? 'mt-1' : 'mt-0.5',
-                              alwaysConflictingSavedSlotIds.has(part.key) &&
-                                'bg-amber-50/80 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/15 dark:ring-amber-300/35',
-                              highlightedConflictSlotIds.has(part.key) &&
-                                'bg-amber-100/70 ring-1 ring-inset ring-amber-300/70 dark:bg-amber-500/20 dark:ring-amber-300/40'
-                            )}
-                          >
-                            <span
-                              className={cn(
-                                'w-[34px] text-center font-semibold tabular-nums',
-                                colorClass
-                              )}
-                            >
-                              {part.code}
-                            </span>
-                            <span className={cn('truncate text-[15px] font-semibold', colorClass)}>
-                              {shortTeacherName(part.profesor, 24)}
-                            </span>
-                            <span className="whitespace-nowrap text-[15px] font-medium tabular-nums text-[#6f5866] dark:text-zinc-300">
-                              {dayShort(part.dia)} {part.inicio} {part.fin}
-                            </span>
-                            <span
-                              className={cn(
-                                'w-[32px] text-right text-[15px] font-semibold tabular-nums',
-                                colorClass
-                              )}
-                            >
-                              {part.venue}
-                            </span>
-                          </div>
-                        );
-                      })}
+                  );
+                })}
+                {!savedElectionDetails.length ? (
+                  <div className="text-xs text-[#7c6272] dark:text-zinc-400">
+                    Sin elecciones guardadas.
                   </div>
-                );
-              })}
-              {!savedElectionDetails.length ? (
-                <div className="text-xs text-[#7c6272] dark:text-zinc-400">
-                  Sin elecciones guardadas.
-                </div>
-              ) : null}
+                ) : null}
               </div>
             </div>
           </div>
@@ -522,8 +508,8 @@ export const SavedElectionsPanel = ({
         onCancel={() => setPendingDelete(null)}
         onConfirm={() => {
           if (!pendingDelete) return;
-          if (pendingDelete.type === 'all') onRemoveAllSubjects();
-          if (pendingDelete.type === 'single') onRemoveSubject(pendingDelete.subjectId);
+          if (pendingDelete.type === 'all') onRemoveAllSavedSubjects();
+          if (pendingDelete.type === 'single') onRemoveSavedSubject(pendingDelete.subjectId);
           setPendingDelete(null);
         }}
       />
@@ -541,7 +527,7 @@ export const SavedElectionsPanel = ({
             aria-modal="true"
             aria-label="Importar elecciones"
             className="w-full max-w-2xl rounded-xl border border-[#d7b8c9] bg-[#fff8fc] px-4 py-5 shadow-xl dark:border-zinc-700 dark:bg-zinc-900"
-            onClick={event => event.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-3">
               <h3 className="text-base font-bold text-[#5a1740] dark:text-zinc-100">
@@ -561,7 +547,7 @@ export const SavedElectionsPanel = ({
               type="file"
               accept="application/json,.json"
               className="sr-only"
-              onChange={async event => {
+              onChange={async (event) => {
                 const input = event.currentTarget;
                 const file = event.target.files?.[0];
                 if (!file) return;
@@ -574,11 +560,11 @@ export const SavedElectionsPanel = ({
                 'mt-3 rounded-xl border border-dashed border-[#d7b8c9] bg-white/60 p-4 text-sm dark:border-zinc-600 dark:bg-zinc-800/70',
                 isImportLoading && 'opacity-70'
               )}
-              onDragOver={event => {
+              onDragOver={(event) => {
                 event.preventDefault();
                 event.dataTransfer.dropEffect = 'copy';
               }}
-              onDrop={async event => {
+              onDrop={async (event) => {
                 event.preventDefault();
                 const file = event.dataTransfer.files?.[0];
                 if (!file) return;
@@ -622,7 +608,7 @@ export const SavedElectionsPanel = ({
                 <div className="max-h-56 overflow-auto rounded-md border border-[#e9d5e2] bg-white/70 p-2 dark:border-zinc-700 dark:bg-zinc-800/70">
                   {importPreview.mapped.length ? (
                     <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
-                      {importPreview.mapped.map(item => (
+                      {importPreview.mapped.map((item) => (
                         <div key={`${item.subjectId}-${item.comision}`} className="py-1.5 text-xs">
                           <div className="font-semibold text-[#4f1237] dark:text-zinc-100">
                             {displaySubjectLabel(item.subjectLabel)}
@@ -645,7 +631,7 @@ export const SavedElectionsPanel = ({
                     <div className="space-y-1">
                       {importPreview.rejected.map((item, index) => (
                         <div key={`rejected-${index}`}>
-                          Cátedra {item.catedra} · Comisión {item.comision || '(vacía)'}: {' '}
+                          Cátedra {item.catedra} · Comisión {item.comision || '(vacía)'}:{' '}
                           {importReasonLabel(item.reason)}
                         </div>
                       ))}
@@ -676,9 +662,7 @@ export const SavedElectionsPanel = ({
                     setIsImportDialogOpen(false);
                   } catch (error) {
                     const message =
-                      error instanceof Error
-                        ? error.message
-                        : 'No se pudo aplicar la importación.';
+                      error instanceof Error ? error.message : 'No se pudo aplicar la importación.';
                     setImportError(message);
                   } finally {
                     setIsImportApplying(false);
