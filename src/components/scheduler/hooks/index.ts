@@ -7,3 +7,4 @@ export { useSchedulerCallbacks } from './use-scheduler-callbacks';
 export { useSchedulerTelemetryEffects } from './use-scheduler-telemetry-effects';
 export { useSubjectDropdown } from './use-subject-dropdown';
 export { useSchedulerTour } from './use-scheduler-tour';
+export { useSavedElectionsViewModel } from './use-saved-elections-view-model';

@@ -24,10 +24,7 @@ import {
   useSchedulerTour,
   useSubjectDropdown,
 } from './hooks';
-import {
-  displayHeaderLabel,
-  displaySubjectLabel,
-} from './scheduler.utils';
+import { displayHeaderLabel, displaySubjectLabel } from './scheduler.utils';
 export type { SubjectData } from './scheduler.types';
 
 type SchedulerProps = {
@@ -62,7 +59,7 @@ const SchedulerContent = ({
   careerLabel = 'Lic. Psicología UBA',
   careerSlug = 'lic-psicologia',
 }: SchedulerProps) => {
-  const currentPeriod = useAppStore(state => state.currentPeriod);
+  const currentPeriod = useAppStore((state) => state.currentPeriod);
   const [showComisiones, setShowComisiones] = useState(true);
   const [showTeoricos, setShowTeoricos] = useState(false);
   const [showSeminarios, setShowSeminarios] = useState(false);
@@ -126,7 +123,7 @@ const SchedulerContent = ({
     onSubjectChanged: resetSelectionState,
   });
   const savedSubjects = useMemo(
-    () => subjects.filter(subject => enrolledBySubject[subject.id]),
+    () => subjects.filter((subject) => enrolledBySubject[subject.id]),
     [subjects, enrolledBySubject]
   );
   const selectedSubjectForCalendar = selectedSubject ?? EMPTY_SELECTED_SUBJECT;
@@ -135,11 +132,11 @@ const SchedulerContent = ({
     const currentMateria = materiaCodeBySubjectId[selectedSubject.id];
     if (!currentMateria) return null;
     const conflictId = Object.keys(enrolledBySubject).find(
-      subjectId =>
+      (subjectId) =>
         subjectId !== selectedSubject.id && materiaCodeBySubjectId[subjectId] === currentMateria
     );
     if (!conflictId) return null;
-    return subjects.find(subject => subject.id === conflictId) || null;
+    return subjects.find((subject) => subject.id === conflictId) || null;
   }, [enrolledBySubject, materiaCodeBySubjectId, selectedSubject, subjects]);
   const conflictingCatedraLabel =
     conflictingSubject?.label.match(/Cátedra\s+\d+/i)?.[0] || 'cátedra seleccionada';
@@ -258,20 +255,12 @@ const SchedulerContent = ({
     onSelectAllVisible,
     onClearVisible,
     onToggleCommission,
-    onRemoveSavedSubject,
-    onRemoveAllSavedSubjects,
-    onExportSelections,
-    onImportSelections,
-    onApplyImportSelections,
   } = useSchedulerCallbacks({
     selectedSubject,
-    currentPeriod: currentPeriod || period,
     careerSlug,
     selectedVenues,
     searchedComisiones,
     selectedCommissionIds,
-    subjects,
-    enrolledBySubject,
     applyEnrollmentRule,
     setSelectedSubjectId,
     setEnrolledBySubject,
@@ -342,7 +331,6 @@ const SchedulerContent = ({
 
   const savedElectionsPanelProps: ComponentProps<typeof SavedElectionsPanel> = {
     isOpen: isEleccionesPanelOpen,
-    savedSubjectsCount: savedSubjects.length,
     savedElectionDetails,
     savedConflictDetailsBySlot,
     alwaysConflictingSavedSlotIds,
@@ -350,12 +338,7 @@ const SchedulerContent = ({
     onOpenPanel: () => {
       if (!isEleccionesPanelOpen) setIsEleccionesPanelOpen(true);
     },
-    onToggleOpen: () => setIsEleccionesPanelOpen(v => !v),
-    onRemoveSubject: onRemoveSavedSubject,
-    onRemoveAllSubjects: onRemoveAllSavedSubjects,
-    onExportSelections: onExportSelections,
-    onImportSelections: onImportSelections,
-    onApplyImportSelections: onApplyImportSelections,
+    onToggleOpen: () => setIsEleccionesPanelOpen((v) => !v),
   };
   const calendarGridProps: ComponentProps<typeof CalendarGrid> = {
     visibleEventSlots,
@@ -408,11 +391,16 @@ const SchedulerContent = ({
 };
 
 export const Scheduler = (props: SchedulerProps) => {
-  const { subjects, careerLabel = 'Lic. Psicología UBA', careerSlug = 'lic-psicologia', period } = props;
-  const bootstrapOffer = useAppStore(state => state.bootstrapOffer);
-  const storeSubjects = useAppStore(state => state.subjects);
-  const storeCareerSlug = useAppStore(state => state.currentCareerSlug);
-  const storePeriod = useAppStore(state => state.currentPeriod);
+  const {
+    subjects,
+    careerLabel = 'Lic. Psicología UBA',
+    careerSlug = 'lic-psicologia',
+    period,
+  } = props;
+  const bootstrapOffer = useAppStore((state) => state.bootstrapOffer);
+  const storeSubjects = useAppStore((state) => state.subjects);
+  const storeCareerSlug = useAppStore((state) => state.currentCareerSlug);
+  const storePeriod = useAppStore((state) => state.currentPeriod);
 
   useEffect(() => {
     bootstrapOffer({
