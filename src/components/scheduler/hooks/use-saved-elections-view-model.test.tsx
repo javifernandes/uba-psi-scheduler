@@ -3,20 +3,21 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSavedElectionsViewModel } from './use-saved-elections-view-model';
 import { useAppStore } from '@/store/app-store';
 import type { SubjectData } from '../scheduler.types';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
 vi.mock('@/lib/posthog', () => ({
   captureEvent: vi.fn(),
 }));
 
 const subjectsFixture: SubjectData[] = [
-  {
+  subjectFromLegacyFixture({
     id: '34',
     label: '(1) Historia de la Psicología - Cátedra 34 (II)',
     header: 'header',
     teoricos: [],
     seminarios: [],
     comisiones: ['21|lunes|10:00|12:00|Docente|II|IN-101|'],
-  },
+  }),
 ];
 
 describe('useSavedElectionsViewModel', () => {

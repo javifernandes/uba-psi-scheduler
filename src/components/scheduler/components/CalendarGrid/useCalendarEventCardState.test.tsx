@@ -5,6 +5,7 @@ import type { Comision } from '../../scheduler.types';
 import type { VisibleEventSlot } from './types';
 
 const activeCommission: Comision = {
+  tipo: 'prac',
   id: '21',
   dia: 'jueves',
   inicio: '14:30',
@@ -12,9 +13,11 @@ const activeCommission: Comision = {
   profesor: 'Cazes',
   aula: 'IN-444',
   observ: '',
-  oblig: 'II - C',
-  teoricoId: 'II',
-  seminarioId: 'C',
+  obligRaw: 'II - C',
+  slotsAsociados: [
+    { slotId: 'C', rol: 'sem', condicion: 'obligatorio' },
+    { slotId: 'II', rol: 'teo', condicion: 'obligatorio' },
+  ],
   vacantes: 20,
 };
 

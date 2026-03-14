@@ -46,11 +46,13 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
   id: '',
   label: '',
   header: '',
+  slots: [],
   teoricos: [],
   seminarios: [],
   comisiones: [],
   teoricoMap: {},
   seminarioMap: {},
+  slotMap: {},
 };
 
 const SchedulerContent = ({

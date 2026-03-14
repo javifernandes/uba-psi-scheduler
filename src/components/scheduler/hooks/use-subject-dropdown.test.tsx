@@ -6,28 +6,25 @@ import { setSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 const subjects: SubjectData[] = [
   {
+    schemaVersion: 2,
     id: '36',
     label: '(2) Psicología Social - Cátedra 36 (II)',
     header: 'Psicología UBA - II - Zubieta',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
   {
+    schemaVersion: 2,
     id: '35',
     label: '(2) Psicología Social - Cátedra 35 (I)',
     header: 'Psicología UBA - I - Vodovotz',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
   {
+    schemaVersion: 2,
     id: '34',
     label: '(1) Historia de la Psicología - Cátedra 34 (II)',
     header: 'Psicología UBA - II - Ibarra',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
 ];
 
@@ -57,11 +54,11 @@ describe('useSubjectDropdown', () => {
   it('agrupa por materia y ordena por código de materia y número de cátedra', () => {
     const { result } = renderHook(() => useSubjectDropdown(baseParams()));
 
-    expect(result.current.groupedSubjectOptions.map(g => g.groupLabel)).toEqual([
+    expect(result.current.groupedSubjectOptions.map((g) => g.groupLabel)).toEqual([
       '1 · Historia de la Psicología',
       '2 · Psicología Social',
     ]);
-    expect(result.current.groupedSubjectOptions[1]?.options.map(option => option.id)).toEqual([
+    expect(result.current.groupedSubjectOptions[1]?.options.map((option) => option.id)).toEqual([
       '35',
       '36',
     ]);
@@ -75,7 +72,7 @@ describe('useSubjectDropdown', () => {
     });
 
     expect(result.current.materiaSearch).toBe('ibarra');
-    expect(result.current.flatSelectableSubjects.map(subject => subject.id)).toEqual(['34']);
+    expect(result.current.flatSelectableSubjects.map((subject) => subject.id)).toEqual(['34']);
   });
 
   it('abre con ArrowDown y selecciona con Enter la opción destacada', async () => {
@@ -168,7 +165,5 @@ describe('useSubjectDropdown', () => {
     await waitFor(() => {
       expect(result.current.isMateriaDropdownOpen).toBe(true);
     });
-
   });
-
 });

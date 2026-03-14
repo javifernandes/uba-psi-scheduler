@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import type { CalendarEvent, ParsedSubject } from '../scheduler.types';
 import {
   buildLinkedCommissionIdsMap,
+  findPrimaryAssociatedSlotId,
   shortTeacherName,
   slotKeyForEvent,
 } from '../scheduler.utils';
@@ -106,25 +107,25 @@ const pushCommissionBundle = ({
   options?: EventOptions;
 }) => {
   pushEvent(buildPracEvent(subject, commission, options));
-  const teorico = commission.teoricoId ? subject.teoricoMap[commission.teoricoId] : undefined;
+  const teoricoId = findPrimaryAssociatedSlotId(commission, 'teo');
+  const teorico = teoricoId ? subject.teoricoMap[teoricoId] : undefined;
   if (teorico) {
     pushEvent(
       buildTeoEvent(subject, teorico, {
         ...options,
         linkedCommissionId: commission.id,
-        linkedTeoricoId: commission.teoricoId,
+        linkedTeoricoId: teoricoId,
       })
     );
   }
-  const seminario = commission.seminarioId
-    ? subject.seminarioMap[commission.seminarioId]
-    : undefined;
+  const seminarioId = findPrimaryAssociatedSlotId(commission, 'sem');
+  const seminario = seminarioId ? subject.seminarioMap[seminarioId] : undefined;
   if (seminario) {
     pushEvent(
       buildSemEvent(subject, seminario, {
         ...options,
         linkedCommissionId: commission.id,
-        linkedSeminarioId: commission.seminarioId,
+        linkedSeminarioId: seminarioId,
       })
     );
   }
@@ -154,25 +155,19 @@ export const useSchedulerCalendar = ({
   const enrolledCurrentCommission = useMemo(
     () =>
       enrolledCurrentCommissionId
-        ? selectedSubject.comisiones.find(c => c.id === enrolledCurrentCommissionId) || null
+        ? selectedSubject.comisiones.find((c) => c.id === enrolledCurrentCommissionId) || null
         : null,
     [selectedSubject.comisiones, enrolledCurrentCommissionId]
   );
 
   const activeCommissionId = hoveredCommissionId || pinnedCommissionId;
-  const activeCommission = selectedComisiones.find(c => c.id === activeCommissionId) || null;
+  const activeCommission = selectedComisiones.find((c) => c.id === activeCommissionId) || null;
 
   const events = useMemo<CalendarEvent[]>(() => {
     const built: CalendarEvent[] = [];
     const seenEventIds = new Set<string>();
-    const linkedCommissionIdsByTeoricoId = buildLinkedCommissionIdsMap(
-      selectedComisiones,
-      'teoricoId'
-    );
-    const linkedCommissionIdsBySeminarioId = buildLinkedCommissionIdsMap(
-      selectedComisiones,
-      'seminarioId'
-    );
+    const linkedCommissionIdsByTeoricoId = buildLinkedCommissionIdsMap(selectedComisiones, 'teo');
+    const linkedCommissionIdsBySeminarioId = buildLinkedCommissionIdsMap(selectedComisiones, 'sem');
 
     const pushEvent = (event: CalendarEvent) => {
       if (seenEventIds.has(event.id)) return;
@@ -181,13 +176,13 @@ export const useSchedulerCalendar = ({
     };
 
     if (showComisiones) {
-      selectedComisiones.forEach(commission => {
+      selectedComisiones.forEach((commission) => {
         pushEvent(buildPracEvent(selectedSubject, commission));
       });
     }
 
     if (showTeoricos) {
-      filteredTeoricos.forEach(teorico => {
+      filteredTeoricos.forEach((teorico) => {
         pushEvent(
           buildTeoEvent(selectedSubject, teorico, {
             linkedCommissionIds: linkedCommissionIdsByTeoricoId[teorico.id],
@@ -197,7 +192,7 @@ export const useSchedulerCalendar = ({
     }
 
     if (showSeminarios) {
-      filteredSeminarios.forEach(seminario => {
+      filteredSeminarios.forEach((seminario) => {
         pushEvent(
           buildSemEvent(selectedSubject, seminario, {
             linkedCommissionIds: linkedCommissionIdsBySeminarioId[seminario.id],
@@ -207,16 +202,16 @@ export const useSchedulerCalendar = ({
     }
 
     if (hoveredLinkedTeoricoId) {
-      (linkedCommissionIdsByTeoricoId[hoveredLinkedTeoricoId] || []).forEach(commissionId => {
-        const linkedCommission = selectedComisiones.find(c => c.id === commissionId);
+      (linkedCommissionIdsByTeoricoId[hoveredLinkedTeoricoId] || []).forEach((commissionId) => {
+        const linkedCommission = selectedComisiones.find((c) => c.id === commissionId);
         if (!linkedCommission) return;
         pushEvent(buildPracEvent(selectedSubject, linkedCommission));
       });
     }
 
     if (hoveredLinkedSeminarioId) {
-      (linkedCommissionIdsBySeminarioId[hoveredLinkedSeminarioId] || []).forEach(commissionId => {
-        const linkedCommission = selectedComisiones.find(c => c.id === commissionId);
+      (linkedCommissionIdsBySeminarioId[hoveredLinkedSeminarioId] || []).forEach((commissionId) => {
+        const linkedCommission = selectedComisiones.find((c) => c.id === commissionId);
         if (!linkedCommission) return;
         pushEvent(buildPracEvent(selectedSubject, linkedCommission));
       });
@@ -240,11 +235,11 @@ export const useSchedulerCalendar = ({
 
     if (showOtherSubjects) {
       parsedSubjects
-        .filter(subject => subject.id !== selectedSubject.id)
-        .forEach(subject => {
+        .filter((subject) => subject.id !== selectedSubject.id)
+        .forEach((subject) => {
           const commissionId = enrolledBySubject[subject.id];
           if (!commissionId) return;
-          const commission = subject.comisiones.find(item => item.id === commissionId);
+          const commission = subject.comisiones.find((item) => item.id === commissionId);
           if (!commission) return;
           pushCommissionBundle({
             subject,
@@ -278,7 +273,7 @@ export const useSchedulerCalendar = ({
 
   const visibleEventSlots = useMemo(() => {
     const grouped = new Map<string, CalendarEvent[]>();
-    events.forEach(event => {
+    events.forEach((event) => {
       const slotKey = slotKeyForEvent(event);
       const existing = grouped.get(slotKey) || [];
       existing.push(event);
@@ -290,30 +285,41 @@ export const useSchedulerCalendar = ({
       const storedIndex = stackIndexBySlot[slotKey] ?? 0;
       const normalizedStoredIndex = ((storedIndex % stackSize) + stackSize) % stackSize;
       const activeMatchIndex = activeCommission
-        ? slotEvents.findIndex(
-            ev =>
-              ev.linkedCommissionId === activeCommission.id ||
-              (ev.linkedTeoricoId &&
-                activeCommission.teoricoId &&
-                ev.linkedTeoricoId === activeCommission.teoricoId) ||
-              (ev.linkedSeminarioId &&
-                activeCommission.seminarioId &&
-                ev.linkedSeminarioId === activeCommission.seminarioId)
-          )
+        ? (() => {
+            const activeTeoricoId = findPrimaryAssociatedSlotId(activeCommission, 'teo');
+            const activeSeminarioId = findPrimaryAssociatedSlotId(activeCommission, 'sem');
+            return slotEvents.findIndex(
+              (ev) =>
+                ev.linkedCommissionId === activeCommission.id ||
+                (ev.linkedTeoricoId && activeTeoricoId && ev.linkedTeoricoId === activeTeoricoId) ||
+                (ev.linkedSeminarioId &&
+                  activeSeminarioId &&
+                  ev.linkedSeminarioId === activeSeminarioId)
+            );
+          })()
         : -1;
       const enrolledMatchIndex =
         !activeCommission && enrolledCurrentCommission
-          ? slotEvents.findIndex(
-              ev =>
+          ? slotEvents.findIndex((ev) => {
+              const enrolledTeoricoId = findPrimaryAssociatedSlotId(
+                enrolledCurrentCommission,
+                'teo'
+              );
+              const enrolledSeminarioId = findPrimaryAssociatedSlotId(
+                enrolledCurrentCommission,
+                'sem'
+              );
+              return (
                 ev.sourceSubjectId === selectedSubject.id &&
                 (ev.linkedCommissionId === enrolledCurrentCommission.id ||
                   (ev.linkedTeoricoId &&
-                    enrolledCurrentCommission.teoricoId &&
-                    ev.linkedTeoricoId === enrolledCurrentCommission.teoricoId) ||
+                    enrolledTeoricoId &&
+                    ev.linkedTeoricoId === enrolledTeoricoId) ||
                   (ev.linkedSeminarioId &&
-                    enrolledCurrentCommission.seminarioId &&
-                    ev.linkedSeminarioId === enrolledCurrentCommission.seminarioId))
-            )
+                    enrolledSeminarioId &&
+                    ev.linkedSeminarioId === enrolledSeminarioId))
+              );
+            })
           : -1;
       const safeIndex =
         activeMatchIndex >= 0

@@ -5,24 +5,26 @@ import type { Comision, SubjectData } from '../../scheduler.types';
 import { setSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
 
 const subjectOption: SubjectData = {
+  schemaVersion: 2,
   id: '35',
   label: '(2) Psicología Social - Cátedra 35 (I)',
   header: 'Psicología UBA - I - Vodovotz',
-  teoricos: [],
-  seminarios: [],
-  comisiones: [],
+  slots: [],
 };
 
 const searchedComisiones: Comision[] = [
   {
+    tipo: 'prac',
     id: '1',
     dia: 'lunes',
     inicio: '09:00',
     fin: '10:30',
     profesor: 'Comision Uno',
-    oblig: 'I - A',
-    teoricoId: 'I',
-    seminarioId: 'A',
+    obligRaw: 'I - A',
+    slotsAsociados: [
+      { slotId: 'A', rol: 'sem', condicion: 'obligatorio' },
+      { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
+    ],
     aula: 'IN-101',
     observ: '',
     vacantes: 12,

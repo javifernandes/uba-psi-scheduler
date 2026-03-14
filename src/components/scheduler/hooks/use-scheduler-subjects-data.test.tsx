@@ -2,9 +2,10 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { useSchedulerSubjectsData } from './use-scheduler-subjects-data';
 import type { SubjectData } from '../scheduler.types';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
 const subjects: SubjectData[] = [
-  {
+  subjectFromLegacyFixture({
     id: '50',
     label: '(16) Psicoanálisis Freud - Cátedra 50 (II)',
     header: 'h50',
@@ -15,23 +16,23 @@ const subjects: SubjectData[] = [
       '9|viernes|09:15|10:45|Israel Ana|IV - A|HY-124||0',
       '12|martes|11:00|12:30|Kohan Pablo|III - B|SI-016||',
     ],
-  },
-  {
+  }),
+  subjectFromLegacyFixture({
     id: '34',
     label: '(1) Historia de la Psicología - Cátedra 34 (II)',
     header: 'h34',
     teoricos: ['I|miércoles|11:00|12:30|Ibarra|HY-014|'],
     seminarios: ['A|jueves|09:15|10:45|Falcone|IN-510|'],
     comisiones: ['1|jueves|11:00|12:30|Boisselier|I - A|IN-125||20'],
-  },
-  {
+  }),
+  subjectFromLegacyFixture({
     id: '298',
     label: 'Neurofisiopatología - Cátedra 298',
     header: 'h298',
     teoricos: [],
     seminarios: [],
     comisiones: ['14|sabado|09:15|10:45|Politis|V|AV 028||8'],
-  },
+  }),
 ];
 
 type HookParams = Parameters<typeof useSchedulerSubjectsData>[0];

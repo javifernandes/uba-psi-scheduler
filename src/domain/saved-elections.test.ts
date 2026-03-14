@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { ParsedSubject, SubjectData } from '@/components/scheduler/scheduler.types';
+import { parseSubject } from '@/components/scheduler/scheduler.utils';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 import {
   buildProjectedEnrollments,
   buildSavedConflicts,
@@ -10,68 +12,38 @@ import {
 
 const subjects: SubjectData[] = [
   {
+    schemaVersion: 2,
     id: '34',
     label: '(1) Historia de la Psicología - Cátedra 34 (II)',
     header: 'header 34',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
   {
+    schemaVersion: 2,
     id: '36',
     label: '(2) Psicología Social - Cátedra 36 (I)',
     header: 'header 36',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
 ];
 
 const parsedSubjects: ParsedSubject[] = [
-  {
-    id: '34',
-    label: '(1) Historia de la Psicología - Cátedra 34 (II)',
-    header: 'header 34',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [
-      {
-        id: '21',
-        dia: 'lunes',
-        inicio: '10:00',
-        fin: '12:00',
-        profesor: 'A',
-        oblig: 'I',
-        aula: 'IN-101',
-        observ: '',
-        vacantes: 20,
-      },
-    ],
-    teoricoMap: {},
-    seminarioMap: {},
-  },
-  {
-    id: '36',
-    label: '(2) Psicología Social - Cátedra 36 (I)',
-    header: 'header 36',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [
-      {
-        id: '7',
-        dia: 'lunes',
-        inicio: '11:00',
-        fin: '13:00',
-        profesor: 'B',
-        oblig: 'I',
-        aula: 'HY-201',
-        observ: '',
-        vacantes: 15,
-      },
-    ],
-    teoricoMap: {},
-    seminarioMap: {},
-  },
+  parseSubject(
+    subjectFromLegacyFixture({
+      id: '34',
+      label: '(1) Historia de la Psicología - Cátedra 34 (II)',
+      header: 'header 34',
+      comisiones: ['21|lunes|10:00|12:00|A|I|IN-101||20'],
+    })
+  ),
+  parseSubject(
+    subjectFromLegacyFixture({
+      id: '36',
+      label: '(2) Psicología Social - Cátedra 36 (I)',
+      header: 'header 36',
+      comisiones: ['7|lunes|11:00|13:00|B|I|HY-201||15'],
+    })
+  ),
 ];
 
 describe('saved elections domain', () => {

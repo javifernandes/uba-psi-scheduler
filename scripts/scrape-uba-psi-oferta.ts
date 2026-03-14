@@ -37,13 +37,41 @@ type DetailData = {
 };
 
 type SubjectOut = {
+  schemaVersion: 2;
   id: string;
   label: string;
   header: string;
-  teoricos: string[];
-  seminarios: string[];
-  comisiones: string[];
+  slots: SubjectSlotOut[];
 };
+
+type SlotTipo = 'teo' | 'sem' | 'prac';
+type SlotAsociadoOut = {
+  slotId: string;
+  rol: 'teo' | 'sem' | `custom:${string}`;
+  condicion: 'obligatorio' | 'opcional';
+};
+
+type SlotBaseOut = {
+  id: string;
+  tipo: SlotTipo;
+  dia: string;
+  inicio: string;
+  fin: string;
+  profesor: string;
+  aula: string;
+  observ: string;
+};
+
+type TeoricoOut = SlotBaseOut & { tipo: 'teo' };
+type SeminarioOut = SlotBaseOut & { tipo: 'sem' };
+type ComisionOut = SlotBaseOut & {
+  tipo: 'prac';
+  vacantes: number | null;
+  obligRaw?: string;
+  slotsAsociados: SlotAsociadoOut[];
+};
+
+type SubjectSlotOut = TeoricoOut | SeminarioOut | ComisionOut;
 
 type CareerConfig = {
   code: string;
@@ -273,21 +301,85 @@ const parseHeading = (headingText: string, row: CatalogRow, career: CareerConfig
   return { id, label, header };
 };
 
-const rowToTeoSemLine = (row: SectionRow) =>
-  [row.id, row.dia, row.inicio, row.fin, row.profesor, row.aula, row.observ].join('|');
+const DAY_ORDER = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+const SLOT_KIND_ORDER: Record<SlotTipo, number> = { teo: 0, sem: 1, prac: 2 };
 
-const rowToComisionLine = (row: SectionRow) =>
-  [
-    row.id,
-    row.dia,
-    row.inicio,
-    row.fin,
-    row.profesor,
-    row.oblig,
-    row.aula,
-    row.observ,
-    row.vacantes,
-  ].join('|');
+const h2m = (hhmm: string) => {
+  const [h, m] = hhmm.split(':').map(Number);
+  return h * 60 + m;
+};
+
+const normalizeComisionAssociations = (obligRaw: string): SlotAsociadoOut[] => {
+  const clean = normalizeText(obligRaw);
+  if (!clean) return [];
+  const parts = clean
+    .split('-')
+    .map((part) => normalizeText(part))
+    .filter(Boolean);
+  const next: SlotAsociadoOut[] = [];
+  if (parts[0]) {
+    next.push({
+      slotId: parts[0],
+      rol: 'teo',
+      condicion: 'obligatorio',
+    });
+  }
+  if (parts[1]) {
+    next.push({
+      slotId: parts[1],
+      rol: 'sem',
+      condicion: 'obligatorio',
+    });
+  }
+  return next.sort((a, b) => {
+    const roleDiff = a.rol.localeCompare(b.rol, 'es');
+    if (roleDiff !== 0) return roleDiff;
+    return a.slotId.localeCompare(b.slotId, 'es');
+  });
+};
+
+const rowToSlotBase = (row: SectionRow) => ({
+  id: row.id,
+  dia: row.dia,
+  inicio: row.inicio,
+  fin: row.fin,
+  profesor: row.profesor,
+  aula: row.aula,
+  observ: row.observ,
+});
+
+const rowToTeoricoSlot = (row: SectionRow): TeoricoOut => ({
+  ...rowToSlotBase(row),
+  tipo: 'teo',
+});
+
+const rowToSeminarioSlot = (row: SectionRow): SeminarioOut => ({
+  ...rowToSlotBase(row),
+  tipo: 'sem',
+});
+
+const rowToComisionSlot = (row: SectionRow): ComisionOut => {
+  const slot: ComisionOut = {
+    ...rowToSlotBase(row),
+    tipo: 'prac',
+    vacantes: row.vacantes ? Number.parseInt(row.vacantes, 10) : null,
+    slotsAsociados: normalizeComisionAssociations(row.oblig),
+  };
+  const cleanOblig = normalizeText(row.oblig);
+  if (cleanOblig) slot.obligRaw = cleanOblig;
+  return slot;
+};
+
+const sortSlots = (slots: SubjectSlotOut[]) =>
+  [...slots].sort((a, b) => {
+    const typeDiff = SLOT_KIND_ORDER[a.tipo] - SLOT_KIND_ORDER[b.tipo];
+    if (typeDiff !== 0) return typeDiff;
+    const dayDiff = DAY_ORDER.indexOf(a.dia) - DAY_ORDER.indexOf(b.dia);
+    if (dayDiff !== 0) return dayDiff;
+    const startDiff = h2m(a.inicio) - h2m(b.inicio);
+    if (startDiff !== 0) return startDiff;
+    return a.id.localeCompare(b.id, 'es');
+  });
 
 const sleep = async (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -615,14 +707,18 @@ const main = async () => {
       const teoricos = detail.teoricos.map(normalizeRow).filter((item) => item.id && item.dia);
       const seminarios = detail.seminarios.map(normalizeRow).filter((item) => item.id && item.dia);
       const comisiones = detail.comisiones.map(normalizeRow).filter((item) => item.id && item.dia);
+      const slots = sortSlots([
+        ...teoricos.map(rowToTeoricoSlot),
+        ...seminarios.map(rowToSeminarioSlot),
+        ...comisiones.map(rowToComisionSlot),
+      ]);
 
       subjects.push({
+        schemaVersion: 2,
         id: parsedHeader.id,
         label: parsedHeader.label,
         header: parsedHeader.header,
-        teoricos: teoricos.map(rowToTeoSemLine),
-        seminarios: seminarios.map(rowToTeoSemLine),
-        comisiones: comisiones.map(rowToComisionLine),
+        slots,
       });
 
       await sleep(100);

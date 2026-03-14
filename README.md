@@ -48,6 +48,12 @@ npm run scrape:catalog -- --min-ratio 0.8
 npm run scrape:catalog -- --skip-sanity
 ```
 
+Migración de datasets existentes a schema v2 (`slots[]`):
+
+```bash
+npm run migrate:subject-schema-v2
+```
+
 Guardrails:
 
 - Escritura atómica por período (`.staging` + swap): ante error no se pisa el dataset vigente.
@@ -59,6 +65,12 @@ Salida (por defecto):
 - `src/data/uba/psicologia/oferta/<period>/<career-slug>/materias/*.json`
 - `src/data/uba/psicologia/oferta/<period>/careers.generated.json`
 - `src/data/uba/psicologia/oferta/periods.generated.json`
+
+Formato de materias (schema v2):
+
+- `schemaVersion: 2`
+- `slots[]` con union tipada (`teo`, `sem`, `prac`)
+- comisiones con `vacantes`, `obligRaw` y `slotsAsociados[]`
 
 ## Ventanas de ejecución
 

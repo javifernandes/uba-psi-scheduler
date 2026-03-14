@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import {
   DAYS,
+  findPrimaryAssociatedSlotId,
   h2m,
   headerHeightPx,
   hourHeightPx,
@@ -41,8 +42,12 @@ export const useCalendarEventCardState = ({
   const topPx = headerHeightPx + (from - startHour * 60) * minuteHeightPx;
   const heightPx = (to - from) * minuteHeightPx;
   const canWrapLabel = heightPx >= 92;
-  const activeTeoricoId = activeCommission?.teoricoId || null;
-  const activeSeminarioId = activeCommission?.seminarioId || null;
+  const activeTeoricoId = activeCommission
+    ? findPrimaryAssociatedSlotId(activeCommission, 'teo')
+    : null;
+  const activeSeminarioId = activeCommission
+    ? findPrimaryAssociatedSlotId(activeCommission, 'sem')
+    : null;
   const canSaveFromCard =
     !event.isExternal && event.sourceSubjectId === selectedSubjectId && !!event.linkedCommissionId;
   const isSavedFromCard =

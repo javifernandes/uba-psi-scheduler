@@ -5,7 +5,12 @@ import {
   buildSavedElectionDetails,
   buildSavedSlotsForConflictAnalysis,
 } from '@/domain/saved-elections';
-import { rangesOverlap, shortTeacherName, splitAula } from '../scheduler.utils';
+import {
+  findPrimaryAssociatedSlotId,
+  rangesOverlap,
+  shortTeacherName,
+  splitAula,
+} from '../scheduler.utils';
 
 type UseSchedulerConflictsParams = {
   savedSubjects: SubjectData[];
@@ -65,7 +70,8 @@ export const useSchedulerConflicts = ({
           end: c.fin,
           title: `${c.id} - ${shortTeacherName(c.profesor, 30)}`,
         });
-        const t = c.teoricoId ? subject.teoricoMap[c.teoricoId] : undefined;
+        const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
+        const t = teoricoId ? subject.teoricoMap[teoricoId] : undefined;
         if (t) {
           reserved.push({
             slotId: `${subject.id}|teo|${t.id}`,
@@ -80,7 +86,8 @@ export const useSchedulerConflicts = ({
             title: `${t.id} - ${shortTeacherName(t.profesor, 30)}`,
           });
         }
-        const s = c.seminarioId ? subject.seminarioMap[c.seminarioId] : undefined;
+        const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
+        const s = seminarioId ? subject.seminarioMap[seminarioId] : undefined;
         if (s) {
           reserved.push({
             slotId: `${subject.id}|sem|${s.id}`,
