@@ -40,7 +40,7 @@ const subjectData: SubjectData = {
   header: 'Lic Psicología - Cátedra 50 - II - Laznik',
   teoricos: ['II|jueves|09:15|10:45|Láznik, David Alberto|IN-MAY|'],
   seminarios: ['B|martes|09:15|10:45|Battaglia, Gabriel German|HY-005|'],
-  comisiones: ['63|martes|07:30|09:00|BLANK, Sofia|III - B|IN-123|'],
+  comisiones: ['63|martes|07:30|09:00|BLANK, Sofia|III - B|IN-123||35'],
 };
 
 const subjectOnlyTeoricoObligData: SubjectData = {
@@ -49,7 +49,7 @@ const subjectOnlyTeoricoObligData: SubjectData = {
   header: 'Psicología UBA - (15) Neurofisiología - Cátedra 48 - I - China',
   teoricos: ['V|martes|18:00|19:30|China, Norma Nancy|HY-014|'],
   seminarios: [],
-  comisiones: ['14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|'],
+  comisiones: ['14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207||'],
 };
 
 const secondarySubjectData: SubjectData = {
@@ -83,6 +83,7 @@ describe('scheduler.utils', () => {
       teoricoId: 'III',
       seminarioId: 'B',
       aula: 'IN-123',
+      vacantes: 35,
     });
     expect(parsed.seminarioMap.B?.profesor).toContain('Battaglia');
   });
@@ -92,6 +93,7 @@ describe('scheduler.utils', () => {
     expect(parsed.comisiones[0]).toMatchObject({
       teoricoId: 'V',
       seminarioId: undefined,
+      vacantes: null,
     });
   });
 
@@ -109,7 +111,9 @@ describe('scheduler.utils', () => {
       '16 · Psicoanálisis Freud - Cátedra 50 (II)'
     );
     expect(
-      displayHeaderLabel('Psicología UBA - (1) Historia de la Psicología - Cátedra 34 - II - Ibarra')
+      displayHeaderLabel(
+        'Psicología UBA - (1) Historia de la Psicología - Cátedra 34 - II - Ibarra'
+      )
     ).toBe('Psicología UBA - 1 · Historia de la Psicología - Cátedra 34 - II - Ibarra');
   });
 
@@ -165,7 +169,7 @@ describe('scheduler.utils', () => {
       { ...commission!, id: '1', dia: 'lunes', inicio: '10:00' },
       { ...commission!, id: '3', dia: 'lunes', inicio: '08:00' },
     ]);
-    expect(sorted.map(item => item.id)).toEqual(['3', '1', '2']);
+    expect(sorted.map((item) => item.id)).toEqual(['3', '1', '2']);
 
     expect(sameSetValues(new Set(['IN', 'HY']), new Set(['HY', 'IN']))).toBe(true);
     expect(sameSetValues(new Set(['IN']), new Set(['HY']))).toBe(false);
@@ -174,10 +178,7 @@ describe('scheduler.utils', () => {
   });
 
   it('serializa y parsea export/import de elecciones con versionado', () => {
-    const payload = buildEnrollmentsExportPayload(
-      [{ catedra: 36, comision: 9 }],
-      '2026-01'
-    );
+    const payload = buildEnrollmentsExportPayload([{ catedra: 36, comision: 9 }], '2026-01');
     const parsed = parseEnrollmentsImportPayload(JSON.stringify(payload));
 
     expect(parsed.version).toBe(1);

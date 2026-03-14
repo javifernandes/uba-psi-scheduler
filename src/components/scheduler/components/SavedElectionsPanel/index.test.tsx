@@ -30,6 +30,7 @@ const savedDetail: SavedElectionDetail = {
     seminarioId: 'C',
     aula: 'IN-444',
     observ: '',
+    vacantes: 18,
   },
   teorico: {
     id: 'II',

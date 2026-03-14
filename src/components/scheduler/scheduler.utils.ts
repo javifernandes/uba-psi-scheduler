@@ -43,7 +43,7 @@ export const venueLabel = (code: VenueCode) => VENUE_LABELS[code] || `Sede ${cod
 export const venueBadgeCode = (code: VenueCode) => (code === 'OTRO' ? 'N/D' : code);
 
 export const sortVenueCodes = (venues: Iterable<VenueCode>) => {
-  const unique = Array.from(new Set(Array.from(venues).map(code => code.trim().toUpperCase())));
+  const unique = Array.from(new Set(Array.from(venues).map((code) => code.trim().toUpperCase())));
   const rank = (code: VenueCode) => {
     if (code === 'ND' || code === 'OTRO') return 99;
     const knownIndex = KNOWN_VENUE_ORDER.indexOf(code as (typeof KNOWN_VENUE_ORDER)[number]);
@@ -58,14 +58,23 @@ export const sortVenueCodes = (venues: Iterable<VenueCode>) => {
 };
 
 const parseRows = <T>(lines: string[], mapper: (parts: string[]) => T): T[] =>
-  lines.map(line => line.split('|')).map(mapper);
+  lines.map((line) => line.split('|')).map(mapper);
 
 const parseOblig = (oblig: string) => {
-  const [rawTeoricoId, rawSeminarioId] = oblig.split('-').map(part => part.trim());
+  const [rawTeoricoId, rawSeminarioId] = oblig.split('-').map((part) => part.trim());
   return {
     teoricoId: rawTeoricoId || undefined,
     seminarioId: rawSeminarioId || undefined,
   };
+};
+
+const parseVacantes = (value: string | undefined) => {
+  if (!value) return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const parsed = Number.parseInt(trimmed, 10);
+  if (!Number.isFinite(parsed) || parsed < 0) return null;
+  return parsed;
 };
 
 export const h2m = (hhmm: string) => {
@@ -91,11 +100,9 @@ export const venueCodeFromAula = (aula: string): VenueCode => {
 export const catedraProfessorFromHeader = (header: string) =>
   header.split(' - ').at(-1)?.trim() || '';
 
-export const displaySubjectLabel = (label: string) =>
-  label.replace(/^\((\d+)\)\s*/, '$1 · ');
+export const displaySubjectLabel = (label: string) => label.replace(/^\((\d+)\)\s*/, '$1 · ');
 
-export const displayHeaderLabel = (header: string) =>
-  header.replace(/-\s*\((\d+)\)\s*/, '- $1 · ');
+export const displayHeaderLabel = (header: string) => header.replace(/-\s*\((\d+)\)\s*/, '- $1 · ');
 
 export const materiaGroupFromLabel = (label: string) => {
   const match = label.match(/^\((\d+)\)\s*(.*?)\s*-\s*Cátedra/i);
@@ -226,12 +233,12 @@ export const mapProjectionEnrollmentsToSubjectMap = (
   subjects: SubjectData[]
 ) => {
   const subjectIdByCatedra = Object.fromEntries(
-    subjects.map(subject => [catedraNumberFromLabel(subject.label), subject.id])
+    subjects.map((subject) => [catedraNumberFromLabel(subject.label), subject.id])
   ) as Record<number, string>;
   const commissionIdsBySubjectId = Object.fromEntries(
-    subjects.map(subject => [
+    subjects.map((subject) => [
       subject.id,
-      new Set(subject.comisiones.map(row => row.split('|')[0]?.trim() || '')),
+      new Set(subject.comisiones.map((row) => row.split('|')[0]?.trim() || '')),
     ])
   ) as Record<string, Set<string>>;
   const nextBySubject: Record<string, string> = {};
@@ -239,7 +246,7 @@ export const mapProjectionEnrollmentsToSubjectMap = (
   const rejected: EnrollmentProjectionRejectedEntry[] = [];
   const subjectIdByMateriaCode: Record<string, string> = {};
 
-  enrollments.forEach(enrollment => {
+  enrollments.forEach((enrollment) => {
     const subjectId = subjectIdByCatedra[enrollment.catedra];
     if (!subjectId) {
       rejected.push({
@@ -267,13 +274,13 @@ export const mapProjectionEnrollmentsToSubjectMap = (
       });
       return;
     }
-    const subject = subjects.find(item => item.id === subjectId);
+    const subject = subjects.find((item) => item.id === subjectId);
     if (!subject) return;
     const materiaCode = materiaCodeFromLabel(subject.label);
     const existingSubjectId = subjectIdByMateriaCode[materiaCode];
     if (existingSubjectId) {
       delete nextBySubject[existingSubjectId];
-      const previousIndex = mapped.findIndex(item => item.subjectId === existingSubjectId);
+      const previousIndex = mapped.findIndex((item) => item.subjectId === existingSubjectId);
       if (previousIndex >= 0) mapped.splice(previousIndex, 1);
     }
     subjectIdByMateriaCode[materiaCode] = subjectId;
@@ -300,14 +307,14 @@ export const rangesOverlap = (fromA: string, toA: string, fromB: string, toB: st
 
 export const sameSetValues = <T>(a: Set<T>, b: Set<T>) => {
   if (a.size !== b.size) return false;
-  return Array.from(a).every(value => b.has(value));
+  return Array.from(a).every((value) => b.has(value));
 };
 
 export const sameRecord = (a: Record<string, string>, b: Record<string, string>) => {
   const aKeys = Object.keys(a);
   const bKeys = Object.keys(b);
   if (aKeys.length !== bKeys.length) return false;
-  return aKeys.every(key => a[key] === b[key]);
+  return aKeys.every((key) => a[key] === b[key]);
 };
 
 export const commissionSummaryLabel = (c: Comision) => `${c.id} ${c.profesor}`;
@@ -342,7 +349,7 @@ export const buildLinkedCommissionIdsMap = (
   }, {});
 
 export const parseSubject = (subject: SubjectData): ParsedSubject => {
-  const teoricos = parseRows<Teorico>(subject.teoricos, parts => ({
+  const teoricos = parseRows<Teorico>(subject.teoricos, (parts) => ({
     id: parts[0],
     dia: parts[1] as Day,
     inicio: parts[2],
@@ -351,7 +358,7 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
     aula: parts[5],
     observ: parts[6] || '',
   }));
-  const seminarios = parseRows<Seminario>(subject.seminarios, parts => ({
+  const seminarios = parseRows<Seminario>(subject.seminarios, (parts) => ({
     id: parts[0],
     dia: parts[1] as Day,
     inicio: parts[2],
@@ -360,7 +367,7 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
     aula: parts[5],
     observ: parts[6] || '',
   }));
-  const comisiones = parseRows<Comision>(subject.comisiones, parts => {
+  const comisiones = parseRows<Comision>(subject.comisiones, (parts) => {
     const refs = parseOblig(parts[5]);
     return {
       id: parts[0],
@@ -373,6 +380,7 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
       seminarioId: refs.seminarioId,
       aula: parts[6],
       observ: parts[7] || '',
+      vacantes: parseVacantes(parts[8]),
     };
   });
   return {
@@ -382,8 +390,8 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
     teoricos,
     seminarios,
     comisiones,
-    teoricoMap: Object.fromEntries(teoricos.map(t => [t.id, t])) as Record<string, Teorico>,
-    seminarioMap: Object.fromEntries(seminarios.map(s => [s.id, s])) as Record<string, Seminario>,
+    teoricoMap: Object.fromEntries(teoricos.map((t) => [t.id, t])) as Record<string, Teorico>,
+    seminarioMap: Object.fromEntries(seminarios.map((s) => [s.id, s])) as Record<string, Seminario>,
   };
 };
 

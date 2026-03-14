@@ -25,6 +25,7 @@ const searchedComisiones: Comision[] = [
     seminarioId: 'A',
     aula: 'IN-101',
     observ: '',
+    vacantes: 12,
   },
 ];
 
@@ -77,6 +78,8 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
   clearVisible: vi.fn(),
   commissionQuery: '',
   setCommissionQuery: vi.fn(),
+  showOnlyWithVacancies: false,
+  setShowOnlyWithVacancies: vi.fn(),
   searchedComisiones,
   selectedCommissionIds: new Set(['1']),
   toggleCommission: vi.fn(),
@@ -131,12 +134,27 @@ describe('SchedulerFiltersPanel', () => {
     fireEvent.click(screen.getByLabelText('Seleccionar todo'));
     fireEvent.click(screen.getByLabelText('Limpiar'));
     fireEvent.change(screen.getByPlaceholderText('Profesor o día'), { target: { value: 'lunes' } });
-    fireEvent.click(screen.getByRole('checkbox'));
+    const checkboxes = screen.getAllByRole('checkbox');
+    fireEvent.click(checkboxes[checkboxes.length - 1]!);
 
     expect(selectAllVisible).toHaveBeenCalledTimes(1);
     expect(clearVisible).toHaveBeenCalledTimes(1);
     expect(setCommissionQuery).toHaveBeenCalled();
     expect(toggleCommission).toHaveBeenCalledWith('1');
+  });
+
+  it('permite activar el filtro de solo vacantes desde el dropdown de comisiones', () => {
+    const setShowOnlyWithVacancies = vi.fn();
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          setShowOnlyWithVacancies,
+        })}
+      />
+    );
+
+    fireEvent.click(screen.getByLabelText('Solo con vacantes'));
+    expect(setShowOnlyWithVacancies).toHaveBeenCalled();
   });
 
   it('oculta controles de Teóricos/Seminarios cuando la cátedra no los tiene', () => {
@@ -179,9 +197,7 @@ describe('SchedulerFiltersPanel', () => {
       />
     );
 
-    const input = screen.getByPlaceholderText(
-      'Buscar / Seleccionar Materia (ESC para cancelar)'
-    );
+    const input = screen.getByPlaceholderText('Buscar / Seleccionar Materia (ESC para cancelar)');
     fireEvent.focus(input);
 
     expect(onMateriaInputChange).toHaveBeenCalledWith('');
@@ -197,7 +213,9 @@ describe('SchedulerFiltersPanel', () => {
       />
     );
 
-    expect(screen.queryByTitle('Mostrar/Ocultar elecciones de otras materias')).not.toBeInTheDocument();
+    expect(
+      screen.queryByTitle('Mostrar/Ocultar elecciones de otras materias')
+    ).not.toBeInTheDocument();
     expect(screen.queryByText('Otras materias')).not.toBeInTheDocument();
   });
 

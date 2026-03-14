@@ -71,6 +71,7 @@ const SchedulerContent = ({
   const [isEleccionesPanelOpen, setIsEleccionesPanelOpen] = useState(true);
   const [isCommissionDropdownOpen, setIsCommissionDropdownOpen] = useState(false);
   const [commissionQuery, setCommissionQuery] = useState('');
+  const [showOnlyWithVacancies, setShowOnlyWithVacancies] = useState(false);
   const [hoveredCommissionId, setHoveredCommissionId] = useState<string | null>(null);
   const [hoveredLinkedTeoricoId, setHoveredLinkedTeoricoId] = useState<string | null>(null);
   const [hoveredLinkedSeminarioId, setHoveredLinkedSeminarioId] = useState<string | null>(null);
@@ -120,6 +121,7 @@ const SchedulerContent = ({
     selectedSubjectId,
     enrolledBySubject,
     commissionQuery,
+    showOnlyWithVacancies,
     onSubjectChanged: resetSelectionState,
   });
   const savedSubjects = useMemo(
@@ -324,6 +326,8 @@ const SchedulerContent = ({
     clearVisible: onClearVisible,
     commissionQuery,
     setCommissionQuery,
+    showOnlyWithVacancies,
+    setShowOnlyWithVacancies,
     searchedComisiones,
     selectedCommissionIds,
     toggleCommission: onToggleCommission,

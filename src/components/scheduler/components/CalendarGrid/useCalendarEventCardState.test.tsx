@@ -15,6 +15,7 @@ const activeCommission: Comision = {
   oblig: 'II - C',
   teoricoId: 'II',
   seminarioId: 'C',
+  vacantes: 20,
 };
 
 const externalTeoricoSlot: VisibleEventSlot = {
