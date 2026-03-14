@@ -6,13 +6,13 @@
   "slots": [
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "--",
       "inicio": "--",
       "fin": "--",
       "profesor": "Banfi, Cristina",
       "aula": "--",
-      "vacantes": 333,
+      "tipo": "prac",
+      "vacantes": 323,
       "slotsAsociados": []
     }
   ]

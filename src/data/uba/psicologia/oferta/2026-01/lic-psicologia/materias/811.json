@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Barrios, Raul",
       "aula": "",
-      "observ": "Campo deportes UBA: Intendente Güiraldes 2620. Aula 1."
+      "observ": "Campo deportes UBA: Intendente Güiraldes 2620. Aula 1.",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Villa, Javier",
       "aula": "",
       "observ": "Campo deportes UBA: Intendente Güiraldes 2620",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

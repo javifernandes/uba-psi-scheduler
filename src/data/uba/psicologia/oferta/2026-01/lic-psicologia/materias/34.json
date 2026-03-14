@@ -6,141 +6,141 @@
   "slots": [
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Miceli, Claudio Marcelo",
-      "aula": "HY-014"
+      "aula": "HY-014",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Ibarra, Maria Florencia",
-      "aula": "HY-014"
+      "aula": "HY-014",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Ibarra, Maria Florencia",
-      "aula": "IN-201"
+      "aula": "IN-201",
+      "tipo": "teo"
     },
     {
       "id": "V",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "09:00",
       "fin": "10:45",
       "profesor": "Jardon, Magali",
       "aula": "SI-023",
-      "observ": "San Isidro"
+      "observ": "San Isidro",
+      "tipo": "teo"
     },
     {
       "id": "IV",
-      "tipo": "teo",
       "dia": "sabado",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lopez, Guillermo Adrian",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "teo"
     },
     {
       "id": "D",
-      "tipo": "sem",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Falcone, Rosa",
-      "aula": "HY-014"
+      "aula": "HY-014",
+      "tipo": "sem"
     },
     {
       "id": "J",
-      "tipo": "sem",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Ibarra, Maria Florencia",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "sem"
     },
     {
       "id": "C",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Rodriguez Sturla, Pablo Ariel",
-      "aula": "HY-005"
+      "aula": "HY-005",
+      "tipo": "sem"
     },
     {
       "id": "E",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Jardon, Magali",
-      "aula": "HY-014"
+      "aula": "HY-014",
+      "tipo": "sem"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "jueves",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Falcone, Rosa",
-      "aula": "IN-510"
+      "aula": "IN-510",
+      "tipo": "sem"
     },
     {
       "id": "B",
-      "tipo": "sem",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Navarlaz, Vanesa Eva",
-      "aula": "HY-014"
+      "aula": "HY-014",
+      "tipo": "sem"
     },
     {
       "id": "G",
-      "tipo": "sem",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:45",
       "profesor": "Jardon, Magali",
       "aula": "SI-023",
-      "observ": "San Isidro"
+      "observ": "San Isidro",
+      "tipo": "sem"
     },
     {
       "id": "F",
-      "tipo": "sem",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Rodriguez Sturla, Pablo Ariel",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "sem"
     },
     {
       "id": "H",
-      "tipo": "sem",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Rodriguez Sturla, Pablo Ariel",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "sem"
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "HY-031",
-      "vacantes": 33,
+      "tipo": "prac",
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -156,12 +156,12 @@
     },
     {
       "id": "22",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Sebastián",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -178,12 +178,12 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-027",
+      "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [
         {
@@ -200,13 +200,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "HY-004",
-      "vacantes": 30,
+      "tipo": "prac",
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -222,12 +222,12 @@
     },
     {
       "id": "28",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Arditi, Mariano Gabriel",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
         {
@@ -244,13 +244,13 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-025",
-      "vacantes": 30,
+      "tipo": "prac",
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -266,12 +266,12 @@
     },
     {
       "id": "29",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Arditi, Mariano Gabriel",
       "aula": "HY-026",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -288,12 +288,12 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Doppelgatz, Angel",
       "aula": "HY-013",
+      "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": [
         {
@@ -310,12 +310,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-032",
+      "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": [
         {
@@ -332,12 +332,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De Luca, Maria Virginia",
       "aula": "HY-026",
+      "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
         {
@@ -354,13 +354,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
-      "vacantes": 32,
+      "tipo": "prac",
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -376,12 +376,12 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De Luca, Maria Virginia",
       "aula": "HY-026",
+      "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -398,12 +398,12 @@
     },
     {
       "id": "24",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Peralta, Roberto Nicolas",
       "aula": "HY-023",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -420,12 +420,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -442,12 +442,12 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Zaldarriaga, Hernan Ezequiel",
       "aula": "IN-421",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -464,13 +464,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "De Leonardis, Jorge",
       "aula": "IN-110",
-      "vacantes": 27,
+      "tipo": "prac",
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -486,12 +486,12 @@
     },
     {
       "id": "27",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
+      "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -508,12 +508,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "IN-125",
+      "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": [
         {
@@ -530,13 +530,13 @@
     },
     {
       "id": "21",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Sebastián",
       "aula": "IN-444",
-      "vacantes": 34,
+      "tipo": "prac",
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -552,12 +552,12 @@
     },
     {
       "id": "26",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Fernandez, Veronica Analia",
       "aula": "IN-126",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -574,12 +574,12 @@
     },
     {
       "id": "25",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Doppelgatz, Angel",
       "aula": "HY-030",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -596,12 +596,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-032",
+      "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": [
         {
@@ -618,12 +618,12 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Otero, Sebastián",
       "aula": "HY-010",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -640,13 +640,13 @@
     },
     {
       "id": "50",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "13:00",
       "fin": "14:45",
       "profesor": "Fernandez, Veronica Analia",
       "aula": "SI-023",
       "observ": "San Isidro",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -663,14 +663,14 @@
     },
     {
       "id": "52",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "13:00",
       "fin": "14:45",
       "profesor": "Peralta, Roberto Nicolas",
       "aula": "SI-021",
       "observ": "San Isidro",
-      "vacantes": 20,
+      "tipo": "prac",
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -686,13 +686,13 @@
     },
     {
       "id": "51",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:00",
       "fin": "16:45",
       "profesor": "Fernandez, Veronica Analia",
       "aula": "SI-023",
       "observ": "San Isidro",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -709,12 +709,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -731,12 +731,12 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -753,12 +753,12 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Fernandez, Veronica Analia",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -775,13 +775,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
-      "vacantes": 28,
+      "tipo": "prac",
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -797,12 +797,12 @@
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -819,13 +819,13 @@
     },
     {
       "id": "23",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Zaldarriaga, Hernan Ezequiel",
       "aula": "HY-032",
-      "vacantes": 35,
+      "tipo": "prac",
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "F",

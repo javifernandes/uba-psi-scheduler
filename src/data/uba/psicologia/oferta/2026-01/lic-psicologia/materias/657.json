@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "18:45",
       "fin": "20:45",
       "profesor": "Sandoval, Arnaldo Martin",
       "aula": "",
-      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA."
+      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Rico, Mara Sol",
       "aula": "",
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Caputo, Macarena",
       "aula": "",
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Berardi, Martina",
       "aula": "",
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

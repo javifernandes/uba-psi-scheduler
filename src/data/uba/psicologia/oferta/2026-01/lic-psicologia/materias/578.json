@@ -6,39 +6,39 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Bareiro, Julieta",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Bareiro, Julieta",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Milmaniene, Magali",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "teo"
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Luchetta, Javier Federico",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -50,12 +50,12 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Luchetta, Javier Federico",
       "aula": "HY-012",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -67,12 +67,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Matzchke, Florencia",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -84,12 +84,12 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -101,12 +101,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Vecchio, Ariel",
       "aula": "HY-032",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -118,12 +118,12 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Vecchio, Ariel",
       "aula": "HY-026",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -135,12 +135,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -152,12 +152,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Barbieri, Julian Javier",
       "aula": "HY-030",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -169,12 +169,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Pallares, Martin",
       "aula": "HY-012",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -186,12 +186,12 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Pallares, Martin",
       "aula": "HY-011",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -203,12 +203,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Barbieri, Julian Javier",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -220,12 +220,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-004",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -237,12 +237,12 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Matzchke, Florencia",
       "aula": "HY-004",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -254,12 +254,12 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-013",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

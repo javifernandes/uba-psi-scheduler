@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Torres, Gustavo Fernando",
-      "aula": "HY-010"
+      "aula": "HY-010",
+      "tipo": "teo"
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Ferrari, Monica Graciela",
       "aula": "",
       "observ": "Alas de Libertad Asociación Civil - Cangayé 1155 - CABA",
+      "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Podhainy, Maria Belen",
       "aula": "",
       "observ": "Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Pepa, Marcela",
       "aula": "",
       "observ": "Fundación Santa Catalina - Callao 433 - Piso 2° - CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Ferrando, Myrian Gabriela",
       "aula": "",
       "observ": "Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {

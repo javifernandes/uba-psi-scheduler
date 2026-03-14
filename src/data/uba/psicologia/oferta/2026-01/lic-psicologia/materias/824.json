@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "10:00",
       "profesor": "Ormart, Elizabeth Beatriz",
       "aula": "",
-      "observ": "CEGYR. Viamonte 1432. CABA"
+      "observ": "CEGYR. Viamonte 1432. CABA",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Abelaira, Paula",
       "aula": "",
       "observ": "Viamonte 1432. CABA",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Novatti, Magdalena",
       "aula": "",
       "observ": "Viamonte 1432. CABA",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {

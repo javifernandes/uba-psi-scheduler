@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Barrios, Raul",
-      "aula": "IN-106"
+      "aula": "IN-106",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Katz, Ezequiel",
       "aula": "IN-106",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Katz, Ezequiel",
       "aula": "IN-443",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -49,12 +49,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Villa, Javier",
       "aula": "IN-434",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -66,12 +66,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Villa, Javier",
       "aula": "IN-434",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {

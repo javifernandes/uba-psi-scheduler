@@ -6,59 +6,59 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Smith, Maria Celeste",
-      "aula": "IN-114"
+      "aula": "IN-114",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muñoz, Pablo Diego",
-      "aula": "IN-103"
+      "aula": "IN-103",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Spinelli, Fabian Alberto",
-      "aula": "IN-520"
+      "aula": "IN-520",
+      "tipo": "teo"
     },
     {
       "id": "B",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Surmani Alfonsin, Florencia",
       "aula": "IN-122",
-      "observ": "Talleres de Lectura- Presencial-Optativo"
+      "observ": "Talleres de Lectura- Presencial-Optativo",
+      "tipo": "sem"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "sabado",
       "inicio": "09:30",
       "fin": "11:00",
       "profesor": "Rodriguez, Patricia Monica",
       "aula": "",
-      "observ": "Talleres de Lectura- Optativo- Virtual"
+      "observ": "Talleres de Lectura- Optativo- Virtual",
+      "tipo": "sem"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Cosentino, Maximiliano Ariel",
       "aula": "IN-214",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -70,12 +70,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Misrahi, Claris Miriam",
       "aula": "IN-126",
+      "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -87,12 +87,12 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Amendolia, Florencia",
       "aula": "IN-126",
+      "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -104,12 +104,12 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Schenone, Sofia",
       "aula": "IN-313",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -121,12 +121,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Bonoris, Bruno",
       "aula": "IN-125",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -138,12 +138,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ibelli, Marianella",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -155,12 +155,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Igartua, Lucas",
       "aula": "IN-109",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -172,12 +172,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Miari, Antonella Silvana",
       "aula": "IN-110",
+      "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [
         {
@@ -189,12 +189,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Schenone, Sofia",
       "aula": "IN-109",
+      "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": [
         {
@@ -206,13 +206,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Rodríguez, Lucas",
       "aula": "IN-124",
-      "vacantes": 16,
+      "tipo": "prac",
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "III",

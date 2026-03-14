@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Dahab, Jose Norberto",
-      "aula": "IN-201"
+      "aula": "IN-201",
+      "tipo": "teo"
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Montano, Rocio Mariel",
       "aula": "IN-421",
+      "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Montano, Rocio Mariel",
       "aula": "IN-421",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -49,12 +49,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Balakuniec, Julia Luciana",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -66,12 +66,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Balakuniec, Julia Luciana",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -83,12 +83,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Machin, Nicolas",
       "aula": "IN-121",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -100,12 +100,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Machin, Nicolas",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -117,12 +117,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Morales, Julian",
       "aula": "IN-412",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -134,12 +134,12 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Morales, Julian",
       "aula": "IN-412",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -151,12 +151,12 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Lescano Caneva, Damian",
       "aula": "IN-434",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -168,12 +168,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Lescano Caneva, Damian",
       "aula": "IN-434",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

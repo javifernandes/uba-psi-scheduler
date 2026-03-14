@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Santesteban, Selva Susana",
       "aula": "AV-041",
-      "observ": "Se dicta al comienzo del cuatrimestre"
+      "observ": "Se dicta al comienzo del cuatrimestre",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Tosto, Virginia Fabiana",
       "aula": "AV-042",
       "observ": "Se dicta al comienzo del cuatrimestre",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Perea, Ximena",
-      "aula": "AV-030"
+      "aula": "AV-030",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Martinez, Eduardo",
       "aula": "AV-026",
+      "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Martinez, Eduardo",
       "aula": "AV-030",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {

@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mastandrea, Paula",
       "aula": "HY-030",
-      "observ": "Aula en HY - Preferentemente que pueda oscurecerse para proyectar cine"
+      "observ": "Aula en HY - Preferentemente que pueda oscurecerse para proyectar cine",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Fuentes Lenci, Alvaro",
       "aula": "",
       "observ": "Módulo de cine. Psicología & Management consultora (Costa Rica 4550, CABA)",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Schneider, Ursula",
       "aula": "",
       "observ": "Cine sindical. FOETRA Sindicato de Telecomunicaciones (Hipólito Yrigoyen 3171)",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Carriles, Paula",
       "aula": "",
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Trovato, Ignacio",
       "aula": "",
       "observ": "Intervención en catástrofes con cine. AFID (Bartolomé Mitre 3971, CABA)",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Serue, Dora Alejandra",
       "aula": "",
       "observ": "Departamento de bioética y cine ICB. AFID (Bartolomé Mitre 3971, CABA)",
+      "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Amatriain, Lucia",
       "aula": "",
       "observ": "Cine y psicoanálisis. Fundación Tiempo (Av. Federico Lacroze 3071)",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -124,13 +124,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Varela, Lucas Manuel",
       "aula": "",
       "observ": "Intervención en catástrofes con cine. AFID (Bartolomé Mitre 3971, CABA)",
+      "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -142,13 +142,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Serue, Dora Alejandra",
       "aula": "",
       "observ": "Departamento de bioética y cine ICB. AFID (Bartolomé Mitre 3971, CABA)",
+      "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -160,13 +160,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Winocur, Maite",
       "aula": "",
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
+      "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -178,13 +178,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Bronstein, Pablo",
       "aula": "",
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -196,13 +196,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Gonzalez, Florencia Paula",
       "aula": "",
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
+      "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
         {

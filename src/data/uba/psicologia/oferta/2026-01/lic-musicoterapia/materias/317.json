@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Martinez, Judith Del Valle",
-      "aula": "AV-028"
+      "aula": "AV-028",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Bernardini, Romina Paola",
       "aula": "AV-028",
+      "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Kinigsberg Berant, Flavia",
       "aula": "AV-029",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {

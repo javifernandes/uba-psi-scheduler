@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Febbraio, Andres",
-      "aula": "HY-026"
+      "aula": "HY-026",
+      "tipo": "teo"
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Martínez Contini, Verónica Ele",
       "aula": "",
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Steckler, Claudio Oscar",
       "aula": "",
       "observ": "ADEEI Manuela Pedraza 3195",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Edgar, Lucas Martin",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Edgar, Lucas Martin",
       "aula": "",
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:00",
       "fin": "19:00",
       "profesor": "Donozo, Sabrina",
       "aula": "",
       "observ": "Tempo de Integrarse - Camarones 4433",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -123,13 +123,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -141,13 +141,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Steckler, Claudio Oscar",
       "aula": "",
       "observ": "Esc Educ Espec 501-1 de Agosto 1806-N° 2876-San Martín-Pcia.Bs.As.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -159,13 +159,13 @@
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Steckler, Claudio Oscar",
       "aula": "",
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -177,13 +177,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Donozo, Sabrina",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -195,13 +195,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:00",
       "fin": "19:00",
       "profesor": "Donozo, Sabrina",
       "aula": "",
       "observ": "Tempo de Integrarse - Camarones 4433",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -213,13 +213,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Martínez Contini, Verónica Ele",
       "aula": "",
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -231,13 +231,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Donozo, Sabrina",
       "aula": "HY-026",
       "observ": "Facultad HY",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -249,13 +249,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Steckler, Claudio Oscar",
       "aula": "HY-026",
       "observ": "Facultad HY",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -267,13 +267,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Martínez Contini, Verónica Ele",
       "aula": "HY-026",
       "observ": "Facultad HY",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -285,13 +285,13 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Edgar, Lucas Martin",
       "aula": "HY-026",
       "observ": "Facultad HY",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -303,13 +303,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -321,13 +321,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Steckler, Claudio Oscar",
       "aula": "",
       "observ": "ADEEI Manuela Pedraza 3195",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -339,13 +339,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Donozo, Sabrina",
       "aula": "",
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -357,13 +357,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Martínez Contini, Verónica Ele",
       "aula": "",
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

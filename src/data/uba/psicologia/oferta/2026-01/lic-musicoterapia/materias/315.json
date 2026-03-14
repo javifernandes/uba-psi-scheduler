@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Gentili, Sebastian",
-      "aula": "AV-025"
+      "aula": "AV-025",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Trotta, Fernando Ezequiel",
       "aula": "AV-025",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {

@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Vizioli, Nicolas",
-      "aula": "HY-004"
+      "aula": "HY-004",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Cure Pabuena, Shadia",
       "aula": "",
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Sanna, Micaela Edith",
       "aula": "",
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Raggio, Sabrina",
       "aula": "",
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Corsi, Gonzalo",
       "aula": "",
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Gimeno, Leandro Crisólogo",
       "aula": "",
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Cure Pabuena, Shadia",
       "aula": "",
       "observ": "Padre Carlos Mugica 1300 Fundacion Scholas Papa Francisco",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -123,13 +123,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Lavanga, Nahuel Martin",
       "aula": "",
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

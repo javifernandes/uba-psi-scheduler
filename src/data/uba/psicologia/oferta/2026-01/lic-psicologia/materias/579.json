@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Dulitzky, Silvina Noemi",
-      "aula": "IN-121"
+      "aula": "IN-121",
+      "tipo": "teo"
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Arra, Hernan",
       "aula": "",
       "observ": "Hospital Gral de Agudos Dr. Enrique Tornú: Av. Cttes de Malvinas 3002 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Mademann, Monica",
       "aula": "",
       "observ": "Hospital General de Agudos Parmenio Piñero: Av. Varela 1301 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Veloso, Veronica Ines",
       "aula": "",
       "observ": "Instituto de Inv. Médicas Dr. Alfredo Lanari : Av. Cttes de Malvinas 3150 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Cano, Perla",
       "aula": "",
       "observ": "Instituto de Oncología Ángel H. Roffo Av. S. Martín 5481 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Dulitzky, Silvina Noemi",
       "aula": "",
       "observ": "Hospital Municipal de Oncología Marie Curie: Av. Patricias Argentinas 150 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Attwell, Mariana",
       "aula": "",
       "observ": "Hospital Italiano de Buenos Aires: Tte. Gral. Juan Domingo Perón 4190 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

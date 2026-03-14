@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Bruner, Norma Berta",
-      "aula": "IN-207"
+      "aula": "IN-207",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Campero, Martin",
       "aula": "IN-214",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Roedelsperger, Mara",
       "aula": "IN-212",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -49,12 +49,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Roedelsperger, Mara",
       "aula": "IN-212",
+      "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -66,12 +66,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Campero, Martin",
       "aula": "IN-218",
+      "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": [
         {

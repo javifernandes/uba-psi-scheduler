@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De La Iglesia, Matilde Aida",
-      "aula": "IN-114"
+      "aula": "IN-114",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Velazquez, Maria Eugenia",
       "aula": "IN-204",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Velazquez, Maria Eugenia",
       "aula": "IN-214",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

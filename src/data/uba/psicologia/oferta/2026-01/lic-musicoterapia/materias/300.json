@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Butman, Judith",
-      "aula": "AV-036"
+      "aula": "AV-036",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Borenstein, Alejandro Damián",
       "aula": "AV-028",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {

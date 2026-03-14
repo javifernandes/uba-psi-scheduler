@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Tajer, Debora",
-      "aula": "IN-101"
+      "aula": "IN-101",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Costa, Maria Lujan",
       "aula": "IN-411",
+      "tipo": "prac",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Saavedra, Lucia Daniela",
       "aula": "IN-434",
+      "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -49,13 +49,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Costa, Maria Lujan",
       "aula": "IN-421",
-      "vacantes": 15,
+      "tipo": "prac",
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -66,12 +66,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Saavedra, Lucia Daniela",
       "aula": "IN-313",
+      "tipo": "prac",
       "vacantes": 17,
       "slotsAsociados": [
         {

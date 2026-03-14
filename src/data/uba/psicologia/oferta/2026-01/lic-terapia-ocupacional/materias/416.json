@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Fernandez, Silvina Soledad",
-      "aula": "SI-018"
+      "aula": "SI-018",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Romualdo, Wendy",
       "aula": "SI-024",
+      "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Romualdo, Wendy",
       "aula": "SI-024",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {

@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Etcheverry, Maria Laura",
-      "aula": "SI-020"
+      "aula": "SI-020",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Ibañez, Fabiana",
       "aula": "SI-027",
+      "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Ibañez, Fabiana",
       "aula": "SI-027",
+      "tipo": "prac",
       "vacantes": 40,
       "slotsAsociados": [
         {

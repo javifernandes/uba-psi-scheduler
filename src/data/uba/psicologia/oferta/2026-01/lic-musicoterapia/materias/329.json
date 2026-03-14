@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Zimbaldo, Ariel Marcelo",
       "aula": "AV-028",
+      "tipo": "prac",
       "vacantes": 38,
       "slotsAsociados": []
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Ruiz, Maria Mercedes",
       "aula": "AV-030",
+      "tipo": "prac",
       "vacantes": 39,
       "slotsAsociados": []
     }

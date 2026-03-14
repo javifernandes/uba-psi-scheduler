@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Alvarez, Maria De Los Angeles",
-      "aula": "SI-TEC"
+      "aula": "SI-TEC",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Diez, Maria Rocio",
       "aula": "SI-TEC",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Diez, Maria Rocio",
       "aula": "SI-TEC",
+      "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
         {

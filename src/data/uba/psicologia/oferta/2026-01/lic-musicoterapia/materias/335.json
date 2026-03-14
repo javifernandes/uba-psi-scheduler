@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "20:00",
       "profesor": "Vidret, Norberto Marcos",
       "aula": "AV-038",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "10:30",
       "fin": "13:30",
       "profesor": "Vesco, Carolina",
       "aula": "",
       "observ": "Centro de Día 20, Ceretti 3524",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Alvarez, Natalia",
       "aula": "",
       "observ": "Centro Día 9, Paraguay 5170 CABA",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Alvarez, Natalia",
       "aula": "",
       "observ": "Centro de Día 27, Falcón 4776.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:00",
       "fin": "13:00",
       "profesor": "Vesco, Carolina",
       "aula": "",
       "observ": "Centro Día 19, Garay 765 CABA",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {

@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Crespino, Claudio Daniel",
-      "aula": "AV-029"
+      "aula": "AV-029",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Broqua, Graciela Ines",
       "aula": "AV-028",
-      "vacantes": 38,
+      "tipo": "prac",
+      "vacantes": 37,
       "slotsAsociados": [
         {
           "slotId": "I",

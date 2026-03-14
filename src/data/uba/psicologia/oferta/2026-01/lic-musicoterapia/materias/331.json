@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Coluccio, Andrea Graciela",
       "aula": "AV-025",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Rossi, Laura",
       "aula": "",
       "observ": "Hospital Moyano",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Sanchez, Analía",
       "aula": "",
       "observ": "Hospital Moyano",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Uzal, Paula",
       "aula": "",
       "observ": "Hospital Moyano",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {

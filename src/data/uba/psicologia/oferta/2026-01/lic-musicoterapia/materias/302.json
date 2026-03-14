@@ -6,31 +6,31 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "18:00",
       "profesor": "Saavedra, Maria Eugenia",
-      "aula": "AV-041"
+      "aula": "AV-041",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:00",
       "profesor": "Ojeda, Ramon Antonio",
-      "aula": "AV-041"
+      "aula": "AV-041",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Suarez, Silvana Cecilia",
       "aula": "AV-041",
-      "vacantes": 67,
+      "tipo": "prac",
+      "vacantes": 65,
       "slotsAsociados": [
         {
           "slotId": "I",

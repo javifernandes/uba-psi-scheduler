@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Trimarco, María Laura",
-      "aula": "SI-042"
+      "aula": "SI-042",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Cagnoni, Segundo",
       "aula": "SI-016",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Cagnoni, Segundo",
       "aula": "SI-016",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

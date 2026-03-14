@@ -6,40 +6,40 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Montañez, Fernando Gabriel",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Medina, Horacio Manuel",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Larrosa, Maria Victoria",
       "aula": "HY-015",
-      "observ": "Seminario Optativo."
+      "observ": "Seminario Optativo.",
+      "tipo": "sem"
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Kot Rozenberg, Gabriela Veroni",
       "aula": "HY-012",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Larrosa, Maria Victoria",
       "aula": "HY-011",
-      "vacantes": 31,
+      "tipo": "prac",
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -68,12 +68,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Saubidet, Agustina",
       "aula": "HY-010",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -85,12 +85,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ramirez, Fernando Cesar",
       "aula": "HY-004",
+      "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
         {

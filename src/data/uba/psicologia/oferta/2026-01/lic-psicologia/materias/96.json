@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Allegro, Fabian Luis",
-      "aula": "IN-207"
+      "aula": "IN-207",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Marino, Juan Pablo",
       "aula": "IN-324",
+      "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Marino, Juan Pablo",
       "aula": "IN-451",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {

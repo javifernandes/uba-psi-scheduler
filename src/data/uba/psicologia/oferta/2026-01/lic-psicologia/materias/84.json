@@ -6,31 +6,31 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pesiney, Cora Judith",
-      "aula": "IN-207"
+      "aula": "IN-207",
+      "tipo": "teo"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pesiney, Cora Judith",
       "aula": "IN-211",
-      "observ": "Optativo"
+      "observ": "Optativo",
+      "tipo": "sem"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Pesiney, Cora Judith",
       "aula": "IN-430",
+      "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -42,12 +42,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Garzon Noguera, Federico",
       "aula": "IN-107",
+      "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
         {

@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "20:00",
       "fin": "22:00",
       "profesor": "Vizzolini, Leandro Martín",
       "aula": "AV-025",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Colagreco, Julieta",
       "aula": "",
       "observ": "Clínica Flores Internación Bonorino 243 C.A.B.A.1 C.A.B.A.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Gentili, Sebastian",
       "aula": "",
       "observ": "Hogar Seres 12 de octubre 275 Avellaneda",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Gentili, Sebastian",
       "aula": "",
       "observ": "I.R.E.P (Instituto de rehabilitación psicofísica) Echeverría 955",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Gentili, Sebastian",
       "aula": "",
       "observ": "Hogar Seres 12 de octubre 275 Avellaneda",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Colagreco, Julieta",
       "aula": "",
       "observ": "Clínica Flores Internación Bonorino 243 C.A.B.A.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Gentili, Sebastian",
       "aula": "",
       "observ": "Hospital Evita Lanus- Diego A. Maradona 1910",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -124,13 +124,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Colagreco, Julieta",
       "aula": "",
       "observ": "Clínica Flores Internación Bonorino 243 C.A.B.A.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -142,13 +142,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Gentili, Sebastian",
       "aula": "",
       "observ": "Centro SIARC-Maza 330 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

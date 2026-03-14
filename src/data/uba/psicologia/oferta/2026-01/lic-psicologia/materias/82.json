@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Garcia, Ariana Gabriela",
-      "aula": "IN-510"
+      "aula": "IN-510",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Presman, Tatiana Melina",
       "aula": "IN-431",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Piccone, Anabela",
       "aula": "IN-125",
+      "tipo": "prac",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -49,12 +49,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Novarese, Marta Ana",
       "aula": "IN-321",
+      "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -66,12 +66,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Boustoure, Maria Alejandra",
       "aula": "IN-214",
+      "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [
         {

@@ -6,32 +6,32 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
-      "dia": "domingo",
-      "inicio": "00:00",
-      "fin": "00:00",
-      "profesor": "",
-      "aula": ""
-    },
-    {
-      "id": "1",
-      "tipo": "prac",
       "dia": "domingo",
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
       "aula": "",
+      "tipo": "teo"
+    },
+    {
+      "id": "1",
+      "dia": "domingo",
+      "inicio": "00:00",
+      "fin": "00:00",
+      "profesor": "",
+      "aula": "",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": []
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "domingo",
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
       "aula": "",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": []
     }

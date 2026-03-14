@@ -6,31 +6,31 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Miceli, Claudio Marcelo",
-      "aula": "AV-026"
+      "aula": "AV-026",
+      "tipo": "teo"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Bruno, Dario Eduardo",
-      "aula": "AV-026"
+      "aula": "AV-026",
+      "tipo": "sem"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Trotta, Fernando Ezequiel",
       "aula": "AV-026",
-      "vacantes": 62,
+      "tipo": "prac",
+      "vacantes": 61,
       "slotsAsociados": [
         {
           "slotId": "A",

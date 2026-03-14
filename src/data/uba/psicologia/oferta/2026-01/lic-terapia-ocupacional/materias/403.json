@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Verna, Maria Fernanda",
-      "aula": "SI-018"
+      "aula": "SI-018",
+      "tipo": "teo"
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Profesor a designar",
       "aula": "SI-LAB",
       "observ": "LABORATORIO CURAI",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Barreiro, Guillermina",
       "aula": "SI-LAB",
       "observ": "LABORATORIO CURAI",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Cappetta, Elida Patricia",
       "aula": "SI-LAB",
       "observ": "LABORATORIO CURAI",
+      "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
         {

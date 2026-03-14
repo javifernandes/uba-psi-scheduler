@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Trigo, Martin Pedro",
-      "aula": "IN-106"
+      "aula": "IN-106",
+      "tipo": "teo"
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Del Castillo, Nadia",
       "aula": "",
       "observ": "SEDRONAR-Samiento 546",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Löwy, Gabriela",
       "aula": "",
       "observ": "CENTRO DE SALUD MENTAL N°3 Dr Ameghino Cordoba 3120 CABA",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Escobar, Andrea Beatriz",
       "aula": "",
       "observ": "-CENTRO DE SALUD MENTAL Nº 3- ADULTOS- vespertino- Av Códoba 3120- CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Almecija, Mariel",
       "aula": "",
       "observ": "HTAL ALVAREZ-Ser. de Urgencias. Aranguren 2701. CABA",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Berenstein, Graciela",
       "aula": "",
       "observ": "HTAL MUÑIZ- Guardia de Salud Mental. Uspallata 2272.CABA",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Tancredi, Melisa Belen",
       "aula": "",
       "observ": "CENTRO DE SALUD MENTAL N°1 DR. HUGO ROSARIOS. Manuela Pedraza 1558 CABA",
+      "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -123,13 +123,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Hoerth, Julia",
       "aula": "",
       "observ": "HTAL BORDA- Servicio de Internació 25-A- Ramon Carrillo 375 - CABA",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -141,13 +141,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Rosenfeld, Natacha",
       "aula": "",
       "observ": "HTAL ALVAREZ- Htal de Dá Vespertino. Aranguren 2701. CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -159,13 +159,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Maccora, Nicolas",
       "aula": "",
       "observ": "CENTRO DE SALUD MENTAL N°1 DR. HUGO ROSARIOS. Manuela Pedraza 1558 CABA",
+      "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -177,13 +177,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Pinto Bejas, Lucia Soledad",
       "aula": "",
       "observ": "Fundación Fernando Ulloa Av. Pueyrredón 510 1er piso A CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -195,13 +195,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Freire, Carolina",
       "aula": "",
       "observ": "CENTRO DE SALUD MENTAL N°1 DR. HUGO ROSARIOS. Manuela Pedraza 1558 CABA",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -213,13 +213,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Salvochea, Maria Victoria",
       "aula": "",
       "observ": "HTAL DURAND- Servicio de Salud Mental. Av. Díaz Velez 5044. CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -231,13 +231,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Gomez, Daiana",
       "aula": "",
       "observ": "HTAL SANTOJANI. Centro de Salud 37. Av.de los Corrales 6999.CABA",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {

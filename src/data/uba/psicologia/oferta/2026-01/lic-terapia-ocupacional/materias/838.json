@@ -6,34 +6,34 @@
   "slots": [
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Bevilacqua, Sabrina",
       "aula": "",
-      "vacantes": 34,
+      "tipo": "prac",
+      "vacantes": 33,
       "slotsAsociados": []
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Garcia, Adriana Silvia",
       "aula": "",
+      "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": []
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Tejera, Laura",
       "aula": "",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": []
     }

@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Barnaba, Elizabeth Dalila Rosa",
-      "aula": "AV-025"
+      "aula": "AV-025",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Vidal Raffo, Federico Jorge",
       "aula": "AV-042",
+      "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Vidal Raffo, Federico Jorge",
       "aula": "AV-042",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {

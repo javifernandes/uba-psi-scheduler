@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Duhalde, Constanza Cecilia",
       "aula": "IN-213",
-      "observ": "Facultad de Psicología UBA"
+      "observ": "Facultad de Psicología UBA",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "14:15",
       "fin": "17:45",
       "profesor": "Huerin, Vanina Carla",
       "aula": "IN-213",
       "observ": "Facultad de Psicología UBA",
+      "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": []
     }

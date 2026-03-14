@@ -6,40 +6,40 @@
   "slots": [
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Garcia Labandal, Livia Beatriz",
-      "aula": "HY-022"
+      "aula": "HY-022",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Greco, Maria Beatriz",
-      "aula": "IN-201"
+      "aula": "IN-201",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Alegre, Sandra Teresa",
-      "aula": "IN-530"
+      "aula": "IN-530",
+      "tipo": "teo"
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Eichenbronner, David",
       "aula": "HY-026",
       "observ": "Intervenciones psicoeducativas institucionales",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Fernandez Tobal, Claudia Rosan",
       "aula": "IN-440",
       "observ": "Trayectorias escolares e intervenciones en escuela secundaria",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Romero, Miguel Adrián",
       "aula": "HY-023",
       "observ": "Nuevas tecnologías en la escuela",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -87,14 +87,14 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Carosella, Florencia",
       "aula": "IN-313",
       "observ": "Educación sexual integral en nivel inicial y primario",
-      "vacantes": 6,
+      "tipo": "prac",
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -105,13 +105,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Villegas, Ana Maria",
       "aula": "IN-444",
       "observ": "Trayectorias escolares e intervenciones en escuela secundaria",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -123,13 +123,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Lofeudo, Silvina Monica",
       "aula": "IN-125",
       "observ": "Educación Inclusiva",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -141,13 +141,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Larripa, Martin Miguel",
       "aula": "IN-108",
       "observ": "Educación Especial/Atención a la diversidad",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -159,13 +159,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Taich, Santiago Federico",
       "aula": "IN-434",
       "observ": "Acompañamiento a las trayectorias educativas en el nivel medio",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -177,13 +177,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Blumenkranz, Camila",
       "aula": "IN-109",
       "observ": "Implementación de la Educación Sexual Integral en instituciones educativas",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -195,13 +195,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Canaves, Maria Victoria",
       "aula": "IN-304",
       "observ": "ESI y trayectorias educativas en escuela media",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -213,13 +213,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Baliño, Roxana Beatriz",
       "aula": "IN-108",
       "observ": "Acompañamiento a las trayectorias educativas en el Nivel Secundario",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -231,13 +231,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Ortega, Gabriela Rosana",
       "aula": "IN-443",
       "observ": "Y AULA108 a partir de las 1945 hs-ESI, formación docente y escuelas",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -249,13 +249,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Gorosito, Maria Celeste",
       "aula": "IN-421",
       "observ": "Intervenciones psicoeducativas en situaciones complejas",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -267,13 +267,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "07:30",
       "fin": "10:45",
       "profesor": "Enzenhofer, Pablo",
       "aula": "IN-106",
       "observ": "Intervenciones psicoeducativas en el nivel inicial y primario",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -285,13 +285,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Maiorana, Silvia",
       "aula": "HY-012",
       "observ": "Formación docente",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -303,13 +303,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Cane, Alan",
       "aula": "IN-412",
       "observ": "Implementaciòn de la Ley de Educaciòn Sexual Integral",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {

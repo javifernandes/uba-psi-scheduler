@@ -6,69 +6,69 @@
   "slots": [
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Sanchez, Maria Veronica",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Quiroga, Oscar Alberto",
-      "aula": "HY-023"
+      "aula": "HY-023",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "OLASO, Juan De",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Albornoz, Eduardo Sergio",
       "aula": "",
-      "observ": "SEMINARIO Optativo-VIRTUAL"
+      "observ": "SEMINARIO Optativo-VIRTUAL",
+      "tipo": "sem"
     },
     {
       "id": "C",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Fuentes Esparza, Mariela",
       "aula": "",
-      "observ": "TALLER Optativo-VIRTUAL"
+      "observ": "TALLER Optativo-VIRTUAL",
+      "tipo": "sem"
     },
     {
       "id": "B",
-      "tipo": "sem",
       "dia": "sabado",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Nogueira, Vanesa Daniela",
       "aula": "",
-      "observ": "TALLER Optativo-VIRTUAL"
+      "observ": "TALLER Optativo-VIRTUAL",
+      "tipo": "sem"
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Sielecki, Carolina Laura",
       "aula": "HY-030",
+      "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -80,12 +80,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Kahanoff, Natacha",
       "aula": "HY-013",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -97,12 +97,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Gelly Cantilo, Luis",
       "aula": "HY-012",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -114,12 +114,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Belaustegui Goitia, Victoria C",
       "aula": "HY-027",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -131,12 +131,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Nogueira, Vanesa Daniela",
       "aula": "HY-031",
+      "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -148,12 +148,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Fuentes Esparza, Mariela",
       "aula": "HY-015",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {

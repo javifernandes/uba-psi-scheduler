@@ -6,33 +6,33 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "20:30",
       "fin": "22:30",
       "profesor": "Rodriguez, Rafael Osvaldo",
       "aula": "",
-      "observ": "Aabra sede central Mansilla 3520 caba"
+      "observ": "Aabra sede central Mansilla 3520 caba",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Rodriguez, Rafael Osvaldo",
       "aula": "IN-108",
-      "observ": "Sede Independencia"
+      "observ": "Sede Independencia",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Saravia, Delicia Noemi",
       "aula": "",
       "observ": "AABRA (admisiones) Mansila 3520, Caba",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -44,13 +44,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Caina Atento, Agustin",
       "aula": "",
       "observ": "Htal.de S Mental Evita (Serv Desordenes Alim)Los Eucaliptus 501,V de Mayo, Bs As",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -62,13 +62,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Donghi, Alicia Ines",
       "aula": "",
       "observ": "Hospital Piñero( Eq Anorexia- bulimia)Varela 1300,CABAVarela 1301",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -80,13 +80,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Giachino, Verónica Marta",
       "aula": "",
       "observ": "AABRA Lanus (Admis T Alim - supervision virtual) Ituzaingo 1247, Lanus",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -98,13 +98,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:30",
       "fin": "20:30",
       "profesor": "Gabutti, Romina",
       "aula": "",
       "observ": "Centro Ulloa (Cons Ext y admisión) Pueyrredón 510, CABA-",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -116,13 +116,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Centurion Roman, Ailen",
       "aula": "",
       "observ": "Htal.de S Mental Evita (Serv Desordenes Alim)Los Eucaliptus 501,V de Mayo, Bs As",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -134,13 +134,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Exposito, Agustin",
       "aula": "",
       "observ": "Pract supervisada Aabra Mansila 3520, Caba",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -152,13 +152,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Guercovich, Johanna",
       "aula": "",
       "observ": "Hospital Vicente Lopez. Servicio trastorno alimentario- nutri . H Yrigoyen 1757",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -170,13 +170,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Centurion Roman, Ailen",
       "aula": "",
       "observ": "Hospital Borda. Disp. de dia. Equip TCA - Dr. Ramon Carrillo 375",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -188,13 +188,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Stukalsky, Sandra Vivian",
       "aula": "",
       "observ": "Centro Ulloa (Admisiónes TA) Pueyrredón 510, CABA. A",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -206,13 +206,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Fernandez, Paula Evangelina",
       "aula": "",
       "observ": "Centro de AP - Grupo terapéutico prob. consumo y TCA - Sargento Cabral 2880",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -224,13 +224,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "17:45",
       "fin": "21:45",
       "profesor": "Itzik, Leonardo Rafael",
       "aula": "",
       "observ": "Red asistencial FARP-(Tr Alim) Carranza 2017,CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -242,13 +242,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Gabutti, Romina",
       "aula": "",
       "observ": "CAFS( At familiar de Suicida)Ciudad de la Paz 3214, 1° CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -260,13 +260,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Caina Atento, Agustin",
       "aula": "",
       "observ": "Htal dl trauma (cirugia bariatrica) - Bailen 2060 Malvinas Argentinas, Bs As",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -278,13 +278,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Casaretto, Adriana",
       "aula": "",
       "observ": "Causa Clinica - Sarmiento 3475, CABA, Niños y adolescentes",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -296,13 +296,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Donghi, Alicia Ines",
       "aula": "",
       "observ": "Comunidad Bienestar (admisiones) Coronel Diaz 2475 CABA",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -314,13 +314,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Saravia, Delicia Noemi",
       "aula": "IN-108",
       "observ": "( Eq Trast Alim)Práct supervisada Sede Independencia",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -332,13 +332,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "14:15",
       "fin": "18:00",
       "profesor": "Hernandez, Mayra",
       "aula": "",
       "observ": "Comunidad Bienestar (admisiones) Lavalleja 1390 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

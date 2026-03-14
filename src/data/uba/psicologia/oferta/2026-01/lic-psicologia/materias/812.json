@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Ferraro, Marcelo",
-      "aula": "HY-012"
+      "aula": "HY-012",
+      "tipo": "teo"
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Torres, Mariana Cecilia",
       "aula": "",
       "observ": "Eq. de adultos, interconsulta y cuidados paliativos. H. Santojanni Pilar 950",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Isoldi, Damian",
       "aula": "",
       "observ": "Equipo Sala de adolescentes. Hospital Alvear, Warnes 2630",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Osuna, Nora",
       "aula": "",
       "observ": "Unidad de violencia intrfliar y maltrato infantil. H. Elizalde. Montes de Oca 40",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Pecoitz, Giselle",
       "aula": "",
       "observ": "Equipo de salud mental - Cesac 44- Saraza 4202 - CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Alvite, Melina",
       "aula": "",
       "observ": "Equipo Infantojuvenil. Salud Escolar - Hospital Piñero - Varela 1301",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Peralba, Luciana",
       "aula": "",
       "observ": "Salud Mental Responde: asistencia telefónica. Dir.Gral.SM. San Luis 3237",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -123,13 +123,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Rosenzvaig, Nadia",
       "aula": "",
       "observ": "Equipo de adm. y seguimiento de sala de guardia. Hospital Alvear, Warnes 2630",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -141,13 +141,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Osuna, Nora",
       "aula": "",
       "observ": "Unidad de violencia intrfliar y maltrato infantil. H. Elizalde. Montes de Oca 40",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -159,13 +159,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Aued Santi, Julieta",
       "aula": "",
       "observ": "Equipo de adultos. Centro de salud Nº 6. M. Acosta 3673 Hospital Piñero",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -177,13 +177,13 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Hrzina, Yanina",
       "aula": "",
       "observ": "Equipo infantojuvenil. Salud Escolar. Hosp. Piñero. Varela 1301. CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -195,13 +195,13 @@
     },
     {
       "id": "25",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Nieto Moreno, Mariana",
       "aula": "",
       "observ": "Equipo Sala de internación - Residencia SM - Hospital Piñero - Varela 1301",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -213,13 +213,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Garber, Ezequiel David",
       "aula": "",
       "observ": "Equipo de guardia de procuración y trasplante de órganos. Incucai Los Patos 2151",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -231,13 +231,13 @@
     },
     {
       "id": "28",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "16:30",
       "fin": "20:30",
       "profesor": "Escaris Pazos, María Elena",
       "aula": "",
       "observ": "Guardia interdisc. de salud mental. Hosp. Durand Av. Díaz Velez 5044",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -249,13 +249,13 @@
     },
     {
       "id": "26",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Feu, Fabiana",
       "aula": "",
       "observ": "Guardia interdisc. de salud mental. Hosp. Emerg. Psiq. Alvear - Warnes 2630",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -267,13 +267,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Aued Santi, Julieta",
       "aula": "",
       "observ": "Equipo de adultos. Centro de salud Nº 6. M. Acosta 3673 Hospital Piñero",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -285,13 +285,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Basso, María Julia",
       "aula": "",
       "observ": "Terapia asistida con Animales. Hospital de niños Elizalde. Montes de Oca 40",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -303,13 +303,13 @@
     },
     {
       "id": "24",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Alvite, Melina",
       "aula": "",
       "observ": "Equipo Infantojuvenil. Salud Escolar - Hospital Piñero - Varela 1301",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -321,13 +321,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:30",
       "fin": "18:30",
       "profesor": "Zarazaga, Rosa",
       "aula": "",
       "observ": "Equipo de guardia de procuración y trasplante de órganos. Incucai Los Patos 2151",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -339,13 +339,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "15:30",
       "fin": "19:30",
       "profesor": "Zarazaga, Rosa",
       "aula": "",
       "observ": "Equipo psicosocial de procuración y trasplante de órganos. Incucai Los Patos215",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -357,13 +357,13 @@
     },
     {
       "id": "21",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Torres, Mariana Cecilia",
       "aula": "",
       "observ": "Eq. de adultos, interconsulta y cuidados paliativos. H. Santojanni Pilar 950",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -375,13 +375,13 @@
     },
     {
       "id": "27",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Ardolino, Mara Montserrat",
       "aula": "",
       "observ": "Equipo de adolescencia. CC.EE. Hosp. Alvear - Warnes 2630",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -393,13 +393,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Cohen Duek, Melisa",
       "aula": "",
       "observ": "Equipo de adm. y seguimiento de sala de guardia. Hospital Alvear, Warnes 2630",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -411,13 +411,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Hrzina, Yanina",
       "aula": "",
       "observ": "Equipo infantojuvenil. Salud Escolar. Hosp. Piñero. Varela 1301. CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -429,13 +429,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "14:45",
       "fin": "18:45",
       "profesor": "Davis Edmonson, Irene Karina",
       "aula": "",
       "observ": "Guardia inter de salud mental. H Grierson. Fernández de la Cruz 4402 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -447,13 +447,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Ferraro, María Inés",
       "aula": "",
       "observ": "Equipo de adultos. Consultorios externos. Hospital Penna. Chutro 3380",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -465,13 +465,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "15:15",
       "fin": "19:15",
       "profesor": "Davis Edmonson, Irene Karina",
       "aula": "",
       "observ": "Guardia inter de salud mental. H Grierson. Fernández de la Cruz 4402 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -483,13 +483,13 @@
     },
     {
       "id": "22",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Gatti, Marcelo",
       "aula": "",
       "observ": "Guardia interdisc. de salud mental. Hosp. Vélez Sarsfield -C.de la Barca 1550",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -501,13 +501,13 @@
     },
     {
       "id": "23",
-      "tipo": "prac",
       "dia": "domingo",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Mosquera, Ignacio",
       "aula": "",
       "observ": "Guardia interdisc. de salud mental. Hosp. Vélez Sarsfield -C.de la Barca 1550",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

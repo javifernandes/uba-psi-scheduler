@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Verna, Maria Fernanda",
-      "aula": "SI-004"
+      "aula": "SI-004",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Bello, Patricia",
       "aula": "SI-018",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Bello, Patricia",
       "aula": "SI-018",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

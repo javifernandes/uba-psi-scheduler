@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Fideleff, Leandro",
-      "aula": "AV-030"
+      "aula": "AV-030",
+      "tipo": "teo"
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Savastano Hidalgo, Paula Danie",
       "aula": "AV-028",
-      "vacantes": 25,
+      "tipo": "prac",
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -32,12 +32,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Savastano Hidalgo, Paula Danie",
       "aula": "AV-030",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {

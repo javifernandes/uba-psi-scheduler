@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Fernandez, Adriana Anabel",
-      "aula": "AV-042"
+      "aula": "AV-042",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Silanes, Maria Celeste",
       "aula": "AV-026",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Silanes, Maria Celeste",
       "aula": "AV-042",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

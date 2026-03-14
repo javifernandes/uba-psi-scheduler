@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Sacheri, Soledad Maria Constan",
-      "aula": "AV-029"
+      "aula": "AV-029",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Bruno, Ailen",
       "aula": "AV-029",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Bruno, Ailen",
       "aula": "AV-029",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
         {

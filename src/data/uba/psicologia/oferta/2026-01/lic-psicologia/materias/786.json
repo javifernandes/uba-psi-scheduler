@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De Lellis, Martin",
-      "aula": "IN-313"
+      "aula": "IN-313",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "López Escobar, Thiago",
       "aula": "",
       "observ": "Hospital Iriarte: Allison Bell 770.Quilmes, Pcia de Bs As/ Hospital Durand CABA",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Falk, Federico Martin",
       "aula": "",
       "observ": "CESAC 14 CABA",
+      "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
         {

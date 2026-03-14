@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Ardila Gomez, Sara Elena",
       "aula": "IN-219",
-      "observ": "sede Facultad (Independencia o HY)"
+      "observ": "sede Facultad (Independencia o HY)",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Rosales, Melina Laura",
       "aula": "",
       "observ": "Hospital General de Agudos J.M. amos mejía Urquiza 609, CABA",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Delmonte, Natalia",
       "aula": "",
       "observ": "Hospital General de Agudos Parmenio Piñero, Varela 1301 , CABA",
+      "tipo": "prac",
       "vacantes": 15,
       "slotsAsociados": [
         {

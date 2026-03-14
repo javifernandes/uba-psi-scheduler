@@ -6,58 +6,58 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Garcia, Miriam Otilia",
-      "aula": "IN-103"
+      "aula": "IN-103",
+      "tipo": "teo"
     },
     {
       "id": "IV",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "18:45",
       "profesor": "Melera, Gustavo Miguel",
       "aula": "SI-031",
-      "observ": "San Isidro"
+      "observ": "San Isidro",
+      "tipo": "teo"
     },
     {
       "id": "V",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Vitale, Nora Beatriz",
-      "aula": "IN-520"
+      "aula": "IN-520",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Perez, Clara",
-      "aula": "IN-520"
+      "aula": "IN-520",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Travnik, Cecilia",
-      "aula": "IN-520"
+      "aula": "IN-520",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Larrea, Nicolas",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,12 +69,12 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Bursztein, Laura Judith",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -86,12 +86,12 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Brudnick, Gabriela",
       "aula": "IN-441",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -103,12 +103,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Cermelo, Renata",
       "aula": "IN-110",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -120,12 +120,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Diego, Maria Paula",
       "aula": "IN-452",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -137,12 +137,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Esmoris, Ana Laura",
       "aula": "IN-530",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -154,12 +154,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Coronel, María José",
       "aula": "IN-444",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -171,13 +171,13 @@
     },
     {
       "id": "50",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "13:00",
       "fin": "16:45",
       "profesor": "Yeria, Marisa Beatriz",
       "aula": "SI-022",
       "observ": "San Isidro.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -189,13 +189,13 @@
     },
     {
       "id": "52",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "13:00",
       "fin": "16:45",
       "profesor": "Gianfrancisco, Candelaria",
       "aula": "SI-025",
       "observ": "San Isidro.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -207,12 +207,12 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Kunst, Miguel",
       "aula": "IN-443",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -224,12 +224,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Luzardo Iovine, Lucas Ezequiel",
       "aula": "IN-205",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -241,13 +241,13 @@
     },
     {
       "id": "51",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "22:45",
       "profesor": "Volz, Flavia Lorena",
       "aula": "SI-019",
       "observ": "San Isidro.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -259,12 +259,12 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Parcero, Javier Sebastián",
       "aula": "IN-443",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -276,12 +276,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Tognetti, Santiago Emanuel",
       "aula": "IN-411",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -293,12 +293,12 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Esmoris, Ana Laura",
       "aula": "IN-420",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -310,12 +310,12 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Bravo Grosjean, Julio",
       "aula": "IN-124",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -327,12 +327,12 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Diego, Maria Paula",
       "aula": "IN-443",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -344,12 +344,12 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Rojas Rayne, Ana Maria",
       "aula": "IN-207",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -361,12 +361,12 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Volante, Facundo Daniel",
       "aula": "IN-303",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -378,12 +378,12 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Vitolo, Veronica Viviana",
       "aula": "IN-106",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -395,12 +395,12 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Garcia Campos, Lucia",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -412,12 +412,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Malti, Juliana Amira",
       "aula": "IN-451",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {

@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Freidin, Fabiana",
-      "aula": "HY-026"
+      "aula": "HY-026",
+      "tipo": "teo"
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Pitelli, Luna",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón",
+      "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Canales, Laura",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños",
+      "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Bardi, Daniela Carla",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Ramos, Laura Vanina",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -87,13 +87,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Garcia Poultier, Julieta",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -105,13 +105,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Stibel, Sonia Vanina",
       "aula": "",
       "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón",
+      "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
         {

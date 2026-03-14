@@ -6,30 +6,30 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Patrono, Roberto Raul",
-      "aula": "IN-207"
+      "aula": "IN-207",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ulnik, Jorge Claudio",
-      "aula": "IN-103"
+      "aula": "IN-103",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Bogani, Hector",
       "aula": "IN-108",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -41,12 +41,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Bogani, Hector",
       "aula": "IN-121",
+      "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [
         {
@@ -58,12 +58,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Fernandez, Alejandra Viviana",
       "aula": "IN-433",
+      "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -75,12 +75,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Fernandez, Alejandra Viviana",
       "aula": "IN-204",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {

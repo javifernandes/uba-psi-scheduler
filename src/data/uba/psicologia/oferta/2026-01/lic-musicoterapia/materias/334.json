@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Rodriguez, Maria Fernanda",
       "aula": "AV-035",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Iervasi, Marina",
       "aula": "",
       "observ": "Residencia Asturiana Asociación Civil Club Tinetense.Calle Guevara 35. Chacarita",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Matalia, Marisol",
       "aula": "",
       "observ": "Institución y dirección de la misma: Hospital de Alta complejidad del bicentenar",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Iervasi, Marina",
       "aula": "",
       "observ": "Residencia Asturiana Asociación Civil Club Tinetense.Calle Guevara 35. Chacarita",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

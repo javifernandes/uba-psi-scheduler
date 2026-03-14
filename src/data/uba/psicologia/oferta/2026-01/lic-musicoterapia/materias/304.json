@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Sotelo, Maria Ines De La Milag",
-      "aula": "AV-028"
+      "aula": "AV-028",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Marchesotti, Araceli Luján",
       "aula": "AV-030",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Vizzolini, Leandro Martín",
       "aula": "AV-011",
+      "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
         {

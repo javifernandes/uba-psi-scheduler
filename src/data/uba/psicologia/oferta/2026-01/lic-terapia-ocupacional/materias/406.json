@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Metz, Miriam Isabel",
-      "aula": "SI-024"
+      "aula": "SI-024",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Perretti, Gabriela Andrea",
       "aula": "SI-011",
+      "tipo": "prac",
       "vacantes": 37,
       "slotsAsociados": [
         {
@@ -32,13 +32,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Perretti, Gabriela Andrea",
       "aula": "SI-011",
-      "vacantes": 39,
+      "tipo": "prac",
+      "vacantes": 38,
       "slotsAsociados": [
         {
           "slotId": "I",

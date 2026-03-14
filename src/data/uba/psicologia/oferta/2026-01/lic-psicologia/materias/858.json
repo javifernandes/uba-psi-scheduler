@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Marqués, Roxana Laura",
-      "aula": "HY-012"
+      "aula": "HY-012",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Pizzarello, Fabricio",
       "aula": "",
       "observ": "Ministerio Pùblico Fiscal, sede Av. Paseo Colòn 1333, C.A.B.A.",
+      "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Pizzarello, Fabricio",
       "aula": "",
       "observ": "Ministerio Pùblico Fiscal, sede Av. Paseo Colòn 1333, C.A.B.A.",
+      "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
         {

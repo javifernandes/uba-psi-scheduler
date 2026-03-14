@@ -6,30 +6,30 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Scaffa, Miriam",
-      "aula": "SI-004"
+      "aula": "SI-004",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Scaffa, Miriam",
-      "aula": "SI-004"
+      "aula": "SI-004",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Mozzone, María Carolina",
       "aula": "SI-TEC",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

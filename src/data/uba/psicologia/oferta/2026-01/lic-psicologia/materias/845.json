@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Iacub, Ricardo",
       "aula": "IN-325",
-      "observ": "Facultad de Psicología (UBA)"
+      "observ": "Facultad de Psicología (UBA)",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "12:15",
       "profesor": "Mansinho, Mariana Andrea",
       "aula": "IN-219",
       "observ": "Invest. Accesibilidad e inaccesibilidad tecnológica (Fac. de Psicología, UBA)",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "12:15",
       "profesor": "Val, Solange",
       "aula": "IN-320",
       "observ": "Invest. Accesibilidad e inaccesibilidad tecnológica (Fac. de Psicología, UBA)",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

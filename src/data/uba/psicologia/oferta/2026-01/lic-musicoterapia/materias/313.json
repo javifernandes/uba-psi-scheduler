@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Justel, Nadia Romina",
-      "aula": "AV-041"
+      "aula": "AV-041",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Lopez, Morena",
       "aula": "AV-041",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
         {

@@ -6,33 +6,33 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "08:30",
       "fin": "09:30",
       "profesor": "Conti, Norberto",
       "aula": "",
-      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F."
+      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "09:30",
       "profesor": "Conti, Norberto",
       "aula": "",
-      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F."
+      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:30",
       "fin": "11:30",
       "profesor": "Conti, Norberto",
       "aula": "",
       "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

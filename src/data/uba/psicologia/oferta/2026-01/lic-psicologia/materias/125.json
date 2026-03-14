@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Patrono, Roberto Raul",
       "aula": "",
-      "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA"
+      "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Juárez, Valeria",
       "aula": "",
       "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Artigas, Horacio",
       "aula": "",
       "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Schultz, Gustavo",
       "aula": "",
       "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Cabrera Carro, Eliana Natalia",
       "aula": "",
       "observ": "Hosp. Durand - Pab. Villanueva 3ºpiso Aula D3 - Av Diaz Velez 5044 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

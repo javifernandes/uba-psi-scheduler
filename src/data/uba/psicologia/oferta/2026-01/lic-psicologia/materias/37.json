@@ -6,168 +6,168 @@
   "slots": [
     {
       "id": "VI",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Naparstek, Fabian Abraham",
       "aula": "IN-510",
-      "observ": "Optativo"
+      "observ": "Optativo",
+      "tipo": "teo"
     },
     {
       "id": "III",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Naparstek, Fabian Abraham",
-      "aula": "IN-MAY"
+      "aula": "IN-MAY",
+      "tipo": "teo"
     },
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Berger, Andrea Viviana",
-      "aula": "IN-101"
+      "aula": "IN-101",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Mazzoni, Maria Yanina",
-      "aula": "IN-101"
+      "aula": "IN-101",
+      "tipo": "teo"
     },
     {
       "id": "IV",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "10:45",
       "profesor": "Kwint Domenech, Maria Enriquet",
       "aula": "SI-039",
-      "observ": "San Isidro"
+      "observ": "San Isidro",
+      "tipo": "teo"
     },
     {
       "id": "V",
-      "tipo": "teo",
       "dia": "sabado",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Bousoño, Nicolás",
       "aula": "IN-101",
-      "observ": "Optativo"
+      "observ": "Optativo",
+      "tipo": "teo"
     },
     {
       "id": "K",
-      "tipo": "sem",
       "dia": "lunes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Vogler, Roxana",
-      "aula": "IN-510"
+      "aula": "IN-510",
+      "tipo": "sem"
     },
     {
       "id": "C",
-      "tipo": "sem",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Lejbowicz, Jacqueline",
       "aula": "IN-119",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "D",
-      "tipo": "sem",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Bousoño, Nicolas",
       "aula": "IN-520",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "J",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Montiel Carli, Alma Alejandra",
-      "aula": "IN-106"
+      "aula": "IN-106",
+      "tipo": "sem"
     },
     {
       "id": "F",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:45",
       "profesor": "Amden, Maria Dolores",
       "aula": "SI-039",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio- San Isidro"
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio- San Isidro",
+      "tipo": "sem"
     },
     {
       "id": "G",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Doti Guiomar, Andrea",
       "aula": "IN-106",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "H",
-      "tipo": "sem",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Scheinkestel, Gabriela",
       "aula": "IN-530",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "jueves",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Marchesini, Angélica",
       "aula": "IN-101",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "E",
-      "tipo": "sem",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Racki, Gabriel",
       "aula": "IN-510",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "B",
-      "tipo": "sem",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Vargas, Raquel",
       "aula": "IN-520",
-      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada."
+      "observ": "Actividad obligatoria. Se organiza desde cada comisión al inicio de la cursada.",
+      "tipo": "sem"
     },
     {
       "id": "38",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Mogaburu, Juan Martin",
       "aula": "IN-107",
-      "vacantes": 16,
+      "tipo": "prac",
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -183,13 +183,13 @@
     },
     {
       "id": "39",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Veron, Natalia",
       "aula": "IN-121",
-      "vacantes": 5,
+      "tipo": "prac",
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -205,12 +205,12 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Brucco, Sofia",
       "aula": "IN-109",
+      "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -227,12 +227,12 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Cocomier, Estanislao",
       "aula": "IN-107",
+      "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -249,13 +249,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Gomez, Susana",
       "aula": "IN-110",
-      "vacantes": 18,
+      "tipo": "prac",
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -271,12 +271,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Cassolino, Nora Cecilia",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -293,12 +293,12 @@
     },
     {
       "id": "36",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-216",
+      "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -315,13 +315,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Mailliat, Maria Fernanda",
       "aula": "IN-209",
-      "vacantes": 7,
+      "tipo": "prac",
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -337,12 +337,12 @@
     },
     {
       "id": "26",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Torregiani, Maria Jazmin",
       "aula": "IN-303",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -359,12 +359,12 @@
     },
     {
       "id": "27",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Rago, Silvina",
       "aula": "IN-121",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -381,13 +381,13 @@
     },
     {
       "id": "35",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Nepomiachi, Ezequiel",
       "aula": "IN-108",
-      "vacantes": 1,
+      "tipo": "prac",
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -403,12 +403,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Peralta Ramos, Sofia",
       "aula": "IN-211",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -425,12 +425,12 @@
     },
     {
       "id": "37",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "De Lelilis, Juan Cruz",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -447,12 +447,12 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Kohan, Maria Carolina",
       "aula": "IN-313",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -469,12 +469,12 @@
     },
     {
       "id": "34",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Teggi, Daniela Judit",
       "aula": "IN-107",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -491,12 +491,12 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Benchimol, Lucia",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -513,12 +513,12 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Tello, Ana Alejandra Georgina",
       "aula": "IN-325",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -535,12 +535,12 @@
     },
     {
       "id": "24",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Cora, María Eugenia",
       "aula": "IN-433",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -557,12 +557,12 @@
     },
     {
       "id": "25",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Di Orio, Sebastián Ernesto",
       "aula": "IN-303",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -579,13 +579,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Castro, Karina",
       "aula": "IN-451",
-      "vacantes": 10,
+      "tipo": "prac",
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -601,13 +601,13 @@
     },
     {
       "id": "21",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Lanndi, Jazmín",
       "aula": "IN-106",
-      "vacantes": 24,
+      "tipo": "prac",
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -623,13 +623,13 @@
     },
     {
       "id": "51",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Soto, Maria Soledad",
       "aula": "SI-022",
       "observ": "San Isidro",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -646,14 +646,14 @@
     },
     {
       "id": "52",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Rañal, Tamara Paula",
       "aula": "SI-028",
       "observ": "San Isidro",
-      "vacantes": 2,
+      "tipo": "prac",
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -669,13 +669,13 @@
     },
     {
       "id": "32",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Hakim, Carolina",
       "aula": "IN-126",
-      "vacantes": 1,
+      "tipo": "prac",
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -691,12 +691,12 @@
     },
     {
       "id": "33",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Aguirre, Damian",
       "aula": "IN-122",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -713,12 +713,12 @@
     },
     {
       "id": "40",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Hakim, Carolina",
       "aula": "IN-124",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -735,13 +735,13 @@
     },
     {
       "id": "50",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "13:00",
       "fin": "14:45",
       "profesor": "Esteban, Florencia",
       "aula": "SI-023",
       "observ": "San Isidro",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -758,12 +758,12 @@
     },
     {
       "id": "28",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Tesi, Julieta",
       "aula": "IN-109",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -780,12 +780,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Brucco, Sofia",
       "aula": "IN-433",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -802,12 +802,12 @@
     },
     {
       "id": "30",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pontini, Narella",
       "aula": "IN-530",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -824,13 +824,13 @@
     },
     {
       "id": "31",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Tudanca, Nahuel",
       "aula": "IN-324",
-      "vacantes": 1,
+      "tipo": "prac",
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -846,13 +846,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Pulvet, Mariana Andrea",
       "aula": "IN-103",
-      "vacantes": 13,
+      "tipo": "prac",
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -868,13 +868,13 @@
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Noya, Viviana",
       "aula": "IN-209",
-      "vacantes": 1,
+      "tipo": "prac",
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -890,13 +890,13 @@
     },
     {
       "id": "23",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Barreiro Aguirre, Cynthia",
       "aula": "IN-123",
-      "vacantes": 3,
+      "tipo": "prac",
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -912,12 +912,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Perez Rean, Natalia",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -934,12 +934,12 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Pozzer, Diego Federico",
       "aula": "IN-210",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -956,12 +956,12 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rio Del Bal, Ana",
       "aula": "IN-431",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -978,12 +978,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Gomila, Lorena Karina",
       "aula": "IN-321",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -1000,12 +1000,12 @@
     },
     {
       "id": "41",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Barnaba, Natalia Gabriela",
       "aula": "IN-452",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -1022,12 +1022,12 @@
     },
     {
       "id": "22",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Barnaba, Natalia Gabriela",
       "aula": "IN-303",
+      "tipo": "prac",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -1044,12 +1044,12 @@
     },
     {
       "id": "29",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-121",
+      "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -1066,12 +1066,12 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Olivero, Pablo Esteban",
       "aula": "IN-107",
+      "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -1088,12 +1088,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Alt Michel, Alejandro Mariano",
       "aula": "IN-109",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -1110,12 +1110,12 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "sabado",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Szwarcbart, Jennifer",
       "aula": "IN-107",
+      "tipo": "prac",
       "vacantes": 15,
       "slotsAsociados": [
         {

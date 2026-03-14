@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Machin, Nicolas",
       "aula": "",
-      "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA."
+      "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Sigler, Maximiliano",
       "aula": "",
       "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Pelosi, Antonella",
       "aula": "",
       "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

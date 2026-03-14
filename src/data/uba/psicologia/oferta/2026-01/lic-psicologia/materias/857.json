@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "D´Anna, Ana Maria",
-      "aula": "IN-103"
+      "aula": "IN-103",
+      "tipo": "teo"
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:15",
       "fin": "12:15",
       "profesor": "Rolandi, Fernanda",
       "aula": "",
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -33,13 +33,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:15",
       "fin": "12:15",
       "profesor": "Rolandi, Fernanda",
       "aula": "",
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -51,13 +51,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Gago, Paula Teresa",
       "aula": "",
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,13 +69,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Gago, Paula Teresa",
       "aula": "",
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

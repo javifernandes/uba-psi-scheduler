@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Peñaloza Egas, Nancy Mery",
-      "aula": "SI-027"
+      "aula": "SI-027",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Garfinkel, Mariana",
       "aula": "SI-027",
+      "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Garfinkel, Mariana",
       "aula": "SI-027",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

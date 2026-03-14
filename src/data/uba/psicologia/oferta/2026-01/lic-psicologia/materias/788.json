@@ -6,31 +6,31 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "15:00",
       "profesor": "Schmidt, Vanina Ines",
-      "aula": "IN-441"
+      "aula": "IN-441",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "13:00",
       "profesor": "Schmidt, Vanina Ines",
-      "aula": "SI-025"
+      "aula": "SI-025",
+      "tipo": "teo"
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Esteva Diaz, Juana",
       "aula": "",
       "observ": "Escuela Técnica N° 29 Av. Boedo 760",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -42,13 +42,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Ajzensztok, Micaela",
       "aula": "",
       "observ": "Escuela Técnica N° 29 Av. Boedo 760",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -60,14 +60,14 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Vargas, Yésica",
       "aula": "",
       "observ": "Escuela Técnica N° 29 Av. Boedo 760",
-      "vacantes": 2,
+      "tipo": "prac",
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -78,13 +78,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Celsi, Ignacio",
       "aula": "",
       "observ": "Escuela Técnica N° 29 Av. Boedo 760",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -96,13 +96,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "07:00",
       "fin": "11:00",
       "profesor": "Cataldi, Silvana",
       "aula": "",
       "observ": "Escuela Secundaria Especializada en Arte Nº 1. Av. Sir Alexander Fleming 1621, M",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -114,13 +114,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "07:00",
       "fin": "11:00",
       "profesor": "Masco, Cecilia",
       "aula": "",
       "observ": "Escuela Secundaria Especializada en Arte Nº 1. Av. Sir Alexander Fleming 1621, M",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {

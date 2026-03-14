@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Ruiz, Maria Mercedes",
       "aula": "AV-004",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Benzacar, Adrian Leandro",
       "aula": "",
       "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "12:30",
       "fin": "15:30",
       "profesor": "Benzacar, Adrian Leandro",
       "aula": "",
       "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Espinosa, Alejandro Miguel",
       "aula": "",
       "observ": "CET Empatia. Av. Isidoro Iriarte 1390 Quilmes",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {

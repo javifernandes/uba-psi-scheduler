@@ -6,34 +6,34 @@
   "slots": [
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Dorin, Lucia Ines",
       "aula": "",
+      "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": []
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Converti, Veronica Helena",
       "aula": "",
-      "vacantes": 28,
+      "tipo": "prac",
+      "vacantes": 27,
       "slotsAsociados": []
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Garcia, Adriana Silvia",
       "aula": "",
+      "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": []
     }

@@ -6,30 +6,30 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Garay, Cristian Javier",
-      "aula": "IN-103"
+      "aula": "IN-103",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Celleri, Milagros",
-      "aula": "IN-510"
+      "aula": "IN-510",
+      "tipo": "teo"
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Innocenti, Maria",
       "aula": "IN-323",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -41,12 +41,12 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Innocenti, Maria",
       "aula": "IN-323",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -58,12 +58,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lopez, Pilar",
       "aula": "IN-125",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -75,12 +75,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Klajner, Florencia",
       "aula": "IN-217",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -92,12 +92,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Lopez, Pilar",
       "aula": "IN-125",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -109,12 +109,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Klajner, Florencia",
       "aula": "IN-217",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -126,12 +126,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Donatti, Sofia",
       "aula": "IN-216",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -143,12 +143,12 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Donatti, Sofia",
       "aula": "IN-216",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

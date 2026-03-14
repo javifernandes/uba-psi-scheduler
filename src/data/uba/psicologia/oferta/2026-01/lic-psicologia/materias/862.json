@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "09:30",
       "fin": "11:30",
       "profesor": "Alomo, Martin Carlos",
       "aula": "",
-      "observ": "Hospital B. Moyano, Hall Central, 1° piso, Dpto. de Docencia e Investigación"
+      "observ": "Hospital B. Moyano, Hall Central, 1° piso, Dpto. de Docencia e Investigación",
+      "tipo": "teo"
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Veira, John",
       "aula": "",
       "observ": "Hospital Presidente Perón (ex Finocchietto), Sala de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Fouroux, Vanesa",
       "aula": "",
       "observ": "Hospital Presidente Perón (ex Finocchietto), Sala de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Mansilla, Veronica",
       "aula": "",
       "observ": "Hospital Presidente Perón (ex Finocchietto), Sala de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Caina Atento, Agustin",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo, Servicio de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Litardo, Francisco",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Dure, Barbara",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo, Servicio de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -124,13 +124,13 @@
     },
     {
       "id": "22",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Caina Atento, Agustin",
       "aula": "",
       "observ": "Hospital de Psiquiatría Ramón Carrillo, Los Polvorines. Servicio de Guardia.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -142,13 +142,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "07:30",
       "fin": "09:30",
       "profesor": "Sayago, Gisela",
       "aula": "",
       "observ": "Hospital Borda, Servicio Emergencia 3.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -160,13 +160,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:30",
       "fin": "15:30",
       "profesor": "Gasque Justo, Cecilia",
       "aula": "",
       "observ": "Hospital B. Moyano, Servicio Riglos. Brandsen 2570 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -178,13 +178,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:30",
       "fin": "13:30",
       "profesor": "Gagliardi, Georgina",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -196,13 +196,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "11:30",
       "fin": "13:30",
       "profesor": "Larraburu, Juan",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -214,13 +214,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Garcia, Maria Evangelina",
       "aula": "",
       "observ": "Hospital Penna, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -232,13 +232,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Perez Ghio, Maria Celeste",
       "aula": "",
       "observ": "Hospital Penna, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -250,13 +250,13 @@
     },
     {
       "id": "23",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Dure, Barbara",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo, Servicio de Salud Mental.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -268,13 +268,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Marsilla, Marcelo Alberto",
       "aula": "",
       "observ": "Hospital Borda, Servicio Emergencia 2.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -286,13 +286,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Caina Atento, Agustin",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo. Hospital de Día.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -304,13 +304,13 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Aguilar, Julian Luciano",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo. Hospital de Día.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -322,13 +322,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Barrera, Angeles",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -340,13 +340,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Cervellera, Gustavo",
       "aula": "",
       "observ": "Hospital B. Moyano, Servicio de Emergencia. Brandsen 2570 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -358,13 +358,13 @@
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Bini, Maria Victoria",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo. Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -376,13 +376,13 @@
     },
     {
       "id": "21",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Argain, Carlos",
       "aula": "",
       "observ": "Hospital de Salud Mental Evita, Villa de Mayo. Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -394,13 +394,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Diaz, Hernan",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -412,13 +412,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "15:00",
       "profesor": "Trejo, Marina",
       "aula": "",
       "observ": "Hospital B. Moyano, Consultorios Externos.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

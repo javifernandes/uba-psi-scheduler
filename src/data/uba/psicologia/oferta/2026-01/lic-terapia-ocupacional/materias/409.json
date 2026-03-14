@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Calb, Alejandro",
-      "aula": "SI-017"
+      "aula": "SI-017",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Itri, Sofia",
       "aula": "SI-004",
-      "vacantes": 25,
+      "tipo": "prac",
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",

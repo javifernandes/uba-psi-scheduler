@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Lima, Natacha Salome",
       "aula": "IN-530",
-      "observ": "Facultad de Psicología"
+      "observ": "Facultad de Psicología",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Romero, Miguel Adrián",
       "aula": "IN-208",
       "observ": "Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -34,14 +34,14 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Cano Colazo, Victoria",
       "aula": "IN-123",
       "observ": "Facultad de Psicología",
-      "vacantes": 2,
+      "tipo": "prac",
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -52,13 +52,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Fleitas, Alejandro Matías",
       "aula": "IN-125",
       "observ": "Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Coronel, María Amalia",
       "aula": "IN-211",
       "observ": "Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Perez Ferretti, Eduardo Fernan",
       "aula": "IN-214",
       "observ": "Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {

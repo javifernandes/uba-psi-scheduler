@@ -6,31 +6,31 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "18:30",
       "profesor": "Nabergoi, Mariela",
-      "aula": "SI-035"
+      "aula": "SI-035",
+      "tipo": "teo"
     },
     {
       "id": "A",
-      "tipo": "sem",
       "dia": "lunes",
       "inicio": "18:30",
       "fin": "20:00",
       "profesor": "Nabergoi, Mariela",
-      "aula": "SI-035"
+      "aula": "SI-035",
+      "tipo": "sem"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "20:00",
       "fin": "22:00",
       "profesor": "Albino, Andrea",
       "aula": "SI-035",
-      "vacantes": 15,
+      "tipo": "prac",
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -46,12 +46,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Albino, Andrea",
       "aula": "SI-035",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Miguens, Gerardo Antonio",
-      "aula": "AV-042"
+      "aula": "AV-042",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Downes, Lucia Victoria",
       "aula": "AV-042",
-      "vacantes": 45,
+      "tipo": "prac",
+      "vacantes": 44,
       "slotsAsociados": [
         {
           "slotId": "I",

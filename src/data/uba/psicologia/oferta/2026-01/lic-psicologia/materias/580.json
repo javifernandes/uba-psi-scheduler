@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "viernes",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Korman, Guido Pablo",
       "aula": "HY-011",
-      "observ": "Primera actividad - Asistir antes de las comisiones de prácticos"
+      "observ": "Primera actividad - Asistir antes de las comisiones de prácticos",
+      "tipo": "teo"
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "10:45",
       "profesor": "Lanzillotti, Alejandra Ines",
       "aula": "",
       "observ": "Servicio de Epilepsia Hospital - Ramos Mejía",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Sarudiansky, Mercedes",
       "aula": "IN-218",
       "observ": "Espacio de Articulación - Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:00",
       "fin": "14:15",
       "profesor": "Pereyra, Martina Inés",
       "aula": "",
       "observ": "Escuela Cangallo Schule - JD Perón 2169 CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Areco Pico, Maria Marta",
       "aula": "IN-218",
       "observ": "Espacio de Articulación - Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:30",
       "fin": "10:45",
       "profesor": "Gonzalez Molina, Lucila",
       "aula": "",
       "observ": "Escuela Cangallo Schule - JD Perón 2169 CABA",
+      "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Wolfzun, Camila",
       "aula": "IN-217",
       "observ": "Espacio de Articulación - Facultad de Psicología",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

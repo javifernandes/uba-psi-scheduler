@@ -6,21 +6,21 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "lunes",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Vodovotz, Gabriel Sergio",
-      "aula": "AV-029"
+      "aula": "AV-029",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Graber, Mara",
       "aula": "AV-026",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -32,12 +32,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Graber, Mara",
       "aula": "AV-029",
+      "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
         {

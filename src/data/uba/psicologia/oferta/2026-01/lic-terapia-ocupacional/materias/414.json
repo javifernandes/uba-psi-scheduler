@@ -6,22 +6,22 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Taglioretti, Paola Valeria",
-      "aula": "SI-017"
+      "aula": "SI-017",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Valencia, Margarita",
       "aula": "SI-017",
-      "vacantes": 60,
+      "tipo": "prac",
+      "vacantes": 59,
       "slotsAsociados": [
         {
           "slotId": "I",

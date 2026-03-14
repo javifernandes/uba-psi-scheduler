@@ -6,30 +6,30 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "martes",
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Fernandez Zalazar, Diana Conce",
-      "aula": "HY-030"
+      "aula": "HY-030",
+      "tipo": "teo"
     },
     {
       "id": "II",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Jofre, Cristian",
-      "aula": "HY-029"
+      "aula": "HY-029",
+      "tipo": "teo"
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Alvarez Sobrado, Emanuel",
       "aula": "HY-030",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -41,12 +41,12 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Borenzstein, Karen",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -58,12 +58,12 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Alvarez Sobrado, Emanuel",
       "aula": "HY-010",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -75,12 +75,12 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Gomez Korol, Dahian Ezequiel",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -92,12 +92,12 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Borenzstein, Karen",
       "aula": "HY-027",
+      "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -109,12 +109,12 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Gomez Korol, Dahian Ezequiel",
       "aula": "HY-024",
+      "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
         {

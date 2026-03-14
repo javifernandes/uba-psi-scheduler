@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Paladino, Paola Karina",
       "aula": "AV-029",
-      "observ": "Sede Avellaneda"
+      "observ": "Sede Avellaneda",
+      "tipo": "teo"
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Morello, Romina Victoria",
       "aula": "",
       "observ": "ESCUELA EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Martinez, Eduardo",
       "aula": "",
       "observ": "Instituto Piedra Libre. Educ. Esp. Achega 3515. Villa Urquiza. CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Carella, Ana Laura",
       "aula": "",
       "observ": "Inst Educ Crear Manuela Pedraza 5239 Caba",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Morello, Romina Victoria",
       "aula": "",
       "observ": "ESCUELA EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+      "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "miercoles",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Martinez, Eduardo",
       "aula": "",
       "observ": "Instituto de Educ. Esp. F.Dolto. Alv. Jonte 321. Ramos Mejía.La Matanza",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Carella, Ana Laura",
       "aula": "",
       "observ": "Inst Educ Crear Manuela Pedraza 5239 Caba",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -124,13 +124,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Morello, Romina Victoria",
       "aula": "",
       "observ": "ESCUELA DE EDUCACION ESPECIAL N° 501 FRENCH 149 RAMOS MEJIA",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -142,13 +142,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Martinez, Eduardo",
       "aula": "",
       "observ": "Instituto de Educ. Esp. F. Doltó Al. Jonte321 Ramos Mejía. La Matanza.",
+      "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -160,13 +160,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Martinez, Eduardo",
       "aula": "",
       "observ": "Instituto Piedra Libre. Educ. Esp. Achega 3515. Caba",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {

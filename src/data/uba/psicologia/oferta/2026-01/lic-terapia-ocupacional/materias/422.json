@@ -6,23 +6,23 @@
   "slots": [
     {
       "id": "I",
-      "tipo": "teo",
       "dia": "miercoles",
       "inicio": "18:00",
       "fin": "21:00",
       "profesor": "Solari, Silvina Andrea",
       "aula": "SI-018",
-      "observ": "MODALIDAD VIRTUAL"
+      "observ": "MODALIDAD VIRTUAL",
+      "tipo": "teo"
     },
     {
       "id": "5",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Correa, Pilar",
       "aula": "",
       "observ": "TPP APAD - PAUNERO 2072 - SAN MIGUEL",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -34,13 +34,13 @@
     },
     {
       "id": "8",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "08:30",
       "fin": "13:30",
       "profesor": "Martínez, Silvia",
       "aula": "",
       "observ": "SAN FRANCISCO DE ASIS - TPP- Pekin 3555 - Isidro Casanova (A COORD 14 hs",
+      "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -52,13 +52,13 @@
     },
     {
       "id": "9",
-      "tipo": "prac",
       "dia": "lunes",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Perez, Adriana Griselda",
       "aula": "",
       "observ": "POLO DE INCLUSION - Emprend Social Tierra Salud Vivero Huerta - WARNES 2450",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -70,13 +70,13 @@
     },
     {
       "id": "14",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "09:00",
       "fin": "14:00",
       "profesor": "Brenlla, Leandro Sebastian",
       "aula": "",
       "observ": "ADEEI COLOCACION LABORAL - ARCOS 3063 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -88,13 +88,13 @@
     },
     {
       "id": "22",
-      "tipo": "prac",
       "dia": "martes",
       "inicio": "10:00",
       "fin": "15:00",
       "profesor": "Florimonte, Valentina",
       "aula": "",
       "observ": "Consejo de la Magistratura, Bolívar 177, CABA.",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -106,13 +106,13 @@
     },
     {
       "id": "13",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "08:00",
       "fin": "14:00",
       "profesor": "Sirianni, Mariana",
       "aula": "",
       "observ": "TOBAR - PROG EMPRENDIMIENTOS SOCIALES - AV. PEDRO GOYENA 886 - CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -124,13 +124,13 @@
     },
     {
       "id": "10",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Lingeri, Fabiana",
       "aula": "",
       "observ": "GENERACION DE CAMBIOS - EMPREND - O`HIGGINGS 477 - SAN ISIDRO",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -142,13 +142,13 @@
     },
     {
       "id": "11",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Losso, Noelia",
       "aula": "",
       "observ": "CENTRO DE OPORTUNIDADES - GRAL SAVIO 2500 VILLA MAIPU - SAN MARTIN",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -160,13 +160,13 @@
     },
     {
       "id": "12",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Perez Wirszke, Maria Victoria",
       "aula": "",
       "observ": "F. MULTIPOLAR. SANCHEZ DE BUSTAMANTE 191 CABA y ROSARIO 4386 BALLESTER.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -178,13 +178,13 @@
     },
     {
       "id": "18",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "12:30",
       "profesor": "Telatenian, Candela",
       "aula": "",
       "observ": "CFI LUCERO DEL ALBA - Monseñor Larumbe 230 MARTINEZ",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -196,13 +196,13 @@
     },
     {
       "id": "21",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "14:00",
       "profesor": "Aquila, Maria Sol",
       "aula": "",
       "observ": "TOBAR - PROG EMPRENDIMIENTOS SOCIALES - AV. PEDRO GOYENA 886 - CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -214,13 +214,13 @@
     },
     {
       "id": "23",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Castillo, Iriel",
       "aula": "",
       "observ": "ADEEI, Arcos 3063, CABA.",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -232,13 +232,13 @@
     },
     {
       "id": "4",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "14:00",
       "profesor": "Miguel, Mariana",
       "aula": "",
       "observ": "TOBAR - PROG EMPRENDIMIENTOS SOCIALES - AV. PEDRO GOYENA 886 - CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -250,13 +250,13 @@
     },
     {
       "id": "7",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Cardoso, Paula Carolina",
       "aula": "",
       "observ": "ADEEI APRESTAMIENTO LABORAL - ARCOS 3063 CABA - 14 HS A COORDINAR",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -268,13 +268,13 @@
     },
     {
       "id": "2",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:00",
       "fin": "15:00",
       "profesor": "Gonzalez Russo, Maria Eugenia",
       "aula": "",
       "observ": "ADEEI - P.A. - CUIDAD DE LA PAZ 3332 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -286,13 +286,13 @@
     },
     {
       "id": "20",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "10:00",
       "fin": "15:00",
       "profesor": "Gonzalez Russo, Maria Eugenia",
       "aula": "",
       "observ": "ADEEI - P.A. - CUIDAD DE LA PAZ 3332 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -304,13 +304,13 @@
     },
     {
       "id": "16",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "11:00",
       "fin": "17:00",
       "profesor": "Romero, Celeste",
       "aula": "",
       "observ": "ACCION COLECTIVA - LO DE FRANCO - SERRANO 824 CABA",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -322,13 +322,13 @@
     },
     {
       "id": "17",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "12:30",
       "fin": "16:00",
       "profesor": "Paladino, Belen",
       "aula": "",
       "observ": "CFI LUCERO DEL ALBA - Monseñor Larumbe 230 MARTINEZ",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -340,13 +340,13 @@
     },
     {
       "id": "1",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Poveda, Constanza",
       "aula": "",
       "observ": "TPP MAYMA - San Martín 961, Morón",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -358,13 +358,13 @@
     },
     {
       "id": "6",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Cardoso, Paula Carolina",
       "aula": "",
       "observ": "ADEEI APRESTAMIENTO LABORAL - ARCOS 3063 CABA -",
+      "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -376,13 +376,13 @@
     },
     {
       "id": "3",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Altri, Aldana",
       "aula": "",
       "observ": "UCA - FORMACION PARA EL EMPLEO - Alicia Moreau de Justo 1600 CABA",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -394,13 +394,13 @@
     },
     {
       "id": "19",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Bottaro, Paola Patricia Adrian",
       "aula": "",
       "observ": "EMPREND AMARÚ - Presidente Perón 2128 - San Miguel",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -412,13 +412,13 @@
     },
     {
       "id": "15",
-      "tipo": "prac",
       "dia": "jueves",
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Goitia, Daniela",
       "aula": "",
       "observ": "ADEEI COLOCACION LABORAL - ARCOS 3063 CABA - 14 HS A COORDINAR",
+      "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
         {
