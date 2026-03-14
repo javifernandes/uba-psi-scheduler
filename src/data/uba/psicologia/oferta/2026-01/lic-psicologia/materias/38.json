@@ -444,7 +444,7 @@
         "aula": "311"
       },
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -619,7 +619,7 @@
         "aula": "110"
       },
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -644,7 +644,7 @@
         "aula": "434"
       },
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -1224,7 +1224,7 @@
         "aula": "108"
       },
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -1399,7 +1399,7 @@
         "aula": "122"
       },
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1424,7 +1424,7 @@
         "aula": "123"
       },
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -1449,7 +1449,7 @@
         "aula": "313"
       },
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1799,7 +1799,7 @@
         "aula": "108"
       },
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "III",
