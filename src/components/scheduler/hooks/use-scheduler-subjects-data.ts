@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import type { Comision, ParsedSubject, SubjectData, VenueCode } from '../scheduler.types';
-import { toParsedSubject } from '@/domain/subject-schema-adapter';
 import {
   findPrimaryAssociatedSlotId,
   matchesCommissionQuery,
+  parseSubject,
   sameSetValues,
   sortVenueCodes,
   sortComisiones,
@@ -54,7 +54,7 @@ export const useSchedulerSubjectsData = ({
     onSubjectChangedRef.current = onSubjectChanged;
   }, [onSubjectChanged]);
 
-  const parsedSubjects = useMemo(() => subjects.map(toParsedSubject), [subjects]);
+  const parsedSubjects = useMemo(() => subjects.map(parseSubject), [subjects]);
   const selectedSubject = useMemo(
     () => parsedSubjects.find((subject) => subject.id === selectedSubjectId) || null,
     [selectedSubjectId, parsedSubjects]

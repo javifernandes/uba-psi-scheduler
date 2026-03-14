@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Lenta, Maria Malena",
-      "aula": "IN-321",
-      "observ": ""
+      "aula": "IN-321"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Sopransi, Maria Belen",
-      "aula": "IN-106",
-      "observ": ""
+      "aula": "IN-106"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "17:45",
       "profesor": "Pipo, Valeria Susana",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -51,7 +47,6 @@
       "fin": "21:15",
       "profesor": "Longo, Roxana Gabriela",
       "aula": "IN-205",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -70,7 +64,6 @@
       "fin": "21:15",
       "profesor": "Ruffa, Estefania",
       "aula": "IN-323",
-      "observ": "",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -89,7 +81,6 @@
       "fin": "12:30",
       "profesor": "Longo, Roxana Gabriela",
       "aula": "IN-303",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -108,7 +98,6 @@
       "fin": "16:00",
       "profesor": "Veloso, Veronica Ines",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -116,8 +105,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "6",
@@ -127,7 +115,6 @@
       "fin": "16:00",
       "profesor": "Sopransi, Maria Belen",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -135,8 +122,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

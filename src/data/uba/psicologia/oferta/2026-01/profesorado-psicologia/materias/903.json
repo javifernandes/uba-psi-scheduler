@@ -11,8 +11,7 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "D'angelo, Agostina",
-      "aula": "EC-019",
-      "observ": ""
+      "aula": "EC-019"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "12:30",
       "profesor": "Sena, Selva Daniela",
       "aula": "EC-019",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:15",
       "profesor": "Vallone, Valeria Claudia Paola",
       "aula": "IN-121",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -60,7 +55,6 @@
       "fin": "16:00",
       "profesor": "D' Urso, Anabel",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -68,8 +62,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -79,7 +72,6 @@
       "fin": "19:30",
       "profesor": "Sanson, Dalila",
       "aula": "IN-421",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -87,8 +79,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -98,7 +89,6 @@
       "fin": "12:30",
       "profesor": "Adrogue, Gabriela",
       "aula": "IN-411",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -106,8 +96,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "6",
@@ -117,7 +106,6 @@
       "fin": "16:00",
       "profesor": "Luzuriaga, Laura Marcela",
       "aula": "IN-209",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -125,8 +113,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

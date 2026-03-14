@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Taglioretti, Paola Valeria",
-      "aula": "SI-017",
-      "observ": ""
+      "aula": "SI-017"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "23:00",
       "profesor": "Valencia, Margarita",
       "aula": "SI-017",
-      "observ": "",
       "vacantes": 60,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

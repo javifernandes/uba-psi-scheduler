@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Politis, Daniel Gustavo",
-      "aula": "IN-101",
-      "observ": ""
+      "aula": "IN-101"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rubinstein, Wanda Yanina",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "8",
@@ -32,7 +30,6 @@
       "fin": "12:30",
       "profesor": "Sanchez, Natalia Alejandra",
       "aula": "IN-114",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -51,7 +47,6 @@
       "fin": "14:15",
       "profesor": "Cores, Evangelina Valeria",
       "aula": "IN-114",
-      "observ": "",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -70,7 +64,6 @@
       "fin": "14:15",
       "profesor": "Indaburu, Ana",
       "aula": "IN-205",
-      "observ": "",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "6",
@@ -89,7 +81,6 @@
       "fin": "14:15",
       "profesor": "Sanchez, Natalia Alejandra",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "1",
@@ -108,7 +98,6 @@
       "fin": "17:45",
       "profesor": "Indaburu, Ana",
       "aula": "IN-109",
-      "observ": "",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -116,8 +105,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -127,7 +115,6 @@
       "fin": "17:45",
       "profesor": "Gomez, Pablo Guillermo",
       "aula": "IN-510",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -135,8 +122,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -146,7 +132,6 @@
       "fin": "17:45",
       "profesor": "Cores, Evangelina Valeria",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -154,8 +139,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "7",
@@ -165,7 +149,6 @@
       "fin": "21:15",
       "profesor": "Gomez, Pablo Guillermo",
       "aula": "IN-303",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -173,8 +156,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

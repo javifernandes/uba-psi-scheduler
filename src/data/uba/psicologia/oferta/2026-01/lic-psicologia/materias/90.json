@@ -11,8 +11,7 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gabelli, Fabian Marcelo",
-      "aula": "IN-201",
-      "observ": ""
+      "aula": "IN-201"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muzio, Ruben Nestor",
-      "aula": "HY-022",
-      "observ": ""
+      "aula": "HY-022"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "10:45",
       "profesor": "Daneri, Maria Florencia",
       "aula": "IN-217",
-      "observ": "",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -51,7 +47,6 @@
       "fin": "12:30",
       "profesor": "Daneri, Maria Florencia",
       "aula": "IN-217",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "11",
@@ -70,7 +64,6 @@
       "fin": "14:15",
       "profesor": "Calleja, Nicolas",
       "aula": "IN-216",
-      "observ": "",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "12",
@@ -89,7 +81,6 @@
       "fin": "16:00",
       "profesor": "Calleja, Nicolas",
       "aula": "IN-216",
-      "observ": "",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -108,7 +98,6 @@
       "fin": "19:30",
       "profesor": "Dzik, Marina Victoria",
       "aula": "IN-441",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -116,8 +105,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -127,7 +115,6 @@
       "fin": "21:15",
       "profesor": "Dzik, Marina Victoria",
       "aula": "IN-441",
-      "observ": "",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -135,8 +122,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -146,7 +132,6 @@
       "fin": "19:30",
       "profesor": "Rodriguez, Mariano",
       "aula": "IN-320",
-      "observ": "",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -154,8 +139,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "6",
@@ -165,7 +149,6 @@
       "fin": "21:15",
       "profesor": "Rodriguez, Mariano",
       "aula": "IN-320",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -173,8 +156,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "7",
@@ -184,7 +166,6 @@
       "fin": "10:45",
       "profesor": "Fosacheca, Sandro",
       "aula": "IN-420",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -192,8 +173,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "8",
@@ -203,7 +183,6 @@
       "fin": "12:30",
       "profesor": "Fosacheca, Sandro",
       "aula": "IN-420",
-      "observ": "",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -211,8 +190,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "9",
@@ -222,7 +200,6 @@
       "fin": "14:15",
       "profesor": "Fernandez, Rocio Candela",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -230,8 +207,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "10",
@@ -241,7 +217,6 @@
       "fin": "16:00",
       "profesor": "Fernandez, Rocio Candela",
       "aula": "IN-208",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -249,8 +224,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

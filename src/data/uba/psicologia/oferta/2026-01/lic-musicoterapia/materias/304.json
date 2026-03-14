@@ -11,8 +11,7 @@
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Sotelo, Maria Ines De La Milag",
-      "aula": "AV-028",
-      "observ": ""
+      "aula": "AV-028"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "21:00",
       "profesor": "Marchesotti, Araceli Luján",
       "aula": "AV-030",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:00",
       "profesor": "Vizzolini, Leandro Martín",
       "aula": "AV-011",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

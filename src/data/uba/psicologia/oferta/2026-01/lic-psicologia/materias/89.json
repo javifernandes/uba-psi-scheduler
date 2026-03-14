@@ -11,8 +11,7 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Montañez, Fernando Gabriel",
-      "aula": "HY-022",
-      "observ": ""
+      "aula": "HY-022"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Medina, Horacio Manuel",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "A",
@@ -42,7 +40,6 @@
       "fin": "10:45",
       "profesor": "Kot Rozenberg, Gabriela Veroni",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -50,8 +47,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -61,7 +57,6 @@
       "fin": "14:15",
       "profesor": "Larrosa, Maria Victoria",
       "aula": "HY-011",
-      "observ": "",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -69,8 +64,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -80,7 +74,6 @@
       "fin": "19:30",
       "profesor": "Saubidet, Agustina",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -88,8 +81,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -99,7 +91,6 @@
       "fin": "19:30",
       "profesor": "Ramirez, Fernando Cesar",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 32,
       "slotsAsociados": [
         {
@@ -107,8 +98,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

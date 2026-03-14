@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "18:30",
       "profesor": "Nabergoi, Mariela",
-      "aula": "SI-035",
-      "observ": ""
+      "aula": "SI-035"
     },
     {
       "id": "A",
@@ -21,8 +20,7 @@
       "inicio": "18:30",
       "fin": "20:00",
       "profesor": "Nabergoi, Mariela",
-      "aula": "SI-035",
-      "observ": ""
+      "aula": "SI-035"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "22:00",
       "profesor": "Albino, Andrea",
       "aula": "SI-035",
-      "observ": "",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -45,8 +42,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I - A"
+      ]
     },
     {
       "id": "2",
@@ -56,7 +52,6 @@
       "fin": "21:00",
       "profesor": "Albino, Andrea",
       "aula": "SI-035",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -69,8 +64,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I - A"
+      ]
     }
   ]
 }

@@ -59,7 +59,7 @@ type SlotBaseOut = {
   fin: string;
   profesor: string;
   aula: string;
-  observ: string;
+  observ?: string;
 };
 
 type TeoricoOut = SlotBaseOut & { tipo: 'teo' };
@@ -67,7 +67,6 @@ type SeminarioOut = SlotBaseOut & { tipo: 'sem' };
 type ComisionOut = SlotBaseOut & {
   tipo: 'prac';
   vacantes: number | null;
-  obligRaw?: string;
   slotsAsociados: SlotAsociadoOut[];
 };
 
@@ -345,7 +344,7 @@ const rowToSlotBase = (row: SectionRow) => ({
   fin: row.fin,
   profesor: row.profesor,
   aula: row.aula,
-  observ: row.observ,
+  ...(row.observ ? { observ: row.observ } : {}),
 });
 
 const rowToTeoricoSlot = (row: SectionRow): TeoricoOut => ({
@@ -359,15 +358,12 @@ const rowToSeminarioSlot = (row: SectionRow): SeminarioOut => ({
 });
 
 const rowToComisionSlot = (row: SectionRow): ComisionOut => {
-  const slot: ComisionOut = {
+  return {
     ...rowToSlotBase(row),
     tipo: 'prac',
     vacantes: row.vacantes ? Number.parseInt(row.vacantes, 10) : null,
     slotsAsociados: normalizeComisionAssociations(row.oblig),
   };
-  const cleanOblig = normalizeText(row.oblig);
-  if (cleanOblig) slot.obligRaw = cleanOblig;
-  return slot;
 };
 
 const sortSlots = (slots: SubjectSlotOut[]) =>

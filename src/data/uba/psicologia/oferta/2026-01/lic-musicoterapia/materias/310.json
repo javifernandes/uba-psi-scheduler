@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Miguens, Gerardo Antonio",
-      "aula": "AV-042",
-      "observ": ""
+      "aula": "AV-042"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "23:00",
       "profesor": "Downes, Lucia Victoria",
       "aula": "AV-042",
-      "observ": "",
       "vacantes": 45,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Fermani, Andrea Amalia",
-      "aula": "AV-028",
-      "observ": ""
+      "aula": "AV-028"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "17:00",
       "profesor": "Isnardi, Ana Ines",
       "aula": "AV-028",
-      "observ": "",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:00",
       "profesor": "Slamecka, Cecilia Ines",
       "aula": "AV-028",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

@@ -18,7 +18,7 @@ type SlotBase = {
   fin: string;
   profesor: string;
   aula: string;
-  observ: string;
+  observ?: string;
 };
 
 type TeoricoSlot = SlotBase & { tipo: 'teo' };
@@ -26,7 +26,6 @@ type SeminarioSlot = SlotBase & { tipo: 'sem' };
 type ComisionSlot = SlotBase & {
   tipo: 'prac';
   vacantes: number | null;
-  obligRaw?: string;
   slotsAsociados: SlotAsociado[];
 };
 
@@ -91,6 +90,7 @@ const normalizeAssociationsFromOblig = (obligRaw: string) => {
 };
 
 const normalizeSlot = (slot: SubjectSlot): SubjectSlot => {
+  const observ = normalizeText(slot.observ || '');
   const base = {
     id: normalizeText(slot.id),
     tipo: slot.tipo,
@@ -99,7 +99,7 @@ const normalizeSlot = (slot: SubjectSlot): SubjectSlot => {
     fin: normalizeText(slot.fin),
     profesor: normalizeText(slot.profesor),
     aula: normalizeText(slot.aula),
-    observ: normalizeText(slot.observ || ''),
+    ...(observ ? { observ } : {}),
   } as const;
 
   if (slot.tipo === 'prac') {
@@ -121,8 +121,6 @@ const normalizeSlot = (slot: SubjectSlot): SubjectSlot => {
           .filter((association) => association.slotId.length > 0)
       ),
     };
-    const obligRaw = normalizeText(slot.obligRaw || '');
-    if (obligRaw) normalized.obligRaw = obligRaw;
     return normalized;
   }
 
@@ -159,7 +157,7 @@ const parseLegacyTeoSemSlot = (raw: string, tipo: 'teo' | 'sem') => {
     fin: parts[3] || '',
     profesor: parts[4] || '',
     aula: parts[5] || '',
-    observ: parts[6] || '',
+    ...(parts[6] ? { observ: parts[6] } : {}),
   };
   return normalizeSlot(slot);
 };
@@ -175,11 +173,10 @@ const parseLegacyComisionSlot = (raw: string) => {
     fin: parts[3] || '',
     profesor: parts[4] || '',
     aula: parts[6] || '',
-    observ: parts[7] || '',
+    ...(parts[7] ? { observ: parts[7] } : {}),
     vacantes: parseVacantes(parts[8]),
     slotsAsociados: normalizeAssociationsFromOblig(obligRaw),
   };
-  if (obligRaw) slot.obligRaw = obligRaw;
   return normalizeSlot(slot);
 };
 

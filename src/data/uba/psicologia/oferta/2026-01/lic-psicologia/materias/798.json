@@ -11,8 +11,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Cordoba, Maria De Los Angeles",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "III",
@@ -21,8 +20,7 @@
       "inicio": "09:00",
       "fin": "10:45",
       "profesor": "Dedovich, Nicolas Andres",
-      "aula": "SI-017",
-      "observ": ""
+      "aula": "SI-017"
     },
     {
       "id": "II",
@@ -31,8 +29,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Giachetti, Federico",
-      "aula": "IN-207",
-      "observ": ""
+      "aula": "IN-207"
     },
     {
       "id": "2",
@@ -42,7 +39,6 @@
       "fin": "09:00",
       "profesor": "Crivelli, Maria Eugenia",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -50,8 +46,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -61,7 +56,6 @@
       "fin": "12:30",
       "profesor": "Quiroga, Bettina Norma",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -69,8 +63,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "50",
@@ -80,7 +73,6 @@
       "fin": "08:45",
       "profesor": "Enrico, Griselda",
       "aula": "SI-017",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -88,8 +80,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "51",
@@ -99,7 +90,6 @@
       "fin": "12:45",
       "profesor": "Enrico, Griselda",
       "aula": "SI-017",
-      "observ": "",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -107,8 +97,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "1",
@@ -118,7 +107,6 @@
       "fin": "19:30",
       "profesor": "Crivelli, Maria Eugenia",
       "aula": "IN-110",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -126,8 +114,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -137,7 +124,6 @@
       "fin": "19:30",
       "profesor": "Cuomo, Gabriela Susana",
       "aula": "IN-214",
-      "observ": "",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -145,8 +131,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

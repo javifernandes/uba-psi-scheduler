@@ -11,8 +11,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pesiney, Cora Judith",
-      "aula": "IN-207",
-      "observ": ""
+      "aula": "IN-207"
     },
     {
       "id": "A",
@@ -32,7 +31,6 @@
       "fin": "19:30",
       "profesor": "Pesiney, Cora Judith",
       "aula": "IN-430",
-      "observ": "",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -40,8 +38,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -51,7 +48,6 @@
       "fin": "19:30",
       "profesor": "Garzon Noguera, Federico",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -59,8 +55,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

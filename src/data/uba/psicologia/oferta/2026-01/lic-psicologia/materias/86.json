@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Aisenson, Gabriela",
-      "aula": "IN-510",
-      "observ": ""
+      "aula": "IN-510"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Batlle, Silvia Mara",
-      "aula": "IN-510",
-      "observ": ""
+      "aula": "IN-510"
     },
     {
       "id": "2",
@@ -32,7 +30,6 @@
       "fin": "21:15",
       "profesor": "Inaebnit, Virginia Carmen",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -51,7 +47,6 @@
       "fin": "21:15",
       "profesor": "Valenzuela, Viviana",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -70,7 +64,6 @@
       "fin": "12:30",
       "profesor": "Inaebnit, Virginia Carmen",
       "aula": "IN-126",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -89,7 +81,6 @@
       "fin": "12:30",
       "profesor": "Valenzuela, Viviana",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "17:30",
       "fin": "19:00",
       "profesor": "Ruiz, Guillermo Ramon",
-      "aula": "EC-107",
-      "observ": ""
+      "aula": "EC-107"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "08:00",
       "fin": "09:30",
       "profesor": "Alvarez, German Gonzalo",
-      "aula": "EC-019",
-      "observ": ""
+      "aula": "EC-019"
     },
     {
       "id": "6",
@@ -32,7 +30,6 @@
       "fin": "17:00",
       "profesor": "Messina, Verónica",
       "aula": "EC-026",
-      "observ": "",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "9",
@@ -51,7 +47,6 @@
       "fin": "17:00",
       "profesor": "Muiños, Claudia Gabriela",
       "aula": "EC-025",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "7",
@@ -70,7 +64,6 @@
       "fin": "22:30",
       "profesor": "Nanni, Silvina",
       "aula": "EC-025",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "8",
@@ -89,7 +81,6 @@
       "fin": "22:30",
       "profesor": "D'abate, Gabriela Inés",
       "aula": "EC-026",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "1",
@@ -108,7 +98,6 @@
       "fin": "13:00",
       "profesor": "Gomar, Matias Salvador",
       "aula": "EC-019",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -116,8 +105,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -127,7 +115,6 @@
       "fin": "13:00",
       "profesor": "Falk, Federico Martin",
       "aula": "EC-026",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -135,8 +122,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -146,7 +132,6 @@
       "fin": "21:15",
       "profesor": "Hofferlen, Gustavo Rodolfo",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -154,8 +139,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "5",
@@ -165,7 +149,6 @@
       "fin": "21:15",
       "profesor": "Mariani, Marina Aida",
       "aula": "IN-443",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -173,8 +156,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -184,7 +166,6 @@
       "fin": "16:00",
       "profesor": "Hofferlen, Gustavo Rodolfo",
       "aula": "IN-411",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -192,8 +173,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

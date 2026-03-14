@@ -11,8 +11,7 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Sánchez, Federico Jose",
-      "aula": "IN-304",
-      "observ": ""
+      "aula": "IN-304"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "15:00",
       "profesor": "Papagna Maldonado, Victoria",
       "aula": "IN-311",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "15:00",
       "profesor": "Raggi, Lorenzo",
       "aula": "IN-313",
-      "observ": "",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

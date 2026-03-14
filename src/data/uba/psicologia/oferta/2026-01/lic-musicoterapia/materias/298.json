@@ -11,8 +11,7 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Politis, Daniel Gustavo",
-      "aula": "AV-026",
-      "observ": ""
+      "aula": "AV-026"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "21:00",
       "profesor": "Detlefsen, María Verónica",
       "aula": "AV-028",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "13:00",
       "profesor": "Moltrasio, Julieta",
       "aula": "AV-032",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

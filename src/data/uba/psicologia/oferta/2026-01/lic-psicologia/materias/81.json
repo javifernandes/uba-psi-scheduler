@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Patrono, Roberto Raul",
-      "aula": "IN-207",
-      "observ": ""
+      "aula": "IN-207"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ulnik, Jorge Claudio",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "14:15",
       "profesor": "Bogani, Hector",
       "aula": "IN-108",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -51,7 +47,6 @@
       "fin": "17:45",
       "profesor": "Bogani, Hector",
       "aula": "IN-121",
-      "observ": "",
       "vacantes": 16,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -70,7 +64,6 @@
       "fin": "17:45",
       "profesor": "Fernandez, Alejandra Viviana",
       "aula": "IN-433",
-      "observ": "",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -89,7 +81,6 @@
       "fin": "21:15",
       "profesor": "Fernandez, Alejandra Viviana",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Bareiro, Julieta",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Bareiro, Julieta",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "III",
@@ -31,8 +29,7 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Milmaniene, Magali",
-      "aula": "HY-022",
-      "observ": ""
+      "aula": "HY-022"
     },
     {
       "id": "4",
@@ -42,7 +39,6 @@
       "fin": "09:00",
       "profesor": "Luchetta, Javier Federico",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -50,8 +46,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "12",
@@ -61,7 +56,6 @@
       "fin": "12:30",
       "profesor": "Luchetta, Javier Federico",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,8 +63,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -80,7 +73,6 @@
       "fin": "12:30",
       "profesor": "Matzchke, Florencia",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -88,8 +80,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "10",
@@ -99,7 +90,6 @@
       "fin": "17:45",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -107,8 +97,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "5",
@@ -118,7 +107,6 @@
       "fin": "17:45",
       "profesor": "Vecchio, Ariel",
       "aula": "HY-032",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -126,8 +114,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "14",
@@ -137,7 +124,6 @@
       "fin": "21:15",
       "profesor": "Vecchio, Ariel",
       "aula": "HY-026",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -145,8 +131,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "6",
@@ -156,7 +141,6 @@
       "fin": "21:15",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -164,8 +148,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -175,7 +158,6 @@
       "fin": "12:30",
       "profesor": "Barbieri, Julian Javier",
       "aula": "HY-030",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -183,8 +165,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "9",
@@ -194,7 +175,6 @@
       "fin": "12:30",
       "profesor": "Pallares, Martin",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -202,8 +182,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "11",
@@ -213,7 +192,6 @@
       "fin": "16:00",
       "profesor": "Pallares, Martin",
       "aula": "HY-011",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -221,8 +199,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "8",
@@ -232,7 +209,6 @@
       "fin": "16:00",
       "profesor": "Barbieri, Julian Javier",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -240,8 +216,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "1",
@@ -251,7 +226,6 @@
       "fin": "21:15",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -259,8 +233,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "13",
@@ -270,7 +243,6 @@
       "fin": "21:15",
       "profesor": "Matzchke, Florencia",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -278,8 +250,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "7",
@@ -289,7 +260,6 @@
       "fin": "10:45",
       "profesor": "Gobbi, Mauro Javier",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -297,8 +267,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

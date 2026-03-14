@@ -25,13 +25,11 @@ const savedDetail: SavedElectionDetail = {
     inicio: '14:30',
     fin: '16:00',
     profesor: 'Cazes Marcela Adriana',
-    obligRaw: 'II - C',
     slotsAsociados: [
       { slotId: 'C', rol: 'sem', condicion: 'obligatorio' },
       { slotId: 'II', rol: 'teo', condicion: 'obligatorio' },
     ],
     aula: 'IN-444',
-    observ: '',
     vacantes: 18,
   },
   teorico: {
@@ -42,7 +40,6 @@ const savedDetail: SavedElectionDetail = {
     fin: '14:15',
     profesor: 'Ibarra Maria Florencia',
     aula: 'IN-201',
-    observ: '',
   },
   seminario: {
     tipo: 'sem',
@@ -52,7 +49,6 @@ const savedDetail: SavedElectionDetail = {
     fin: '16:00',
     profesor: 'Rodriguez Sturla Pablo',
     aula: 'HY-005',
-    observ: '',
   },
 };
 

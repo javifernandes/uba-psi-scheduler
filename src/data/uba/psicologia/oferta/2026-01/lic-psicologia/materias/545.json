@@ -41,8 +41,7 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Alcover, Silvina Mariela",
-      "aula": "HY-005",
-      "observ": ""
+      "aula": "HY-005"
     },
     {
       "id": "50",
@@ -60,8 +59,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "51",
@@ -79,8 +77,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "13",
@@ -90,7 +87,6 @@
       "fin": "10:45",
       "profesor": "Carbonetti, Yael Tamara",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -98,8 +94,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "3",
@@ -109,7 +104,6 @@
       "fin": "10:45",
       "profesor": "Cirami, Lautaro",
       "aula": "IN-421",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -117,8 +111,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "7",
@@ -128,7 +121,6 @@
       "fin": "17:45",
       "profesor": "Cirami, Lautaro",
       "aula": "HY-022",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -136,8 +128,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "12",
@@ -147,7 +138,6 @@
       "fin": "23:00",
       "profesor": "Carbonetti, Yael Tamara",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -155,8 +145,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -166,7 +155,6 @@
       "fin": "23:00",
       "profesor": "Zaldarriaga, Hernán Ezequiel",
       "aula": "HY-025",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -174,8 +162,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "8",
@@ -185,7 +172,6 @@
       "fin": "10:45",
       "profesor": "Repetto, Guido",
       "aula": "IN-433",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -193,8 +179,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "6",
@@ -204,7 +189,6 @@
       "fin": "12:30",
       "profesor": "Repetto, Guido",
       "aula": "IN-433",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -212,8 +196,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "2",
@@ -223,7 +206,6 @@
       "fin": "09:00",
       "profesor": "Montes Quintián, Mariano",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -231,8 +213,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "14",
@@ -242,7 +223,6 @@
       "fin": "14:15",
       "profesor": "Cornejo, Romina Alejandra",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -250,8 +230,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "4",
@@ -261,7 +240,6 @@
       "fin": "14:15",
       "profesor": "Ottolina, Victoria",
       "aula": "HY-025",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -269,8 +247,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "9",
@@ -280,7 +257,6 @@
       "fin": "14:15",
       "profesor": "Cornejo, Romina Alejandra",
       "aula": "HY-026",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -288,8 +264,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "1",
@@ -299,7 +274,6 @@
       "fin": "19:30",
       "profesor": "Ottolina, Victoria",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -307,8 +281,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "10",
@@ -318,7 +291,6 @@
       "fin": "19:30",
       "profesor": "Montes Quintián, Mariano",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -326,8 +298,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "11",
@@ -337,7 +308,6 @@
       "fin": "12:30",
       "profesor": "Zaldarriaga, Hernán Ezequiel",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -345,8 +315,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

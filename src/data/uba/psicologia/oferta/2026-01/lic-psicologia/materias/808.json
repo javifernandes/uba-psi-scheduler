@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Bruner, Norma Berta",
-      "aula": "IN-207",
-      "observ": ""
+      "aula": "IN-207"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "17:45",
       "profesor": "Campero, Martin",
       "aula": "IN-214",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -41,7 +38,6 @@
       "fin": "17:45",
       "profesor": "Roedelsperger, Mara",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 34,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -60,7 +55,6 @@
       "fin": "21:15",
       "profesor": "Roedelsperger, Mara",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 31,
       "slotsAsociados": [
         {
@@ -68,8 +62,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -79,7 +72,6 @@
       "fin": "21:15",
       "profesor": "Campero, Martin",
       "aula": "IN-218",
-      "observ": "",
       "vacantes": 30,
       "slotsAsociados": [
         {
@@ -87,8 +79,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

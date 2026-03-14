@@ -62,7 +62,7 @@ const parseTeorico = (raw: string): Teorico => {
     fin: parts[3] || '',
     profesor: parts[4] || '',
     aula: parts[5] || '',
-    observ: parts[6] || '',
+    ...(parts[6] ? { observ: parts[6] } : {}),
   };
 };
 
@@ -76,7 +76,7 @@ const parseSeminario = (raw: string): Seminario => {
     fin: parts[3] || '',
     profesor: parts[4] || '',
     aula: parts[5] || '',
-    observ: parts[6] || '',
+    ...(parts[6] ? { observ: parts[6] } : {}),
   };
 };
 
@@ -91,11 +91,10 @@ const parseComision = (raw: string): Comision => {
     fin: parts[3] || '',
     profesor: parts[4] || '',
     aula: parts[6] || '',
-    observ: parts[7] || '',
+    ...(parts[7] ? { observ: parts[7] } : {}),
     vacantes: parseVacantes(parts[8]),
     slotsAsociados: parseAssociations(obligRaw),
   };
-  if (obligRaw) parsed.obligRaw = obligRaw;
   return parsed;
 };
 

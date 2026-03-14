@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Martinez Wagner, Alejandro Raf",
-      "aula": "SI-TEC",
-      "observ": ""
+      "aula": "SI-TEC"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "21:00",
       "profesor": "Merlo, Miguel Atilio",
       "aula": "SI-TEC",
-      "observ": "",
       "vacantes": 39,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

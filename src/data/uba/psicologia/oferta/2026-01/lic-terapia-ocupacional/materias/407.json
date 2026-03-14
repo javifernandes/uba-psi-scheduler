@@ -22,7 +22,6 @@
       "fin": "21:00",
       "profesor": "Rico, Paola Vanesa",
       "aula": "SI-TEC",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -30,8 +29,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

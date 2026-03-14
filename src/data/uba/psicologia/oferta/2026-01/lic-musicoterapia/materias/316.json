@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Ojeda, Ramon Antonio",
-      "aula": "AV-030",
-      "observ": ""
+      "aula": "AV-030"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "21:00",
       "profesor": "Aguzzi, Sebastian",
       "aula": "AV-030",
-      "observ": "",
       "vacantes": 47,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

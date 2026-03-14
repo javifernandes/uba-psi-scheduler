@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Martinez, Judith Del Valle",
-      "aula": "AV-028",
-      "observ": ""
+      "aula": "AV-028"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "23:00",
       "profesor": "Bernardini, Romina Paola",
       "aula": "AV-028",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "23:00",
       "profesor": "Kinigsberg Berant, Flavia",
       "aula": "AV-029",
-      "observ": "",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }
