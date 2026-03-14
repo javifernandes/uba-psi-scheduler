@@ -39,7 +39,7 @@
       "profesor": "Britos, Mariana",
       "aula": "IN-219",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -56,7 +56,7 @@
       "profesor": "Britos, Mariana",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -158,7 +158,7 @@
       "profesor": "Lidovski, Magali",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -175,7 +175,7 @@
       "profesor": "Ramirez, Rosana",
       "aula": "IN-324",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -277,7 +277,7 @@
       "profesor": "Brea, Norma Beatriz",
       "aula": "IN-114",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -311,7 +311,7 @@
       "profesor": "Brea, Norma Beatriz",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -362,7 +362,7 @@
       "profesor": "Merele, Emilia",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "II",

@@ -179,7 +179,7 @@
       "aula": "SI-016",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -436,7 +436,7 @@
       "profesor": "Marchiano, Federico Agustin",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "III",

@@ -233,7 +233,7 @@
       "profesor": "Cocomier, Estanislao",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -299,7 +299,7 @@
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -1028,7 +1028,7 @@
       "profesor": "Barnaba, Natalia Gabriela",
       "aula": "IN-303",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -1050,7 +1050,7 @@
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "E",

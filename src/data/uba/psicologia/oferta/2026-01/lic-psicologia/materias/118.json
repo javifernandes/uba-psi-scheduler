@@ -99,7 +99,7 @@
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "HY-012",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -165,7 +165,7 @@
       "profesor": "Briolotti, Ana Soledad",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -253,7 +253,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -275,7 +275,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -407,7 +407,7 @@
       "profesor": "Abeijon, Matias Federico",
       "aula": "IN-433",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 35,
       "slotsAsociados": [
         {
           "slotId": "F",
