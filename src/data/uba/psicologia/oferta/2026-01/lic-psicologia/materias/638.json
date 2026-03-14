@@ -10,7 +10,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Educativo Isauro Arancibia - Av.Paseo Colón 1318",
       "tipo": "prac",
       "vacantes": 0,
@@ -37,7 +43,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Social, Cultural y Deportivo Flores Sur - Pje. Arrotea 951 - CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -55,7 +64,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de dia-Fund CPI-Cerámica-FitzRoy 2311-CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -73,7 +85,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Atención integral de Derechos de NNyA -MPT- Mujeres de Fraga 4129.CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -91,7 +106,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa de Prealta Hosp. Borda 4° P . - R. Carillo 375-CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -109,7 +127,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Atención Integral Derechos de NNyA MPT - Once Combate de los Pozos 155 6°P.CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -127,7 +148,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Frente de Artistas del Borda-R. Carrillo 375",
       "tipo": "prac",
       "vacantes": 1,
@@ -145,7 +169,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Wainstein, Julieta",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Social, Cultural y Deportivo Flores Sur - Pje. Arrotea 951 CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -163,7 +190,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de dia-Fund CPI-Folklore/reciclado-FitzRoy 2311-CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -181,7 +211,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "PREA -Centro Libremente Alem 855 Lomas de Zamora",
       "tipo": "prac",
       "vacantes": 2,
@@ -199,7 +232,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Atención integral de Derechos de NNyA -MPT- Av Varela 3301-CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -217,7 +253,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Noche del Borda.Ramon Carrillo 375-CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -235,7 +274,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de dia-Fund CPI-Cerámica-FitzRoy 2311-CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -253,7 +295,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Pipo, Valeria Susana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cto.Salud y Arte La Puerta.S de Bustamante 549.CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -271,7 +316,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Frente de artistas del Borda Taller de Mimo- R Carrillo 375",
       "tipo": "prac",
       "vacantes": 0,
@@ -289,7 +337,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Ruffa, Estefania",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cooperanza Htal Borda- Carrillo 375-CABA",
       "tipo": "prac",
       "vacantes": 0,

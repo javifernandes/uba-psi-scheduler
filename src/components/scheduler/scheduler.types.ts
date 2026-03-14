@@ -12,6 +12,11 @@ export type SlotAsociado = {
   condicion: SlotAssociationCondition;
 };
 
+export type SlotLugar = {
+  anexo: string | null;
+  aula: string | null;
+};
+
 type BaseSlot = {
   id: string;
   tipo: SlotTipo;
@@ -19,7 +24,7 @@ type BaseSlot = {
   inicio: string;
   fin: string;
   profesor: string;
-  aula: string;
+  lugar: SlotLugar;
   observ?: string;
 };
 

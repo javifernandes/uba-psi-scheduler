@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Smith, Maria Celeste",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muñoz, Pablo Diego",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Spinelli, Fabian Alberto",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Surmani Alfonsin, Florencia",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "observ": "Talleres de Lectura- Presencial-Optativo",
       "tipo": "sem"
     },
@@ -47,7 +59,10 @@
       "inicio": "09:30",
       "fin": "11:00",
       "profesor": "Rodriguez, Patricia Monica",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Talleres de Lectura- Optativo- Virtual",
       "tipo": "sem"
     },
@@ -57,7 +72,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Cosentino, Maximiliano Ariel",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 17,
       "slotsAsociados": [
@@ -74,7 +92,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Misrahi, Claris Miriam",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -91,7 +112,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Amendolia, Florencia",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -108,7 +132,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Schenone, Sofia",
-      "aula": "IN-313",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "313"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -125,7 +152,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Bonoris, Bruno",
-      "aula": "IN-125",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "125"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -142,7 +172,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ibelli, Marianella",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
@@ -159,7 +192,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Igartua, Lucas",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
@@ -176,7 +212,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Miari, Antonella Silvana",
-      "aula": "IN-110",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "110"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -193,7 +232,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Schenone, Sofia",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": [
@@ -210,7 +252,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Rodríguez, Lucas",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [

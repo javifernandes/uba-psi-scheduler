@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Bustingorri, Maria Laura",
-      "aula": "SI-042",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "042"
+      },
       "observ": "Compartido con Andrea Villagra",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Rico, Paola Vanesa",
-      "aula": "SI-TEC",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "TEC"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [

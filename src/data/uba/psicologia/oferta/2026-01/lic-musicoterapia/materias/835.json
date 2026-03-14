@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Messina, Graciela Noemi",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": []
@@ -21,7 +24,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Caligaris, Gagriel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": []
@@ -32,7 +38,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Amado, Sebastián",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": []
@@ -43,7 +52,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Toledo Castrillo, Maria Soleda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": []
@@ -54,7 +66,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Rodriguez, Laura Mariela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": []
@@ -65,7 +80,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Serra, Mariana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": []
@@ -76,7 +94,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Rossell, Jorge David",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": []
@@ -87,7 +108,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Castaño, Marina Anabel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": []
@@ -98,7 +122,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Castro, Paola Ornela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": []
@@ -109,7 +136,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Sabato, Celia Inés",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": []

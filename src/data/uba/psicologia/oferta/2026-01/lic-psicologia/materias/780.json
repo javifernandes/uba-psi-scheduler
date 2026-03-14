@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Dahab, Jose Norberto",
-      "aula": "IN-201",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "201"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Montano, Rocio Mariel",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Montano, Rocio Mariel",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -53,7 +62,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Balakuniec, Julia Luciana",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
@@ -70,7 +82,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Balakuniec, Julia Luciana",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
@@ -87,7 +102,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Machin, Nicolas",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -104,7 +122,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Machin, Nicolas",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -121,7 +142,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Morales, Julian",
-      "aula": "IN-412",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "412"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -138,7 +162,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Morales, Julian",
-      "aula": "IN-412",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "412"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -155,7 +182,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Lescano Caneva, Damian",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -172,7 +202,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Lescano Caneva, Damian",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [

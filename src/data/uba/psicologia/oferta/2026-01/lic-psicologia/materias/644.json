@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Selvatici, Laura",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rivero, Nestor Javier",
-      "aula": "IN-101",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "101"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Funes Molineri, Mariana Silvia",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "07:30",
       "fin": "10:45",
       "profesor": "Cocha, Trinidad Elizabeth",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "observ": "Subjetividad y socialización en la era digital desde la perspectiva instituciona",
       "tipo": "prac",
       "vacantes": 14,
@@ -55,7 +67,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Furlan, Gabriela Beatriz",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "observ": "Consumos problemáticos: posibles abordajes desde la psicología institucional",
       "tipo": "prac",
       "vacantes": 0,
@@ -73,7 +88,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Dombrovsky, Paula Maria",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "observ": "Abordajes en Salud Mental con base en la comunidad",
       "tipo": "prac",
       "vacantes": 0,
@@ -91,7 +109,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Cocha, Trinidad Elizabeth",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "observ": "Abordajes territoriales en salud. Objetivos y desafíos en el contexto actual",
       "tipo": "prac",
       "vacantes": 4,
@@ -109,7 +130,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Pancani, Marilín Andrea",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "observ": "Historia Institucional: orígenes, devenir y porvenir en las organizaciones",
       "tipo": "prac",
       "vacantes": 0,
@@ -127,7 +151,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Villar, Federico",
-      "aula": "IN-311",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "311"
+      },
       "observ": "El arte y sus instituciones",
       "tipo": "prac",
       "vacantes": 0,
@@ -145,7 +172,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Velazquez, Maria Eugenia",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "observ": "Diversidad, disidencia y otredad. La diferencia desde una perspectiva transfemin",
       "tipo": "prac",
       "vacantes": 0,
@@ -163,7 +193,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Stellavato, Bruno Luciano",
-      "aula": "IN-530",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "530"
+      },
       "observ": "Instituciones, sensibilidad y la expresión de las emociones",
       "tipo": "prac",
       "vacantes": 0,
@@ -181,7 +214,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Carrera Mandalunis, Sol",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "observ": "Prácticas de acompañamiento en adolescencias e infancias",
       "tipo": "prac",
       "vacantes": 0,
@@ -199,7 +235,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Schembri, Lihuen",
-      "aula": "IN-216",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "216"
+      },
       "observ": "El rol psi y las prácticas en territorio",
       "tipo": "prac",
       "vacantes": 0,
@@ -217,7 +256,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Randazzo, Santiago",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "observ": "Derechos Humanos, disputas y desafíos en el contexto actual",
       "tipo": "prac",
       "vacantes": 0,
@@ -235,7 +277,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Bagdadi Dziubek, Martín",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "observ": "Redes sociales, subjetividad e institución",
       "tipo": "prac",
       "vacantes": 0,
@@ -253,7 +298,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Montenegro, Luisina",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "observ": "Las violencias de género y sus instituciones",
       "tipo": "prac",
       "vacantes": 0,
@@ -271,7 +319,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Taubin, Nadia",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "observ": "De la formación a la práctica profesional en psicología: herramientas e incertid",
       "tipo": "prac",
       "vacantes": 0,
@@ -289,7 +340,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Croatto, Virginia",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "observ": "Derechos Humanos en el entramado social",
       "tipo": "prac",
       "vacantes": 14,
@@ -307,7 +361,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Flores, Maria Eugenia Julieta",
-      "aula": "IN-440",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "440"
+      },
       "observ": "Instituciones y debates actuales",
       "tipo": "prac",
       "vacantes": 0,
@@ -325,7 +382,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Font Guido, Paula",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "observ": "Género y subjetividad",
       "tipo": "prac",
       "vacantes": 0,
@@ -343,7 +403,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Velazquez, Maria Eugenia",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "observ": "Cuerpos diversos, luchas comunes",
       "tipo": "prac",
       "vacantes": 13,

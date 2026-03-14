@@ -10,7 +10,10 @@
       "inicio": "15:00",
       "fin": "16:45",
       "profesor": "Oteyza, Gabriela Rita",
-      "aula": "SI-024",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "024"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Oteyza, Gabriela Rita",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "De Simone, Claudia Susana",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Ghiso, Claudio Daniel",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -46,7 +58,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Siderakis, Melina",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -55,7 +70,10 @@
       "inicio": "11:00",
       "fin": "12:45",
       "profesor": "Arias, Cristina Edith",
-      "aula": "SI-024",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -72,7 +90,10 @@
       "inicio": "13:00",
       "fin": "14:45",
       "profesor": "Arias, Cristina Edith",
-      "aula": "SI-024",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -89,7 +110,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gomez, Claudia Edith",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -106,7 +130,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cross, Maria Gabriela",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -123,7 +150,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Manson, Carola",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -140,7 +170,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Manson, Carola",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -157,7 +190,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Lopez, Lorena Susana",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -174,7 +210,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lopez, Lorena Susana",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -191,7 +230,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cross, Maria Gabriela",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -208,7 +250,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Camero, Sofia",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -225,7 +270,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Camero, Sofia",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -242,7 +290,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Escayol, Mercedes",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -259,7 +310,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Arias, Cristina Edith",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -276,7 +330,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Escayol, Mercedes",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -293,7 +350,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Mateo, Victoria",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -310,7 +370,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Mateo, Victoria",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -327,7 +390,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Fraga, Lorena",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -344,7 +410,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Arias, Cristina Edith",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -361,7 +430,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gomez, Claudia Edith",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -378,7 +450,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Fraga, Lorena",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

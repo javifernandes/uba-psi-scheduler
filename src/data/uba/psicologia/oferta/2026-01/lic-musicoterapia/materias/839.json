@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Dorin, Lucia Ines",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": []
@@ -21,7 +24,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Converti, Veronica Helena",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": []
@@ -32,7 +38,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Garcia, Adriana Silvia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": []

@@ -5,6 +5,7 @@ import type {
   ParsedSubject,
   SlotAsociado,
   SlotAssociationRole,
+  SlotLugar,
   SlotTipo,
   SubjectSlot,
   SubjectData,
@@ -113,11 +114,43 @@ export const overlapRange = (fromA: string, toA: string, fromB: string, toB: str
   end: m2h(Math.min(h2m(toA), h2m(toB))),
 });
 
-export const venueCodeFromAula = (aula: string): VenueCode => {
-  const normalized = aula.trim().toUpperCase();
-  const matchedPrefix = normalized.match(/^([A-Z]{2,5})(?:\b|[-\s/])/)?.[1];
-  if (!matchedPrefix) return 'ND';
-  return matchedPrefix;
+const normalizeText = (value: string) => value.replace(/\s+/g, ' ').trim();
+
+export const parseSlotLugar = (rawAula: string): SlotLugar => {
+  const clean = normalizeText(rawAula).toUpperCase();
+  if (!clean) {
+    return {
+      anexo: null,
+      aula: null,
+    };
+  }
+  const prefixMatch = clean.match(/^([A-Z]{2,5})(?:[-\s/](.+))?$/);
+  if (!prefixMatch?.[1]) {
+    return {
+      anexo: null,
+      aula: clean,
+    };
+  }
+  const anexo = prefixMatch[1];
+  const aula = normalizeText(prefixMatch[2] || '');
+  return {
+    anexo,
+    aula: aula || null,
+  };
+};
+
+export const formatSlotLugar = (lugar: SlotLugar): string => {
+  if (lugar.anexo && lugar.aula) return `${lugar.anexo}-${lugar.aula}`;
+  if (lugar.anexo) return lugar.anexo;
+  if (lugar.aula) return lugar.aula;
+  return '';
+};
+
+export const venueCodeFromAula = (aulaOrLugar: string | SlotLugar): VenueCode => {
+  if (typeof aulaOrLugar !== 'string') {
+    return aulaOrLugar.anexo || 'ND';
+  }
+  return parseSlotLugar(aulaOrLugar).anexo || 'ND';
 };
 
 export const catedraProfessorFromHeader = (header: string) =>
@@ -147,10 +180,12 @@ export const shortTeacherName = (raw: string, max = 18) => {
   return clean.length > max ? `${clean.slice(0, max - 1)}…` : clean;
 };
 
-export const splitAula = (aula: string) => {
-  if (!aula.includes('-')) return { prefix: aula, room: '' };
-  const [prefix, ...rest] = aula.split('-');
-  return { prefix, room: rest.join('-') };
+export const splitAula = (aulaOrLugar: string | SlotLugar) => {
+  const lugar = typeof aulaOrLugar === 'string' ? parseSlotLugar(aulaOrLugar) : aulaOrLugar;
+  return {
+    prefix: lugar.anexo || 'ND',
+    room: lugar.aula || '',
+  };
 };
 
 export const splitEventTitle = (title: string) => {
@@ -381,14 +416,25 @@ export const slotById = (subject: Pick<ParsedSubject, 'slotMap'>, slotId: string
   subject.slotMap[slotId];
 
 export const parseSubject = (subject: SubjectData): ParsedSubject => {
+  const normalizeSlotLugar = (slot: SubjectSlot) => {
+    const rawSlot = slot as SubjectSlot & { aula?: string };
+    if (slot.lugar) return slot;
+    const parsedLugar = parseSlotLugar(rawSlot.aula || '');
+    const { aula: _legacyAula, ...rest } = rawSlot;
+    return {
+      ...rest,
+      lugar: parsedLugar,
+    } as SubjectSlot;
+  };
+
   const slots = sortSlotsByStableOrder(
     subject.slots.map((slot) =>
       slot.tipo === 'prac'
         ? {
-            ...slot,
+            ...normalizeSlotLugar(slot),
             slotsAsociados: sortSlotAssociations(slot.slotsAsociados),
           }
-        : slot
+        : normalizeSlotLugar(slot)
     )
   );
   const comisiones = slots.filter((slot): slot is Comision => slot.tipo === 'prac');

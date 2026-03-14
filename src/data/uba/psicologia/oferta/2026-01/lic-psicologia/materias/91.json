@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Politis, Daniel Gustavo",
-      "aula": "IN-101",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "101"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rubinstein, Wanda Yanina",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Sanchez, Natalia Alejandra",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cores, Evangelina Valeria",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Indaburu, Ana",
-      "aula": "IN-205",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "205"
+      },
       "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
@@ -79,7 +94,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Sanchez, Natalia Alejandra",
-      "aula": "IN-204",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "204"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
@@ -96,7 +114,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Indaburu, Ana",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
@@ -113,7 +134,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gomez, Pablo Guillermo",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -130,7 +154,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Cores, Evangelina Valeria",
-      "aula": "IN-204",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "204"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -147,7 +174,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gomez, Pablo Guillermo",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

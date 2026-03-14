@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Martinez Wagner, Alejandro Raf",
-      "aula": "SI-TEC",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "TEC"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Merlo, Miguel Atilio",
-      "aula": "SI-TEC",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "TEC"
+      },
       "tipo": "prac",
       "vacantes": 38,
       "slotsAsociados": [

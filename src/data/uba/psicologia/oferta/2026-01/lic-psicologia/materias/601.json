@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Siderakis, Melina",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "observ": "Concurrir al espacio de articulacion teorico practico antes que a la institucion",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Lopez Fernandez, Giselle",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Juzgado 8 Lavalle 1220 3° P CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -38,7 +44,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Vidal, Laura Gabriela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Juzgado 83 Lavalle 1220 3er. Piso",
       "tipo": "prac",
       "vacantes": 4,
@@ -56,7 +65,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Casas, Nora Leticia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Juzgado 38 Talcahuano 490 7°piso",
       "tipo": "prac",
       "vacantes": 4,
@@ -74,7 +86,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Casas, Nora Leticia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Defensoría de Menores e Incapaces 7  Cerrito 536  Dra. Carolina Paladini",
       "tipo": "prac",
       "vacantes": 3,
@@ -92,7 +107,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Siderakis, Melina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Juzgado 7  Talcahuano 490  9no. Piso  Dra. Miriam Cataldi",
       "tipo": "prac",
       "vacantes": 3,
@@ -110,7 +128,10 @@
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Vidal, Laura Gabriela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Salud Mental N° 1, M. Pedraza 1558. CABA",
       "tipo": "prac",
       "vacantes": 10,
@@ -128,7 +149,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Lopez Fernandez, Giselle",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Juzgado Civil de Familia N° 1 San Isidro Bilbao 912. PB",
       "tipo": "prac",
       "vacantes": 3,

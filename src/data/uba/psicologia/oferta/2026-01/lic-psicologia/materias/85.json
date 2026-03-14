@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Alvarez, Patricia",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Cantu, Gustavo Alejandro",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Dieguez, Analia Susana",
-      "aula": "IN-GES",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "GES"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Durán, Alejo",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Grunin, Julian Nicolas",
-      "aula": "IN-GES",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "GES"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -79,7 +94,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Rego, Maria Victoria",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [

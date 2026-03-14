@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Sanchez, Magali Luz",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "observ": "Se puede elegir el teórico al cual asistir durante todo el cuatrimestre",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Cryan, Glenda Martha",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "observ": "Se puede elegir el teórico al cual asistir durante todo el cuatrimestre",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "13:00",
       "fin": "15:00",
       "profesor": "Mandet, David",
-      "aula": "SI-006",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "006"
+      },
       "observ": "San Isidro",
       "tipo": "teo"
     },
@@ -40,7 +49,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gimenez, Ana Clara",
-      "aula": "IN-530",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "530"
+      },
       "observ": "Se puede elegir el teórico al cual asistir durante todo el cuatrimestre",
       "tipo": "teo"
     },
@@ -50,7 +62,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Sanchez, Patricia Ines",
-      "aula": "IN-441",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "441"
+      },
       "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
@@ -67,7 +82,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Cimas, Magali",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
@@ -84,7 +102,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Boccacci, Matias",
-      "aula": "IN-430",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "430"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
@@ -101,7 +122,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cimas, Magali",
-      "aula": "IN-302",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "302"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -118,7 +142,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Barrionuevo Cibeira, Fernando",
-      "aula": "IN-302",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "302"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
@@ -135,7 +162,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Botta, Nadia",
-      "aula": "IN-209",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "209"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
@@ -152,7 +182,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Barrionuevo Cibeira, Fernando",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
@@ -169,7 +202,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Berjolis, Barbara",
-      "aula": "IN-412",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "412"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -186,7 +222,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Sanchez, Patricia Ines",
-      "aula": "IN-441",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "441"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -203,7 +242,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Botta, Nadia",
-      "aula": "IN-311",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "311"
+      },
       "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
@@ -220,7 +262,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Maza, Jésica",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
@@ -237,7 +282,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Maza, Jésica",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": [
@@ -254,7 +302,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Dominguez, Maia Yamila",
-      "aula": "SI-004",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "004"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 1,
@@ -272,7 +323,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Dominguez, Maia Yamila",
-      "aula": "SI-004",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "004"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 20,
@@ -290,7 +344,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Berjolis, Barbara",
-      "aula": "IN-211",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "211"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
@@ -307,7 +364,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Nigro, Facundo",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
@@ -324,7 +384,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Nigro, Facundo",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
@@ -341,7 +404,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Boccacci, Matias",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [

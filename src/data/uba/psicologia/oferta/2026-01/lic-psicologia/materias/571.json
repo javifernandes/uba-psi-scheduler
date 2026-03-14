@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Keegan, Eduardo Gustavo",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Korman, Guido Pablo",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Rutsztein, Guillermina",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Koutsovitis, Florencia",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -54,7 +66,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Tarruella, Cecilia",
-      "aula": "IN-430",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "430"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -71,7 +86,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Camino, Victoria",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -88,7 +106,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Sarno, María Del Milagro",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
@@ -105,7 +126,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Ortega, Ivana Soledad",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -122,7 +146,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Betelu, Ana Inés",
-      "aula": "IN-451",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "451"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -139,7 +166,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lopez, Julieta",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
@@ -156,7 +186,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Arana, Fernan Guido",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -173,7 +206,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Lopez, Julieta",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -190,7 +226,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Arana, Fernan Guido",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -207,7 +246,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Partarrieu, Andres Ignacio",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -224,7 +266,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Banasco Falivelli, María Belén",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -241,7 +286,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Banasco Falivelli, María Belén",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -258,7 +306,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Koutsovitis, Florencia",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -275,7 +326,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Sarno, María Del Milagro",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -292,7 +346,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ortega, Ivana Soledad",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -309,7 +366,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Tarruella, Cecilia",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -326,7 +386,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Partarrieu, Andres Ignacio",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -343,7 +406,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Betelu, Ana Inés",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
@@ -360,7 +426,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Barrios, Valentina",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -377,7 +446,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De Rosa, Lorena",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -394,7 +466,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Camino, Victoria",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -411,7 +486,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Barrios, Valentina",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -428,7 +506,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De Rosa, Lorena",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -445,7 +526,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Sanchez, Emiliano Hernan",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -462,7 +546,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Sanchez, Emiliano Hernan",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [

@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Spinella Trapani, Agostina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": []
@@ -21,7 +24,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Britos, Cecilia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": []
@@ -32,7 +38,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Lomagno, Dana Romina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": []
@@ -43,7 +52,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Labandeira, Pablo Jorge",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": []
@@ -54,7 +66,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Mortoro, Fernando",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": []
@@ -65,7 +80,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Peregrini, Fabian Alberto",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": []
@@ -76,7 +94,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Vidal, Bibiana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": []
@@ -87,7 +108,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Castino, Mariana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": []
@@ -98,7 +122,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Merino, Maria Silvia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 29,
       "slotsAsociados": []

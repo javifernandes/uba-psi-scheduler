@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Maidana, Miriam",
-      "aula": "IN-420",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "420"
+      },
       "observ": "Los alumnos deberán optar por alguno de los dos espacios de articulación teorico",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Revale, Guido",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "observ": "Los alumnos deberán optar por alguno de los dos espacios de articulación teorico",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Maidana, Miriam",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal. Eduardo Oller (Admisión) Av. 844 2100 San Francisco Solano, Bs. As",
       "tipo": "prac",
       "vacantes": 4,
@@ -42,7 +51,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Ruiz, Maria Cecilia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Causa Clínica (Adm y presentación de casos) Adultos. Sarmiento 3475. CABA",
       "tipo": "prac",
       "vacantes": 4,
@@ -54,7 +66,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Saravia, Delicia Noemi",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "AABRA (Adm. y supervisión) Mansilla 3520. CABA",
       "tipo": "prac",
       "vacantes": 4,
@@ -66,7 +81,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Capdevielle, Juan Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Alvarez - Htal. de día Adicciones - Dr. Juan Felipe Aranguren 2701",
       "tipo": "prac",
       "vacantes": 3,
@@ -78,7 +96,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Maidana, Miriam",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Fernandez Toxicología Cerviño 3356 CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -90,7 +111,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Rodriguez, Rafael Osvaldo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Durand (Consult Ext y Servicio de VIH) Diaz Velez 5044, CaBA",
       "tipo": "prac",
       "vacantes": 5,
@@ -102,7 +126,10 @@
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Giachino, Verónica Marta",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "AAbra Lanus- Ituzaingo 1247, Lanus- Admisiones",
       "tipo": "prac",
       "vacantes": 5,
@@ -114,7 +141,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Revale, Guido",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Dispositivo Acercate (Territorio) Ministerio de Salud) Monasterio 480, CABA",
       "tipo": "prac",
       "vacantes": 5,
@@ -126,7 +156,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Zapata, David Alejandro",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda (Guardia)Ramon Carrillo 375,CABA",
       "tipo": "prac",
       "vacantes": 3,
@@ -138,7 +171,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Capdevielle, Juan Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Piñero -Toxicología (grupos, admisiones) Av. Varela 1301, CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -150,7 +186,10 @@
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Caina Atento, Agustin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hosp de Salud Mental Evita- Los Eucaliptos 501-Villa de Mayo, PBA",
       "tipo": "prac",
       "vacantes": 4,
@@ -162,7 +201,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Maidana, Miriam",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Alvear (Consultorios Externos) Av. Warnes 2630",
       "tipo": "prac",
       "vacantes": 4,
@@ -174,7 +216,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Capdevielle, Juan Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Instituto Ulloa (Espacio similar a Cámara Gesell) Pueyrredón 510 1",
       "tipo": "prac",
       "vacantes": 2,
@@ -186,7 +231,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Guercovich, Johanna",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Vicente Lopez, Yrigoyen 1757. Florida. Vicente López-. GUARDIA",
       "tipo": "prac",
       "vacantes": 0,
@@ -198,7 +246,10 @@
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Capdevielle, Juan Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Instituto Ulloa (Espacio similar a Cámara Gesell) Pueyrredón 510 1",
       "tipo": "prac",
       "vacantes": 4,
@@ -210,7 +261,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Revale, Guido",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Dispositivo Acercate (Territorio) (Ministerio de Salud) Monasterio 480, CABA",
       "tipo": "prac",
       "vacantes": 5,
@@ -222,7 +276,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Rodriguez, Rafael Osvaldo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Espacio de atención al suicidio (Super. y análisis Cdad. de la Paz 3214 1C CABA",
       "tipo": "prac",
       "vacantes": 4,
@@ -234,7 +291,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Caina Atento, Agustin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital del trauma (cirugia bariárica) Bailen 2060 - Malvinas Argent - Bs As",
       "tipo": "prac",
       "vacantes": 2,
@@ -246,7 +306,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Maidana, Miriam",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal. Eduardo Oller (Guardia) Av. 844 2100 San Francisco Solano, Bs. As",
       "tipo": "prac",
       "vacantes": 4,
@@ -258,7 +321,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Ruiz, Maria Cecilia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Causa Clínica (Adm y análisis de casos) Niños/as y adol. Sarmiento 3475. CABA",
       "tipo": "prac",
       "vacantes": 4,
@@ -270,7 +336,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Bossi, Marilina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Clínica de psicopatología (Adm, psicodiag. y eval. neurocog.) Av.Indep.1400 CABA",
       "tipo": "prac",
       "vacantes": 4,
@@ -282,7 +351,10 @@
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Maidana, Miriam",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda (Guardia) Ramon Carrillo 375, CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -294,7 +366,10 @@
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Capdevielle, Juan Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Alvear (Guardia) Av. Warnes 2630",
       "tipo": "prac",
       "vacantes": 1,
@@ -306,7 +381,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Revale, Guido",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Alvear (Guardia) Av. Warnes 2630",
       "tipo": "prac",
       "vacantes": 2,

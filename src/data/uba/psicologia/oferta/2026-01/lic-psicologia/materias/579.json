@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Dulitzky, Silvina Noemi",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Arra, Hernan",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Gral de Agudos Dr. Enrique Tornú: Av. Cttes de Malvinas 3002 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -37,7 +43,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Mademann, Monica",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital General de Agudos Parmenio Piñero: Av. Varela 1301 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -55,7 +64,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Veloso, Veronica Ines",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Instituto de Inv. Médicas Dr. Alfredo Lanari : Av. Cttes de Malvinas 3150 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -73,7 +85,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Cano, Perla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Instituto de Oncología Ángel H. Roffo Av. S. Martín 5481 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -91,7 +106,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Dulitzky, Silvina Noemi",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal de Oncología Marie Curie: Av. Patricias Argentinas 150 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -109,7 +127,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Attwell, Mariana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Italiano de Buenos Aires: Tte. Gral. Juan Domingo Perón 4190 CABA",
       "tipo": "prac",
       "vacantes": 0,

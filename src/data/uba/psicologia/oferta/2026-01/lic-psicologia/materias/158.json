@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Wittner, Valeria",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Traverso, Gregorio Martin",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Walsh, Santiago",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
@@ -53,7 +62,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Walsh, Santiago",
-      "aula": "IN-441",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "441"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -70,7 +82,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Traverso, Gregorio Martin",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

@@ -46,6 +46,7 @@ npm run scrape:catalog -- --limit 20
 npm run scrape:catalog -- --period 2026-01
 npm run scrape:catalog -- --min-ratio 0.8
 npm run scrape:catalog -- --skip-sanity
+npm run scrape:catalog -- --catalog-url http://localhost:8787/Psi/Ope154_.php
 ```
 
 Migración de datasets existentes a schema v2 (`slots[]`):
@@ -70,6 +71,7 @@ Formato de materias (schema v2):
 
 - `schemaVersion: 2`
 - `slots[]` con union tipada (`teo`, `sem`, `prac`)
+- slots con `lugar: { anexo, aula }`
 - comisiones con `vacantes` y `slotsAsociados[]`
 
 ## Ventanas de ejecución

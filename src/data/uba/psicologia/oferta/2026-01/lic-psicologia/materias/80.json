@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Iacub, Ricardo",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Machluk, Andrea Luciana",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Mansinho, Mariana Andrea",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Vainscheinker, Tamara",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
@@ -54,7 +66,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Seufer, Carla Andrea",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -71,7 +86,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Andreachi, Carolina Belén",
-      "aula": "IN-313",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "313"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -88,7 +106,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Cavallero, Nicolas",
-      "aula": "IN-412",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "412"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -105,7 +126,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Maldonado, Ivana",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -122,7 +146,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Seufer, Carla Andrea",
-      "aula": "IN-110",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "110"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -139,7 +166,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Cavallero, Nicolas",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -156,7 +186,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Maldonado, Ivana",
-      "aula": "IN-217",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "217"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -173,7 +206,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Andreachi, Carolina Belén",
-      "aula": "IN-420",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "420"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -190,7 +226,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Winzeler, Martin",
-      "aula": "IN-108",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "108"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -207,7 +246,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Paz, Mariana",
-      "aula": "IN-110",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "110"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -224,7 +266,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Vainscheinker, Tamara",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -241,7 +286,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Paz, Mariana",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -258,7 +306,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Winzeler, Martin",
-      "aula": "IN-443",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "443"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

@@ -10,7 +10,10 @@
       "inicio": "08:30",
       "fin": "09:30",
       "profesor": "Conti, Norberto",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "08:30",
       "fin": "09:30",
       "profesor": "Conti, Norberto",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "09:30",
       "fin": "11:30",
       "profesor": "Conti, Norberto",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
       "tipo": "prac",
       "vacantes": 19,

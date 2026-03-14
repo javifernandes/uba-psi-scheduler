@@ -10,7 +10,10 @@
       "inicio": "12:15",
       "fin": "13:45",
       "profesor": "Molinari, Andrea Judith",
-      "aula": "EC-037",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "037"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "García, María Virginia",
-      "aula": "EC-026",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Juvenal, Maria Alejandra",
-      "aula": "EC-025",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [
@@ -53,7 +62,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Osorio, Natalia",
-      "aula": "EC-028",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "028"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -70,7 +82,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Reisin, Gabriela Maia",
-      "aula": "EC-028",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "028"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -87,7 +102,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Tokman, Ariel",
-      "aula": "EC-032",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -104,7 +122,10 @@
       "inicio": "14:30",
       "fin": "17:30",
       "profesor": "Cordero, Carlos Mauricio",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -121,7 +142,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "De Marco, Luciano Rodolfo",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -138,7 +162,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Urrutia, Juan Pablo",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -155,7 +182,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Blardoni, Mariana",
-      "aula": "IN-452",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "452"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [

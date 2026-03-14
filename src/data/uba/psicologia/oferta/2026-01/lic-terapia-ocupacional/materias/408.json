@@ -10,7 +10,10 @@
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Peñaloza Egas, Nancy Mery",
-      "aula": "SI-027",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "027"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Garfinkel, Mariana",
-      "aula": "SI-027",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Garfinkel, Mariana",
-      "aula": "SI-027",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

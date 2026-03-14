@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Altamirano, Cecilia",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:30",
       "fin": "11:00",
       "profesor": "Etchevers, Martin Juan",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Fernández. Piso 7 sala 10",
       "tipo": "teo"
     },
@@ -29,7 +35,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Rivero, Nestor Javier",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital San Miguel Arcangel. Bella Vista. CAI Centro de asistencia Inmediata en",
       "tipo": "prac",
       "vacantes": 2,
@@ -41,7 +50,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Roldan, Laura Perez",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio Magnan. Internación a",
       "tipo": "prac",
       "vacantes": 0,
@@ -53,7 +65,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Levy, Diego Adrian",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Esteves. Garibaldi 1661",
       "tipo": "prac",
       "vacantes": 3,
@@ -65,7 +80,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Mainardi, Josefina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Habilidades Para el Cambio. Inclusión en taller de habilidades sociales DBT.",
       "tipo": "prac",
       "vacantes": 0,
@@ -77,7 +95,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Cervellera, Gustavo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio de emergencias. Inter",
       "tipo": "prac",
       "vacantes": 0,
@@ -89,7 +110,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Andion, Gabriela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio Magnan. Internación a",
       "tipo": "prac",
       "vacantes": 0,
@@ -101,7 +125,10 @@
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Levandosky, Sofia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Habilidades Para el Cambio. Inclusión en taller de habilidades sociales DBT.",
       "tipo": "prac",
       "vacantes": 1,
@@ -113,7 +140,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Reyes, Alejandra",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio Magnan. Internación a",
       "tipo": "prac",
       "vacantes": 0,
@@ -125,7 +155,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Rodante, Demian Emanuel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Fundación Foro (Olazabal 2015). ADMISIÓN.",
       "tipo": "prac",
       "vacantes": 0,
@@ -137,7 +170,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Rivero, Nestor Javier",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital San Miguel Arcangel. Bella Vista. CAI Centro de asistencia Inmediata en",
       "tipo": "prac",
       "vacantes": 2,
@@ -149,7 +185,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Roggiano, Pedro",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio de Admisiones.",
       "tipo": "prac",
       "vacantes": 0,
@@ -161,7 +200,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Liebermann, Carolina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital General de Agudos Dr. Juan A. Fernandez (Av. Cerviño 3356) Entrevista d",
       "tipo": "prac",
       "vacantes": 0,
@@ -173,7 +215,10 @@
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Iturrio, Belen",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Habilidades Para el Cambio. Inclusión en taller de habilidades sociales DBT.",
       "tipo": "prac",
       "vacantes": 1,
@@ -185,7 +230,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Koschuk, Anabella",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Habilidades Para el Cambio. Inclusión en taller de habilidades sociales DBT.",
       "tipo": "prac",
       "vacantes": 0,
@@ -197,7 +245,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Alvarez Ojeda, Pilar",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Habilidades Para el Cambio. Inclusión en taller de habilidades sociales DBT.",
       "tipo": "prac",
       "vacantes": 0,
@@ -209,7 +260,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Diaz, Natalia Solange",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Unidad Sanitaria Vías Respiratorias Dr. German Argerich .Gral. Machado 778, B170",
       "tipo": "prac",
       "vacantes": 1,
@@ -221,7 +275,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Colombo, Maria Cecilia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Pirovano (Av. Monroe 3555). ADMISIÓN.",
       "tipo": "prac",
       "vacantes": 0,
@@ -233,7 +290,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Carabajal, Gabriela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Municipal Braulio Moyano (Brandsen 2570) Servicio Magnan. Internación a",
       "tipo": "prac",
       "vacantes": 0,

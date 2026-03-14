@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "13:00",
       "profesor": "Leserre, Lucas",
-      "aula": "SI-026",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "026"
+      },
       "observ": "SAN ISIDRO",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Valcarce, Maria Laura",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -29,7 +35,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Sotelo, Maria Ines De La Milag",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -38,7 +47,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "De Luca, Agostina",
-      "aula": "SI-026",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "026"
+      },
       "observ": "SAN ISIDRO",
       "tipo": "prac",
       "vacantes": 14,
@@ -56,7 +68,10 @@
       "inicio": "13:00",
       "fin": "15:00",
       "profesor": "Gonzalez, Ana Cecilia",
-      "aula": "SI-027",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "027"
+      },
       "observ": "SAN ISIDRO",
       "tipo": "prac",
       "vacantes": 22,
@@ -74,7 +89,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Breglia, Alejandra",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -91,7 +109,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lastra, Juan Julian",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -108,7 +129,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Lastra, Juan Julian",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -125,7 +149,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Breglia, Alejandra",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -142,7 +169,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Tustanoski, Graciela Maria",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
@@ -159,7 +189,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Santa Cruz, Diego",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [

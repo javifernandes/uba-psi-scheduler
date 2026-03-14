@@ -29,7 +29,10 @@ const savedDetail: SavedElectionDetail = {
       { slotId: 'C', rol: 'sem', condicion: 'obligatorio' },
       { slotId: 'II', rol: 'teo', condicion: 'obligatorio' },
     ],
-    aula: 'IN-444',
+    lugar: {
+      anexo: 'IN',
+      aula: '444',
+    },
     vacantes: 18,
   },
   teorico: {
@@ -39,7 +42,10 @@ const savedDetail: SavedElectionDetail = {
     inicio: '12:45',
     fin: '14:15',
     profesor: 'Ibarra Maria Florencia',
-    aula: 'IN-201',
+    lugar: {
+      anexo: 'IN',
+      aula: '201',
+    },
   },
   seminario: {
     tipo: 'sem',
@@ -48,7 +54,10 @@ const savedDetail: SavedElectionDetail = {
     inicio: '14:30',
     fin: '16:00',
     profesor: 'Rodriguez Sturla Pablo',
-    aula: 'HY-005',
+    lugar: {
+      anexo: 'HY',
+      aula: '005',
+    },
   },
 };
 

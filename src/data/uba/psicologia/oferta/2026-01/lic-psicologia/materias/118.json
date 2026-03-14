@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Borinsky, Marcela Patricia",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Vallejo, Mauro Sebastian",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pavesi, Pablo Emilio",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Borinsky, Marcela Patricia",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "observ": "Historia del movimiento psicoanalítico. Freud, Jung y los sueños",
       "tipo": "sem"
     },
@@ -47,7 +59,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Dagfal, Alejandro Antonio",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "observ": "Psicología y Psicoanálisis: historia de una relación complicada",
       "tipo": "sem"
     },
@@ -57,7 +72,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Sanfelippo, Luis Cesar",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "observ": "Historia del psicoanálisis a la luz del trauma",
       "tipo": "sem"
     },
@@ -67,7 +85,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Macchioli, Florencia Adriana",
-      "aula": "IN-101",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "101"
+      },
       "observ": "La familia como objeto de intervencion psi",
       "tipo": "sem"
     },
@@ -77,7 +98,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Scholten, Hernan Santiago Ezeq",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "observ": "Entre el individuo y la población. La analítica del poder en M. Foucault.",
       "tipo": "sem"
     },
@@ -87,7 +111,10 @@
       "inicio": "18:00",
       "fin": "19:45",
       "profesor": "Pavesi, Pablo Emilio",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "observ": "Saber, poder, sujeto. Michel Foucault y la geneaología de la subjetividad",
       "tipo": "sem"
     },
@@ -97,7 +124,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Cardaci, Gabriela Victoria",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
@@ -119,7 +149,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Cardaci, Gabriela Victoria",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -141,7 +174,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Briolotti, Ana Soledad",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
@@ -163,7 +199,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Briolotti, Ana Soledad",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -185,7 +224,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Moukarzel, Maria Laura",
-      "aula": "IN-302",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "302"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [
@@ -207,7 +249,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Moukarzel, Maria Laura",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
@@ -229,7 +274,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Ni, Mónica",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 32,
       "slotsAsociados": [
@@ -251,7 +299,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Mendl, Sebastian",
-      "aula": "IN-216",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "216"
+      },
       "tipo": "prac",
       "vacantes": 13,
       "slotsAsociados": [
@@ -273,7 +324,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Mendl, Sebastian",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
@@ -295,7 +349,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Ni, Mónica",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
@@ -317,7 +374,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Abeijon, Matias Federico",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -339,7 +399,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Zengotita, Alonso",
-      "aula": "IN-110",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "110"
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [
@@ -361,7 +424,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Klein, Tamara Lis",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
@@ -383,7 +449,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Klein, Tamara Lis",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": [
@@ -405,7 +474,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Abeijon, Matias Federico",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -427,7 +499,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Carreno, Sebastian",
-      "aula": "IN-204",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "204"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -449,7 +524,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Carreno, Sebastian",
-      "aula": "IN-110",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "110"
+      },
       "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
@@ -471,7 +549,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Zengotita, Alonso",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

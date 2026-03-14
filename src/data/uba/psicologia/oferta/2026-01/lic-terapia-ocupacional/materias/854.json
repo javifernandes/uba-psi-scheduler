@@ -10,7 +10,10 @@
       "inicio": "--",
       "fin": "--",
       "profesor": "Banfi, Cristina",
-      "aula": "--",
+      "lugar": {
+        "anexo": null,
+        "aula": "--"
+      },
       "tipo": "prac",
       "vacantes": 260,
       "slotsAsociados": []

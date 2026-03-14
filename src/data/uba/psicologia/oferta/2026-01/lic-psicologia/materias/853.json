@@ -10,7 +10,10 @@
       "inicio": "--",
       "fin": "--",
       "profesor": "Banfi, Cristina",
-      "aula": "--",
+      "lugar": {
+        "anexo": null,
+        "aula": "--"
+      },
       "observ": "ASINCRONICA POR CAMPUS VIRTUAL",
       "tipo": "prac",
       "vacantes": 147,

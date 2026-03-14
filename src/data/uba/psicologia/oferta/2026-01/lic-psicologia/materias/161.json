@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Reyes, Marcela Victoria",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "observ": "Los alumnos deberán optar por alguno de los dos espacios de articulación teorico",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Rodriguez, Lucila",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "observ": "Los alumnos deberán optar por alguno de los dos espacios de articulación teorico",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Reyes, Marcela Victoria",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Aula a confirmar en el hospital Houssay",
       "tipo": "teo"
     },
@@ -40,7 +49,10 @@
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Branca, Benjamin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de San Isidro. Av. Santa Fe 431- San Isidro. Pcia. de Buenos Aires",
       "tipo": "prac",
       "vacantes": 2,
@@ -52,7 +64,10 @@
       "inicio": "10:30",
       "fin": "14:15",
       "profesor": "Namios, Paula Andrea",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Fernando Ulloa. Av. Pueyrredon 510",
       "tipo": "prac",
       "vacantes": 5,
@@ -64,7 +79,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Reyes, Marcela Victoria",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Vicente López H. Yrigoyen 1757 Florida Pcia. de Bs. As.",
       "tipo": "prac",
       "vacantes": 0,
@@ -76,7 +94,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Salomone, Javier Vicente",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Vicente López Florida Prov. de Bs. As.",
       "tipo": "prac",
       "vacantes": 0,
@@ -88,7 +109,10 @@
       "inicio": "18:30",
       "fin": "21:45",
       "profesor": "Fioranelli, Maria Fernanda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "As. Civil Proyecto Asistir Amenabar 2046 9° A - CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -100,7 +124,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Diez, Miguel Angel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Emergencias Psiquiátricas Torcuato de Alvear Warnes 2630 CABA",
       "tipo": "prac",
       "vacantes": 3,
@@ -112,7 +139,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Salomone, Javier Vicente",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Vicente López. H. Yrigoyen 1757 Florida Prov. de Bs. As.",
       "tipo": "prac",
       "vacantes": 0,
@@ -124,7 +154,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Kremer, Carlos Daniel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital José Borda Ramon Carillo 375 CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -136,7 +169,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Antequera, Mariela M",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Posadas - Pte. Illia y Av. Marconi - Haedo",
       "tipo": "prac",
       "vacantes": 0,
@@ -148,7 +184,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Diez, Miguel Angel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Emergencias Psiquiátricas Torcuato de Alvear Warnes 2630 CABA",
       "tipo": "prac",
       "vacantes": 3,
@@ -160,7 +199,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "De Anso, Eugenia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Vicente López. H. Yrigoyen 1757 Florida Prov. de Bs. As.",
       "tipo": "prac",
       "vacantes": 0,
@@ -172,7 +214,10 @@
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Reyes, Marcela Victoria",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Vicente López. H. Yrigoyen 1757 Florida Prov. de Bs. As.",
       "tipo": "prac",
       "vacantes": 0,

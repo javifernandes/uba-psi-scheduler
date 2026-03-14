@@ -87,7 +87,10 @@ describe('scheduler.utils', () => {
         { slotId: 'B', rol: 'sem', condicion: 'obligatorio' },
         { slotId: 'III', rol: 'teo', condicion: 'obligatorio' },
       ],
-      aula: 'IN-123',
+      lugar: {
+        anexo: 'IN',
+        aula: '123',
+      },
       vacantes: 35,
     });
     const linkedSeminario = slotById(parsed, 'B');

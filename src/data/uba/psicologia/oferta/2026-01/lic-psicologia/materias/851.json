@@ -10,7 +10,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Machin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Sigler, Maximiliano",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
       "tipo": "prac",
       "vacantes": 0,
@@ -38,7 +44,10 @@
       "inicio": "10:30",
       "fin": "14:30",
       "profesor": "Pelosi, Antonella",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "INMAE - Dto. Docencia Dirección: Belisario Roldán 4651; Palermo, CABA.",
       "tipo": "prac",
       "vacantes": 0,

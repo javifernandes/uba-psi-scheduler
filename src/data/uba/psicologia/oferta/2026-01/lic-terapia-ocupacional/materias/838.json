@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Bevilacqua, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": []
@@ -21,7 +24,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Garcia, Adriana Silvia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": []
@@ -32,7 +38,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Tejera, Laura",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": []

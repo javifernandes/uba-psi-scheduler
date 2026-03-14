@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Justel, Nadia Romina",
-      "aula": "AV-041",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "041"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Lopez, Morena",
-      "aula": "AV-041",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "041"
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [

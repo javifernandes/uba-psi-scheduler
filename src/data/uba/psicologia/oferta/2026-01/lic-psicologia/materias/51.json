@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Eisenberg, Estela Sonia",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Patri, Liliana Beatriz",
-      "aula": "IN-311",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "311"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Carrasco Bax, Gabriela",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Louison, Diego German",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Denza, Sabrina Noemi",
-      "aula": "IN-322",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "322"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [

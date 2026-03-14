@@ -340,9 +340,9 @@ export const SavedElectionsPanel = ({
             <div className="pr-1 xl:h-full xl:overflow-auto">
               <div className="divide-y divide-[#e8d3df] dark:divide-zinc-700">
                 {savedElectionDetails.map((item) => {
-                  const commissionRoom = splitAula(item.commission.aula);
-                  const teoricoRoom = item.teorico ? splitAula(item.teorico.aula) : null;
-                  const seminarioRoom = item.seminario ? splitAula(item.seminario.aula) : null;
+                  const commissionRoom = splitAula(item.commission.lugar);
+                  const teoricoRoom = item.teorico ? splitAula(item.teorico.lugar) : null;
+                  const seminarioRoom = item.seminario ? splitAula(item.seminario.lugar) : null;
                   const commissionConflictKey = `${item.subject.id}|prac|${item.commission.id}`;
                   const teoricoConflictKey = item.teorico
                     ? `${item.subject.id}|teo|${item.teorico.id}`

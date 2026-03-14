@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "INDEPENDENCIA - El estudiante puede optar por uno de los dos horarios de teórico",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SAN ISIDRO - El estudiante puede optar por uno de los dos horarios de teórico",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Responsabilidad Joven (Urquiza 4465-Tres de Febrero)",
       "tipo": "prac",
       "vacantes": 3,
@@ -48,7 +57,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Barrenechea, Romina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Equipo de Neurodesarrollo - TEA (Av. 133 1000-1098, e/118 y 120, Barrio La Yaya)",
       "tipo": "prac",
       "vacantes": 4,
@@ -66,7 +78,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Calderone, Maria Julia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Equipo de violencia de géneros y familia-Av. Arturo Jauretche 1131, Guernica",
       "tipo": "prac",
       "vacantes": 4,
@@ -84,7 +99,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Responsabilidad Joven (Urquiza 4465-Tres de Febrero)",
       "tipo": "prac",
       "vacantes": 3,
@@ -102,7 +120,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Fernandez, Agustin Federico",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Equipo de violencia de géneros y familia-Av. Arturo Jauretche 1131, Guernica",
       "tipo": "prac",
       "vacantes": 3,
@@ -120,7 +141,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Fernandez, Agustin Federico",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Cuidarnos-Guatemala 2389, MORENO",
       "tipo": "prac",
       "vacantes": 2,
@@ -138,7 +162,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Fernandez, Agustin Federico",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "DITIC Dispositivo Trans-Andinos 1306-Moreno",
       "tipo": "prac",
       "vacantes": 3,
@@ -156,7 +183,10 @@
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Patronato de Liberados Bonaerense- Hilarión de la Quintana 2013 Olivos",
       "tipo": "prac",
       "vacantes": 2,
@@ -174,7 +204,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Calderone, Maria Julia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de las Pluralidades: Ugarte 3071, Olivos",
       "tipo": "prac",
       "vacantes": 3,
@@ -192,7 +225,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Acompañamiento Familiar (Urquiza 4465-Tres de Febrero,)",
       "tipo": "prac",
       "vacantes": 2,
@@ -210,7 +246,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Fernandez, Agustin Federico",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Cuidarnos-Guatemala 2389, MORENO",
       "tipo": "prac",
       "vacantes": 2,
@@ -228,7 +267,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Barrenechea, Romina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Día Espejos Cruzados-Av. del Libertador 750/910, Moreno",
       "tipo": "prac",
       "vacantes": 2,
@@ -246,7 +288,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Calderone, Maria Julia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa de Capacitación.Av. Martín García 464",
       "tipo": "prac",
       "vacantes": 1,
@@ -264,7 +309,10 @@
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Barrenechea, Romina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Día Espejos Cruzados-Av. del Libertador 750/910, Moreno",
       "tipo": "prac",
       "vacantes": 2,
@@ -282,7 +330,10 @@
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Patronato de Liberados Bonaerense- Hilarión de la Quintana 2013 Olivos",
       "tipo": "prac",
       "vacantes": 3,
@@ -300,7 +351,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Responsabilidad Joven (Urquiza 4465-Tres de Febrero)",
       "tipo": "prac",
       "vacantes": 2,
@@ -318,7 +372,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Barrenechea, Romina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Equipo de Neurodesarrollo - TEA (Av. 133 1000-1098, e/118 y 120, Barrio La Yaya)",
       "tipo": "prac",
       "vacantes": 4,
@@ -336,7 +393,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Responsabilidad Joven (Urquiza 4465-Tres de Febrero)",
       "tipo": "prac",
       "vacantes": 2,
@@ -354,7 +414,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Fernandez Garbin, Nicolas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Programa Acompañamiento Familiar (Urquiza 4465-Tres de Febrero,)",
       "tipo": "prac",
       "vacantes": 2,
@@ -372,7 +435,10 @@
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Patronato de Liberados Bonaerense- Hilarión de la Quintana 2013 Olivos",
       "tipo": "prac",
       "vacantes": 2,
@@ -390,7 +456,10 @@
       "inicio": "12:00",
       "fin": "16:00",
       "profesor": "Calderone, Maria Julia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital de Día Espejos Cruzados-Av. del Libertador 750/910, Moreno",
       "tipo": "prac",
       "vacantes": 2,
@@ -408,7 +477,10 @@
       "inicio": "16:00",
       "fin": "20:00",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de las Pluralidades: Ugarte 3071, Olivos",
       "tipo": "prac",
       "vacantes": 2,

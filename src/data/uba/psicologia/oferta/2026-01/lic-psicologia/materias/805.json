@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Morao, Marisa",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "observ": "Se podrá optar por uno de los teóricos a elección",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Morao, Marisa",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cap. Htal. San isidro Labrador Tomkinson y Rolon. SI",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Morao, Marisa",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "observ": "Las observaciones en instituciones comienzan la segunda semana de cursada",
       "tipo": "teo"
     },
@@ -40,7 +49,10 @@
       "inicio": "07:00",
       "fin": "09:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -58,7 +70,10 @@
       "inicio": "07:00",
       "fin": "09:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADULTOS EN CONTEXTO DE ENCIERRO.Av 25 de Mayo y Francia San Martin",
       "tipo": "prac",
       "vacantes": 3,
@@ -76,7 +91,10 @@
       "inicio": "07:00",
       "fin": "09:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "INTERNACIÓN. H. Álvarez. Aranguren 2701, Pabellón i PB secretaria de SM. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -94,7 +112,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 0,
@@ -112,7 +133,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 0,
@@ -130,7 +154,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 1,
@@ -148,7 +175,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 1,
@@ -166,7 +196,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -184,7 +217,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 1,
@@ -202,7 +238,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 0,
@@ -220,7 +259,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -238,7 +280,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -256,7 +301,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 1,
@@ -274,7 +322,10 @@
       "inicio": "12:00",
       "fin": "14:00",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "EQ DE VIOLENCIA. ADMISIONES Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 0,
@@ -292,7 +343,10 @@
       "inicio": "13:30",
       "fin": "15:30",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS. HTAL DE DÍA. Tucumán 3238 3 piso. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -310,7 +364,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA. Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 1,
@@ -328,7 +385,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA. Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 2,
@@ -346,7 +406,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA. Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 1,
@@ -364,7 +427,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA. Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 1,
@@ -382,7 +448,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES ADMISIONES. Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -400,7 +469,10 @@
       "inicio": "17:30",
       "fin": "19:30",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -418,7 +490,10 @@
       "inicio": "18:30",
       "fin": "20:30",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -436,7 +511,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -454,7 +532,10 @@
       "inicio": "13:30",
       "fin": "15:30",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS. HTAL DE DÍA. Tucumán 3238 3 piso. CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -472,7 +553,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES TALLER Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -490,7 +574,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES ADMISIONES. Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -508,7 +595,10 @@
       "inicio": "08:00",
       "fin": "10:00",
       "profesor": "Cuneo, Analia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA HTAL ARGERICH Py y Margall 750, CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -526,7 +616,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Cuneo, Analia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA HTAL ARGERICH Py y Margall 750, CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -544,7 +637,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Cuneo, Analia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA HTAL ARGERICH Py y Margall 750, CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -562,7 +658,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADMISONES ADULT/ NIÑS. H BELGRANO.Av de los Constituyentes 3132. V Zagala. S Ma",
       "tipo": "prac",
       "vacantes": 1,
@@ -580,7 +679,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADMISONES ADULT/ NIÑS. H BELGRANO.Av de los Constituyentes 3132. V Zagala. S Ma",
       "tipo": "prac",
       "vacantes": 1,
@@ -598,7 +700,10 @@
       "inicio": "13:30",
       "fin": "15:30",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS. HTAL DE DÍA. Tucumán 3238 3 piso. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -616,7 +721,10 @@
       "inicio": "15:15",
       "fin": "17:15",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -634,7 +742,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES ADMISIONES. Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -652,7 +763,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TUTORÍA H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -670,7 +784,10 @@
       "inicio": "08:30",
       "fin": "10:30",
       "profesor": "Leserre, Maria Eva",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "EQ DE VIOLENCIA. ADMISIONES Caps. San isidro Labrador Tomkinson y Rolon.",
       "tipo": "prac",
       "vacantes": 3,
@@ -688,7 +805,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADMISONES ADULT/ NIÑS. H BELGRANO.Av de los Constituyentes 3132. V Zagala. S Ma",
       "tipo": "prac",
       "vacantes": 1,
@@ -706,7 +826,10 @@
       "inicio": "12:00",
       "fin": "14:00",
       "profesor": "Castillo, Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -724,7 +847,10 @@
       "inicio": "13:30",
       "fin": "15:30",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS. HTAL DE DÍA. Tucumán 3238 3 piso. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -742,7 +868,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ACT CLÍNICA. H BEL. H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 2,
@@ -760,7 +889,10 @@
       "inicio": "14:30",
       "fin": "16:30",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADM ADULTOS, ADOLESCENTES Y NIÑOS. Pueyrredón 538 3ero A CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -778,7 +910,10 @@
       "inicio": "14:30",
       "fin": "16:30",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS HC SAN ISIDRO Santa Fe 421 SI",
       "tipo": "prac",
       "vacantes": 1,
@@ -796,7 +931,10 @@
       "inicio": "14:30",
       "fin": "16:30",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ACT CLÍNICA. H BEL. H Yrigoyen 3359. CABA.",
       "tipo": "prac",
       "vacantes": 1,
@@ -814,7 +952,10 @@
       "inicio": "14:30",
       "fin": "16:30",
       "profesor": "Bruckmann, Tomas",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "TALLER PSICOSIS HC SAN ISIDRO Santa Fe 421 SI",
       "tipo": "prac",
       "vacantes": 1,
@@ -832,7 +973,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "VICTIMAS ABUSO SEX INFAN ENTREVISTA PERITO CAM GESELL PODER JUDIC HYrigoy 3359",
       "tipo": "prac",
       "vacantes": 1,
@@ -850,7 +994,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "García Blesa, María",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES ADMISIONES. Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -868,7 +1015,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "VICTIMAS ABUSO SEX INFAN ENTREVISTA PERITO CAM GESELL PODER JUDIC HYrigoy 3359",
       "tipo": "prac",
       "vacantes": 3,
@@ -886,7 +1036,10 @@
       "inicio": "14:00",
       "fin": "16:00",
       "profesor": "Malga, Mercedes",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "SEDRONAR ADICCIONES TALLER Sarmiento 546. CABA",
       "tipo": "prac",
       "vacantes": 1,

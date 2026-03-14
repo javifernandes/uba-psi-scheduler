@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Aisenson, Gabriela",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Batlle, Silvia Mara",
-      "aula": "IN-510",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "510"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Inaebnit, Virginia Carmen",
-      "aula": "IN-204",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "204"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Valenzuela, Viviana",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Inaebnit, Virginia Carmen",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -79,7 +94,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Valenzuela, Viviana",
-      "aula": "IN-125",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "125"
+      },
       "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": [

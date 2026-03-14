@@ -10,7 +10,10 @@
       "inicio": "18:45",
       "fin": "20:45",
       "profesor": "Sandoval, Arnaldo Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Rico, Mara Sol",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
       "tipo": "prac",
       "vacantes": 22,
@@ -38,7 +44,10 @@
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Caputo, Macarena",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
       "tipo": "prac",
       "vacantes": 22,
@@ -56,7 +65,10 @@
       "inicio": "18:30",
       "fin": "22:30",
       "profesor": "Berardi, Martina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
       "tipo": "prac",
       "vacantes": 19,

@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Febbraio, Andres",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -37,7 +43,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Martínez Contini, Verónica Ele",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -55,7 +64,10 @@
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADEEI Manuela Pedraza 3195",
       "tipo": "prac",
       "vacantes": 3,
@@ -73,7 +85,10 @@
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -91,7 +106,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -109,7 +127,10 @@
       "inicio": "16:00",
       "fin": "19:00",
       "profesor": "Donozo, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Tempo de Integrarse - Camarones 4433",
       "tipo": "prac",
       "vacantes": 2,
@@ -127,7 +148,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -145,7 +169,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Esc Educ Espec 501-1 de Agosto 1806-N° 2876-San Martín-Pcia.Bs.As.",
       "tipo": "prac",
       "vacantes": 2,
@@ -163,7 +190,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -181,7 +211,10 @@
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Donozo, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -199,7 +232,10 @@
       "inicio": "16:00",
       "fin": "19:00",
       "profesor": "Donozo, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Tempo de Integrarse - Camarones 4433",
       "tipo": "prac",
       "vacantes": 2,
@@ -217,7 +253,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Martínez Contini, Verónica Ele",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -235,7 +274,10 @@
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Donozo, Sabrina",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "Facultad HY",
       "tipo": "prac",
       "vacantes": 2,
@@ -253,7 +295,10 @@
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "Facultad HY",
       "tipo": "prac",
       "vacantes": 1,
@@ -271,7 +316,10 @@
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Martínez Contini, Verónica Ele",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "Facultad HY",
       "tipo": "prac",
       "vacantes": 1,
@@ -289,7 +337,10 @@
       "inicio": "14:30",
       "fin": "15:30",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "Facultad HY",
       "tipo": "prac",
       "vacantes": 2,
@@ -307,7 +358,10 @@
       "inicio": "09:00",
       "fin": "12:00",
       "profesor": "Edgar, Lucas Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 2,
@@ -325,7 +379,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "ADEEI Manuela Pedraza 3195",
       "tipo": "prac",
       "vacantes": 2,
@@ -343,7 +400,10 @@
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Donozo, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Los Alcerces. Niceto Vega 4965. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -361,7 +421,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Martínez Contini, Verónica Ele",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CARI - Hipólito Yrigoyen 4081 - CABA",
       "tipo": "prac",
       "vacantes": 1,

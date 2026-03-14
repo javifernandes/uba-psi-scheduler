@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Freidin, Fabiana",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Pitelli, Luna",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón",
       "tipo": "prac",
       "vacantes": 12,
@@ -37,7 +43,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Canales, Laura",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños",
       "tipo": "prac",
       "vacantes": 11,
@@ -55,7 +64,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Bardi, Daniela Carla",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
       "tipo": "prac",
       "vacantes": 8,
@@ -73,7 +85,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Ramos, Laura Vanina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
       "tipo": "prac",
       "vacantes": 5,
@@ -91,7 +106,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Garcia Poultier, Julieta",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
       "tipo": "prac",
       "vacantes": 10,
@@ -109,7 +127,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Stibel, Sonia Vanina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón",
       "tipo": "prac",
       "vacantes": 12,

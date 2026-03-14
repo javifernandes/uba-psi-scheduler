@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Bruner, Norma Berta",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Campero, Martin",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Roedelsperger, Mara",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -53,7 +62,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Roedelsperger, Mara",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
@@ -70,7 +82,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Campero, Martin",
-      "aula": "IN-218",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "218"
+      },
       "tipo": "prac",
       "vacantes": 30,
       "slotsAsociados": [

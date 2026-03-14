@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Taglioretti, Paola Valeria",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Valencia, Margarita",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "prac",
       "vacantes": 58,
       "slotsAsociados": [
