@@ -138,7 +138,7 @@
         "aula": "010"
       },
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -238,7 +238,7 @@
         "aula": "024"
       },
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -263,7 +263,7 @@
         "aula": "027"
       },
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -365,7 +365,7 @@
         "aula": "025"
       },
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -390,7 +390,7 @@
         "aula": "023"
       },
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -440,7 +440,7 @@
         "aula": "015"
       },
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -465,7 +465,7 @@
         "aula": "004"
       },
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -565,7 +565,7 @@
         "aula": "025"
       },
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -615,7 +615,7 @@
         "aula": "026"
       },
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -640,7 +640,7 @@
         "aula": "010"
       },
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -666,7 +666,7 @@
       },
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "VII",
