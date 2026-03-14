@@ -93,7 +93,6 @@ const normalizeSlot = (slot: SubjectSlot): SubjectSlot => {
   const observ = normalizeText(slot.observ || '');
   const base = {
     id: normalizeText(slot.id),
-    tipo: slot.tipo,
     dia: normalizeText(slot.dia),
     inicio: normalizeText(slot.inicio),
     fin: normalizeText(slot.fin),
