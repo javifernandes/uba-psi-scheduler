@@ -107,7 +107,7 @@
       "profesor": "Yablonovsky, Talia",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -124,7 +124,7 @@
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -141,7 +141,7 @@
       "profesor": "Mazzolini, Carlos Norberto",
       "aula": "IN-323",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -158,7 +158,7 @@
       "profesor": "Lopez, Maria Elisa",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -175,7 +175,7 @@
       "profesor": "Mpacas, Diana",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -226,7 +226,7 @@
       "profesor": "Colangelo, Juliana",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -243,7 +243,7 @@
       "profesor": "Collado, Candido Luis",
       "aula": "IN-303",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -260,7 +260,7 @@
       "profesor": "Bokser, Julian Luciano",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -294,7 +294,7 @@
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "III",

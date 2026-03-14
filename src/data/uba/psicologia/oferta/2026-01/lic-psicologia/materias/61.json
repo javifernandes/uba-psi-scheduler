@@ -66,7 +66,7 @@
       "profesor": "Morales, Candela",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -186,7 +186,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -254,7 +254,7 @@
       "profesor": "Galeano, Pablo",
       "aula": "IN-431",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -305,7 +305,7 @@
       "profesor": "Caccia, Paula Agustina",
       "aula": "IN-213",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -441,7 +441,7 @@
       "profesor": "Hernandez Escalona, Mery Del C",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",

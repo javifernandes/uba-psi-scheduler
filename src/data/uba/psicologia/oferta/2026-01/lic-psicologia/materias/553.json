@@ -86,7 +86,7 @@
       "profesor": "Sosa, Sofía",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -108,7 +108,7 @@
       "profesor": "Bejarano, Daniela",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -130,7 +130,7 @@
       "profesor": "Herrera, Loana",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -196,7 +196,7 @@
       "profesor": "Serodio, Manuel",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -218,7 +218,7 @@
       "profesor": "Ojeda, Agustn",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -263,7 +263,7 @@
       "aula": "SI-039",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -286,7 +286,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -330,7 +330,7 @@
       "profesor": "Sosa, Sofía",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -374,7 +374,7 @@
       "profesor": "Mellis, Patricia",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -506,7 +506,7 @@
       "profesor": "Caceres, Matias",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",

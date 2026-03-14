@@ -49,7 +49,7 @@
       "profesor": "Leonardelli, Eduardo Miguel",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -151,7 +151,7 @@
       "profesor": "Casal, Mariana Elizabeth",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -168,7 +168,7 @@
       "profesor": "Murillo, Manuel Alejandro",
       "aula": "IN-320",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -185,7 +185,7 @@
       "profesor": "Sueldo, Lautaro Matias",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -203,7 +203,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -238,7 +238,7 @@
       "aula": "SI-002",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "IV",

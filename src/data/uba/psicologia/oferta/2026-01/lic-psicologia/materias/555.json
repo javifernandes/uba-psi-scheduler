@@ -52,7 +52,7 @@
       "profesor": "Sanchez, Patricia Ines",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -69,7 +69,7 @@
       "profesor": "Cimas, Magali",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -154,7 +154,7 @@
       "profesor": "Barrionuevo Cibeira, Fernando",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -188,7 +188,7 @@
       "profesor": "Sanchez, Patricia Ines",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -275,7 +275,7 @@
       "aula": "SI-004",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -292,7 +292,7 @@
       "profesor": "Berjolis, Barbara",
       "aula": "IN-211",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "III",

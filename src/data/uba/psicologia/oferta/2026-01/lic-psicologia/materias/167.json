@@ -62,7 +62,7 @@
       "profesor": "Lopez, Silvina",
       "aula": "IN-217",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -573,7 +573,7 @@
       "profesor": "Meneses Cantero, Elizabeth",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 35,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -590,7 +590,7 @@
       "profesor": "Juan, Santiago",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "I",

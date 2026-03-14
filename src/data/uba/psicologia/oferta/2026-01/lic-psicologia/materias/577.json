@@ -150,7 +150,7 @@
       "profesor": "Noailles Uriburu, Gervasio Jor",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -320,7 +320,7 @@
       "profesor": "Belucci, Gabriel",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",

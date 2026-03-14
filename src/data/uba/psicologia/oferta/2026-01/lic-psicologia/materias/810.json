@@ -30,7 +30,7 @@
       "profesor": "Rodriguez, Flabia Andrea",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -132,7 +132,7 @@
       "profesor": "Roca, Marcelo",
       "aula": "HY-030",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",

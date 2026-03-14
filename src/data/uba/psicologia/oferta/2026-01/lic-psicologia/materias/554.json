@@ -264,7 +264,7 @@
       "profesor": "Basso, Francina",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -330,7 +330,7 @@
       "profesor": "Basso, Francina",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -418,7 +418,7 @@
       "profesor": "Guazzaroni, Maria de la Paz",
       "aula": "IN-217",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -440,7 +440,7 @@
       "profesor": "Fernandez, Mariana Alicia",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -462,7 +462,7 @@
       "profesor": "Russi, Mauro",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -572,7 +572,7 @@
       "profesor": "Guazzaroni, Maria de la Paz",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -638,7 +638,7 @@
       "profesor": "Canulli Canziani, Natalia Gise",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -726,7 +726,7 @@
       "profesor": "Quiroga, Leila",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "I",
