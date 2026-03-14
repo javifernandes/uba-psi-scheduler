@@ -1,12 +1,75 @@
 {
+  "schemaVersion": 2,
   "id": "anatomia-c403",
   "label": "Anatomía - Cátedra 403",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Anatomía - Cátedra 403 - Verna",
-  "teoricos": ["I|jueves|17:00|19:00|Verna, Maria Fernanda|SI-018|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|19:00|22:00|Cappetta, Elida Patricia|I|SI-LAB|LABORATORIO CURAI|24",
-    "2|jueves|19:00|22:00|Barreiro, Guillermina|I|SI-LAB|LABORATORIO CURAI|25",
-    "3|lunes|19:00|22:00|Profesor a designar|I|SI-LAB|LABORATORIO CURAI|25"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Verna, Maria Fernanda",
+      "aula": "SI-018",
+      "observ": ""
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:00",
+      "fin": "22:00",
+      "profesor": "Profesor a designar",
+      "aula": "SI-LAB",
+      "observ": "LABORATORIO CURAI",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "22:00",
+      "profesor": "Barreiro, Guillermina",
+      "aula": "SI-LAB",
+      "observ": "LABORATORIO CURAI",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "19:00",
+      "fin": "22:00",
+      "profesor": "Cappetta, Elida Patricia",
+      "aula": "SI-LAB",
+      "observ": "LABORATORIO CURAI",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,26 +1,303 @@
 {
+  "schemaVersion": 2,
   "id": "practica-profesional-i-c412",
   "label": "Práctica Profesional I - Cátedra 412",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Práctica Profesional I - Cátedra 412 - Metz",
-  "teoricos": [
-    "I|jueves|19:00|23:00|Metz, Miriam Isabel|SI-018|y Lic. Perretti Gabriela Andrea - MODALIDAD VIRTUAL"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|sabado|10:00|19:00|Paz, Paloma|I||Juegoteca. Panamericana y Camino Morón. Escalera 96 PB B. Boulogne SI|0",
-    "2|jueves|08:00|13:00|Perretti, Gabriela Andrea|I||disp. cap. y orientación laboral|1",
-    "3|jueves|08:00|12:00|Filomena, Graciela Esther|I||Disp. Juegoteca|0",
-    "4|jueves|12:00|16:00|Filomena, Graciela Esther|I||Disp. Juegoteca|0",
-    "5|lunes|15:00|19:00|Balmaceda, Lucila|I||Av. Beiro 3206 Caba consul Pediátrico|0",
-    "6|jueves|09:00|13:00|Orami, Milagros|I||Galileo Galilei 7442, Trujuy Moreno Prov. Bs As. Estimulación Temprana|1",
-    "7|jueves|13:00|17:00|Orami, Milagros|I||Galileo Galilei 7442, Trujuy Moreno Prov. Bs As. Estimulación Temprana|1",
-    "8|lunes|09:00|13:00|Cerini, María Alejandra|I||Club Social polo Inclusión. Warnes 2450 CABA|0",
-    "9|lunes|10:00|13:00|Javelier, Natalia|I||Fundación Ríos Pinturas. Dorrego 363, Martínez. Prov. Bs As|0",
-    "10|jueves|08:00|12:00|Bonesi, Maria Eugenia|I||Esp. terapéutico abordaje niños con trasto del desarrollo|1",
-    "11|martes|15:00|18:00|De La Fuente, Brenda|I||Rojas 1611 CABA. Consultorio pediatrico|1",
-    "12|lunes|15:00|18:00|Perretti, Gabriela Andrea|I||San guillermo 6006. Martin coronado. 3 de febrero. Pro. BS AS consul pediatrico|1",
-    "13|miercoles|09:00|13:00|Grinberg, Lucila|I||Centro Modelo. Av. garay 799 Caba|0",
-    "14|lunes|08:30|12:30|Rico, Paola Vanesa|I||CDIT (desarrollo infantil temprano)|1",
-    "15|lunes|10:00|14:00|Epstein, Vanesa|I||AMIA: Centro de día para personas mayores JOFESH. URIBURU 650. CABA..|0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Metz, Miriam Isabel",
+      "aula": "SI-018",
+      "observ": "y Lic. Perretti Gabriela Andrea - MODALIDAD VIRTUAL"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Rico, Paola Vanesa",
+      "aula": "",
+      "observ": "CDIT (desarrollo infantil temprano)",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Cerini, María Alejandra",
+      "aula": "",
+      "observ": "Club Social polo Inclusión. Warnes 2450 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Epstein, Vanesa",
+      "aula": "",
+      "observ": "AMIA: Centro de día para personas mayores JOFESH. URIBURU 650. CABA..",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "13:00",
+      "profesor": "Javelier, Natalia",
+      "aula": "",
+      "observ": "Fundación Ríos Pinturas. Dorrego 363, Martínez. Prov. Bs As",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "15:00",
+      "fin": "18:00",
+      "profesor": "Perretti, Gabriela Andrea",
+      "aula": "",
+      "observ": "San guillermo 6006. Martin coronado. 3 de febrero. Pro. BS AS consul pediatrico",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "15:00",
+      "fin": "19:00",
+      "profesor": "Balmaceda, Lucila",
+      "aula": "",
+      "observ": "Av. Beiro 3206 Caba consul Pediátrico",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "15:00",
+      "fin": "18:00",
+      "profesor": "De La Fuente, Brenda",
+      "aula": "",
+      "observ": "Rojas 1611 CABA. Consultorio pediatrico",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Grinberg, Lucila",
+      "aula": "",
+      "observ": "Centro Modelo. Av. garay 799 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Bonesi, Maria Eugenia",
+      "aula": "",
+      "observ": "Esp. terapéutico abordaje niños con trasto del desarrollo",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "13:00",
+      "profesor": "Perretti, Gabriela Andrea",
+      "aula": "",
+      "observ": "disp. cap. y orientación laboral",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Filomena, Graciela Esther",
+      "aula": "",
+      "observ": "Disp. Juegoteca",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Orami, Milagros",
+      "aula": "",
+      "observ": "Galileo Galilei 7442, Trujuy Moreno Prov. Bs As. Estimulación Temprana",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:00",
+      "fin": "16:00",
+      "profesor": "Filomena, Graciela Esther",
+      "aula": "",
+      "observ": "Disp. Juegoteca",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "13:00",
+      "fin": "17:00",
+      "profesor": "Orami, Milagros",
+      "aula": "",
+      "observ": "Galileo Galilei 7442, Trujuy Moreno Prov. Bs As. Estimulación Temprana",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "10:00",
+      "fin": "19:00",
+      "profesor": "Paz, Paloma",
+      "aula": "",
+      "observ": "Juegoteca. Panamericana y Camino Morón. Escalera 96 PB B. Boulogne SI",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

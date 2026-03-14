@@ -1,11 +1,32 @@
 {
+  "schemaVersion": 2,
   "id": "curso-de-formacion-musical-c329",
   "label": "Curso de Formación Musical - Cátedra 329",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Curso de Formación Musical - Cátedra 329 - Prof. Zimbaldo",
-  "teoricos": [],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|14:00|17:00|Zimbaldo, Ariel Marcelo||AV-028||38",
-    "2|miercoles|14:00|17:00|Ruiz, Maria Mercedes||AV-030||39"
+  "slots": [
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "17:00",
+      "profesor": "Zimbaldo, Ariel Marcelo",
+      "aula": "AV-028",
+      "observ": "",
+      "vacantes": 38,
+      "slotsAsociados": []
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:00",
+      "fin": "17:00",
+      "profesor": "Ruiz, Maria Mercedes",
+      "aula": "AV-030",
+      "observ": "",
+      "vacantes": 39,
+      "slotsAsociados": []
+    }
   ]
 }

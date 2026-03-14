@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "grupo-de-improvisacion-en-musicoterapia-c317",
   "label": "Grupo de Improvisación en Musicoterapia - Cátedra 317",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Grupo de Improvisación en Musicoterapia - Cátedra 317 - Martinez",
-  "teoricos": ["I|martes|17:00|19:00|Martinez, Judith Del Valle|AV-028|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|19:00|23:00|Bernardini, Romina Paola|I|AV-028||22",
-    "2|martes|19:00|23:00|Kinigsberg Berant, Flavia|I|AV-029||8"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Martinez, Judith Del Valle",
+      "aula": "AV-028",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Bernardini, Romina Paola",
+      "aula": "AV-028",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Kinigsberg Berant, Flavia",
+      "aula": "AV-029",
+      "observ": "",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

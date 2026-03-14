@@ -1,12 +1,44 @@
 {
+  "schemaVersion": 2,
   "id": "10316-requisito-idioma-frances-modulo-i-c838-i",
   "label": "(10316) Requisito Idioma: Francés Módulo I - Cátedra 838 (I)",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - (10316) Requisito Idioma: Francés Módulo I - Cátedra 838 - I - Miñones",
-  "teoricos": [],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|18:00|21:15|Garcia, Adriana Silvia||||33",
-    "2|martes|09:15|12:30|Bevilacqua, Sabrina||||34",
-    "3|jueves|18:00|21:15|Tejera, Laura||||25"
+  "slots": [
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Bevilacqua, Sabrina",
+      "aula": "",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": []
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Garcia, Adriana Silvia",
+      "aula": "",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": []
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Tejera, Laura",
+      "aula": "",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": []
+    }
   ]
 }

@@ -1,14 +1,76 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-social-comunitaria-abordaje-y-prevencion-de-violen-c842-i",
   "label": "P.P.: P.P.: Área Social Comunitaria: Abordaje y Prevención de Violen - Cátedra 842 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Social Comunitaria: Abordaje y Prevención de Violen - Cátedra 842 - I - Miracco",
-  "teoricos": ["I|jueves|16:15|17:45|Miracco, Mariana Carolina|IN-103|"],
-  "seminarios": [
-    "A|viernes|18:00|20:00|Giraldez, Agostina||OPTATIVA-VIRTUAL-Reunión de equipos y co-visión de casos clínicos. De la Red de",
-    "B|jueves|18:00|20:00|Lucente, Giulietta||OPTATIVA-VIRTUAL/PRESENCIAL- Club Argentinos Jrs Polideportivo Las Malvinas Arge"
-  ],
-  "comisiones": [
-    "1|martes|18:00|22:00|Giraldez, Agostina|I||Campus virtual/ Sede Asoc. Interdis. SM Perinatal, Almagro|8",
-    "2|sabado|09:00|13:00|Copati, Anahi|I||AIFAN, Rivadavia 5012, 3°, CABA. Y dispositivos virtuales|9"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Miracco, Mariana Carolina",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "B",
+      "tipo": "sem",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "20:00",
+      "profesor": "Lucente, Giulietta",
+      "aula": "",
+      "observ": "OPTATIVA-VIRTUAL/PRESENCIAL- Club Argentinos Jrs Polideportivo Las Malvinas Arge"
+    },
+    {
+      "id": "A",
+      "tipo": "sem",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "20:00",
+      "profesor": "Giraldez, Agostina",
+      "aula": "",
+      "observ": "OPTATIVA-VIRTUAL-Reunión de equipos y co-visión de casos clínicos. De la Red de"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "22:00",
+      "profesor": "Giraldez, Agostina",
+      "aula": "",
+      "observ": "Campus virtual/ Sede Asoc. Interdis. SM Perinatal, Almagro",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Copati, Anahi",
+      "aula": "",
+      "observ": "AIFAN, Rivadavia 5012, 3°, CABA. Y dispositivos virtuales",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

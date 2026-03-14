@@ -1,10 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "la-ocupacion-y-su-proceso-ii-c407",
   "label": "La Ocupación y su Proceso II - Cátedra 407",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - La Ocupación y su Proceso II - Cátedra 407 - To. Bustingorri",
-  "teoricos": [
-    "I|jueves|17:00|21:00|Bustingorri, Maria Laura|SI-042|Compartido con Andrea Villagra"
-  ],
-  "seminarios": [],
-  "comisiones": ["1|martes|17:00|21:00|Rico, Paola Vanesa|I|SI-TEC||20"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Bustingorri, Maria Laura",
+      "aula": "SI-042",
+      "observ": "Compartido con Andrea Villagra"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Rico, Paola Vanesa",
+      "aula": "SI-TEC",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "teoria-y-tecnica-de-terapia-ocupacional-iv-c416",
   "label": "Teoría y Técnica de Terapia Ocupacional IV - Cátedra 416",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Teoría y Técnica de Terapia Ocupacional IV - Cátedra 416 - To. Fernandez",
-  "teoricos": ["I|miercoles|18:00|22:00|Fernandez, Silvina Soledad|SI-018|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|17:00|19:00|Romualdo, Wendy|I|SI-024||32",
-    "2|viernes|19:00|21:00|Romualdo, Wendy|I|SI-024||34"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "22:00",
+      "profesor": "Fernandez, Silvina Soledad",
+      "aula": "SI-018",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Romualdo, Wendy",
+      "aula": "SI-024",
+      "observ": "",
+      "vacantes": 32,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Romualdo, Wendy",
+      "aula": "SI-024",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

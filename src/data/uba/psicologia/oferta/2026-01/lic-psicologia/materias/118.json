@@ -1,38 +1,530 @@
 {
+  "schemaVersion": 2,
   "id": "1-historia-de-la-psicologia-c118-i",
   "label": "(1) Historia de la Psicología - Cátedra 118 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (1) Historia de la Psicología - Cátedra 118 - I - Borinsky",
-  "teoricos": [
-    "I|lunes|11:00|12:30|Borinsky, Marcela Patricia|HY-005|",
-    "II|martes|12:45|14:15|Vallejo, Mauro Sebastian|IN-510|",
-    "III|jueves|19:45|21:15|Pavesi, Pablo Emilio|IN-520|"
-  ],
-  "seminarios": [
-    "A|lunes|09:15|10:45|Borinsky, Marcela Patricia|HY-005|Historia del movimiento psicoanalítico. Freud, Jung y los sueños",
-    "B|martes|11:00|12:30|Sanfelippo, Luis Cesar|IN-106|Historia del psicoanálisis a la luz del trauma",
-    "C|lunes|18:00|19:30|Dagfal, Alejandro Antonio|IN-207|Psicología y Psicoanálisis: historia de una relación complicada",
-    "D|jueves|18:00|19:45|Pavesi, Pablo Emilio|IN-106|Saber, poder, sujeto. Michel Foucault y la geneaología de la subjetividad",
-    "E|martes|14:30|16:00|Macchioli, Florencia Adriana|IN-101|La familia como objeto de intervencion psi",
-    "F|jueves|12:45|14:15|Scholten, Hernan Santiago Ezeq|IN-106|Entre el individuo y la población. La analítica del poder en M. Foucault."
-  ],
-  "comisiones": [
-    "1|lunes|07:30|09:00|Cardaci, Gabriela Victoria|I - A|HY-012||25",
-    "2|martes|09:15|10:45|Mendl, Sebastian|II - B|IN-216||21",
-    "3|jueves|12:45|14:15|Klein, Tamara Lis|II - E|IN-107||34",
-    "4|martes|16:15|17:45|Abeijon, Matias Federico|II - E|IN-411||27",
-    "5|jueves|16:15|17:45|Carreno, Sebastian|III - D|IN-204||5",
-    "6|jueves|21:30|23:00|Carreno, Sebastian|III - D|IN-110||16",
-    "7|martes|19:45|21:15|Zengotita, Alonso|III - D|IN-110||29",
-    "8|lunes|09:15|10:45|Cardaci, Gabriela Victoria|I - B|HY-012||34",
-    "9|sabado|12:45|14:15|Zengotita, Alonso|III - C|IN-109||35",
-    "10|martes|09:15|10:45|Ni, Mónica|II - B|IN-210||33",
-    "11|lunes|16:15|17:45|Moukarzel, Maria Laura|III - C|IN-302||31",
-    "12|martes|11:00|12:30|Mendl, Sebastian|II - F|IN-207||30",
-    "13|lunes|12:45|14:15|Briolotti, Ana Soledad|I - A|HY-004||20",
-    "14|lunes|19:45|21:15|Moukarzel, Maria Laura|III - C|IN-434||31",
-    "15|jueves|14:30|16:00|Abeijon, Matias Federico|II - F|IN-433||35",
-    "16|martes|16:15|17:45|Ni, Mónica|II - E|IN-123||29",
-    "17|lunes|14:30|16:00|Briolotti, Ana Soledad|I - A|HY-027||35",
-    "18|jueves|11:00|12:30|Klein, Tamara Lis|I - F|IN-121||33"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Borinsky, Marcela Patricia",
+      "aula": "HY-005",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Vallejo, Mauro Sebastian",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Pavesi, Pablo Emilio",
+      "aula": "IN-520",
+      "observ": ""
+    },
+    {
+      "id": "A",
+      "tipo": "sem",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Borinsky, Marcela Patricia",
+      "aula": "HY-005",
+      "observ": "Historia del movimiento psicoanalítico. Freud, Jung y los sueños"
+    },
+    {
+      "id": "C",
+      "tipo": "sem",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Dagfal, Alejandro Antonio",
+      "aula": "IN-207",
+      "observ": "Psicología y Psicoanálisis: historia de una relación complicada"
+    },
+    {
+      "id": "B",
+      "tipo": "sem",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Sanfelippo, Luis Cesar",
+      "aula": "IN-106",
+      "observ": "Historia del psicoanálisis a la luz del trauma"
+    },
+    {
+      "id": "E",
+      "tipo": "sem",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Macchioli, Florencia Adriana",
+      "aula": "IN-101",
+      "observ": "La familia como objeto de intervencion psi"
+    },
+    {
+      "id": "F",
+      "tipo": "sem",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Scholten, Hernan Santiago Ezeq",
+      "aula": "IN-106",
+      "observ": "Entre el individuo y la población. La analítica del poder en M. Foucault."
+    },
+    {
+      "id": "D",
+      "tipo": "sem",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:45",
+      "profesor": "Pavesi, Pablo Emilio",
+      "aula": "IN-106",
+      "observ": "Saber, poder, sujeto. Michel Foucault y la geneaología de la subjetividad"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Cardaci, Gabriela Victoria",
+      "aula": "HY-012",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Cardaci, Gabriela Victoria",
+      "aula": "HY-012",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "B",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - B"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Briolotti, Ana Soledad",
+      "aula": "HY-004",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Briolotti, Ana Soledad",
+      "aula": "HY-027",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Moukarzel, Maria Laura",
+      "aula": "IN-302",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "C",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - C"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Moukarzel, Maria Laura",
+      "aula": "IN-434",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "C",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - C"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Ni, Mónica",
+      "aula": "IN-210",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "B",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - B"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Mendl, Sebastian",
+      "aula": "IN-216",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": [
+        {
+          "slotId": "B",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - B"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Mendl, Sebastian",
+      "aula": "IN-207",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "F",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - F"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Ni, Mónica",
+      "aula": "IN-123",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "E",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - E"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Abeijon, Matias Federico",
+      "aula": "IN-411",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": [
+        {
+          "slotId": "E",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - E"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Zengotita, Alonso",
+      "aula": "IN-110",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "D",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - D"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Klein, Tamara Lis",
+      "aula": "IN-121",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "F",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - F"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Klein, Tamara Lis",
+      "aula": "IN-107",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "E",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - E"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Abeijon, Matias Federico",
+      "aula": "IN-433",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "F",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II - F"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Carreno, Sebastian",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "D",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - D"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "21:30",
+      "fin": "23:00",
+      "profesor": "Carreno, Sebastian",
+      "aula": "IN-110",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "D",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - D"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Zengotita, Alonso",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "C",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III - C"
+    }
   ]
 }

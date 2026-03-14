@@ -1,12 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "seminario-gestion-y-organizacion-del-equipo-interdisciplinario-de-sa-c320",
   "label": "Seminario Gestión y Organización del Equipo Interdisciplinario de Sa - Cátedra 320",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Seminario Gestión y Organización del Equipo Interdisciplinario de Sa - Cátedra 320 - A designar",
-  "teoricos": [
-    "I|sabado|09:00|11:00|Baro, Silvana Maria|AV-033|Las clases comienzan el día sábado 28 de marzo"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|sabado|11:00|14:00|Gonzalez, Diego Roberto Osvald|I|AV-033|Las clases comienzan el día sábado 28 de marzo|23"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Baro, Silvana Maria",
+      "aula": "AV-033",
+      "observ": "Las clases comienzan el día sábado 28 de marzo"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "11:00",
+      "fin": "14:00",
+      "profesor": "Gonzalez, Diego Roberto Osvald",
+      "aula": "AV-033",
+      "observ": "Las clases comienzan el día sábado 28 de marzo",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

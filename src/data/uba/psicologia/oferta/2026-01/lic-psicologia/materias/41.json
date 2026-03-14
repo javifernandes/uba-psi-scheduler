@@ -1,29 +1,342 @@
 {
+  "schemaVersion": 2,
   "id": "8-psicologia-educacional-c41-ii",
   "label": "(8) Psicología Educacional - Cátedra 41 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (8) Psicología Educacional - Cátedra 41 - II - A designar",
-  "teoricos": [
-    "I|viernes|11:00|12:30|Alegre, Sandra Teresa|IN-530|",
-    "II|lunes|14:30|16:00|Garcia Labandal, Livia Beatriz|HY-022|",
-    "III|martes|18:00|19:30|Greco, Maria Beatriz|IN-201|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|16:15|19:30|Fernandez Tobal, Claudia Rosan|I|IN-440|Trayectorias escolares e intervenciones en escuela secundaria|0",
-    "2|martes|14:30|17:45|Larripa, Martin Miguel|II|IN-108|Educación Especial/Atención a la diversidad|0",
-    "3|miercoles|09:15|12:30|Canaves, Maria Victoria|I|IN-304|ESI y trayectorias educativas en escuela media|4",
-    "4|miercoles|14:30|17:45|Baliño, Roxana Beatriz|II|IN-108|Acompañamiento a las trayectorias educativas en el Nivel Secundario|0",
-    "5|lunes|18:00|21:15|Carosella, Florencia|III|IN-313|Educación sexual integral en nivel inicial y primario|6",
-    "6|viernes|07:30|10:45|Enzenhofer, Pablo|I|IN-106|Intervenciones psicoeducativas en el nivel inicial y primario|0",
-    "7|miercoles|18:00|21:15|Ortega, Gabriela Rosana|III|IN-443|Y AULA108 a partir de las 1945 hs-ESI, formación docente y escuelas|2",
-    "8|sabado|11:00|14:15|Cane, Alan|III|IN-412|Implementaciòn de la Ley de Educaciòn Sexual Integral|7",
-    "9|lunes|09:15|12:30|Eichenbronner, David|I|HY-026|Intervenciones psicoeducativas institucionales|0",
-    "10|martes|19:45|23:00|Taich, Santiago Federico|III|IN-434|Acompañamiento a las trayectorias educativas en el nivel medio|0",
-    "11|viernes|12:45|16:00|Maiorana, Silvia|II|HY-012|Formación docente|0",
-    "12|lunes|16:15|19:30|Romero, Miguel Adrián|II|HY-023|Nuevas tecnologías en la escuela|0",
-    "13|jueves|18:00|21:15|Gorosito, Maria Celeste|III|IN-421|Intervenciones psicoeducativas en situaciones complejas|0",
-    "14|martes|14:30|17:45|Lofeudo, Silvina Monica|III|IN-125|Educación Inclusiva|0",
-    "15|martes|19:45|23:00|Blumenkranz, Camila|III|IN-109|Implementación de la Educación Sexual Integral en instituciones educativas|0",
-    "16|martes|09:15|12:30|Villegas, Ana Maria|I|IN-444|Trayectorias escolares e intervenciones en escuela secundaria|0"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Garcia Labandal, Livia Beatriz",
+      "aula": "HY-022",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Greco, Maria Beatriz",
+      "aula": "IN-201",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Alegre, Sandra Teresa",
+      "aula": "IN-530",
+      "observ": ""
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Eichenbronner, David",
+      "aula": "HY-026",
+      "observ": "Intervenciones psicoeducativas institucionales",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Fernandez Tobal, Claudia Rosan",
+      "aula": "IN-440",
+      "observ": "Trayectorias escolares e intervenciones en escuela secundaria",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Romero, Miguel Adrián",
+      "aula": "HY-023",
+      "observ": "Nuevas tecnologías en la escuela",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Carosella, Florencia",
+      "aula": "IN-313",
+      "observ": "Educación sexual integral en nivel inicial y primario",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Villegas, Ana Maria",
+      "aula": "IN-444",
+      "observ": "Trayectorias escolares e intervenciones en escuela secundaria",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Lofeudo, Silvina Monica",
+      "aula": "IN-125",
+      "observ": "Educación Inclusiva",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Larripa, Martin Miguel",
+      "aula": "IN-108",
+      "observ": "Educación Especial/Atención a la diversidad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Taich, Santiago Federico",
+      "aula": "IN-434",
+      "observ": "Acompañamiento a las trayectorias educativas en el nivel medio",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Blumenkranz, Camila",
+      "aula": "IN-109",
+      "observ": "Implementación de la Educación Sexual Integral en instituciones educativas",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Canaves, Maria Victoria",
+      "aula": "IN-304",
+      "observ": "ESI y trayectorias educativas en escuela media",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Baliño, Roxana Beatriz",
+      "aula": "IN-108",
+      "observ": "Acompañamiento a las trayectorias educativas en el Nivel Secundario",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Ortega, Gabriela Rosana",
+      "aula": "IN-443",
+      "observ": "Y AULA108 a partir de las 1945 hs-ESI, formación docente y escuelas",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Gorosito, Maria Celeste",
+      "aula": "IN-421",
+      "observ": "Intervenciones psicoeducativas en situaciones complejas",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Enzenhofer, Pablo",
+      "aula": "IN-106",
+      "observ": "Intervenciones psicoeducativas en el nivel inicial y primario",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Maiorana, Silvia",
+      "aula": "HY-012",
+      "observ": "Formación docente",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Cane, Alan",
+      "aula": "IN-412",
+      "observ": "Implementaciòn de la Ley de Educaciòn Sexual Integral",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    }
   ]
 }

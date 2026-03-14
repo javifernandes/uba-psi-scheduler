@@ -1,15 +1,85 @@
 {
+  "schemaVersion": 2,
   "id": "18-psicoanalisis-escuela-inglesa-c51-i",
   "label": "(18) Psicoanálisis: Escuela Inglesa - Cátedra 51 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (18) Psicoanálisis: Escuela Inglesa - Cátedra 51 - I - Eisenberg",
-  "teoricos": [
-    "I|lunes|12:45|14:15|Eisenberg, Estela Sonia|IN-106|",
-    "II|lunes|18:00|19:30|Patri, Liliana Beatriz|IN-311|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|19:45|23:00|Denza, Sabrina Noemi|II|IN-322||19",
-    "2|lunes|09:15|12:30|Carrasco Bax, Gabriela|I|IN-214||0",
-    "3|lunes|14:30|17:45|Louison, Diego German|I|IN-208||0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Eisenberg, Estela Sonia",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Patri, Liliana Beatriz",
+      "aula": "IN-311",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Carrasco Bax, Gabriela",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Louison, Diego German",
+      "aula": "IN-208",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Denza, Sabrina Noemi",
+      "aula": "IN-322",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

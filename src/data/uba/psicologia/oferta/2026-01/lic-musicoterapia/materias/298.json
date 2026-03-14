@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "neurofisiopatologia-c298",
   "label": "Neurofisiopatología - Cátedra 298",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Neurofisiopatología - Cátedra 298 - Prof. Politis",
-  "teoricos": ["I|jueves|19:00|21:00|Politis, Daniel Gustavo|AV-026|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|17:00|21:00|Detlefsen, María Verónica|I|AV-028||35",
-    "2|sabado|09:00|13:00|Moltrasio, Julieta|I|AV-032||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Politis, Daniel Gustavo",
+      "aula": "AV-026",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Detlefsen, María Verónica",
+      "aula": "AV-028",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Moltrasio, Julieta",
+      "aula": "AV-032",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

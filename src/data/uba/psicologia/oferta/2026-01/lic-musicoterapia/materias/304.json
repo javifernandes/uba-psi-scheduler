@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "psicopatologia-c304",
   "label": "Psicopatología - Cátedra 304",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Psicopatología - Cátedra 304 - Prof. Sotelo",
-  "teoricos": ["I|lunes|21:00|23:00|Sotelo, Maria Ines De La Milag|AV-028|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|17:00|21:00|Marchesotti, Araceli Luján|I|AV-030||18",
-    "2|lunes|17:00|21:00|Vizzolini, Leandro Martín|I|AV-011||23"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "21:00",
+      "fin": "23:00",
+      "profesor": "Sotelo, Maria Ines De La Milag",
+      "aula": "AV-028",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Marchesotti, Araceli Luján",
+      "aula": "AV-030",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Vizzolini, Leandro Martín",
+      "aula": "AV-011",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

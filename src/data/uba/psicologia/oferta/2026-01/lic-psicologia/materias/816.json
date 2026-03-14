@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "10231-el-rol-del-psicologo-en-el-equipo-interdisciplinario-de-salud-c816-i",
   "label": "(10231) El rol del psicólogo en el equipo interdisciplinario de salud - Cátedra 816 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10231) El rol del psicólogo en el equipo interdisciplinario de salud - Cátedra 816 - I - Perrotta",
-  "teoricos": ["I|martes|18:00|19:30|Perrotta, Gabriela Viviana|IN-106|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|16:15|17:45|Rosende, Mariana|I|IN-421||8",
-    "2|jueves|16:15|17:45|Rosende, Mariana|I|IN-304||23",
-    "3|jueves|18:00|19:30|Ostropolsky, Matias|I|IN-304||22",
-    "4|martes|19:45|21:15|Ostropolsky, Matias|I|IN-304||9"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Perrotta, Gabriela Viviana",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Rosende, Mariana",
+      "aula": "IN-421",
+      "observ": "",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Ostropolsky, Matias",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Rosende, Mariana",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Ostropolsky, Matias",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

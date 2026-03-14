@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "orientacion-para-el-ejercicio-profesional-c421",
   "label": "Orientación para el ejercicio profesional - Cátedra 421",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Orientación para el ejercicio profesional - Cátedra 421 - To. Etcheverry",
-  "teoricos": ["I|martes|17:00|21:00|Etcheverry, Maria Laura|SI-020|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|21:00|23:00|Ibañez, Fabiana|I|SI-027||14",
-    "2|miercoles|21:00|23:00|Ibañez, Fabiana|I|SI-027||40"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Etcheverry, Maria Laura",
+      "aula": "SI-020",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "21:00",
+      "fin": "23:00",
+      "profesor": "Ibañez, Fabiana",
+      "aula": "SI-027",
+      "observ": "",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "21:00",
+      "fin": "23:00",
+      "profesor": "Ibañez, Fabiana",
+      "aula": "SI-027",
+      "observ": "",
+      "vacantes": 40,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

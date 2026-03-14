@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "psicopatologia-c411",
   "label": "Psicopatología - Cátedra 411",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Psicopatología - Cátedra 411 - Prof. Gerskovich",
-  "teoricos": ["I|martes|17:00|21:00|Gerskovich, Nestor|SI-016|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|17:00|19:00|Romualdo, Wendy|I|SI-017||27",
-    "2|jueves|19:00|21:00|Romualdo, Wendy|I|SI-017||28"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Gerskovich, Nestor",
+      "aula": "SI-016",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Romualdo, Wendy",
+      "aula": "SI-017",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Romualdo, Wendy",
+      "aula": "SI-017",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

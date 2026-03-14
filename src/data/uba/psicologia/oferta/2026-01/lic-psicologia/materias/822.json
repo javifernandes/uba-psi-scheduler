@@ -1,25 +1,322 @@
 {
+  "schemaVersion": 2,
   "id": "10237-pp-pp-area-clinica-el-tratamiento-del-padecimiento-subjetivo-en-la-experiencia-analitica-c822-i",
   "label": "(10237) P.P.: P.P.: Area Clinica: El tratamiento del padecimiento subjetivo en la experiencia analítica - Cátedra 822 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10237) P.P.: P.P.: Area Clinica: El tratamiento del padecimiento subjetivo en la experiencia analítica - Cátedra 822 - I - Iuale",
-  "teoricos": ["I|lunes|18:00|19:30|Iuale, Maria Lujan|IN-434|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|15:00|17:00|Perez, Alejandra|I||Mafalda. Hospital de día para niños con autismo y psicosis. Hospital Álvarez.|2",
-    "2|viernes|15:00|17:00|Steinberg, Silvina|I||Causa Clínica. Sarmiento 3475. CABA. Tutoría.|0",
-    "3|jueves|08:00|10:00|Espert, Maria Juliana|I||CeSAC Nº 9. Irala 1254. CABA.|2",
-    "4|miercoles|10:00|12:00|Igol, Pablo Ruben|I||CETRe. Riglos 119. CABA.|3",
-    "5|jueves|08:00|10:00|Wanzek, Vanina|I||Juegoteca Centro de Salud Mental Pichón Riviere. Matheu 4441, San Martín. Bs. As|4",
-    "6|miercoles|08:00|10:00|Vilchez, Silvana Lorena|I||Hospital Piñero. Av. Varela 1301. Flores. Tutoría.|2",
-    "7|viernes|08:00|10:00|Novara, Mariana Helvecia|I||Centro de Salud Mental Dr. E. Pichón Riviere|2",
-    "8|lunes|12:00|14:00|Barredo, Paula Valeria|I||Centro de salud Mental N°1 Hugo Rosarios|1",
-    "9|lunes|08:30|10:30|Avalos, Romina|I||Hospital Belgrano. Constituyentes 3120 San Martín. Buenos Aires.|2",
-    "10|martes|08:00|10:00|Garcia, Walter Miguel|I||Escuela Especial M. Montessori. Córdoba 4353. V. Ballester. Prov. Bs. As.|4",
-    "11|miercoles|19:00|21:00|Gimenez, Maria Fernanda|I||La Tercera. Junín 731. CABA. Tutoría.|3",
-    "12|miercoles|08:00|10:00|Rodrigo, Monica Teresa|I||Hospital Tobar García. Ramón Carrillo 315. CABA. Tutoría.|4",
-    "13|jueves|15:00|17:00|Rotatori, Liliana Beatriz|I||Centro Dos. Pueyrredón 538 1 A . CABA. Tutoría.|3",
-    "14|miercoles|12:00|14:00|Fracuelli, Paola|I||Centro Dos. Pueyrredón 538 1 A . CABA. Tutoría.|1",
-    "15|jueves|09:00|11:00|Dossena, Gabriela|I||nstituto Lanari. Combatientes de Malvinas 3150. Tutoría.|1",
-    "16|jueves|13:00|15:00|Demianiuk, Mariel Viviana|I||Instituto Fernando Ulloa. Pueyrredón 510 1 A. CABA.|1"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Iuale, Maria Lujan",
+      "aula": "IN-434",
+      "observ": ""
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Avalos, Romina",
+      "aula": "",
+      "observ": "Hospital Belgrano. Constituyentes 3120 San Martín. Buenos Aires.",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:00",
+      "fin": "14:00",
+      "profesor": "Barredo, Paula Valeria",
+      "aula": "",
+      "observ": "Centro de salud Mental N°1 Hugo Rosarios",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Garcia, Walter Miguel",
+      "aula": "",
+      "observ": "Escuela Especial M. Montessori. Córdoba 4353. V. Ballester. Prov. Bs. As.",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Rodrigo, Monica Teresa",
+      "aula": "",
+      "observ": "Hospital Tobar García. Ramón Carrillo 315. CABA. Tutoría.",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Vilchez, Silvana Lorena",
+      "aula": "",
+      "observ": "Hospital Piñero. Av. Varela 1301. Flores. Tutoría.",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Igol, Pablo Ruben",
+      "aula": "",
+      "observ": "CETRe. Riglos 119. CABA.",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:00",
+      "fin": "14:00",
+      "profesor": "Fracuelli, Paola",
+      "aula": "",
+      "observ": "Centro Dos. Pueyrredón 538 1 A . CABA. Tutoría.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Perez, Alejandra",
+      "aula": "",
+      "observ": "Mafalda. Hospital de día para niños con autismo y psicosis. Hospital Álvarez.",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Gimenez, Maria Fernanda",
+      "aula": "",
+      "observ": "La Tercera. Junín 731. CABA. Tutoría.",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Espert, Maria Juliana",
+      "aula": "",
+      "observ": "CeSAC Nº 9. Irala 1254. CABA.",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Wanzek, Vanina",
+      "aula": "",
+      "observ": "Juegoteca Centro de Salud Mental Pichón Riviere. Matheu 4441, San Martín. Bs. As",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Dossena, Gabriela",
+      "aula": "",
+      "observ": "nstituto Lanari. Combatientes de Malvinas 3150. Tutoría.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "13:00",
+      "fin": "15:00",
+      "profesor": "Demianiuk, Mariel Viviana",
+      "aula": "",
+      "observ": "Instituto Fernando Ulloa. Pueyrredón 510 1 A. CABA.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Rotatori, Liliana Beatriz",
+      "aula": "",
+      "observ": "Centro Dos. Pueyrredón 538 1 A . CABA. Tutoría.",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Novara, Mariana Helvecia",
+      "aula": "",
+      "observ": "Centro de Salud Mental Dr. E. Pichón Riviere",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Steinberg, Silvina",
+      "aula": "",
+      "observ": "Causa Clínica. Sarmiento 3475. CABA. Tutoría.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

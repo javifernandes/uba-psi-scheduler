@@ -1,12 +1,75 @@
 {
+  "schemaVersion": 2,
   "id": "practica-profesional-modulo-ii-area-clinica-c331",
   "label": "Práctica Profesional. Módulo II: Area Clínica - Cátedra 331",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Práctica Profesional. Módulo II: Area Clínica - Cátedra 331 - Prof. Coluccio",
-  "teoricos": ["I|lunes|17:00|19:00|Coluccio, Andrea Graciela|AV-025|Sede Avellaneda"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|09:00|13:00|Rossi, Laura|I||Hospital Moyano|3",
-    "2|jueves|09:00|13:00|Sanchez, Analía|I||Hospital Moyano|8",
-    "3|viernes|09:00|13:00|Uzal, Paula|I||Hospital Moyano|2"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Coluccio, Andrea Graciela",
+      "aula": "AV-025",
+      "observ": "Sede Avellaneda"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Rossi, Laura",
+      "aula": "",
+      "observ": "Hospital Moyano",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Sanchez, Analía",
+      "aula": "",
+      "observ": "Hospital Moyano",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Uzal, Paula",
+      "aula": "",
+      "observ": "Hospital Moyano",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

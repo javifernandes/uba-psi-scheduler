@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "teoria-y-tecnica-de-grupos-c301",
   "label": "Teoría y Técnica de Grupos - Cátedra 301",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Teoría y Técnica de Grupos - Cátedra 301 - Jaume",
-  "teoricos": ["I|miercoles|17:00|19:00|Jaume, Luis Carlos|AV-026|"],
-  "seminarios": [],
-  "comisiones": ["1|miercoles|19:00|21:00|Roca, Marcelo|I|AV-026||69"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Jaume, Luis Carlos",
+      "aula": "AV-026",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Roca, Marcelo",
+      "aula": "AV-026",
+      "observ": "",
+      "vacantes": 69,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

@@ -1,26 +1,248 @@
 {
+  "schemaVersion": 2,
   "id": "24-psicoanalisis-escuela-francesa-c122-ii",
   "label": "(24) Psicoanálisis: Escuela Francesa - Cátedra 122 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (24) Psicoanálisis: Escuela Francesa - Cátedra 122 - II - Muñoz",
-  "teoricos": [
-    "I|miercoles|11:00|12:30|Smith, Maria Celeste|IN-114|",
-    "II|jueves|19:45|21:15|Muñoz, Pablo Diego|IN-103|",
-    "III|viernes|14:30|16:00|Spinelli, Fabian Alberto|IN-520|"
-  ],
-  "seminarios": [
-    "A|sabado|09:30|11:00|Rodriguez, Patricia Monica||Talleres de Lectura- Optativo- Virtual",
-    "B|miercoles|18:00|19:30|Surmani Alfonsin, Florencia|IN-122|Talleres de Lectura- Presencial-Optativo"
-  ],
-  "comisiones": [
-    "1|miercoles|09:15|10:45|Cosentino, Maximiliano Ariel|I|IN-214||19",
-    "2|viernes|16:15|17:45|Rodríguez, Lucas|III|IN-124||16",
-    "3|jueves|18:00|19:30|Ibelli, Marianella|II|IN-122||29",
-    "4|miercoles|09:15|10:45|Misrahi, Claris Miriam|I|IN-126||29",
-    "5|jueves|18:00|19:30|Igartua, Lucas|II|IN-109||4",
-    "6|viernes|12:45|14:15|Miari, Antonella Silvana|III|IN-110||26",
-    "7|miercoles|12:45|14:15|Amendolia, Florencia|I|IN-126||28",
-    "8|miercoles|19:45|21:15|Bonoris, Bruno|II|IN-125||27",
-    "9|viernes|12:45|14:15|Schenone, Sofia|III|IN-109||30",
-    "10|miercoles|19:45|21:15|Schenone, Sofia|II|IN-313||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Smith, Maria Celeste",
+      "aula": "IN-114",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Muñoz, Pablo Diego",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Spinelli, Fabian Alberto",
+      "aula": "IN-520",
+      "observ": ""
+    },
+    {
+      "id": "B",
+      "tipo": "sem",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Surmani Alfonsin, Florencia",
+      "aula": "IN-122",
+      "observ": "Talleres de Lectura- Presencial-Optativo"
+    },
+    {
+      "id": "A",
+      "tipo": "sem",
+      "dia": "sabado",
+      "inicio": "09:30",
+      "fin": "11:00",
+      "profesor": "Rodriguez, Patricia Monica",
+      "aula": "",
+      "observ": "Talleres de Lectura- Optativo- Virtual"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Cosentino, Maximiliano Ariel",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Misrahi, Claris Miriam",
+      "aula": "IN-126",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Amendolia, Florencia",
+      "aula": "IN-126",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Schenone, Sofia",
+      "aula": "IN-313",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Bonoris, Bruno",
+      "aula": "IN-125",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Ibelli, Marianella",
+      "aula": "IN-122",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Igartua, Lucas",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Miari, Antonella Silvana",
+      "aula": "IN-110",
+      "observ": "",
+      "vacantes": 26,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Schenone, Sofia",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Rodríguez, Lucas",
+      "aula": "IN-124",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    }
   ]
 }

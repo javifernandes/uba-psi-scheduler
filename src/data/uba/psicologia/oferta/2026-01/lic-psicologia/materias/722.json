@@ -1,17 +1,170 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-el-juego-en-los-limites-el-psicoanalisis-c722",
   "label": "P.P.: P.P.: Área Clínica: El Juego en los Límites: el Psicoanálisis - Cátedra 722",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: El Juego en los Límites: el Psicoanálisis - Cátedra 722 - a. Bruner",
-  "teoricos": ["I|lunes|18:00|19:30|Bruner, Norma Berta|HY-013|TEORICO"],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|10:00|14:00|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca|4",
-    "2|jueves|08:30|12:30|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca|4",
-    "3|martes|17:00|21:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA|7",
-    "4|sabado|10:00|14:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario).Av. Hipolito Yrigoyen 4608 Lanues Oe|6",
-    "5|jueves|14:00|18:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA|2",
-    "6|sabado|12:00|16:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario)Av. Hipolito Yrigoyen 4608- Lanues Oe|6",
-    "7|sabado|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.|1",
-    "8|jueves|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.|1"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Bruner, Norma Berta",
+      "aula": "HY-013",
+      "observ": "TEORICO"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Manghi, Clara",
+      "aula": "",
+      "observ": "LEtourdit Salud Mental. Asuncion 3245. CABA",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Panizza, Maria Martha",
+      "aula": "",
+      "observ": "Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Lefevre, Zulema",
+      "aula": "",
+      "observ": "Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Panizza, Maria Martha",
+      "aula": "",
+      "observ": "Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Manghi, Clara",
+      "aula": "",
+      "observ": "LEtourdit Salud Mental. Asuncion 3245. CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Lefevre, Zulema",
+      "aula": "",
+      "observ": "Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Getz, Juan Pablo",
+      "aula": "",
+      "observ": "Somos Nosotros. Equipo interdisciplinario).Av. Hipolito Yrigoyen 4608 Lanues Oe",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "12:00",
+      "fin": "16:00",
+      "profesor": "Getz, Juan Pablo",
+      "aula": "",
+      "observ": "Somos Nosotros. Equipo interdisciplinario)Av. Hipolito Yrigoyen 4608- Lanues Oe",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

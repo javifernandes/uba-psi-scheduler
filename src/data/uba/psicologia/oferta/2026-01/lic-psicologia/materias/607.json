@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "psicologia-aplicada-al-deporte-c607",
   "label": "Psicología Aplicada al Deporte - Cátedra 607",
   "header": "Psicología UBA - Licenciatura en Psicología - Psicología Aplicada al Deporte - Cátedra 607 - Prof. Barrios",
-  "teoricos": ["I|martes|09:15|10:45|Barrios, Raul|IN-106|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|07:30|09:00|Katz, Ezequiel|I|IN-106||0",
-    "2|martes|11:00|12:30|Katz, Ezequiel|I|IN-443||0",
-    "3|martes|11:00|12:30|Villa, Javier|I|IN-434||18",
-    "4|martes|12:45|14:15|Villa, Javier|I|IN-434||25"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Barrios, Raul",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Katz, Ezequiel",
+      "aula": "IN-106",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Katz, Ezequiel",
+      "aula": "IN-443",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Villa, Javier",
+      "aula": "IN-434",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Villa, Javier",
+      "aula": "IN-434",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

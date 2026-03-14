@@ -1,15 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-educacional-y-trabajo-orientacion-vocacional-y-ocu-c100",
   "label": "P.P.: P.P.: Área Educacional y Trabajo: Orientación Vocacional y Ocu - Cátedra 100",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Educacional y Trabajo: Orientación Vocacional y Ocu - Cátedra 100 - Aisenson",
-  "teoricos": [
-    "I|jueves|13:00|15:00|Aisenson, Gabriela||Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|15:00|19:00|Labandeira, Julieta Lorena|I||Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso - Capital|13",
-    "2|jueves|15:00|19:00|García, Alejandra|I||Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso - Capital|12",
-    "3|jueves|09:00|13:00|Del Re, Valeria Alejandra|I||Dir de Orient al Est - UBA|12",
-    "4|jueves|09:00|13:00|Valenzuela, Viviana|I||Dir de Orient al Est - UBA|12"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "13:00",
+      "fin": "15:00",
+      "profesor": "Aisenson, Gabriela",
+      "aula": "",
+      "observ": "Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Del Re, Valeria Alejandra",
+      "aula": "",
+      "observ": "Dir de Orient al Est - UBA",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Valenzuela, Viviana",
+      "aula": "",
+      "observ": "Dir de Orient al Est - UBA",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "15:00",
+      "fin": "19:00",
+      "profesor": "Labandeira, Julieta Lorena",
+      "aula": "",
+      "observ": "Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso - Capital",
+      "vacantes": 13,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "15:00",
+      "fin": "19:00",
+      "profesor": "García, Alejandra",
+      "aula": "",
+      "observ": "Dir de Orient al Est- UBA Jose Evaristo Uriburu 950 Entrepiso - Capital",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "teoria-y-tecnica-de-terapia-ocupacional-ii-c406",
   "label": "Teoría y Técnica de Terapia Ocupacional II - Cátedra 406",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Teoría y Técnica de Terapia Ocupacional II - Cátedra 406 - Metz",
-  "teoricos": ["I|martes|19:00|23:00|Metz, Miriam Isabel|SI-024|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|17:00|19:00|Perretti, Gabriela Andrea|I|SI-011||37",
-    "2|miercoles|19:00|21:00|Perretti, Gabriela Andrea|I|SI-011||39"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Metz, Miriam Isabel",
+      "aula": "SI-024",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Perretti, Gabriela Andrea",
+      "aula": "SI-011",
+      "observ": "",
+      "vacantes": 37,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Perretti, Gabriela Andrea",
+      "aula": "SI-011",
+      "observ": "",
+      "vacantes": 39,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

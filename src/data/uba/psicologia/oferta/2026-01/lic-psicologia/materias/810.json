@@ -1,20 +1,180 @@
 {
+  "schemaVersion": 2,
   "id": "10212-psicologia-politica-c810-ii",
   "label": "(10212) Psicología Política - Cátedra 810 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10212) Psicología Política - Cátedra 810 - II - Biglieri",
-  "teoricos": [
-    "I|jueves|18:00|19:30|Biglieri, Jorge Antonio|HY-029|",
-    "II|jueves|11:00|12:30|Rodriguez, Flabia Andrea|IN-510|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|16:15|17:45|Roca, Marcelo|I|HY-023||24",
-    "2|jueves|19:45|21:15|Roca, Marcelo|I|HY-030||20",
-    "3|jueves|09:15|10:45|Rodriguez, Flabia Andrea|II|IN-452||13",
-    "4|jueves|19:45|21:15|Gomez Bekerman, Kevin|I|HY-025||24",
-    "5|jueves|12:45|14:15|Mazzarella, Mauro|II|IN-304||27",
-    "6|jueves|09:15|10:45|Mazzarella, Mauro|II|IN-204||32",
-    "7|jueves|12:45|14:15|Mazzarella, Mauro|II|IN-109||33",
-    "8|jueves|16:15|17:45|Gomez Bekerman, Kevin|I|HY-032||33"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Rodriguez, Flabia Andrea",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Biglieri, Jorge Antonio",
+      "aula": "HY-029",
+      "observ": ""
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Rodriguez, Flabia Andrea",
+      "aula": "IN-452",
+      "observ": "",
+      "vacantes": 13,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Mazzarella, Mauro",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 32,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Mazzarella, Mauro",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Mazzarella, Mauro",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Roca, Marcelo",
+      "aula": "HY-023",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Gomez Bekerman, Kevin",
+      "aula": "HY-032",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Roca, Marcelo",
+      "aula": "HY-030",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Gomez Bekerman, Kevin",
+      "aula": "HY-025",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

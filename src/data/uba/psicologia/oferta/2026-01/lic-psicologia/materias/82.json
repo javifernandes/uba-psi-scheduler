@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "psicodiagnostico-rorschach-c82",
   "label": "Psicodiagnóstico: Rorschach - Cátedra 82",
   "header": "Psicología UBA - Licenciatura en Psicología - Psicodiagnóstico: Rorschach - Cátedra 82 - Prof. Garcia",
-  "teoricos": ["I|miercoles|14:30|16:00|Garcia, Ariana Gabriela|IN-510|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|12:45|14:15|Presman, Tatiana Melina|I|IN-431||10",
-    "2|miercoles|16:15|17:45|Piccone, Anabela|I|IN-125||15",
-    "3|miercoles|16:15|17:45|Novarese, Marta Ana|I|IN-321||14",
-    "4|miercoles|18:00|19:30|Boustoure, Maria Alejandra|I|IN-214||16"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Garcia, Ariana Gabriela",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Presman, Tatiana Melina",
+      "aula": "IN-431",
+      "observ": "",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Piccone, Anabela",
+      "aula": "IN-125",
+      "observ": "",
+      "vacantes": 15,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Novarese, Marta Ana",
+      "aula": "IN-321",
+      "observ": "",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Boustoure, Maria Alejandra",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,22 +1,227 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-atencion-psicologica-en-un-hospital-c689",
   "label": "P.P.: P.P.: Área Clínica: Atención Psicológica en un Hospital - Cátedra 689",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Atención Psicológica en un Hospital - Cátedra 689 - Di Biasi",
-  "teoricos": [
-    "I|miercoles|19:45|21:15|Di Biasi, Silvia Ines|IN-433|Independencia 3065. Concurrir primero al teorico"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|08:30|12:30|Tysz, Cecilia Erika|I||Hospital Alvarez - Aranguren 2701 - Flores - CABA|0",
-    "2|viernes|12:30|16:30|Tysz, Cecilia Erika|I||Hospital Alvarez - Aranguren 2701 - Flores - CABA|0",
-    "3|sabado|09:00|13:00|Bianchi, Valentina|I||Hospital Alvarez - Aranguren 2701 - Flores - CABA|0",
-    "4|sabado|09:00|13:00|Dauz, Micaela|I||Hospital Alvarez - Aranguren 2701 -Flores - CABA|0",
-    "5|lunes|08:00|12:00|Gimenez, Ana Clara|I||Hospital de Wilde - Baradero 5808 Wilde (frenta a la estación) - Pcia de Bs As|1",
-    "6|martes|08:00|12:00|Diaz, Claudia|I||Hospital de Wilde - Baradero 5808 - Wilde (frente a la estación)|4",
-    "7|miercoles|08:00|12:00|Gimenez, Ana Clara|I||Hospital de Wilde - Baradero 5808 - Wilde (frente a la estación)|2",
-    "8|martes|08:00|12:00|Antequera, Mariela M|I||Hospital Posadas - Illia y Marconi - Haedo|0",
-    "9|viernes|08:00|12:00|Antequera, Mariela M|I||Hospital Posadass - Illia y Marconi - Haedo|2",
-    "10|martes|08:00|12:00|Vazquez, Ludmila|I||Hospital Fiorito - Belgrano 822 - Avellaneda|0",
-    "11|miercoles|08:00|12:00|Vazquez, Ludmila|I||Hospital Fiorito - Belgrano 827, Avellaneda|1"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Di Biasi, Silvia Ines",
+      "aula": "IN-433",
+      "observ": "Independencia 3065. Concurrir primero al teorico"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Gimenez, Ana Clara",
+      "aula": "",
+      "observ": "Hospital de Wilde - Baradero 5808 Wilde (frenta a la estación) - Pcia de Bs As",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Vazquez, Ludmila",
+      "aula": "",
+      "observ": "Hospital Fiorito - Belgrano 822 - Avellaneda",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Diaz, Claudia",
+      "aula": "",
+      "observ": "Hospital de Wilde - Baradero 5808 - Wilde (frente a la estación)",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Antequera, Mariela M",
+      "aula": "",
+      "observ": "Hospital Posadas - Illia y Marconi - Haedo",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Vazquez, Ludmila",
+      "aula": "",
+      "observ": "Hospital Fiorito - Belgrano 827, Avellaneda",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Gimenez, Ana Clara",
+      "aula": "",
+      "observ": "Hospital de Wilde - Baradero 5808 - Wilde (frente a la estación)",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Antequera, Mariela M",
+      "aula": "",
+      "observ": "Hospital Posadass - Illia y Marconi - Haedo",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Tysz, Cecilia Erika",
+      "aula": "",
+      "observ": "Hospital Alvarez - Aranguren 2701 - Flores - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:30",
+      "fin": "16:30",
+      "profesor": "Tysz, Cecilia Erika",
+      "aula": "",
+      "observ": "Hospital Alvarez - Aranguren 2701 - Flores - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Bianchi, Valentina",
+      "aula": "",
+      "observ": "Hospital Alvarez - Aranguren 2701 - Flores - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Dauz, Micaela",
+      "aula": "",
+      "observ": "Hospital Alvarez - Aranguren 2701 -Flores - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

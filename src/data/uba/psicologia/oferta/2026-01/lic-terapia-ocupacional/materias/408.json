@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "psicologia-de-los-ciclos-vitales-ii-c408",
   "label": "Psicología de los Ciclos Vitales II - Cátedra 408",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Psicología de los Ciclos Vitales II - Cátedra 408 - Bustingorri",
-  "teoricos": ["I|viernes|19:00|22:00|Peñaloza Egas, Nancy Mery|SI-027|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|17:00|19:00|Garfinkel, Mariana|I|SI-027||29",
-    "2|martes|19:00|21:00|Garfinkel, Mariana|I|SI-027||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "19:00",
+      "fin": "22:00",
+      "profesor": "Peñaloza Egas, Nancy Mery",
+      "aula": "SI-027",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Garfinkel, Mariana",
+      "aula": "SI-027",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Garfinkel, Mariana",
+      "aula": "SI-027",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

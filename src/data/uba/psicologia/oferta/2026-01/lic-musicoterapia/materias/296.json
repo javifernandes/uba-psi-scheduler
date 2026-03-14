@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "psicologia-del-ciclo-vital-i-c296",
   "label": "Psicología del Ciclo Vital I - Cátedra 296",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Psicología del Ciclo Vital I - Cátedra 296 - Quattrocchi",
-  "teoricos": ["I|martes|17:00|19:00|Fernandez, Adriana Anabel|AV-042|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|15:00|17:00|Silanes, Maria Celeste|I|AV-026||35",
-    "2|martes|19:00|21:00|Silanes, Maria Celeste|I|AV-042||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Fernandez, Adriana Anabel",
+      "aula": "AV-042",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Silanes, Maria Celeste",
+      "aula": "AV-026",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Silanes, Maria Celeste",
+      "aula": "AV-042",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

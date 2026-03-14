@@ -1,8 +1,52 @@
 {
+  "schemaVersion": 2,
   "id": "escuelas-psicologicas-contemporaneas-c311",
   "label": "Escuelas Psicológicas Contemporáneas - Cátedra 311",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Escuelas Psicológicas Contemporáneas - Cátedra 311 - Prof. Miceli",
-  "teoricos": ["I|jueves|17:00|19:00|Miceli, Claudio Marcelo|AV-026|"],
-  "seminarios": ["A|jueves|19:00|21:00|Bruno, Dario Eduardo|AV-026|"],
-  "comisiones": ["1|jueves|21:00|23:00|Trotta, Fernando Ezequiel|I - A|AV-026||62"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Miceli, Claudio Marcelo",
+      "aula": "AV-026",
+      "observ": ""
+    },
+    {
+      "id": "A",
+      "tipo": "sem",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Bruno, Dario Eduardo",
+      "aula": "AV-026",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "21:00",
+      "fin": "23:00",
+      "profesor": "Trotta, Fernando Ezequiel",
+      "aula": "AV-026",
+      "observ": "",
+      "vacantes": 62,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    }
+  ]
 }

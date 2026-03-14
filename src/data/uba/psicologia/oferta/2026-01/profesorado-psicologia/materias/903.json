@@ -1,15 +1,132 @@
 {
+  "schemaVersion": 2,
   "id": "didactica-especial-de-la-psicologia-c903",
   "label": "Didáctica Especial de la Psicología - Cátedra 903",
   "header": "Psicología UBA - Profesorado en Psicología - Didáctica Especial de la Psicología - Cátedra 903 - A designar",
-  "teoricos": ["I|miercoles|07:30|09:00|D'angelo, Agostina|EC-019|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|09:15|12:30|Sena, Selva Daniela|I|EC-019||25",
-    "2|miercoles|18:00|21:15|Vallone, Valeria Claudia Paola|I|IN-121||25",
-    "3|viernes|12:45|16:00|D' Urso, Anabel|I|HY-024||25",
-    "4|sabado|09:15|12:30|Adrogue, Gabriela|I|IN-411||25",
-    "5|viernes|16:15|19:30|Sanson, Dalila|I|IN-421||25",
-    "6|sabado|12:45|16:00|Luzuriaga, Laura Marcela|I|IN-209||25"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "D'angelo, Agostina",
+      "aula": "EC-019",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Sena, Selva Daniela",
+      "aula": "EC-019",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Vallone, Valeria Claudia Paola",
+      "aula": "IN-121",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "D' Urso, Anabel",
+      "aula": "HY-024",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Sanson, Dalila",
+      "aula": "IN-421",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Adrogue, Gabriela",
+      "aula": "IN-411",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Luzuriaga, Laura Marcela",
+      "aula": "IN-209",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

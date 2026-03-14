@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-diagnostico-y-tratamiento-en-personas-que-c857-i",
   "label": "P.P.: P.P.: Área Clínica: Diagnóstico y tratamiento en personas que - Cátedra 857 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Diagnóstico y tratamiento en personas que - Cátedra 857 - I - a. D´Anna",
-  "teoricos": ["I|jueves|12:45|14:15|D´Anna, Ana Maria|IN-103|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|13:30|17:30|Gago, Paula Teresa|I||En Centro Ki-A: Blanco Encalada 5115. Caba.|0",
-    "2|lunes|08:15|12:15|Rolandi, Fernanda|I||En Centro Ki-A: Blanco Encalada 5115. Caba.|1",
-    "3|martes|13:30|17:30|Gago, Paula Teresa|I||En Centro Ki-A: Blanco Encalada 5115. Caba.|0",
-    "4|lunes|08:15|12:15|Rolandi, Fernanda|I||En Centro Ki-A: Blanco Encalada 5115. Caba.|1"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "D´Anna, Ana Maria",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:15",
+      "fin": "12:15",
+      "profesor": "Rolandi, Fernanda",
+      "aula": "",
+      "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:15",
+      "fin": "12:15",
+      "profesor": "Rolandi, Fernanda",
+      "aula": "",
+      "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:30",
+      "fin": "17:30",
+      "profesor": "Gago, Paula Teresa",
+      "aula": "",
+      "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:30",
+      "fin": "17:30",
+      "profesor": "Gago, Paula Teresa",
+      "aula": "",
+      "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

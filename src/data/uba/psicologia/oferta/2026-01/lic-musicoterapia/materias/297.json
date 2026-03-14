@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "sociedad-e-instituciones-c297",
   "label": "Sociedad e Instituciones - Cátedra 297",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Sociedad e Instituciones - Cátedra 297 - Prof. Vodovotz",
-  "teoricos": ["I|lunes|17:00|19:00|Vodovotz, Gabriel Sergio|AV-029|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|15:00|17:00|Graber, Mara|I|AV-026||35",
-    "2|lunes|19:00|21:00|Graber, Mara|I|AV-029||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Vodovotz, Gabriel Sergio",
+      "aula": "AV-029",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Graber, Mara",
+      "aula": "AV-026",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Graber, Mara",
+      "aula": "AV-029",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

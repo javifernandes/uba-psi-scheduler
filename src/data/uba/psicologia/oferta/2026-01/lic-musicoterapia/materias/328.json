@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "musicoterapia-ii-c328",
   "label": "Musicoterapia II - Cátedra 328",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Musicoterapia II - Cátedra 328 - Prof. Ferrari",
-  "teoricos": ["I|jueves|17:00|19:00|Ferrari, Karina Daniela|AV-028|"],
-  "seminarios": [],
-  "comisiones": ["1|jueves|19:00|21:00|Figueroa, María Pía|I|AV-028||70"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Ferrari, Karina Daniela",
+      "aula": "AV-028",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Figueroa, María Pía",
+      "aula": "AV-028",
+      "observ": "",
+      "vacantes": 70,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

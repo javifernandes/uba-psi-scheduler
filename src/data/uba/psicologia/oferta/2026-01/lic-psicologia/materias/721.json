@@ -1,24 +1,265 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-psicologia-perinatal-c721",
   "label": "P.P.: P.P.: Área Clínica: Psicología Perinatal - Cátedra 721",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Psicología Perinatal - Cátedra 721 - Galindez",
-  "teoricos": [
-    "I|martes|18:00|19:30|Galindez, Elena Teresa|HY-012|FACULTAD Presencial Obligatorio"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|14:00|18:00|Galindez, Elena Teresa|I||H.Ana Goitia - L. V. Lopez 1737 - Avellaneda|2",
-    "2|martes|09:00|13:00|Diaz, Aldana Belen|I||F.Hospitalaria - Cramer 4601 CABA|0",
-    "3|miercoles|08:30|12:30|Galli, Miryam Alejandra|I||H. Ana Goitia - L. V. Lopez 1737 Avellaneda|0",
-    "4|martes|08:30|12:30|Mansilla, Mariela Luz|I||H. Ana Goitia - L. V. Lopez 1737 Avellaneda|1",
-    "5|viernes|09:00|13:00|Lucero, Aurora Graciela|I||Ciipme-Pte. Perón 2158-CABA|0",
-    "6|lunes|08:00|12:00|Hauser, Maria Paulina|I||H. Ana Goitia - L. V. Lopez 1737 - Avellaneda|2",
-    "7|lunes|10:00|14:00|Galindez, Elena Teresa|I||H. Ana Goitia - L. V. Lopez 1737. Avellaneda|2",
-    "8|viernes|10:00|14:00|Carballo, Rita Maria Gabriela|I||H. de Morón- Dr. Rodolfo Monte 848. Morón|1",
-    "9|lunes|08:30|12:30|Mercado, Andrea Patricia|I||Htal. Mi Pueblo-El Progreso 240. Fcio. Varela|2",
-    "10|martes|09:00|13:00|Poletti, Irina|I||F. Hospitalaria. Cramer 4601 CABA|0",
-    "11|miercoles|08:30|12:30|Aranda, Soledad|I||Htal. Zerboni. Moreno 90. San A. de Areco|1",
-    "12|lunes|08:00|12:00|Ottaviano, Paula|I||Htal. A.Goitia. V. Lopez 1737 Avellaneda|2",
-    "13|lunes|08:30|12:30|Panizza, Maria Martha|I||Htal. S. Isidro. Diego Palma 505. San Isidro|0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Galindez, Elena Teresa",
+      "aula": "HY-012",
+      "observ": "FACULTAD Presencial Obligatorio"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Ottaviano, Paula",
+      "aula": "",
+      "observ": "Htal. A.Goitia. V. Lopez 1737 Avellaneda",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Hauser, Maria Paulina",
+      "aula": "",
+      "observ": "H. Ana Goitia - L. V. Lopez 1737 - Avellaneda",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Panizza, Maria Martha",
+      "aula": "",
+      "observ": "Htal. S. Isidro. Diego Palma 505. San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Mercado, Andrea Patricia",
+      "aula": "",
+      "observ": "Htal. Mi Pueblo-El Progreso 240. Fcio. Varela",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Galindez, Elena Teresa",
+      "aula": "",
+      "observ": "H. Ana Goitia - L. V. Lopez 1737. Avellaneda",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Mansilla, Mariela Luz",
+      "aula": "",
+      "observ": "H. Ana Goitia - L. V. Lopez 1737 Avellaneda",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Poletti, Irina",
+      "aula": "",
+      "observ": "F. Hospitalaria. Cramer 4601 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Diaz, Aldana Belen",
+      "aula": "",
+      "observ": "F.Hospitalaria - Cramer 4601 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Aranda, Soledad",
+      "aula": "",
+      "observ": "Htal. Zerboni. Moreno 90. San A. de Areco",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Galli, Miryam Alejandra",
+      "aula": "",
+      "observ": "H. Ana Goitia - L. V. Lopez 1737 Avellaneda",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Galindez, Elena Teresa",
+      "aula": "",
+      "observ": "H.Ana Goitia - L. V. Lopez 1737 - Avellaneda",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Lucero, Aurora Graciela",
+      "aula": "",
+      "observ": "Ciipme-Pte. Perón 2158-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Carballo, Rita Maria Gabriela",
+      "aula": "",
+      "observ": "H. de Morón- Dr. Rodolfo Monte 848. Morón",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

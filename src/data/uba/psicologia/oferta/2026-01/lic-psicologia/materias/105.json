@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "introduccion-a-los-estudios-de-genero-c105",
   "label": "Introducción a los Estudios de Género - Cátedra 105",
   "header": "Psicología UBA - Licenciatura en Psicología - Introducción a los Estudios de Género - Cátedra 105 - Prof. Tajer",
-  "teoricos": ["I|viernes|18:00|19:30|Tajer, Debora|IN-101|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|16:15|17:45|Costa, Maria Lujan|I|IN-411||17",
-    "2|viernes|19:45|21:15|Costa, Maria Lujan|I|IN-421||15",
-    "3|viernes|19:45|21:15|Saavedra, Lucia Daniela|I|IN-313||17",
-    "4|viernes|16:15|17:45|Saavedra, Lucia Daniela|I|IN-434||24"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Tajer, Debora",
+      "aula": "IN-101",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Costa, Maria Lujan",
+      "aula": "IN-411",
+      "observ": "",
+      "vacantes": 17,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Saavedra, Lucia Daniela",
+      "aula": "IN-434",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Costa, Maria Lujan",
+      "aula": "IN-421",
+      "observ": "",
+      "vacantes": 15,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Saavedra, Lucia Daniela",
+      "aula": "IN-313",
+      "observ": "",
+      "vacantes": 17,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

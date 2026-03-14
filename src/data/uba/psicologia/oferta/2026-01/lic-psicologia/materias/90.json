@@ -1,24 +1,256 @@
 {
+  "schemaVersion": 2,
   "id": "biologia-del-comportamiento-c90",
   "label": "Biología del Comportamiento - Cátedra 90",
   "header": "Psicología UBA - Licenciatura en Psicología - Biología del Comportamiento - Cátedra 90 - Prof. Muzio",
-  "teoricos": [
-    "I|jueves|19:45|21:15|Muzio, Ruben Nestor|HY-022|",
-    "II|jueves|16:15|17:45|Gabelli, Fabian Marcelo|IN-201|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|09:15|10:45|Daneri, Maria Florencia|I|IN-217||12",
-    "2|martes|11:00|12:30|Daneri, Maria Florencia|II|IN-217||0",
-    "3|martes|18:00|19:30|Dzik, Marina Victoria|I|IN-441||0",
-    "4|martes|19:45|21:15|Dzik, Marina Victoria|I|IN-441||9",
-    "5|miercoles|18:00|19:30|Rodriguez, Mariano|I|IN-320||8",
-    "6|miercoles|19:45|21:15|Rodriguez, Mariano|I|IN-320||18",
-    "7|jueves|09:15|10:45|Fosacheca, Sandro|II|IN-420||25",
-    "8|jueves|11:00|12:30|Fosacheca, Sandro|II|IN-420||17",
-    "9|jueves|12:45|14:15|Fernandez, Rocio Candela|II|IN-204||0",
-    "10|jueves|14:30|16:00|Fernandez, Rocio Candela|II|IN-208||0",
-    "11|martes|12:45|14:15|Calleja, Nicolas|II|IN-216||17",
-    "12|martes|14:30|16:00|Calleja, Nicolas|II|IN-216||1"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Gabelli, Fabian Marcelo",
+      "aula": "IN-201",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Muzio, Ruben Nestor",
+      "aula": "HY-022",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Daneri, Maria Florencia",
+      "aula": "IN-217",
+      "observ": "",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Daneri, Maria Florencia",
+      "aula": "IN-217",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Calleja, Nicolas",
+      "aula": "IN-216",
+      "observ": "",
+      "vacantes": 17,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Calleja, Nicolas",
+      "aula": "IN-216",
+      "observ": "",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Dzik, Marina Victoria",
+      "aula": "IN-441",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Dzik, Marina Victoria",
+      "aula": "IN-441",
+      "observ": "",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Rodriguez, Mariano",
+      "aula": "IN-320",
+      "observ": "",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Rodriguez, Mariano",
+      "aula": "IN-320",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Fosacheca, Sandro",
+      "aula": "IN-420",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Fosacheca, Sandro",
+      "aula": "IN-420",
+      "observ": "",
+      "vacantes": 17,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Fernandez, Rocio Candela",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Fernandez, Rocio Candela",
+      "aula": "IN-208",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

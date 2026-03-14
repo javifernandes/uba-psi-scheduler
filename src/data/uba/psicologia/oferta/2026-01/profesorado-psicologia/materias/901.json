@@ -1,21 +1,199 @@
 {
+  "schemaVersion": 2,
   "id": "teorias-de-la-educacion-y-sistema-educativo-argentino-c901",
   "label": "Teorías de la Educación y Sistema Educativo Argentino - Cátedra 901",
   "header": "Psicología UBA - Profesorado en Psicología - Teorías de la Educación y Sistema Educativo Argentino - Cátedra 901 - Ruiz",
-  "teoricos": [
-    "I|martes|08:00|09:30|Alvarez, German Gonzalo|EC-019|",
-    "II|lunes|17:30|19:00|Ruiz, Guillermo Ramon|EC-107|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|09:45|13:00|Gomar, Matias Salvador|I|EC-019||35",
-    "2|sabado|12:45|16:00|Hofferlen, Gustavo Rodolfo|II|IN-411||35",
-    "3|martes|09:45|13:00|Falk, Federico Martin|I|EC-026||35",
-    "4|viernes|18:00|21:15|Hofferlen, Gustavo Rodolfo|II|IN-107||35",
-    "5|viernes|18:00|21:15|Mariani, Marina Aida|II|IN-443||35",
-    "6|lunes|13:45|17:00|Messina, Verónica|II|EC-026||34",
-    "7|lunes|19:15|22:30|Nanni, Silvina|II|EC-025||35",
-    "8|lunes|19:15|22:30|D'abate, Gabriela Inés|II|EC-026||35",
-    "9|lunes|13:45|17:00|Muiños, Claudia Gabriela|II|EC-025||35"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:30",
+      "fin": "19:00",
+      "profesor": "Ruiz, Guillermo Ramon",
+      "aula": "EC-107",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "09:30",
+      "profesor": "Alvarez, German Gonzalo",
+      "aula": "EC-019",
+      "observ": ""
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "13:45",
+      "fin": "17:00",
+      "profesor": "Messina, Verónica",
+      "aula": "EC-026",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "13:45",
+      "fin": "17:00",
+      "profesor": "Muiños, Claudia Gabriela",
+      "aula": "EC-025",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:15",
+      "fin": "22:30",
+      "profesor": "Nanni, Silvina",
+      "aula": "EC-025",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:15",
+      "fin": "22:30",
+      "profesor": "D'abate, Gabriela Inés",
+      "aula": "EC-026",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:45",
+      "fin": "13:00",
+      "profesor": "Gomar, Matias Salvador",
+      "aula": "EC-019",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:45",
+      "fin": "13:00",
+      "profesor": "Falk, Federico Martin",
+      "aula": "EC-026",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Hofferlen, Gustavo Rodolfo",
+      "aula": "IN-107",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Mariani, Marina Aida",
+      "aula": "IN-443",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Hofferlen, Gustavo Rodolfo",
+      "aula": "IN-411",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

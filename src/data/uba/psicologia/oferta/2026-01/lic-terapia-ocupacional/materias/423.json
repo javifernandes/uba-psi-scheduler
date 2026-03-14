@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "biomecanica-c423",
   "label": "Biomecánica - Cátedra 423",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Biomecánica - Cátedra 423 - A designar",
-  "teoricos": ["I|viernes|17:00|19:00|Cappetta, Elida Patricia|SI-025|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|19:00|21:00|Milco, Leila Carola|I|SI-008||22",
-    "2|lunes|21:00|23:00|Milco, Leila Carola|I|SI-008||27"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Cappetta, Elida Patricia",
+      "aula": "SI-025",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Milco, Leila Carola",
+      "aula": "SI-008",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "21:00",
+      "fin": "23:00",
+      "profesor": "Milco, Leila Carola",
+      "aula": "SI-008",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

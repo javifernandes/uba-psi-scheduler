@@ -1,16 +1,104 @@
 {
+  "schemaVersion": 2,
   "id": "orientacion-vocacional-y-ocupacional-c86",
   "label": "Orientación Vocacional y Ocupacional - Cátedra 86",
   "header": "Psicología UBA - Licenciatura en Psicología - Orientación Vocacional y Ocupacional - Cátedra 86 - a. Aisenson",
-  "teoricos": [
-    "I|martes|18:00|19:30|Aisenson, Gabriela|IN-510|",
-    "II|miercoles|09:15|10:45|Batlle, Silvia Mara|IN-510|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|11:00|12:30|Inaebnit, Virginia Carmen|II|IN-126||20",
-    "2|martes|19:45|21:15|Inaebnit, Virginia Carmen|I|IN-204||13",
-    "3|martes|19:45|21:15|Valenzuela, Viviana|I|IN-212||23",
-    "4|miercoles|11:00|12:30|Valenzuela, Viviana|II|IN-125||21"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Aisenson, Gabriela",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Batlle, Silvia Mara",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Inaebnit, Virginia Carmen",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 13,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Valenzuela, Viviana",
+      "aula": "IN-212",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Inaebnit, Virginia Carmen",
+      "aula": "IN-126",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Valenzuela, Viviana",
+      "aula": "IN-125",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

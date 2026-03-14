@@ -1,14 +1,75 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-trabajo-proceso-de-reinsercion-laboral-c657",
   "label": "P.P.: P.P.: Área Trabajo: Proceso de Reinserción Laboral - Cátedra 657",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Trabajo: Proceso de Reinserción Laboral - Cátedra 657 - Sandoval",
-  "teoricos": [
-    "I|martes|18:45|20:45|Sandoval, Arnaldo Martin||Comunidad Las Victorias. Paraguay y Libertad. CABA."
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|18:00|22:00|Rico, Mara Sol|I||Comunidad Las Victorias. Paraguay y Libertad. CABA.|22",
-    "2|miercoles|18:30|22:30|Caputo, Macarena|I||Comunidad Las Victorias. Paraguay y Libertad. CABA.|22",
-    "3|jueves|18:30|22:30|Berardi, Martina|I||Comunidad Las Victorias. Paraguay y Libertad. CABA.|19"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:45",
+      "fin": "20:45",
+      "profesor": "Sandoval, Arnaldo Martin",
+      "aula": "",
+      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA."
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "22:00",
+      "profesor": "Rico, Mara Sol",
+      "aula": "",
+      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:30",
+      "fin": "22:30",
+      "profesor": "Caputo, Macarena",
+      "aula": "",
+      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:30",
+      "fin": "22:30",
+      "profesor": "Berardi, Martina",
+      "aula": "",
+      "observ": "Comunidad Las Victorias. Paraguay y Libertad. CABA.",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

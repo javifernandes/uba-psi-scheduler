@@ -1,8 +1,20 @@
 {
+  "schemaVersion": 2,
   "id": "10314-requisito-idioma-ingles-modulo-ii-c854-ii",
   "label": "(10314) Requisito Idioma: Inglés Módulo II - Cátedra 854 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10314) Requisito Idioma: Inglés Módulo II - Cátedra 854 - II - Banfi",
-  "teoricos": [],
-  "seminarios": [],
-  "comisiones": ["1|--|--|--|Banfi, Cristina||--||333"]
+  "slots": [
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "--",
+      "inicio": "--",
+      "fin": "--",
+      "profesor": "Banfi, Cristina",
+      "aula": "--",
+      "observ": "",
+      "vacantes": 333,
+      "slotsAsociados": []
+    }
+  ]
 }
