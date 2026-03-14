@@ -485,7 +485,7 @@
         "aula": "109"
       },
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -585,7 +585,7 @@
         "aula": "452"
       },
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -1138,7 +1138,7 @@
       },
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 38,
+      "vacantes": 37,
       "slotsAsociados": [
         {
           "slotId": "M",

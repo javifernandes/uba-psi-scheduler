@@ -185,7 +185,7 @@
         "aula": "031"
       },
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -210,7 +210,7 @@
         "aula": "024"
       },
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -235,7 +235,7 @@
         "aula": "027"
       },
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -410,7 +410,7 @@
         "aula": "026"
       },
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -560,7 +560,7 @@
         "aula": "110"
       },
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -585,7 +585,7 @@
         "aula": "321"
       },
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -710,7 +710,7 @@
         "aula": "032"
       },
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -735,7 +735,7 @@
         "aula": "010"
       },
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -888,7 +888,7 @@
         "aula": "015"
       },
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -913,7 +913,7 @@
         "aula": "031"
       },
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -938,7 +938,7 @@
         "aula": "029"
       },
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -963,7 +963,7 @@
         "aula": "032"
       },
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "F",

@@ -43,7 +43,7 @@
         "aula": null
       },
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": []
     },
     {
@@ -113,7 +113,7 @@
         "aula": null
       },
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": []
     },
     {
@@ -127,7 +127,7 @@
         "aula": null
       },
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": []
     }
   ]

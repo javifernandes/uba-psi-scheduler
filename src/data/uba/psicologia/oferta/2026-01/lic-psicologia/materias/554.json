@@ -287,7 +287,7 @@
         "aula": "304"
       },
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -312,7 +312,7 @@
         "aula": "208"
       },
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -337,7 +337,7 @@
         "aula": "110"
       },
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -387,7 +387,7 @@
         "aula": "304"
       },
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -412,7 +412,7 @@
         "aula": "311"
       },
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -512,7 +512,7 @@
         "aula": "124"
       },
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -537,7 +537,7 @@
         "aula": "216"
       },
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -612,7 +612,7 @@
         "aula": "125"
       },
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -737,7 +737,7 @@
         "aula": "121"
       },
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -787,7 +787,7 @@
         "aula": "122"
       },
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -812,7 +812,7 @@
         "aula": "126"
       },
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
