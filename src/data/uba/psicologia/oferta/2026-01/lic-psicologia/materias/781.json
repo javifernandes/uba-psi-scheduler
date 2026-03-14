@@ -2,12 +2,10 @@
   "id": "victimologia-c781",
   "label": "Victimología - Cátedra 781",
   "header": "Psicología UBA - Licenciatura en Psicología - Victimología - Cátedra 781 - Rodriguez",
-  "teoricos": [
-    "I|lunes|11:00|12:30|Rodriguez, Flabia Andrea|IN-404|"
-  ],
+  "teoricos": ["I|lunes|11:00|12:30|Rodriguez, Flabia Andrea|IN-404|"],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|09:15|10:45|Ferreira, Cintia Elena|I|IN-404|",
-    "2|lunes|12:45|14:15|Ferreira, Cintia Elena|I|IN-404|"
+    "1|lunes|09:15|10:45|Ferreira, Cintia Elena|I|IN-404||23",
+    "2|lunes|12:45|14:15|Ferreira, Cintia Elena|I|IN-404||30"
   ]
 }

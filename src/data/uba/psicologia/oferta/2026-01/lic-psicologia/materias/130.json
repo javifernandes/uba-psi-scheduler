@@ -2,19 +2,17 @@
   "id": "pp-pp-area-clinica-clinica-de-ninos-y-adolescentes-las-forma-c130",
   "label": "P.P.: P.P.: Área Clínica: Clínica de Niños y Adolescentes: Las Forma - Cátedra 130",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Clínica de Niños y Adolescentes: Las Forma - Cátedra 130 - Martinez Liss",
-  "teoricos": [
-    "I|viernes|12:45|14:15|Martinez Liss, Mariana|HY-015|Hipolito Yrigoyen"
-  ],
+  "teoricos": ["I|viernes|12:45|14:15|Martinez Liss, Mariana|HY-015|Hipolito Yrigoyen"],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|08:00|12:00|Martofel, Magalí|I||H. ALVAREZ Aranguren 2701 y Condarco CABA",
-    "2|miercoles|14:00|18:00|Profesor a designar|I||H. ALVAREZ Aranguren 2701 y Condarco CABA",
-    "3|viernes|15:00|19:00|Steinberg, Silvina|I||causa clinica Sarmiento 3475 P 2 C",
-    "4|viernes|08:00|12:00|Torregiani, Mora|I||Hospital Piñero : Av. Varela 1301. CABA.",
-    "5|jueves|09:00|13:00|Calderon Bonora, Amanda|I||Hospital Alvarez Aranguren 2701 CABA",
-    "6|jueves|14:00|18:00|Carbon, Lucila|I||CeSAC (Centro de Salud y Acción Comunitaria) N°26 Gurruchaga 1939 CABA",
-    "7|martes|12:00|16:00|Guaglianone, Julieta|l||CEPAPI 6 Av Piedrabuena 3101 CABA",
-    "8|jueves|10:00|14:00|Borghetti, Maria Florencia|I||Fundación para la familia: Pichincha 143, Boulogne, San Isidro.",
-    "9|miercoles|15:00|19:00|Risso Joly, Maria Gala|I||CSM Ameghino: av cordoba 3120"
+    "1|miercoles|08:00|12:00|Martofel, Magalí|I||H. ALVAREZ Aranguren 2701 y Condarco CABA|0",
+    "2|miercoles|14:00|18:00|Profesor a designar|I||H. ALVAREZ Aranguren 2701 y Condarco CABA|2",
+    "3|viernes|15:00|19:00|Steinberg, Silvina|I||causa clinica Sarmiento 3475 P 2 C|0",
+    "4|viernes|08:00|12:00|Torregiani, Mora|I||Hospital Piñero : Av. Varela 1301. CABA.|0",
+    "5|jueves|09:00|13:00|Calderon Bonora, Amanda|I||Hospital Alvarez Aranguren 2701 CABA|0",
+    "6|jueves|14:00|18:00|Carbon, Lucila|I||CeSAC (Centro de Salud y Acción Comunitaria) N°26 Gurruchaga 1939 CABA|3",
+    "7|martes|12:00|16:00|Guaglianone, Julieta|l||CEPAPI 6 Av Piedrabuena 3101 CABA|3",
+    "8|jueves|10:00|14:00|Borghetti, Maria Florencia|I||Fundación para la familia: Pichincha 143, Boulogne, San Isidro.|4",
+    "9|miercoles|15:00|19:00|Risso Joly, Maria Gala|I||CSM Ameghino: av cordoba 3120|2"
   ]
 }

@@ -8,11 +8,11 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|14:30|17:45|Izcurdia, Maria De Los Angeles||IN-GES|",
-    "2|lunes|18:00|21:15|Varela, Barbara||IN-GES|",
-    "3|martes|14:30|17:45|Deus, Brenda||IN-GES|",
-    "4|jueves|14:30|17:45|Izcurdia, Maria De Los Ángeles||IN-GES|",
-    "5|jueves|18:00|21:15|Rodriguez Vainman, Camila||IN-GES|",
-    "6|sabado|11:00|14:15|Vidal, Nahuel Ignacio||IN-GES|"
+    "1|lunes|14:30|17:45|Izcurdia, Maria De Los Angeles||IN-GES||0",
+    "2|lunes|18:00|21:15|Varela, Barbara||IN-GES||14",
+    "3|martes|14:30|17:45|Deus, Brenda||IN-GES||12",
+    "4|jueves|14:30|17:45|Izcurdia, Maria De Los Ángeles||IN-GES||0",
+    "5|jueves|18:00|21:15|Rodriguez Vainman, Camila||IN-GES||0",
+    "6|sabado|11:00|14:15|Vidal, Nahuel Ignacio||IN-GES||8"
   ]
 }

@@ -2,14 +2,12 @@
   "id": "introduccion-a-los-estudios-de-genero-c105",
   "label": "Introducción a los Estudios de Género - Cátedra 105",
   "header": "Psicología UBA - Licenciatura en Psicología - Introducción a los Estudios de Género - Cátedra 105 - Prof. Tajer",
-  "teoricos": [
-    "I|viernes|18:00|19:30|Tajer, Debora|IN-101|"
-  ],
+  "teoricos": ["I|viernes|18:00|19:30|Tajer, Debora|IN-101|"],
   "seminarios": [],
   "comisiones": [
-    "1|viernes|16:15|17:45|Costa, Maria Lujan|I|IN-411|",
-    "2|viernes|19:45|21:15|Costa, Maria Lujan|I|IN-421|",
-    "3|viernes|19:45|21:15|Saavedra, Lucia Daniela|I|IN-313|",
-    "4|viernes|16:15|17:45|Saavedra, Lucia Daniela|I|IN-434|"
+    "1|viernes|16:15|17:45|Costa, Maria Lujan|I|IN-411||17",
+    "2|viernes|19:45|21:15|Costa, Maria Lujan|I|IN-421||15",
+    "3|viernes|19:45|21:15|Saavedra, Lucia Daniela|I|IN-313||17",
+    "4|viernes|16:15|17:45|Saavedra, Lucia Daniela|I|IN-434||24"
   ]
 }

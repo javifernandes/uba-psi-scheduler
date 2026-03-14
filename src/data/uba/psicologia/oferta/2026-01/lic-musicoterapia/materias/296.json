@@ -2,12 +2,10 @@
   "id": "psicologia-del-ciclo-vital-i-c296",
   "label": "Psicología del Ciclo Vital I - Cátedra 296",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Psicología del Ciclo Vital I - Cátedra 296 - Quattrocchi",
-  "teoricos": [
-    "I|martes|17:00|19:00|Fernandez, Adriana Anabel|AV-042|"
-  ],
+  "teoricos": ["I|martes|17:00|19:00|Fernandez, Adriana Anabel|AV-042|"],
   "seminarios": [],
   "comisiones": [
-    "1|martes|15:00|17:00|Silanes, Maria Celeste|I|AV-026|",
-    "2|martes|19:00|21:00|Silanes, Maria Celeste|I|AV-042|"
+    "1|martes|15:00|17:00|Silanes, Maria Celeste|I|AV-026||35",
+    "2|martes|19:00|21:00|Silanes, Maria Celeste|I|AV-042||35"
   ]
 }

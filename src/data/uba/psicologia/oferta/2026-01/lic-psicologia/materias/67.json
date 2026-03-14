@@ -8,11 +8,11 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|16:15|17:45|Pipo, Valeria Susana|I|IN-107|",
-    "2|lunes|19:45|21:15|Longo, Roxana Gabriela|I|IN-205|",
-    "3|miercoles|11:00|12:30|Longo, Roxana Gabriela|II|IN-303|",
-    "4|miercoles|14:30|16:00|Veloso, Veronica Ines|II|IN-204|",
-    "5|lunes|19:45|21:15|Ruffa, Estefania|I|IN-323|",
-    "6|miercoles|14:30|16:00|Sopransi, Maria Belen|II|IN-125|"
+    "1|lunes|16:15|17:45|Pipo, Valeria Susana|I|IN-107||18",
+    "2|lunes|19:45|21:15|Longo, Roxana Gabriela|I|IN-205||18",
+    "3|miercoles|11:00|12:30|Longo, Roxana Gabriela|II|IN-303||19",
+    "4|miercoles|14:30|16:00|Veloso, Veronica Ines|II|IN-204||10",
+    "5|lunes|19:45|21:15|Ruffa, Estefania|I|IN-323||12",
+    "6|miercoles|14:30|16:00|Sopransi, Maria Belen|II|IN-125||24"
   ]
 }

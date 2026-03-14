@@ -8,9 +8,9 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|09:15|10:45|Prieto, Luis Orlando|I|IN-311|",
-    "2|lunes|09:15|10:45|Lopez, Gonzalo Javier|I|IN-114|",
-    "3|lunes|18:00|19:30|Prieto, Luis Orlando|II|IN-125|",
-    "4|lunes|18:00|19:30|Lopez, Gonzalo Javier|II|IN-218|"
+    "1|lunes|09:15|10:45|Prieto, Luis Orlando|I|IN-311||3",
+    "2|lunes|09:15|10:45|Lopez, Gonzalo Javier|I|IN-114||27",
+    "3|lunes|18:00|19:30|Prieto, Luis Orlando|II|IN-125||3",
+    "4|lunes|18:00|19:30|Lopez, Gonzalo Javier|II|IN-218||24"
   ]
 }

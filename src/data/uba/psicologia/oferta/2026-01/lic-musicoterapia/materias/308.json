@@ -2,11 +2,7 @@
   "id": "taller-de-instrumentos-de-percusion-c308",
   "label": "Taller de Instrumentos de Percusión - Cátedra 308",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Taller de Instrumentos de Percusión - Cátedra 308 - Crespino",
-  "teoricos": [
-    "I|viernes|17:00|19:00|Crespino, Claudio Daniel|AV-029|"
-  ],
+  "teoricos": ["I|viernes|17:00|19:00|Crespino, Claudio Daniel|AV-029|"],
   "seminarios": [],
-  "comisiones": [
-    "1|viernes|15:00|17:00|Broqua, Graciela Ines|I|AV-028|"
-  ]
+  "comisiones": ["1|viernes|15:00|17:00|Broqua, Graciela Ines|I|AV-028||39"]
 }

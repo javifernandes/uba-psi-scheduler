@@ -2,13 +2,11 @@
   "id": "practica-profesional-modulo-ii-area-clinica-c331",
   "label": "Práctica Profesional. Módulo II: Area Clínica - Cátedra 331",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Práctica Profesional. Módulo II: Area Clínica - Cátedra 331 - Prof. Coluccio",
-  "teoricos": [
-    "I|lunes|17:00|19:00|Coluccio, Andrea Graciela|AV-025|Sede Avellaneda"
-  ],
+  "teoricos": ["I|lunes|17:00|19:00|Coluccio, Andrea Graciela|AV-025|Sede Avellaneda"],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|09:00|13:00|Rossi, Laura|I||Hospital Moyano",
-    "2|jueves|09:00|13:00|Sanchez, Analía|I||Hospital Moyano",
-    "3|viernes|09:00|13:00|Uzal, Paula|I||Hospital Moyano"
+    "1|miercoles|09:00|13:00|Rossi, Laura|I||Hospital Moyano|3",
+    "2|jueves|09:00|13:00|Sanchez, Analía|I||Hospital Moyano|8",
+    "3|viernes|09:00|13:00|Uzal, Paula|I||Hospital Moyano|2"
   ]
 }

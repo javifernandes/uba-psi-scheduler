@@ -2,14 +2,12 @@
   "id": "psicodiagnostico-rorschach-c82",
   "label": "Psicodiagnóstico: Rorschach - Cátedra 82",
   "header": "Psicología UBA - Licenciatura en Psicología - Psicodiagnóstico: Rorschach - Cátedra 82 - Prof. Garcia",
-  "teoricos": [
-    "I|miercoles|14:30|16:00|Garcia, Ariana Gabriela|IN-510|"
-  ],
+  "teoricos": ["I|miercoles|14:30|16:00|Garcia, Ariana Gabriela|IN-510|"],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|12:45|14:15|Presman, Tatiana Melina|I|IN-431|",
-    "2|miercoles|16:15|17:45|Piccone, Anabela|I|IN-125|",
-    "3|miercoles|16:15|17:45|Novarese, Marta Ana|I|IN-321|",
-    "4|miercoles|18:00|19:30|Boustoure, Maria Alejandra|I|IN-214|"
+    "1|miercoles|12:45|14:15|Presman, Tatiana Melina|I|IN-431||10",
+    "2|miercoles|16:15|17:45|Piccone, Anabela|I|IN-125||15",
+    "3|miercoles|16:15|17:45|Novarese, Marta Ana|I|IN-321||14",
+    "4|miercoles|18:00|19:30|Boustoure, Maria Alejandra|I|IN-214||16"
   ]
 }

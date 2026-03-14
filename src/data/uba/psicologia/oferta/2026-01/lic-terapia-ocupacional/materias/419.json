@@ -2,12 +2,10 @@
   "id": "la-ocupacion-y-su-proceso-iii-c419",
   "label": "La Ocupación y su Proceso III - Cátedra 419",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - La Ocupación y su Proceso III - Cátedra 419 - Alvarez",
-  "teoricos": [
-    "I|jueves|17:00|19:00|Alvarez, Maria De Los Angeles|SI-TEC|"
-  ],
+  "teoricos": ["I|jueves|17:00|19:00|Alvarez, Maria De Los Angeles|SI-TEC|"],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|19:00|21:00|Diez, Maria Rocio|I|SI-TEC|",
-    "2|jueves|21:00|23:00|Diez, Maria Rocio|I|SI-TEC|"
+    "1|jueves|19:00|21:00|Diez, Maria Rocio|I|SI-TEC||11",
+    "2|jueves|21:00|23:00|Diez, Maria Rocio|I|SI-TEC||24"
   ]
 }

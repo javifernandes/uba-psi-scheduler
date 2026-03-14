@@ -2,11 +2,7 @@
   "id": "musicoterapia-en-salud-mental-c316",
   "label": "Musicoterapia en Salud Mental - Cátedra 316",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Musicoterapia en Salud Mental - Cátedra 316 - Prof. Ojeda",
-  "teoricos": [
-    "I|viernes|17:00|19:00|Ojeda, Ramon Antonio|AV-030|"
-  ],
+  "teoricos": ["I|viernes|17:00|19:00|Ojeda, Ramon Antonio|AV-030|"],
   "seminarios": [],
-  "comisiones": [
-    "1|viernes|19:00|21:00|Aguzzi, Sebastian|I|AV-030|"
-  ]
+  "comisiones": ["1|viernes|19:00|21:00|Aguzzi, Sebastian|I|AV-030||47"]
 }

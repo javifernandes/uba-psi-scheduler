@@ -8,14 +8,14 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|martes|09:45|13:00|Gomar, Matias Salvador|I|EC-019|",
-    "2|sabado|12:45|16:00|Hofferlen, Gustavo Rodolfo|II|IN-411|",
-    "3|martes|09:45|13:00|Falk, Federico Martin|I|EC-026|",
-    "4|viernes|18:00|21:15|Hofferlen, Gustavo Rodolfo|II|IN-107|",
-    "5|viernes|18:00|21:15|Mariani, Marina Aida|II|IN-443|",
-    "6|lunes|13:45|17:00|Messina, Verónica|II|EC-026|",
-    "7|lunes|19:15|22:30|Nanni, Silvina|II|EC-025|",
-    "8|lunes|19:15|22:30|D'abate, Gabriela Inés|II|EC-026|",
-    "9|lunes|13:45|17:00|Muiños, Claudia Gabriela|II|EC-025|"
+    "1|martes|09:45|13:00|Gomar, Matias Salvador|I|EC-019||35",
+    "2|sabado|12:45|16:00|Hofferlen, Gustavo Rodolfo|II|IN-411||35",
+    "3|martes|09:45|13:00|Falk, Federico Martin|I|EC-026||35",
+    "4|viernes|18:00|21:15|Hofferlen, Gustavo Rodolfo|II|IN-107||35",
+    "5|viernes|18:00|21:15|Mariani, Marina Aida|II|IN-443||35",
+    "6|lunes|13:45|17:00|Messina, Verónica|II|EC-026||34",
+    "7|lunes|19:15|22:30|Nanni, Silvina|II|EC-025||35",
+    "8|lunes|19:15|22:30|D'abate, Gabriela Inés|II|EC-026||35",
+    "9|lunes|13:45|17:00|Muiños, Claudia Gabriela|II|EC-025||35"
   ]
 }

@@ -2,12 +2,10 @@
   "id": "tecnicas-psicologicas-en-el-ambito-juridico-c782",
   "label": "Técnicas Psicológicas en el Ámbito Jurídico - Cátedra 782",
   "header": "Psicología UBA - Licenciatura en Psicología - Técnicas Psicológicas en el Ámbito Jurídico - Cátedra 782 - Prof. Rodriguez",
-  "teoricos": [
-    "I|viernes|18:00|19:30|Rodriguez, Jose Antonio|IN-103|"
-  ],
+  "teoricos": ["I|viernes|18:00|19:30|Rodriguez, Jose Antonio|IN-103|"],
   "seminarios": [],
   "comisiones": [
-    "1|viernes|16:15|17:45|Yañez, Carolina|I|IN-213|",
-    "2|viernes|14:30|16:15|González Vieyto, Sebastián Ric|I|IN-213|"
+    "1|viernes|16:15|17:45|Yañez, Carolina|I|IN-213||5",
+    "2|viernes|14:30|16:15|González Vieyto, Sebastián Ric|I|IN-213||35"
   ]
 }

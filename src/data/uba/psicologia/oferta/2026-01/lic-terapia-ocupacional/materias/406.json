@@ -2,12 +2,10 @@
   "id": "teoria-y-tecnica-de-terapia-ocupacional-ii-c406",
   "label": "Teoría y Técnica de Terapia Ocupacional II - Cátedra 406",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Teoría y Técnica de Terapia Ocupacional II - Cátedra 406 - Metz",
-  "teoricos": [
-    "I|martes|19:00|23:00|Metz, Miriam Isabel|SI-024|"
-  ],
+  "teoricos": ["I|martes|19:00|23:00|Metz, Miriam Isabel|SI-024|"],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|17:00|19:00|Perretti, Gabriela Andrea|I|SI-011|",
-    "2|miercoles|19:00|21:00|Perretti, Gabriela Andrea|I|SI-011|"
+    "1|miercoles|17:00|19:00|Perretti, Gabriela Andrea|I|SI-011||39",
+    "2|miercoles|19:00|21:00|Perretti, Gabriela Andrea|I|SI-011||43"
   ]
 }

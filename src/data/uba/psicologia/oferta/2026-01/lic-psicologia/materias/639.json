@@ -2,16 +2,14 @@
   "id": "pp-pp-area-clinica-practica-clinica-psicoanalitica-de-ninos-c-c639",
   "label": "P.P.: P.P.: Área Clínica: Práctica Clínica Psicoanalítica de Niños c - Cátedra 639",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Práctica Clínica Psicoanalítica de Niños c - Cátedra 639 - Prof. Freidin",
-  "teoricos": [
-    "I|martes|09:15|10:45|Freidin, Fabiana|HY-026|"
-  ],
+  "teoricos": ["I|martes|09:15|10:45|Freidin, Fabiana|HY-026|"],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|08:00|12:00|Bardi, Daniela Carla|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
-    "2|miercoles|08:00|12:00|Ramos, Laura Vanina|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
-    "3|viernes|08:00|12:00|Garcia Poultier, Julieta|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
-    "4|viernes|08:00|12:00|Stibel, Sonia Vanina|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón",
-    "5|lunes|08:00|12:00|Pitelli, Luna|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón",
-    "6|lunes|08:00|12:00|Canales, Laura|I||Servicio de Psicología Clínica de Niños"
+    "1|miercoles|08:00|12:00|Bardi, Daniela Carla|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|8",
+    "2|miercoles|08:00|12:00|Ramos, Laura Vanina|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|5",
+    "3|viernes|08:00|12:00|Garcia Poultier, Julieta|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|10",
+    "4|viernes|08:00|12:00|Stibel, Sonia Vanina|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón|12",
+    "5|lunes|08:00|12:00|Pitelli, Luna|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón|12",
+    "6|lunes|08:00|12:00|Canales, Laura|I||Servicio de Psicología Clínica de Niños|11"
   ]
 }

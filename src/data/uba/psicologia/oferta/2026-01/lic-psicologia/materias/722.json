@@ -2,18 +2,16 @@
   "id": "pp-pp-area-clinica-el-juego-en-los-limites-el-psicoanalisis-c722",
   "label": "P.P.: P.P.: Área Clínica: El Juego en los Límites: el Psicoanálisis - Cátedra 722",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: El Juego en los Límites: el Psicoanálisis - Cátedra 722 - a. Bruner",
-  "teoricos": [
-    "I|lunes|18:00|19:30|Bruner, Norma Berta|HY-013|TEORICO"
-  ],
+  "teoricos": ["I|lunes|18:00|19:30|Bruner, Norma Berta|HY-013|TEORICO"],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|10:00|14:00|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca",
-    "2|jueves|08:30|12:30|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca",
-    "3|martes|17:00|21:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA",
-    "4|sabado|10:00|14:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario).Av. Hipolito Yrigoyen 4608 Lanues Oe",
-    "5|jueves|14:00|18:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA",
-    "6|sabado|12:00|16:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario)Av. Hipolito Yrigoyen 4608- Lanues Oe",
-    "7|sabado|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.",
-    "8|jueves|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510."
+    "1|jueves|10:00|14:00|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca|4",
+    "2|jueves|08:30|12:30|Panizza, Maria Martha|I||Centro de Desarrollo Infantil y Estimulación Temp. El Nido. Av. Rolon 1879 Becca|4",
+    "3|martes|17:00|21:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA|7",
+    "4|sabado|10:00|14:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario).Av. Hipolito Yrigoyen 4608 Lanues Oe|6",
+    "5|jueves|14:00|18:00|Manghi, Clara|I||LEtourdit Salud Mental. Asuncion 3245. CABA|2",
+    "6|sabado|12:00|16:00|Getz, Juan Pablo|I||Somos Nosotros. Equipo interdisciplinario)Av. Hipolito Yrigoyen 4608- Lanues Oe|6",
+    "7|sabado|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.|1",
+    "8|jueves|09:00|13:00|Lefevre, Zulema|I||Institución Fernando Ulloa. Admisiones y equipo de niños. . Av. Pueyrredon 510.|1"
   ]
 }
