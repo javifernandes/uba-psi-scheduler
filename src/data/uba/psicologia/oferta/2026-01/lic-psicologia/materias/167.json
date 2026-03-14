@@ -140,7 +140,7 @@
         "aula": "209"
       },
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -501,7 +501,7 @@
         "aula": "324"
       },
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -801,7 +801,7 @@
         "aula": "GES"
       },
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -841,7 +841,7 @@
         "aula": "110"
       },
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "I",
