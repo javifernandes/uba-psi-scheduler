@@ -12,6 +12,34 @@ const subjectOption: SubjectData = {
   slots: [],
 };
 
+const buildSubjectWithVacancies = (
+  id: string,
+  label: string,
+  teacher: string,
+  vacancies: number
+): SubjectData => ({
+  schemaVersion: 2,
+  id,
+  label,
+  header: `Psicología UBA - I - ${teacher}`,
+  slots: [
+    {
+      tipo: 'prac',
+      id: `${id}-1`,
+      dia: 'lunes',
+      inicio: '09:00',
+      fin: '10:30',
+      profesor: teacher,
+      lugar: {
+        anexo: 'IN',
+        aula: '101',
+      },
+      vacantes: vacancies,
+      slotsAsociados: [],
+    },
+  ],
+});
+
 const searchedComisiones: Comision[] = [
   {
     tipo: 'prac',
@@ -75,6 +103,8 @@ const createProps = (overrides: Partial<Parameters<typeof SchedulerFiltersPanel>
   setIsComisionesPanelOpen: vi.fn(),
   selectedComisionesLength: 1,
   filteredComisionesLength: 2,
+  filteredComisionesVacancies: 12,
+  selectedSubjectVacancies: 99,
   isCommissionDropdownOpen: true,
   setIsCommissionDropdownOpen: vi.fn(),
   selectAllVisible: vi.fn(),
@@ -144,6 +174,44 @@ describe('SchedulerFiltersPanel', () => {
     expect(clearVisible).toHaveBeenCalledTimes(1);
     expect(setCommissionQuery).toHaveBeenCalled();
     expect(toggleCommission).toHaveBeenCalledWith('1');
+  });
+
+  it('muestra vacantes en materia/cátedra, total de comisiones y cada comisión', () => {
+    render(<SchedulerFiltersPanel {...createProps()} />);
+
+    expect(screen.getByText('Vacantes 99')).toBeInTheDocument();
+    expect(screen.getByText('Comisiones (1/2) · Vacantes 12')).toBeInTheDocument();
+    expect(screen.getByText('Vac 12')).toBeInTheDocument();
+  });
+
+  it('muestra en el encabezado de grupo la suma de vacantes de sus cátedras', () => {
+    const groupedSubjectOptions = [
+      {
+        groupLabel: '16 · Psicoanálisis Freud',
+        options: [
+          buildSubjectWithVacancies('49', '(16) Psicoanálisis Freud - Cátedra 49 (I)', 'Pino', 10),
+          buildSubjectWithVacancies(
+            '50',
+            '(16) Psicoanálisis Freud - Cátedra 50 (II)',
+            'Laznik',
+            6
+          ),
+        ],
+      },
+    ];
+
+    render(
+      <SchedulerFiltersPanel
+        {...createProps({
+          isMateriaPanelOpen: true,
+          isMateriaDropdownOpen: true,
+          groupedSubjectOptions,
+          flatSelectableSubjectsLength: 2,
+        })}
+      />
+    );
+
+    expect(screen.getByText('Vac 16')).toBeInTheDocument();
   });
 
   it('permite activar el filtro de solo vacantes desde el dropdown de comisiones', () => {
