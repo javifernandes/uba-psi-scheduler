@@ -11,3 +11,4 @@ pnpm-debug.log*
 .env.local
 tmp
 test-results
+src/data/uba/psicologia/oferta/.staging

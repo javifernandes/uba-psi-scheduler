@@ -14,6 +14,8 @@
     "test:e2e": "playwright test",
     "inspect:catalog": "node --experimental-strip-types scripts/inspect-uba-psi-catalog.ts",
     "scrape:catalog": "node --experimental-strip-types scripts/scrape-uba-psi-oferta.ts",
+    "scrape:window:status": "node --experimental-strip-types scripts/scraper-window-control.ts status",
+    "scrape:window:close": "node --experimental-strip-types scripts/scraper-window-control.ts close",
     "prepare": "husky"
   },
   "dependencies": {

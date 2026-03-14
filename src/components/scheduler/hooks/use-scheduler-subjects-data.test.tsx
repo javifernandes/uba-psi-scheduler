@@ -11,9 +11,9 @@ const subjects: SubjectData[] = [
     teoricos: ['II|jueves|09:15|10:45|Láznik|IN-MAY|'],
     seminarios: ['B|martes|09:15|10:45|Battaglia|HY-005|'],
     comisiones: [
-      '63|martes|07:30|09:00|BLANK Sofia|III - B|IN-123|',
-      '9|viernes|09:15|10:45|Israel Ana|IV - A|HY-124|',
-      '12|martes|11:00|12:30|Kohan Pablo|III - B|SI-016|',
+      '63|martes|07:30|09:00|BLANK Sofia|III - B|IN-123||35',
+      '9|viernes|09:15|10:45|Israel Ana|IV - A|HY-124||0',
+      '12|martes|11:00|12:30|Kohan Pablo|III - B|SI-016||',
     ],
   },
   {
@@ -22,7 +22,7 @@ const subjects: SubjectData[] = [
     header: 'h34',
     teoricos: ['I|miércoles|11:00|12:30|Ibarra|HY-014|'],
     seminarios: ['A|jueves|09:15|10:45|Falcone|IN-510|'],
-    comisiones: ['1|jueves|11:00|12:30|Boisselier|I - A|IN-125|'],
+    comisiones: ['1|jueves|11:00|12:30|Boisselier|I - A|IN-125||20'],
   },
   {
     id: '298',
@@ -30,7 +30,7 @@ const subjects: SubjectData[] = [
     header: 'h298',
     teoricos: [],
     seminarios: [],
-    comisiones: ['14|sabado|09:15|10:45|Politis|V|AV 028|'],
+    comisiones: ['14|sabado|09:15|10:45|Politis|V|AV 028||8'],
   },
 ];
 
@@ -41,6 +41,7 @@ const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
   selectedSubjectId: '50',
   enrolledBySubject: {},
   commissionQuery: '',
+  showOnlyWithVacancies: false,
   onSubjectChanged: vi.fn(),
   ...overrides,
 });
@@ -80,7 +81,7 @@ describe('useSchedulerSubjectsData', () => {
     const { result } = renderHook(() => useSchedulerSubjectsData(baseParams()));
 
     await waitFor(() => {
-      expect(result.current.filteredComisiones.map(c => c.id)).toEqual(['63', '12', '9']);
+      expect(result.current.filteredComisiones.map((c) => c.id)).toEqual(['63', '12', '9']);
     });
 
     act(() => {
@@ -88,15 +89,26 @@ describe('useSchedulerSubjectsData', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.filteredComisiones.map(c => c.id)).toEqual(['9']);
-      expect(result.current.selectedComisiones.map(c => c.id)).toEqual(['9']);
+      expect(result.current.filteredComisiones.map((c) => c.id)).toEqual(['9']);
+      expect(result.current.selectedComisiones.map((c) => c.id)).toEqual(['9']);
     });
 
     const { result: queriedResult } = renderHook(() =>
       useSchedulerSubjectsData(baseParams({ commissionQuery: 'martes' }))
     );
     await waitFor(() => {
-      expect(queriedResult.current.searchedComisiones.map(c => c.id)).toEqual(['12', '63']);
+      expect(queriedResult.current.searchedComisiones.map((c) => c.id)).toEqual(['12', '63']);
+    });
+  });
+
+  it('si el filtro de vacantes está activo oculta solo comisiones con vacantes 0', async () => {
+    const { result } = renderHook(() =>
+      useSchedulerSubjectsData(baseParams({ showOnlyWithVacancies: true }))
+    );
+
+    await waitFor(() => {
+      expect(result.current.filteredComisiones.map((c) => c.id)).toEqual(['63', '12']);
+      expect(result.current.filteredComisiones.map((c) => c.vacantes)).toEqual([35, null]);
     });
   });
 

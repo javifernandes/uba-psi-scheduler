@@ -20,6 +20,7 @@ export type Comision = BaseSlot & {
   oblig: string;
   teoricoId?: string;
   seminarioId?: string;
+  vacantes: number | null;
 };
 
 export type CalendarEvent = {

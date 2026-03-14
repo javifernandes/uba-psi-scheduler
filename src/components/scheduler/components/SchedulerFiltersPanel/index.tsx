@@ -74,6 +74,8 @@ type SchedulerFiltersPanelProps = {
   clearVisible: () => void;
   commissionQuery: string;
   setCommissionQuery: Dispatch<SetStateAction<string>>;
+  showOnlyWithVacancies: boolean;
+  setShowOnlyWithVacancies: Dispatch<SetStateAction<boolean>>;
   searchedComisiones: Comision[];
   selectedCommissionIds: Set<string>;
   toggleCommission: (id: string) => void;
@@ -128,6 +130,8 @@ export const SchedulerFiltersPanel = ({
   clearVisible,
   commissionQuery,
   setCommissionQuery,
+  showOnlyWithVacancies,
+  setShowOnlyWithVacancies,
   searchedComisiones,
   selectedCommissionIds,
   toggleCommission,
@@ -183,7 +187,7 @@ export const SchedulerFiltersPanel = ({
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
-          onClick={() => setIsMateriaPanelOpen(v => !v)}
+          onClick={() => setIsMateriaPanelOpen((v) => !v)}
         >
           <h2 className="text-sm font-semibold text-[#6d5162] dark:text-zinc-200">
             Materia / Cátedra
@@ -196,9 +200,9 @@ export const SchedulerFiltersPanel = ({
             ) : null}
             <button
               type="button"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
-                setIsMateriaPanelOpen(v => !v);
+                setIsMateriaPanelOpen((v) => !v);
               }}
               className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
               aria-label="Expandir o colapsar Materia"
@@ -213,14 +217,14 @@ export const SchedulerFiltersPanel = ({
               ref={materiaInputRef}
               type="text"
               value={materiaInputValue}
-              onChange={e => onMateriaInputChange(e.target.value)}
-              onFocus={e => {
+              onChange={(e) => onMateriaInputChange(e.target.value)}
+              onFocus={(e) => {
                 setIsMateriaDropdownOpen(true);
                 if (selectedSubjectId && materiaInputValue.trim().length > 0) {
                   onMateriaInputChange('');
                 }
               }}
-              onClick={e => {
+              onClick={(e) => {
                 setIsMateriaDropdownOpen(true);
                 if (selectedSubjectId && materiaInputValue.trim().length > 0) {
                   onMateriaInputChange('');
@@ -236,7 +240,7 @@ export const SchedulerFiltersPanel = ({
               <div className="mt-1 flex justify-end">
                 <button
                   type="button"
-                  onClick={e => {
+                  onClick={(e) => {
                     e.stopPropagation();
                     onClearSelectedSubject();
                   }}
@@ -264,7 +268,7 @@ export const SchedulerFiltersPanel = ({
                 >
                   {(() => {
                     let optionIndex = -1;
-                    return groupedSubjectOptions.map(group => (
+                    return groupedSubjectOptions.map((group) => (
                       <div
                         key={group.groupLabel}
                         className="border-b border-[#f0e5ec] last:border-b-0 dark:border-zinc-700"
@@ -273,19 +277,19 @@ export const SchedulerFiltersPanel = ({
                           {group.groupLabel}
                         </div>
                         <div className="divide-y divide-[#f5ebf1] dark:divide-zinc-700/70">
-                          {group.options.map(subject => {
+                          {group.options.map((subject) => {
                             optionIndex += 1;
                             const isHighlighted = optionIndex === highlightedSubjectIndex;
                             return (
                               <button
                                 key={subject.id}
-                                ref={node => {
+                                ref={(node) => {
                                   optionRefs.current[subject.id] = node;
                                 }}
                                 type="button"
                                 onMouseEnter={() => setHighlightedSubjectIndex(optionIndex)}
                                 onClick={() => selectSubject(subject.id)}
-                                onKeyDown={event => {
+                                onKeyDown={(event) => {
                                   if (event.key === 'ArrowDown') {
                                     event.preventDefault();
                                     focusOptionByIndex(optionIndex + 1);
@@ -357,7 +361,7 @@ export const SchedulerFiltersPanel = ({
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
-          onClick={() => setIsComisionesPanelOpen(v => !v)}
+          onClick={() => setIsComisionesPanelOpen((v) => !v)}
         >
           <h2 className="text-sm font-semibold text-[#6d5162] dark:text-zinc-200">Comisiones</h2>
           <div className="flex items-center gap-2">
@@ -368,9 +372,9 @@ export const SchedulerFiltersPanel = ({
             ) : null}
             <button
               type="button"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
-                setIsComisionesPanelOpen(v => !v);
+                setIsComisionesPanelOpen((v) => !v);
               }}
               className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
               aria-label="Expandir o colapsar Comisiones"
@@ -383,11 +387,20 @@ export const SchedulerFiltersPanel = ({
           <>
             <button
               type="button"
-              onClick={() => setIsCommissionDropdownOpen(v => !v)}
+              onClick={() => setIsCommissionDropdownOpen((v) => !v)}
               className="w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 py-2 text-left text-sm font-medium text-[#5a1740] dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100"
             >
               Comisiones ({selectedComisionesLength}/{filteredComisionesLength})
             </button>
+            <label className="mt-2 flex items-center gap-2 text-[11px] font-medium text-[#6d5162] dark:text-zinc-300">
+              <input
+                type="checkbox"
+                checked={showOnlyWithVacancies}
+                onChange={() => setShowOnlyWithVacancies((v) => !v)}
+                className="h-4 w-4 accent-[#861f5c]"
+              />
+              Solo con vacantes
+            </label>
             {isCommissionDropdownOpen ? (
               <div className="mt-2 space-y-2 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 dark:border-zinc-700 dark:bg-zinc-900">
                 <div className="flex items-center gap-1">
@@ -412,13 +425,13 @@ export const SchedulerFiltersPanel = ({
                   <input
                     type="text"
                     value={commissionQuery}
-                    onChange={e => setCommissionQuery(e.target.value)}
+                    onChange={(e) => setCommissionQuery(e.target.value)}
                     placeholder="Profesor o día"
                     className="ml-1 h-7 min-w-0 flex-1 rounded border border-[#d7b8c9] bg-white px-2 text-[11px] text-[#5a1740] placeholder:text-[#a68498] focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400"
                   />
                 </div>
                 <div className="max-h-56 space-y-1 overflow-auto rounded border border-[#f0e5ec] bg-white p-2 dark:border-zinc-700 dark:bg-zinc-800">
-                  {searchedComisiones.map(c => {
+                  {searchedComisiones.map((c) => {
                     const checked = selectedCommissionIds.has(c.id);
                     return (
                       <label
@@ -466,23 +479,23 @@ export const SchedulerFiltersPanel = ({
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
-          onClick={() => setIsSedesPanelOpen(v => !v)}
+          onClick={() => setIsSedesPanelOpen((v) => !v)}
         >
           <h2 className="text-sm font-semibold text-[#6d5162] dark:text-zinc-200">Sedes</h2>
           <div className="flex items-center gap-2">
             {!isSedesPanelOpen ? (
               <span className="flex items-center gap-2">
-                {allVenues.map(venue => {
+                {allVenues.map((venue) => {
                   const active = selectedVenues.has(venue);
                   return (
                     <button
                       key={`venue-inline-${venue}`}
                       type="button"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.stopPropagation();
                         toggleVenue(venue);
                       }}
-                      onDoubleClick={e => {
+                      onDoubleClick={(e) => {
                         e.stopPropagation();
                         setOnlyVenue(venue);
                       }}
@@ -502,9 +515,9 @@ export const SchedulerFiltersPanel = ({
             ) : null}
             <button
               type="button"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
-                setIsSedesPanelOpen(v => !v);
+                setIsSedesPanelOpen((v) => !v);
               }}
               className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
               aria-label="Expandir o colapsar Sedes"
@@ -515,7 +528,7 @@ export const SchedulerFiltersPanel = ({
         </div>
         {isSedesPanelOpen ? (
           <div className="space-y-2 pl-1.5">
-            {allVenues.map(venue => (
+            {allVenues.map((venue) => (
               <label
                 key={venue}
                 className="flex cursor-pointer items-center gap-3 text-sm text-[#4f1237] dark:text-zinc-200"
@@ -553,7 +566,7 @@ export const SchedulerFiltersPanel = ({
       >
         <div
           className="mb-2 flex cursor-pointer items-center justify-between"
-          onClick={() => setIsMostrarPanelOpen(v => !v)}
+          onClick={() => setIsMostrarPanelOpen((v) => !v)}
         >
           <h2 className="text-sm font-semibold text-[#6d5162] dark:text-zinc-200">
             Tipo de contenido
@@ -563,11 +576,11 @@ export const SchedulerFiltersPanel = ({
               <span className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={e => {
+                  onClick={(e) => {
                     e.stopPropagation();
-                    setShowComisiones(v => !v);
+                    setShowComisiones((v) => !v);
                   }}
-                  onDoubleClick={e => {
+                  onDoubleClick={(e) => {
                     e.stopPropagation();
                     setOnlyContent('comisiones');
                   }}
@@ -582,11 +595,11 @@ export const SchedulerFiltersPanel = ({
                 {hasTeoricos ? (
                   <button
                     type="button"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.stopPropagation();
-                      setShowTeoricos(v => !v);
+                      setShowTeoricos((v) => !v);
                     }}
-                    onDoubleClick={e => {
+                    onDoubleClick={(e) => {
                       e.stopPropagation();
                       setOnlyContent('teoricos');
                     }}
@@ -602,11 +615,11 @@ export const SchedulerFiltersPanel = ({
                 {hasSeminarios ? (
                   <button
                     type="button"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.stopPropagation();
-                      setShowSeminarios(v => !v);
+                      setShowSeminarios((v) => !v);
                     }}
-                    onDoubleClick={e => {
+                    onDoubleClick={(e) => {
                       e.stopPropagation();
                       setOnlyContent('seminarios');
                     }}
@@ -622,11 +635,11 @@ export const SchedulerFiltersPanel = ({
                 {canToggleOtherSubjects ? (
                   <button
                     type="button"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.stopPropagation();
-                      setShowOtherSubjects(v => !v);
+                      setShowOtherSubjects((v) => !v);
                     }}
-                    onDoubleClick={e => {
+                    onDoubleClick={(e) => {
                       e.stopPropagation();
                       setOnlyContent('otras');
                     }}
@@ -643,9 +656,9 @@ export const SchedulerFiltersPanel = ({
             ) : null}
             <button
               type="button"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
-                setIsMostrarPanelOpen(v => !v);
+                setIsMostrarPanelOpen((v) => !v);
               }}
               className="text-[#9f8695] hover:text-[#6d5162] dark:text-zinc-400 dark:hover:text-zinc-200"
               aria-label="Expandir o colapsar Tipo de contenido"
@@ -658,7 +671,7 @@ export const SchedulerFiltersPanel = ({
           <div className="flex flex-wrap gap-x-3 gap-y-1 pl-1.5">
             <button
               type="button"
-              onClick={() => setShowComisiones(v => !v)}
+              onClick={() => setShowComisiones((v) => !v)}
               className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
               title="Mostrar/Ocultar comisiones"
               data-tour="content-toggle-comisiones"
@@ -674,7 +687,7 @@ export const SchedulerFiltersPanel = ({
             {hasTeoricos ? (
               <button
                 type="button"
-                onClick={() => setShowTeoricos(v => !v)}
+                onClick={() => setShowTeoricos((v) => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar teóricos"
                 data-tour="content-toggle-teoricos"
@@ -691,7 +704,7 @@ export const SchedulerFiltersPanel = ({
             {hasSeminarios ? (
               <button
                 type="button"
-                onClick={() => setShowSeminarios(v => !v)}
+                onClick={() => setShowSeminarios((v) => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar seminarios"
                 data-tour="content-toggle-seminarios"
@@ -708,7 +721,7 @@ export const SchedulerFiltersPanel = ({
             {canToggleOtherSubjects ? (
               <button
                 type="button"
-                onClick={() => setShowOtherSubjects(v => !v)}
+                onClick={() => setShowOtherSubjects((v) => !v)}
                 className="inline-flex items-center gap-2 rounded px-1.5 py-0.5 text-sm text-[#4f1237] dark:text-zinc-200"
                 title="Mostrar/Ocultar elecciones de otras materias"
                 data-tour="content-toggle-other-subjects"

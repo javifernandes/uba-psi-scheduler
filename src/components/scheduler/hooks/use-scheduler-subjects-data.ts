@@ -1,17 +1,5 @@
-import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type Dispatch,
-  type SetStateAction,
-} from 'react';
-import type {
-  Comision,
-  ParsedSubject,
-  SubjectData,
-  VenueCode,
-} from '../scheduler.types';
+import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
+import type { Comision, ParsedSubject, SubjectData, VenueCode } from '../scheduler.types';
 import {
   matchesCommissionQuery,
   parseSubject,
@@ -26,6 +14,7 @@ type UseSchedulerSubjectsDataParams = {
   selectedSubjectId: string;
   enrolledBySubject: Record<string, string>;
   commissionQuery: string;
+  showOnlyWithVacancies: boolean;
   onSubjectChanged: () => void;
 };
 
@@ -49,6 +38,7 @@ export const useSchedulerSubjectsData = ({
   selectedSubjectId,
   enrolledBySubject,
   commissionQuery,
+  showOnlyWithVacancies,
   onSubjectChanged,
 }: UseSchedulerSubjectsDataParams): UseSchedulerSubjectsDataResult => {
   const [selectedVenues, setSelectedVenues] = useState<Set<VenueCode>>(
@@ -65,7 +55,7 @@ export const useSchedulerSubjectsData = ({
 
   const parsedSubjects = useMemo(() => subjects.map(parseSubject), [subjects]);
   const selectedSubject = useMemo(
-    () => parsedSubjects.find(subject => subject.id === selectedSubjectId) || null,
+    () => parsedSubjects.find((subject) => subject.id === selectedSubjectId) || null,
     [selectedSubjectId, parsedSubjects]
   );
 
@@ -75,15 +65,17 @@ export const useSchedulerSubjectsData = ({
 
   const allVenues = useMemo(() => {
     const found = new Set<VenueCode>();
-    [...teoricos, ...seminarios, ...comisiones].forEach(item => {
+    [...teoricos, ...seminarios, ...comisiones].forEach((item) => {
       found.add(venueCodeFromAula(item.aula));
     });
     parsedSubjects
-      .filter(subject => subject.id !== selectedSubjectId)
-      .forEach(subject => {
+      .filter((subject) => subject.id !== selectedSubjectId)
+      .forEach((subject) => {
         const enrolledCommissionId = enrolledBySubject[subject.id];
         if (!enrolledCommissionId) return;
-        const enrolledCommission = subject.comisiones.find(item => item.id === enrolledCommissionId);
+        const enrolledCommission = subject.comisiones.find(
+          (item) => item.id === enrolledCommissionId
+        );
         if (!enrolledCommission) return;
         found.add(venueCodeFromAula(enrolledCommission.aula));
         if (enrolledCommission.teoricoId) {
@@ -104,40 +96,49 @@ export const useSchedulerSubjectsData = ({
   }, [allVenues, comisiones]);
 
   useEffect(() => {
-    setSelectedVenues(prev => {
+    setSelectedVenues((prev) => {
       const next = new Set(allVenuesRef.current);
       return sameSetValues(prev, next) ? prev : next;
     });
-    setSelectedCommissionIds(prev => {
-      const next = new Set(comisionesRef.current.map(c => c.id));
+    setSelectedCommissionIds((prev) => {
+      const next = new Set(comisionesRef.current.map((c) => c.id));
       return sameSetValues(prev, next) ? prev : next;
     });
     onSubjectChangedRef.current();
   }, [selectedSubjectId]);
 
   const filteredComisiones = useMemo(
-    () => sortComisiones(comisiones.filter(c => selectedVenues.has(venueCodeFromAula(c.aula)))),
-    [selectedVenues, comisiones]
+    () =>
+      sortComisiones(
+        comisiones.filter((c) => {
+          if (!selectedVenues.has(venueCodeFromAula(c.aula))) return false;
+          if (!showOnlyWithVacancies) return true;
+          return c.vacantes !== 0;
+        })
+      ),
+    [comisiones, selectedVenues, showOnlyWithVacancies]
   );
 
   const filteredTeoricos = useMemo(
-    () => teoricos.filter(t => selectedVenues.has(venueCodeFromAula(t.aula))),
+    () => teoricos.filter((t) => selectedVenues.has(venueCodeFromAula(t.aula))),
     [selectedVenues, teoricos]
   );
 
   const filteredSeminarios = useMemo(
-    () => seminarios.filter(s => selectedVenues.has(venueCodeFromAula(s.aula))),
+    () => seminarios.filter((s) => selectedVenues.has(venueCodeFromAula(s.aula))),
     [selectedVenues, seminarios]
   );
 
   const selectedComisiones = useMemo(() => {
-    const visibleIds = new Set(filteredComisiones.map(c => c.id));
-    return filteredComisiones.filter(c => selectedCommissionIds.has(c.id) && visibleIds.has(c.id));
+    const visibleIds = new Set(filteredComisiones.map((c) => c.id));
+    return filteredComisiones.filter(
+      (c) => selectedCommissionIds.has(c.id) && visibleIds.has(c.id)
+    );
   }, [filteredComisiones, selectedCommissionIds]);
 
   const searchedComisiones = useMemo(
     () =>
-      [...filteredComisiones.filter(c => matchesCommissionQuery(c, commissionQuery))].sort(
+      [...filteredComisiones.filter((c) => matchesCommissionQuery(c, commissionQuery))].sort(
         (a, b) => Number.parseInt(a.id, 10) - Number.parseInt(b.id, 10)
       ),
     [filteredComisiones, commissionQuery]
