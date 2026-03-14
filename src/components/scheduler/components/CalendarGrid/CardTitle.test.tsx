@@ -30,4 +30,22 @@ describe('CardTitle', () => {
     expect(title).toHaveClass('whitespace-normal', 'opacity-0');
     expect(title.style.webkitLineClamp).toBe('2');
   });
+
+  it('renderiza segunda línea para cupo cuando se informa subtitle', () => {
+    render(
+      <CardTitle
+        code="21"
+        label="Cazes"
+        type="prac"
+        canWrap={false}
+        subtitle="9 vacantes · cupo bajo"
+        subtitleTone="warning"
+        hidden={false}
+      />
+    );
+
+    expect(screen.getByText('21')).toBeInTheDocument();
+    expect(screen.getByText(/Cazes/)).toBeInTheDocument();
+    expect(screen.getByText('9 vacantes · cupo bajo')).toHaveClass('text-amber-100');
+  });
 });

@@ -1,5 +1,10 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
+import {
+  type VacancyStatus,
+  vacancyStatusFromVacancies,
+  vacancySummaryLine,
+} from '@/domain/vacancies';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import { displaySubjectLabel } from '../../scheduler.utils';
 import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
@@ -47,6 +52,13 @@ const externalSubjectParts = (subjectLabel: string) => {
     subject: matched[1]?.replace(/^\d+\s*·\s*/, '').trim() || normalized,
     catedra: matched[2]?.trim() || '',
   };
+};
+
+const vacancyToneByStatus: Record<VacancyStatus, 'neutral' | 'critical' | 'warning' | 'good'> = {
+  sin_datos: 'neutral',
+  sin_cupo: 'critical',
+  cupo_bajo: 'warning',
+  cupo_disponible: 'good',
 };
 
 export const CalendarEventCard = ({
@@ -124,6 +136,14 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
+  const vacancySubtitle =
+    !event.isExternal && event.tipo === 'prac'
+      ? vacancySummaryLine(event.vacantes ?? null)
+      : undefined;
+  const vacancySubtitleTone =
+    !event.isExternal && event.tipo === 'prac'
+      ? vacancyToneByStatus[vacancyStatusFromVacancies(event.vacantes ?? null)]
+      : undefined;
 
   return (
     <div
@@ -131,11 +151,11 @@ export const CalendarEventCard = ({
       key={slotKey}
       role="button"
       tabIndex={0}
-      onMouseEnter={eventMouse => {
+      onMouseEnter={(eventMouse) => {
         onCardMouseEnter(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalEnter();
       }}
-      onMouseLeave={eventMouse => {
+      onMouseLeave={(eventMouse) => {
         onCardMouseLeave(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalLeave();
       }}
@@ -153,9 +173,15 @@ export const CalendarEventCard = ({
         isActive && 'ring-2 ring-[#fbe7f3] dark:ring-zinc-200/70'
       )}
       style={layoutStyle}
-      data-tour-card={!event.isExternal && event.tipo === 'prac' ? 'internal-commission' : 'event-card'}
+      data-tour-card={
+        !event.isExternal && event.tipo === 'prac' ? 'internal-commission' : 'event-card'
+      }
       data-tour-card-kind={
-        event.isExternal ? 'external' : event.tipo === 'prac' ? 'internal-commission' : 'internal-linked'
+        event.isExternal
+          ? 'external'
+          : event.tipo === 'prac'
+            ? 'internal-commission'
+            : 'internal-linked'
       }
       data-tour-internal={!event.isExternal ? 'true' : 'false'}
       data-testid="calendar-event-card"
@@ -224,9 +250,7 @@ export const CalendarEventCard = ({
               {externalParts.subject}
             </span>
             {externalParts.catedra ? (
-              <span
-                className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]"
-              >
+              <span className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]">
                 {externalParts.catedra}
               </span>
             ) : null}
@@ -272,8 +296,10 @@ export const CalendarEventCard = ({
             code={titleParts.code}
             label={titleParts.label}
             type={event.tipo}
-            canWrap={canWrapLabel}
-            wrapStyle={titleWrapStyle}
+            canWrap={vacancySubtitle ? false : canWrapLabel}
+            wrapStyle={vacancySubtitle ? undefined : titleWrapStyle}
+            subtitle={vacancySubtitle}
+            subtitleTone={vacancySubtitleTone}
             hidden={hideText}
           />
           <CardTime
