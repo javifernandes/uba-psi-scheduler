@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Torres, Gustavo Fernando",
-      "aula": "HY-010",
-      "observ": ""
+      "aula": "HY-010"
     },
     {
       "id": "3",
@@ -30,8 +29,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -49,8 +47,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -68,8 +65,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -87,8 +83,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

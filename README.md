@@ -70,7 +70,7 @@ Formato de materias (schema v2):
 
 - `schemaVersion: 2`
 - `slots[]` con union tipada (`teo`, `sem`, `prac`)
-- comisiones con `vacantes`, `obligRaw` y `slotsAsociados[]`
+- comisiones con `vacantes` y `slotsAsociados[]`
 
 ## Ventanas de ejecución
 

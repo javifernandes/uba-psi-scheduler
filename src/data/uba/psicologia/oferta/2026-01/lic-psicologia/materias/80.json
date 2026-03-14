@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Iacub, Ricardo",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Machluk, Andrea Luciana",
-      "aula": "IN-106",
-      "observ": ""
+      "aula": "IN-106"
     },
     {
       "id": "II",
@@ -31,8 +29,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Mansinho, Mariana Andrea",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "5",
@@ -42,7 +39,6 @@
       "fin": "12:30",
       "profesor": "Vainscheinker, Tamara",
       "aula": "IN-411",
-      "observ": "",
       "vacantes": 2,
       "slotsAsociados": [
         {
@@ -50,8 +46,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "7",
@@ -61,7 +56,6 @@
       "fin": "12:30",
       "profesor": "Seufer, Carla Andrea",
       "aula": "IN-325",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -69,8 +63,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "10",
@@ -80,7 +73,6 @@
       "fin": "17:45",
       "profesor": "Andreachi, Carolina Belén",
       "aula": "IN-313",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -88,8 +80,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "12",
@@ -99,7 +90,6 @@
       "fin": "17:45",
       "profesor": "Cavallero, Nicolas",
       "aula": "IN-412",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -107,8 +97,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "14",
@@ -118,7 +107,6 @@
       "fin": "17:45",
       "profesor": "Maldonado, Ivana",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -126,8 +114,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -137,7 +124,6 @@
       "fin": "17:45",
       "profesor": "Seufer, Carla Andrea",
       "aula": "IN-110",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -145,8 +131,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "11",
@@ -156,7 +141,6 @@
       "fin": "21:15",
       "profesor": "Cavallero, Nicolas",
       "aula": "IN-303",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -164,8 +148,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "13",
@@ -175,7 +158,6 @@
       "fin": "21:15",
       "profesor": "Maldonado, Ivana",
       "aula": "IN-217",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -183,8 +165,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "9",
@@ -194,7 +175,6 @@
       "fin": "21:15",
       "profesor": "Andreachi, Carolina Belén",
       "aula": "IN-420",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -202,8 +182,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -213,7 +192,6 @@
       "fin": "09:00",
       "profesor": "Winzeler, Martin",
       "aula": "IN-108",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -221,8 +199,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -232,7 +209,6 @@
       "fin": "09:00",
       "profesor": "Paz, Mariana",
       "aula": "IN-110",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -240,8 +216,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -251,7 +226,6 @@
       "fin": "12:30",
       "profesor": "Vainscheinker, Tamara",
       "aula": "IN-411",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -259,8 +233,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "6",
@@ -270,7 +243,6 @@
       "fin": "12:30",
       "profesor": "Paz, Mariana",
       "aula": "IN-421",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -278,8 +250,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "8",
@@ -289,7 +260,6 @@
       "fin": "12:30",
       "profesor": "Winzeler, Martin",
       "aula": "IN-443",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -297,8 +267,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

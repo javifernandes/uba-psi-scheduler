@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rodriguez, Jose Antonio",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "2",
@@ -22,7 +21,6 @@
       "fin": "16:15",
       "profesor": "González Vieyto, Sebastián Ric",
       "aula": "IN-213",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -41,7 +38,6 @@
       "fin": "17:45",
       "profesor": "Yañez, Carolina",
       "aula": "IN-213",
-      "observ": "",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

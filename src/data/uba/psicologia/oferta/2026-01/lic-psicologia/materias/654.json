@@ -11,8 +11,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lubian, Elena Carmen",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Laznik, David Alberto",
-      "aula": "IN-520",
-      "observ": ""
+      "aula": "IN-520"
     },
     {
       "id": "5",
@@ -32,7 +30,6 @@
       "fin": "09:00",
       "profesor": "Bonet, Ramiro",
       "aula": "IN-434",
-      "observ": "",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -51,7 +47,6 @@
       "fin": "12:30",
       "profesor": "Grosso, Maria Veronica",
       "aula": "IN-434",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -59,8 +54,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -70,7 +64,6 @@
       "fin": "17:45",
       "profesor": "Patri, Liliana Beatriz",
       "aula": "IN-209",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -78,8 +71,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "6",
@@ -89,7 +81,6 @@
       "fin": "17:45",
       "profesor": "Topper, Florencia",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 26,
       "slotsAsociados": [
         {
@@ -97,8 +88,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -108,7 +98,6 @@
       "fin": "21:15",
       "profesor": "Szerman, Maia",
       "aula": "IN-430",
-      "observ": "",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -116,8 +105,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -127,7 +115,6 @@
       "fin": "21:15",
       "profesor": "Urbaj, Eduardo Daniel",
       "aula": "IN-122",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -135,8 +122,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     }
   ]
 }

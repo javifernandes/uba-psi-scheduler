@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Verna, Maria Fernanda",
-      "aula": "SI-018",
-      "observ": ""
+      "aula": "SI-018"
     },
     {
       "id": "3",
@@ -30,8 +29,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -49,8 +47,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -68,8 +65,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

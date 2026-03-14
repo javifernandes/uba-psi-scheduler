@@ -11,8 +11,7 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Biegun, Karin Sandra",
-      "aula": "AV-030",
-      "observ": ""
+      "aula": "AV-030"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "19:00",
       "profesor": "Berenstecher, Mariana",
       "aula": "AV-030",
-      "observ": "",
       "vacantes": 58,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Justel, Nadia Romina",
-      "aula": "AV-041",
-      "observ": ""
+      "aula": "AV-041"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "21:00",
       "profesor": "Lopez, Morena",
       "aula": "AV-041",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

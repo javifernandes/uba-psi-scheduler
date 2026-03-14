@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Sanchez, Maria Veronica",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "III",
@@ -21,8 +20,7 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Quiroga, Oscar Alberto",
-      "aula": "HY-023",
-      "observ": ""
+      "aula": "HY-023"
     },
     {
       "id": "I",
@@ -31,8 +29,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "OLASO, Juan De",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "A",
@@ -72,7 +69,6 @@
       "fin": "14:15",
       "profesor": "Sielecki, Carolina Laura",
       "aula": "HY-030",
-      "observ": "",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -80,8 +76,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -91,7 +86,6 @@
       "fin": "10:45",
       "profesor": "Kahanoff, Natacha",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -99,8 +93,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "1",
@@ -110,7 +103,6 @@
       "fin": "14:15",
       "profesor": "Gelly Cantilo, Luis",
       "aula": "HY-012",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -118,8 +110,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "3",
@@ -129,7 +120,6 @@
       "fin": "19:30",
       "profesor": "Belaustegui Goitia, Victoria C",
       "aula": "HY-027",
-      "observ": "",
       "vacantes": 5,
       "slotsAsociados": [
         {
@@ -137,8 +127,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -148,7 +137,6 @@
       "fin": "19:30",
       "profesor": "Nogueira, Vanesa Daniela",
       "aula": "HY-031",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -156,8 +144,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "4",
@@ -167,7 +154,6 @@
       "fin": "23:00",
       "profesor": "Fuentes Esparza, Mariela",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -175,8 +161,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

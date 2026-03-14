@@ -11,8 +11,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Garcia, Ariana Gabriela",
-      "aula": "IN-510",
-      "observ": ""
+      "aula": "IN-510"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "14:15",
       "profesor": "Presman, Tatiana Melina",
       "aula": "IN-431",
-      "observ": "",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "17:45",
       "profesor": "Piccone, Anabela",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -60,7 +55,6 @@
       "fin": "17:45",
       "profesor": "Novarese, Marta Ana",
       "aula": "IN-321",
-      "observ": "",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -68,8 +62,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -79,7 +72,6 @@
       "fin": "19:30",
       "profesor": "Boustoure, Maria Alejandra",
       "aula": "IN-214",
-      "observ": "",
       "vacantes": 16,
       "slotsAsociados": [
         {
@@ -87,8 +79,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

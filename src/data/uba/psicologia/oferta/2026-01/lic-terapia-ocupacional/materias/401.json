@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Roldan, Ana Lis",
-      "aula": "SI-029",
-      "observ": ""
+      "aula": "SI-029"
     },
     {
       "id": "2",
@@ -22,7 +21,6 @@
       "fin": "19:00",
       "profesor": "Pérez, Marcia Carolina",
       "aula": "SI-021",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -41,7 +38,6 @@
       "fin": "21:00",
       "profesor": "Pérez, Marcia Carolina",
       "aula": "SI-021",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Vanotti, Sandra Ines",
-      "aula": "HY-010",
-      "observ": ""
+      "aula": "HY-010"
     },
     {
       "id": "1",
@@ -30,8 +29,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -49,8 +47,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -68,8 +65,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

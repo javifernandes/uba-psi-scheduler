@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Etcheverry, Maria Laura",
-      "aula": "SI-020",
-      "observ": ""
+      "aula": "SI-020"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "23:00",
       "profesor": "Ibañez, Fabiana",
       "aula": "SI-027",
-      "observ": "",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "23:00",
       "profesor": "Ibañez, Fabiana",
       "aula": "SI-027",
-      "observ": "",
       "vacantes": 40,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

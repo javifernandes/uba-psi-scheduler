@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Gerskovich, Nestor",
-      "aula": "SI-016",
-      "observ": ""
+      "aula": "SI-016"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "19:00",
       "profesor": "Romualdo, Wendy",
       "aula": "SI-017",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:00",
       "profesor": "Romualdo, Wendy",
       "aula": "SI-017",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

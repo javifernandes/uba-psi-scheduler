@@ -11,8 +11,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Abinzano, Rodrigo",
-      "aula": "IN-106",
-      "observ": ""
+      "aula": "IN-106"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "19:30",
       "profesor": "Amor, Mauro",
       "aula": "IN-114",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "23:00",
       "profesor": "Amor, Mauro",
       "aula": "IN-126",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

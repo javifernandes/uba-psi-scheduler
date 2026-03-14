@@ -11,8 +11,7 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Llull Casado, Veronica Gabriel",
-      "aula": "HY-005",
-      "observ": ""
+      "aula": "HY-005"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "16:00",
       "profesor": "Yokobori, Naomi Celia",
       "aula": "HY-031",
-      "observ": "",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "19:30",
       "profesor": "Milan, Sandra",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

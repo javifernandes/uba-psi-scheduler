@@ -20,13 +20,11 @@ const searchedComisiones: Comision[] = [
     inicio: '09:00',
     fin: '10:30',
     profesor: 'Comision Uno',
-    obligRaw: 'I - A',
     slotsAsociados: [
       { slotId: 'A', rol: 'sem', condicion: 'obligatorio' },
       { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
     ],
     aula: 'IN-101',
-    observ: '',
     vacantes: 12,
   },
 ];

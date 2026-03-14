@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "18:00",
       "profesor": "Saavedra, Maria Eugenia",
-      "aula": "AV-041",
-      "observ": ""
+      "aula": "AV-041"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "18:00",
       "fin": "19:00",
       "profesor": "Ojeda, Ramon Antonio",
-      "aula": "AV-041",
-      "observ": ""
+      "aula": "AV-041"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "21:00",
       "profesor": "Suarez, Silvana Cecilia",
       "aula": "AV-041",
-      "observ": "",
       "vacantes": 67,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

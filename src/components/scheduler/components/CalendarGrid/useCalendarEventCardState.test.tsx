@@ -12,8 +12,6 @@ const activeCommission: Comision = {
   fin: '16:00',
   profesor: 'Cazes',
   aula: 'IN-444',
-  observ: '',
-  obligRaw: 'II - C',
   slotsAsociados: [
     { slotId: 'C', rol: 'sem', condicion: 'obligatorio' },
     { slotId: 'II', rol: 'teo', condicion: 'obligatorio' },

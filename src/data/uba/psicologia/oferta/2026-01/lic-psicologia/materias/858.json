@@ -11,8 +11,7 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Marqués, Roxana Laura",
-      "aula": "HY-012",
-      "observ": ""
+      "aula": "HY-012"
     },
     {
       "id": "1",
@@ -30,8 +29,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -49,8 +47,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

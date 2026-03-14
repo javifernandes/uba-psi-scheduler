@@ -20,7 +20,7 @@ type BaseSlot = {
   fin: string;
   profesor: string;
   aula: string;
-  observ: string;
+  observ?: string;
 };
 
 export type Teorico = Omit<BaseSlot, 'tipo'> & { tipo: 'teo' };
@@ -29,7 +29,6 @@ export type Seminario = Omit<BaseSlot, 'tipo'> & { tipo: 'sem' };
 export type Comision = Omit<BaseSlot, 'tipo'> & {
   tipo: 'prac';
   vacantes: number | null;
-  obligRaw?: string;
   slotsAsociados: SlotAsociado[];
 };
 

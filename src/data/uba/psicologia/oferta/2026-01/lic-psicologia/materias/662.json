@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Santarsiero, Maria Marta",
-      "aula": "IN-302",
-      "observ": ""
+      "aula": "IN-302"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "17:45",
       "profesor": "Oliveto, Maria Victoria",
       "aula": "IN-430",
-      "observ": "",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:15",
       "profesor": "Oliveto, Maria Victoria",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

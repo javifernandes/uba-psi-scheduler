@@ -11,8 +11,7 @@
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Peñaloza Egas, Nancy Mery",
-      "aula": "SI-027",
-      "observ": ""
+      "aula": "SI-027"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "19:00",
       "profesor": "Garfinkel, Mariana",
       "aula": "SI-027",
-      "observ": "",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "21:00",
       "profesor": "Garfinkel, Mariana",
       "aula": "SI-027",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

@@ -11,8 +11,7 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Rolon, Cintia Gisella",
-      "aula": "IN-101",
-      "observ": ""
+      "aula": "IN-101"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Faggiano, Marina Cristina",
-      "aula": "HY-014",
-      "observ": ""
+      "aula": "HY-014"
     },
     {
       "id": "IV",
@@ -41,8 +39,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Cossi, Eduardo Fabián",
-      "aula": "IN-201",
-      "observ": ""
+      "aula": "IN-201"
     },
     {
       "id": "1",
@@ -52,7 +49,6 @@
       "fin": "10:45",
       "profesor": "Andrada, Leandro",
       "aula": "IN-321",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -60,8 +56,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "11",
@@ -71,7 +66,6 @@
       "fin": "10:45",
       "profesor": "Moffat, Malena",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -79,8 +73,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "19",
@@ -90,7 +83,6 @@
       "fin": "10:45",
       "profesor": "Tejo Arroyo, Mariano",
       "aula": "HY-027",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -98,8 +90,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "20",
@@ -109,7 +100,6 @@
       "fin": "10:45",
       "profesor": "Samara, Santiago",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -117,8 +107,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "25",
@@ -128,7 +117,6 @@
       "fin": "10:45",
       "profesor": "Maugis, Camila",
       "aula": "IN-213",
-      "observ": "",
       "vacantes": 7,
       "slotsAsociados": [
         {
@@ -136,8 +124,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "18",
@@ -147,7 +134,6 @@
       "fin": "21:15",
       "profesor": "Villafane, Adrian Ricardo",
       "aula": "IN-411",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -155,8 +141,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "2",
@@ -166,7 +151,6 @@
       "fin": "21:15",
       "profesor": "Del Brutto, Luciana",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 14,
       "slotsAsociados": [
         {
@@ -174,8 +158,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "24",
@@ -185,7 +168,6 @@
       "fin": "21:15",
       "profesor": "Recchia, Veronica Analia",
       "aula": "IN-213",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -193,8 +175,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "14",
@@ -204,7 +185,6 @@
       "fin": "23:00",
       "profesor": "Cabral, Maria",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -212,8 +192,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "15",
@@ -223,7 +202,6 @@
       "fin": "10:45",
       "profesor": "Becerra Odoguardi, Indira Clar",
       "aula": "IN-209",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -231,8 +209,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "17",
@@ -242,7 +219,6 @@
       "fin": "14:15",
       "profesor": "Berenstein, Brenda",
       "aula": "IN-304",
-      "observ": "",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -250,8 +226,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "3",
@@ -261,7 +236,6 @@
       "fin": "16:00",
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "IN-212",
-      "observ": "",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -269,8 +243,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "4",
@@ -280,7 +253,6 @@
       "fin": "17:45",
       "profesor": "Molinero Davila, Nahuel",
       "aula": "IN-430",
-      "observ": "",
       "vacantes": 1,
       "slotsAsociados": [
         {
@@ -288,8 +260,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "5",
@@ -299,7 +270,6 @@
       "fin": "23:00",
       "profesor": "Fiumara, Mariano",
       "aula": "HY-032",
-      "observ": "",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -307,8 +277,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "6",
@@ -318,7 +287,6 @@
       "fin": "10:45",
       "profesor": "Becerra Odoguardi, Indira Clar",
       "aula": "HY-011",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -326,8 +294,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "50",
@@ -345,8 +312,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "52",
@@ -364,8 +330,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "55",
@@ -383,8 +348,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "7",
@@ -394,7 +358,6 @@
       "fin": "12:30",
       "profesor": "Galan, Ignacio",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -402,8 +365,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "13",
@@ -413,7 +375,6 @@
       "fin": "17:45",
       "profesor": "Cardoso Marino, Yohanna",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 16,
       "slotsAsociados": [
         {
@@ -421,8 +382,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "51",
@@ -440,8 +400,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "53",
@@ -459,8 +418,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "54",
@@ -478,8 +436,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "8",
@@ -489,7 +446,6 @@
       "fin": "19:30",
       "profesor": "Hoffman, Griselda",
       "aula": "IN-114",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -497,8 +453,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "9",
@@ -508,7 +463,6 @@
       "fin": "10:45",
       "profesor": "Neiman, Luciano",
       "aula": "HY-030",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -516,8 +470,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "16",
@@ -527,7 +480,6 @@
       "fin": "17:45",
       "profesor": "Moffat, Malena",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 3,
       "slotsAsociados": [
         {
@@ -535,8 +487,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "21",
@@ -546,7 +497,6 @@
       "fin": "21:15",
       "profesor": "Masimelli, Roman",
       "aula": "HY-032",
-      "observ": "",
       "vacantes": 15,
       "slotsAsociados": [
         {
@@ -554,8 +504,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "26",
@@ -565,7 +514,6 @@
       "fin": "21:15",
       "profesor": "Ramirez, Ivana Gabriela",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -573,8 +521,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "23",
@@ -584,7 +531,6 @@
       "fin": "10:45",
       "profesor": "Boczkowski, Ionatan",
       "aula": "HY-031",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -592,8 +538,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "10",
@@ -603,7 +548,6 @@
       "fin": "12:30",
       "profesor": "Florit, Dionisia Maria",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 13,
       "slotsAsociados": [
         {
@@ -611,8 +555,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "12",
@@ -622,7 +565,6 @@
       "fin": "12:30",
       "profesor": "Alonso, Maria Florencia",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -630,8 +572,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "22",
@@ -641,7 +582,6 @@
       "fin": "12:30",
       "profesor": "Madariaga, Cecilia",
       "aula": "IN-215",
-      "observ": "",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -649,8 +589,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     }
   ]
 }

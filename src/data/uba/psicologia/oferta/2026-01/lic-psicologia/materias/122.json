@@ -11,8 +11,7 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Smith, Maria Celeste",
-      "aula": "IN-114",
-      "observ": ""
+      "aula": "IN-114"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muñoz, Pablo Diego",
-      "aula": "IN-103",
-      "observ": ""
+      "aula": "IN-103"
     },
     {
       "id": "III",
@@ -31,8 +29,7 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Spinelli, Fabian Alberto",
-      "aula": "IN-520",
-      "observ": ""
+      "aula": "IN-520"
     },
     {
       "id": "B",
@@ -62,7 +59,6 @@
       "fin": "10:45",
       "profesor": "Cosentino, Maximiliano Ariel",
       "aula": "IN-214",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -70,8 +66,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -81,7 +76,6 @@
       "fin": "10:45",
       "profesor": "Misrahi, Claris Miriam",
       "aula": "IN-126",
-      "observ": "",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -89,8 +83,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "7",
@@ -100,7 +93,6 @@
       "fin": "14:15",
       "profesor": "Amendolia, Florencia",
       "aula": "IN-126",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -108,8 +100,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "10",
@@ -119,7 +110,6 @@
       "fin": "21:15",
       "profesor": "Schenone, Sofia",
       "aula": "IN-313",
-      "observ": "",
       "vacantes": 35,
       "slotsAsociados": [
         {
@@ -127,8 +117,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "8",
@@ -138,7 +127,6 @@
       "fin": "21:15",
       "profesor": "Bonoris, Bruno",
       "aula": "IN-125",
-      "observ": "",
       "vacantes": 27,
       "slotsAsociados": [
         {
@@ -146,8 +134,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -157,7 +144,6 @@
       "fin": "19:30",
       "profesor": "Ibelli, Marianella",
       "aula": "IN-122",
-      "observ": "",
       "vacantes": 29,
       "slotsAsociados": [
         {
@@ -165,8 +151,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "5",
@@ -176,7 +161,6 @@
       "fin": "19:30",
       "profesor": "Igartua, Lucas",
       "aula": "IN-109",
-      "observ": "",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -184,8 +168,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "6",
@@ -195,7 +178,6 @@
       "fin": "14:15",
       "profesor": "Miari, Antonella Silvana",
       "aula": "IN-110",
-      "observ": "",
       "vacantes": 26,
       "slotsAsociados": [
         {
@@ -203,8 +185,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "9",
@@ -214,7 +195,6 @@
       "fin": "14:15",
       "profesor": "Schenone, Sofia",
       "aula": "IN-109",
-      "observ": "",
       "vacantes": 30,
       "slotsAsociados": [
         {
@@ -222,8 +202,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "2",
@@ -233,7 +212,6 @@
       "fin": "17:45",
       "profesor": "Rodríguez, Lucas",
       "aula": "IN-124",
-      "observ": "",
       "vacantes": 16,
       "slotsAsociados": [
         {
@@ -241,8 +219,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     }
   ]
 }

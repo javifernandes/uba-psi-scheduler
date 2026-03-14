@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Scaffa, Miriam",
-      "aula": "SI-004",
-      "observ": ""
+      "aula": "SI-004"
     },
     {
       "id": "I",
@@ -21,8 +20,7 @@
       "inicio": "21:00",
       "fin": "23:00",
       "profesor": "Scaffa, Miriam",
-      "aula": "SI-004",
-      "observ": ""
+      "aula": "SI-004"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "22:00",
       "profesor": "Mozzone, María Carolina",
       "aula": "SI-TEC",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -40,8 +37,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

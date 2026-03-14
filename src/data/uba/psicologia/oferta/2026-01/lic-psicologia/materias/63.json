@@ -11,8 +11,7 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Farruggio, Liliana Rosalia",
-      "aula": "HY-014",
-      "observ": ""
+      "aula": "HY-014"
     },
     {
       "id": "II",
@@ -21,8 +20,7 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gobet, Laura Silvina",
-      "aula": "HY-029",
-      "observ": ""
+      "aula": "HY-029"
     },
     {
       "id": "III",
@@ -31,8 +29,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Calloway, Cecilia Eugenia",
-      "aula": "HY-022",
-      "observ": ""
+      "aula": "HY-022"
     },
     {
       "id": "13",
@@ -42,7 +39,6 @@
       "fin": "14:15",
       "profesor": "Bethencourt, Natalia Verónica",
       "aula": "HY-025",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": [
         {
@@ -50,8 +46,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "9",
@@ -61,7 +56,6 @@
       "fin": "14:15",
       "profesor": "Ortiz Molinuevo, Santiago",
       "aula": "HY-013",
-      "observ": "",
       "vacantes": 8,
       "slotsAsociados": [
         {
@@ -69,8 +63,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -80,7 +73,6 @@
       "fin": "16:00",
       "profesor": "Davis Edmonson, Irene Karina",
       "aula": "HY-032",
-      "observ": "",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -88,8 +80,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "10",
@@ -99,7 +90,6 @@
       "fin": "16:00",
       "profesor": "Idigoras, Julio Nicolas",
       "aula": "IN-124",
-      "observ": "",
       "vacantes": 10,
       "slotsAsociados": [
         {
@@ -107,8 +97,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "17",
@@ -118,7 +107,6 @@
       "fin": "12:30",
       "profesor": "Yablonovsky, Talia",
       "aula": "HY-004",
-      "observ": "",
       "vacantes": 21,
       "slotsAsociados": [
         {
@@ -126,8 +114,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "8",
@@ -137,7 +124,6 @@
       "fin": "17:45",
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
-      "observ": "",
       "vacantes": 11,
       "slotsAsociados": [
         {
@@ -145,8 +131,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -156,7 +141,6 @@
       "fin": "21:15",
       "profesor": "Mazzolini, Carlos Norberto",
       "aula": "IN-323",
-      "observ": "",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -164,8 +148,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "3",
@@ -175,7 +158,6 @@
       "fin": "12:30",
       "profesor": "Lopez, Maria Elisa",
       "aula": "HY-023",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -183,8 +165,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "12",
@@ -194,7 +175,6 @@
       "fin": "14:15",
       "profesor": "Mpacas, Diana",
       "aula": "HY-027",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -202,8 +182,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "11",
@@ -213,7 +192,6 @@
       "fin": "21:15",
       "profesor": "Vilares, Tomas",
       "aula": "HY-015",
-      "observ": "",
       "vacantes": 12,
       "slotsAsociados": [
         {
@@ -221,8 +199,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "4",
@@ -232,7 +209,6 @@
       "fin": "12:30",
       "profesor": "Gimenez, Maria Fernanda",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -240,8 +216,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "5",
@@ -251,7 +226,6 @@
       "fin": "21:15",
       "profesor": "Colangelo, Juliana",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 4,
       "slotsAsociados": [
         {
@@ -259,8 +233,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "6",
@@ -270,7 +243,6 @@
       "fin": "21:15",
       "profesor": "Collado, Candido Luis",
       "aula": "IN-303",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -278,8 +250,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "15",
@@ -289,7 +260,6 @@
       "fin": "12:30",
       "profesor": "Bokser, Julian Luciano",
       "aula": "HY-024",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -297,8 +267,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "7",
@@ -308,7 +277,6 @@
       "fin": "12:30",
       "profesor": "Corino, Carolina Alicia",
       "aula": "HY-010",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -316,8 +284,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "14",
@@ -327,7 +294,6 @@
       "fin": "21:15",
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -335,8 +301,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "16",
@@ -346,7 +311,6 @@
       "fin": "12:30",
       "profesor": "Churba, Daniel Alberto",
       "aula": "HY-030",
-      "observ": "",
       "vacantes": 9,
       "slotsAsociados": [
         {
@@ -354,8 +318,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     }
   ]
 }

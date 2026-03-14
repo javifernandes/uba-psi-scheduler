@@ -11,8 +11,7 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Sacheri, Soledad Maria Constan",
-      "aula": "AV-029",
-      "observ": ""
+      "aula": "AV-029"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "17:00",
       "profesor": "Bruno, Ailen",
       "aula": "AV-029",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "19:00",
       "profesor": "Bruno, Ailen",
       "aula": "AV-029",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

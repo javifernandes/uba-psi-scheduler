@@ -11,8 +11,7 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Miceli, Claudio Marcelo",
-      "aula": "AV-026",
-      "observ": ""
+      "aula": "AV-026"
     },
     {
       "id": "A",
@@ -21,8 +20,7 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Bruno, Dario Eduardo",
-      "aula": "AV-026",
-      "observ": ""
+      "aula": "AV-026"
     },
     {
       "id": "1",
@@ -32,7 +30,6 @@
       "fin": "23:00",
       "profesor": "Trotta, Fernando Ezequiel",
       "aula": "AV-026",
-      "observ": "",
       "vacantes": 62,
       "slotsAsociados": [
         {
@@ -45,8 +42,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I - A"
+      ]
     }
   ]
 }

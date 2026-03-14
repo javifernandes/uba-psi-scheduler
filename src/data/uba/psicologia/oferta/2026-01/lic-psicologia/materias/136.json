@@ -11,8 +11,7 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Febbraio, Andres",
-      "aula": "IN-510",
-      "observ": ""
+      "aula": "IN-510"
     },
     {
       "id": "3",
@@ -22,7 +21,6 @@
       "fin": "17:45",
       "profesor": "Edgar, Lucas Martin",
       "aula": "IN-452",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "4",
@@ -41,7 +38,6 @@
       "fin": "17:45",
       "profesor": "Donozo, Sabrina",
       "aula": "IN-211",
-      "observ": "",
       "vacantes": 28,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "1",
@@ -60,7 +55,6 @@
       "fin": "21:15",
       "profesor": "Edgar, Lucas Martin",
       "aula": "IN-108",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -68,8 +62,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -79,7 +72,6 @@
       "fin": "21:15",
       "profesor": "Donozo, Sabrina",
       "aula": "IN-211",
-      "observ": "",
       "vacantes": 32,
       "slotsAsociados": [
         {
@@ -87,8 +79,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }

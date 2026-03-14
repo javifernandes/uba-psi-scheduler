@@ -11,8 +11,7 @@
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
-      "aula": "",
-      "observ": ""
+      "aula": ""
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "00:00",
       "profesor": "",
       "aula": "",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": []
     },
@@ -34,7 +32,6 @@
       "fin": "00:00",
       "profesor": "",
       "aula": "",
-      "observ": "",
       "vacantes": 0,
       "slotsAsociados": []
     }

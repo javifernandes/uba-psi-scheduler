@@ -52,7 +52,6 @@
       "fin": "12:30",
       "profesor": "Sanchez, Patricia Ines",
       "aula": "IN-441",
-      "observ": "",
       "vacantes": 17,
       "slotsAsociados": [
         {
@@ -60,8 +59,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "15",
@@ -71,7 +69,6 @@
       "fin": "12:30",
       "profesor": "Cimas, Magali",
       "aula": "IN-124",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -79,8 +76,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "16",
@@ -90,7 +86,6 @@
       "fin": "12:30",
       "profesor": "Boccacci, Matias",
       "aula": "IN-430",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -98,8 +93,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "14",
@@ -109,7 +103,6 @@
       "fin": "14:15",
       "profesor": "Cimas, Magali",
       "aula": "IN-302",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -117,8 +110,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "12",
@@ -128,7 +120,6 @@
       "fin": "14:15",
       "profesor": "Barrionuevo Cibeira, Fernando",
       "aula": "IN-302",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -136,8 +127,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "13",
@@ -147,7 +137,6 @@
       "fin": "16:00",
       "profesor": "Botta, Nadia",
       "aula": "IN-209",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -155,8 +144,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "2",
@@ -166,7 +154,6 @@
       "fin": "16:00",
       "profesor": "Barrionuevo Cibeira, Fernando",
       "aula": "IN-123",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -174,8 +161,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "3",
@@ -185,7 +171,6 @@
       "fin": "16:00",
       "profesor": "Berjolis, Barbara",
       "aula": "IN-412",
-      "observ": "",
       "vacantes": 20,
       "slotsAsociados": [
         {
@@ -193,8 +178,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "9",
@@ -204,7 +188,6 @@
       "fin": "16:00",
       "profesor": "Sanchez, Patricia Ines",
       "aula": "IN-441",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -212,8 +195,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "11",
@@ -223,7 +205,6 @@
       "fin": "19:30",
       "profesor": "Botta, Nadia",
       "aula": "IN-311",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -231,8 +212,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "II"
+      ]
     },
     {
       "id": "8",
@@ -242,7 +222,6 @@
       "fin": "10:45",
       "profesor": "Maza, Jésica",
       "aula": "IN-434",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -250,8 +229,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "6",
@@ -261,7 +239,6 @@
       "fin": "12:30",
       "profesor": "Maza, Jésica",
       "aula": "IN-109",
-      "observ": "",
       "vacantes": 24,
       "slotsAsociados": [
         {
@@ -269,8 +246,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "50",
@@ -288,8 +264,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "51",
@@ -307,8 +282,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "IV"
+      ]
     },
     {
       "id": "10",
@@ -318,7 +292,6 @@
       "fin": "19:30",
       "profesor": "Berjolis, Barbara",
       "aula": "IN-211",
-      "observ": "",
       "vacantes": 22,
       "slotsAsociados": [
         {
@@ -326,8 +299,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "4",
@@ -337,7 +309,6 @@
       "fin": "19:30",
       "profesor": "Nigro, Facundo",
       "aula": "IN-126",
-      "observ": "",
       "vacantes": 18,
       "slotsAsociados": [
         {
@@ -345,8 +316,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "7",
@@ -356,7 +326,6 @@
       "fin": "23:00",
       "profesor": "Nigro, Facundo",
       "aula": "IN-107",
-      "observ": "",
       "vacantes": 23,
       "slotsAsociados": [
         {
@@ -364,8 +333,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     },
     {
       "id": "5",
@@ -375,7 +343,6 @@
       "fin": "12:30",
       "profesor": "Boccacci, Matias",
       "aula": "IN-122",
-      "observ": "",
       "vacantes": 25,
       "slotsAsociados": [
         {
@@ -383,8 +350,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "III"
+      ]
     }
   ]
 }

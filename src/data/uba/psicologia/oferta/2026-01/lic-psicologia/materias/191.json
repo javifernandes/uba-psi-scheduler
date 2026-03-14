@@ -11,8 +11,7 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De La Iglesia, Matilde Aida",
-      "aula": "IN-114",
-      "observ": ""
+      "aula": "IN-114"
     },
     {
       "id": "1",
@@ -22,7 +21,6 @@
       "fin": "16:00",
       "profesor": "Velazquez, Maria Eugenia",
       "aula": "IN-204",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -30,8 +28,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     },
     {
       "id": "2",
@@ -41,7 +38,6 @@
       "fin": "19:30",
       "profesor": "Velazquez, Maria Eugenia",
       "aula": "IN-214",
-      "observ": "",
       "vacantes": 19,
       "slotsAsociados": [
         {
@@ -49,8 +45,7 @@
           "rol": "teo",
           "condicion": "obligatorio"
         }
-      ],
-      "obligRaw": "I"
+      ]
     }
   ]
 }
