@@ -8,6 +8,7 @@ import {
 import {
   findPrimaryAssociatedSlotId,
   rangesOverlap,
+  slotById,
   shortTeacherName,
   splitAula,
 } from '../scheduler.utils';
@@ -71,7 +72,8 @@ export const useSchedulerConflicts = ({
           title: `${c.id} - ${shortTeacherName(c.profesor, 30)}`,
         });
         const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
-        const t = teoricoId ? subject.teoricoMap[teoricoId] : undefined;
+        const teoricoSlot = teoricoId ? slotById(subject, teoricoId) : undefined;
+        const t = teoricoSlot?.tipo === 'teo' ? teoricoSlot : undefined;
         if (t) {
           reserved.push({
             slotId: `${subject.id}|teo|${t.id}`,
@@ -87,7 +89,8 @@ export const useSchedulerConflicts = ({
           });
         }
         const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
-        const s = seminarioId ? subject.seminarioMap[seminarioId] : undefined;
+        const seminarioSlot = seminarioId ? slotById(subject, seminarioId) : undefined;
+        const s = seminarioSlot?.tipo === 'sem' ? seminarioSlot : undefined;
         if (s) {
           reserved.push({
             slotId: `${subject.id}|sem|${s.id}`,

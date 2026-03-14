@@ -56,8 +56,12 @@ export const useCalendarEventCardState = ({
   const isActive =
     isCurrentSubjectEvent &&
     ((event.tipo === 'prac' && event.linkedCommissionId === activeCommission?.id) ||
-      (event.tipo === 'teo' && event.linkedTeoricoId === activeTeoricoId) ||
-      (event.tipo === 'sem' && event.linkedSeminarioId === activeSeminarioId));
+      (event.tipo === 'teo' &&
+        event.linkedSlotRole === 'teo' &&
+        event.linkedSlotId === activeTeoricoId) ||
+      (event.tipo === 'sem' &&
+        event.linkedSlotRole === 'sem' &&
+        event.linkedSlotId === activeSeminarioId));
   const isEnrolledCurrent =
     event.sourceSubjectId === selectedSubjectId &&
     !!enrolledCurrentCommissionId &&

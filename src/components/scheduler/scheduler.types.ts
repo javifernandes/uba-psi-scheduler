@@ -44,8 +44,8 @@ export type CalendarEvent = {
   title: string;
   linkedCommissionId?: string;
   linkedCommissionIds?: string[];
-  linkedTeoricoId?: string;
-  linkedSeminarioId?: string;
+  linkedSlotId?: string;
+  linkedSlotRole?: SlotAssociationRole;
   sourceSubjectId: string;
   sourceSubjectLabel: string;
   isExternal?: boolean;
@@ -64,11 +64,7 @@ export type ParsedSubject = {
   label: string;
   header: string;
   slots: SubjectSlot[];
-  teoricos: Teorico[];
-  seminarios: Seminario[];
   comisiones: Comision[];
-  teoricoMap: Record<string, Teorico>;
-  seminarioMap: Record<string, Seminario>;
   slotMap: Record<string, SubjectSlot>;
 };
 

@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
-import type { CalendarEvent, ParsedSubject } from '../scheduler.types';
+import type { CalendarEvent, ParsedSubject, Seminario, Teorico } from '../scheduler.types';
 import {
   buildLinkedCommissionIdsMap,
   findPrimaryAssociatedSlotId,
+  slotById,
   shortTeacherName,
   slotKeyForEvent,
 } from '../scheduler.utils';
@@ -11,8 +12,8 @@ type UseSchedulerCalendarParams = {
   selectedSubject: ParsedSubject;
   enrolledBySubject: Record<string, string>;
   selectedComisiones: ParsedSubject['comisiones'];
-  filteredTeoricos: ParsedSubject['teoricos'];
-  filteredSeminarios: ParsedSubject['seminarios'];
+  filteredTeoricos: Teorico[];
+  filteredSeminarios: Seminario[];
   parsedSubjects: ParsedSubject[];
   showComisiones: boolean;
   showTeoricos: boolean;
@@ -25,7 +26,7 @@ type UseSchedulerCalendarParams = {
   stackIndexBySlot: Record<string, number>;
 };
 
-type EventSubject = Pick<ParsedSubject, 'id' | 'label' | 'teoricoMap' | 'seminarioMap'>;
+type EventSubject = Pick<ParsedSubject, 'id' | 'label' | 'slotMap'>;
 
 type EventOptions = {
   idPrefix?: string;
@@ -33,6 +34,12 @@ type EventOptions = {
   linkedCommissionId?: string;
   linkedCommissionIds?: string[];
 };
+
+const matchesLinkedRoleSlot = (
+  event: CalendarEvent,
+  role: 'teo' | 'sem',
+  slotId: string | undefined
+) => event.linkedSlotRole === role && !!slotId && event.linkedSlotId === slotId;
 
 const buildTitle = (id: string, profesor: string) => `${id} - ${shortTeacherName(profesor)}`;
 
@@ -57,8 +64,8 @@ const buildPracEvent = (
 
 const buildTeoEvent = (
   subject: Pick<ParsedSubject, 'id' | 'label'>,
-  teorico: ParsedSubject['teoricos'][number],
-  options: EventOptions & { linkedTeoricoId?: string } = {}
+  teorico: Teorico,
+  options: EventOptions & { linkedSlotId?: string } = {}
 ): CalendarEvent => ({
   tipo: 'teo',
   id: `${options.idPrefix || ''}teo-${teorico.id}`,
@@ -67,7 +74,8 @@ const buildTeoEvent = (
   fin: teorico.fin,
   aula: teorico.aula,
   title: buildTitle(teorico.id, teorico.profesor),
-  linkedTeoricoId: options.linkedTeoricoId || teorico.id,
+  linkedSlotId: options.linkedSlotId || teorico.id,
+  linkedSlotRole: 'teo',
   linkedCommissionId: options.linkedCommissionId,
   linkedCommissionIds: options.linkedCommissionIds,
   sourceSubjectId: subject.id,
@@ -77,8 +85,8 @@ const buildTeoEvent = (
 
 const buildSemEvent = (
   subject: Pick<ParsedSubject, 'id' | 'label'>,
-  seminario: ParsedSubject['seminarios'][number],
-  options: EventOptions & { linkedSeminarioId?: string } = {}
+  seminario: Seminario,
+  options: EventOptions & { linkedSlotId?: string } = {}
 ): CalendarEvent => ({
   tipo: 'sem',
   id: `${options.idPrefix || ''}sem-${seminario.id}`,
@@ -87,7 +95,8 @@ const buildSemEvent = (
   fin: seminario.fin,
   aula: seminario.aula,
   title: buildTitle(seminario.id, seminario.profesor),
-  linkedSeminarioId: options.linkedSeminarioId || seminario.id,
+  linkedSlotId: options.linkedSlotId || seminario.id,
+  linkedSlotRole: 'sem',
   linkedCommissionId: options.linkedCommissionId,
   linkedCommissionIds: options.linkedCommissionIds,
   sourceSubjectId: subject.id,
@@ -108,24 +117,26 @@ const pushCommissionBundle = ({
 }) => {
   pushEvent(buildPracEvent(subject, commission, options));
   const teoricoId = findPrimaryAssociatedSlotId(commission, 'teo');
-  const teorico = teoricoId ? subject.teoricoMap[teoricoId] : undefined;
+  const teoricoSlot = teoricoId ? slotById(subject, teoricoId) : undefined;
+  const teorico = teoricoSlot?.tipo === 'teo' ? teoricoSlot : undefined;
   if (teorico) {
     pushEvent(
       buildTeoEvent(subject, teorico, {
         ...options,
         linkedCommissionId: commission.id,
-        linkedTeoricoId: teoricoId,
+        linkedSlotId: teoricoId,
       })
     );
   }
   const seminarioId = findPrimaryAssociatedSlotId(commission, 'sem');
-  const seminario = seminarioId ? subject.seminarioMap[seminarioId] : undefined;
+  const seminarioSlot = seminarioId ? slotById(subject, seminarioId) : undefined;
+  const seminario = seminarioSlot?.tipo === 'sem' ? seminarioSlot : undefined;
   if (seminario) {
     pushEvent(
       buildSemEvent(subject, seminario, {
         ...options,
         linkedCommissionId: commission.id,
-        linkedSeminarioId: seminarioId,
+        linkedSlotId: seminarioId,
       })
     );
   }
@@ -291,10 +302,8 @@ export const useSchedulerCalendar = ({
             return slotEvents.findIndex(
               (ev) =>
                 ev.linkedCommissionId === activeCommission.id ||
-                (ev.linkedTeoricoId && activeTeoricoId && ev.linkedTeoricoId === activeTeoricoId) ||
-                (ev.linkedSeminarioId &&
-                  activeSeminarioId &&
-                  ev.linkedSeminarioId === activeSeminarioId)
+                matchesLinkedRoleSlot(ev, 'teo', activeTeoricoId) ||
+                matchesLinkedRoleSlot(ev, 'sem', activeSeminarioId)
             );
           })()
         : -1;
@@ -312,12 +321,8 @@ export const useSchedulerCalendar = ({
               return (
                 ev.sourceSubjectId === selectedSubject.id &&
                 (ev.linkedCommissionId === enrolledCurrentCommission.id ||
-                  (ev.linkedTeoricoId &&
-                    enrolledTeoricoId &&
-                    ev.linkedTeoricoId === enrolledTeoricoId) ||
-                  (ev.linkedSeminarioId &&
-                    enrolledSeminarioId &&
-                    ev.linkedSeminarioId === enrolledSeminarioId))
+                  matchesLinkedRoleSlot(ev, 'teo', enrolledTeoricoId) ||
+                  matchesLinkedRoleSlot(ev, 'sem', enrolledSeminarioId))
               );
             })
           : -1;

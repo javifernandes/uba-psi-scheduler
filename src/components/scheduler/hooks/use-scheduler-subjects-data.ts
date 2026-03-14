@@ -1,10 +1,19 @@
 import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
-import type { Comision, ParsedSubject, SubjectData, VenueCode } from '../scheduler.types';
+import type {
+  Comision,
+  ParsedSubject,
+  Seminario,
+  SubjectData,
+  Teorico,
+  VenueCode,
+} from '../scheduler.types';
 import {
   findPrimaryAssociatedSlotId,
   matchesCommissionQuery,
   parseSubject,
   sameSetValues,
+  slotById,
+  slotsByTipo,
   sortVenueCodes,
   sortComisiones,
   venueCodeFromAula,
@@ -28,8 +37,8 @@ type UseSchedulerSubjectsDataResult = {
   selectedCommissionIds: Set<string>;
   setSelectedCommissionIds: Dispatch<SetStateAction<Set<string>>>;
   filteredComisiones: Comision[];
-  filteredTeoricos: ParsedSubject['teoricos'];
-  filteredSeminarios: ParsedSubject['seminarios'];
+  filteredTeoricos: Teorico[];
+  filteredSeminarios: Seminario[];
   selectedComisiones: Comision[];
   searchedComisiones: Comision[];
 };
@@ -60,8 +69,14 @@ export const useSchedulerSubjectsData = ({
     [selectedSubjectId, parsedSubjects]
   );
 
-  const teoricos = useMemo(() => selectedSubject?.teoricos || [], [selectedSubject]);
-  const seminarios = useMemo(() => selectedSubject?.seminarios || [], [selectedSubject]);
+  const teoricos = useMemo(
+    () => (selectedSubject ? slotsByTipo(selectedSubject, 'teo') : []),
+    [selectedSubject]
+  );
+  const seminarios = useMemo(
+    () => (selectedSubject ? slotsByTipo(selectedSubject, 'sem') : []),
+    [selectedSubject]
+  );
   const comisiones = useMemo(() => selectedSubject?.comisiones || [], [selectedSubject]);
 
   const allVenues = useMemo(() => {
@@ -81,12 +96,14 @@ export const useSchedulerSubjectsData = ({
         found.add(venueCodeFromAula(enrolledCommission.aula));
         const teoricoId = findPrimaryAssociatedSlotId(enrolledCommission, 'teo');
         if (teoricoId) {
-          const teorico = subject.teoricoMap[teoricoId];
+          const linkedSlot = slotById(subject, teoricoId);
+          const teorico = linkedSlot?.tipo === 'teo' ? linkedSlot : undefined;
           if (teorico) found.add(venueCodeFromAula(teorico.aula));
         }
         const seminarioId = findPrimaryAssociatedSlotId(enrolledCommission, 'sem');
         if (seminarioId) {
-          const seminario = subject.seminarioMap[seminarioId];
+          const linkedSlot = slotById(subject, seminarioId);
+          const seminario = linkedSlot?.tipo === 'sem' ? linkedSlot : undefined;
           if (seminario) found.add(venueCodeFromAula(seminario.aula));
         }
       });

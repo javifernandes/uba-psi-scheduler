@@ -3,13 +3,11 @@ import type {
   Comision,
   Day,
   ParsedSubject,
-  Seminario,
   SlotAsociado,
   SlotAssociationRole,
   SlotTipo,
   SubjectSlot,
   SubjectData,
-  Teorico,
   VenueCode,
 } from './scheduler.types';
 
@@ -376,6 +374,12 @@ export const buildLinkedCommissionIdsMap = (comisiones: Comision[], linkedBy: 't
     return acc;
   }, {});
 
+export const slotsByTipo = <T extends SlotTipo>(subject: Pick<ParsedSubject, 'slots'>, tipo: T) =>
+  subject.slots.filter((slot): slot is Extract<SubjectSlot, { tipo: T }> => slot.tipo === tipo);
+
+export const slotById = (subject: Pick<ParsedSubject, 'slotMap'>, slotId: string) =>
+  subject.slotMap[slotId];
+
 export const parseSubject = (subject: SubjectData): ParsedSubject => {
   const slots = sortSlotsByStableOrder(
     subject.slots.map((slot) =>
@@ -387,8 +391,6 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
         : slot
     )
   );
-  const teoricos = slots.filter((slot): slot is Teorico => slot.tipo === 'teo');
-  const seminarios = slots.filter((slot): slot is Seminario => slot.tipo === 'sem');
   const comisiones = slots.filter((slot): slot is Comision => slot.tipo === 'prac');
 
   return {
@@ -396,11 +398,7 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
     label: subject.label,
     header: subject.header,
     slots,
-    teoricos,
-    seminarios,
     comisiones,
-    teoricoMap: Object.fromEntries(teoricos.map((t) => [t.id, t])) as Record<string, Teorico>,
-    seminarioMap: Object.fromEntries(seminarios.map((s) => [s.id, s])) as Record<string, Seminario>,
     slotMap: Object.fromEntries(slots.map((slot) => [slot.id, slot])) as Record<
       string,
       SubjectSlot
