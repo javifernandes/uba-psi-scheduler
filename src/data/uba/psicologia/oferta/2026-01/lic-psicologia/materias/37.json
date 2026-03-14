@@ -167,7 +167,7 @@
       "profesor": "Mogaburu, Juan Martin",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -189,7 +189,7 @@
       "profesor": "Veron, Natalia",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -211,7 +211,7 @@
       "profesor": "Brucco, Sofia",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -233,7 +233,7 @@
       "profesor": "Cocomier, Estanislao",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -255,7 +255,7 @@
       "profesor": "Gomez, Susana",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -299,7 +299,7 @@
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -321,7 +321,7 @@
       "profesor": "Mailliat, Maria Fernanda",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -343,7 +343,7 @@
       "profesor": "Torregiani, Maria Jazmin",
       "aula": "IN-303",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -585,7 +585,7 @@
       "profesor": "Castro, Karina",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -607,7 +607,7 @@
       "profesor": "Lanndi, Jazmín",
       "aula": "IN-106",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -852,7 +852,7 @@
       "profesor": "Pulvet, Mariana Andrea",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -896,7 +896,7 @@
       "profesor": "Barreiro Aguirre, Cynthia",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -1072,7 +1072,7 @@
       "profesor": "Olivero, Pablo Esteban",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -1094,7 +1094,7 @@
       "profesor": "Alt Michel, Alejandro Mariano",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -1116,7 +1116,7 @@
       "profesor": "Szwarcbart, Jennifer",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "E",

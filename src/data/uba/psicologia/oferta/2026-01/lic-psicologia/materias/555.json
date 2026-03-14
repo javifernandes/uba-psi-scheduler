@@ -257,7 +257,7 @@
       "aula": "SI-004",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -309,7 +309,7 @@
       "profesor": "Nigro, Facundo",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "III",

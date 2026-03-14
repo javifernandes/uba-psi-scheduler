@@ -52,7 +52,7 @@
       "profesor": "Pastorini, Gabriela Natalia",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -69,7 +69,7 @@
       "profesor": "Bouzigues, Magdalena",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -86,7 +86,7 @@
       "profesor": "Fernandez Romeral, Juliana",
       "aula": "IN-412",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -120,7 +120,7 @@
       "profesor": "Pierri Carla",
       "aula": "IN-211",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -137,7 +137,7 @@
       "profesor": "Rojtenberg, Carolina Beatriz",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -222,7 +222,7 @@
       "profesor": "Luzuriaga, Claudia Graciela",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -240,7 +240,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -275,7 +275,7 @@
       "profesor": "Carril, Maria Veronica",
       "aula": "IN-443",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -326,7 +326,7 @@
       "profesor": "Verdun, Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "III",

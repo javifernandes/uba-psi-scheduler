@@ -304,7 +304,7 @@
       "profesor": "Zaffore, Carolina",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -326,7 +326,7 @@
       "profesor": "Tercic, Cecilia",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -348,7 +348,7 @@
       "profesor": "Svartzman, Rocio",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -524,7 +524,7 @@
       "profesor": "Gimenez, Virginia Lucia",
       "aula": "IN-434",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -546,7 +546,7 @@
       "profesor": "Goldsmidt, Julieta Yasmin",
       "aula": "IN-325",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -634,7 +634,7 @@
       "profesor": "Ramirez Cuervo, Jason",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -791,7 +791,7 @@
       "profesor": "Esborraz, Marina Alejandra",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -835,7 +835,7 @@
       "profesor": "Sanchez, Federico",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -879,7 +879,7 @@
       "profesor": "Leicach, Dario",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -947,7 +947,7 @@
       "profesor": "Pastor, Maria Victoria",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -1013,7 +1013,7 @@
       "profesor": "Fragale, Gabriela Eugenia",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -1057,7 +1057,7 @@
       "profesor": "Wang, Yi Ran",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -1079,7 +1079,7 @@
       "profesor": "Hardmeier, Leonora Cecilia",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1145,7 +1145,7 @@
       "profesor": "Rodriguez, Santiago",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1167,7 +1167,7 @@
       "profesor": "Torres, María Florencia",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1189,7 +1189,7 @@
       "profesor": "Quiroga, Florencia",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1233,7 +1233,7 @@
       "profesor": "Canosa, Julio Luis",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1387,7 +1387,7 @@
       "profesor": "Scokin Rimolo, Maria Milagros",
       "aula": "IN-213",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -1409,7 +1409,7 @@
       "profesor": "Otero, Vanesa",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -1541,7 +1541,7 @@
       "profesor": "Flores, Magdalena",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "III",

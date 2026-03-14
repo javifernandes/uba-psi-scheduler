@@ -56,7 +56,7 @@
       "profesor": "Ortiz Molinuevo, Santiago",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -73,7 +73,7 @@
       "profesor": "Davis Edmonson, Irene Karina",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -90,7 +90,7 @@
       "profesor": "Idigoras, Julio Nicolas",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -107,7 +107,7 @@
       "profesor": "Yablonovsky, Talia",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -124,7 +124,7 @@
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -209,7 +209,7 @@
       "profesor": "Gimenez, Maria Fernanda",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -277,7 +277,7 @@
       "profesor": "Corino, Carolina Alicia",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -294,7 +294,7 @@
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",

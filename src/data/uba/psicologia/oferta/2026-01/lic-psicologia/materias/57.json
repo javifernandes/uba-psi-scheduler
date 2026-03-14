@@ -103,7 +103,7 @@
       "profesor": "Gelly Cantilo, Luis",
       "aula": "HY-012",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -120,7 +120,7 @@
       "profesor": "Belaustegui Goitia, Victoria C",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "I",

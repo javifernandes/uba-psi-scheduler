@@ -57,7 +57,7 @@
       "profesor": "Larrosa, Maria Victoria",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -91,7 +91,7 @@
       "profesor": "Ramirez, Fernando Cesar",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "II",

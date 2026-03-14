@@ -162,7 +162,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -294,7 +294,7 @@
       "profesor": "Doppelgatz, Angel",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -404,7 +404,7 @@
       "profesor": "Peralta, Roberto Nicolas",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -426,7 +426,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -470,7 +470,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -536,7 +536,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -624,7 +624,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -647,7 +647,7 @@
       "aula": "SI-023",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -670,7 +670,7 @@
       "aula": "SI-021",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -715,7 +715,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -737,7 +737,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -781,7 +781,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -803,7 +803,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "F",

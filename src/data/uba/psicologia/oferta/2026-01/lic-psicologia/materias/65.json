@@ -136,7 +136,7 @@
       "aula": "SI-022",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -170,7 +170,7 @@
       "profesor": "Lamponi Tappata, Maru",
       "aula": "IN-324",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -238,7 +238,7 @@
       "profesor": "Amantea, Romina Veronica",
       "aula": "IN-431",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -255,7 +255,7 @@
       "profesor": "Brunelli, Maximiliano",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -408,7 +408,7 @@
       "profesor": "Catalan, Pablo Daniel",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -425,7 +425,7 @@
       "profesor": "Moncalvillo, Maximiliano",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "III",

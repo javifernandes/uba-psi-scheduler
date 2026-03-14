@@ -88,7 +88,7 @@
       "profesor": "Diaz, Noelia Soledad",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -264,7 +264,7 @@
       "profesor": "Basso, Francina",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -330,7 +330,7 @@
       "profesor": "Basso, Francina",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -396,7 +396,7 @@
       "profesor": "Rivarola Britez, Maria Del Roc",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -550,7 +550,7 @@
       "profesor": "Feminella, Andrea",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -572,7 +572,7 @@
       "profesor": "Guazzaroni, Maria de la Paz",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -616,7 +616,7 @@
       "profesor": "Gonzalez Cadahia, Mariana",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "III",
