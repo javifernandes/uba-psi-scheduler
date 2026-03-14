@@ -293,7 +293,7 @@
         "aula": "107"
       },
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -368,7 +368,7 @@
         "aula": "216"
       },
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "I",
