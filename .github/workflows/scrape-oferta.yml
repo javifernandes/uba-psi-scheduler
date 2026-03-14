@@ -83,7 +83,7 @@ jobs:
         id: status
         if: steps.params.outputs.operation == 'scrape'
         run: |
-          node --experimental-strip-types scripts/scraper-window-control.ts status \
+          npm run scrape:window:status -- \
             --config config/scraper-windows.json \
             --trigger "${{ steps.params.outputs.trigger }}" \
             --force "${{ steps.params.outputs.force_run }}"
@@ -103,11 +103,11 @@ jobs:
         shell: bash
         run: |
           if [[ -n "${{ steps.params.outputs.window_id }}" ]]; then
-            node --experimental-strip-types scripts/scraper-window-control.ts close \
+            npm run scrape:window:close -- \
               --config config/scraper-windows.json \
               --window-id "${{ steps.params.outputs.window_id }}"
           else
-            node --experimental-strip-types scripts/scraper-window-control.ts close \
+            npm run scrape:window:close -- \
               --config config/scraper-windows.json
           fi
 
