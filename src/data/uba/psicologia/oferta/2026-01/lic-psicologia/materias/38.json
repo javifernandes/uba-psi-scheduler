@@ -260,7 +260,7 @@
       "profesor": "Almira, Maria Belen",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -304,7 +304,7 @@
       "profesor": "Zaffore, Carolina",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -348,7 +348,7 @@
       "profesor": "Svartzman, Rocio",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -370,7 +370,7 @@
       "profesor": "Leon, Natalia",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -634,7 +634,7 @@
       "profesor": "Ramirez Cuervo, Jason",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -791,7 +791,7 @@
       "profesor": "Esborraz, Marina Alejandra",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -879,7 +879,7 @@
       "profesor": "Leicach, Dario",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -947,7 +947,7 @@
       "profesor": "Pastor, Maria Victoria",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -969,7 +969,7 @@
       "profesor": "Cima, Dante",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -1013,7 +1013,7 @@
       "profesor": "Fragale, Gabriela Eugenia",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -1035,7 +1035,7 @@
       "profesor": "Busson, Adriana",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -1057,7 +1057,7 @@
       "profesor": "Wang, Yi Ran",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -1079,7 +1079,7 @@
       "profesor": "Hardmeier, Leonora Cecilia",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1167,7 +1167,7 @@
       "profesor": "Torres, María Florencia",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1409,7 +1409,7 @@
       "profesor": "Otero, Vanesa",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -1541,7 +1541,7 @@
       "profesor": "Flores, Magdalena",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",

@@ -426,7 +426,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -470,7 +470,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -624,7 +624,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -670,7 +670,7 @@
       "aula": "SI-021",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "G",

@@ -83,7 +83,7 @@
       "profesor": "Tejo Arroyo, Mariano",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -100,7 +100,7 @@
       "profesor": "Samara, Santiago",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -117,7 +117,7 @@
       "profesor": "Maugis, Camila",
       "aula": "IN-213",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -134,7 +134,7 @@
       "profesor": "Villafane, Adrian Ricardo",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -151,7 +151,7 @@
       "profesor": "Del Brutto, Luciana",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -202,7 +202,7 @@
       "profesor": "Becerra Odoguardi, Indira Clar",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -236,7 +236,7 @@
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -305,7 +305,7 @@
       "aula": "SI-022",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -323,7 +323,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -341,7 +341,7 @@
       "aula": "SI-013",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -358,7 +358,7 @@
       "profesor": "Galan, Ignacio",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -411,7 +411,7 @@
       "aula": "SI-012",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -497,7 +497,7 @@
       "profesor": "Masimelli, Roman",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -548,7 +548,7 @@
       "profesor": "Florit, Dionisia Maria",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -565,7 +565,7 @@
       "profesor": "Alonso, Maria Florencia",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",

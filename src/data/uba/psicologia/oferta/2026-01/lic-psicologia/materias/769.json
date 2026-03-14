@@ -211,7 +211,7 @@
       "profesor": "Palestrini, Gabriela Paola",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -347,7 +347,7 @@
       "profesor": "Cobo, Stella",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "IV",

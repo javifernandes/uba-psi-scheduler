@@ -82,7 +82,7 @@
       "profesor": "Mercadal, Gabriela Lucia",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -116,7 +116,7 @@
       "profesor": "Laso, Eduardo Luis",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -320,7 +320,7 @@
       "profesor": "Belucci, Gabriel",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "III",

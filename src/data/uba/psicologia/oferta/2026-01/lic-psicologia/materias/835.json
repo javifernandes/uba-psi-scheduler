@@ -23,7 +23,7 @@
       "profesor": "Caligaris, Gagriel",
       "aula": "",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 30,
       "slotsAsociados": []
     },
     {
@@ -34,7 +34,7 @@
       "profesor": "Amado, Sebastián",
       "aula": "",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": []
     },
     {
@@ -78,7 +78,7 @@
       "profesor": "Rossell, Jorge David",
       "aula": "",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 24,
       "slotsAsociados": []
     },
     {
@@ -89,7 +89,7 @@
       "profesor": "Castaño, Marina Anabel",
       "aula": "",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": []
     },
     {
@@ -111,7 +111,7 @@
       "profesor": "Sabato, Celia Inés",
       "aula": "",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": []
     }
   ]

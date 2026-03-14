@@ -275,7 +275,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -297,7 +297,7 @@
       "profesor": "Ni, Mónica",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -363,7 +363,7 @@
       "profesor": "Klein, Tamara Lis",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -385,7 +385,7 @@
       "profesor": "Klein, Tamara Lis",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "E",

@@ -83,7 +83,7 @@
       "profesor": "Smud, Martin Hernan",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -100,7 +100,7 @@
       "profesor": "Zion, Maria Victoria",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -134,7 +134,7 @@
       "profesor": "Santos, Julia Susana",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -151,7 +151,7 @@
       "profesor": "Casal, Mariana Elizabeth",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -168,7 +168,7 @@
       "profesor": "Murillo, Manuel Alejandro",
       "aula": "IN-320",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -185,7 +185,7 @@
       "profesor": "Sueldo, Lautaro Matias",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -203,7 +203,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -238,7 +238,7 @@
       "aula": "SI-002",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -255,7 +255,7 @@
       "profesor": "Samaja, Juan Alfonso",
       "aula": "IN-420",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "I",

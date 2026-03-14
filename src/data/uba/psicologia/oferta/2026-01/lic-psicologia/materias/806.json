@@ -110,7 +110,7 @@
       "profesor": "Lastra, Juan Julian",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -127,7 +127,7 @@
       "profesor": "Breglia, Alejandra",
       "aula": "HY-025",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",

@@ -311,7 +311,7 @@
       "aula": "SI-016",
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -401,7 +401,7 @@
       "aula": "IN-434",
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",

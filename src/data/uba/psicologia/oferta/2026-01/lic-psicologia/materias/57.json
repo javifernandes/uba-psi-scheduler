@@ -86,7 +86,7 @@
       "profesor": "Kahanoff, Natacha",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -120,7 +120,7 @@
       "profesor": "Belaustegui Goitia, Victoria C",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
