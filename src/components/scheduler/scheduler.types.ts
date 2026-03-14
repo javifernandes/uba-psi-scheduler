@@ -47,6 +47,7 @@ export type CalendarEvent = {
   fin: string;
   aula: string;
   title: string;
+  vacantes?: number | null;
   linkedCommissionId?: string;
   linkedCommissionIds?: string[];
   linkedSlotId?: string;

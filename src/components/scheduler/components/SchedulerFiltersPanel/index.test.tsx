@@ -184,7 +184,7 @@ describe('SchedulerFiltersPanel', () => {
     expect(screen.getByText('Vac 12')).toBeInTheDocument();
   });
 
-  it('muestra en el encabezado de grupo la suma de vacantes de sus cátedras', () => {
+  it('en dropdown de materia muestra vacantes por cátedra y total agregado por grupo', () => {
     const groupedSubjectOptions = [
       {
         groupLabel: '16 · Psicoanálisis Freud',
@@ -212,6 +212,8 @@ describe('SchedulerFiltersPanel', () => {
     );
 
     expect(screen.getByText('Vac 16')).toBeInTheDocument();
+    expect(screen.getByText('Vac 10')).toBeInTheDocument();
+    expect(screen.getByText('Vac 6')).toBeInTheDocument();
   });
 
   it('permite activar el filtro de solo vacantes desde el dropdown de comisiones', () => {

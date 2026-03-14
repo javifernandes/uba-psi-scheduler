@@ -30,4 +30,22 @@ describe('CardTitle', () => {
     expect(title).toHaveClass('whitespace-normal', 'opacity-0');
     expect(title.style.webkitLineClamp).toBe('2');
   });
+
+  it('renderiza segunda línea para cupo cuando se informa subtitle', () => {
+    render(
+      <CardTitle
+        code="21"
+        label="Cazes"
+        type="prac"
+        canWrap={false}
+        vacancyIndicator={{ countLabel: '9', status: 'cupo_bajo', filledBars: 1 }}
+        hidden={false}
+      />
+    );
+
+    expect(screen.getByText('21')).toBeInTheDocument();
+    expect(screen.getByText(/Cazes/)).toBeInTheDocument();
+    expect(screen.getByText('9')).toBeInTheDocument();
+    expect(screen.getByTestId('vacancy-indicator-icon')).toBeInTheDocument();
+  });
 });

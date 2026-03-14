@@ -1,5 +1,6 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
+import { vacancyIndicator } from '@/domain/vacancies';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import { displaySubjectLabel } from '../../scheduler.utils';
 import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
@@ -124,6 +125,10 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
+  const vacancyDisplay =
+    !event.isExternal && event.tipo === 'prac'
+      ? vacancyIndicator(event.vacantes ?? null)
+      : undefined;
 
   return (
     <div
@@ -131,11 +136,11 @@ export const CalendarEventCard = ({
       key={slotKey}
       role="button"
       tabIndex={0}
-      onMouseEnter={eventMouse => {
+      onMouseEnter={(eventMouse) => {
         onCardMouseEnter(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalEnter();
       }}
-      onMouseLeave={eventMouse => {
+      onMouseLeave={(eventMouse) => {
         onCardMouseLeave(eventMouse);
         if (event.isExternal && isCalendarOnlyMode) onCalendarOnlyExternalLeave();
       }}
@@ -153,9 +158,15 @@ export const CalendarEventCard = ({
         isActive && 'ring-2 ring-[#fbe7f3] dark:ring-zinc-200/70'
       )}
       style={layoutStyle}
-      data-tour-card={!event.isExternal && event.tipo === 'prac' ? 'internal-commission' : 'event-card'}
+      data-tour-card={
+        !event.isExternal && event.tipo === 'prac' ? 'internal-commission' : 'event-card'
+      }
       data-tour-card-kind={
-        event.isExternal ? 'external' : event.tipo === 'prac' ? 'internal-commission' : 'internal-linked'
+        event.isExternal
+          ? 'external'
+          : event.tipo === 'prac'
+            ? 'internal-commission'
+            : 'internal-linked'
       }
       data-tour-internal={!event.isExternal ? 'true' : 'false'}
       data-testid="calendar-event-card"
@@ -224,9 +235,7 @@ export const CalendarEventCard = ({
               {externalParts.subject}
             </span>
             {externalParts.catedra ? (
-              <span
-                className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]"
-              >
+              <span className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]">
                 {externalParts.catedra}
               </span>
             ) : null}
@@ -272,8 +281,9 @@ export const CalendarEventCard = ({
             code={titleParts.code}
             label={titleParts.label}
             type={event.tipo}
-            canWrap={canWrapLabel}
-            wrapStyle={titleWrapStyle}
+            canWrap={vacancyDisplay ? false : canWrapLabel}
+            wrapStyle={vacancyDisplay ? undefined : titleWrapStyle}
+            vacancyIndicator={vacancyDisplay}
             hidden={hideText}
           />
           <CardTime

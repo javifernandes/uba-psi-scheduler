@@ -27,6 +27,7 @@ const slot: VisibleEventSlot = {
     fin: '16:00',
     aula: 'IN-444',
     title: '21 - Cazes',
+    vacantes: 9,
     linkedCommissionId: '21',
     sourceSubjectId: '34',
     sourceSubjectLabel: 'Materia',
@@ -77,7 +78,7 @@ describe('CalendarEventCard', () => {
   beforeEach(() => {
     mockUseCalendarEventCardState.mockReset();
     mockUseEventCardInteractions.mockReset();
-    Object.values(interactionHandlers).forEach(fn => fn.mockReset());
+    Object.values(interactionHandlers).forEach((fn) => fn.mockReset());
     mockUseCalendarEventCardState.mockReturnValue(baseState);
     mockUseEventCardInteractions.mockReturnValue(interactionHandlers);
   });
@@ -107,6 +108,8 @@ describe('CalendarEventCard', () => {
 
     expect(screen.getByText('21')).toBeInTheDocument();
     expect(screen.getByText(/Cazes/)).toBeInTheDocument();
+    expect(screen.getByText('9')).toBeInTheDocument();
+    expect(screen.getByTestId('vacancy-indicator-icon')).toBeInTheDocument();
     expect(screen.getByLabelText('Guardar o quitar esta comisión elegida')).toBeInTheDocument();
     expect(screen.getByText('☆')).toBeInTheDocument();
 
@@ -120,6 +123,44 @@ describe('CalendarEventCard', () => {
     expect(interactionHandlers.onCardMouseLeave).toHaveBeenCalled();
     expect(interactionHandlers.onCardClick).toHaveBeenCalled();
     expect(interactionHandlers.onCardKeyDown).toHaveBeenCalled();
+  });
+
+  it('para comisión sin cupo mantiene el indicador compacto con 0 + P', () => {
+    const withoutVacanciesSlot: VisibleEventSlot = {
+      ...slot,
+      event: {
+        ...slot.event,
+        id: 'prac-21-no-vacancies',
+        vacantes: 0,
+      },
+    };
+
+    const { container } = render(
+      <CalendarEventCard
+        slot={withoutVacanciesSlot}
+        activeCommission={null}
+        selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        onCalendarOnlyExternalEnter={vi.fn()}
+        onCalendarOnlyExternalLeave={vi.fn()}
+        enrolledBySubject={{}}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setHoveredLinkedTeoricoId={vi.fn()}
+        setHoveredLinkedSeminarioId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText('0')).toBeInTheDocument();
+    expect(screen.getByTestId('vacancy-indicator-icon')).toBeInTheDocument();
+    const bars = container.querySelectorAll('span.h-1\\.5.w-4');
+    expect(bars.length).toBe(3);
   });
 
   it('renderiza estado con conflicto y guardado activo', () => {
@@ -196,7 +237,9 @@ describe('CalendarEventCard', () => {
     expect(screen.getByText('Psicología Social')).toBeInTheDocument();
     expect(screen.getByText('Cátedra 36 (II)')).toBeInTheDocument();
     expect(screen.getByText('IN')).toBeInTheDocument();
-    expect(screen.queryByLabelText('Guardar o quitar esta comisión elegida')).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText('Guardar o quitar esta comisión elegida')
+    ).not.toBeInTheDocument();
     expect(screen.queryByText('09:15')).not.toBeInTheDocument();
     expect(screen.queryByText('10:45')).not.toBeInTheDocument();
   });

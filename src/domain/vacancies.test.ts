@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
-import { sumKnownVacancies, sumKnownVacanciesFromSubject } from './vacancies';
+import {
+  sumKnownVacancies,
+  sumKnownVacanciesFromSubject,
+  vacancyIndicator,
+  vacancyStatusFromVacancies,
+  vacancySummaryLine,
+} from './vacancies';
 
 describe('vacancies domain', () => {
   it('suma vacantes conocidas en un conjunto de comisiones', () => {
@@ -51,5 +57,31 @@ describe('vacancies domain', () => {
     };
 
     expect(sumKnownVacanciesFromSubject(subject)).toBe(9);
+  });
+
+  it('clasifica estado de cupo por vacantes', () => {
+    expect(vacancyStatusFromVacancies(null)).toBe('sin_datos');
+    expect(vacancyStatusFromVacancies(0)).toBe('sin_cupo');
+    expect(vacancyStatusFromVacancies(5)).toBe('cupo_bajo');
+    expect(vacancyStatusFromVacancies(18)).toBe('cupo_disponible');
+  });
+
+  it('arma la línea de resumen para tarjetas de calendario', () => {
+    expect(vacancySummaryLine(null)).toBe('Vacantes s/d · cupo s/d');
+    expect(vacancySummaryLine(1)).toBe('1 vacante · cupo bajo');
+    expect(vacancySummaryLine(9)).toBe('9 vacantes · cupo bajo');
+    expect(vacancySummaryLine(14)).toBe('14 vacantes · cupo disponible');
+    expect(vacancySummaryLine(0)).toBe('0 vacantes · sin cupo');
+  });
+
+  it('arma indicador compacto de barras para la tarjeta', () => {
+    expect(vacancyIndicator(null)).toEqual({ countLabel: '?', status: 'sin_datos', filledBars: 0 });
+    expect(vacancyIndicator(0)).toEqual({ countLabel: '0', status: 'sin_cupo', filledBars: 0 });
+    expect(vacancyIndicator(5)).toEqual({ countLabel: '5', status: 'cupo_bajo', filledBars: 1 });
+    expect(vacancyIndicator(14)).toEqual({
+      countLabel: '14',
+      status: 'cupo_disponible',
+      filledBars: 3,
+    });
   });
 });

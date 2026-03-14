@@ -56,6 +56,7 @@ const buildPracEvent = (
   fin: commission.fin,
   aula: formatSlotLugar(commission.lugar),
   title: buildTitle(commission.id, commission.profesor),
+  vacantes: commission.vacantes,
   linkedCommissionId: options.linkedCommissionId || commission.id,
   linkedCommissionIds: [options.linkedCommissionId || commission.id],
   sourceSubjectId: subject.id,

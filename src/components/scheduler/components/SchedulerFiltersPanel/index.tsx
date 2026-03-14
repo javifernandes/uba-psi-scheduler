@@ -287,7 +287,7 @@ export const SchedulerFiltersPanel = ({
                           <span className="text-[14px] font-bold text-[#4f1237] dark:text-zinc-100">
                             {group.groupLabel}
                           </span>
-                          <span className="shrink-0 rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
+                          <span className="inline-flex w-[4.75rem] shrink-0 items-center justify-center rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
                             Vac{' '}
                             {group.options.reduce(
                               (total, subject) => total + sumKnownVacanciesFromSubject(subject),
@@ -347,7 +347,7 @@ export const SchedulerFiltersPanel = ({
                                       {catedraProfessorFromHeader(subject.header)}
                                     </span>
                                   </span>
-                                  <span className="shrink-0 rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
+                                  <span className="inline-flex w-[4.75rem] shrink-0 items-center justify-center rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
                                     Vac {subjectVacancies}
                                   </span>
                                 </div>
