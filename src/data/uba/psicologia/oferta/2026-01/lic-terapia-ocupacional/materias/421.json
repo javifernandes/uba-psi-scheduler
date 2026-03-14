@@ -2,12 +2,10 @@
   "id": "orientacion-para-el-ejercicio-profesional-c421",
   "label": "Orientación para el ejercicio profesional - Cátedra 421",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Orientación para el ejercicio profesional - Cátedra 421 - To. Etcheverry",
-  "teoricos": [
-    "I|martes|17:00|21:00|Etcheverry, Maria Laura|SI-020|"
-  ],
+  "teoricos": ["I|martes|17:00|21:00|Etcheverry, Maria Laura|SI-020|"],
   "seminarios": [],
   "comisiones": [
-    "1|martes|21:00|23:00|Ibañez, Fabiana|I|SI-027|",
-    "2|miercoles|21:00|23:00|Ibañez, Fabiana|I|SI-027|"
+    "1|martes|21:00|23:00|Ibañez, Fabiana|I|SI-027||14",
+    "2|miercoles|21:00|23:00|Ibañez, Fabiana|I|SI-027||40"
   ]
 }

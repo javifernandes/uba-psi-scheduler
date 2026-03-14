@@ -9,19 +9,19 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|martes|19:45|21:15|Gobbi, Mauro Javier|II|HY-004|",
-    "2|martes|11:00|12:30|Barbieri, Julian Javier|III|HY-030|",
-    "3|lunes|11:00|12:30|Matzchke, Florencia|I|HY-015|",
-    "4|lunes|07:30|09:00|Luchetta, Javier Federico|I|HY-015|",
-    "5|lunes|16:15|17:45|Vecchio, Ariel|II|HY-032|",
-    "6|lunes|19:45|21:15|Gobbi, Mauro Javier|II|HY-024|",
-    "7|sabado|09:15|10:45|Gobbi, Mauro Javier|II|HY-013|",
-    "8|martes|14:30|16:00|Barbieri, Julian Javier|III|HY-015|",
-    "9|martes|11:00|12:30|Pallares, Martin|III|HY-012|",
-    "10|lunes|16:15|17:45|Gobbi, Mauro Javier|II|HY-015|",
-    "11|martes|14:30|16:00|Pallares, Martin|III|HY-011|",
-    "12|lunes|11:00|12:30|Luchetta, Javier Federico|I|HY-012|",
-    "13|miercoles|19:45|21:15|Matzchke, Florencia|II|HY-004|",
-    "14|lunes|19:45|21:15|Vecchio, Ariel|II|HY-026|"
+    "1|martes|19:45|21:15|Gobbi, Mauro Javier|II|HY-004||0",
+    "2|martes|11:00|12:30|Barbieri, Julian Javier|III|HY-030||0",
+    "3|lunes|11:00|12:30|Matzchke, Florencia|I|HY-015||0",
+    "4|lunes|07:30|09:00|Luchetta, Javier Federico|I|HY-015||0",
+    "5|lunes|16:15|17:45|Vecchio, Ariel|II|HY-032||0",
+    "6|lunes|19:45|21:15|Gobbi, Mauro Javier|II|HY-024||0",
+    "7|sabado|09:15|10:45|Gobbi, Mauro Javier|II|HY-013||1",
+    "8|martes|14:30|16:00|Barbieri, Julian Javier|III|HY-015||0",
+    "9|martes|11:00|12:30|Pallares, Martin|III|HY-012||0",
+    "10|lunes|16:15|17:45|Gobbi, Mauro Javier|II|HY-015||0",
+    "11|martes|14:30|16:00|Pallares, Martin|III|HY-011||0",
+    "12|lunes|11:00|12:30|Luchetta, Javier Federico|I|HY-012||0",
+    "13|miercoles|19:45|21:15|Matzchke, Florencia|II|HY-004||0",
+    "14|lunes|19:45|21:15|Vecchio, Ariel|II|HY-026||0"
   ]
 }

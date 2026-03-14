@@ -2,14 +2,12 @@
   "id": "pp-pp-area-clinica-clinica-de-las-adicciones-abordaje-interd-c138",
   "label": "P.P.: P.P.: Área Clínica: Clínica de las Adicciones: Abordaje Interd - Cátedra 138",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Clínica de las Adicciones: Abordaje Interd - Cátedra 138 - Prof. Torres",
-  "teoricos": [
-    "I|martes|14:30|16:00|Torres, Gustavo Fernando|HY-010|"
-  ],
+  "teoricos": ["I|martes|14:30|16:00|Torres, Gustavo Fernando|HY-010|"],
   "seminarios": [],
   "comisiones": [
-    "1|martes|17:00|21:00|Pepa, Marcela|I||Fundación Santa Catalina - Callao 433 - Piso 2° - CABA",
-    "2|lunes|14:00|18:00|Podhainy, Maria Belen|I||Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar",
-    "3|lunes|13:00|17:00|Ferrari, Monica Graciela|I||Alas de Libertad Asociación Civil - Cangayé 1155 - CABA",
-    "4|viernes|15:00|19:00|Ferrando, Myrian Gabriela|I||Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC"
+    "1|martes|17:00|21:00|Pepa, Marcela|I||Fundación Santa Catalina - Callao 433 - Piso 2° - CABA|0",
+    "2|lunes|14:00|18:00|Podhainy, Maria Belen|I||Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar|6",
+    "3|lunes|13:00|17:00|Ferrari, Monica Graciela|I||Alas de Libertad Asociación Civil - Cangayé 1155 - CABA|9",
+    "4|viernes|15:00|19:00|Ferrando, Myrian Gabriela|I||Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC|7"
   ]
 }

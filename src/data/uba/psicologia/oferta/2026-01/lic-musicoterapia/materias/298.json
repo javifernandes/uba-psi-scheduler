@@ -2,12 +2,10 @@
   "id": "neurofisiopatologia-c298",
   "label": "Neurofisiopatología - Cátedra 298",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Neurofisiopatología - Cátedra 298 - Prof. Politis",
-  "teoricos": [
-    "I|jueves|19:00|21:00|Politis, Daniel Gustavo|AV-026|"
-  ],
+  "teoricos": ["I|jueves|19:00|21:00|Politis, Daniel Gustavo|AV-026|"],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|17:00|21:00|Detlefsen, María Verónica|I|AV-028|",
-    "2|sabado|09:00|13:00|Moltrasio, Julieta|I|AV-032|"
+    "1|lunes|17:00|21:00|Detlefsen, María Verónica|I|AV-028||35",
+    "2|sabado|09:00|13:00|Moltrasio, Julieta|I|AV-032||35"
   ]
 }

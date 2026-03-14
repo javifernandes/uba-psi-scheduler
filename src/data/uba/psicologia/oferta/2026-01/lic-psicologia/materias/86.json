@@ -8,9 +8,9 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|11:00|12:30|Inaebnit, Virginia Carmen|II|IN-126|",
-    "2|martes|19:45|21:15|Inaebnit, Virginia Carmen|I|IN-204|",
-    "3|martes|19:45|21:15|Valenzuela, Viviana|I|IN-212|",
-    "4|miercoles|11:00|12:30|Valenzuela, Viviana|II|IN-125|"
+    "1|miercoles|11:00|12:30|Inaebnit, Virginia Carmen|II|IN-126||20",
+    "2|martes|19:45|21:15|Inaebnit, Virginia Carmen|I|IN-204||13",
+    "3|martes|19:45|21:15|Valenzuela, Viviana|I|IN-212||23",
+    "4|miercoles|11:00|12:30|Valenzuela, Viviana|II|IN-125||21"
   ]
 }

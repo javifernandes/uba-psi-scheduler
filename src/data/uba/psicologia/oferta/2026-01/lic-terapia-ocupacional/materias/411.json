@@ -2,12 +2,10 @@
   "id": "psicopatologia-c411",
   "label": "Psicopatología - Cátedra 411",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Psicopatología - Cátedra 411 - Prof. Gerskovich",
-  "teoricos": [
-    "I|martes|17:00|21:00|Gerskovich, Nestor|SI-016|"
-  ],
+  "teoricos": ["I|martes|17:00|21:00|Gerskovich, Nestor|SI-016|"],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|17:00|19:00|Romualdo, Wendy|I|SI-017|",
-    "2|jueves|19:00|21:00|Romualdo, Wendy|I|SI-017|"
+    "1|jueves|17:00|19:00|Romualdo, Wendy|I|SI-017||28",
+    "2|jueves|19:00|21:00|Romualdo, Wendy|I|SI-017||28"
   ]
 }

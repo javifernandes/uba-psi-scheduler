@@ -2,11 +2,7 @@
   "id": "musicoterapia-comunicacion-y-discapacidad-c312",
   "label": "Musicoterapia, Comunicación y Discapacidad - Cátedra 312",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Musicoterapia, Comunicación y Discapacidad - Cátedra 312 - Prof. Alperovich",
-  "teoricos": [
-    "I|jueves|15:00|17:00|Alperovich, Natalia Judith|AV-026|"
-  ],
+  "teoricos": ["I|jueves|15:00|17:00|Alperovich, Natalia Judith|AV-026|"],
   "seminarios": [],
-  "comisiones": [
-    "1|jueves|17:00|21:00|Contarino, Marcela Rosana|I|AV-041|"
-  ]
+  "comisiones": ["1|jueves|17:00|21:00|Contarino, Marcela Rosana|I|AV-041||33"]
 }

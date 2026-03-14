@@ -8,11 +8,11 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|11:00|12:30|Grosso, Maria Veronica|I|IN-434|",
-    "2|viernes|16:15|17:45|Patri, Liliana Beatriz|II|IN-209|",
-    "3|viernes|19:45|21:15|Szerman, Maia|II|IN-430|",
-    "4|viernes|19:45|21:15|Urbaj, Eduardo Daniel|II|IN-122|",
-    "5|miercoles|07:30|09:00|Bonet, Ramiro|I|IN-434|",
-    "6|viernes|16:15|17:45|Topper, Florencia|II|IN-212|"
+    "1|miercoles|11:00|12:30|Grosso, Maria Veronica|I|IN-434||18",
+    "2|viernes|16:15|17:45|Patri, Liliana Beatriz|II|IN-209||25",
+    "3|viernes|19:45|21:15|Szerman, Maia|II|IN-430||11",
+    "4|viernes|19:45|21:15|Urbaj, Eduardo Daniel|II|IN-122||28",
+    "5|miercoles|07:30|09:00|Bonet, Ramiro|I|IN-434||29",
+    "6|viernes|16:15|17:45|Topper, Florencia|II|IN-212||26"
   ]
 }

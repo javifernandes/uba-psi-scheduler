@@ -2,12 +2,10 @@
   "id": "tecnica-vocal-i-c299",
   "label": "Técnica Vocal I - Cátedra 299",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Técnica Vocal I - Cátedra 299 - a. Sacheri",
-  "teoricos": [
-    "I|miercoles|15:00|17:00|Sacheri, Soledad Maria Constan|AV-029|"
-  ],
+  "teoricos": ["I|miercoles|15:00|17:00|Sacheri, Soledad Maria Constan|AV-029|"],
   "seminarios": [],
   "comisiones": [
-    "1|martes|15:00|17:00|Bruno, Ailen|I|AV-029|",
-    "2|martes|17:00|19:00|Bruno, Ailen|I|AV-029|"
+    "1|martes|15:00|17:00|Bruno, Ailen|I|AV-029||25",
+    "2|martes|17:00|19:00|Bruno, Ailen|I|AV-029||25"
   ]
 }

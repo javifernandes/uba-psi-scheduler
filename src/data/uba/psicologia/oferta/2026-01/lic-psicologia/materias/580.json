@@ -7,11 +7,11 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|miercoles|09:15|10:45|Sarudiansky, Mercedes|I|IN-218|Espacio de Articulación - Facultad de Psicología",
-    "2|miercoles|08:30|10:45|Lanzillotti, Alejandra Ines|I||Servicio de Epilepsia Hospital - Ramos Mejía",
-    "3|miercoles|12:45|14:15|Areco Pico, Maria Marta|I|IN-218|Espacio de Articulación - Facultad de Psicología",
-    "4|miercoles|12:00|14:15|Pereyra, Martina Inés|I||Escuela Cangallo Schule - JD Perón 2169 CABA",
-    "5|jueves|09:15|10:45|Wolfzun, Camila|I|IN-217|Espacio de Articulación - Facultad de Psicología",
-    "6|jueves|08:30|10:45|Gonzalez Molina, Lucila|I||Escuela Cangallo Schule - JD Perón 2169 CABA"
+    "1|miercoles|09:15|10:45|Sarudiansky, Mercedes|I|IN-218|Espacio de Articulación - Facultad de Psicología|0",
+    "2|miercoles|08:30|10:45|Lanzillotti, Alejandra Ines|I||Servicio de Epilepsia Hospital - Ramos Mejía|0",
+    "3|miercoles|12:45|14:15|Areco Pico, Maria Marta|I|IN-218|Espacio de Articulación - Facultad de Psicología|0",
+    "4|miercoles|12:00|14:15|Pereyra, Martina Inés|I||Escuela Cangallo Schule - JD Perón 2169 CABA|4",
+    "5|jueves|09:15|10:45|Wolfzun, Camila|I|IN-217|Espacio de Articulación - Facultad de Psicología|0",
+    "6|jueves|08:30|10:45|Gonzalez Molina, Lucila|I||Escuela Cangallo Schule - JD Perón 2169 CABA|4"
   ]
 }

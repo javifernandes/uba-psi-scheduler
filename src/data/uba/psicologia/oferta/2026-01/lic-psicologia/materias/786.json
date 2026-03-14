@@ -2,12 +2,10 @@
   "id": "pp-pp-area-social-comunitaria-el-psicologo-en-centros-de-aten-c786",
   "label": "P.P.: P.P.: Área Social Comunitaria: El Psicólogo en Centros de Aten - Cátedra 786",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Social Comunitaria: El Psicólogo en Centros de Aten - Cátedra 786 - Prof. De Lellis",
-  "teoricos": [
-    "I|jueves|18:00|19:30|De Lellis, Martin|IN-313|"
-  ],
+  "teoricos": ["I|jueves|18:00|19:30|De Lellis, Martin|IN-313|"],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|08:00|12:00|López Escobar, Thiago|I||Hospital Iriarte: Allison Bell 770.Quilmes, Pcia de Bs As/ Hospital Durand CABA",
-    "2|viernes|08:00|12:00|Falk, Federico Martin|I||CESAC 14 CABA"
+    "1|jueves|08:00|12:00|López Escobar, Thiago|I||Hospital Iriarte: Allison Bell 770.Quilmes, Pcia de Bs As/ Hospital Durand CABA|10",
+    "2|viernes|08:00|12:00|Falk, Federico Martin|I||CESAC 14 CABA|9"
   ]
 }

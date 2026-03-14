@@ -2,11 +2,7 @@
   "id": "teoria-y-tecnica-de-grupos-c301",
   "label": "Teoría y Técnica de Grupos - Cátedra 301",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Teoría y Técnica de Grupos - Cátedra 301 - Jaume",
-  "teoricos": [
-    "I|miercoles|17:00|19:00|Jaume, Luis Carlos|AV-026|"
-  ],
+  "teoricos": ["I|miercoles|17:00|19:00|Jaume, Luis Carlos|AV-026|"],
   "seminarios": [],
-  "comisiones": [
-    "1|miercoles|19:00|21:00|Roca, Marcelo|I|AV-026|"
-  ]
+  "comisiones": ["1|miercoles|19:00|21:00|Roca, Marcelo|I|AV-026||69"]
 }

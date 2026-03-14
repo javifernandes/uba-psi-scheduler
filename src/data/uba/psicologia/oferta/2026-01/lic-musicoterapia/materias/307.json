@@ -2,12 +2,10 @@
   "id": "audioperceptiva-aplicada-i-c307",
   "label": "Audioperceptiva Aplicada I - Cátedra 307",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Audioperceptiva Aplicada I - Cátedra 307 - Prof. Barnaba",
-  "teoricos": [
-    "I|lunes|19:00|21:00|Barnaba, Elizabeth Dalila Rosa|AV-025|"
-  ],
+  "teoricos": ["I|lunes|19:00|21:00|Barnaba, Elizabeth Dalila Rosa|AV-025|"],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|15:00|19:00|Vidal Raffo, Federico Jorge|I|AV-042|",
-    "2|viernes|17:00|21:00|Vidal Raffo, Federico Jorge|I|AV-042|"
+    "1|lunes|15:00|19:00|Vidal Raffo, Federico Jorge|I|AV-042||23",
+    "2|viernes|17:00|21:00|Vidal Raffo, Federico Jorge|I|AV-042||25"
   ]
 }
