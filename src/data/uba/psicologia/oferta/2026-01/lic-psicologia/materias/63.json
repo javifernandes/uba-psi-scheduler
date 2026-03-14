@@ -90,7 +90,7 @@
       "profesor": "Idigoras, Julio Nicolas",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -107,7 +107,7 @@
       "profesor": "Yablonovsky, Talia",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -124,7 +124,7 @@
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -141,7 +141,7 @@
       "profesor": "Mazzolini, Carlos Norberto",
       "aula": "IN-323",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -175,7 +175,7 @@
       "profesor": "Mpacas, Diana",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -192,7 +192,7 @@
       "profesor": "Vilares, Tomas",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -209,7 +209,7 @@
       "profesor": "Gimenez, Maria Fernanda",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -260,7 +260,7 @@
       "profesor": "Bokser, Julian Luciano",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -277,7 +277,7 @@
       "profesor": "Corino, Carolina Alicia",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -294,7 +294,7 @@
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "III",

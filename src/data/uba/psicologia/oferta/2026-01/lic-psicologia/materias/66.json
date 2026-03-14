@@ -86,7 +86,7 @@
       "profesor": "Fernandez Romeral, Juliana",
       "aula": "IN-412",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -103,7 +103,7 @@
       "profesor": "Krotsch, Patricio Enrique",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -137,7 +137,7 @@
       "profesor": "Rojtenberg, Carolina Beatriz",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -240,7 +240,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -258,7 +258,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -275,7 +275,7 @@
       "profesor": "Carril, Maria Veronica",
       "aula": "IN-443",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -292,7 +292,7 @@
       "profesor": "Rosales, Melina Laura",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -309,7 +309,7 @@
       "profesor": "Riveros, Brenda Gabriela",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -326,7 +326,7 @@
       "profesor": "Verdun, Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -377,7 +377,7 @@
       "profesor": "Ferreyra, Julián Agustín",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -394,7 +394,7 @@
       "profesor": "Prado, Jorge",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",

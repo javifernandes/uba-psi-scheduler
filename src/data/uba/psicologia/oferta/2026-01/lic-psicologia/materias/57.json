@@ -69,7 +69,7 @@
       "profesor": "Sielecki, Carolina Laura",
       "aula": "HY-030",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -103,7 +103,7 @@
       "profesor": "Gelly Cantilo, Luis",
       "aula": "HY-012",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -137,7 +137,7 @@
       "profesor": "Nogueira, Vanesa Daniela",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -154,7 +154,7 @@
       "profesor": "Fuentes Esparza, Mariela",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "I",

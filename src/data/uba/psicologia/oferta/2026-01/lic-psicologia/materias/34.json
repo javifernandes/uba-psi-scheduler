@@ -162,7 +162,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -228,7 +228,7 @@
       "profesor": "Arditi, Mariano Gabriel",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -316,7 +316,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -448,7 +448,7 @@
       "profesor": "Zaldarriaga, Hernan Ezequiel",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -470,7 +470,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -580,7 +580,7 @@
       "profesor": "Doppelgatz, Angel",
       "aula": "HY-030",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -670,7 +670,7 @@
       "aula": "SI-021",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -715,7 +715,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -737,7 +737,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -781,7 +781,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "F",

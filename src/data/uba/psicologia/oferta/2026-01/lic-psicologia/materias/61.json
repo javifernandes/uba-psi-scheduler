@@ -101,7 +101,7 @@
       "profesor": "Goldschmidt, Micaela Giuliana",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -135,7 +135,7 @@
       "profesor": "Hauche, Rocio Anabel",
       "aula": "IN-106",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -152,7 +152,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -254,7 +254,7 @@
       "profesor": "Galeano, Pablo",
       "aula": "IN-431",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -373,7 +373,7 @@
       "profesor": "Nasra, Natasha",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -458,7 +458,7 @@
       "profesor": "Vizioli, Nicolas",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -475,7 +475,7 @@
       "profesor": "Fraternale, Giuliana Daniela",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -509,7 +509,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "VI",

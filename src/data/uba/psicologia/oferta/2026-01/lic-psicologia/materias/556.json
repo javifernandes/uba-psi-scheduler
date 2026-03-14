@@ -56,7 +56,7 @@
       "profesor": "Britos, Mariana",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -124,7 +124,7 @@
       "profesor": "Tacchini, Carla",
       "aula": "IN-324",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -158,7 +158,7 @@
       "profesor": "Lidovski, Magali",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -175,7 +175,7 @@
       "profesor": "Ramirez, Rosana",
       "aula": "IN-324",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -226,7 +226,7 @@
       "profesor": "Izsak, Paloma",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -243,7 +243,7 @@
       "profesor": "Izsak, Paloma",
       "aula": "IN-433",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -260,7 +260,7 @@
       "profesor": "Meiss, Martín Leonardo",
       "aula": "IN-431",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -277,7 +277,7 @@
       "profesor": "Brea, Norma Beatriz",
       "aula": "IN-114",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -328,7 +328,7 @@
       "profesor": "Mazzitelli, David Omar",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -345,7 +345,7 @@
       "profesor": "Mazzitelli, David Omar",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -362,7 +362,7 @@
       "profesor": "Merele, Emilia",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -379,7 +379,7 @@
       "profesor": "Rueda, Maria Sabrina",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -481,7 +481,7 @@
       "profesor": "Miguelez, Cecilia Denise",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "II",

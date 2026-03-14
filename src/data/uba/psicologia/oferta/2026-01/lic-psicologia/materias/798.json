@@ -39,7 +39,7 @@
       "profesor": "Crivelli, Maria Eugenia",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -124,7 +124,7 @@
       "profesor": "Cuomo, Gabriela Susana",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "II",

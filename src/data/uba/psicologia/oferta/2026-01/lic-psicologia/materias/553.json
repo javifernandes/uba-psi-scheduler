@@ -86,7 +86,7 @@
       "profesor": "Sosa, Sofía",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -130,7 +130,7 @@
       "profesor": "Herrera, Loana",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -196,7 +196,7 @@
       "profesor": "Serodio, Manuel",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -218,7 +218,7 @@
       "profesor": "Ojeda, Agustn",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -263,7 +263,7 @@
       "aula": "SI-039",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -330,7 +330,7 @@
       "profesor": "Sosa, Sofía",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -352,7 +352,7 @@
       "profesor": "Campos, Gisela",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -374,7 +374,7 @@
       "profesor": "Mellis, Patricia",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -396,7 +396,7 @@
       "profesor": "Bollasina, Valeria Laura",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -462,7 +462,7 @@
       "profesor": "Bejarano, Daniela",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -484,7 +484,7 @@
       "profesor": "Gómez Mari, Ailín",
       "aula": "HY-025",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",

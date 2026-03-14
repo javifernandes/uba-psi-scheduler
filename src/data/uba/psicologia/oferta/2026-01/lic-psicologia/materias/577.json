@@ -184,7 +184,7 @@
       "profesor": "Gorocito, Patricia Monica",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -201,7 +201,7 @@
       "profesor": "Serue, Dora Alejandra",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -218,7 +218,7 @@
       "profesor": "Kletnicki, Armando Benjamin",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -252,7 +252,7 @@
       "profesor": "Smud, Martin Hernan",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "III",

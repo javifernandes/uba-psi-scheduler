@@ -30,7 +30,7 @@
       "profesor": "Sanchez, Natalia Alejandra",
       "aula": "IN-114",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -64,7 +64,7 @@
       "profesor": "Indaburu, Ana",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -98,7 +98,7 @@
       "profesor": "Indaburu, Ana",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "II",

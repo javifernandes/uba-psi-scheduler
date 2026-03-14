@@ -300,7 +300,7 @@
       "profesor": "Meneses Cantero, Elizabeth",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -403,7 +403,7 @@
       "profesor": "Garcia Domench, Maria Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -675,7 +675,7 @@
       "profesor": "Val, Solange",
       "aula": "IN-GES",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "IV",

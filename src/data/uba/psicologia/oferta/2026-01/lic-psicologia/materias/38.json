@@ -260,7 +260,7 @@
       "profesor": "Almira, Maria Belen",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -304,7 +304,7 @@
       "profesor": "Zaffore, Carolina",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -348,7 +348,7 @@
       "profesor": "Svartzman, Rocio",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -370,7 +370,7 @@
       "profesor": "Leon, Natalia",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -634,7 +634,7 @@
       "profesor": "Ramirez Cuervo, Jason",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -835,7 +835,7 @@
       "profesor": "Sanchez, Federico",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -947,7 +947,7 @@
       "profesor": "Pastor, Maria Victoria",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -1013,7 +1013,7 @@
       "profesor": "Fragale, Gabriela Eugenia",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -1079,7 +1079,7 @@
       "profesor": "Hardmeier, Leonora Cecilia",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1167,7 +1167,7 @@
       "profesor": "Torres, María Florencia",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1189,7 +1189,7 @@
       "profesor": "Quiroga, Florencia",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "G",
