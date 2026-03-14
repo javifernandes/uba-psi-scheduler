@@ -110,7 +110,7 @@
       "profesor": "Pintos, Claudia",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -242,7 +242,7 @@
       "profesor": "Mendez, Maria Cecilia",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -286,7 +286,7 @@
       "profesor": "Duarte, Cecilia",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -330,7 +330,7 @@
       "profesor": "Basso, Francina",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -396,7 +396,7 @@
       "profesor": "Rivarola Britez, Maria Del Roc",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -462,7 +462,7 @@
       "profesor": "Russi, Mauro",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -704,7 +704,7 @@
       "profesor": "Gonzalez Cadahia, Mariana",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "I",

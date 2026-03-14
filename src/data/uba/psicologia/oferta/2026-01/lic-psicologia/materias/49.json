@@ -862,7 +862,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 38,
+      "vacantes": 37,
       "slotsAsociados": [
         {
           "slotId": "M",
@@ -906,7 +906,7 @@
       "profesor": "Moreno, Soledad",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -1017,7 +1017,7 @@
       "profesor": "Dal Maso Otano, Silvina Rosa",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -1149,7 +1149,7 @@
       "profesor": "Crivelli, Maria Eugenia",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1259,7 +1259,7 @@
       "profesor": "Basso, María Julia",
       "aula": "IN-204",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "D",

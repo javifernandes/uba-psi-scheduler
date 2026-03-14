@@ -90,7 +90,7 @@
       "profesor": "Idigoras, Julio Nicolas",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -107,7 +107,7 @@
       "profesor": "Yablonovsky, Talia",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -124,7 +124,7 @@
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -243,7 +243,7 @@
       "profesor": "Collado, Candido Luis",
       "aula": "IN-303",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -294,7 +294,7 @@
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "III",

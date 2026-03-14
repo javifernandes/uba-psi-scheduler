@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -602,7 +602,7 @@
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -647,7 +647,7 @@
       "aula": "SI-023",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -670,7 +670,7 @@
       "aula": "SI-021",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -737,7 +737,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -781,7 +781,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "F",

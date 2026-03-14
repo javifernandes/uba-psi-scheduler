@@ -232,7 +232,7 @@
       "profesor": "Silvestre, Ingrid Lorena",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -403,7 +403,7 @@
       "profesor": "Garcia Domench, Maria Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 35,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -437,7 +437,7 @@
       "profesor": "Claramunt, Maria Ines",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "IV",

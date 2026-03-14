@@ -100,7 +100,7 @@
       "profesor": "Zion, Maria Victoria",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -185,7 +185,7 @@
       "profesor": "Sueldo, Lautaro Matias",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -203,7 +203,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -238,7 +238,7 @@
       "aula": "SI-002",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -255,7 +255,7 @@
       "profesor": "Samaja, Juan Alfonso",
       "aula": "IN-420",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "I",

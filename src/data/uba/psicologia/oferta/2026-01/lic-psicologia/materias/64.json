@@ -83,7 +83,7 @@
       "profesor": "Tejo Arroyo, Mariano",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -134,7 +134,7 @@
       "profesor": "Villafane, Adrian Ricardo",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -236,7 +236,7 @@
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -270,7 +270,7 @@
       "profesor": "Fiumara, Mariano",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -287,7 +287,7 @@
       "profesor": "Becerra Odoguardi, Indira Clar",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -305,7 +305,7 @@
       "aula": "SI-022",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -358,7 +358,7 @@
       "profesor": "Galan, Ignacio",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -375,7 +375,7 @@
       "profesor": "Cardoso Marino, Yohanna",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -411,7 +411,7 @@
       "aula": "SI-012",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -463,7 +463,7 @@
       "profesor": "Neiman, Luciano",
       "aula": "HY-030",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -531,7 +531,7 @@
       "profesor": "Boczkowski, Ionatan",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -548,7 +548,7 @@
       "profesor": "Florit, Dionisia Maria",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "I",

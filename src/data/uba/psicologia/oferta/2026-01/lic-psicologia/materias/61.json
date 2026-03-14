@@ -118,7 +118,7 @@
       "profesor": "Hirschberg, Silvina Erica",
       "aula": "IN-433",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -152,7 +152,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -288,7 +288,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -305,7 +305,7 @@
       "profesor": "Caccia, Paula Agustina",
       "aula": "IN-213",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -339,7 +339,7 @@
       "profesor": "Dowzuk, Nadia Alejandra",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -390,7 +390,7 @@
       "profesor": "Cattaneo, Brenda",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -407,7 +407,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-322",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -475,7 +475,7 @@
       "profesor": "Fraternale, Giuliana Daniela",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -509,7 +509,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "VI",
@@ -526,7 +526,7 @@
       "profesor": "Masin, Alejandro",
       "aula": "IN-443",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "I",

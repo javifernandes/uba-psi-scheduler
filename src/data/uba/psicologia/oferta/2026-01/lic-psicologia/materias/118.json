@@ -99,7 +99,7 @@
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "HY-012",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -253,7 +253,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -275,7 +275,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -319,7 +319,7 @@
       "profesor": "Abeijon, Matias Federico",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -341,7 +341,7 @@
       "profesor": "Zengotita, Alonso",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -363,7 +363,7 @@
       "profesor": "Klein, Tamara Lis",
       "aula": "IN-121",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -451,7 +451,7 @@
       "profesor": "Carreno, Sebastian",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "D",

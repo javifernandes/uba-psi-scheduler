@@ -70,7 +70,7 @@
       "aula": "SI-003",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -207,7 +207,7 @@
       "profesor": "López, Silvina",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -293,7 +293,7 @@
       "profesor": "Dorrego, Gisele Nauali",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -327,7 +327,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "HY-021",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "IV",

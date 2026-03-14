@@ -86,7 +86,7 @@
       "profesor": "Fernandez Romeral, Juliana",
       "aula": "IN-412",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -103,7 +103,7 @@
       "profesor": "Krotsch, Patricio Enrique",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -240,7 +240,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -275,7 +275,7 @@
       "profesor": "Carril, Maria Veronica",
       "aula": "IN-443",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -292,7 +292,7 @@
       "profesor": "Rosales, Melina Laura",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -326,7 +326,7 @@
       "profesor": "Verdun, Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -343,7 +343,7 @@
       "profesor": "Fanelli, Ana Maria",
       "aula": "IN-434",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
