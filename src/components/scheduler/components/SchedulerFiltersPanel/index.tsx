@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useSchedulerTourStep } from '@/hooks/dom/use-scheduler-tour-step';
+import { sumKnownVacanciesFromSubject } from '@/domain/vacancies';
 import type { Comision, SubjectData, VenueCode } from '../../scheduler.types';
 import {
   catedraFragmentFromLabel,
@@ -282,13 +283,23 @@ export const SchedulerFiltersPanel = ({
                         key={group.groupLabel}
                         className="border-b border-[#f0e5ec] last:border-b-0 dark:border-zinc-700"
                       >
-                        <div className="px-5 pb-1.5 pt-2 text-[14px] font-bold text-[#4f1237] dark:text-zinc-100">
-                          {group.groupLabel}
+                        <div className="flex items-center justify-between gap-2 px-5 pb-1.5 pt-2">
+                          <span className="text-[14px] font-bold text-[#4f1237] dark:text-zinc-100">
+                            {group.groupLabel}
+                          </span>
+                          <span className="inline-flex w-[4.75rem] shrink-0 items-center justify-center rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
+                            Vac{' '}
+                            {group.options.reduce(
+                              (total, subject) => total + sumKnownVacanciesFromSubject(subject),
+                              0
+                            )}
+                          </span>
                         </div>
                         <div className="divide-y divide-[#f5ebf1] dark:divide-zinc-700/70">
                           {group.options.map((subject) => {
                             optionIndex += 1;
                             const isHighlighted = optionIndex === highlightedSubjectIndex;
+                            const subjectVacancies = sumKnownVacanciesFromSubject(subject);
                             return (
                               <button
                                 key={subject.id}
@@ -329,10 +340,15 @@ export const SchedulerFiltersPanel = ({
                                 data-testid="subject-option"
                                 data-subject-id={subject.id}
                               >
-                                <div className="pl-4 text-[12px] font-semibold text-[#6d5162] dark:text-zinc-300">
-                                  {catedraFragmentFromLabel(subject.label)} ·{' '}
-                                  <span className="font-medium text-[#8b6f80] dark:text-zinc-400">
-                                    {catedraProfessorFromHeader(subject.header)}
+                                <div className="flex items-center justify-between gap-2 pl-4 text-[12px] font-semibold text-[#6d5162] dark:text-zinc-300">
+                                  <span className="min-w-0 flex-1 truncate">
+                                    {catedraFragmentFromLabel(subject.label)} ·{' '}
+                                    <span className="font-medium text-[#8b6f80] dark:text-zinc-400">
+                                      {catedraProfessorFromHeader(subject.header)}
+                                    </span>
+                                  </span>
+                                  <span className="inline-flex w-[4.75rem] shrink-0 items-center justify-center rounded bg-[#f2e0ea] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-[#6d5162] dark:bg-zinc-700 dark:text-zinc-300">
+                                    Vac {subjectVacancies}
                                   </span>
                                 </div>
                               </button>
