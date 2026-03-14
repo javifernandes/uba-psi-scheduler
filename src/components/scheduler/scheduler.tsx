@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, type ComponentProps } from 'react';
 import type { ParsedSubject, SubjectData } from './scheduler.types';
 import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
+import { sumKnownVacancies } from '@/domain/vacancies';
 import type { PeriodId } from '@/lib/period';
 import { useAppStore } from '@/store/app-store';
 import {
@@ -142,6 +143,14 @@ const SchedulerContent = ({
     conflictingSubject?.label.match(/Cátedra\s+\d+/i)?.[0] || 'cátedra seleccionada';
   const hasTeoricos = selectedSubject ? slotsByTipo(selectedSubject, 'teo').length > 0 : false;
   const hasSeminarios = selectedSubject ? slotsByTipo(selectedSubject, 'sem').length > 0 : false;
+  const filteredComisionesVacancies = useMemo(
+    () => sumKnownVacancies(filteredComisiones),
+    [filteredComisiones]
+  );
+  const selectedSubjectVacancies = useMemo(
+    () => sumKnownVacancies(selectedSubject?.comisiones || []),
+    [selectedSubject]
+  );
 
   useEffect(() => {
     setDismissConflictWarning(false);
@@ -318,6 +327,8 @@ const SchedulerContent = ({
     setIsComisionesPanelOpen,
     selectedComisionesLength: selectedComisiones.length,
     filteredComisionesLength: filteredComisiones.length,
+    filteredComisionesVacancies,
+    selectedSubjectVacancies,
     isCommissionDropdownOpen,
     setIsCommissionDropdownOpen,
     selectAllVisible: onSelectAllVisible,
