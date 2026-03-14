@@ -138,7 +138,7 @@
         "aula": "010"
       },
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -163,7 +163,7 @@
         "aula": "029"
       },
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -263,7 +263,7 @@
         "aula": "027"
       },
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -340,7 +340,7 @@
       },
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -365,7 +365,7 @@
         "aula": "025"
       },
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -390,7 +390,7 @@
         "aula": "023"
       },
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -415,7 +415,7 @@
         "aula": "013"
       },
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -465,7 +465,7 @@
         "aula": "004"
       },
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -515,7 +515,7 @@
         "aula": "026"
       },
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -540,7 +540,7 @@
         "aula": "024"
       },
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -565,7 +565,7 @@
         "aula": "025"
       },
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -615,7 +615,7 @@
         "aula": "026"
       },
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -640,7 +640,7 @@
         "aula": "010"
       },
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -666,7 +666,7 @@
       },
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "VII",
