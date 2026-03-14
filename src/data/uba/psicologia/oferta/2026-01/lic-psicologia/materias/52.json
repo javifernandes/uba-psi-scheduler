@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Diaz, Noelia Soledad",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Grigoravicius, Marcelo Juan",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Freidin, Fabiana",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Ramos, Laura Vanina",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [
@@ -54,7 +66,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Canelo, Elisa Irene",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
@@ -71,7 +86,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Aguiriano, Vanina Mariela",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -88,7 +106,10 @@
       "inicio": "07:30",
       "fin": "10:45",
       "profesor": "Bardi, Daniela Carla",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [

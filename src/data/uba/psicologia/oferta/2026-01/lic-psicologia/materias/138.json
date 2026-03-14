@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Torres, Gustavo Fernando",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Ferrari, Monica Graciela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Alas de Libertad Asociación Civil - Cangayé 1155 - CABA",
       "tipo": "prac",
       "vacantes": 9,
@@ -37,7 +43,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Podhainy, Maria Belen",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar",
       "tipo": "prac",
       "vacantes": 6,
@@ -55,7 +64,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Pepa, Marcela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Fundación Santa Catalina - Callao 433 - Piso 2° - CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -73,7 +85,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Ferrando, Myrian Gabriela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC",
       "tipo": "prac",
       "vacantes": 7,

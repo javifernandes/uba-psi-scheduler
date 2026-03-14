@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Gonzalez, Federico Faustino",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "A",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Irrazabal, Natalia Carolina",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "B",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Burin, Debora Ines",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "B",
       "tipo": "teo"
     },
@@ -40,7 +49,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gonzalez, Federico Faustino",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "A",
       "tipo": "teo"
     },
@@ -50,7 +62,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Gonzalez, Federico Faustino",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "A",
       "tipo": "teo"
     },
@@ -60,7 +75,10 @@
       "inicio": "09:00",
       "fin": "10:45",
       "profesor": "Azzollini, Susana Celeste",
-      "aula": "SI-004",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "004"
+      },
       "observ": "San Isidro",
       "tipo": "teo"
     },
@@ -70,7 +88,10 @@
       "inicio": "11:00",
       "fin": "12:45",
       "profesor": "Azzollini, Susana Celeste",
-      "aula": "SI-004",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "004"
+      },
       "observ": "San Isidro",
       "tipo": "teo"
     },
@@ -80,7 +101,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Burin, Debora Ines",
-      "aula": "IN-MAY",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "MAY"
+      },
       "observ": "B",
       "tipo": "teo"
     },
@@ -90,7 +114,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Vattimo, Silvana",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -112,7 +139,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "González Canteros, Sofia",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -134,7 +164,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "González Canteros, Sofia",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -156,7 +189,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Vattimo, Silvana",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -178,7 +214,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cervetti, Verónica Esther",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -200,7 +239,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cervetti, Verónica Esther",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -222,7 +264,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Iseb, Macarena",
-      "aula": "IN-444",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "444"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -244,7 +289,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Delembert, Walter Guillermo",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -266,7 +314,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Iseb, Macarena",
-      "aula": "IN-444",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "444"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -288,7 +339,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Delembert, Walter Guillermo",
-      "aula": "IN-209",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "209"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -310,7 +364,10 @@
       "inicio": "13:00",
       "fin": "14:45",
       "profesor": "Marrujo, Jonathan",
-      "aula": "SI-040",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "040"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 35,
@@ -333,7 +390,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Giesenberg Bel, Sofia",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -355,7 +415,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Palmieri, Dario",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -377,7 +440,10 @@
       "inicio": "15:00",
       "fin": "16:45",
       "profesor": "Marrujo, Jonathan",
-      "aula": "SI-040",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "040"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 35,
@@ -400,7 +466,10 @@
       "inicio": "16:15",
       "fin": "18:00",
       "profesor": "Giesenberg Bel, Sofia",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -422,7 +491,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Palmieri, Dario",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -444,7 +516,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Gonzalez, Federico Martín",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -466,7 +541,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gonzalez, Federico Martín",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -488,7 +566,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Buján, Gustavo Ezequiel",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -510,7 +591,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Bujan, Gustavo Ezequiel",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -532,7 +616,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cultraro, Felipe Alejandro",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -554,7 +641,10 @@
       "inicio": "14:30",
       "fin": "16:15",
       "profesor": "Sztabzyb, Sebastian Ezequiel",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -576,7 +666,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cultraro, Felipe Alejandro",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -598,7 +691,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Sztabzyb, Sebastian Ezequiel",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -620,7 +716,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Lanchini, Daniela Juliana",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -642,7 +741,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Martinez, Magali",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -664,7 +766,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Lanchini, Daniela Juliana",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -686,7 +791,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Martinez, Magali",
-      "aula": "IN-122",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "122"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -708,7 +816,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Carreira Caro, Candela Sofa",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -730,7 +841,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Rios, Micaela Yanet",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -752,7 +866,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Rios, Micaela Yanet",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -774,7 +891,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Carreira Caro, Candela Sofa",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

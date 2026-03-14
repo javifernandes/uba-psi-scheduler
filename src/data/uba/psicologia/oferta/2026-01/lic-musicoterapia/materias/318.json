@@ -10,7 +10,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Santesteban, Selva Susana",
-      "aula": "AV-041",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "041"
+      },
       "observ": "Se dicta al comienzo del cuatrimestre",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Tosto, Virginia Fabiana",
-      "aula": "AV-042",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "042"
+      },
       "observ": "Se dicta al comienzo del cuatrimestre",
       "tipo": "prac",
       "vacantes": 19,

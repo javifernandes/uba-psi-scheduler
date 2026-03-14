@@ -17,7 +17,10 @@ type SlotBase = {
   inicio: string;
   fin: string;
   profesor: string;
-  aula: string;
+  lugar: {
+    anexo: string | null;
+    aula: string | null;
+  };
   observ?: string;
 };
 
@@ -53,6 +56,27 @@ const DAY_ORDER = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'
 const SLOT_KIND_ORDER: Record<SlotTipo, number> = { teo: 0, sem: 1, prac: 2 };
 
 const normalizeText = (value: string) => value.replace(/\s+/g, ' ').trim();
+
+const parseLugar = (rawAula: string) => {
+  const clean = normalizeText(rawAula).toUpperCase();
+  if (!clean) {
+    return {
+      anexo: null,
+      aula: null,
+    };
+  }
+  const match = clean.match(/^([A-Z]{2,5})(?:[-\s/](.+))?$/);
+  if (!match?.[1]) {
+    return {
+      anexo: null,
+      aula: clean,
+    };
+  }
+  return {
+    anexo: match[1],
+    aula: normalizeText(match[2] || '') || null,
+  };
+};
 
 const h2m = (hhmm: string) => {
   const [h, m] = hhmm.split(':').map(Number);
@@ -91,13 +115,19 @@ const normalizeAssociationsFromOblig = (obligRaw: string) => {
 
 const normalizeSlot = (slot: SubjectSlot): SubjectSlot => {
   const observ = normalizeText(slot.observ || '');
+  const legacySlot = slot as SubjectSlot & { aula?: string };
   const base = {
     id: normalizeText(slot.id),
     dia: normalizeText(slot.dia),
     inicio: normalizeText(slot.inicio),
     fin: normalizeText(slot.fin),
     profesor: normalizeText(slot.profesor),
-    aula: normalizeText(slot.aula),
+    lugar: slot.lugar
+      ? {
+          anexo: normalizeText(slot.lugar.anexo || '').toUpperCase() || null,
+          aula: normalizeText(slot.lugar.aula || '').toUpperCase() || null,
+        }
+      : parseLugar(legacySlot.aula || ''),
     ...(observ ? { observ } : {}),
   } as const;
 
@@ -155,7 +185,7 @@ const parseLegacyTeoSemSlot = (raw: string, tipo: 'teo' | 'sem') => {
     inicio: parts[2] || '',
     fin: parts[3] || '',
     profesor: parts[4] || '',
-    aula: parts[5] || '',
+    lugar: parseLugar(parts[5] || ''),
     ...(parts[6] ? { observ: parts[6] } : {}),
   };
   return normalizeSlot(slot);
@@ -171,7 +201,7 @@ const parseLegacyComisionSlot = (raw: string) => {
     inicio: parts[2] || '',
     fin: parts[3] || '',
     profesor: parts[4] || '',
-    aula: parts[6] || '',
+    lugar: parseLugar(parts[6] || ''),
     ...(parts[7] ? { observ: parts[7] } : {}),
     vacantes: parseVacantes(parts[8]),
     slotsAsociados: normalizeAssociationsFromOblig(obligRaw),

@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Roldan, Ana Lis",
-      "aula": "SI-029",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Pérez, Marcia Carolina",
-      "aula": "SI-021",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "021"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Pérez, Marcia Carolina",
-      "aula": "SI-021",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "021"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

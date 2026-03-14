@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Ruiz, Maria Mercedes",
-      "aula": "AV-004",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "004"
+      },
       "observ": "Sede Avellaneda",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Benzacar, Adrian Leandro",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
       "tipo": "prac",
       "vacantes": 0,
@@ -38,7 +44,10 @@
       "inicio": "12:30",
       "fin": "15:30",
       "profesor": "Benzacar, Adrian Leandro",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
       "tipo": "prac",
       "vacantes": 0,
@@ -56,7 +65,10 @@
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Espinosa, Alejandro Miguel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CET Empatia. Av. Isidoro Iriarte 1390 Quilmes",
       "tipo": "prac",
       "vacantes": 2,

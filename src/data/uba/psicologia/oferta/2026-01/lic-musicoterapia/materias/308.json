@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Crespino, Claudio Daniel",
-      "aula": "AV-029",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Broqua, Graciela Ines",
-      "aula": "AV-028",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "028"
+      },
       "tipo": "prac",
       "vacantes": 37,
       "slotsAsociados": [

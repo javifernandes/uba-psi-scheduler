@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Gerskovich, Nestor",
-      "aula": "SI-016",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "016"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Romualdo, Wendy",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "prac",
       "vacantes": 27,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Romualdo, Wendy",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "prac",
       "vacantes": 28,
       "slotsAsociados": [

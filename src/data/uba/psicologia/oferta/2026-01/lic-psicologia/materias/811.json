@@ -10,7 +10,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Barrios, Raul",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Campo deportes UBA: Intendente Güiraldes 2620. Aula 1.",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Villa, Javier",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Campo deportes UBA: Intendente Güiraldes 2620",
       "tipo": "prac",
       "vacantes": 0,

@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Abinzano, Rodrigo",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Amor, Mauro",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Amor, Mauro",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 24,
       "slotsAsociados": [

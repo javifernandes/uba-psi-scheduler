@@ -10,7 +10,10 @@
       "inicio": "08:15",
       "fin": "10:15",
       "profesor": "Benvenuto, Analía Liliana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Durand (Av. Díaz Vélez 5044). Pabellón Romano 8vo. piso Aula de Nefrología",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "10:15",
       "fin": "14:15",
       "profesor": "Nassiff, Magali",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Durand (Av. Díaz Vélez 5044). Pabellón Villanueva 3 piso.",
       "tipo": "prac",
       "vacantes": 10,
@@ -38,7 +44,10 @@
       "inicio": "10:15",
       "fin": "14:15",
       "profesor": "Papaleo, Maria Lorena",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Durand (Av. Díaz Vélez 5044). Pabellón Villanueva 3 piso.",
       "tipo": "prac",
       "vacantes": 12,
@@ -56,7 +65,10 @@
       "inicio": "10:15",
       "fin": "14:15",
       "profesor": "Di Fiore, Giuliana Agostina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Durand (Av. Díaz Vélez 5044). Pabellón Villanueva 3 piso.",
       "tipo": "prac",
       "vacantes": 0,
@@ -74,7 +86,10 @@
       "inicio": "10:15",
       "fin": "14:15",
       "profesor": "Torales Witman, Wanda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Durand (Av. Díaz Vélez 5044). Pabellón Villanueva 3 piso.",
       "tipo": "prac",
       "vacantes": 13,

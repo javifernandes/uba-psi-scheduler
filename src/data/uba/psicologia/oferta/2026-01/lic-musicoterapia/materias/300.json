@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Butman, Judith",
-      "aula": "AV-036",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "036"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Borenstein, Alejandro Damián",
-      "aula": "AV-028",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "028"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [

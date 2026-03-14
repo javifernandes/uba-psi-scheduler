@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Vizioli, Nicolas",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Cure Pabuena, Shadia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
       "tipo": "prac",
       "vacantes": 1,
@@ -37,7 +43,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Sanna, Micaela Edith",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
       "tipo": "prac",
       "vacantes": 8,
@@ -55,7 +64,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Raggio, Sabrina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
       "tipo": "prac",
       "vacantes": 3,
@@ -73,7 +85,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Corsi, Gonzalo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
       "tipo": "prac",
       "vacantes": 6,
@@ -91,7 +106,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Gimeno, Leandro Crisólogo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
       "tipo": "prac",
       "vacantes": 6,
@@ -109,7 +127,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Cure Pabuena, Shadia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Padre Carlos Mugica 1300 Fundacion Scholas Papa Francisco",
       "tipo": "prac",
       "vacantes": 0,
@@ -127,7 +148,10 @@
       "inicio": "08:30",
       "fin": "12:30",
       "profesor": "Lavanga, Nahuel Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
       "tipo": "prac",
       "vacantes": 1,

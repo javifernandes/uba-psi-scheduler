@@ -10,7 +10,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Miracco, Mariana Carolina",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "20:00",
       "profesor": "Lucente, Giulietta",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "OPTATIVA-VIRTUAL/PRESENCIAL- Club Argentinos Jrs Polideportivo Las Malvinas Arge",
       "tipo": "sem"
     },
@@ -29,7 +35,10 @@
       "inicio": "18:00",
       "fin": "20:00",
       "profesor": "Giraldez, Agostina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "OPTATIVA-VIRTUAL-Reunión de equipos y co-visión de casos clínicos. De la Red de",
       "tipo": "sem"
     },
@@ -39,7 +48,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Giraldez, Agostina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Campus virtual/ Sede Asoc. Interdis. SM Perinatal, Almagro",
       "tipo": "prac",
       "vacantes": 7,
@@ -57,7 +69,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Copati, Anahi",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "AIFAN, Rivadavia 5012, 3°, CABA. Y dispositivos virtuales",
       "tipo": "prac",
       "vacantes": 9,

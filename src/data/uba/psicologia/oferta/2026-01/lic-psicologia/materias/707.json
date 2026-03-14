@@ -10,7 +10,10 @@
       "inicio": "08:00",
       "fin": "10:00",
       "profesor": "Coppola, Daniel Ricardo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda (se opta por uno de los dos teóricos)",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Coppola, Daniel Ricardo",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia (se opta por uno de los dos teóricos)",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 3,
@@ -42,7 +51,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -54,7 +66,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -66,7 +81,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -78,7 +96,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -90,7 +111,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -102,7 +126,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -114,7 +141,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 2,
@@ -126,7 +156,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -138,7 +171,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -150,7 +186,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -162,7 +201,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -174,7 +216,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -186,7 +231,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -198,7 +246,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -210,7 +261,10 @@
       "inicio": "10:00",
       "fin": "12:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Borda",
       "tipo": "prac",
       "vacantes": 4,
@@ -222,7 +276,10 @@
       "inicio": "09:00",
       "fin": "11:15",
       "profesor": "Saavedra, Mariela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Tepokora Cochabamba 2509 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 4,
@@ -234,7 +291,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Fernández, Eugenia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal borda Carrillo 375 o elegí entre otros 70 horarios y lugares ver info inscr",
       "tipo": "prac",
       "vacantes": 4,
@@ -246,7 +306,10 @@
       "inicio": "09:00",
       "fin": "11:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Clin Abril Humahuaca 3763 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 4,
@@ -258,7 +321,10 @@
       "inicio": "12:00",
       "fin": "14:00",
       "profesor": "Saavedra, Mariela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "AA Santa cruz Urquiza 941 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 5,
@@ -270,7 +336,10 @@
       "inicio": "12:30",
       "fin": "14:30",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Tepokora Cochabamba 2509 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 4,
@@ -282,7 +351,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -294,7 +366,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -306,7 +381,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -318,7 +396,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -330,7 +411,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -342,7 +426,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -354,7 +441,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -366,7 +456,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -378,7 +471,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -390,7 +486,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -402,7 +501,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -414,7 +516,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -426,7 +531,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -438,7 +546,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -450,7 +561,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -462,7 +576,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 2,
@@ -474,7 +591,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 3,
@@ -486,7 +606,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -498,7 +621,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -510,7 +636,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -522,7 +651,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -534,7 +666,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Otero, Vanesa",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -546,7 +681,10 @@
       "inicio": "16:00",
       "fin": "18:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "AA Santa cruz Urquiza 941 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 4,
@@ -558,7 +696,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 3,
@@ -570,7 +711,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -582,7 +726,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -594,7 +741,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -606,7 +756,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 3,
@@ -618,7 +771,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -630,7 +786,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -642,7 +801,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -654,7 +816,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -666,7 +831,10 @@
       "inicio": "18:00",
       "fin": "19:15",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -678,7 +846,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -690,7 +861,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 3,
@@ -702,7 +876,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 5,
@@ -714,7 +891,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -726,7 +906,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -738,7 +921,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -750,7 +936,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Paveto, Ricardo Daniel",
-      "aula": "IN-325",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "325"
+      },
       "observ": "Sede independencia",
       "tipo": "prac",
       "vacantes": 4,
@@ -762,7 +951,10 @@
       "inicio": "18:00",
       "fin": "20:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Clin Abril Humahuaca 3763 o elegí entre 70 horarios y lugares ver info inscrip",
       "tipo": "prac",
       "vacantes": 4,
@@ -774,7 +966,10 @@
       "inicio": "11:00",
       "fin": "13:00",
       "profesor": "Saavedra, Mariela",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal borda Carrillo 375 o elegí entre otros 70 horarios y lugares ver info inscr",
       "tipo": "prac",
       "vacantes": 0,
@@ -786,7 +981,10 @@
       "inicio": "11:00",
       "fin": "13:00",
       "profesor": "Fernández, Eugenia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal borda Carrillo 375 o elegí entre otros 70 horarios y lugares ver info inscr",
       "tipo": "prac",
       "vacantes": 0,
@@ -798,7 +996,10 @@
       "inicio": "11:00",
       "fin": "13:00",
       "profesor": "Goldestein, Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal borda Carrillo 375 o elegí entre otros 70 horarios y lugares ver info inscr",
       "tipo": "prac",
       "vacantes": 4,

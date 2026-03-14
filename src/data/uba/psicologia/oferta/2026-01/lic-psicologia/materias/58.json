@@ -10,7 +10,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Castro Solano, Alejandro Alber",
-      "aula": "IN-119",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "119"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Uriel, Fabiana Edith",
-      "aula": "IN-201",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "201"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Lupano Perugini, Maria Laura",
-      "aula": "IN-119",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "119"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Pérez, Marcelo Antonio",
-      "aula": "IN-201",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "201"
+      },
       "tipo": "teo"
     },
     {
@@ -46,7 +58,10 @@
       "inicio": "07:30",
       "fin": "10:45",
       "profesor": "Ruscio, Franco",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -63,7 +78,10 @@
       "inicio": "07:30",
       "fin": "10:45",
       "profesor": "Martínez, Nancy Beatriz",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -80,7 +98,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Tisocco, Franco",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -97,7 +118,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Lejzurowicz, Anabella",
-      "aula": "IN-217",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "217"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -114,7 +138,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Lejzurowicz, Anabella",
-      "aula": "IN-452",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "452"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -131,7 +158,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Tisocco, Franco",
-      "aula": "IN-216",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "216"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -148,7 +178,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Díaz, Jorge Gustavo",
-      "aula": "IN-213",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "213"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -165,7 +198,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Ongarato, Paula",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -182,7 +218,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Salvino, Carina Veronica",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -199,7 +238,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Passarello, Selva Marina",
-      "aula": "IN-451",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "451"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -216,7 +258,10 @@
       "inicio": "19:45",
       "fin": "23:00",
       "profesor": "Montenegro, Belen",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -233,7 +278,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Gago, Paula Teresa",
-      "aula": "IN-431",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "431"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -250,7 +298,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Salvino, Carina Veronica",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -267,7 +318,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Caporiccio Trillo, Micaela",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -284,7 +338,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "D'amelio, Veronica Belen",
-      "aula": "IN-430",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "430"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -301,7 +358,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "D'amelio, Veronica Belen",
-      "aula": "IN-441",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "441"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -318,7 +378,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Diaz, Jorge Gustavo",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -335,7 +398,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Garcia, Camila",
-      "aula": "IN-218",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "218"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -352,7 +418,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Motta, Florencia Anabel",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -369,7 +438,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Bruno, Flavia Eugenia",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -386,7 +458,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Suarez Hernandez, Nora Veronic",
-      "aula": "IN-209",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "209"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

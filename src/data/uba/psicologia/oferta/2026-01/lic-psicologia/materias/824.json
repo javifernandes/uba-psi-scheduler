@@ -10,7 +10,10 @@
       "inicio": "08:00",
       "fin": "10:00",
       "profesor": "Ormart, Elizabeth Beatriz",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CEGYR. Viamonte 1432. CABA",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Abelaira, Paula",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Viamonte 1432. CABA",
       "tipo": "prac",
       "vacantes": 6,
@@ -38,7 +44,10 @@
       "inicio": "10:00",
       "fin": "14:00",
       "profesor": "Novatti, Magdalena",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Viamonte 1432. CABA",
       "tipo": "prac",
       "vacantes": 10,

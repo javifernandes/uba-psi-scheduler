@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Ardila Gomez, Sara Elena",
-      "aula": "IN-219",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "219"
+      },
       "observ": "sede Facultad (Independencia o HY)",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Rosales, Melina Laura",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital General de Agudos J.M. amos mejía Urquiza 609, CABA",
       "tipo": "prac",
       "vacantes": 11,
@@ -38,7 +44,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Delmonte, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital General de Agudos Parmenio Piñero, Varela 1301 , CABA",
       "tipo": "prac",
       "vacantes": 15,

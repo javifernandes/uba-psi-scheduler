@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Allegro, Fabian Luis",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Marino, Juan Pablo",
-      "aula": "IN-324",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "324"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Marino, Juan Pablo",
-      "aula": "IN-451",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "451"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [

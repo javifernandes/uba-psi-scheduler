@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Jaume, Luis Carlos",
-      "aula": "AV-026",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "026"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Roca, Marcelo",
-      "aula": "AV-026",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 69,
       "slotsAsociados": [

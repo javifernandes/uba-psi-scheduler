@@ -10,7 +10,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Alperovich, Natalia Judith",
-      "aula": "AV-026",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "026"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Contarino, Marcela Rosana",
-      "aula": "AV-041",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "041"
+      },
       "tipo": "prac",
       "vacantes": 33,
       "slotsAsociados": [

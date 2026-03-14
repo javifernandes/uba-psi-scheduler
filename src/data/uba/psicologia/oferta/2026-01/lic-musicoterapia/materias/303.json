@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Feferovich, Sergio Eduardo",
-      "aula": "AV-029",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Garrido, Armando Angel",
-      "aula": "AV-029",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "029"
+      },
       "tipo": "prac",
       "vacantes": 42,
       "slotsAsociados": [

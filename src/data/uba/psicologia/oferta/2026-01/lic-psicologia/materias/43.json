@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Yorston, Paul Douglas",
-      "aula": "IN-530",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "530"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Steckler, Claudio Oscar",
-      "aula": "IN-106",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "106"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Higa, Noelia Belen",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Guatri, Cecilia Paula",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Rodriguez, Monica Alejandra",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -79,7 +94,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Pérez Villar, Fernando José",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [

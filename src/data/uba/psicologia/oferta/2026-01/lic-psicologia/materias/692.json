@@ -10,7 +10,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Llull Casado, Veronica Gabriel",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Yokobori, Naomi Celia",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Milan, Sandra",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 23,
       "slotsAsociados": [

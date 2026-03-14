@@ -10,7 +10,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "D'angelo, Agostina",
-      "aula": "EC-019",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "019"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Sena, Selva Daniela",
-      "aula": "EC-019",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "019"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Vallone, Valeria Claudia Paola",
-      "aula": "IN-121",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "121"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -53,7 +62,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "D' Urso, Anabel",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -70,7 +82,10 @@
       "inicio": "16:15",
       "fin": "19:30",
       "profesor": "Sanson, Dalila",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -87,7 +102,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Adrogue, Gabriela",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -104,7 +122,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Luzuriaga, Laura Marcela",
-      "aula": "IN-209",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "209"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [

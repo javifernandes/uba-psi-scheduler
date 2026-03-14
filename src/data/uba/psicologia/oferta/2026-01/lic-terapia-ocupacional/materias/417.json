@@ -10,7 +10,10 @@
       "inicio": "19:00",
       "fin": "22:00",
       "profesor": "Fernandez, Silvina Soledad",
-      "aula": "SI-023",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "023"
+      },
       "observ": "MODALIDAD VIRTUAL",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "08:00",
       "fin": "14:00",
       "profesor": "Calveyra, Soledad",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Tobar Garcia. Programa Ecoparque. Palermo",
       "tipo": "prac",
       "vacantes": 0,
@@ -38,7 +44,10 @@
       "inicio": "08:00",
       "fin": "13:00",
       "profesor": "Romero, Celeste",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de Dia De los Buenos Ayres. Sargento Gomez 1644. Hurlingham",
       "tipo": "prac",
       "vacantes": 1,
@@ -56,7 +65,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Fraga, Cyntia Eleonora",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Alvarez. Adultos.Internacion Dr. Aranguren 2701Caba",
       "tipo": "prac",
       "vacantes": 0,
@@ -74,7 +86,10 @@
       "inicio": "12:30",
       "fin": "18:00",
       "profesor": "Vazquez, Evelyn Ailen",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Tobar garcia, Niños y adolescentes. R. Carrillo 315.CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -92,7 +107,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Nogueras, Magali Soledad",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Alvear. Hospital de dia TT.Adultos. Warnes 2630. Paternal. CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -110,7 +128,10 @@
       "inicio": "08:00",
       "fin": "13:00",
       "profesor": "Aranguren, Tamara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Santa Clara CET. Niños/as adolescentes. gral. Jose de San Martin 335. Moron",
       "tipo": "prac",
       "vacantes": 0,
@@ -128,7 +149,10 @@
       "inicio": "08:30",
       "fin": "14:00",
       "profesor": "Diaz, Victoria",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital General Durand.Av. Díaz Vélez 5044.CABA.Adultos Mujeres Internacion",
       "tipo": "prac",
       "vacantes": 0,
@@ -146,7 +170,10 @@
       "inicio": "09:00",
       "fin": "16:00",
       "profesor": "Bourguet, Marìan Sol",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Castelar salud cet. NIÑOS/AS Y ADOLESCENTES. Rio de janeiro 3551. Castelar su",
       "tipo": "prac",
       "vacantes": 4,
@@ -164,7 +191,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Martino, Belen",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Moyano. Admision Corta Estadia. Brandsen 2570. CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -182,7 +212,10 @@
       "inicio": "09:00",
       "fin": "13:30",
       "profesor": "Aviles, Veronica",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Moyano. Sev. Internacion. Mujeres. Brandsen 2570. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -200,7 +233,10 @@
       "inicio": "09:00",
       "fin": "15:00",
       "profesor": "Cavaciocchi, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Pichon Riviere. Niños Htal de Dia. Matheu 4453 B1650, Villa Linch, PBA",
       "tipo": "prac",
       "vacantes": 0,
@@ -218,7 +254,10 @@
       "inicio": "09:00",
       "fin": "14:00",
       "profesor": "Trimarco, María Laura",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CURAI. Niños.ATDI. Consultorios Externos. Cordoba 2009. Martinez",
       "tipo": "prac",
       "vacantes": 0,
@@ -236,7 +275,10 @@
       "inicio": "09:00",
       "fin": "15:00",
       "profesor": "Romualdo, Wendy",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Lemures.Equipo Interd Consult Ext Niños y Adolesc. Rivera 146 Ciudad Madero",
       "tipo": "prac",
       "vacantes": 1,
@@ -254,7 +296,10 @@
       "inicio": "09:00",
       "fin": "15:00",
       "profesor": "Cavaciocchi, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal. Pichon Riviere. Matheu 4453 Villa Lynch. Hospital de dia Adultos",
       "tipo": "prac",
       "vacantes": 1,
@@ -272,7 +317,10 @@
       "inicio": "09:00",
       "fin": "13:30",
       "profesor": "Rozadas, Juliana",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Moyano. Sev. Internacion. Mujeres. Brandsen 2570. CABA",
       "tipo": "prac",
       "vacantes": 1,
@@ -290,7 +338,10 @@
       "inicio": "09:00",
       "fin": "12:30",
       "profesor": "Garcia, Erica",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Pequeño mundo. CET. Niños.Mendoza 5663, Villa Urquiza, C.A.B.A.",
       "tipo": "prac",
       "vacantes": 0,
@@ -308,7 +359,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Perez, Adriana Griselda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Residencia Asistida. Warnes 2450. CABA",
       "tipo": "prac",
       "vacantes": 0,
@@ -326,7 +380,10 @@
       "inicio": "12:30",
       "fin": "16:00",
       "profesor": "Garcia, Erica",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Pequeño mundo. CET. Niños.Mendoza 5663, Villa Urquiza, C.A.B.A.",
       "tipo": "prac",
       "vacantes": 0,
@@ -344,7 +401,10 @@
       "inicio": "13:00",
       "fin": "18:00",
       "profesor": "Trimarco, María Laura",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CURAI. Niños. Consultorios Externos. Cordoba 2009. Martinez",
       "tipo": "prac",
       "vacantes": 0,

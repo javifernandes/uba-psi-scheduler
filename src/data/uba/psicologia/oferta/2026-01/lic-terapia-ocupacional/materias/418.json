@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Ciampa, Maria Agostina",
-      "aula": "SI-018",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "018"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Fernandez Miragaya, Florencia",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Fernandez Miragaya, Florencia",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "prac",
       "vacantes": 26,
       "slotsAsociados": [

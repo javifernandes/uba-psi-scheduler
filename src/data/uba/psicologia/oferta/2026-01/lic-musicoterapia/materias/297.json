@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Vodovotz, Gabriel Sergio",
-      "aula": "AV-029",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "15:00",
       "fin": "17:00",
       "profesor": "Graber, Mara",
-      "aula": "AV-026",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Graber, Mara",
-      "aula": "AV-029",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "029"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

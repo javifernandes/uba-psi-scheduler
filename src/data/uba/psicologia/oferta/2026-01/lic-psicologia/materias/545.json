@@ -10,7 +10,10 @@
       "inicio": "13:00",
       "fin": "16:45",
       "profesor": "Pábago, Gustavo Marcelo",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "San Isidro Dicta junto a Laura Martinez Frontera",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Bur, Felix Ricardo",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "observ": "Dicta junto a Martín Larripa",
       "tipo": "teo"
     },
@@ -30,7 +36,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Mayol, Juan De La Cruz",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "observ": "Dicta junto a Laura Martinez Frontera",
       "tipo": "teo"
     },
@@ -40,7 +49,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Alcover, Silvina Mariela",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -49,7 +61,10 @@
       "inicio": "09:00",
       "fin": "10:45",
       "profesor": "Salerno, Elisabet Mara",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 35,
@@ -67,7 +82,10 @@
       "inicio": "11:00",
       "fin": "12:45",
       "profesor": "Salerno, Elisabet Mara",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "San Isidro",
       "tipo": "prac",
       "vacantes": 35,
@@ -85,7 +103,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Carbonetti, Yael Tamara",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -102,7 +123,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Cirami, Lautaro",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -119,7 +143,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Cirami, Lautaro",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -136,7 +163,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Carbonetti, Yael Tamara",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -153,7 +183,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Zaldarriaga, Hernán Ezequiel",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -170,7 +203,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Repetto, Guido",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -187,7 +223,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Repetto, Guido",
-      "aula": "IN-433",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "433"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -204,7 +243,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Montes Quintián, Mariano",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -221,7 +263,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cornejo, Romina Alejandra",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -238,7 +283,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Ottolina, Victoria",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -255,7 +303,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Cornejo, Romina Alejandra",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -272,7 +323,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ottolina, Victoria",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -289,7 +343,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Montes Quintián, Mariano",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -306,7 +363,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Zaldarriaga, Hernán Ezequiel",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

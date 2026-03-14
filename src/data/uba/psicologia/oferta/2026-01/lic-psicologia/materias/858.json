@@ -10,7 +10,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Marqués, Roxana Laura",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "09:00",
       "fin": "13:00",
       "profesor": "Pizzarello, Fabricio",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Ministerio Pùblico Fiscal, sede Av. Paseo Colòn 1333, C.A.B.A.",
       "tipo": "prac",
       "vacantes": 9,
@@ -37,7 +43,10 @@
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Pizzarello, Fabricio",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Ministerio Pùblico Fiscal, sede Av. Paseo Colòn 1333, C.A.B.A.",
       "tipo": "prac",
       "vacantes": 10,

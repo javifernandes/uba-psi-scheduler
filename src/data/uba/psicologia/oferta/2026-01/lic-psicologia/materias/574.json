@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mazzuca, Marcelo Esteban",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Farias, Florencia Elisa",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "San Isidro",
       "tipo": "teo"
     },
@@ -29,7 +35,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muraro, Vanina",
-      "aula": "HY-005",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "005"
+      },
       "tipo": "teo"
     },
     {
@@ -38,7 +47,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Iuale, María Luján",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -47,7 +59,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Alomo, Martin Carlos",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -56,7 +71,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Castro Tolosa, Silvana",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -74,7 +92,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cellerino, Sergio Óscar",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -92,7 +113,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Moraña, Juan Manuel",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -110,7 +134,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Vargas Castro, David Andrés",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -128,7 +155,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cellerino, Sergio Óscar",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -146,7 +176,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Cragaris, Andrea",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -164,7 +197,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Cragaris, Andrea",
-      "aula": "HY-012",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "012"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -182,7 +218,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Alfaro, Laura",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -200,7 +239,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Zaffore, Carolina",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -218,7 +260,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Zaffore, Carolina",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -236,7 +281,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mendoza, Ayelén",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -254,7 +302,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mendoza, Ayelén",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -272,7 +323,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Rotbard, Natalia",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -290,7 +344,10 @@
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Pirillo, Patricia",
-      "aula": "SI-016",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "016"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO",
       "tipo": "prac",
       "vacantes": 1,
@@ -308,7 +365,10 @@
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Pirillo, Patricia",
-      "aula": "SI-016",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "016"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO",
       "tipo": "prac",
       "vacantes": 3,
@@ -326,7 +386,10 @@
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Prieto, Luis Orlando",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede San Isidro",
       "tipo": "prac",
       "vacantes": 0,
@@ -344,7 +407,10 @@
       "inicio": "07:00",
       "fin": "08:45",
       "profesor": "Prieto, Luis Orlando",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede San Isidro",
       "tipo": "prac",
       "vacantes": 0,
@@ -362,7 +428,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Tercic, Cecilia",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -380,7 +449,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Tercic, Cecilia",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -398,7 +470,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Moretto, Marisa Viviana",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 1,
@@ -416,7 +491,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Moretto, Marisa Viviana",
-      "aula": "IN-434",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "434"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -434,7 +512,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Stranges, Valeria Romina",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 1,
@@ -452,7 +533,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "López, Mariano Alejandro",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 3,
@@ -470,7 +554,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "López, Mariano Alejandro",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
       "tipo": "prac",
       "vacantes": 0,
@@ -488,7 +575,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Lifschitz, Sofia",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
       "tipo": "prac",
       "vacantes": 1,
@@ -506,7 +596,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Lifschitz, Sofia",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
       "tipo": "prac",
       "vacantes": 12,
@@ -524,7 +617,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Salinas, Luciano",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -542,7 +638,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Salinas, Luciano",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -560,7 +659,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mercuri, Valeria",
-      "aula": "IN-108",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "108"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -578,7 +680,10 @@
       "inicio": "18:00",
       "fin": "19:45",
       "profesor": "Mercuri, Valeria",
-      "aula": "IN-108",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "108"
+      },
       "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -596,7 +701,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Marsilla, Marcelo Alberto",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,
@@ -614,7 +722,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Marsilla, Marcelo Alberto",
-      "aula": "IN-123",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "123"
+      },
       "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
       "tipo": "prac",
       "vacantes": 0,

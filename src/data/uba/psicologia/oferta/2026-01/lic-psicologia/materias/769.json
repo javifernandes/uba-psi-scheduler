@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Puhl, Stella Maris",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Izcurdia, María De Los Ángeles",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Llull Casado, Veronica Gabriel",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Rodriguez, Jose Antonio",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -46,7 +58,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Dabul, Karina Sandra",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -55,7 +70,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Laursen, Gustavo Matias",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -64,7 +82,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De La Iglesia, Matilde Aida",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -73,7 +94,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Muñoz, Adriana Beatriz",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -90,7 +114,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Assis, Miguel",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -107,7 +134,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Muñoz, Adriana Beatriz",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -124,7 +154,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Profesor a designar",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -141,7 +174,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Milan, Sandra",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -158,7 +194,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Ferrari, Santiago",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -175,7 +214,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Assis, Miguel",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
@@ -192,7 +234,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Ferrari, Santiago",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 2,
       "slotsAsociados": [
@@ -209,7 +254,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Palestrini, Gabriela Paola",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 3,
       "slotsAsociados": [
@@ -226,7 +274,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Gauto, Jazmin",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -243,7 +294,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Gauto, Jazmin",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -260,7 +314,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Ortiz, Mariana Blanca",
-      "aula": "IN-212",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "212"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -277,7 +334,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cobo, Stella",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -294,7 +354,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Cruz, Maria Alejandra",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
@@ -311,7 +374,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Ortiz, Mariana Blanca",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 15,
       "slotsAsociados": [
@@ -328,7 +394,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Molins, Maria Constanza",
-      "aula": "IN-219",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "219"
+      },
       "tipo": "prac",
       "vacantes": 11,
       "slotsAsociados": [
@@ -345,7 +414,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Cobo, Stella",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 12,
       "slotsAsociados": [
@@ -362,7 +434,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Molins, Maria Constanza",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -379,7 +454,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Buzarquis, Ayelen Abel",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -396,7 +474,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Buzarquis, Ayelen Abel",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -413,7 +494,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gomez, Claudia Edith",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -430,7 +514,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Palestrini, Gabriela Paola",
-      "aula": "HY-031",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "031"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -447,7 +534,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Gomez, Claudia Edith",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -464,7 +554,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Profesor a designar",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [

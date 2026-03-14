@@ -10,7 +10,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "De La Iglesia, Matilde Aida",
-      "aula": "IN-114",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "114"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Velazquez, Maria Eugenia",
-      "aula": "IN-204",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "204"
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Velazquez, Maria Eugenia",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 19,
       "slotsAsociados": [

@@ -51,6 +51,11 @@ type SlotAsociadoOut = {
   condicion: 'obligatorio' | 'opcional';
 };
 
+type SlotLugarOut = {
+  anexo: string | null;
+  aula: string | null;
+};
+
 type SlotBaseOut = {
   id: string;
   tipo: SlotTipo;
@@ -58,7 +63,7 @@ type SlotBaseOut = {
   inicio: string;
   fin: string;
   profesor: string;
-  aula: string;
+  lugar: SlotLugarOut;
   observ?: string;
 };
 
@@ -79,6 +84,7 @@ type CareerConfig = {
 };
 
 type CliOptions = {
+  catalogUrl: string;
   outputDir: string;
   period?: PeriodId;
   limit?: number;
@@ -111,6 +117,7 @@ const careerByToken = new Map<string, CareerConfig>(
 
 const parseArgs = (): CliOptions => {
   const args = process.argv.slice(2);
+  let catalogUrl = DEFAULT_CATALOG_URL;
   let outputDir = DEFAULT_OUTPUT_DIR;
   let period: PeriodId | undefined;
   let limit: number | undefined;
@@ -122,6 +129,11 @@ const parseArgs = (): CliOptions => {
     const arg = args[i];
     if (arg === '--output-dir' && args[i + 1]) {
       outputDir = path.resolve(args[i + 1]);
+      i += 1;
+      continue;
+    }
+    if (arg === '--catalog-url' && args[i + 1]) {
+      catalogUrl = args[i + 1];
       i += 1;
       continue;
     }
@@ -175,7 +187,7 @@ const parseArgs = (): CliOptions => {
     throw new Error('Valor inválido para --min-ratio. Debe estar en rango (0, 1].');
   }
 
-  return { outputDir, period, limit, skipSanity, minRatio, careers };
+  return { catalogUrl, outputDir, period, limit, skipSanity, minRatio, careers };
 };
 
 const decodeEntities = (value: string) =>
@@ -267,6 +279,27 @@ const normalizeVacantes = (value: string) => {
   return String(parsed);
 };
 
+const parseSlotLugar = (rawAula: string): SlotLugarOut => {
+  const clean = normalizeText(rawAula).toUpperCase();
+  if (!clean) {
+    return {
+      anexo: null,
+      aula: null,
+    };
+  }
+  const match = clean.match(/^([A-Z]{2,5})(?:[-\s/](.+))?$/);
+  if (!match?.[1]) {
+    return {
+      anexo: null,
+      aula: clean,
+    };
+  }
+  return {
+    anexo: match[1],
+    aula: normalizeText(match[2] || '') || null,
+  };
+};
+
 const parseHeading = (headingText: string, row: CatalogRow, career: CareerConfig) => {
   const normalized = normalizeText(headingText);
   const match = normalized.match(
@@ -343,7 +376,7 @@ const rowToSlotBase = (row: SectionRow) => ({
   inicio: row.inicio,
   fin: row.fin,
   profesor: row.profesor,
-  aula: row.aula,
+  lugar: parseSlotLugar(row.aula),
   ...(row.observ ? { observ: row.observ } : {}),
 });
 
@@ -602,8 +635,8 @@ const parseDetail = (html: string): DetailData => {
 const main = async () => {
   const options = parseArgs();
 
-  console.log(`Abriendo catálogo: ${DEFAULT_CATALOG_URL}`);
-  const catalogHtml = await fetchHtml(DEFAULT_CATALOG_URL);
+  console.log(`Abriendo catálogo: ${options.catalogUrl}`);
+  const catalogHtml = await fetchHtml(options.catalogUrl);
   const detectedPeriod = periodFromCatalogHtml(catalogHtml);
   const resolvedPeriod = options.period || detectedPeriod;
   if (!resolvedPeriod) {
@@ -626,7 +659,7 @@ const main = async () => {
 
   const careersFromCatalog: CatalogCareer[] = options.careers.map((career) => {
     const panelHtml = extractPanelHtml(catalogHtml, career.code);
-    const rows = extractRowsFromPanel(panelHtml, DEFAULT_CATALOG_URL);
+    const rows = extractRowsFromPanel(panelHtml, options.catalogUrl);
     return {
       code: career.code,
       label: career.label,

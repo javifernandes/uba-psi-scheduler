@@ -10,7 +10,10 @@
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": []
@@ -30,7 +36,10 @@
       "inicio": "00:00",
       "fin": "00:00",
       "profesor": "",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": []

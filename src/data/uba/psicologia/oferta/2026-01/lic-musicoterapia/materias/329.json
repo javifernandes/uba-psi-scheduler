@@ -10,7 +10,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Zimbaldo, Ariel Marcelo",
-      "aula": "AV-028",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "028"
+      },
       "tipo": "prac",
       "vacantes": 38,
       "slotsAsociados": []
@@ -21,7 +24,10 @@
       "inicio": "14:00",
       "fin": "17:00",
       "profesor": "Ruiz, Maria Mercedes",
-      "aula": "AV-030",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 39,
       "slotsAsociados": []

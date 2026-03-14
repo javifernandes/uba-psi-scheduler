@@ -82,7 +82,7 @@ export const useSchedulerSubjectsData = ({
   const allVenues = useMemo(() => {
     const found = new Set<VenueCode>();
     [...teoricos, ...seminarios, ...comisiones].forEach((item) => {
-      found.add(venueCodeFromAula(item.aula));
+      found.add(venueCodeFromAula(item.lugar));
     });
     parsedSubjects
       .filter((subject) => subject.id !== selectedSubjectId)
@@ -93,18 +93,18 @@ export const useSchedulerSubjectsData = ({
           (item) => item.id === enrolledCommissionId
         );
         if (!enrolledCommission) return;
-        found.add(venueCodeFromAula(enrolledCommission.aula));
+        found.add(venueCodeFromAula(enrolledCommission.lugar));
         const teoricoId = findPrimaryAssociatedSlotId(enrolledCommission, 'teo');
         if (teoricoId) {
           const linkedSlot = slotById(subject, teoricoId);
           const teorico = linkedSlot?.tipo === 'teo' ? linkedSlot : undefined;
-          if (teorico) found.add(venueCodeFromAula(teorico.aula));
+          if (teorico) found.add(venueCodeFromAula(teorico.lugar));
         }
         const seminarioId = findPrimaryAssociatedSlotId(enrolledCommission, 'sem');
         if (seminarioId) {
           const linkedSlot = slotById(subject, seminarioId);
           const seminario = linkedSlot?.tipo === 'sem' ? linkedSlot : undefined;
-          if (seminario) found.add(venueCodeFromAula(seminario.aula));
+          if (seminario) found.add(venueCodeFromAula(seminario.lugar));
         }
       });
     return sortVenueCodes(found);
@@ -131,7 +131,7 @@ export const useSchedulerSubjectsData = ({
     () =>
       sortComisiones(
         comisiones.filter((c) => {
-          if (!selectedVenues.has(venueCodeFromAula(c.aula))) return false;
+          if (!selectedVenues.has(venueCodeFromAula(c.lugar))) return false;
           if (!showOnlyWithVacancies) return true;
           return c.vacantes !== 0;
         })
@@ -140,12 +140,12 @@ export const useSchedulerSubjectsData = ({
   );
 
   const filteredTeoricos = useMemo(
-    () => teoricos.filter((t) => selectedVenues.has(venueCodeFromAula(t.aula))),
+    () => teoricos.filter((t) => selectedVenues.has(venueCodeFromAula(t.lugar))),
     [selectedVenues, teoricos]
   );
 
   const filteredSeminarios = useMemo(
-    () => seminarios.filter((s) => selectedVenues.has(venueCodeFromAula(s.aula))),
+    () => seminarios.filter((s) => selectedVenues.has(venueCodeFromAula(s.lugar))),
     [selectedVenues, seminarios]
   );
 

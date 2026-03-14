@@ -10,7 +10,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Farruggio, Liliana Rosalia",
-      "aula": "HY-014",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "014"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Gobet, Laura Silvina",
-      "aula": "HY-029",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "029"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Calloway, Cecilia Eugenia",
-      "aula": "HY-022",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "022"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Bethencourt, Natalia Verónica",
-      "aula": "HY-025",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -54,7 +66,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Ortiz Molinuevo, Santiago",
-      "aula": "HY-013",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "013"
+      },
       "tipo": "prac",
       "vacantes": 4,
       "slotsAsociados": [
@@ -71,7 +86,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Davis Edmonson, Irene Karina",
-      "aula": "HY-032",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "032"
+      },
       "tipo": "prac",
       "vacantes": 5,
       "slotsAsociados": [
@@ -88,7 +106,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Idigoras, Julio Nicolas",
-      "aula": "IN-124",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "124"
+      },
       "tipo": "prac",
       "vacantes": 8,
       "slotsAsociados": [
@@ -105,7 +126,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Yablonovsky, Talia",
-      "aula": "HY-004",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -122,7 +146,10 @@
       "inicio": "14:30",
       "fin": "17:45",
       "profesor": "Ragonese, Sergio",
-      "aula": "HY-026",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -139,7 +166,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Mazzolini, Carlos Norberto",
-      "aula": "IN-323",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "323"
+      },
       "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
@@ -156,7 +186,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Lopez, Maria Elisa",
-      "aula": "HY-023",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "023"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
@@ -173,7 +206,10 @@
       "inicio": "11:00",
       "fin": "14:15",
       "profesor": "Mpacas, Diana",
-      "aula": "HY-027",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "027"
+      },
       "tipo": "prac",
       "vacantes": 20,
       "slotsAsociados": [
@@ -190,7 +226,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Vilares, Tomas",
-      "aula": "HY-015",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "015"
+      },
       "tipo": "prac",
       "vacantes": 10,
       "slotsAsociados": [
@@ -207,7 +246,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Gimenez, Maria Fernanda",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -224,7 +266,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Colangelo, Juliana",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -241,7 +286,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Collado, Candido Luis",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
@@ -258,7 +306,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Bokser, Julian Luciano",
-      "aula": "HY-024",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "024"
+      },
       "tipo": "prac",
       "vacantes": 18,
       "slotsAsociados": [
@@ -275,7 +326,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Corino, Carolina Alicia",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": [
@@ -292,7 +346,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Dmytrow, Tamara Alejandra",
-      "aula": "HY-011",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 14,
       "slotsAsociados": [
@@ -309,7 +366,10 @@
       "inicio": "09:15",
       "fin": "12:30",
       "profesor": "Churba, Daniel Alberto",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [

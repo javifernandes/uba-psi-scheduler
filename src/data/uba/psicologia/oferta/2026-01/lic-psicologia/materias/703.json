@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Vanotti, Sandra Ines",
-      "aula": "HY-010",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "010"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Eizaguirre, Maria Barbara",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Ramos Mejía General Urquiza 609 CABA-",
       "tipo": "prac",
       "vacantes": 0,
@@ -37,7 +43,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Fiorentini, Leticia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Ramos Mejía General Urquiza 609 CABA-",
       "tipo": "prac",
       "vacantes": 0,
@@ -55,7 +64,10 @@
       "inicio": "14:00",
       "fin": "18:00",
       "profesor": "Ciufia, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Htal Ramos Mejía General Urquiza 609 - - CABA",
       "tipo": "prac",
       "vacantes": 4,

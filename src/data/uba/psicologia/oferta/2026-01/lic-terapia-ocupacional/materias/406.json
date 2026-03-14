@@ -10,7 +10,10 @@
       "inicio": "19:00",
       "fin": "23:00",
       "profesor": "Metz, Miriam Isabel",
-      "aula": "SI-024",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "024"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "19:00",
       "profesor": "Perretti, Gabriela Andrea",
-      "aula": "SI-011",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 37,
       "slotsAsociados": [
@@ -36,7 +42,10 @@
       "inicio": "19:00",
       "fin": "21:00",
       "profesor": "Perretti, Gabriela Andrea",
-      "aula": "SI-011",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "011"
+      },
       "tipo": "prac",
       "vacantes": 38,
       "slotsAsociados": [

@@ -2,6 +2,7 @@ import type {
   Comision,
   Seminario,
   SlotAsociado,
+  SlotLugar,
   SubjectData,
   Teorico,
 } from '@/components/scheduler/scheduler.types';
@@ -52,6 +53,17 @@ const parseVacantes = (value: string | undefined) => {
   return parsed;
 };
 
+const parseLugar = (rawAula: string): SlotLugar => {
+  const clean = normalizeText(rawAula).toUpperCase();
+  if (!clean) return { anexo: null, aula: null };
+  const match = clean.match(/^([A-Z]{2,5})(?:[-\s/](.+))?$/);
+  if (!match?.[1]) return { anexo: null, aula: clean };
+  return {
+    anexo: match[1],
+    aula: normalizeText(match[2] || '') || null,
+  };
+};
+
 const parseTeorico = (raw: string): Teorico => {
   const parts = raw.split('|');
   return {
@@ -61,7 +73,7 @@ const parseTeorico = (raw: string): Teorico => {
     inicio: parts[2] || '',
     fin: parts[3] || '',
     profesor: parts[4] || '',
-    aula: parts[5] || '',
+    lugar: parseLugar(parts[5] || ''),
     ...(parts[6] ? { observ: parts[6] } : {}),
   };
 };
@@ -75,7 +87,7 @@ const parseSeminario = (raw: string): Seminario => {
     inicio: parts[2] || '',
     fin: parts[3] || '',
     profesor: parts[4] || '',
-    aula: parts[5] || '',
+    lugar: parseLugar(parts[5] || ''),
     ...(parts[6] ? { observ: parts[6] } : {}),
   };
 };
@@ -90,7 +102,7 @@ const parseComision = (raw: string): Comision => {
     inicio: parts[2] || '',
     fin: parts[3] || '',
     profesor: parts[4] || '',
-    aula: parts[6] || '',
+    lugar: parseLugar(parts[6] || ''),
     ...(parts[7] ? { observ: parts[7] } : {}),
     vacantes: parseVacantes(parts[8]),
     slotsAsociados: parseAssociations(obligRaw),

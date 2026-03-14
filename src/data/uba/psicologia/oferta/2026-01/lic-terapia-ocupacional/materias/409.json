@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Calb, Alejandro",
-      "aula": "SI-017",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "017"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Itri, Sofia",
-      "aula": "SI-004",
+      "lugar": {
+        "anexo": "SI",
+        "aula": "004"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [

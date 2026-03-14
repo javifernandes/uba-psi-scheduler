@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "De Lellis, Martin",
-      "aula": "IN-313",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "313"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "López Escobar, Thiago",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Hospital Iriarte: Allison Bell 770.Quilmes, Pcia de Bs As/ Hospital Durand CABA",
       "tipo": "prac",
       "vacantes": 10,
@@ -37,7 +43,10 @@
       "inicio": "08:00",
       "fin": "12:00",
       "profesor": "Falk, Federico Martin",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "CESAC 14 CABA",
       "tipo": "prac",
       "vacantes": 9,

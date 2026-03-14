@@ -10,7 +10,10 @@
       "inicio": "17:30",
       "fin": "19:00",
       "profesor": "Ruiz, Guillermo Ramon",
-      "aula": "EC-107",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "107"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:00",
       "fin": "09:30",
       "profesor": "Alvarez, German Gonzalo",
-      "aula": "EC-019",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "019"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "13:45",
       "fin": "17:00",
       "profesor": "Messina, Verónica",
-      "aula": "EC-026",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [
@@ -45,7 +54,10 @@
       "inicio": "13:45",
       "fin": "17:00",
       "profesor": "Muiños, Claudia Gabriela",
-      "aula": "EC-025",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -62,7 +74,10 @@
       "inicio": "19:15",
       "fin": "22:30",
       "profesor": "Nanni, Silvina",
-      "aula": "EC-025",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "025"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -79,7 +94,10 @@
       "inicio": "19:15",
       "fin": "22:30",
       "profesor": "D'abate, Gabriela Inés",
-      "aula": "EC-026",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -96,7 +114,10 @@
       "inicio": "09:45",
       "fin": "13:00",
       "profesor": "Gomar, Matias Salvador",
-      "aula": "EC-019",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "019"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -113,7 +134,10 @@
       "inicio": "09:45",
       "fin": "13:00",
       "profesor": "Falk, Federico Martin",
-      "aula": "EC-026",
+      "lugar": {
+        "anexo": "EC",
+        "aula": "026"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -130,7 +154,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Hofferlen, Gustavo Rodolfo",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -147,7 +174,10 @@
       "inicio": "18:00",
       "fin": "21:15",
       "profesor": "Mariani, Marina Aida",
-      "aula": "IN-443",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "443"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [
@@ -164,7 +194,10 @@
       "inicio": "12:45",
       "fin": "16:00",
       "profesor": "Hofferlen, Gustavo Rodolfo",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 35,
       "slotsAsociados": [

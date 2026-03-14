@@ -24,7 +24,10 @@ const searchedComisiones: Comision[] = [
       { slotId: 'A', rol: 'sem', condicion: 'obligatorio' },
       { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
     ],
-    aula: 'IN-101',
+    lugar: {
+      anexo: 'IN',
+      aula: '101',
+    },
     vacantes: 12,
   },
 ];

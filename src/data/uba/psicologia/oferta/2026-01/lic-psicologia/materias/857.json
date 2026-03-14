@@ -10,7 +10,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "D´Anna, Ana Maria",
-      "aula": "IN-103",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "103"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "08:15",
       "fin": "12:15",
       "profesor": "Rolandi, Fernanda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
       "tipo": "prac",
       "vacantes": 1,
@@ -37,7 +43,10 @@
       "inicio": "08:15",
       "fin": "12:15",
       "profesor": "Rolandi, Fernanda",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
       "tipo": "prac",
       "vacantes": 1,
@@ -55,7 +64,10 @@
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Gago, Paula Teresa",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
       "tipo": "prac",
       "vacantes": 0,
@@ -73,7 +85,10 @@
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Gago, Paula Teresa",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "En Centro Ki-A: Blanco Encalada 5115. Caba.",
       "tipo": "prac",
       "vacantes": 0,

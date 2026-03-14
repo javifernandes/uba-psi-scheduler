@@ -10,7 +10,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pesiney, Cora Judith",
-      "aula": "IN-207",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "207"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Pesiney, Cora Judith",
-      "aula": "IN-211",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "211"
+      },
       "observ": "Optativo",
       "tipo": "sem"
     },
@@ -29,7 +35,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Pesiney, Cora Judith",
-      "aula": "IN-430",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "430"
+      },
       "tipo": "prac",
       "vacantes": 31,
       "slotsAsociados": [
@@ -46,7 +55,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Garzon Noguera, Federico",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 34,
       "slotsAsociados": [

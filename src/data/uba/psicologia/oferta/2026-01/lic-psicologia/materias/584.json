@@ -10,7 +10,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mastandrea, Paula",
-      "aula": "HY-030",
+      "lugar": {
+        "anexo": "HY",
+        "aula": "030"
+      },
       "observ": "Aula en HY - Preferentemente que pueda oscurecerse para proyectar cine",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "13:00",
       "fin": "17:00",
       "profesor": "Fuentes Lenci, Alvaro",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Módulo de cine. Psicología & Management consultora (Costa Rica 4550, CABA)",
       "tipo": "prac",
       "vacantes": 10,
@@ -38,7 +44,10 @@
       "inicio": "13:30",
       "fin": "17:30",
       "profesor": "Schneider, Ursula",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cine sindical. FOETRA Sindicato de Telecomunicaciones (Hipólito Yrigoyen 3171)",
       "tipo": "prac",
       "vacantes": 4,
@@ -56,7 +65,10 @@
       "inicio": "15:00",
       "fin": "19:00",
       "profesor": "Carriles, Paula",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
       "tipo": "prac",
       "vacantes": 11,
@@ -74,7 +86,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Trovato, Ignacio",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Intervención en catástrofes con cine. AFID (Bartolomé Mitre 3971, CABA)",
       "tipo": "prac",
       "vacantes": 10,
@@ -92,7 +107,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Serue, Dora Alejandra",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Departamento de bioética y cine ICB. AFID (Bartolomé Mitre 3971, CABA)",
       "tipo": "prac",
       "vacantes": 14,
@@ -110,7 +128,10 @@
       "inicio": "12:30",
       "fin": "16:30",
       "profesor": "Amatriain, Lucia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cine y psicoanálisis. Fundación Tiempo (Av. Federico Lacroze 3071)",
       "tipo": "prac",
       "vacantes": 10,
@@ -128,7 +149,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Varela, Lucas Manuel",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Intervención en catástrofes con cine. AFID (Bartolomé Mitre 3971, CABA)",
       "tipo": "prac",
       "vacantes": 13,
@@ -146,7 +170,10 @@
       "inicio": "17:00",
       "fin": "21:00",
       "profesor": "Serue, Dora Alejandra",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Departamento de bioética y cine ICB. AFID (Bartolomé Mitre 3971, CABA)",
       "tipo": "prac",
       "vacantes": 12,
@@ -164,7 +191,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Winocur, Maite",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
       "tipo": "prac",
       "vacantes": 13,
@@ -182,7 +212,10 @@
       "inicio": "18:00",
       "fin": "22:00",
       "profesor": "Bronstein, Pablo",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
       "tipo": "prac",
       "vacantes": 5,
@@ -200,7 +233,10 @@
       "inicio": "09:30",
       "fin": "13:30",
       "profesor": "Gonzalez, Florencia Paula",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Cámara Gesell. Institución Fernando Ulloa (Av. Pueyrredón 510)",
       "tipo": "prac",
       "vacantes": 13,

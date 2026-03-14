@@ -10,7 +10,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Dominguez, Maria Elena",
-      "aula": "IN-119",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "119"
+      },
       "tipo": "teo"
     },
     {
@@ -19,7 +22,10 @@
       "inicio": "16:15",
       "fin": "17:45",
       "profesor": "Ormart, Elizabeth Beatriz",
-      "aula": "IN-119",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "119"
+      },
       "tipo": "teo"
     },
     {
@@ -28,7 +34,10 @@
       "inicio": "19:45",
       "fin": "21:15",
       "profesor": "Kletnicki, Armando Benjamin",
-      "aula": "IN-520",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "520"
+      },
       "tipo": "teo"
     },
     {
@@ -37,7 +46,10 @@
       "inicio": "09:15",
       "fin": "10:45",
       "profesor": "Salomone, Gabriela Zulma",
-      "aula": "IN-119",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "119"
+      },
       "tipo": "teo"
     },
     {
@@ -46,7 +58,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Belucci, Gabriel",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -63,7 +78,10 @@
       "inicio": "12:45",
       "fin": "14:15",
       "profesor": "Martinez, Alejandra Gabriela",
-      "aula": "IN-452",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "452"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -80,7 +98,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Mercadal, Gabriela Lucia",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 9,
       "slotsAsociados": [
@@ -97,7 +118,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Serue, Dora Alejandra",
-      "aula": "IN-304",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "304"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -114,7 +138,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Laso, Eduardo Luis",
-      "aula": "IN-107",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "107"
+      },
       "tipo": "prac",
       "vacantes": 21,
       "slotsAsociados": [
@@ -131,7 +158,10 @@
       "inicio": "14:30",
       "fin": "16:00",
       "profesor": "Suque, Valeria",
-      "aula": "IN-303",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "303"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -148,7 +178,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Noailles Uriburu, Gervasio Jor",
-      "aula": "IN-421",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "421"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -165,7 +198,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Corinaldesi, Ana Clara",
-      "aula": "IN-304",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "304"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -182,7 +218,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Gorocito, Patricia Monica",
-      "aula": "IN-126",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "126"
+      },
       "tipo": "prac",
       "vacantes": 25,
       "slotsAsociados": [
@@ -199,7 +238,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Serue, Dora Alejandra",
-      "aula": "IN-209",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "209"
+      },
       "tipo": "prac",
       "vacantes": 1,
       "slotsAsociados": [
@@ -216,7 +258,10 @@
       "inicio": "18:00",
       "fin": "19:30",
       "profesor": "Kletnicki, Armando Benjamin",
-      "aula": "IN-411",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "411"
+      },
       "tipo": "prac",
       "vacantes": 7,
       "slotsAsociados": [
@@ -233,7 +278,10 @@
       "inicio": "21:30",
       "fin": "23:00",
       "profesor": "Del Do, Adelqui Oscar",
-      "aula": "IN-210",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "210"
+      },
       "tipo": "prac",
       "vacantes": 16,
       "slotsAsociados": [
@@ -250,7 +298,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Smud, Martin Hernan",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 22,
       "slotsAsociados": [
@@ -267,7 +318,10 @@
       "inicio": "07:30",
       "fin": "09:00",
       "profesor": "Brunetti, Marcela Cristina",
-      "aula": "IN-109",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "109"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -284,7 +338,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Smud, Martin Hernan",
-      "aula": "IN-108",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "108"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [
@@ -301,7 +358,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Gorocito, Patricia Monica",
-      "aula": "IN-214",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "214"
+      },
       "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
@@ -318,7 +378,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Belucci, Gabriel",
-      "aula": "IN-215",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "215"
+      },
       "tipo": "prac",
       "vacantes": 6,
       "slotsAsociados": [
@@ -335,7 +398,10 @@
       "inicio": "11:00",
       "fin": "12:30",
       "profesor": "Brunetti, Marcela Cristina",
-      "aula": "IN-208",
+      "lugar": {
+        "anexo": "IN",
+        "aula": "208"
+      },
       "tipo": "prac",
       "vacantes": 0,
       "slotsAsociados": [

@@ -10,7 +10,10 @@
       "inicio": "17:00",
       "fin": "20:00",
       "profesor": "Vidret, Norberto Marcos",
-      "aula": "AV-038",
+      "lugar": {
+        "anexo": "AV",
+        "aula": "038"
+      },
       "observ": "Sede Avellaneda",
       "tipo": "teo"
     },
@@ -20,7 +23,10 @@
       "inicio": "10:30",
       "fin": "13:30",
       "profesor": "Vesco, Carolina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de Día 20, Ceretti 3524",
       "tipo": "prac",
       "vacantes": 3,
@@ -38,7 +44,10 @@
       "inicio": "09:30",
       "fin": "12:30",
       "profesor": "Alvarez, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Día 9, Paraguay 5170 CABA",
       "tipo": "prac",
       "vacantes": 5,
@@ -56,7 +65,10 @@
       "inicio": "13:00",
       "fin": "16:00",
       "profesor": "Alvarez, Natalia",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro de Día 27, Falcón 4776.",
       "tipo": "prac",
       "vacantes": 1,
@@ -74,7 +86,10 @@
       "inicio": "10:00",
       "fin": "13:00",
       "profesor": "Vesco, Carolina",
-      "aula": "",
+      "lugar": {
+        "anexo": null,
+        "aula": null
+      },
       "observ": "Centro Día 19, Garay 765 CABA",
       "tipo": "prac",
       "vacantes": 5,
