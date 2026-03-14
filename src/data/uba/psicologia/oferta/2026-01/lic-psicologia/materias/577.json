@@ -116,7 +116,7 @@
       "profesor": "Laso, Eduardo Luis",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -184,7 +184,7 @@
       "profesor": "Gorocito, Patricia Monica",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -218,7 +218,7 @@
       "profesor": "Kletnicki, Armando Benjamin",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -286,7 +286,7 @@
       "profesor": "Smud, Martin Hernan",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "III",

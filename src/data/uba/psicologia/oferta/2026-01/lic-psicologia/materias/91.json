@@ -98,7 +98,7 @@
       "profesor": "Indaburu, Ana",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -115,7 +115,7 @@
       "profesor": "Gomez, Pablo Guillermo",
       "aula": "IN-510",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "I",

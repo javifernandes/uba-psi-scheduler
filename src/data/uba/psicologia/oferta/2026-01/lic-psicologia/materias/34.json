@@ -206,7 +206,7 @@
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -250,7 +250,7 @@
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-025",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -294,7 +294,7 @@
       "profesor": "Doppelgatz, Angel",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -316,7 +316,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -382,7 +382,7 @@
       "profesor": "De Luca, Maria Virginia",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -426,7 +426,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -470,7 +470,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -536,7 +536,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -602,7 +602,7 @@
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -670,7 +670,7 @@
       "aula": "SI-021",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -737,7 +737,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -781,7 +781,7 @@
       "profesor": "Akashima, Diego Mariano",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "F",

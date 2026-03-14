@@ -187,7 +187,7 @@
       "profesor": "Moukarzel, Maria Laura",
       "aula": "IN-302",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -253,7 +253,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -275,7 +275,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "F",
@@ -297,7 +297,7 @@
       "profesor": "Ni, Mónica",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -407,7 +407,7 @@
       "profesor": "Abeijon, Matias Federico",
       "aula": "IN-433",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "F",

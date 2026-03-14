@@ -49,7 +49,7 @@
       "profesor": "Leonardelli, Eduardo Miguel",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -100,7 +100,7 @@
       "profesor": "Zion, Maria Victoria",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -117,7 +117,7 @@
       "profesor": "Ralon, Gonzalo",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -134,7 +134,7 @@
       "profesor": "Santos, Julia Susana",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -168,7 +168,7 @@
       "profesor": "Murillo, Manuel Alejandro",
       "aula": "IN-320",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -203,7 +203,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -238,7 +238,7 @@
       "aula": "SI-002",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "IV",

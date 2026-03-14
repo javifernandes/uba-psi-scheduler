@@ -108,7 +108,7 @@
       "profesor": "Bejarano, Daniela",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -130,7 +130,7 @@
       "profesor": "Herrera, Loana",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -174,7 +174,7 @@
       "profesor": "Perez, Diana Marcia",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -196,7 +196,7 @@
       "profesor": "Serodio, Manuel",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -218,7 +218,7 @@
       "profesor": "Ojeda, Agustn",
       "aula": "HY-027",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -240,7 +240,7 @@
       "profesor": "Ojeda, Agustn",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -263,7 +263,7 @@
       "aula": "SI-039",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -286,7 +286,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -330,7 +330,7 @@
       "profesor": "Sosa, Sofía",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -352,7 +352,7 @@
       "profesor": "Campos, Gisela",
       "aula": "HY-013",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -396,7 +396,7 @@
       "profesor": "Bollasina, Valeria Laura",
       "aula": "HY-004",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -462,7 +462,7 @@
       "profesor": "Bejarano, Daniela",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -484,7 +484,7 @@
       "profesor": "Gómez Mari, Ailín",
       "aula": "HY-025",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -506,7 +506,7 @@
       "profesor": "Caceres, Matias",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -528,7 +528,7 @@
       "profesor": "Serodio, Manuel",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -550,7 +550,7 @@
       "profesor": "Caceres, Matias",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -573,7 +573,7 @@
       "aula": "SI-040",
       "observ": "San Isidro.",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -619,7 +619,7 @@
       "aula": "SI-012",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "VII",
