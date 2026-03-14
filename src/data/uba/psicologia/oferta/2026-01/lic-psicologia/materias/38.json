@@ -260,7 +260,7 @@
       "profesor": "Almira, Maria Belen",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -282,7 +282,7 @@
       "profesor": "Rondinone, Ariel Angel",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -304,7 +304,7 @@
       "profesor": "Zaffore, Carolina",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -348,7 +348,7 @@
       "profesor": "Svartzman, Rocio",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -370,7 +370,7 @@
       "profesor": "Leon, Natalia",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -879,7 +879,7 @@
       "profesor": "Leicach, Dario",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1079,7 +1079,7 @@
       "profesor": "Hardmeier, Leonora Cecilia",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1101,7 +1101,7 @@
       "profesor": "García Neira, Noelia Natalia",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1167,7 +1167,7 @@
       "profesor": "Torres, María Florencia",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1189,7 +1189,7 @@
       "profesor": "Quiroga, Florencia",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1277,7 +1277,7 @@
       "profesor": "Rolando, Pablo",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "C",

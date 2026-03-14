@@ -83,7 +83,7 @@
       "profesor": "Smud, Martin Hernan",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -117,7 +117,7 @@
       "profesor": "Ralon, Gonzalo",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -185,7 +185,7 @@
       "profesor": "Sueldo, Lautaro Matias",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "III",

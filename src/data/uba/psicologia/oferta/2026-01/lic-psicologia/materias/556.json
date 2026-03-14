@@ -107,7 +107,7 @@
       "profesor": "Clemeno, Lucas Manuel",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -124,7 +124,7 @@
       "profesor": "Tacchini, Carla",
       "aula": "IN-324",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -158,7 +158,7 @@
       "profesor": "Lidovski, Magali",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 8,
+      "vacantes": 7,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -226,7 +226,7 @@
       "profesor": "Izsak, Paloma",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -311,7 +311,7 @@
       "profesor": "Brea, Norma Beatriz",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -396,7 +396,7 @@
       "profesor": "Santa Cruz, Martina",
       "aula": "IN-320",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -464,7 +464,7 @@
       "profesor": "Santa Cruz, Martina",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -532,7 +532,7 @@
       "profesor": "Sacristan, Aldana",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "III",

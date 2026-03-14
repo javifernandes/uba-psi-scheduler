@@ -236,7 +236,7 @@
       "profesor": "Cardaci, Gabriela Victoria",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -270,7 +270,7 @@
       "profesor": "Fiumara, Mariano",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -323,7 +323,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -375,7 +375,7 @@
       "profesor": "Cardoso Marino, Yohanna",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "II",

@@ -218,7 +218,7 @@
       "profesor": "Kletnicki, Armando Benjamin",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -286,7 +286,7 @@
       "profesor": "Smud, Martin Hernan",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -303,7 +303,7 @@
       "profesor": "Gorocito, Patricia Monica",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -320,7 +320,7 @@
       "profesor": "Belucci, Gabriel",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",

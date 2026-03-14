@@ -240,7 +240,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -292,7 +292,7 @@
       "profesor": "Rosales, Melina Laura",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -326,7 +326,7 @@
       "profesor": "Verdun, Laura",
       "aula": "IN-452",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -343,7 +343,7 @@
       "profesor": "Fanelli, Ana Maria",
       "aula": "IN-434",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "III",

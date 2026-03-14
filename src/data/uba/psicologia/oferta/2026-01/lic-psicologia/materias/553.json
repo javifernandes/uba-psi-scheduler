@@ -108,7 +108,7 @@
       "profesor": "Bejarano, Daniela",
       "aula": "HY-010",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -152,7 +152,7 @@
       "profesor": "Herrera, Loana",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -174,7 +174,7 @@
       "profesor": "Perez, Diana Marcia",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 24,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -286,7 +286,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "VII",
@@ -374,7 +374,7 @@
       "profesor": "Mellis, Patricia",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -528,7 +528,7 @@
       "profesor": "Serodio, Manuel",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "V",

@@ -224,7 +224,7 @@
       "profesor": "Auné, Sofía Esmeralda",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -242,7 +242,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 35,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -293,7 +293,7 @@
       "profesor": "Dorrego, Gisele Nauali",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -310,7 +310,7 @@
       "profesor": "Ursino, Damian",
       "aula": "HY-021",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "II",

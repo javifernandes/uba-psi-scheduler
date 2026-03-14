@@ -167,7 +167,7 @@
       "profesor": "Mogaburu, Juan Martin",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -299,7 +299,7 @@
       "profesor": "Skarlovnik, Rodrigo",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -852,7 +852,7 @@
       "profesor": "Pulvet, Mariana Andrea",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -1094,7 +1094,7 @@
       "profesor": "Alt Michel, Alejandro Mariano",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "B",

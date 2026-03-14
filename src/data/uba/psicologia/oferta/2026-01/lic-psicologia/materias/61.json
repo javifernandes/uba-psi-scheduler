@@ -84,7 +84,7 @@
       "aula": "SI-006",
       "observ": "San Isidro-",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -118,7 +118,7 @@
       "profesor": "Hirschberg, Silvina Erica",
       "aula": "IN-433",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -152,7 +152,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -186,7 +186,7 @@
       "profesor": "Rugna, Marcela Edith",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -237,7 +237,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "VI",
@@ -271,7 +271,7 @@
       "profesor": "Bellofatto, Maria Micaela",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -305,7 +305,7 @@
       "profesor": "Caccia, Paula Agustina",
       "aula": "IN-213",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 19,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -339,7 +339,7 @@
       "profesor": "Dowzuk, Nadia Alejandra",
       "aula": "IN-444",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -356,7 +356,7 @@
       "profesor": "Miscusi, Agustin",
       "aula": "IN-211",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "VI",
@@ -373,7 +373,7 @@
       "profesor": "Nasra, Natasha",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 28,
+      "vacantes": 27,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -475,7 +475,7 @@
       "profesor": "Fraternale, Giuliana Daniela",
       "aula": "IN-304",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "III",

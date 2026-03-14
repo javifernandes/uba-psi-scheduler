@@ -140,7 +140,7 @@
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -162,7 +162,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -514,7 +514,7 @@
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "IN-125",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -737,7 +737,7 @@
       "profesor": "Celentano, Carlos Andres",
       "aula": "HY-029",
       "tipo": "prac",
-      "vacantes": 24,
+      "vacantes": 23,
       "slotsAsociados": [
         {
           "slotId": "H",

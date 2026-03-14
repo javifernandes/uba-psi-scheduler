@@ -124,7 +124,7 @@
       "profesor": "Ragonese, Sergio",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -141,7 +141,7 @@
       "profesor": "Mazzolini, Carlos Norberto",
       "aula": "IN-323",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -226,7 +226,7 @@
       "profesor": "Colangelo, Juliana",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -243,7 +243,7 @@
       "profesor": "Collado, Candido Luis",
       "aula": "IN-303",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -294,7 +294,7 @@
       "profesor": "Dmytrow, Tamara Alejandra",
       "aula": "HY-011",
       "tipo": "prac",
-      "vacantes": 10,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "III",
