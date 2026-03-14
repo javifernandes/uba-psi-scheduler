@@ -6,6 +6,7 @@ import type {
 } from '@/components/scheduler/scheduler.types';
 import {
   catedraNumberFromLabel,
+  findPrimaryAssociatedSlotId,
   rangesOverlap,
   shortTeacherName,
   splitAula,
@@ -62,11 +63,13 @@ export const buildSavedElectionDetails = (
     if (!parsed || !commissionId) return;
     const c = parsed.comisiones.find((item) => item.id === commissionId);
     if (!c) return;
+    const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
+    const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
     built.push({
       subject,
       commission: c,
-      teorico: c.teoricoId ? parsed.teoricoMap[c.teoricoId] : undefined,
-      seminario: c.seminarioId ? parsed.seminarioMap[c.seminarioId] : undefined,
+      teorico: teoricoId ? parsed.teoricoMap[teoricoId] : undefined,
+      seminario: seminarioId ? parsed.seminarioMap[seminarioId] : undefined,
     });
   });
   return built;

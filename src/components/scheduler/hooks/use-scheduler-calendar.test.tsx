@@ -3,8 +3,9 @@ import { describe, expect, it } from 'vitest';
 import { useSchedulerCalendar } from './use-scheduler-calendar';
 import { parseSubject } from '../scheduler.utils';
 import type { ParsedSubject, SubjectData } from '../scheduler.types';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
-const subjectAData: SubjectData = {
+const subjectAData: SubjectData = subjectFromLegacyFixture({
   id: 's1',
   label: '(2) Psicología Social - Cátedra 35 (I)',
   header: 'header',
@@ -17,21 +18,21 @@ const subjectAData: SubjectData = {
     '1|lunes|09:00|10:30|Comision Uno|I - A|IN-201|',
     '2|lunes|09:00|10:30|Comision Dos|II - B|IN-202|',
   ],
-};
+});
 
-const subjectBData: SubjectData = {
+const subjectBData: SubjectData = subjectFromLegacyFixture({
   id: 's2',
   label: '(1) Historia de la Psicología - Cátedra 34 (II)',
   header: 'header',
   teoricos: ['X|miércoles|08:00|09:30|Teorico Externo|IN-301|'],
   seminarios: ['Z|jueves|12:00|13:30|Seminario Externo|SI-020|'],
   comisiones: ['9|viernes|14:00|15:30|Comision Externa|X - Z|IN-401|'],
-};
+});
 
 const subjectA = parseSubject(subjectAData);
 const subjectB = parseSubject(subjectBData);
 
-const subjectOnlyTeoricoData: SubjectData = {
+const subjectOnlyTeoricoData: SubjectData = subjectFromLegacyFixture({
   id: 's48',
   label: '(15) Neurofisiología - Cátedra 48 (I)',
   header: 'header',
@@ -44,8 +45,8 @@ const subjectOnlyTeoricoData: SubjectData = {
     '14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207|',
     '99|martes|18:00|19:30|Comision Superpuesta|I - A|IN-301|',
   ],
-};
-const subjectSharedTeoricoData: SubjectData = {
+});
+const subjectSharedTeoricoData: SubjectData = subjectFromLegacyFixture({
   id: 's-shared',
   label: '(20) Materia Shared - Cátedra 20 (I)',
   header: 'header',
@@ -55,8 +56,8 @@ const subjectSharedTeoricoData: SubjectData = {
     '31|lunes|07:00|08:30|Comision A|T1|IN-711|',
     '32|martes|07:00|08:30|Comision B|T1|IN-712|',
   ],
-};
-const subjectSharedSeminarioData: SubjectData = {
+});
+const subjectSharedSeminarioData: SubjectData = subjectFromLegacyFixture({
   id: 's-shared-sem',
   label: '(21) Materia Shared Sem - Cátedra 21 (I)',
   header: 'header',
@@ -66,7 +67,7 @@ const subjectSharedSeminarioData: SubjectData = {
     '41|lunes|08:00|09:30|Comision S A|T2 - S1|IN-731|',
     '42|martes|08:00|09:30|Comision S B|T2 - S1|IN-732|',
   ],
-};
+});
 
 type HookParams = Parameters<typeof useSchedulerCalendar>[0];
 
@@ -90,11 +91,11 @@ const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
 });
 
 const eventIds = (result: ReturnType<typeof useSchedulerCalendar>) =>
-  result.events.map(event => event.id);
+  result.events.map((event) => event.id);
 
 const visibleBySlot = (result: ReturnType<typeof useSchedulerCalendar>) =>
   Object.fromEntries(
-    result.visibleEventSlots.map(item => [
+    result.visibleEventSlots.map((item) => [
       item.slotKey,
       { eventId: item.event.id, stackSize: item.stackSize, stackIndex: item.stackIndex },
     ])
@@ -178,7 +179,7 @@ describe('useSchedulerCalendar', () => {
     );
 
     expect(eventIds(result.current)).toEqual(['ext-s2-prac-9', 'ext-s2-teo-X', 'ext-s2-sem-Z']);
-    expect(result.current.events.every(event => event.isExternal)).toBe(true);
+    expect(result.current.events.every((event) => event.isExternal)).toBe(true);
   });
 
   it('prioriza evento de comisión activa en slot superpuesto por encima del índice almacenado', () => {
@@ -307,6 +308,6 @@ describe('useSchedulerCalendar', () => {
     );
 
     expect(eventIds(result.current)).toEqual(['sem-S1', 'prac-41', 'prac-42']);
-    expect(result.current.events.some(event => event.id === 'teo-T2')).toBe(false);
+    expect(result.current.events.some((event) => event.id === 'teo-T2')).toBe(false);
   });
 });

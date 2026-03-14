@@ -3,24 +3,25 @@ import { describe, expect, it } from 'vitest';
 import { useSchedulerConflicts } from './use-scheduler-conflicts';
 import { parseSubject } from '../scheduler.utils';
 import type { CalendarEvent, SubjectData } from '../scheduler.types';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
-const subject34: SubjectData = {
+const subject34: SubjectData = subjectFromLegacyFixture({
   id: '34',
   label: '(1) Historia de la Psicología - Cátedra 34 (II)',
   header: 'header 34',
   teoricos: ['II|jueves|12:45|14:15|Ibarra Maria Florencia|IN-201|'],
   seminarios: ['C|miércoles|14:30|16:00|Rodriguez Sturla Pablo|HY-005|'],
   comisiones: ['21|jueves|14:30|16:00|Cazes Marcela Adriana|II - C|IN-444|'],
-};
+});
 
-const subject36: SubjectData = {
+const subject36: SubjectData = subjectFromLegacyFixture({
   id: '36',
   label: '(2) Psicología Social - Cátedra 36 (II)',
   header: 'header 36',
   teoricos: ['II|jueves|14:30|16:00|Ferrari Liliana Edith|IN-208|'],
   seminarios: ['I|viernes|12:45|14:15|Schwarcz Lopez Aranguren|HY-014|'],
   comisiones: ['9|jueves|16:15|19:30|Fazzito Lorena Laura|II - I|IN-208|'],
-};
+});
 
 const parsed34 = parseSubject(subject34);
 const parsed36 = parseSubject(subject36);

@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "problemas-sociologicos-en-psicologia-c87",
   "label": "Problemas Sociológicos en Psicología - Cátedra 87",
   "header": "Psicología UBA - Licenciatura en Psicología - Problemas Sociológicos en Psicología - Cátedra 87 - Prof. Ferrari",
-  "teoricos": ["I|viernes|09:15|10:45|Ferrari, Liliana Edith|HY-022|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|11:00|12:30|Picchetti, Valentina|I|HY-029||26",
-    "2|viernes|07:30|09:00|Appiani, Federico|I|HY-010||30",
-    "3|viernes|16:15|17:45|Picchetti, Valentina|I|HY-022||31",
-    "4|viernes|11:00|12:30|Appiani, Federico|I|HY-011||14"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Ferrari, Liliana Edith",
+      "aula": "HY-022",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Appiani, Federico",
+      "aula": "HY-010",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Picchetti, Valentina",
+      "aula": "HY-029",
+      "observ": "",
+      "vacantes": 26,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Appiani, Federico",
+      "aula": "HY-011",
+      "observ": "",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Picchetti, Valentina",
+      "aula": "HY-022",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "clinica-de-la-discapacidad-y-problemas-en-el-desarrollo-infantil-c808",
   "label": "Clínica de la discapacidad y problemas en el desarrollo infantil - Cátedra 808",
   "header": "Psicología UBA - Licenciatura en Psicología - Clínica de la discapacidad y problemas en el desarrollo infantil - Cátedra 808 - a. Bruner",
-  "teoricos": ["I|miercoles|18:00|19:30|Bruner, Norma Berta|IN-207|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|16:15|17:45|Campero, Martin|I|IN-214||25",
-    "2|miercoles|19:45|21:15|Roedelsperger, Mara|I|IN-212||31",
-    "3|miercoles|16:15|17:45|Roedelsperger, Mara|I|IN-212||34",
-    "4|miercoles|19:45|21:15|Campero, Martin|I|IN-218||30"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Bruner, Norma Berta",
+      "aula": "IN-207",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Campero, Martin",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Roedelsperger, Mara",
+      "aula": "IN-212",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Roedelsperger, Mara",
+      "aula": "IN-212",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Campero, Martin",
+      "aula": "IN-218",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

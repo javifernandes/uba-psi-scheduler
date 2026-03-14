@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "antropologia-de-la-musica-c314",
   "label": "Antropología de la Música - Cátedra 314",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Antropología de la Música - Cátedra 314 - Biegun",
-  "teoricos": ["I|lunes|19:00|21:00|Biegun, Karin Sandra|AV-030|"],
-  "seminarios": [],
-  "comisiones": ["1|lunes|17:00|19:00|Berenstecher, Mariana|I|AV-030||58"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Biegun, Karin Sandra",
+      "aula": "AV-030",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Berenstecher, Mariana",
+      "aula": "AV-030",
+      "observ": "",
+      "vacantes": 58,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

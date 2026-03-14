@@ -1,18 +1,116 @@
 {
+  "schemaVersion": 2,
   "id": "10314-requisito-idioma-ingles-modulo-ii-c836-i",
   "label": "(10314) Requisito Idioma: Inglés Módulo II - Cátedra 836 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10314) Requisito Idioma: Inglés Módulo II - Cátedra 836 - I - Mazzei",
-  "teoricos": [],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|09:15|12:30|Spinella Trapani, Agostina||||23",
-    "2|martes|18:00|21:15|Mortoro, Fernando||||19",
-    "3|lunes|19:45|23:00|Britos, Cecilia||||21",
-    "4|miercoles|14:30|17:45|Peregrini, Fabian Alberto||||24",
-    "5|viernes|09:15|12:30|Merino, Maria Silvia||||30",
-    "6|martes|14:30|17:45|Labandeira, Pablo Jorge||||25",
-    "7|jueves|18:00|21:15|Castino, Mariana||||30",
-    "8|martes|09:15|12:30|Lomagno, Dana Romina||||31",
-    "9|miercoles|18:00|21:15|Vidal, Bibiana||||27"
+  "slots": [
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Spinella Trapani, Agostina",
+      "aula": "",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": []
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Britos, Cecilia",
+      "aula": "",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": []
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Lomagno, Dana Romina",
+      "aula": "",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": []
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Labandeira, Pablo Jorge",
+      "aula": "",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": []
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Mortoro, Fernando",
+      "aula": "",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": []
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Peregrini, Fabian Alberto",
+      "aula": "",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": []
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Vidal, Bibiana",
+      "aula": "",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": []
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Castino, Mariana",
+      "aula": "",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": []
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Merino, Maria Silvia",
+      "aula": "",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": []
+    }
   ]
 }

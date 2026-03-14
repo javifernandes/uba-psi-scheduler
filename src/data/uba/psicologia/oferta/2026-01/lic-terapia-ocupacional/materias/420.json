@@ -1,11 +1,76 @@
 {
+  "schemaVersion": 2,
   "id": "metodologia-de-la-investigacion-y-estadistica-c420",
   "label": "Metodología de la Investigación y Estadística - Cátedra 420",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Metodología de la Investigación y Estadística - Cátedra 420 - Nabergoi",
-  "teoricos": ["I|lunes|17:00|18:30|Nabergoi, Mariela|SI-035|"],
-  "seminarios": ["A|lunes|18:30|20:00|Nabergoi, Mariela|SI-035|"],
-  "comisiones": [
-    "1|lunes|20:00|22:00|Albino, Andrea|I - A|SI-035||15",
-    "2|miercoles|19:00|21:00|Albino, Andrea|I - A|SI-035||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "18:30",
+      "profesor": "Nabergoi, Mariela",
+      "aula": "SI-035",
+      "observ": ""
+    },
+    {
+      "id": "A",
+      "tipo": "sem",
+      "dia": "lunes",
+      "inicio": "18:30",
+      "fin": "20:00",
+      "profesor": "Nabergoi, Mariela",
+      "aula": "SI-035",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "20:00",
+      "fin": "22:00",
+      "profesor": "Albino, Andrea",
+      "aula": "SI-035",
+      "observ": "",
+      "vacantes": 15,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Albino, Andrea",
+      "aula": "SI-035",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "A",
+          "rol": "sem",
+          "condicion": "obligatorio"
+        },
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I - A"
+    }
   ]
 }

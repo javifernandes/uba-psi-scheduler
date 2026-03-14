@@ -1,27 +1,295 @@
 {
+  "schemaVersion": 2,
   "id": "28-metodologia-de-la-investigacion-c62-ii",
   "label": "(28) Metodología de la Investigación - Cátedra 62 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (28) Metodología de la Investigación - Cátedra 62 - II - Ynoub",
-  "teoricos": [
-    "I|lunes|18:00|19:30|Ynoub, Roxana Cecilia|IN-119|",
-    "II|martes|16:15|17:45|Ros, Cecilia Beatriz|IN-510|",
-    "III|miercoles|07:30|09:00|Pawlowicz, Maria Pia|IN-520|",
-    "IV|miercoles|17:00|18:45|Gomez, Valeria Mariel|SI-002|San Isidro"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|14:30|17:45|Leonardelli, Eduardo Miguel|I|IN-207||25",
-    "2|martes|18:00|21:15|Casal, Mariana Elizabeth|II|IN-430||23",
-    "3|miercoles|09:15|12:30|Sueldo, Lautaro Matias|III|IN-451||25",
-    "4|martes|12:45|16:00|Santos, Julia Susana|II|IN-421||19",
-    "5|lunes|19:45|23:00|Smud, Martin Hernan|I|IN-441||31",
-    "6|sabado|09:15|12:30|Samaja, Juan Alfonso|I|IN-420||34",
-    "7|martes|09:15|12:30|Zion, Maria Victoria|III|IN-452||33",
-    "8|martes|18:00|21:15|Murillo, Manuel Alejandro|II|IN-320||25",
-    "9|miercoles|18:00|21:15|Abal, Yamila Soledad|I|IN-304||26",
-    "10|martes|12:45|16:00|Ralon, Gonzalo|II|IN-209||33",
-    "11|lunes|19:45|23:00|Crespo, Beatriz Elizabeth|I|IN-440||34",
-    "50|miercoles|19:00|22:15|Fabris, Ana Catalina|IV|SI-002|San Isidro.|30",
-    "51|miercoles|13:00|16:15|Wood, Lucia|IV|SI-002|San Isidro|30"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Ynoub, Roxana Cecilia",
+      "aula": "IN-119",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Ros, Cecilia Beatriz",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Pawlowicz, Maria Pia",
+      "aula": "IN-520",
+      "observ": ""
+    },
+    {
+      "id": "IV",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "18:45",
+      "profesor": "Gomez, Valeria Mariel",
+      "aula": "SI-002",
+      "observ": "San Isidro"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Leonardelli, Eduardo Miguel",
+      "aula": "IN-207",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Crespo, Beatriz Elizabeth",
+      "aula": "IN-440",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Smud, Martin Hernan",
+      "aula": "IN-441",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Zion, Maria Victoria",
+      "aula": "IN-452",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Ralon, Gonzalo",
+      "aula": "IN-209",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Santos, Julia Susana",
+      "aula": "IN-421",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Casal, Mariana Elizabeth",
+      "aula": "IN-430",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Murillo, Manuel Alejandro",
+      "aula": "IN-320",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Sueldo, Lautaro Matias",
+      "aula": "IN-451",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "51",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "13:00",
+      "fin": "16:15",
+      "profesor": "Wood, Lucia",
+      "aula": "SI-002",
+      "observ": "San Isidro",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Abal, Yamila Soledad",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 26,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "50",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "22:15",
+      "profesor": "Fabris, Ana Catalina",
+      "aula": "SI-002",
+      "observ": "San Isidro.",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Samaja, Juan Alfonso",
+      "aula": "IN-420",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

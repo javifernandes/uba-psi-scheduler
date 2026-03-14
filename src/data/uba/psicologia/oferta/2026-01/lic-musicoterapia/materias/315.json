@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "musicoterapia-iii-c315-i",
   "label": "Musicoterapia III - Cátedra 315 (I)",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Musicoterapia III - Cátedra 315 - I - Gentili",
-  "teoricos": ["I|lunes|17:00|19:00|Gentili, Sebastian|AV-025|"],
-  "seminarios": [],
-  "comisiones": ["1|lunes|19:00|23:00|Trotta, Fernando Ezequiel|I|AV-025||18"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Gentili, Sebastian",
+      "aula": "AV-025",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Trotta, Fernando Ezequiel",
+      "aula": "AV-025",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "seleccion-e-incorporacion-de-personal-c662",
   "label": "Selección e Incorporación de Personal - Cátedra 662",
   "header": "Psicología UBA - Licenciatura en Psicología - Selección e Incorporación de Personal - Cátedra 662 - Santarsiero",
-  "teoricos": ["I|lunes|18:00|19:30|Santarsiero, Maria Marta|IN-302|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|16:15|17:45|Oliveto, Maria Victoria|I|IN-430||21",
-    "2|lunes|19:45|21:15|Oliveto, Maria Victoria|I|IN-107||12"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Santarsiero, Maria Marta",
+      "aula": "IN-302",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Oliveto, Maria Victoria",
+      "aula": "IN-430",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Oliveto, Maria Victoria",
+      "aula": "IN-107",
+      "observ": "",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -33,33 +33,34 @@ import {
   venueCodeFromAula,
 } from './scheduler.utils';
 import type { SubjectData } from './scheduler.types';
+import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
-const subjectData: SubjectData = {
+const subjectData: SubjectData = subjectFromLegacyFixture({
   id: '50',
   label: '(16) Psicoanálisis Freud - Cátedra 50 (II)',
   header: 'Lic Psicología - Cátedra 50 - II - Laznik',
   teoricos: ['II|jueves|09:15|10:45|Láznik, David Alberto|IN-MAY|'],
   seminarios: ['B|martes|09:15|10:45|Battaglia, Gabriel German|HY-005|'],
   comisiones: ['63|martes|07:30|09:00|BLANK, Sofia|III - B|IN-123||35'],
-};
+});
 
-const subjectOnlyTeoricoObligData: SubjectData = {
+const subjectOnlyTeoricoObligData: SubjectData = subjectFromLegacyFixture({
   id: '48',
   label: '(15) Neurofisiología - Cátedra 48 (I)',
   header: 'Psicología UBA - (15) Neurofisiología - Cátedra 48 - I - China',
   teoricos: ['V|martes|18:00|19:30|China, Norma Nancy|HY-014|'],
   seminarios: [],
   comisiones: ['14|sabado|09:15|10:45|García, Adriana Verónica|V|IN-207||'],
-};
+});
 
-const secondarySubjectData: SubjectData = {
+const secondarySubjectData: SubjectData = subjectFromLegacyFixture({
   id: '36',
   label: '(2) Psicología Social - Cátedra 36 (II)',
   header: 'Psicología UBA - (2) Psicología Social - Cátedra 36 - II - Zubieta',
   teoricos: [],
   seminarios: [],
   comisiones: ['9|jueves|16:15|19:30|Fazzito, Lorena Laura|II|IN-208|'],
-};
+});
 
 describe('scheduler.utils', () => {
   it('convierte horas y calcula overlap', () => {
@@ -80,8 +81,10 @@ describe('scheduler.utils', () => {
     expect(parsed.seminarios[0]?.id).toBe('B');
     expect(parsed.comisiones[0]).toMatchObject({
       id: '63',
-      teoricoId: 'III',
-      seminarioId: 'B',
+      slotsAsociados: [
+        { slotId: 'B', rol: 'sem', condicion: 'obligatorio' },
+        { slotId: 'III', rol: 'teo', condicion: 'obligatorio' },
+      ],
       aula: 'IN-123',
       vacantes: 35,
     });
@@ -91,8 +94,7 @@ describe('scheduler.utils', () => {
   it('parsea oblig con solo teórico sin inyectar seminario indefinido', () => {
     const parsed = parseSubject(subjectOnlyTeoricoObligData);
     expect(parsed.comisiones[0]).toMatchObject({
-      teoricoId: 'V',
-      seminarioId: undefined,
+      slotsAsociados: [{ slotId: 'V', rol: 'teo', condicion: 'obligatorio' }],
       vacantes: null,
     });
   });
@@ -218,22 +220,28 @@ describe('scheduler.utils', () => {
 
   it('agrupa todas las comisiones asociadas a un mismo teórico o seminario', () => {
     const parsed = parseSubject({
+      schemaVersion: 2,
       id: 'shared',
       label: '(99) Materia de prueba - Cátedra 1 (I)',
       header: 'header',
-      teoricos: ['T1|lunes|08:00|09:00|Docente T1|IN-100|'],
-      seminarios: ['S1|martes|08:00|09:00|Docente S1|IN-101|'],
-      comisiones: [
-        '11|miercoles|08:00|09:00|Com A|T1 - S1|IN-201|',
-        '12|miercoles|09:00|10:00|Com B|T1 - S1|IN-202|',
-        '13|jueves|08:00|09:00|Com C|T1|IN-203|',
-      ],
+      slots: subjectFromLegacyFixture({
+        id: 'shared',
+        label: '(99) Materia de prueba - Cátedra 1 (I)',
+        header: 'header',
+        teoricos: ['T1|lunes|08:00|09:00|Docente T1|IN-100|'],
+        seminarios: ['S1|martes|08:00|09:00|Docente S1|IN-101|'],
+        comisiones: [
+          '11|miercoles|08:00|09:00|Com A|T1 - S1|IN-201|',
+          '12|miercoles|09:00|10:00|Com B|T1 - S1|IN-202|',
+          '13|jueves|08:00|09:00|Com C|T1|IN-203|',
+        ],
+      }).slots,
     });
 
-    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'teoricoId')).toEqual({
+    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'teo')).toEqual({
       T1: ['11', '12', '13'],
     });
-    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'seminarioId')).toEqual({
+    expect(buildLinkedCommissionIdsMap(parsed.comisiones, 'sem')).toEqual({
       S1: ['11', '12'],
     });
   });

@@ -1,30 +1,352 @@
 {
+  "schemaVersion": 2,
   "id": "10350-procesos-psicologicos-basicos-c545-ii",
   "label": "(10350) Procesos Psicológicos Básicos - Cátedra 545 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10350) Procesos Psicológicos Básicos - Cátedra 545 - II - Bur",
-  "teoricos": [
-    "I|martes|18:00|21:15|Bur, Felix Ricardo|HY-005|Dicta junto a Martín Larripa",
-    "II|viernes|14:30|17:45|Alcover, Silvina Mariela|HY-005|",
-    "III|jueves|09:15|12:30|Mayol, Juan De La Cruz|HY-005|Dicta junto a Laura Martinez Frontera",
-    "IV|lunes|13:00|16:45|Pábago, Gustavo Marcelo|SI-017|San Isidro Dicta junto a Laura Martinez Frontera"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|18:00|19:30|Ottolina, Victoria|II|HY-012||35",
-    "2|jueves|07:30|09:00|Montes Quintián, Mariano|III|HY-013||35",
-    "3|martes|09:15|10:45|Cirami, Lautaro|III|IN-421||35",
-    "4|viernes|12:45|14:15|Ottolina, Victoria|II|HY-025||35",
-    "5|martes|21:30|23:00|Zaldarriaga, Hernán Ezequiel|I|HY-025||35",
-    "6|miercoles|11:00|12:30|Repetto, Guido|III|IN-433||35",
-    "7|martes|16:15|17:45|Cirami, Lautaro|I|HY-022||35",
-    "8|miercoles|09:15|10:45|Repetto, Guido|III|IN-433||35",
-    "9|viernes|12:45|14:15|Cornejo, Romina Alejandra|II|HY-026||35",
-    "10|viernes|18:00|19:30|Montes Quintián, Mariano|II|HY-013||35",
-    "11|sabado|11:00|12:30|Zaldarriaga, Hernán Ezequiel|I|HY-013||35",
-    "12|martes|21:30|23:00|Carbonetti, Yael Tamara|I|HY-004||35",
-    "13|martes|09:15|10:45|Carbonetti, Yael Tamara|III|HY-012||35",
-    "14|jueves|12:45|14:15|Cornejo, Romina Alejandra|III|HY-015||34",
-    "50|lunes|09:00|10:45|Salerno, Elisabet Mara|IV|SI-017|San Isidro|35",
-    "51|lunes|11:00|12:45|Salerno, Elisabet Mara|IV|SI-017|San Isidro|35"
+  "slots": [
+    {
+      "id": "IV",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "13:00",
+      "fin": "16:45",
+      "profesor": "Pábago, Gustavo Marcelo",
+      "aula": "SI-017",
+      "observ": "San Isidro Dicta junto a Laura Martinez Frontera"
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Bur, Felix Ricardo",
+      "aula": "HY-005",
+      "observ": "Dicta junto a Martín Larripa"
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Mayol, Juan De La Cruz",
+      "aula": "HY-005",
+      "observ": "Dicta junto a Laura Martinez Frontera"
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Alcover, Silvina Mariela",
+      "aula": "HY-005",
+      "observ": ""
+    },
+    {
+      "id": "50",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "10:45",
+      "profesor": "Salerno, Elisabet Mara",
+      "aula": "SI-017",
+      "observ": "San Isidro",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "51",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "12:45",
+      "profesor": "Salerno, Elisabet Mara",
+      "aula": "SI-017",
+      "observ": "San Isidro",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Carbonetti, Yael Tamara",
+      "aula": "HY-012",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Cirami, Lautaro",
+      "aula": "IN-421",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Cirami, Lautaro",
+      "aula": "HY-022",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "21:30",
+      "fin": "23:00",
+      "profesor": "Carbonetti, Yael Tamara",
+      "aula": "HY-004",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "21:30",
+      "fin": "23:00",
+      "profesor": "Zaldarriaga, Hernán Ezequiel",
+      "aula": "HY-025",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Repetto, Guido",
+      "aula": "IN-433",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Repetto, Guido",
+      "aula": "IN-433",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Montes Quintián, Mariano",
+      "aula": "HY-013",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Cornejo, Romina Alejandra",
+      "aula": "HY-015",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Ottolina, Victoria",
+      "aula": "HY-025",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Cornejo, Romina Alejandra",
+      "aula": "HY-026",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Ottolina, Victoria",
+      "aula": "HY-012",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Montes Quintián, Mariano",
+      "aula": "HY-013",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Zaldarriaga, Hernán Ezequiel",
+      "aula": "HY-013",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "intervenciones-psicologico-forenses-en-disfunciones-y-patologias-f-c191",
   "label": "Intervenciones Psicológico - Forenses en Disfunciones y Patologías F - Cátedra 191",
   "header": "Psicología UBA - Licenciatura en Psicología - Intervenciones Psicológico - Forenses en Disfunciones y Patologías F - Cátedra 191 - Prof. De La Iglesia",
-  "teoricos": ["I|jueves|16:15|17:45|De La Iglesia, Matilde Aida|IN-114|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|14:30|16:00|Velazquez, Maria Eugenia|I|IN-204||19",
-    "2|jueves|18:00|19:30|Velazquez, Maria Eugenia|I|IN-214||19"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "De La Iglesia, Matilde Aida",
+      "aula": "IN-114",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Velazquez, Maria Eugenia",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Velazquez, Maria Eugenia",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

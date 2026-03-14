@@ -1,13 +1,47 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-una-perspectiva-antropologica-en-la-clinic-c779",
   "label": "P.P.: P.P.: Área Clínica: Una Perspectiva Antropológica en la Clínic - Cátedra 779",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Una Perspectiva Antropológica en la Clínic - Cátedra 779 - Prof. Conti",
-  "teoricos": [
-    "I|lunes|08:30|09:30|Conti, Norberto||Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
-    "I|miercoles|08:30|09:30|Conti, Norberto||Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F."
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|09:30|11:30|Conti, Norberto|I||Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.|19"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "09:30",
+      "profesor": "Conti, Norberto",
+      "aula": "",
+      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F."
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "09:30",
+      "profesor": "Conti, Norberto",
+      "aula": "",
+      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F."
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "Conti, Norberto",
+      "aula": "",
+      "observ": "Servicio 25 A Hosp. Borda Ramon Carrillo 375 C. F.",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "audioperceptiva-aplicada-ii-c310",
   "label": "Audioperceptiva Aplicada II - Cátedra 310",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Audioperceptiva Aplicada II - Cátedra 310 - A designar",
-  "teoricos": ["I|miercoles|17:00|19:00|Miguens, Gerardo Antonio|AV-042|"],
-  "seminarios": [],
-  "comisiones": ["1|miercoles|19:00|23:00|Downes, Lucia Victoria|I|AV-042||45"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Miguens, Gerardo Antonio",
+      "aula": "AV-042",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Downes, Lucia Victoria",
+      "aula": "AV-042",
+      "observ": "",
+      "vacantes": 45,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

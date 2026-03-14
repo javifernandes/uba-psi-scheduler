@@ -1,42 +1,607 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-hospital-de-ninos-dr-ricardo-gutierrez-c135",
   "label": "P.P.: P.P.: Área Clínica: Hospital de niños Dr. Ricardo Gutiérrez - Cátedra 135",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Hospital de niños Dr. Ricardo Gutiérrez - Cátedra 135 - Fränkel",
-  "teoricos": [
-    "I|martes|18:00|20:00|Fränkel, Andrea||Htal. de Niños . NO CONCURRIR AL HTAL. ANTES DE ESTA 1ª CLASE"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|08:30|10:30|Buonanotte, Cecilia|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "2|viernes|10:30|12:30|Buonanotte, Cecilia|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "3|lunes|13:30|15:30|Buonanotte, Cecilia|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|1",
-    "4|miercoles|08:30|10:30|Buonanotte, Cecilia|I||Práctica clínica-Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|1",
-    "5|lunes|08:30|10:30|Mattarucco, Juan Pablo|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "6|martes|08:30|10:30|Mattarucco, Juan Pablo|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "7|martes|20:00|22:00|Mattarucco, Juan Pablo|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "8|jueves|09:00|11:00|Mattarucco, Juan Pablo|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "9|lunes|14:00|16:00|Mattarucco, Juan Pablo|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "10|martes|20:00|22:00|Mattarucco, Juan Pablo|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "11|jueves|14:00|16:00|Mattarucco, Juan Pablo|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "12|martes|20:00|22:00|Mattarucco, Juan Pablo|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "13|martes|20:00|22:00|Mattarucco, Juan Pablo|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "14|lunes|10:30|12:30|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "15|martes|09:00|11:00|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "16|martes|16:00|18:00|Trinidad, Adriana Isabel|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "17|jueves|08:30|10:30|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "18|martes|13:00|15:00|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "19|martes|14:00|16:00|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "20|martes|16:00|18:00|Trinidad, Adriana Isabel|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "21|jueves|14:00|17:00|Trinidad, Adriana Isabel|I||Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "22|martes|16:00|18:00|Trinidad, Adriana Isabel|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|0",
-    "23|martes|16:00|18:00|Trinidad, Adriana Isabel|I||Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA|1",
-    "24|lunes|09:00|11:00|Loiácono, Florencia|I||Practica Clinica. Htal de Niños DR Ricardo Gutierrez. Bustamante 1399 Caba|0",
-    "25|martes|09:00|11:00|Loiácono, Florencia|I||Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba|2",
-    "26|martes|16:00|18:00|Loiácono, Florencia|I||Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamente 1399 Caba|0",
-    "27|martes|16:00|18:00|Loiácono, Florencia|I||Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamente 1399 Caba|0",
-    "28|martes|16:00|18:00|Loiácono, Florencia|I||Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba|0",
-    "29|jueves|14:00|16:00|Loiácono, Florencia|I||Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba|0",
-    "30|jueves|10:30|12:30|Loiácono, Florencia|I||Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba|0",
-    "31|martes|16:00|18:00|Loiácono, Florencia|I||Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba|0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "20:00",
+      "profesor": "Fränkel, Andrea",
+      "aula": "",
+      "observ": "Htal. de Niños . NO CONCURRIR AL HTAL. ANTES DE ESTA 1ª CLASE"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "24",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Practica Clinica. Htal de Niños DR Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:30",
+      "fin": "12:30",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "13:30",
+      "fin": "15:30",
+      "profesor": "Buonanotte, Cecilia",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "25",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:00",
+      "fin": "15:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "19",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "20",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "22",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "23",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "26",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamente 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "27",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamente 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "28",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "31",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Espacio de tutoria. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "20:00",
+      "fin": "22:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "20:00",
+      "fin": "22:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "20:00",
+      "fin": "22:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "20:00",
+      "fin": "22:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Buonanotte, Cecilia",
+      "aula": "",
+      "observ": "Práctica clínica-Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "30",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "10:30",
+      "fin": "12:30",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Mattarucco, Juan Pablo",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "21",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "17:00",
+      "profesor": "Trinidad, Adriana Isabel",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "29",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Loiácono, Florencia",
+      "aula": "",
+      "observ": "Practica Clinica. Htal de Niños Dr Ricardo Gutierrez. Bustamante 1399 Caba",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Buonanotte, Cecilia",
+      "aula": "",
+      "observ": "Práctica clínica- Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "10:30",
+      "fin": "12:30",
+      "profesor": "Buonanotte, Cecilia",
+      "aula": "",
+      "observ": "Espacio de Tutoría.Htal. de Niños Dr. Ricardo Gutierrez - Bustamante 1399 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

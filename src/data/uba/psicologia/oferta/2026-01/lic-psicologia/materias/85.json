@@ -1,16 +1,104 @@
 {
+  "schemaVersion": 2,
   "id": "psicopedagogia-clinica-c85",
   "label": "Psicopedagogía Clínica - Cátedra 85",
   "header": "Psicología UBA - Licenciatura en Psicología - Psicopedagogía Clínica - Cátedra 85 - a. Alvarez",
-  "teoricos": [
-    "I|martes|19:45|21:15|Alvarez, Patricia|IN-510|",
-    "II|jueves|11:00|12:30|Cantu, Gustavo Alejandro|IN-106|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|18:00|19:30|Dieguez, Analia Susana|I|IN-GES||20",
-    "2|martes|18:00|19:30|Durán, Alejo|I|IN-109||16",
-    "3|jueves|09:15|10:45|Grunin, Julian Nicolas|II|IN-GES||22",
-    "4|jueves|09:15|10:45|Rego, Maria Victoria|II|IN-210||21"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Alvarez, Patricia",
+      "aula": "IN-510",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Cantu, Gustavo Alejandro",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Dieguez, Analia Susana",
+      "aula": "IN-GES",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Durán, Alejo",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Grunin, Julian Nicolas",
+      "aula": "IN-GES",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Rego, Maria Victoria",
+      "aula": "IN-210",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

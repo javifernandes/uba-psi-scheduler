@@ -1,16 +1,151 @@
 {
+  "schemaVersion": 2,
   "id": "10343-pp-pp-area-social-comunitaria-abordaje-comunitario-en-barrios-vulnerables-c852-i",
   "label": "(10343) P.P.: P.P.: Area Social Comunitaria: Abordaje comunitario en barrios vulnerables - Cátedra 852 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10343) P.P.: P.P.: Area Social Comunitaria: Abordaje comunitario en barrios vulnerables - Cátedra 852 - I - Vizioli",
-  "teoricos": ["I|lunes|18:00|19:30|Vizioli, Nicolas|HY-004|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|08:30|12:30|Cure Pabuena, Shadia|I||Cuzco 220, Liniers. Parroquia San Cayetano|1",
-    "2|jueves|08:30|12:30|Corsi, Gonzalo|I||Cuzco 220, Liniers. Parroquia San Cayetano|6",
-    "3|sabado|08:30|12:30|Cure Pabuena, Shadia|I||Padre Carlos Mugica 1300 Fundacion Scholas Papa Francisco|0",
-    "4|martes|17:00|21:00|Sanna, Micaela Edith|I||Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados|8",
-    "5|jueves|17:00|21:00|Gimeno, Leandro Crisólogo|I||Cuzco 220, Liniers. Parroquia San Cayetano|6",
-    "6|sabado|08:30|12:30|Lavanga, Nahuel Martin|I||Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados|1",
-    "7|miercoles|08:30|12:30|Raggio, Sabrina|I||Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados|3"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Vizioli, Nicolas",
+      "aula": "HY-004",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Cure Pabuena, Shadia",
+      "aula": "",
+      "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Sanna, Micaela Edith",
+      "aula": "",
+      "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Raggio, Sabrina",
+      "aula": "",
+      "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Corsi, Gonzalo",
+      "aula": "",
+      "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Gimeno, Leandro Crisólogo",
+      "aula": "",
+      "observ": "Cuzco 220, Liniers. Parroquia San Cayetano",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Cure Pabuena, Shadia",
+      "aula": "",
+      "observ": "Padre Carlos Mugica 1300 Fundacion Scholas Papa Francisco",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "08:30",
+      "fin": "12:30",
+      "profesor": "Lavanga, Nahuel Martin",
+      "aula": "",
+      "observ": "Jose E. Rodo 4203, Parque Avellaneda, Parroquia Virgen de los Desamparados",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

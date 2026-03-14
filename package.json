@@ -14,6 +14,7 @@
     "test:e2e": "playwright test",
     "inspect:catalog": "tsx scripts/inspect-uba-psi-catalog.ts",
     "scrape:catalog": "tsx scripts/scrape-uba-psi-oferta.ts",
+    "migrate:subject-schema-v2": "tsx scripts/migrate-subject-schema-v2.ts",
     "scrape:window:status": "tsx scripts/scraper-window-control.ts status",
     "scrape:window:close": "tsx scripts/scraper-window-control.ts close",
     "prepare": "husky"

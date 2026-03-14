@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "ortopedia-c410",
   "label": "Ortopedia - Cátedra 410",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Ortopedia - Cátedra 410 - Prof. Martinez Wagner",
-  "teoricos": ["I|miercoles|17:00|19:00|Martinez Wagner, Alejandro Raf|SI-TEC|"],
-  "seminarios": [],
-  "comisiones": ["1|miercoles|19:00|21:00|Merlo, Miguel Atilio|I|SI-TEC||39"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Martinez Wagner, Alejandro Raf",
+      "aula": "SI-TEC",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Merlo, Miguel Atilio",
+      "aula": "SI-TEC",
+      "observ": "",
+      "vacantes": 39,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

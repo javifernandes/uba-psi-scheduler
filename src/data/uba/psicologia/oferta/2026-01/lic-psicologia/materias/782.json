@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "tecnicas-psicologicas-en-el-ambito-juridico-c782",
   "label": "Técnicas Psicológicas en el Ámbito Jurídico - Cátedra 782",
   "header": "Psicología UBA - Licenciatura en Psicología - Técnicas Psicológicas en el Ámbito Jurídico - Cátedra 782 - Prof. Rodriguez",
-  "teoricos": ["I|viernes|18:00|19:30|Rodriguez, Jose Antonio|IN-103|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|16:15|17:45|Yañez, Carolina|I|IN-213||5",
-    "2|viernes|14:30|16:15|González Vieyto, Sebastián Ric|I|IN-213||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Rodriguez, Jose Antonio",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "14:30",
+      "fin": "16:15",
+      "profesor": "González Vieyto, Sebastián Ric",
+      "aula": "IN-213",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Yañez, Carolina",
+      "aula": "IN-213",
+      "observ": "",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

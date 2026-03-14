@@ -1,12 +1,75 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-neuropsicologia-practica-tecnicas-de-eval-c703",
   "label": "P.P.: P.P.: Área Clínica: Neuropsicología Práctica: Técnicas de Eval - Cátedra 703",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Neuropsicología Práctica: Técnicas de Eval - Cátedra 703 - Vanotti",
-  "teoricos": ["I|jueves|18:00|19:30|Vanotti, Sandra Ines|HY-010|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|14:00|18:00|Eizaguirre, Maria Barbara|I||Htal Ramos Mejía General Urquiza 609 CABA-|0",
-    "2|jueves|14:00|18:00|Fiorentini, Leticia|I||Htal Ramos Mejía General Urquiza 609 CABA-|0",
-    "3|jueves|14:00|18:00|Ciufia, Natalia|I||Htal Ramos Mejía General Urquiza 609 - - CABA|4"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Vanotti, Sandra Ines",
+      "aula": "HY-010",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Eizaguirre, Maria Barbara",
+      "aula": "",
+      "observ": "Htal Ramos Mejía General Urquiza 609 CABA-",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Fiorentini, Leticia",
+      "aula": "",
+      "observ": "Htal Ramos Mejía General Urquiza 609 CABA-",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Ciufia, Natalia",
+      "aula": "",
+      "observ": "Htal Ramos Mejía General Urquiza 609 - - CABA",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

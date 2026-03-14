@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "10230-clinica-de-las-anorexias-las-bulimias-y-la-obesidad-abordaje-interdisciplinario-c815-i",
   "label": "(10230) Clínica de las anorexias, las bulimias y la obesidad. Abordaje interdisciplinario - Cátedra 815 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10230) Clínica de las anorexias, las bulimias y la obesidad. Abordaje interdisciplinario - Cátedra 815 - I - Abinzano",
-  "teoricos": ["I|martes|19:45|21:15|Abinzano, Rodrigo|IN-106|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|18:00|19:30|Amor, Mauro|I|IN-114||0",
-    "2|martes|21:30|23:00|Amor, Mauro|I|IN-126||24"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Abinzano, Rodrigo",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Amor, Mauro",
+      "aula": "IN-114",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "21:30",
+      "fin": "23:00",
+      "profesor": "Amor, Mauro",
+      "aula": "IN-126",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

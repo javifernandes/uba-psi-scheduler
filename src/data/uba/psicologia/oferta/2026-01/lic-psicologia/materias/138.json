@@ -1,13 +1,94 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-clinica-de-las-adicciones-abordaje-interd-c138",
   "label": "P.P.: P.P.: Área Clínica: Clínica de las Adicciones: Abordaje Interd - Cátedra 138",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Clínica de las Adicciones: Abordaje Interd - Cátedra 138 - Prof. Torres",
-  "teoricos": ["I|martes|14:30|16:00|Torres, Gustavo Fernando|HY-010|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|17:00|21:00|Pepa, Marcela|I||Fundación Santa Catalina - Callao 433 - Piso 2° - CABA|0",
-    "2|lunes|14:00|18:00|Podhainy, Maria Belen|I||Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar|6",
-    "3|lunes|13:00|17:00|Ferrari, Monica Graciela|I||Alas de Libertad Asociación Civil - Cangayé 1155 - CABA|9",
-    "4|viernes|15:00|19:00|Ferrando, Myrian Gabriela|I||Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC|7"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Torres, Gustavo Fernando",
+      "aula": "HY-010",
+      "observ": ""
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "13:00",
+      "fin": "17:00",
+      "profesor": "Ferrari, Monica Graciela",
+      "aula": "",
+      "observ": "Alas de Libertad Asociación Civil - Cangayé 1155 - CABA",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Podhainy, Maria Belen",
+      "aula": "",
+      "observ": "Comunidad Terap. Por Decir - Alfredo Bufano 3870 Castelar",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Pepa, Marcela",
+      "aula": "",
+      "observ": "Fundación Santa Catalina - Callao 433 - Piso 2° - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "15:00",
+      "fin": "19:00",
+      "profesor": "Ferrando, Myrian Gabriela",
+      "aula": "",
+      "observ": "Centro de Vida - Av. Santa Fé 2861 1ºB y 1ªC",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

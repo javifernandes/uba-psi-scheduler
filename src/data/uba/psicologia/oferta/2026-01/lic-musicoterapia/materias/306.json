@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "tecnica-vocal-ii-c306",
   "label": "Técnica Vocal II - Cátedra 306",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Técnica Vocal II - Cátedra 306 - A designar",
-  "teoricos": ["I|martes|17:00|19:00|Fideleff, Leandro|AV-030|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|19:00|21:00|Savastano Hidalgo, Paula Danie|I|AV-030||25",
-    "2|martes|15:00|17:00|Savastano Hidalgo, Paula Danie|I|AV-028||25"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Fideleff, Leandro",
+      "aula": "AV-030",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Savastano Hidalgo, Paula Danie",
+      "aula": "AV-028",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Savastano Hidalgo, Paula Danie",
+      "aula": "AV-030",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

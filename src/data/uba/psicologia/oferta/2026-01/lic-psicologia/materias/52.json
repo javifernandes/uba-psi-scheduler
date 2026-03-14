@@ -1,17 +1,114 @@
 {
+  "schemaVersion": 2,
   "id": "18-psicoanalisis-escuela-inglesa-c52-ii",
   "label": "(18) Psicoanálisis: Escuela Inglesa - Cátedra 52 (II)",
   "header": "Psicología UBA - Licenciatura en Psicología - (18) Psicoanálisis: Escuela Inglesa - Cátedra 52 - II - Freidin",
-  "teoricos": [
-    "I|martes|14:30|16:00|Diaz, Noelia Soledad|HY-030|",
-    "II|miercoles|18:00|19:30|Grigoravicius, Marcelo Juan|HY-029|",
-    "III|jueves|11:00|12:30|Freidin, Fabiana|HY-029|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|19:45|23:00|Aguiriano, Vanina Mariela|II|HY-032||24",
-    "2|jueves|07:30|10:45|Bardi, Daniela Carla|III|HY-026||16",
-    "3|martes|16:15|19:30|Canelo, Elisa Irene|I|HY-032||14",
-    "4|martes|11:00|14:15|Ramos, Laura Vanina|I|HY-011||16"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Diaz, Noelia Soledad",
+      "aula": "HY-030",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Grigoravicius, Marcelo Juan",
+      "aula": "HY-029",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Freidin, Fabiana",
+      "aula": "HY-029",
+      "observ": ""
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Ramos, Laura Vanina",
+      "aula": "HY-011",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Canelo, Elisa Irene",
+      "aula": "HY-032",
+      "observ": "",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Aguiriano, Vanina Mariela",
+      "aula": "HY-032",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Bardi, Daniela Carla",
+      "aula": "HY-026",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    }
   ]
 }

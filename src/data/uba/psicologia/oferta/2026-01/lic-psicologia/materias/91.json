@@ -1,20 +1,180 @@
 {
+  "schemaVersion": 2,
   "id": "neuropsicologia-c91",
   "label": "Neuropsicología - Cátedra 91",
   "header": "Psicología UBA - Licenciatura en Psicología - Neuropsicología - Cátedra 91 - Prof. Politis",
-  "teoricos": [
-    "I|lunes|18:00|19:30|Rubinstein, Wanda Yanina|IN-103|",
-    "II|lunes|14:30|16:00|Politis, Daniel Gustavo|IN-101|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|16:15|17:45|Indaburu, Ana|II|IN-109||7",
-    "2|lunes|12:45|14:15|Cores, Evangelina Valeria|II|IN-114||31",
-    "3|lunes|16:15|17:45|Gomez, Pablo Guillermo|I|IN-510||22",
-    "4|lunes|12:45|14:15|Indaburu, Ana|II|IN-205||13",
-    "5|lunes|16:15|17:45|Cores, Evangelina Valeria|II|IN-204||28",
-    "6|lunes|12:45|14:15|Sanchez, Natalia Alejandra|II|IN-204||18",
-    "7|lunes|19:45|21:15|Gomez, Pablo Guillermo|I|IN-303||0",
-    "8|lunes|11:00|12:30|Sanchez, Natalia Alejandra|II|IN-114||28"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Politis, Daniel Gustavo",
+      "aula": "IN-101",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Rubinstein, Wanda Yanina",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Sanchez, Natalia Alejandra",
+      "aula": "IN-114",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Cores, Evangelina Valeria",
+      "aula": "IN-114",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Indaburu, Ana",
+      "aula": "IN-205",
+      "observ": "",
+      "vacantes": 13,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Sanchez, Natalia Alejandra",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Indaburu, Ana",
+      "aula": "IN-109",
+      "observ": "",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Gomez, Pablo Guillermo",
+      "aula": "IN-510",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Cores, Evangelina Valeria",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Gomez, Pablo Guillermo",
+      "aula": "IN-303",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

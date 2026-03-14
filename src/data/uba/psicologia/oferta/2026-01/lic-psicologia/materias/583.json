@@ -1,16 +1,104 @@
 {
+  "schemaVersion": 2,
   "id": "10366-pp-pp-area-social-comunitaria-problemas-bioeticos-en-educacion-sexual-integral-c583-i",
   "label": "(10366) PP: PP: Area Social Comunitaria: Problemas Bioéticos en Educación Sexual Integral - Cátedra 583 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10366) PP: PP: Area Social Comunitaria: Problemas Bioéticos en Educación Sexual Integral - Cátedra 583 - I - Ormart",
-  "teoricos": [
-    "I|martes|12:00|14:00|Ormart, Elizabeth Beatriz||Rawson 42. CABA",
-    "I|miercoles|12:00|14:00|Tesolin, Cecilia||French 149. Ramos Mejia"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|08:00|12:00|Glaz, Claudia|I||Rawson 42. CABA|5",
-    "2|martes|14:00|18:00|Cottini Rencoret, María Eugeni|I||Rawson 42. CABA|7",
-    "3|miercoles|08:00|12:00|Tesolin, Cecilia|I||Escuela Doltó- Álvarez Jonte 321 Ramos Mejía|10",
-    "4|martes|14:00|18:00|Lopez, Agustina|I||Rawson 42. CABA|11"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "12:00",
+      "fin": "14:00",
+      "profesor": "Ormart, Elizabeth Beatriz",
+      "aula": "",
+      "observ": "Rawson 42. CABA"
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "12:00",
+      "fin": "14:00",
+      "profesor": "Tesolin, Cecilia",
+      "aula": "",
+      "observ": "French 149. Ramos Mejia"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Glaz, Claudia",
+      "aula": "",
+      "observ": "Rawson 42. CABA",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Cottini Rencoret, María Eugeni",
+      "aula": "",
+      "observ": "Rawson 42. CABA",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Lopez, Agustina",
+      "aula": "",
+      "observ": "Rawson 42. CABA",
+      "vacantes": 11,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Tesolin, Cecilia",
+      "aula": "",
+      "observ": "Escuela Doltó- Álvarez Jonte 321 Ramos Mejía",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

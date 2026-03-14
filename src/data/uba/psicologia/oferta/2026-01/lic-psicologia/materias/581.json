@@ -1,13 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "10364-pp-pp-area-social-comunitaria-salud-colectiva-gestion-y-evaluacion-de-politicas-publicas-c581-i",
   "label": "(10364) PP: PP: Area Social Comunitaria: Salud Colectiva: Gestión y Evaluación de Políticas Públicas - Cátedra 581 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10364) PP: PP: Area Social Comunitaria: Salud Colectiva: Gestión y Evaluación de Políticas Públicas - Cátedra 581 - I - Ardila Gomez",
-  "teoricos": [
-    "I|martes|12:45|14:15|Ardila Gomez, Sara Elena|IN-219|sede Facultad (Independencia o HY)"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|08:00|12:00|Rosales, Melina Laura|I||Hospital General de Agudos J.M. amos mejía Urquiza 609, CABA|11",
-    "2|martes|08:00|12:00|Delmonte, Natalia|I||Hospital General de Agudos Parmenio Piñero, Varela 1301 , CABA|15"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Ardila Gomez, Sara Elena",
+      "aula": "IN-219",
+      "observ": "sede Facultad (Independencia o HY)"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Rosales, Melina Laura",
+      "aula": "",
+      "observ": "Hospital General de Agudos J.M. amos mejía Urquiza 609, CABA",
+      "vacantes": 11,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Delmonte, Natalia",
+      "aula": "",
+      "observ": "Hospital General de Agudos Parmenio Piñero, Varela 1301 , CABA",
+      "vacantes": 15,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

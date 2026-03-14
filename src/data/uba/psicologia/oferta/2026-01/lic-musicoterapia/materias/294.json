@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "taller-de-instrumentos-aerofonos-c294",
   "label": "Taller de Instrumentos Aerófonos - Cátedra 294",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Taller de Instrumentos Aerófonos - Cátedra 294 - Perea",
-  "teoricos": ["I|viernes|17:00|19:00|Perea, Ximena|AV-030|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|viernes|15:00|17:00|Martinez, Eduardo|I|AV-026||24",
-    "2|viernes|19:00|21:00|Martinez, Eduardo|I|AV-030||25"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Perea, Ximena",
+      "aula": "AV-030",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Martinez, Eduardo",
+      "aula": "AV-026",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Martinez, Eduardo",
+      "aula": "AV-030",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

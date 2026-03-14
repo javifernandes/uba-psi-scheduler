@@ -1,8 +1,37 @@
 {
+  "schemaVersion": 2,
   "id": "clinica-medica-y-neurologia-c409",
   "label": "Clínica Médica y Neurología - Cátedra 409",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Clínica Médica y Neurología - Cátedra 409 - Prof. Calb",
-  "teoricos": ["I|lunes|17:00|21:00|Calb, Alejandro|SI-017|"],
-  "seminarios": [],
-  "comisiones": ["1|miercoles|17:00|21:00|Itri, Sofia|I|SI-004||25"]
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Calb, Alejandro",
+      "aula": "SI-017",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "21:00",
+      "profesor": "Itri, Sofia",
+      "aula": "SI-004",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
+  ]
 }

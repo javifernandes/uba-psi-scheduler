@@ -1,14 +1,66 @@
 {
+  "schemaVersion": 2,
   "id": "45-psicologia-fenomenologica-y-existencial-c78-i",
   "label": "(45) Psicología Fenomenológica y Existencial - Cátedra 78 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (45) Psicología Fenomenológica y Existencial - Cátedra 78 - I - Muñoz",
-  "teoricos": [
-    "I|jueves|11:00|12:30|Muñoz, Pablo Diego|IN-216|",
-    "II|miercoles|19:45|21:15|Lutereau, Luciano|IN-207|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|09:15|10:45|Sourigues, Santiago|I|IN-216||19",
-    "2|miercoles|18:00|19:30|Sadrinas, Demian|II|IN-212||24"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Lutereau, Luciano",
+      "aula": "IN-207",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Muñoz, Pablo Diego",
+      "aula": "IN-216",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Sadrinas, Demian",
+      "aula": "IN-212",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Sourigues, Santiago",
+      "aula": "IN-216",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

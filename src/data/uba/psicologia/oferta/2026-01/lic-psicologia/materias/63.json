@@ -1,30 +1,361 @@
 {
+  "schemaVersion": 2,
   "id": "30-teoria-y-tecnica-de-grupos-c63-i",
   "label": "(30) Teoría y Técnica de Grupos - Cátedra 63 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (30) Teoría y Técnica de Grupos - Cátedra 63 - I - A designar",
-  "teoricos": [
-    "I|lunes|09:15|10:45|Farruggio, Liliana Rosalia|HY-014|",
-    "II|lunes|16:15|17:45|Gobet, Laura Silvina|HY-029|",
-    "III|lunes|18:00|19:30|Calloway, Cecilia Eugenia|HY-022|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|12:45|16:00|Davis Edmonson, Irene Karina|II|HY-032||11",
-    "2|martes|18:00|21:15|Mazzolini, Carlos Norberto|III|IN-323||9",
-    "3|miercoles|09:15|12:30|Lopez, Maria Elisa|I|HY-023||19",
-    "4|jueves|09:15|12:30|Gimenez, Maria Fernanda|I|HY-010||24",
-    "5|jueves|18:00|21:15|Colangelo, Juliana|III|HY-024||4",
-    "6|jueves|18:00|21:15|Collado, Candido Luis|III|IN-303||20",
-    "7|viernes|09:15|12:30|Corino, Carolina Alicia|I|HY-010||22",
-    "8|martes|14:30|17:45|Ragonese, Sergio|II|HY-026||11",
-    "9|lunes|11:00|14:15|Ortiz Molinuevo, Santiago|I|HY-013||8",
-    "10|lunes|12:45|16:00|Idigoras, Julio Nicolas|II|IN-124||10",
-    "11|miercoles|18:00|21:15|Vilares, Tomas|III|HY-015||12",
-    "12|miercoles|11:00|14:15|Mpacas, Diana|I|HY-027||22",
-    "13|lunes|11:00|14:15|Bethencourt, Natalia Verónica|I|HY-025||0",
-    "14|viernes|18:00|21:15|Dmytrow, Tamara Alejandra|III|HY-011||18",
-    "15|viernes|09:15|12:30|Bokser, Julian Luciano|I|HY-024||19",
-    "16|sabado|09:15|12:30|Churba, Daniel Alberto|III|HY-030||9",
-    "17|martes|09:15|12:30|Yablonovsky, Talia|I|HY-004||21"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Farruggio, Liliana Rosalia",
+      "aula": "HY-014",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Gobet, Laura Silvina",
+      "aula": "HY-029",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Calloway, Cecilia Eugenia",
+      "aula": "HY-022",
+      "observ": ""
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Bethencourt, Natalia Verónica",
+      "aula": "HY-025",
+      "observ": "",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Ortiz Molinuevo, Santiago",
+      "aula": "HY-013",
+      "observ": "",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Davis Edmonson, Irene Karina",
+      "aula": "HY-032",
+      "observ": "",
+      "vacantes": 11,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Idigoras, Julio Nicolas",
+      "aula": "IN-124",
+      "observ": "",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Yablonovsky, Talia",
+      "aula": "HY-004",
+      "observ": "",
+      "vacantes": 21,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Ragonese, Sergio",
+      "aula": "HY-026",
+      "observ": "",
+      "vacantes": 11,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Mazzolini, Carlos Norberto",
+      "aula": "IN-323",
+      "observ": "",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Lopez, Maria Elisa",
+      "aula": "HY-023",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Mpacas, Diana",
+      "aula": "HY-027",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Vilares, Tomas",
+      "aula": "HY-015",
+      "observ": "",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Gimenez, Maria Fernanda",
+      "aula": "HY-010",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Colangelo, Juliana",
+      "aula": "HY-024",
+      "observ": "",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Collado, Candido Luis",
+      "aula": "IN-303",
+      "observ": "",
+      "vacantes": 20,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Bokser, Julian Luciano",
+      "aula": "HY-024",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Corino, Carolina Alicia",
+      "aula": "HY-010",
+      "observ": "",
+      "vacantes": 22,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Dmytrow, Tamara Alejandra",
+      "aula": "HY-011",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Churba, Daniel Alberto",
+      "aula": "HY-030",
+      "observ": "",
+      "vacantes": 9,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    }
   ]
 }

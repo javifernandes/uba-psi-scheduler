@@ -1,15 +1,132 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-practica-clinica-psicoanalitica-de-ninos-c-c639",
   "label": "P.P.: P.P.: Área Clínica: Práctica Clínica Psicoanalítica de Niños c - Cátedra 639",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Práctica Clínica Psicoanalítica de Niños c - Cátedra 639 - Prof. Freidin",
-  "teoricos": ["I|martes|09:15|10:45|Freidin, Fabiana|HY-026|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|08:00|12:00|Bardi, Daniela Carla|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|8",
-    "2|miercoles|08:00|12:00|Ramos, Laura Vanina|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|5",
-    "3|viernes|08:00|12:00|Garcia Poultier, Julieta|I||Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón|10",
-    "4|viernes|08:00|12:00|Stibel, Sonia Vanina|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón|12",
-    "5|lunes|08:00|12:00|Pitelli, Luna|I||Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón|12",
-    "6|lunes|08:00|12:00|Canales, Laura|I||Servicio de Psicología Clínica de Niños|11"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Freidin, Fabiana",
+      "aula": "HY-026",
+      "observ": ""
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Pitelli, Luna",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA. Güemes y Eva Perón",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Canales, Laura",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños",
+      "vacantes": 11,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Bardi, Daniela Carla",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "vacantes": 8,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Ramos, Laura Vanina",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Garcia Poultier, Julieta",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños Regional Sur - UBA - Guemes y Eva Perón",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Stibel, Sonia Vanina",
+      "aula": "",
+      "observ": "Servicio de Psicología Clínica de Niños. Regional Sur UBA Güemes y Eva Perón",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

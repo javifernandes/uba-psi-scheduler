@@ -9,30 +9,33 @@ vi.mock('../../hooks/use-saved-elections-view-model', () => ({
 }));
 
 const subject: SubjectData = {
+  schemaVersion: 2,
   id: '34',
   label: '(1) Historia de la Psicología - Cátedra 34 (II)',
   header: 'header',
-  teoricos: [],
-  seminarios: [],
-  comisiones: [],
+  slots: [],
 };
 
 const savedDetail: SavedElectionDetail = {
   subject,
   commission: {
+    tipo: 'prac',
     id: '21',
     dia: 'jueves',
     inicio: '14:30',
     fin: '16:00',
     profesor: 'Cazes Marcela Adriana',
-    oblig: 'II - C',
-    teoricoId: 'II',
-    seminarioId: 'C',
+    obligRaw: 'II - C',
+    slotsAsociados: [
+      { slotId: 'C', rol: 'sem', condicion: 'obligatorio' },
+      { slotId: 'II', rol: 'teo', condicion: 'obligatorio' },
+    ],
     aula: 'IN-444',
     observ: '',
     vacantes: 18,
   },
   teorico: {
+    tipo: 'teo',
     id: 'II',
     dia: 'jueves',
     inicio: '12:45',
@@ -42,6 +45,7 @@ const savedDetail: SavedElectionDetail = {
     observ: '',
   },
   seminario: {
+    tipo: 'sem',
     id: 'C',
     dia: 'miercoles',
     inicio: '14:30',

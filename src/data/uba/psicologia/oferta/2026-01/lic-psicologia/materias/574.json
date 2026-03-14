@@ -1,47 +1,666 @@
 {
+  "schemaVersion": 2,
   "id": "10359-psicologia-clinica-y-psicoterapias-i-c574-i",
   "label": "(10359) Psicología Clínica y Psicoterapias I - Cátedra 574 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10359) Psicología Clínica y Psicoterapias I - Cátedra 574 - I - Muraro",
-  "teoricos": [
-    "I|jueves|11:00|12:30|Iuale, María Luján|HY-014|",
-    "II|jueves|16:15|17:45|Alomo, Martin Carlos|HY-029|",
-    "III|miercoles|19:45|21:15|Muraro, Vanina|HY-005|",
-    "IV|lunes|18:00|19:30|Mazzuca, Marcelo Esteban|HY-031|",
-    "V|miercoles|11:00|12:30|Farias, Florencia Elisa|SI-017|San Isidro"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|09:15|10:45|Zaffore, Carolina|I|HY-024|TALLER LECTURA DE TEXTOS - Sede en Facultad|0",
-    "2|martes|09:15|10:45|Zaffore, Carolina|I|HY-024|TALLER LECTURA DE TEXTOS - Sede en Facultad|0",
-    "3|jueves|09:15|10:45|Stranges, Valeria Romina|I|HY-025|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|1",
-    "4|lunes|09:15|10:45|Castro Tolosa, Silvana|I|HY-010|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "5|jueves|09:15|10:45|López, Mariano Alejandro|I|HY-023|TALLER LECTURA DE TEXTOS- Sede en Facultad|3",
-    "6|jueves|09:15|10:45|López, Mariano Alejandro|I|HY-023|TALLER LECTURA DE TEXTOS- Sede en Facultad|0",
-    "7|sabado|09:15|10:45|Marsilla, Marcelo Alberto|III|IN-123|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "8|sabado|09:15|10:45|Marsilla, Marcelo Alberto|II|IN-123|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "9|lunes|14:30|16:00|Cellerino, Sergio Óscar|II|HY-012|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "10|lunes|14:30|16:00|Cellerino, Sergio Óscar|II|HY-012|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "11|martes|18:00|19:30|Mendoza, Ayelén|III|HY-026|TALLER LECTURA DE TEXTOS- Sede en Facultad|0",
-    "12|martes|18:00|19:30|Mendoza, Ayelén|III|HY-026|TALLER LECTURA DE TEXTOS- Sede en Facultad|0",
-    "13|viernes|16:15|17:45|Salinas, Luciano|III|HY-032|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "14|viernes|16:15|17:45|Salinas, Luciano|II|HY-032|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "15|lunes|18:00|19:30|Cragaris, Andrea|III|HY-012|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "16|lunes|18:00|19:30|Cragaris, Andrea|III|HY-012|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "17|martes|19:45|21:15|Rotbard, Natalia|III|HY-030|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "18|lunes|19:45|21:15|Alfaro, Laura|IV|HY-023|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "19|miercoles|09:15|10:45|Tercic, Cecilia|I|HY-025|TALLER LECTURA DE TEXTOS- Sede en Facultad|0",
-    "20|miercoles|09:15|10:45|Tercic, Cecilia|I|HY-025|TALLER LECTURA DE TEXTOS- Sede en Facultad|0",
-    "21|miercoles|16:15|17:45|Moretto, Marisa Viviana|III|IN-434|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|1",
-    "22|miercoles|16:15|17:45|Moretto, Marisa Viviana|III|IN-434|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD|0",
-    "23|viernes|18:00|19:30|Mercuri, Valeria|III|IN-108|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "24|viernes|18:00|19:45|Mercuri, Valeria|IV|IN-108|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "25|lunes|14:30|16:00|Moraña, Juan Manuel|IV|HY-030|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "26|lunes|14:30|16:00|Vargas Castro, David Andrés|II|HY-013|PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD|0",
-    "27|jueves|12:45|14:15|Lifschitz, Sofia|I|HY-026|TALLER LECTURA DE TEXTOS - Sede en Facultad|1",
-    "28|jueves|12:45|14:15|Lifschitz, Sofia|I|HY-026|TALLER LECTURA DE TEXTOS - Sede en Facultad|12",
-    "50|miercoles|07:00|08:45|Pirillo, Patricia|V|SI-016|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO|1",
-    "51|miercoles|07:00|08:45|Pirillo, Patricia|V|SI-016|PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO|3",
-    "52|miercoles|07:00|08:45|Prieto, Luis Orlando|V|SI-017|TALLER LECTURA DE TEXTOS - Sede San Isidro|0",
-    "53|miercoles|07:00|08:45|Prieto, Luis Orlando|V|SI-017|TALLER LECTURA DE TEXTOS - Sede San Isidro|0"
+  "slots": [
+    {
+      "id": "IV",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Mazzuca, Marcelo Esteban",
+      "aula": "HY-031",
+      "observ": ""
+    },
+    {
+      "id": "V",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Farias, Florencia Elisa",
+      "aula": "SI-017",
+      "observ": "San Isidro"
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Muraro, Vanina",
+      "aula": "HY-005",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Iuale, María Luján",
+      "aula": "HY-014",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Alomo, Martin Carlos",
+      "aula": "HY-029",
+      "observ": ""
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Castro Tolosa, Silvana",
+      "aula": "HY-010",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Cellerino, Sergio Óscar",
+      "aula": "HY-012",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "25",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Moraña, Juan Manuel",
+      "aula": "HY-030",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "26",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Vargas Castro, David Andrés",
+      "aula": "HY-013",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Cellerino, Sergio Óscar",
+      "aula": "HY-012",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Cragaris, Andrea",
+      "aula": "HY-012",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Cragaris, Andrea",
+      "aula": "HY-012",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Alfaro, Laura",
+      "aula": "HY-023",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Zaffore, Carolina",
+      "aula": "HY-024",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Zaffore, Carolina",
+      "aula": "HY-024",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Mendoza, Ayelén",
+      "aula": "HY-026",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Mendoza, Ayelén",
+      "aula": "HY-026",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Rotbard, Natalia",
+      "aula": "HY-030",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "50",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "07:00",
+      "fin": "08:45",
+      "profesor": "Pirillo, Patricia",
+      "aula": "SI-016",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "51",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "07:00",
+      "fin": "08:45",
+      "profesor": "Pirillo, Patricia",
+      "aula": "SI-016",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE SAN ISIDRO",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "52",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "07:00",
+      "fin": "08:45",
+      "profesor": "Prieto, Luis Orlando",
+      "aula": "SI-017",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "53",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "07:00",
+      "fin": "08:45",
+      "profesor": "Prieto, Luis Orlando",
+      "aula": "SI-017",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "19",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Tercic, Cecilia",
+      "aula": "HY-025",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "20",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Tercic, Cecilia",
+      "aula": "HY-025",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "21",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Moretto, Marisa Viviana",
+      "aula": "IN-434",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "22",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Moretto, Marisa Viviana",
+      "aula": "IN-434",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Stranges, Valeria Romina",
+      "aula": "HY-025",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "López, Mariano Alejandro",
+      "aula": "HY-023",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "López, Mariano Alejandro",
+      "aula": "HY-023",
+      "observ": "TALLER LECTURA DE TEXTOS- Sede en Facultad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "27",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Lifschitz, Sofia",
+      "aula": "HY-026",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "28",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Lifschitz, Sofia",
+      "aula": "HY-026",
+      "observ": "TALLER LECTURA DE TEXTOS - Sede en Facultad",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Salinas, Luciano",
+      "aula": "HY-032",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Salinas, Luciano",
+      "aula": "HY-032",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "23",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Mercuri, Valeria",
+      "aula": "IN-108",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "24",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:45",
+      "profesor": "Mercuri, Valeria",
+      "aula": "IN-108",
+      "observ": "PPIOS. PRAC. CLINICA - SERVICIO CLINICA DE ADULTOS - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Marsilla, Marcelo Alberto",
+      "aula": "IN-123",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Marsilla, Marcelo Alberto",
+      "aula": "IN-123",
+      "observ": "PPIOS. PRAC. CLINICA - DISCUSIÓN CLINICA - SEDE FACULTAD",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

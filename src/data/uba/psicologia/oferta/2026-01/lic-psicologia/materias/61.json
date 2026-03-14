@@ -1,44 +1,600 @@
 {
+  "schemaVersion": 2,
   "id": "28-metodologia-de-la-investigacion-c61-i",
   "label": "(28) Metodología de la Investigación - Cátedra 61 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (28) Metodología de la Investigación - Cátedra 61 - I - Azzollini",
-  "teoricos": [
-    "I|miercoles|19:45|21:15|Squillace, Mario Rodolfo|IN-101|",
-    "II|martes|07:30|09:00|Piñeyro, Diego Raul|IN-520|",
-    "III|viernes|09:15|10:45|Lassi, Maria Silvia|IN-MAY|",
-    "IV|martes|16:15|17:45|Cosentino, Alejandro Cesar|IN-201|",
-    "V|lunes|19:45|21:15|Lassi, Maria Silvia|IN-201|",
-    "VI|miercoles|14:30|16:00|Azzollini, Susana Celeste|IN-201|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|07:30|10:45|Morales, Candela|II|IN-207||33",
-    "2|jueves|09:15|12:30|Rodil Martinez, Alfredo|II|IN-322||33",
-    "3|martes|09:15|12:30|Rugna, Marcela Edith|III|IN-313||30",
-    "4|martes|12:45|16:00|Rugna, Marcela Edith|VI|IN-313||30",
-    "5|martes|18:00|21:15|Galeano, Pablo|I|IN-431||30",
-    "6|miercoles|07:30|10:45|Rugna, Marcela Edith|II|IN-124||33",
-    "7|miercoles|09:15|12:30|Romano, Gisela Sabrina|VI|IN-452||34",
-    "8|miercoles|18:00|21:15|Nasra, Natasha|IV|IN-205||33",
-    "9|martes|19:45|23:00|Bellofatto, Maria Micaela|IV|IN-214||33",
-    "10|jueves|12:45|16:00|Gorosito, Maria Laura|VI|IN-451||33",
-    "11|lunes|14:30|17:45|Hauche, Rocio Anabel|V|IN-106||34",
-    "12|viernes|14:30|17:45|Rodil Martinez, Alfredo|VI|IN-103||34",
-    "13|miercoles|14:30|17:45|Dowzuk, Nadia Alejandra|V|IN-444||34",
-    "14|sabado|09:15|12:30|Masin, Alejandro|I|IN-443||28",
-    "15|martes|12:45|16:00|Puddington, Martin Miguel|V|IN-411||35",
-    "16|jueves|09:15|12:30|Cattaneo, Brenda|II|IN-444||31",
-    "17|jueves|19:45|23:00|Vizioli, Nicolas|I|IN-205||31",
-    "18|lunes|16:15|19:30|Rugna, Marcela Edith|V|IN-451||23",
-    "19|martes|07:30|10:45|Masin, Alejandro|III|IN-434||35",
-    "20|martes|14:30|17:45|Rodil Martinez, Alfredo|VI|IN-124||31",
-    "21|jueves|18:00|21:15|Hernandez Escalona, Mery Del C|I|IN-444||28",
-    "22|lunes|09:15|12:30|Goldschmidt, Micaela Giuliana|V|IN-215||33",
-    "23|miercoles|09:15|12:30|Caccia, Paula Agustina|III|IN-213||30",
-    "24|miercoles|16:15|19:30|Miscusi, Agustin|VI|IN-211||29",
-    "25|lunes|09:15|12:30|Hirschberg, Silvina Erica|IV|IN-433||33",
-    "26|viernes|11:00|14:15|Fraternale, Giuliana Daniela|III|IN-304||26",
-    "27|viernes|12:45|16:00|Cattaneo, Brenda|III|IN-107||33",
-    "50|lunes|09:00|12:45|Coldeira, Maria Florencia|II|SI-006|San Isidro-|32"
+  "slots": [
+    {
+      "id": "V",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Lassi, Maria Silvia",
+      "aula": "IN-201",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "07:30",
+      "fin": "09:00",
+      "profesor": "Piñeyro, Diego Raul",
+      "aula": "IN-520",
+      "observ": ""
+    },
+    {
+      "id": "IV",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Cosentino, Alejandro Cesar",
+      "aula": "IN-201",
+      "observ": ""
+    },
+    {
+      "id": "VI",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Azzollini, Susana Celeste",
+      "aula": "IN-201",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Squillace, Mario Rodolfo",
+      "aula": "IN-101",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Lassi, Maria Silvia",
+      "aula": "IN-MAY",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Morales, Candela",
+      "aula": "IN-207",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "50",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "12:45",
+      "profesor": "Coldeira, Maria Florencia",
+      "aula": "SI-006",
+      "observ": "San Isidro-",
+      "vacantes": 32,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "22",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Goldschmidt, Micaela Giuliana",
+      "aula": "IN-215",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "25",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Hirschberg, Silvina Erica",
+      "aula": "IN-433",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Hauche, Rocio Anabel",
+      "aula": "IN-106",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Rugna, Marcela Edith",
+      "aula": "IN-451",
+      "observ": "",
+      "vacantes": 23,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "19",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Masin, Alejandro",
+      "aula": "IN-434",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Rugna, Marcela Edith",
+      "aula": "IN-313",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Puddington, Martin Miguel",
+      "aula": "IN-411",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Rugna, Marcela Edith",
+      "aula": "IN-313",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "20",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Rodil Martinez, Alfredo",
+      "aula": "IN-124",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Galeano, Pablo",
+      "aula": "IN-431",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Bellofatto, Maria Micaela",
+      "aula": "IN-214",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Rugna, Marcela Edith",
+      "aula": "IN-124",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "23",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Caccia, Paula Agustina",
+      "aula": "IN-213",
+      "observ": "",
+      "vacantes": 30,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Romano, Gisela Sabrina",
+      "aula": "IN-452",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Dowzuk, Nadia Alejandra",
+      "aula": "IN-444",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "V",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "V"
+    },
+    {
+      "id": "24",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Miscusi, Agustin",
+      "aula": "IN-211",
+      "observ": "",
+      "vacantes": 29,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Nasra, Natasha",
+      "aula": "IN-205",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "IV",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "IV"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Cattaneo, Brenda",
+      "aula": "IN-444",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Rodil Martinez, Alfredo",
+      "aula": "IN-322",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Gorosito, Maria Laura",
+      "aula": "IN-451",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "21",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Hernandez Escalona, Mery Del C",
+      "aula": "IN-444",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Vizioli, Nicolas",
+      "aula": "IN-205",
+      "observ": "",
+      "vacantes": 31,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "26",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Fraternale, Giuliana Daniela",
+      "aula": "IN-304",
+      "observ": "",
+      "vacantes": 26,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "27",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "12:45",
+      "fin": "16:00",
+      "profesor": "Cattaneo, Brenda",
+      "aula": "IN-107",
+      "observ": "",
+      "vacantes": 33,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Rodil Martinez, Alfredo",
+      "aula": "IN-103",
+      "observ": "",
+      "vacantes": 34,
+      "slotsAsociados": [
+        {
+          "slotId": "VI",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "VI"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Masin, Alejandro",
+      "aula": "IN-443",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

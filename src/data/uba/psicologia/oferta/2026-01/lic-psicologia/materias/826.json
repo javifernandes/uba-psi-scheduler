@@ -1,35 +1,465 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-social-comunitaria-intervenciones-psicoanaliticas-c826",
   "label": "P.P.: P.P.: Area Social Comunitaria: Intervenciones psicoanalíticas - Cátedra 826",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Area Social Comunitaria: Intervenciones psicoanalíticas - Cátedra 826 - Prof. Suarez",
-  "teoricos": [
-    "I|miercoles|19:45|21:15|Suarez, Nazarena|IN-122|Deberán optar por alguno de los dos espacios de articulación teórico-práctico",
-    "II|viernes|11:00|12:30|Suarez, Nazarena|HY-015|Deberán optar por alguno de los dos espacios de articulación teórico-práctico"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|08:00|12:00|Romero Ballesteros, Mariela|II||Esc. Normal Superior Nº6-Güemes 3859 CABA|6",
-    "2|jueves|08:00|12:00|Romero Ballesteros, Mariela|II||Esc. Normal Superior Nº6-Güemes 3859 CABA|5",
-    "3|lunes|14:00|18:00|Reyes, Marcela Victoria|I||Hospital Houssay - Pres. Hipólito Yrigoyen 1757, Florida, Vicente López|2",
-    "4|martes|19:00|23:00|Vargas, Gladys Carolina|I||Proyecto Asistir -Juramento 2715, PB B, Belgrano, CABA|1",
-    "5|jueves|10:30|14:30|Hassan, Ricardo|II||CIENA - Malabia 2139, 1° piso, CABA|2",
-    "6|lunes|08:00|12:00|Antequera, Mariela M|II||Hosp. Posadas - Pte. Illia y Av. Marconi - Haedo|5",
-    "7|miercoles|09:00|13:00|Muñoz, Maria Julieta|II||Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA|4",
-    "8|jueves|09:00|13:00|Guilera, Laura Estefania|II||Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA|1",
-    "9|viernes|09:00|13:00|Muñoz, Maria Julieta|I||Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA|4",
-    "10|viernes|14:00|18:00|Guilera, Laura Estefania|II||Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA|4",
-    "11|miercoles|09:00|13:00|Suarez, Nazarena|II||Hogar Gianantonio - Dr. Carlos Gianantonio 3925, CABA|3",
-    "12|jueves|14:00|18:00|Suarez, Nazarena|I||Hogar Gianantonio - Dr. Carlos Gianantonio 3925, CABA|2",
-    "13|sabado|10:00|14:00|Cottini Rencoret, María Eugeni|I||Asoc. Civil Voces de Barro. Alpaca 1035, Villa 31, CABA|10",
-    "14|martes|09:00|13:00|Hassan, Ricardo|II||Centro Integral de la Mujer-Malabia 2139, 1°, Palermo, CABA|3",
-    "15|lunes|10:00|14:00|Suarez, Nazarena|II||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|2",
-    "16|martes|08:00|12:00|Suarez, Nazarena|II||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|1",
-    "17|miercoles|08:00|12:00|Suarez, Nazarena|II||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|1",
-    "18|miercoles|14:00|18:00|Suarez, Nazarena|I||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|2",
-    "19|jueves|08:00|12:00|Suarez, Nazarena|II||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|2",
-    "20|jueves|16:00|20:00|Suarez, Nazarena|I||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|1",
-    "21|viernes|08:00|12:00|Suarez, Nazarena|I||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|2",
-    "22|viernes|16:00|20:00|Suarez, Nazarena|I||Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA|1",
-    "23|lunes|14:00|18:00|Muñoz, Maria Julieta|I||Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA|3"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Suarez, Nazarena",
+      "aula": "IN-122",
+      "observ": "Deberán optar por alguno de los dos espacios de articulación teórico-práctico"
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Suarez, Nazarena",
+      "aula": "HY-015",
+      "observ": "Deberán optar por alguno de los dos espacios de articulación teórico-práctico"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Antequera, Mariela M",
+      "aula": "",
+      "observ": "Hosp. Posadas - Pte. Illia y Av. Marconi - Haedo",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "23",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Muñoz, Maria Julieta",
+      "aula": "",
+      "observ": "Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Reyes, Marcela Victoria",
+      "aula": "",
+      "observ": "Hospital Houssay - Pres. Hipólito Yrigoyen 1757, Florida, Vicente López",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Romero Ballesteros, Mariela",
+      "aula": "",
+      "observ": "Esc. Normal Superior Nº6-Güemes 3859 CABA",
+      "vacantes": 6,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Hassan, Ricardo",
+      "aula": "",
+      "observ": "Centro Integral de la Mujer-Malabia 2139, 1°, Palermo, CABA",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "19:00",
+      "fin": "23:00",
+      "profesor": "Vargas, Gladys Carolina",
+      "aula": "",
+      "observ": "Proyecto Asistir -Juramento 2715, PB B, Belgrano, CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Gianantonio - Dr. Carlos Gianantonio 3925, CABA",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Muñoz, Maria Julieta",
+      "aula": "",
+      "observ": "Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "19",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Romero Ballesteros, Mariela",
+      "aula": "",
+      "observ": "Esc. Normal Superior Nº6-Güemes 3859 CABA",
+      "vacantes": 5,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Guilera, Laura Estefania",
+      "aula": "",
+      "observ": "Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "10:30",
+      "fin": "14:30",
+      "profesor": "Hassan, Ricardo",
+      "aula": "",
+      "observ": "CIENA - Malabia 2139, 1° piso, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Gianantonio - Dr. Carlos Gianantonio 3925, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "20",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:00",
+      "fin": "20:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "21",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "08:00",
+      "fin": "12:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "13:00",
+      "profesor": "Muñoz, Maria Julieta",
+      "aula": "",
+      "observ": "Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "14:00",
+      "fin": "18:00",
+      "profesor": "Guilera, Laura Estefania",
+      "aula": "",
+      "observ": "Hogar Bs As. Adolescentes Mujeres - Nueva York 2930 CABA",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "22",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "16:00",
+      "fin": "20:00",
+      "profesor": "Suarez, Nazarena",
+      "aula": "",
+      "observ": "Hogar Bs As Adolescentes Varones-Miller 2751, Villa Urquiza, CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "10:00",
+      "fin": "14:00",
+      "profesor": "Cottini Rencoret, María Eugeni",
+      "aula": "",
+      "observ": "Asoc. Civil Voces de Barro. Alpaca 1035, Villa 31, CABA",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

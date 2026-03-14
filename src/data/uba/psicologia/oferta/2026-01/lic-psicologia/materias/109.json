@@ -1,92 +1,1557 @@
 {
+  "schemaVersion": 2,
   "id": "pp-pp-area-clinica-clinica-de-la-urgencia-c109",
   "label": "P.P.: P.P.: Área Clínica: Clínica de la Urgencia - Cátedra 109",
   "header": "Psicología UBA - Licenciatura en Psicología - P.P.: P.P.: Área Clínica: Clínica de la Urgencia - Cátedra 109 - Sotelo",
-  "teoricos": [
-    "I|viernes|18:00|19:30|Sotelo, Maria Ines De La Milag|HY-005|La 1º Actividad será ésta.NO ASISTIR ANTES AL HOSPITAL"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|13:45|15:45|Soto, Adriana Marcela|I||Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.|0",
-    "2|martes|10:00|12:00|Tome, Ines|I||Htal.de Pacheco-Guardia-Av.de los Constituyentes 395- Pcia.de Bs.As.|0",
-    "3|jueves|10:00|12:00|Tome, Ines|I||Htal. de Pacheco-Guardia-Constituyentes 395 - Pcia.Bs.As.|0",
-    "4|martes|13:45|15:45|Soto, Adriana Marcela|I||Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.|0",
-    "5|martes|13:45|15:45|Soto, Adriana Marcela|I||Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.|1",
-    "6|lunes|10:00|12:00|Colombo, Romina|I||Htal.de Día de Niños La Cigarra (Autismo)-M.Pedraza 1558-CABA|1",
-    "7|viernes|09:00|11:00|Acosta Cordoba, Sol Ailen|I||Htal.Piñero-Equipo Infanto juvenil-Cons.Externos -Varela 1300-CABA|0",
-    "8|viernes|10:00|12:00|Colombo, Romina|I||Htal.de Día de Niños La Cigarra (Autismo)-M.Pedraza 1558-CABA|0",
-    "9|miercoles|15:00|17:00|Acosta Cordoba, Sol Ailen|I||Htal.de Día Infanto-Juvenil Mafalda - Htal. Alvarez Condarco 2701 CABA|0",
-    "10|lunes|14:00|16:00|Cid, Gisela Carolina|I||Guardia- Htal. Esteves, Garibaldi 1661- Temperley, BA|0",
-    "11|domingo|10:00|12:00|Marini Forero, Miguel Martin|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "12|lunes|10:00|12:00|Marini Forero, Miguel Martin|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "13|lunes|15:00|17:00|Cid, Gisela Carolina|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "14|miercoles|10:00|12:00|Marini Forero, Miguel Martin|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|1",
-    "15|martes|10:00|12:00|Cid, Gisela Carolina|I||Htal. Esteves -Guardia-Garibaldi 1661 Témperley|0",
-    "16|viernes|10:00|12:00|Marini Forero, Miguel Martin|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "17|sabado|10:00|12:00|Cid, Gisela Carolina|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "18|jueves|11:00|13:00|Marini Forero, Miguel Martin|I||Htal. Esteves -Guardia-Garibaldi 1661 Témperley|0",
-    "19|martes|10:00|12:00|Prospero, Carolina Laura|I||Htal.Argerich-Transplantes-Pi y Margal 750-Cap. Fed.|1",
-    "20|martes|09:00|11:00|Prospero, Carolina Laura|I||Htal.Argerich-Transplantes-CABA|2",
-    "21|miercoles|12:45|14:15|Ceballos, Maria Silvina|I|IN-125|Espacio de Articulación -Independencia 3065-CABA-|0",
-    "22|domingo|10:00|12:00|Prospero, Carolina Laura|I||Htal.Argerich-Guardia externa-. CABA|2",
-    "23|viernes|14:00|16:00|Raimondi, Mariana Andrea|I||Htal de Niños Gutierrez-Guardia Externa-Sánchez de Bustamante 1352-CABA|0",
-    "24|miercoles|18:00|20:00|Barrionuevo, Carolina|I||Htal de Niños Gutierrez-Guardia Externa-Sánchez de Bustamante 1352-CABA|0",
-    "25|martes|10:00|12:00|Cid, Gisela Carolina|I||Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús|0",
-    "26|viernes|09:00|11:00|Colombo, Romina|I||Instituto Vaccarez- Consultorios Externos-Av.Vélez Sarsfield 405 - CABA|1",
-    "27|martes|13:45|15:45|Soto, Adriana Marcela|I||Espacio de articulación-Htal.Tigre-Av.Constituyentes 395-Tigre- Pcia.Bs.As.|0",
-    "28|domingo|10:00|12:00|Tome, Ines|I||Htal. Pacheco-Guardia-Av. de los Constituyentes 395 Tigre- Pcia.Bs.As.|0",
-    "29|lunes|11:00|13:00|Gagliardi, Georgina|I||Serv. Consultorios Externos - Htal Moyano- Brandsen 2570 CABA|2",
-    "30|miercoles|10:00|12:00|Selzer, Nahir|I||Htal Moyano - Guardia - Brandsen 2570 CABA|0",
-    "31|miercoles|15:00|17:00|Selzer, Nahir|I||Htal Moyano - Guardia - Brandsen 2570 CABA|0",
-    "32|martes|09:30|11:30|Selzer, Nahir|I||Htal Moyano - Consultorios Externos- Brandsen 2570 CABA|1",
-    "33|jueves|09:30|11:30|Selzer, Nahir|I||Htal Moyano -Serv. de Emergencias (Internación) - Brandsen 2570 CABA|0",
-    "34|lunes|08:30|10:30|Branca, Benjamin|I||Htal.Central de San Isidro -Admisión-Sta.Fe 431-San Isidro|0",
-    "35|martes|08:30|10:30|Branca, Benjamin|I||Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidro|0",
-    "36|miercoles|08:30|10:30|Branca, Benjamin|I||Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidro|0",
-    "37|jueves|08:30|10:30|Branca, Benjamin|I||Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidroión|0",
-    "38|miercoles|13:00|15:00|Melamedoff, Daniel|I||Espacio de articulacion Htal San Isidro Av. Sta Fe 431 San Isidro Pcia. Bs. As.|2",
-    "39|jueves|08:30|10:30|Valcarce, Maria Laura|I||Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA|0",
-    "40|jueves|08:30|10:30|Valcarce, Maria Laura|I||Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA|0",
-    "41|jueves|08:30|10:30|Valcarce, Maria Laura|I||Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA|1",
-    "42|jueves|08:30|10:30|Valcarce, Maria Laura|I||Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA|1",
-    "43|lunes|08:30|10:30|Domenicucci, Gabriel Andres|I||Htal Borda - Admisión Guardia internación y grupos|0",
-    "44|martes|09:00|11:00|Domenicucci, Gabriel Andres|I||Htal Borda - Admisión Guardia internación - grupos-Consultorios Externos|0",
-    "45|miercoles|08:30|10:30|Gadea, Lucía|I||Htal Borda - Admisión Guardia internación grupos - Consultorios Externos|0",
-    "46|jueves|09:00|11:00|Gadea, Lucía|I||Htal Borda - Admisión Guardia internación grupos - Consultorios Externos|0",
-    "47|miercoles|09:30|11:30|Domenicucci, Gabriel Andres|I||Htal Borda - Admisión Guardia internación grupos - Consultorios Externos|1",
-    "48|lunes|08:30|10:30|Gadea, Lucía|I||Htal Borda - Admisión Guardia internación grupos -consultorios Externos|0",
-    "49|domingo|10:00|12:00|Werner, Violeta|I||Htal.Alvear- Guardia -Warnes 2630 CABA|1",
-    "60|jueves|12:45|14:15|Werner, Violeta|I|HY-031|Espacio de Articulación-Hipólito Yrigoyen 3242.CABA|1",
-    "61|jueves|09:00|11:00|Werner, Violeta|I||Inst.de Oncología A.Roffo-Admisión e Interconsultas-Av. San Martín 5481-CABA|1",
-    "62|jueves|12:45|14:15|Werner, Violeta|I|HY-031|Espacio de Articulación-Hipólito Yrigoyen 3242.CABA|1",
-    "63|jueves|11:15|13:15|San Miguel, Tomasa|I||Htal. Piñero - Grupo de pacientes- Varela 1301 CABA|0",
-    "64|miercoles|10:30|12:30|San Miguel, Tomasa|I||Htal. Piñero - Consultorios Externos - Varela 1301 - CABA|0",
-    "65|domingo|09:30|11:30|Gonzalez, Maria Magdalena|I||Htal. Piñero - Guardia Externa- Varela 1301 CABA|1",
-    "66|sabado|14:00|16:00|Carrillo, Camila|I||Htal.Alvear-Guardia- Warnes 2630-CABA|0",
-    "67|martes|17:00|19:00|Carrillo, Camila|I||Htal.Alvear-Guardia- Warnes 2630-CABA|0",
-    "68|miercoles|16:00|18:00|Carrillo, Camila|I||Htal.Alvear-Guardia- Warnes 2630-CABA|0",
-    "69|jueves|16:00|18:00|Carrillo, Camila|I||Htal.Alvear-Guardia- Warnes 2630-CABA|0",
-    "70|sabado|10:00|12:00|Carrillo, Camila|I||Htal.Alvear-Guardia- Warnes 2630-CABA|0",
-    "71|lunes|10:00|12:00|Barrionuevo, Carolina|I||Htal de Niños Gutierrez-Admisión Cons.Ext. Niños-Sánchez de Bustamante 1352-CABA|0",
-    "72|sabado|09:00|11:00|Moschella, Romina Giselle|I||Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.|0",
-    "73|jueves|08:30|10:30|San Miguel, Tomasa|I||Htal.Piñero-Admisión-Varela 1300 CABA|0",
-    "74|miercoles|09:30|11:30|San Miguel, Tomasa|I||Htal. Piñero - Sala de Internación- Varela 1301-CABA|0",
-    "75|jueves|08:30|10:30|Marquina, Lucía|I||Espacio de Articulación-Cesac 12 -Olazábal 3960 - CABA|3",
-    "76|jueves|08:30|10:30|Marquina, Lucía|I||Espacio de Articulación-Cesac 12-Olazábal 3960 - CABA|2",
-    "77|jueves|08:30|10:30|Marquina, Lucía|I||Espacio de Articulación-Cesac 12-Olazábal 3960 - CABA|3",
-    "78|miercoles|12:45|14:15|Reisis, Lorena Eva|I|HY-031|Espacio de articulación- Hipólito Yrigoyen 3242- CABA|0",
-    "79|miercoles|12:45|14:15|Reisis, Lorena Eva|I|HY-031|Espacio de articulación- Hipólito Yrigoyen 3242- CABA|0",
-    "80|miercoles|12:45|14:15|Reisis, Lorena Eva|I|HY-031|Espacio de articulación- Hipólito Yrigoyen 3242- CABA|0",
-    "81|lunes|15:00|17:00|Sobel, Gustavo Ariel|I||Espacio de Articulación - PAUSA- Dr. E. Ravignani 2506- CABA|1",
-    "82|jueves|08:15|10:15|Suarez Lopez, Paula|I||Htal. Bonaparte -Disp.telefónico Urgencias- Combate de los Pozos 2133-CABA|0",
-    "83|lunes|09:00|11:00|Castelluccio, Mara Cecilia|I||Htal.Fernández-Admisión Toxicología-Av.Cerviño 3356-CABA|0",
-    "84|lunes|09:00|11:00|Castelluccio, Mara Cecilia|I||Htal.Fernández-Admisión Toxicología-Av.Cerviño 3356-CABA|0",
-    "85|lunes|08:00|10:00|Moschella, Romina Giselle|I||Htal. E. de Carlotto - Admisión Gral. - Albatros 7225, Barrio Trujuy-Moreno|0",
-    "86|lunes|10:00|12:00|Moschella, Romina Giselle|I||Htal. E. de Carlotto - Admisión Gral. - Albatros 7225, Barrio Trujuy-Moreno|2",
-    "87|lunes|10:00|12:00|Moschella, Romina Giselle|I||Htal.E.de Carlotto-Interconsul Neonatología-Albatros 7225, Barrio Trujuy-Moreno|1",
-    "88|lunes|14:00|16:00|Moschella, Romina Giselle|I||Htal. E.de Curso preparación parto-Albatros 7225, Moreno|1",
-    "89|martes|10:00|12:00|Moschella, Romina Giselle|I||Htal.E.de Carlotto-Interconsul Neonatología-Albatros 7225, Barrio Trujuy-Moreno|1",
-    "90|viernes|09:00|11:00|Moschella, Romina Giselle|I||Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.|0",
-    "91|domingo|09:00|11:00|Moschella, Romina Giselle|I||Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.|0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Sotelo, Maria Ines De La Milag",
+      "aula": "HY-005",
+      "observ": "La 1º Actividad será ésta.NO ASISTIR ANTES AL HOSPITAL"
+    },
+    {
+      "id": "85",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:00",
+      "fin": "10:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Htal. E. de Carlotto - Admisión Gral. - Albatros 7225, Barrio Trujuy-Moreno",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "34",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Branca, Benjamin",
+      "aula": "",
+      "observ": "Htal.Central de San Isidro -Admisión-Sta.Fe 431-San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "43",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Domenicucci, Gabriel Andres",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación y grupos",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "48",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Gadea, Lucía",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación grupos -consultorios Externos",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "83",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Castelluccio, Mara Cecilia",
+      "aula": "",
+      "observ": "Htal.Fernández-Admisión Toxicología-Av.Cerviño 3356-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "84",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Castelluccio, Mara Cecilia",
+      "aula": "",
+      "observ": "Htal.Fernández-Admisión Toxicología-Av.Cerviño 3356-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Marini Forero, Miguel Martin",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Colombo, Romina",
+      "aula": "",
+      "observ": "Htal.de Día de Niños La Cigarra (Autismo)-M.Pedraza 1558-CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "71",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Barrionuevo, Carolina",
+      "aula": "",
+      "observ": "Htal de Niños Gutierrez-Admisión Cons.Ext. Niños-Sánchez de Bustamante 1352-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "86",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Htal. E. de Carlotto - Admisión Gral. - Albatros 7225, Barrio Trujuy-Moreno",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "87",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Htal.E.de Carlotto-Interconsul Neonatología-Albatros 7225, Barrio Trujuy-Moreno",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "29",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "11:00",
+      "fin": "13:00",
+      "profesor": "Gagliardi, Georgina",
+      "aula": "",
+      "observ": "Serv. Consultorios Externos - Htal Moyano- Brandsen 2570 CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Cid, Gisela Carolina",
+      "aula": "",
+      "observ": "Guardia- Htal. Esteves, Garibaldi 1661- Temperley, BA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "88",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Htal. E.de Curso preparación parto-Albatros 7225, Moreno",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Cid, Gisela Carolina",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "81",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Sobel, Gustavo Ariel",
+      "aula": "",
+      "observ": "Espacio de Articulación - PAUSA- Dr. E. Ravignani 2506- CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "35",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Branca, Benjamin",
+      "aula": "",
+      "observ": "Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "20",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Prospero, Carolina Laura",
+      "aula": "",
+      "observ": "Htal.Argerich-Transplantes-CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "44",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Domenicucci, Gabriel Andres",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación - grupos-Consultorios Externos",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "32",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "Selzer, Nahir",
+      "aula": "",
+      "observ": "Htal Moyano - Consultorios Externos- Brandsen 2570 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Cid, Gisela Carolina",
+      "aula": "",
+      "observ": "Htal. Esteves -Guardia-Garibaldi 1661 Témperley",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "19",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Prospero, Carolina Laura",
+      "aula": "",
+      "observ": "Htal.Argerich-Transplantes-Pi y Margal 750-Cap. Fed.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Tome, Ines",
+      "aula": "",
+      "observ": "Htal.de Pacheco-Guardia-Av.de los Constituyentes 395- Pcia.de Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "25",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Cid, Gisela Carolina",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "89",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Htal.E.de Carlotto-Interconsul Neonatología-Albatros 7225, Barrio Trujuy-Moreno",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:45",
+      "fin": "15:45",
+      "profesor": "Soto, Adriana Marcela",
+      "aula": "",
+      "observ": "Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "27",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:45",
+      "fin": "15:45",
+      "profesor": "Soto, Adriana Marcela",
+      "aula": "",
+      "observ": "Espacio de articulación-Htal.Tigre-Av.Constituyentes 395-Tigre- Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:45",
+      "fin": "15:45",
+      "profesor": "Soto, Adriana Marcela",
+      "aula": "",
+      "observ": "Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "13:45",
+      "fin": "15:45",
+      "profesor": "Soto, Adriana Marcela",
+      "aula": "",
+      "observ": "Espacio de articulación-Htal.de Pacheco-Av.Constituyentes 395- Pcia.Bs.As.",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "67",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Carrillo, Camila",
+      "aula": "",
+      "observ": "Htal.Alvear-Guardia- Warnes 2630-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "36",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Branca, Benjamin",
+      "aula": "",
+      "observ": "Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidro",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "45",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Gadea, Lucía",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación grupos - Consultorios Externos",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "47",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "Domenicucci, Gabriel Andres",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación grupos - Consultorios Externos",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "74",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "San Miguel, Tomasa",
+      "aula": "",
+      "observ": "Htal. Piñero - Sala de Internación- Varela 1301-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Marini Forero, Miguel Martin",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "30",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Selzer, Nahir",
+      "aula": "",
+      "observ": "Htal Moyano - Guardia - Brandsen 2570 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "64",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "10:30",
+      "fin": "12:30",
+      "profesor": "San Miguel, Tomasa",
+      "aula": "",
+      "observ": "Htal. Piñero - Consultorios Externos - Varela 1301 - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "21",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Ceballos, Maria Silvina",
+      "aula": "IN-125",
+      "observ": "Espacio de Articulación -Independencia 3065-CABA-",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "78",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Reisis, Lorena Eva",
+      "aula": "HY-031",
+      "observ": "Espacio de articulación- Hipólito Yrigoyen 3242- CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "79",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Reisis, Lorena Eva",
+      "aula": "HY-031",
+      "observ": "Espacio de articulación- Hipólito Yrigoyen 3242- CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "80",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Reisis, Lorena Eva",
+      "aula": "HY-031",
+      "observ": "Espacio de articulación- Hipólito Yrigoyen 3242- CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "38",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "13:00",
+      "fin": "15:00",
+      "profesor": "Melamedoff, Daniel",
+      "aula": "",
+      "observ": "Espacio de articulacion Htal San Isidro Av. Sta Fe 431 San Isidro Pcia. Bs. As.",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "31",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Selzer, Nahir",
+      "aula": "",
+      "observ": "Htal Moyano - Guardia - Brandsen 2570 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "15:00",
+      "fin": "17:00",
+      "profesor": "Acosta Cordoba, Sol Ailen",
+      "aula": "",
+      "observ": "Htal.de Día Infanto-Juvenil Mafalda - Htal. Alvarez Condarco 2701 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "68",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Carrillo, Camila",
+      "aula": "",
+      "observ": "Htal.Alvear-Guardia- Warnes 2630-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "24",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "20:00",
+      "profesor": "Barrionuevo, Carolina",
+      "aula": "",
+      "observ": "Htal de Niños Gutierrez-Guardia Externa-Sánchez de Bustamante 1352-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "82",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:15",
+      "fin": "10:15",
+      "profesor": "Suarez Lopez, Paula",
+      "aula": "",
+      "observ": "Htal. Bonaparte -Disp.telefónico Urgencias- Combate de los Pozos 2133-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "37",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Branca, Benjamin",
+      "aula": "",
+      "observ": "Htal Central de San Isidro-Admisión-Sta.Fe 431-San Isidroión",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "39",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Valcarce, Maria Laura",
+      "aula": "",
+      "observ": "Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "40",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Valcarce, Maria Laura",
+      "aula": "",
+      "observ": "Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "41",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Valcarce, Maria Laura",
+      "aula": "",
+      "observ": "Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "42",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Valcarce, Maria Laura",
+      "aula": "",
+      "observ": "Espacio de Articulación-Proyecto SUMA - Guemes 4130 - CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "73",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "San Miguel, Tomasa",
+      "aula": "",
+      "observ": "Htal.Piñero-Admisión-Varela 1300 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "75",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Marquina, Lucía",
+      "aula": "",
+      "observ": "Espacio de Articulación-Cesac 12 -Olazábal 3960 - CABA",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "76",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Marquina, Lucía",
+      "aula": "",
+      "observ": "Espacio de Articulación-Cesac 12-Olazábal 3960 - CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "77",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "08:30",
+      "fin": "10:30",
+      "profesor": "Marquina, Lucía",
+      "aula": "",
+      "observ": "Espacio de Articulación-Cesac 12-Olazábal 3960 - CABA",
+      "vacantes": 3,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "46",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Gadea, Lucía",
+      "aula": "",
+      "observ": "Htal Borda - Admisión Guardia internación grupos - Consultorios Externos",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "61",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Werner, Violeta",
+      "aula": "",
+      "observ": "Inst.de Oncología A.Roffo-Admisión e Interconsultas-Av. San Martín 5481-CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "33",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "Selzer, Nahir",
+      "aula": "",
+      "observ": "Htal Moyano -Serv. de Emergencias (Internación) - Brandsen 2570 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Tome, Ines",
+      "aula": "",
+      "observ": "Htal. de Pacheco-Guardia-Constituyentes 395 - Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "13:00",
+      "profesor": "Marini Forero, Miguel Martin",
+      "aula": "",
+      "observ": "Htal. Esteves -Guardia-Garibaldi 1661 Témperley",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "63",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:15",
+      "fin": "13:15",
+      "profesor": "San Miguel, Tomasa",
+      "aula": "",
+      "observ": "Htal. Piñero - Grupo de pacientes- Varela 1301 CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "60",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Werner, Violeta",
+      "aula": "HY-031",
+      "observ": "Espacio de Articulación-Hipólito Yrigoyen 3242.CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "62",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Werner, Violeta",
+      "aula": "HY-031",
+      "observ": "Espacio de Articulación-Hipólito Yrigoyen 3242.CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "69",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:00",
+      "fin": "18:00",
+      "profesor": "Carrillo, Camila",
+      "aula": "",
+      "observ": "Htal.Alvear-Guardia- Warnes 2630-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "26",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Colombo, Romina",
+      "aula": "",
+      "observ": "Instituto Vaccarez- Consultorios Externos-Av.Vélez Sarsfield 405 - CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Acosta Cordoba, Sol Ailen",
+      "aula": "",
+      "observ": "Htal.Piñero-Equipo Infanto juvenil-Cons.Externos -Varela 1300-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "90",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Marini Forero, Miguel Martin",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Colombo, Romina",
+      "aula": "",
+      "observ": "Htal.de Día de Niños La Cigarra (Autismo)-M.Pedraza 1558-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "23",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Raimondi, Mariana Andrea",
+      "aula": "",
+      "observ": "Htal de Niños Gutierrez-Guardia Externa-Sánchez de Bustamante 1352-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "72",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Cid, Gisela Carolina",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "70",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Carrillo, Camila",
+      "aula": "",
+      "observ": "Htal.Alvear-Guardia- Warnes 2630-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "66",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "14:00",
+      "fin": "16:00",
+      "profesor": "Carrillo, Camila",
+      "aula": "",
+      "observ": "Htal.Alvear-Guardia- Warnes 2630-CABA",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "91",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "09:00",
+      "fin": "11:00",
+      "profesor": "Moschella, Romina Giselle",
+      "aula": "",
+      "observ": "Hosp. Mun.de Morón- Guardia -Dr. Rodolfo Monte 848-Morón-Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "65",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "09:30",
+      "fin": "11:30",
+      "profesor": "Gonzalez, Maria Magdalena",
+      "aula": "",
+      "observ": "Htal. Piñero - Guardia Externa- Varela 1301 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Marini Forero, Miguel Martin",
+      "aula": "",
+      "observ": "Htal. Evita-Guardia- Diego A. Maradona 1910 - Lanús",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "22",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Prospero, Carolina Laura",
+      "aula": "",
+      "observ": "Htal.Argerich-Guardia externa-. CABA",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "28",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Tome, Ines",
+      "aula": "",
+      "observ": "Htal. Pacheco-Guardia-Av. de los Constituyentes 395 Tigre- Pcia.Bs.As.",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "49",
+      "tipo": "prac",
+      "dia": "domingo",
+      "inicio": "10:00",
+      "fin": "12:00",
+      "profesor": "Werner, Violeta",
+      "aula": "",
+      "observ": "Htal.Alvear- Guardia -Warnes 2630 CABA",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

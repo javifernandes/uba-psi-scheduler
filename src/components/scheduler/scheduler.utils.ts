@@ -4,6 +4,10 @@ import type {
   Day,
   ParsedSubject,
   Seminario,
+  SlotAsociado,
+  SlotAssociationRole,
+  SlotTipo,
+  SubjectSlot,
   SubjectData,
   Teorico,
   VenueCode,
@@ -38,6 +42,7 @@ export const VENUE_LABELS: Record<string, string> = {
 };
 
 const KNOWN_VENUE_ORDER = ['IN', 'HY', 'SI'] as const;
+const SLOT_KIND_ORDER: Record<SlotTipo, number> = { teo: 0, sem: 1, prac: 2 };
 
 export const venueLabel = (code: VenueCode) => VENUE_LABELS[code] || `Sede ${code}`;
 export const venueBadgeCode = (code: VenueCode) => (code === 'OTRO' ? 'N/D' : code);
@@ -57,24 +62,44 @@ export const sortVenueCodes = (venues: Iterable<VenueCode>) => {
   });
 };
 
-const parseRows = <T>(lines: string[], mapper: (parts: string[]) => T): T[] =>
-  lines.map((line) => line.split('|')).map(mapper);
+const sortSlotsByStableOrder = (slots: SubjectSlot[]) =>
+  [...slots].sort((a, b) => {
+    const typeDiff = SLOT_KIND_ORDER[a.tipo] - SLOT_KIND_ORDER[b.tipo];
+    if (typeDiff !== 0) return typeDiff;
+    const dayDiff = DAYS.indexOf(a.dia) - DAYS.indexOf(b.dia);
+    if (dayDiff !== 0) return dayDiff;
+    const startDiff = h2m(a.inicio) - h2m(b.inicio);
+    if (startDiff !== 0) return startDiff;
+    return a.id.localeCompare(b.id, 'es');
+  });
 
-const parseOblig = (oblig: string) => {
-  const [rawTeoricoId, rawSeminarioId] = oblig.split('-').map((part) => part.trim());
-  return {
-    teoricoId: rawTeoricoId || undefined,
-    seminarioId: rawSeminarioId || undefined,
-  };
+export const sortSlotAssociations = (associations: SlotAsociado[]) =>
+  [...associations].sort((a, b) => {
+    const roleDiff = a.rol.localeCompare(b.rol, 'es');
+    if (roleDiff !== 0) return roleDiff;
+    return a.slotId.localeCompare(b.slotId, 'es');
+  });
+
+export const findAssociatedSlotIds = (
+  commission: Pick<Comision, 'slotsAsociados'>,
+  role: SlotAssociationRole,
+  condition?: SlotAsociado['condicion']
+) => {
+  const filtered = commission.slotsAsociados.filter(
+    (association) =>
+      association.rol === role && (condition ? association.condicion === condition : true)
+  );
+  return sortSlotAssociations(filtered).map((association) => association.slotId);
 };
 
-const parseVacantes = (value: string | undefined) => {
-  if (!value) return null;
-  const trimmed = value.trim();
-  if (!trimmed) return null;
-  const parsed = Number.parseInt(trimmed, 10);
-  if (!Number.isFinite(parsed) || parsed < 0) return null;
-  return parsed;
+export const findPrimaryAssociatedSlotId = (
+  commission: Pick<Comision, 'id' | 'slotsAsociados'>,
+  role: SlotAssociationRole
+) => {
+  const required = findAssociatedSlotIds(commission, role, 'obligatorio');
+  if (required.length > 0) return required[0];
+  const optional = findAssociatedSlotIds(commission, role, 'opcional');
+  return optional[0];
 };
 
 export const h2m = (hhmm: string) => {
@@ -238,7 +263,12 @@ export const mapProjectionEnrollmentsToSubjectMap = (
   const commissionIdsBySubjectId = Object.fromEntries(
     subjects.map((subject) => [
       subject.id,
-      new Set(subject.comisiones.map((row) => row.split('|')[0]?.trim() || '')),
+      new Set(
+        subject.slots
+          .filter((slot): slot is Comision => slot.tipo === 'prac')
+          .map((slot) => slot.id.trim())
+          .filter(Boolean)
+      ),
     ])
   ) as Record<string, Set<string>>;
   const nextBySubject: Record<string, string> = {};
@@ -336,62 +366,45 @@ export const sortComisiones = (comisiones: Comision[]) =>
     return h2m(a.inicio) - h2m(b.inicio);
   });
 
-export const buildLinkedCommissionIdsMap = (
-  comisiones: Comision[],
-  linkedBy: 'teoricoId' | 'seminarioId'
-) =>
+export const buildLinkedCommissionIdsMap = (comisiones: Comision[], linkedBy: 'teo' | 'sem') =>
   comisiones.reduce<Record<string, string[]>>((acc, commission) => {
-    const linkedId = commission[linkedBy];
-    if (!linkedId) return acc;
-    const current = acc[linkedId] || [];
-    acc[linkedId] = [...current, commission.id];
+    const linkedIds = findAssociatedSlotIds(commission, linkedBy);
+    linkedIds.forEach((linkedId) => {
+      const current = acc[linkedId] || [];
+      acc[linkedId] = [...current, commission.id];
+    });
     return acc;
   }, {});
 
 export const parseSubject = (subject: SubjectData): ParsedSubject => {
-  const teoricos = parseRows<Teorico>(subject.teoricos, (parts) => ({
-    id: parts[0],
-    dia: parts[1] as Day,
-    inicio: parts[2],
-    fin: parts[3],
-    profesor: parts[4],
-    aula: parts[5],
-    observ: parts[6] || '',
-  }));
-  const seminarios = parseRows<Seminario>(subject.seminarios, (parts) => ({
-    id: parts[0],
-    dia: parts[1] as Day,
-    inicio: parts[2],
-    fin: parts[3],
-    profesor: parts[4],
-    aula: parts[5],
-    observ: parts[6] || '',
-  }));
-  const comisiones = parseRows<Comision>(subject.comisiones, (parts) => {
-    const refs = parseOblig(parts[5]);
-    return {
-      id: parts[0],
-      dia: parts[1] as Day,
-      inicio: parts[2],
-      fin: parts[3],
-      profesor: parts[4],
-      oblig: parts[5],
-      teoricoId: refs.teoricoId,
-      seminarioId: refs.seminarioId,
-      aula: parts[6],
-      observ: parts[7] || '',
-      vacantes: parseVacantes(parts[8]),
-    };
-  });
+  const slots = sortSlotsByStableOrder(
+    subject.slots.map((slot) =>
+      slot.tipo === 'prac'
+        ? {
+            ...slot,
+            slotsAsociados: sortSlotAssociations(slot.slotsAsociados),
+          }
+        : slot
+    )
+  );
+  const teoricos = slots.filter((slot): slot is Teorico => slot.tipo === 'teo');
+  const seminarios = slots.filter((slot): slot is Seminario => slot.tipo === 'sem');
+  const comisiones = slots.filter((slot): slot is Comision => slot.tipo === 'prac');
+
   return {
     id: subject.id,
     label: subject.label,
     header: subject.header,
+    slots,
     teoricos,
     seminarios,
     comisiones,
     teoricoMap: Object.fromEntries(teoricos.map((t) => [t.id, t])) as Record<string, Teorico>,
     seminarioMap: Object.fromEntries(seminarios.map((s) => [s.id, s])) as Record<string, Seminario>,
+    slotMap: Object.fromEntries(slots.map((slot) => [slot.id, slot])) as Record<
+      string,
+      SubjectSlot
+    >,
   };
 };
 

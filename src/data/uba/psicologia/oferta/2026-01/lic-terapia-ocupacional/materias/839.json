@@ -1,12 +1,44 @@
 {
+  "schemaVersion": 2,
   "id": "10317-requisito-idioma-frances-modulo-ii-c839-i",
   "label": "(10317) Requisito Idioma: Francés Módulo II - Cátedra 839 (I)",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - (10317) Requisito Idioma: Francés Módulo II - Cátedra 839 - I - Miñones",
-  "teoricos": [],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|09:15|12:30|Dorin, Lucia Ines||||27",
-    "2|jueves|18:00|21:15|Converti, Veronica Helena||||28",
-    "3|viernes|18:00|21:15|Garcia, Adriana Silvia||||25"
+  "slots": [
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Dorin, Lucia Ines",
+      "aula": "",
+      "observ": "",
+      "vacantes": 27,
+      "slotsAsociados": []
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Converti, Veronica Helena",
+      "aula": "",
+      "observ": "",
+      "vacantes": 28,
+      "slotsAsociados": []
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "viernes",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Garcia, Adriana Silvia",
+      "aula": "",
+      "observ": "",
+      "vacantes": 25,
+      "slotsAsociados": []
+    }
   ]
 }

@@ -2,9 +2,19 @@ export type Day = 'lunes' | 'martes' | 'miercoles' | 'jueves' | 'viernes' | 'sab
 
 export type VenueCode = string;
 export type EventType = 'prac' | 'teo' | 'sem';
+export type SlotTipo = EventType;
+export type SlotAssociationRole = 'teo' | 'sem' | `custom:${string}`;
+export type SlotAssociationCondition = 'obligatorio' | 'opcional';
+
+export type SlotAsociado = {
+  slotId: string;
+  rol: SlotAssociationRole;
+  condicion: SlotAssociationCondition;
+};
 
 type BaseSlot = {
   id: string;
+  tipo: SlotTipo;
   dia: Day;
   inicio: string;
   fin: string;
@@ -13,15 +23,17 @@ type BaseSlot = {
   observ: string;
 };
 
-export type Teorico = BaseSlot;
-export type Seminario = BaseSlot;
+export type Teorico = Omit<BaseSlot, 'tipo'> & { tipo: 'teo' };
+export type Seminario = Omit<BaseSlot, 'tipo'> & { tipo: 'sem' };
 
-export type Comision = BaseSlot & {
-  oblig: string;
-  teoricoId?: string;
-  seminarioId?: string;
+export type Comision = Omit<BaseSlot, 'tipo'> & {
+  tipo: 'prac';
   vacantes: number | null;
+  obligRaw?: string;
+  slotsAsociados: SlotAsociado[];
 };
+
+export type SubjectSlot = Teorico | Seminario | Comision;
 
 export type CalendarEvent = {
   tipo: EventType;
@@ -41,23 +53,24 @@ export type CalendarEvent = {
 };
 
 export type SubjectData = {
+  schemaVersion: 2;
   id: string;
   label: string;
   header: string;
-  teoricos: string[];
-  seminarios: string[];
-  comisiones: string[];
+  slots: SubjectSlot[];
 };
 
 export type ParsedSubject = {
   id: string;
   label: string;
   header: string;
+  slots: SubjectSlot[];
   teoricos: Teorico[];
   seminarios: Seminario[];
   comisiones: Comision[];
   teoricoMap: Record<string, Teorico>;
   seminarioMap: Record<string, Seminario>;
+  slotMap: Record<string, SubjectSlot>;
 };
 
 export type SavedElectionDetail = {

@@ -1,12 +1,75 @@
 {
+  "schemaVersion": 2,
   "id": "practica-profesional-modulo-i-area-educacional-c332",
   "label": "Práctica Profesional. Módulo I: Area Educacional - Cátedra 332",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Práctica Profesional. Módulo I: Area Educacional - Cátedra 332 - Prof. Ruiz",
-  "teoricos": ["I|miercoles|17:00|19:00|Ruiz, Maria Mercedes|AV-004|Sede Avellaneda"],
-  "seminarios": [],
-  "comisiones": [
-    "1|jueves|12:30|16:30|Espinosa, Alejandro Miguel|I||CET Empatia. Av. Isidoro Iriarte 1390 Quilmes|2",
-    "2|lunes|09:30|12:30|Benzacar, Adrian Leandro|I||CET Hermano Sol Hermana Luna. Moldes 553 Llavallol|0",
-    "3|lunes|12:30|15:30|Benzacar, Adrian Leandro|I||CET Hermano Sol Hermana Luna. Moldes 553 Llavallol|0"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Ruiz, Maria Mercedes",
+      "aula": "AV-004",
+      "observ": "Sede Avellaneda"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "09:30",
+      "fin": "12:30",
+      "profesor": "Benzacar, Adrian Leandro",
+      "aula": "",
+      "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "12:30",
+      "fin": "15:30",
+      "profesor": "Benzacar, Adrian Leandro",
+      "aula": "",
+      "observ": "CET Hermano Sol Hermana Luna. Moldes 553 Llavallol",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "12:30",
+      "fin": "16:30",
+      "profesor": "Espinosa, Alejandro Miguel",
+      "aula": "",
+      "observ": "CET Empatia. Av. Isidoro Iriarte 1390 Quilmes",
+      "vacantes": 2,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

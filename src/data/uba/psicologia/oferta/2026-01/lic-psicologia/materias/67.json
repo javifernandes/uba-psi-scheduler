@@ -1,18 +1,142 @@
 {
+  "schemaVersion": 2,
   "id": "psicologia-preventiva-c67",
   "label": "Psicología Preventiva - Cátedra 67",
   "header": "Psicología UBA - Licenciatura en Psicología - Psicología Preventiva - Cátedra 67 - Prof. Tisera",
-  "teoricos": [
-    "I|lunes|18:00|19:30|Lenta, Maria Malena|IN-321|",
-    "II|miercoles|12:45|14:15|Sopransi, Maria Belen|IN-106|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|lunes|16:15|17:45|Pipo, Valeria Susana|I|IN-107||18",
-    "2|lunes|19:45|21:15|Longo, Roxana Gabriela|I|IN-205||18",
-    "3|miercoles|11:00|12:30|Longo, Roxana Gabriela|II|IN-303||19",
-    "4|miercoles|14:30|16:00|Veloso, Veronica Ines|II|IN-204||10",
-    "5|lunes|19:45|21:15|Ruffa, Estefania|I|IN-323||12",
-    "6|miercoles|14:30|16:00|Sopransi, Maria Belen|II|IN-125||24"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "lunes",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Lenta, Maria Malena",
+      "aula": "IN-321",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Sopransi, Maria Belen",
+      "aula": "IN-106",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Pipo, Valeria Susana",
+      "aula": "IN-107",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Longo, Roxana Gabriela",
+      "aula": "IN-205",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "lunes",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Ruffa, Estefania",
+      "aula": "IN-323",
+      "observ": "",
+      "vacantes": 12,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "11:00",
+      "fin": "12:30",
+      "profesor": "Longo, Roxana Gabriela",
+      "aula": "IN-303",
+      "observ": "",
+      "vacantes": 19,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Veloso, Veronica Ines",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 10,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Sopransi, Maria Belen",
+      "aula": "IN-125",
+      "observ": "",
+      "vacantes": 24,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

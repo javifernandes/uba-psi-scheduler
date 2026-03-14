@@ -1,11 +1,56 @@
 {
+  "schemaVersion": 2,
   "id": "teoria-y-tecnica-de-terapia-ocupacional-i-c401",
   "label": "Teoría y Técnica de Terapia Ocupacional I - Cátedra 401",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Teoría y Técnica de Terapia Ocupacional I - Cátedra 401 - Bustingorri",
-  "teoricos": ["I|martes|17:00|19:00|Roldan, Ana Lis|SI-029|"],
-  "seminarios": [],
-  "comisiones": [
-    "1|miercoles|19:00|21:00|Pérez, Marcia Carolina|I|SI-021||35",
-    "2|miercoles|17:00|19:00|Pérez, Marcia Carolina|I|SI-021||35"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Roldan, Ana Lis",
+      "aula": "SI-029",
+      "observ": ""
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "17:00",
+      "fin": "19:00",
+      "profesor": "Pérez, Marcia Carolina",
+      "aula": "SI-021",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:00",
+      "fin": "21:00",
+      "profesor": "Pérez, Marcia Carolina",
+      "aula": "SI-021",
+      "observ": "",
+      "vacantes": 35,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    }
   ]
 }

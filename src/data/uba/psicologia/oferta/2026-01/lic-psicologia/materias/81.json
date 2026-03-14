@@ -1,16 +1,104 @@
 {
+  "schemaVersion": 2,
   "id": "fisiopatologia-y-enfermedades-psicosomaticas-c81",
   "label": "Fisiopatología y Enfermedades Psicosomáticas - Cátedra 81",
   "header": "Psicología UBA - Licenciatura en Psicología - Fisiopatología y Enfermedades Psicosomáticas - Cátedra 81 - Prof. Ulnik",
-  "teoricos": [
-    "I|martes|14:30|16:00|Patrono, Roberto Raul|IN-207|",
-    "II|jueves|18:00|19:30|Ulnik, Jorge Claudio|IN-103|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|12:45|14:15|Bogani, Hector|I|IN-108||18",
-    "2|jueves|16:15|17:45|Fernandez, Alejandra Viviana|II|IN-433||7",
-    "3|jueves|19:45|21:15|Fernandez, Alejandra Viviana|II|IN-204||1",
-    "4|martes|16:15|17:45|Bogani, Hector|I|IN-121||16"
+  "slots": [
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Patrono, Roberto Raul",
+      "aula": "IN-207",
+      "observ": ""
+    },
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Ulnik, Jorge Claudio",
+      "aula": "IN-103",
+      "observ": ""
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "12:45",
+      "fin": "14:15",
+      "profesor": "Bogani, Hector",
+      "aula": "IN-108",
+      "observ": "",
+      "vacantes": 18,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Bogani, Hector",
+      "aula": "IN-121",
+      "observ": "",
+      "vacantes": 16,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "16:15",
+      "fin": "17:45",
+      "profesor": "Fernandez, Alejandra Viviana",
+      "aula": "IN-433",
+      "observ": "",
+      "vacantes": 7,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "19:45",
+      "fin": "21:15",
+      "profesor": "Fernandez, Alejandra Viviana",
+      "aula": "IN-204",
+      "observ": "",
+      "vacantes": 1,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    }
   ]
 }

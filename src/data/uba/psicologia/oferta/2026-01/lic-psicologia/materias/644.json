@@ -1,31 +1,380 @@
 {
+  "schemaVersion": 2,
   "id": "10357-psicologia-organizacional-e-institucional-c644-i",
   "label": "(10357) Psicología Organizacional e Institucional - Cátedra 644 (I)",
   "header": "Psicología UBA - Licenciatura en Psicología - (10357) Psicología Organizacional e Institucional - Cátedra 644 - I - Funes Molineri",
-  "teoricos": [
-    "I|jueves|09:15|10:45|Funes Molineri, Mariana Silvia|HY-014|",
-    "II|martes|14:30|16:00|Selvatici, Laura|HY-014|",
-    "III|miercoles|18:00|19:30|Rivero, Nestor Javier|IN-101|"
-  ],
-  "seminarios": [],
-  "comisiones": [
-    "1|martes|09:15|12:30|Furlan, Gabriela Beatriz|I|HY-031|Consumos problemáticos: posibles abordajes desde la psicología institucional|0",
-    "2|jueves|11:00|14:15|Montenegro, Luisina|I|HY-013|Las violencias de género y sus instituciones|0",
-    "3|miercoles|14:30|17:45|Velazquez, Maria Eugenia|II|IN-520|Diversidad, disidencia y otredad. La diferencia desde una perspectiva transfemin|0",
-    "4|jueves|14:30|17:45|Croatto, Virginia|II|HY-010|Derechos Humanos en el entramado social|14",
-    "5|martes|16:15|19:30|Pancani, Marilín Andrea|II|HY-025|Historia Institucional: orígenes, devenir y porvenir en las organizaciones|0",
-    "6|miercoles|19:45|23:00|Randazzo, Santiago|III|IN-106|Derechos Humanos, disputas y desafíos en el contexto actual|0",
-    "7|jueves|18:00|21:15|Font Guido, Paula|III|HY-023|Género y subjetividad|0",
-    "8|jueves|11:00|14:15|Taubin, Nadia|I|HY-027|De la formación a la práctica profesional en psicología: herramientas e incertid|0",
-    "9|miercoles|14:30|17:45|Stellavato, Bruno Luciano|II|IN-530|Instituciones, sensibilidad y la expresión de las emociones|0",
-    "10|jueves|11:00|14:15|Bagdadi Dziubek, Martín|I|IN-207|Redes sociales, subjetividad e institución|0",
-    "11|miercoles|09:15|12:30|Villar, Federico|I|IN-311|El arte y sus instituciones|0",
-    "12|martes|16:15|19:30|Dombrovsky, Paula Maria|II|IN-520|Abordajes en Salud Mental con base en la comunidad|0",
-    "13|miercoles|19:45|23:00|Carrera Mandalunis, Sol|III|IN-126|Prácticas de acompañamiento en adolescencias e infancias|0",
-    "14|martes|07:30|10:45|Cocha, Trinidad Elizabeth|I|HY-011|Subjetividad y socialización en la era digital desde la perspectiva instituciona|14",
-    "15|jueves|18:00|21:15|Flores, Maria Eugenia Julieta|III|IN-440|Instituciones y debates actuales|0",
-    "16|miercoles|19:45|23:00|Schembri, Lihuen|III|IN-216|El rol psi y las prácticas en territorio|0",
-    "17|martes|16:15|19:30|Cocha, Trinidad Elizabeth|III|HY-031|Abordajes territoriales en salud. Objetivos y desafíos en el contexto actual|4",
-    "18|sabado|09:15|12:30|Velazquez, Maria Eugenia|III|IN-124|Cuerpos diversos, luchas comunes|14"
+  "slots": [
+    {
+      "id": "II",
+      "tipo": "teo",
+      "dia": "martes",
+      "inicio": "14:30",
+      "fin": "16:00",
+      "profesor": "Selvatici, Laura",
+      "aula": "HY-014",
+      "observ": ""
+    },
+    {
+      "id": "III",
+      "tipo": "teo",
+      "dia": "miercoles",
+      "inicio": "18:00",
+      "fin": "19:30",
+      "profesor": "Rivero, Nestor Javier",
+      "aula": "IN-101",
+      "observ": ""
+    },
+    {
+      "id": "I",
+      "tipo": "teo",
+      "dia": "jueves",
+      "inicio": "09:15",
+      "fin": "10:45",
+      "profesor": "Funes Molineri, Mariana Silvia",
+      "aula": "HY-014",
+      "observ": ""
+    },
+    {
+      "id": "14",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "07:30",
+      "fin": "10:45",
+      "profesor": "Cocha, Trinidad Elizabeth",
+      "aula": "HY-011",
+      "observ": "Subjetividad y socialización en la era digital desde la perspectiva instituciona",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "1",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Furlan, Gabriela Beatriz",
+      "aula": "HY-031",
+      "observ": "Consumos problemáticos: posibles abordajes desde la psicología institucional",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "12",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Dombrovsky, Paula Maria",
+      "aula": "IN-520",
+      "observ": "Abordajes en Salud Mental con base en la comunidad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "17",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Cocha, Trinidad Elizabeth",
+      "aula": "HY-031",
+      "observ": "Abordajes territoriales en salud. Objetivos y desafíos en el contexto actual",
+      "vacantes": 4,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "5",
+      "tipo": "prac",
+      "dia": "martes",
+      "inicio": "16:15",
+      "fin": "19:30",
+      "profesor": "Pancani, Marilín Andrea",
+      "aula": "HY-025",
+      "observ": "Historia Institucional: orígenes, devenir y porvenir en las organizaciones",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "11",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Villar, Federico",
+      "aula": "IN-311",
+      "observ": "El arte y sus instituciones",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "3",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Velazquez, Maria Eugenia",
+      "aula": "IN-520",
+      "observ": "Diversidad, disidencia y otredad. La diferencia desde una perspectiva transfemin",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "9",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Stellavato, Bruno Luciano",
+      "aula": "IN-530",
+      "observ": "Instituciones, sensibilidad y la expresión de las emociones",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "13",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Carrera Mandalunis, Sol",
+      "aula": "IN-126",
+      "observ": "Prácticas de acompañamiento en adolescencias e infancias",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "16",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Schembri, Lihuen",
+      "aula": "IN-216",
+      "observ": "El rol psi y las prácticas en territorio",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "6",
+      "tipo": "prac",
+      "dia": "miercoles",
+      "inicio": "19:45",
+      "fin": "23:00",
+      "profesor": "Randazzo, Santiago",
+      "aula": "IN-106",
+      "observ": "Derechos Humanos, disputas y desafíos en el contexto actual",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "10",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Bagdadi Dziubek, Martín",
+      "aula": "IN-207",
+      "observ": "Redes sociales, subjetividad e institución",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "2",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Montenegro, Luisina",
+      "aula": "HY-013",
+      "observ": "Las violencias de género y sus instituciones",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "8",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "11:00",
+      "fin": "14:15",
+      "profesor": "Taubin, Nadia",
+      "aula": "HY-027",
+      "observ": "De la formación a la práctica profesional en psicología: herramientas e incertid",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "I",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "I"
+    },
+    {
+      "id": "4",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "14:30",
+      "fin": "17:45",
+      "profesor": "Croatto, Virginia",
+      "aula": "HY-010",
+      "observ": "Derechos Humanos en el entramado social",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "II",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "II"
+    },
+    {
+      "id": "15",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Flores, Maria Eugenia Julieta",
+      "aula": "IN-440",
+      "observ": "Instituciones y debates actuales",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "7",
+      "tipo": "prac",
+      "dia": "jueves",
+      "inicio": "18:00",
+      "fin": "21:15",
+      "profesor": "Font Guido, Paula",
+      "aula": "HY-023",
+      "observ": "Género y subjetividad",
+      "vacantes": 0,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    },
+    {
+      "id": "18",
+      "tipo": "prac",
+      "dia": "sabado",
+      "inicio": "09:15",
+      "fin": "12:30",
+      "profesor": "Velazquez, Maria Eugenia",
+      "aula": "IN-124",
+      "observ": "Cuerpos diversos, luchas comunes",
+      "vacantes": 14,
+      "slotsAsociados": [
+        {
+          "slotId": "III",
+          "rol": "teo",
+          "condicion": "obligatorio"
+        }
+      ],
+      "obligRaw": "III"
+    }
   ]
 }

@@ -8,28 +8,25 @@ import {
 
 const subjects: SubjectData[] = [
   {
+    schemaVersion: 2,
     id: '34',
     label: '(2) Psicología Social - Cátedra 34 (II)',
     header: 'h34',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
   {
+    schemaVersion: 2,
     id: '35',
     label: '(2) Psicología Social - Cátedra 35 (I)',
     header: 'h35',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
   {
+    schemaVersion: 2,
     id: '60',
     label: '(10) Estadística - Cátedra 60 (I)',
     header: 'h60',
-    teoricos: [],
-    seminarios: [],
-    comisiones: [],
+    slots: [],
   },
 ];
 
