@@ -150,9 +150,12 @@ jobs:
           git push
 
       - name: Create pull request
+        id: create_pr
         if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'pr'
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.CI_PR_TOKEN != '' && secrets.CI_PR_TOKEN || github.token }}
           branch: codex/auto-scrape-${{ github.run_id }}
           delete-branch: true
           commit-message: ${{ steps.publish_meta.outputs.commit_message }}
@@ -161,6 +164,16 @@ jobs:
           add-paths: |
             src/data/uba/psicologia/oferta
             config/scraper-windows.json
+
+      - name: Explain PR permission failure
+        if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'pr' && steps.create_pr.outcome == 'failure'
+        run: |
+          echo "No se pudo crear PR desde GitHub Actions."
+          echo "Opciones de solución:"
+          echo "1) Habilitar en repo Settings > Actions > General: 'Allow GitHub Actions to create and approve pull requests'."
+          echo "2) Configurar secret CI_PR_TOKEN con un PAT que tenga permisos de repo/pull_request."
+          echo "3) Reintentar workflow con publish_mode=commit."
+          exit 1
 
       - name: No publish mode
         if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'none'
