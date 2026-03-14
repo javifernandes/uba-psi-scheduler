@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { useSchedulerCalendar } from './use-scheduler-calendar';
-import { parseSubject } from '../scheduler.utils';
+import { parseSubject, slotsByTipo } from '../scheduler.utils';
 import type { ParsedSubject, SubjectData } from '../scheduler.types';
 import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
@@ -75,8 +75,8 @@ const baseParams = (overrides: Partial<HookParams> = {}): HookParams => ({
   selectedSubject: subjectA,
   enrolledBySubject: {},
   selectedComisiones: subjectA.comisiones,
-  filteredTeoricos: subjectA.teoricos,
-  filteredSeminarios: subjectA.seminarios,
+  filteredTeoricos: slotsByTipo(subjectA, 'teo'),
+  filteredSeminarios: slotsByTipo(subjectA, 'sem'),
   parsedSubjects: [subjectA, subjectB],
   showComisiones: true,
   showTeoricos: false,
@@ -238,8 +238,8 @@ describe('useSchedulerCalendar', () => {
         selectedSubject: subject,
         enrolledBySubject: {},
         selectedComisiones: subject.comisiones,
-        filteredTeoricos: subject.teoricos,
-        filteredSeminarios: subject.seminarios,
+        filteredTeoricos: slotsByTipo(subject, 'teo'),
+        filteredSeminarios: slotsByTipo(subject, 'sem'),
         parsedSubjects: [subject],
         showComisiones: true,
         showTeoricos: false,
@@ -267,8 +267,8 @@ describe('useSchedulerCalendar', () => {
         selectedSubject: subject,
         enrolledBySubject: {},
         selectedComisiones: subject.comisiones,
-        filteredTeoricos: subject.teoricos,
-        filteredSeminarios: subject.seminarios,
+        filteredTeoricos: slotsByTipo(subject, 'teo'),
+        filteredSeminarios: slotsByTipo(subject, 'sem'),
         parsedSubjects: [subject],
         showComisiones: false,
         showTeoricos: true,
@@ -292,8 +292,8 @@ describe('useSchedulerCalendar', () => {
         selectedSubject: subject,
         enrolledBySubject: {},
         selectedComisiones: subject.comisiones,
-        filteredTeoricos: subject.teoricos,
-        filteredSeminarios: subject.seminarios,
+        filteredTeoricos: slotsByTipo(subject, 'teo'),
+        filteredSeminarios: slotsByTipo(subject, 'sem'),
         parsedSubjects: [subject],
         showComisiones: false,
         showTeoricos: false,

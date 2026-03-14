@@ -9,6 +9,7 @@ import {
   findPrimaryAssociatedSlotId,
   rangesOverlap,
   shortTeacherName,
+  slotById,
   splitAula,
   type EnrollmentProjectionEntry,
   type EnrollmentProjectionMappedEntry,
@@ -65,11 +66,13 @@ export const buildSavedElectionDetails = (
     if (!c) return;
     const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
     const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
+    const linkedTeoricoSlot = teoricoId ? slotById(parsed, teoricoId) : undefined;
+    const linkedSeminarioSlot = seminarioId ? slotById(parsed, seminarioId) : undefined;
     built.push({
       subject,
       commission: c,
-      teorico: teoricoId ? parsed.teoricoMap[teoricoId] : undefined,
-      seminario: seminarioId ? parsed.seminarioMap[seminarioId] : undefined,
+      teorico: linkedTeoricoSlot?.tipo === 'teo' ? linkedTeoricoSlot : undefined,
+      seminario: linkedSeminarioSlot?.tipo === 'sem' ? linkedSeminarioSlot : undefined,
     });
   });
   return built;

@@ -24,7 +24,9 @@ import {
   sameRecord,
   sameSetValues,
   shortTeacherName,
+  slotById,
   sortVenueCodes,
+  slotsByTipo,
   slotKeyForEvent,
   sortComisiones,
   splitAula,
@@ -77,8 +79,8 @@ describe('scheduler.utils', () => {
   it('parsea materia y referencias de teoría/seminario correctamente', () => {
     const parsed = parseSubject(subjectData);
     expect(parsed.id).toBe('50');
-    expect(parsed.teoricos[0]?.id).toBe('II');
-    expect(parsed.seminarios[0]?.id).toBe('B');
+    expect(slotsByTipo(parsed, 'teo')[0]?.id).toBe('II');
+    expect(slotsByTipo(parsed, 'sem')[0]?.id).toBe('B');
     expect(parsed.comisiones[0]).toMatchObject({
       id: '63',
       slotsAsociados: [
@@ -88,7 +90,9 @@ describe('scheduler.utils', () => {
       aula: 'IN-123',
       vacantes: 35,
     });
-    expect(parsed.seminarioMap.B?.profesor).toContain('Battaglia');
+    const linkedSeminario = slotById(parsed, 'B');
+    expect(linkedSeminario?.tipo).toBe('sem');
+    expect(linkedSeminario?.profesor).toContain('Battaglia');
   });
 
   it('parsea oblig con solo teórico sin inyectar seminario indefinido', () => {

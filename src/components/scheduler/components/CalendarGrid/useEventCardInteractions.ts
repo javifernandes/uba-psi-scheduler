@@ -33,14 +33,16 @@ export const useEventCardInteractions = ({
   const { event, slotKey, stackSize, stackIndex, slotEvents } = slot;
 
   const hoverLinkedCommissionId = event.tipo === 'prac' ? event.linkedCommissionId || null : null;
-  const hoverLinkedTeoricoId = event.tipo === 'teo' ? event.linkedTeoricoId || null : null;
-  const hoverLinkedSeminarioId = event.tipo === 'sem' ? event.linkedSeminarioId || null : null;
+  const hoverLinkedTeoricoId =
+    event.tipo === 'teo' && event.linkedSlotRole === 'teo' ? event.linkedSlotId || null : null;
+  const hoverLinkedSeminarioId =
+    event.tipo === 'sem' && event.linkedSlotRole === 'sem' ? event.linkedSlotId || null : null;
 
   const togglePinnedCommission = () => {
     if (event.isExternal) return;
     const commissionId = hoverLinkedCommissionId;
     if (!commissionId) return;
-    setPinnedCommissionId(prev => (prev === commissionId ? null : commissionId));
+    setPinnedCommissionId((prev) => (prev === commissionId ? null : commissionId));
   };
 
   const onCardMouseEnter: MouseEventHandler<HTMLDivElement> = () => {
@@ -59,15 +61,15 @@ export const useEventCardInteractions = ({
     const seminarioId = hoverLinkedSeminarioId;
     window.setTimeout(() => {
       if (commissionId) {
-        setHoveredCommissionId(prev => (prev === commissionId ? null : prev));
+        setHoveredCommissionId((prev) => (prev === commissionId ? null : prev));
       }
       if (teoricoId) {
-        setHoveredLinkedTeoricoId(prev => (prev === teoricoId ? null : prev));
+        setHoveredLinkedTeoricoId((prev) => (prev === teoricoId ? null : prev));
       }
       if (seminarioId) {
-        setHoveredLinkedSeminarioId(prev => (prev === seminarioId ? null : prev));
+        setHoveredLinkedSeminarioId((prev) => (prev === seminarioId ? null : prev));
       }
-      setHoveredConflictEventId(prev => (prev === event.id ? null : prev));
+      setHoveredConflictEventId((prev) => (prev === event.id ? null : prev));
     }, HOVER_LEAVE_GRACE_MS);
   };
 
@@ -75,46 +77,62 @@ export const useEventCardInteractions = ({
     togglePinnedCommission();
   };
 
-  const onCardKeyDown: KeyboardEventHandler<HTMLDivElement> = eventKey => {
+  const onCardKeyDown: KeyboardEventHandler<HTMLDivElement> = (eventKey) => {
     if (eventKey.key !== 'Enter' && eventKey.key !== ' ') return;
     eventKey.preventDefault();
     togglePinnedCommission();
   };
 
-  const onSaveButtonClick: MouseEventHandler<HTMLButtonElement> = clickEvent => {
+  const onSaveButtonClick: MouseEventHandler<HTMLButtonElement> = (clickEvent) => {
     clickEvent.stopPropagation();
     const commissionId = hoverLinkedCommissionId;
     if (!commissionId) return;
     onToggleEnrollment(commissionId);
   };
 
-  const onStackPrevClick: MouseEventHandler<HTMLButtonElement> = clickEvent => {
+  const onStackPrevClick: MouseEventHandler<HTMLButtonElement> = (clickEvent) => {
     clickEvent.stopPropagation();
     const nextIndex = ((stackIndex ?? 0) - 1 + stackSize) % stackSize;
     const nextEvent = slotEvents[nextIndex];
-    setStackIndexBySlot(prev => ({
+    setStackIndexBySlot((prev) => ({
       ...prev,
       [slotKey]: nextIndex,
     }));
-    setHoveredCommissionId(nextEvent?.tipo === 'prac' ? nextEvent.linkedCommissionId ?? null : null);
-    setHoveredLinkedTeoricoId(nextEvent?.tipo === 'teo' ? nextEvent.linkedTeoricoId ?? null : null);
+    setHoveredCommissionId(
+      nextEvent?.tipo === 'prac' ? (nextEvent.linkedCommissionId ?? null) : null
+    );
+    setHoveredLinkedTeoricoId(
+      nextEvent?.tipo === 'teo' && nextEvent.linkedSlotRole === 'teo'
+        ? (nextEvent.linkedSlotId ?? null)
+        : null
+    );
     setHoveredLinkedSeminarioId(
-      nextEvent?.tipo === 'sem' ? nextEvent.linkedSeminarioId ?? null : null
+      nextEvent?.tipo === 'sem' && nextEvent.linkedSlotRole === 'sem'
+        ? (nextEvent.linkedSlotId ?? null)
+        : null
     );
   };
 
-  const onStackNextClick: MouseEventHandler<HTMLButtonElement> = clickEvent => {
+  const onStackNextClick: MouseEventHandler<HTMLButtonElement> = (clickEvent) => {
     clickEvent.stopPropagation();
     const nextIndex = ((stackIndex ?? 0) + 1) % stackSize;
     const nextEvent = slotEvents[nextIndex];
-    setStackIndexBySlot(prev => ({
+    setStackIndexBySlot((prev) => ({
       ...prev,
       [slotKey]: nextIndex,
     }));
-    setHoveredCommissionId(nextEvent?.tipo === 'prac' ? nextEvent.linkedCommissionId ?? null : null);
-    setHoveredLinkedTeoricoId(nextEvent?.tipo === 'teo' ? nextEvent.linkedTeoricoId ?? null : null);
+    setHoveredCommissionId(
+      nextEvent?.tipo === 'prac' ? (nextEvent.linkedCommissionId ?? null) : null
+    );
+    setHoveredLinkedTeoricoId(
+      nextEvent?.tipo === 'teo' && nextEvent.linkedSlotRole === 'teo'
+        ? (nextEvent.linkedSlotId ?? null)
+        : null
+    );
     setHoveredLinkedSeminarioId(
-      nextEvent?.tipo === 'sem' ? nextEvent.linkedSeminarioId ?? null : null
+      nextEvent?.tipo === 'sem' && nextEvent.linkedSlotRole === 'sem'
+        ? (nextEvent.linkedSlotId ?? null)
+        : null
     );
   };
 

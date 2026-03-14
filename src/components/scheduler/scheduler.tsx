@@ -24,7 +24,7 @@ import {
   useSchedulerTour,
   useSubjectDropdown,
 } from './hooks';
-import { displayHeaderLabel, displaySubjectLabel } from './scheduler.utils';
+import { displayHeaderLabel, displaySubjectLabel, slotsByTipo } from './scheduler.utils';
 export type { SubjectData } from './scheduler.types';
 
 type SchedulerProps = {
@@ -47,11 +47,7 @@ const EMPTY_SELECTED_SUBJECT: ParsedSubject = {
   label: '',
   header: '',
   slots: [],
-  teoricos: [],
-  seminarios: [],
   comisiones: [],
-  teoricoMap: {},
-  seminarioMap: {},
   slotMap: {},
 };
 
@@ -144,8 +140,8 @@ const SchedulerContent = ({
   }, [enrolledBySubject, materiaCodeBySubjectId, selectedSubject, subjects]);
   const conflictingCatedraLabel =
     conflictingSubject?.label.match(/Cátedra\s+\d+/i)?.[0] || 'cátedra seleccionada';
-  const hasTeoricos = selectedSubject ? selectedSubject.teoricos.length > 0 : false;
-  const hasSeminarios = selectedSubject ? selectedSubject.seminarios.length > 0 : false;
+  const hasTeoricos = selectedSubject ? slotsByTipo(selectedSubject, 'teo').length > 0 : false;
+  const hasSeminarios = selectedSubject ? slotsByTipo(selectedSubject, 'sem').length > 0 : false;
 
   useEffect(() => {
     setDismissConflictWarning(false);
