@@ -10,18 +10,18 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|14:30|17:45|Leonardelli, Eduardo Miguel|I|IN-207|",
-    "2|martes|18:00|21:15|Casal, Mariana Elizabeth|II|IN-430|",
-    "3|miercoles|09:15|12:30|Sueldo, Lautaro Matias|III|IN-451|",
-    "4|martes|12:45|16:00|Santos, Julia Susana|II|IN-421|",
-    "5|lunes|19:45|23:00|Smud, Martin Hernan|I|IN-441|",
-    "6|sabado|09:15|12:30|Samaja, Juan Alfonso|I|IN-420|",
-    "7|martes|09:15|12:30|Zion, Maria Victoria|III|IN-452|",
-    "8|martes|18:00|21:15|Murillo, Manuel Alejandro|II|IN-320|",
-    "9|miercoles|18:00|21:15|Abal, Yamila Soledad|I|IN-304|",
-    "10|martes|12:45|16:00|Ralon, Gonzalo|II|IN-209|",
-    "11|lunes|19:45|23:00|Crespo, Beatriz Elizabeth|I|IN-440|",
-    "50|miercoles|19:00|22:15|Fabris, Ana Catalina|IV|SI-002|San Isidro.",
-    "51|miercoles|13:00|16:15|Wood, Lucia|IV|SI-002|San Isidro"
+    "1|lunes|14:30|17:45|Leonardelli, Eduardo Miguel|I|IN-207||28",
+    "2|martes|18:00|21:15|Casal, Mariana Elizabeth|II|IN-430||27",
+    "3|miercoles|09:15|12:30|Sueldo, Lautaro Matias|III|IN-451||32",
+    "4|martes|12:45|16:00|Santos, Julia Susana|II|IN-421||23",
+    "5|lunes|19:45|23:00|Smud, Martin Hernan|I|IN-441||32",
+    "6|sabado|09:15|12:30|Samaja, Juan Alfonso|I|IN-420||34",
+    "7|martes|09:15|12:30|Zion, Maria Victoria|III|IN-452||33",
+    "8|martes|18:00|21:15|Murillo, Manuel Alejandro|II|IN-320||27",
+    "9|miercoles|18:00|21:15|Abal, Yamila Soledad|I|IN-304||30",
+    "10|martes|12:45|16:00|Ralon, Gonzalo|II|IN-209||35",
+    "11|lunes|19:45|23:00|Crespo, Beatriz Elizabeth|I|IN-440||34",
+    "50|miercoles|19:00|22:15|Fabris, Ana Catalina|IV|SI-002|San Isidro.|31",
+    "51|miercoles|13:00|16:15|Wood, Lucia|IV|SI-002|San Isidro|29"
   ]
 }

@@ -2,11 +2,7 @@
   "id": "neuropsicopatologia-c300",
   "label": "Neuropsicopatología - Cátedra 300",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Neuropsicopatología - Cátedra 300 - Prof. Politis",
-  "teoricos": [
-    "I|viernes|17:00|19:00|Butman, Judith|AV-036|"
-  ],
+  "teoricos": ["I|viernes|17:00|19:00|Butman, Judith|AV-036|"],
   "seminarios": [],
-  "comisiones": [
-    "1|viernes|19:00|23:00|Borenstein, Alejandro Damián|I|AV-028|"
-  ]
+  "comisiones": ["1|viernes|19:00|23:00|Borenstein, Alejandro Damián|I|AV-028||34"]
 }

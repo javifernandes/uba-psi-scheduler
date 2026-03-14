@@ -2,11 +2,7 @@
   "id": "musicoterapia-i-c293",
   "label": "Musicoterapia I - Cátedra 293",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Musicoterapia I - Cátedra 293 - Zimbaldo",
-  "teoricos": [
-    "I|miercoles|17:00|19:00|Zimbaldo, Ariel Marcelo|AV-030|"
-  ],
+  "teoricos": ["I|miercoles|17:00|19:00|Zimbaldo, Ariel Marcelo|AV-030|"],
   "seminarios": [],
-  "comisiones": [
-    "1|miercoles|15:00|17:00|Bottale, Roxana|I|AV-028|"
-  ]
+  "comisiones": ["1|miercoles|15:00|17:00|Bottale, Roxana|I|AV-028||35"]
 }

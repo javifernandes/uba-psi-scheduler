@@ -8,9 +8,9 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|martes|12:45|14:15|Bogani, Hector|I|IN-108|",
-    "2|jueves|16:15|17:45|Fernandez, Alejandra Viviana|II|IN-431|",
-    "3|jueves|19:45|21:15|Fernandez, Alejandra Viviana|II|IN-204|",
-    "4|martes|16:15|17:45|Bogani, Hector|I|IN-121|"
+    "1|martes|12:45|14:15|Bogani, Hector|I|IN-108||18",
+    "2|jueves|16:15|17:45|Fernandez, Alejandra Viviana|II|IN-433||7",
+    "3|jueves|19:45|21:15|Fernandez, Alejandra Viviana|II|IN-204||1",
+    "4|martes|16:15|17:45|Bogani, Hector|I|IN-121||16"
   ]
 }

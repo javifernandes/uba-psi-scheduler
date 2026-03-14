@@ -7,12 +7,12 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|martes|09:00|13:00|Lopez Fernandez, Giselle|I||Juzgado 8 Lavalle 1220 3° P CABA",
-    "2|jueves|12:30|16:30|Vidal, Laura Gabriela|I||Centro Salud Mental N° 1, M. Pedraza 1558. CABA",
-    "3|martes|09:00|13:00|Vidal, Laura Gabriela|I||Juzgado 83 Lavalle 1220 3er. Piso",
-    "4|viernes|09:00|13:00|Lopez Fernandez, Giselle|I||Juzgado Civil de Familia N° 1 San Isidro Bilbao 912. PB",
-    "5|martes|09:00|13:00|Casas, Nora Leticia|I||Juzgado 38 Talcahuano 490 7°piso",
-    "6|miercoles|09:00|13:00|Casas, Nora Leticia|I||Defensoría de Menores e Incapaces 7 – Cerrito 536 – Dra. Carolina Paladini",
-    "7|jueves|09:00|13:00|Siderakis, Melina|I||Juzgado 7 – Talcahuano 490 – 9no. Piso – Dra. Miriam Cataldi"
+    "1|martes|09:00|13:00|Lopez Fernandez, Giselle|I||Juzgado 8 Lavalle 1220 3° P CABA|1",
+    "2|jueves|12:30|16:30|Vidal, Laura Gabriela|I||Centro Salud Mental N° 1, M. Pedraza 1558. CABA|10",
+    "3|martes|09:00|13:00|Vidal, Laura Gabriela|I||Juzgado 83 Lavalle 1220 3er. Piso|4",
+    "4|viernes|09:00|13:00|Lopez Fernandez, Giselle|I||Juzgado Civil de Familia N° 1 San Isidro Bilbao 912. PB|3",
+    "5|martes|09:00|13:00|Casas, Nora Leticia|I||Juzgado 38 Talcahuano 490 7°piso|4",
+    "6|miercoles|09:00|13:00|Casas, Nora Leticia|I||Defensoría de Menores e Incapaces 7  Cerrito 536  Dra. Carolina Paladini|3",
+    "7|jueves|09:00|13:00|Siderakis, Melina|I||Juzgado 7  Talcahuano 490  9no. Piso  Dra. Miriam Cataldi|3"
   ]
 }

@@ -9,19 +9,19 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|07:30|09:00|Winzeler, Martin|II|IN-108|",
-    "2|miercoles|16:15|17:45|Seufer, Carla Andrea|I|IN-110|",
-    "3|jueves|11:00|12:30|Vainscheinker, Tamara|I|IN-411|",
-    "4|jueves|07:30|09:00|Paz, Mariana|II|IN-110|",
-    "5|miercoles|11:00|12:30|Vainscheinker, Tamara|III|IN-411|",
-    "6|jueves|11:00|12:30|Paz, Mariana|II|IN-421|",
-    "7|miercoles|11:00|12:30|Seufer, Carla Andrea|III|IN-410|",
-    "8|jueves|11:00|12:30|Winzeler, Martin|II|IN-443|",
-    "9|miercoles|19:45|21:15|Andreachi, Carolina Belén|I|IN-420|",
-    "10|miercoles|16:15|17:45|Andreachi, Carolina Belén|III|IN-313|",
-    "11|miercoles|19:45|21:15|Cavallero, Nicolas|I|IN-303|",
-    "12|miercoles|16:15|17:45|Cavallero, Nicolas|III|IN-412|",
-    "13|miercoles|19:45|21:15|Maldonado, Ivana|I|IN-217|",
-    "14|miercoles|16:15|17:45|Maldonado, Ivana|I|IN-107|"
+    "1|jueves|07:30|09:00|Winzeler, Martin|II|IN-108||0",
+    "2|miercoles|16:15|17:45|Seufer, Carla Andrea|I|IN-110||0",
+    "3|jueves|11:00|12:30|Vainscheinker, Tamara|I|IN-411||3",
+    "4|jueves|07:30|09:00|Paz, Mariana|II|IN-110||0",
+    "5|miercoles|11:00|12:30|Vainscheinker, Tamara|III|IN-411||1",
+    "6|jueves|11:00|12:30|Paz, Mariana|II|IN-421||0",
+    "7|miercoles|11:00|12:30|Seufer, Carla Andrea|III|IN-325||0",
+    "8|jueves|11:00|12:30|Winzeler, Martin|II|IN-443||0",
+    "9|miercoles|19:45|21:15|Andreachi, Carolina Belén|I|IN-420||0",
+    "10|miercoles|16:15|17:45|Andreachi, Carolina Belén|III|IN-313||0",
+    "11|miercoles|19:45|21:15|Cavallero, Nicolas|I|IN-303||0",
+    "12|miercoles|16:15|17:45|Cavallero, Nicolas|III|IN-412||0",
+    "13|miercoles|19:45|21:15|Maldonado, Ivana|I|IN-217||0",
+    "14|miercoles|16:15|17:45|Maldonado, Ivana|I|IN-107||0"
   ]
 }

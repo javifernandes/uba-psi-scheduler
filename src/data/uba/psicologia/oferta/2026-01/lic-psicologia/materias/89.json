@@ -6,13 +6,11 @@
     "I|viernes|11:00|12:30|Montañez, Fernando Gabriel|HY-022|",
     "II|viernes|19:45|21:15|Medina, Horacio Manuel|HY-029|"
   ],
-  "seminarios": [
-    "A|lunes|19:45|21:15|Larrosa, Maria Victoria|HY-015|Seminario Optativo."
-  ],
+  "seminarios": ["A|lunes|19:45|21:15|Larrosa, Maria Victoria|HY-015|Seminario Optativo."],
   "comisiones": [
-    "1|viernes|18:00|19:30|Saubidet, Agustina|II|HY-010|",
-    "2|viernes|12:45|14:15|Larrosa, Maria Victoria|I|HY-011|",
-    "3|viernes|09:15|10:45|Kot Rozenberg, Gabriela Veroni|I|HY-012|",
-    "4|viernes|18:00|19:30|Ramirez, Fernando Cesar|II|HY-004|"
+    "1|viernes|18:00|19:30|Saubidet, Agustina|II|HY-010||4",
+    "2|viernes|12:45|14:15|Larrosa, Maria Victoria|I|HY-011||31",
+    "3|viernes|09:15|10:45|Kot Rozenberg, Gabriela Veroni|I|HY-012||27",
+    "4|viernes|18:00|19:30|Ramirez, Fernando Cesar|II|HY-004||32"
   ]
 }

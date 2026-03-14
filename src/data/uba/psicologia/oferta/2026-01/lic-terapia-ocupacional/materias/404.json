@@ -2,12 +2,10 @@
   "id": "fisiologia-c404",
   "label": "Fisiología - Cátedra 404",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Fisiología - Cátedra 404 - Verna",
-  "teoricos": [
-    "I|jueves|19:00|23:00|Verna, Maria Fernanda|SI-004|"
-  ],
+  "teoricos": ["I|jueves|19:00|23:00|Verna, Maria Fernanda|SI-004|"],
   "seminarios": [],
   "comisiones": [
-    "1|lunes|17:00|19:00|Bello, Patricia|I|SI-018|",
-    "2|lunes|19:00|21:00|Bello, Patricia|I|SI-018|"
+    "1|lunes|17:00|19:00|Bello, Patricia|I|SI-018||35",
+    "2|lunes|19:00|21:00|Bello, Patricia|I|SI-018||35"
   ]
 }

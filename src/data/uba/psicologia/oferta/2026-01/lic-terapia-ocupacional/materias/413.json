@@ -7,7 +7,5 @@
     "I|lunes|21:00|23:00|Scaffa, Miriam|SI-004|"
   ],
   "seminarios": [],
-  "comisiones": [
-    "1|viernes|18:00|22:00|Mozzone, María Carolina|I|SI-TEC|"
-  ]
+  "comisiones": ["1|viernes|18:00|22:00|Mozzone, María Carolina|I|SI-TEC||19"]
 }

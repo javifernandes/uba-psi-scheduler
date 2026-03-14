@@ -2,14 +2,10 @@
   "id": "metodologia-de-la-investigacion-y-estadistica-c420",
   "label": "Metodología de la Investigación y Estadística - Cátedra 420",
   "header": "Psicología UBA - Licenciatura en Terapia Ocupacional - Metodología de la Investigación y Estadística - Cátedra 420 - Nabergoi",
-  "teoricos": [
-    "I|lunes|17:00|18:30|Nabergoi, Mariela|SI-035|"
-  ],
-  "seminarios": [
-    "A|lunes|18:30|20:00|Nabergoi, Mariela|SI-035|"
-  ],
+  "teoricos": ["I|lunes|17:00|18:30|Nabergoi, Mariela|SI-035|"],
+  "seminarios": ["A|lunes|18:30|20:00|Nabergoi, Mariela|SI-035|"],
   "comisiones": [
-    "1|lunes|20:00|22:00|Albino, Andrea|I - A|SI-035|",
-    "2|miercoles|19:00|21:00|Albino, Andrea|I - A|SI-035|"
+    "1|lunes|20:00|22:00|Albino, Andrea|I - A|SI-035||15",
+    "2|miercoles|19:00|21:00|Albino, Andrea|I - A|SI-035||35"
   ]
 }

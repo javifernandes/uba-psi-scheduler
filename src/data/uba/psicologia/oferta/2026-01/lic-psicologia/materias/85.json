@@ -8,9 +8,9 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|martes|18:00|19:30|Dieguez, Analia Susana|I|IN-GES|",
-    "2|martes|18:00|19:30|Durán, Alejo|I|IN-109|",
-    "3|jueves|09:15|10:45|Grunin, Julian Nicolas|II|IN-GES|",
-    "4|jueves|09:15|10:45|Rego, Maria Victoria|II|IN-210|"
+    "1|martes|18:00|19:30|Dieguez, Analia Susana|I|IN-GES||20",
+    "2|martes|18:00|19:30|Durán, Alejo|I|IN-109||16",
+    "3|jueves|09:15|10:45|Grunin, Julian Nicolas|II|IN-GES||22",
+    "4|jueves|09:15|10:45|Rego, Maria Victoria|II|IN-210||21"
   ]
 }

@@ -9,11 +9,11 @@
   ],
   "seminarios": [],
   "comisiones": [
-    "1|viernes|18:00|19:30|Crivelli, Maria Eugenia|II|IN-110|",
-    "2|martes|07:30|09:00|Crivelli, Maria Eugenia|I|IN-212|",
-    "3|viernes|18:00|19:30|Cuomo, Gabriela Susana|II|IN-214|",
-    "4|martes|11:00|12:30|Quiroga, Bettina Norma|I|IN-212|",
-    "50|jueves|07:00|08:45|Enrico, Griselda|III|SI-017|",
-    "51|jueves|11:00|12:45|Enrico, Griselda|III|SI-017|"
+    "1|viernes|18:00|19:30|Crivelli, Maria Eugenia|II|IN-110||0",
+    "2|martes|07:30|09:00|Crivelli, Maria Eugenia|I|IN-212||22",
+    "3|viernes|18:00|19:30|Cuomo, Gabriela Susana|II|IN-214||16",
+    "4|martes|11:00|12:30|Quiroga, Bettina Norma|I|IN-212||9",
+    "50|jueves|07:00|08:45|Enrico, Griselda|III|SI-017||26",
+    "51|jueves|11:00|12:45|Enrico, Griselda|III|SI-017||10"
   ]
 }

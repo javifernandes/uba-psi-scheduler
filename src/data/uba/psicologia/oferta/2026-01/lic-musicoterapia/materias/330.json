@@ -2,18 +2,16 @@
   "id": "practica-profesional-modulo-i-area-clinica-c330",
   "label": "Práctica Profesional. Módulo I: Area Clínica - Cátedra 330",
   "header": "Psicología UBA - Licenciatura en Musicoterapia - Práctica Profesional. Módulo I: Area Clínica - Cátedra 330 - Vizzolini",
-  "teoricos": [
-    "I|lunes|20:00|22:00|Vizzolini, Leandro Martín|AV-025|Sede Avellaneda"
-  ],
+  "teoricos": ["I|lunes|20:00|22:00|Vizzolini, Leandro Martín|AV-025|Sede Avellaneda"],
   "seminarios": [],
   "comisiones": [
-    "1|jueves|09:00|13:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.",
-    "2|jueves|13:00|16:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.",
-    "3|lunes|13:00|16:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.1 C.A.B.A.",
-    "4|jueves|10:00|14:00|Gentili, Sebastian|I||Hospital Evita Lanus- Diego A. Maradona 1910",
-    "5|viernes|09:00|12:00|Gentili, Sebastian|I||Centro SIARC-Maza 330 CABA",
-    "6|miercoles|14:00|17:00|Gentili, Sebastian|I||Hogar Seres 12 de octubre 275 Avellaneda",
-    "7|miercoles|09:00|13:00|Gentili, Sebastian|I||I.R.E.P (Instituto de rehabilitación psicofísica) Echeverría 955",
-    "8|martes|14:00|17:00|Gentili, Sebastian|I||Hogar Seres 12 de octubre 275 Avellaneda"
+    "1|jueves|09:00|13:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.|1",
+    "2|jueves|13:00|16:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.|1",
+    "3|lunes|13:00|16:00|Colagreco, Julieta|I||Clínica Flores Internación Bonorino 243 C.A.B.A.1 C.A.B.A.|1",
+    "4|jueves|10:00|14:00|Gentili, Sebastian|I||Hospital Evita Lanus- Diego A. Maradona 1910|0",
+    "5|viernes|09:00|12:00|Gentili, Sebastian|I||Centro SIARC-Maza 330 CABA|1",
+    "6|miercoles|14:00|17:00|Gentili, Sebastian|I||Hogar Seres 12 de octubre 275 Avellaneda|0",
+    "7|miercoles|09:00|13:00|Gentili, Sebastian|I||I.R.E.P (Instituto de rehabilitación psicofísica) Echeverría 955|0",
+    "8|martes|14:00|17:00|Gentili, Sebastian|I||Hogar Seres 12 de octubre 275 Avellaneda|0"
   ]
 }
