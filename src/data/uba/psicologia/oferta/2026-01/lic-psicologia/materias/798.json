@@ -73,7 +73,7 @@
       "profesor": "Enrico, Griselda",
       "aula": "SI-017",
       "tipo": "prac",
-      "vacantes": 26,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -124,7 +124,7 @@
       "profesor": "Cuomo, Gabriela Susana",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "II",

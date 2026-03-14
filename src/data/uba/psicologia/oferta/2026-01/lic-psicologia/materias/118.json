@@ -253,7 +253,7 @@
       "profesor": "Mendl, Sebastian",
       "aula": "IN-216",
       "tipo": "prac",
-      "vacantes": 21,
+      "vacantes": 20,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -319,7 +319,7 @@
       "profesor": "Abeijon, Matias Federico",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 27,
+      "vacantes": 25,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -429,7 +429,7 @@
       "profesor": "Carreno, Sebastian",
       "aula": "IN-204",
       "tipo": "prac",
-      "vacantes": 5,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -451,7 +451,7 @@
       "profesor": "Carreno, Sebastian",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 14,
       "slotsAsociados": [
         {
           "slotId": "D",

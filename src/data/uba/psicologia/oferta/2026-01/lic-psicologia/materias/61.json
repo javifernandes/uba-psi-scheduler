@@ -66,7 +66,7 @@
       "profesor": "Morales, Candela",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -101,7 +101,7 @@
       "profesor": "Goldschmidt, Micaela Giuliana",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "V",
@@ -237,7 +237,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-124",
       "tipo": "prac",
-      "vacantes": 29,
+      "vacantes": 28,
       "slotsAsociados": [
         {
           "slotId": "VI",
@@ -373,7 +373,7 @@
       "profesor": "Nasra, Natasha",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -407,7 +407,7 @@
       "profesor": "Rodil Martinez, Alfredo",
       "aula": "IN-322",
       "tipo": "prac",
-      "vacantes": 33,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -458,7 +458,7 @@
       "profesor": "Vizioli, Nicolas",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "I",

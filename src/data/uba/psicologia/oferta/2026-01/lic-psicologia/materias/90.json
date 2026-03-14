@@ -30,7 +30,7 @@
       "profesor": "Daneri, Maria Florencia",
       "aula": "IN-217",
       "tipo": "prac",
-      "vacantes": 12,
+      "vacantes": 11,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -115,7 +115,7 @@
       "profesor": "Dzik, Marina Victoria",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -132,7 +132,7 @@
       "profesor": "Rodriguez, Mariano",
       "aula": "IN-320",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -183,7 +183,7 @@
       "profesor": "Fosacheca, Sandro",
       "aula": "IN-420",
       "tipo": "prac",
-      "vacantes": 16,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "II",

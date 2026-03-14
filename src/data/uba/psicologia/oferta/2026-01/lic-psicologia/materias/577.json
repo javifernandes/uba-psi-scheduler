@@ -116,7 +116,7 @@
       "profesor": "Laso, Eduardo Luis",
       "aula": "IN-107",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -150,7 +150,7 @@
       "profesor": "Noailles Uriburu, Gervasio Jor",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -235,7 +235,7 @@
       "profesor": "Del Do, Adelqui Oscar",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -303,7 +303,7 @@
       "profesor": "Gorocito, Patricia Monica",
       "aula": "IN-214",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -320,7 +320,7 @@
       "profesor": "Belucci, Gabriel",
       "aula": "IN-215",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "III",

@@ -66,7 +66,7 @@
       "profesor": "Dayan Mariano, Julieta",
       "aula": "IN-411",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -136,7 +136,7 @@
       "aula": "SI-022",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 0,
+      "vacantes": 1,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -153,7 +153,7 @@
       "profesor": "Pereyra, Gonzalo",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -221,7 +221,7 @@
       "profesor": "Perez Sobrero, Javier",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -408,7 +408,7 @@
       "profesor": "Catalan, Pablo Daniel",
       "aula": "IN-212",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 4,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -425,7 +425,7 @@
       "profesor": "Moncalvillo, Maximiliano",
       "aula": "IN-103",
       "tipo": "prac",
-      "vacantes": 7,
+      "vacantes": 6,
       "slotsAsociados": [
         {
           "slotId": "III",

@@ -134,7 +134,7 @@
       "profesor": "Santos, Julia Susana",
       "aula": "IN-421",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -151,7 +151,7 @@
       "profesor": "Casal, Mariana Elizabeth",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -203,7 +203,7 @@
       "aula": "SI-002",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "IV",

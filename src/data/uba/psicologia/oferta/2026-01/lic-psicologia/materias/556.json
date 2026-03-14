@@ -158,7 +158,7 @@
       "profesor": "Lidovski, Magali",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 22,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -226,7 +226,7 @@
       "profesor": "Izsak, Paloma",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -566,7 +566,7 @@
       "profesor": "Campanella, Natalia",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 21,
       "slotsAsociados": [
         {
           "slotId": "II",

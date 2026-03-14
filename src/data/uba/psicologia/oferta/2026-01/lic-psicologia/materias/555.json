@@ -52,7 +52,7 @@
       "profesor": "Sanchez, Patricia Ines",
       "aula": "IN-441",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -239,7 +239,7 @@
       "profesor": "Maza, Jésica",
       "aula": "IN-109",
       "tipo": "prac",
-      "vacantes": 23,
+      "vacantes": 22,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -257,7 +257,7 @@
       "aula": "SI-004",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -309,7 +309,7 @@
       "profesor": "Nigro, Facundo",
       "aula": "IN-126",
       "tipo": "prac",
-      "vacantes": 19,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "III",

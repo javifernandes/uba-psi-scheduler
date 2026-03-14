@@ -140,7 +140,7 @@
       "profesor": "Boisselier Silva Vilas, Javier",
       "aula": "HY-031",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -162,7 +162,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "HY-024",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 10,
       "slotsAsociados": [
         {
           "slotId": "D",
@@ -250,7 +250,7 @@
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-025",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -272,7 +272,7 @@
       "profesor": "Arditi, Mariano Gabriel",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -338,7 +338,7 @@
       "profesor": "De Luca, Maria Virginia",
       "aula": "HY-026",
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "C",
@@ -426,7 +426,7 @@
       "profesor": "De Leonardis, Jorge",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 25,
+      "vacantes": 26,
       "slotsAsociados": [
         {
           "slotId": "E",
@@ -492,7 +492,7 @@
       "profesor": "Otero, Sebastián",
       "aula": "IN-321",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 18,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -602,7 +602,7 @@
       "profesor": "Freijo Becchero, Fedra Solange",
       "aula": "HY-032",
       "tipo": "prac",
-      "vacantes": 30,
+      "vacantes": 29,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -759,7 +759,7 @@
       "profesor": "Fernandez, Veronica Analia",
       "aula": "HY-015",
       "tipo": "prac",
-      "vacantes": 31,
+      "vacantes": 30,
       "slotsAsociados": [
         {
           "slotId": "H",

@@ -171,7 +171,7 @@
       "profesor": "Zurita, Fidel Christian",
       "aula": "IN-217",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -240,7 +240,7 @@
       "aula": "SI-006",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 11,
+      "vacantes": 9,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -258,7 +258,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 4,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -292,7 +292,7 @@
       "profesor": "Rosales, Melina Laura",
       "aula": "IN-210",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -309,7 +309,7 @@
       "profesor": "Riveros, Brenda Gabriela",
       "aula": "IN-110",
       "tipo": "prac",
-      "vacantes": 2,
+      "vacantes": 3,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -360,7 +360,7 @@
       "profesor": "Laino, Cecilia",
       "aula": "IN-322",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -377,7 +377,7 @@
       "profesor": "Ferreyra, Julián Agustín",
       "aula": "IN-451",
       "tipo": "prac",
-      "vacantes": 17,
+      "vacantes": 15,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -394,7 +394,7 @@
       "profesor": "Prado, Jorge",
       "aula": "IN-313",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "III",

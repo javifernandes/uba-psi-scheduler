@@ -304,7 +304,7 @@
       "profesor": "Zaffore, Carolina",
       "aula": "IN-122",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -348,7 +348,7 @@
       "profesor": "Svartzman, Rocio",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 15,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "B",
@@ -414,7 +414,7 @@
       "profesor": "Castañeda, Cristina Carla",
       "aula": "IN-205",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -524,7 +524,7 @@
       "profesor": "Gimenez, Virginia Lucia",
       "aula": "IN-434",
       "tipo": "prac",
-      "vacantes": 9,
+      "vacantes": 8,
       "slotsAsociados": [
         {
           "slotId": "A",
@@ -634,7 +634,7 @@
       "profesor": "Ramirez Cuervo, Jason",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 13,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -835,7 +835,7 @@
       "profesor": "Sanchez, Federico",
       "aula": "IN-311",
       "tipo": "prac",
-      "vacantes": 6,
+      "vacantes": 5,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -879,7 +879,7 @@
       "profesor": "Leicach, Dario",
       "aula": "IN-430",
       "tipo": "prac",
-      "vacantes": 20,
+      "vacantes": 17,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -947,7 +947,7 @@
       "profesor": "Pastor, Maria Victoria",
       "aula": "HY-023",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 12,
       "slotsAsociados": [
         {
           "slotId": "H",
@@ -1101,7 +1101,7 @@
       "profesor": "García Neira, Noelia Natalia",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 14,
+      "vacantes": 13,
       "slotsAsociados": [
         {
           "slotId": "K",
@@ -1145,7 +1145,7 @@
       "profesor": "Rodriguez, Santiago",
       "aula": "IN-208",
       "tipo": "prac",
-      "vacantes": 3,
+      "vacantes": 2,
       "slotsAsociados": [
         {
           "slotId": "G",
@@ -1211,7 +1211,7 @@
       "profesor": "Caminos, Jorge Esteban",
       "aula": "IN-123",
       "tipo": "prac",
-      "vacantes": 1,
+      "vacantes": 0,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -1541,7 +1541,7 @@
       "profesor": "Flores, Magdalena",
       "aula": "IN-108",
       "tipo": "prac",
-      "vacantes": 18,
+      "vacantes": 16,
       "slotsAsociados": [
         {
           "slotId": "III",

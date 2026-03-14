@@ -113,7 +113,7 @@
       "profesor": "Dorrego, Gisele Nauali",
       "aula": "IN-209",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "IV",
@@ -386,7 +386,7 @@
       "aula": "SI-024",
       "observ": "San Isidro",
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -539,7 +539,7 @@
       "profesor": "Dorrego, Gisele Nauali",
       "aula": "IN-207",
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 32,
       "slotsAsociados": [
         {
           "slotId": "I",
