@@ -1,10 +1,6 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
-import {
-  type VacancyStatus,
-  vacancyStatusFromVacancies,
-  vacancySummaryLine,
-} from '@/domain/vacancies';
+import { vacancyIndicator } from '@/domain/vacancies';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import { displaySubjectLabel } from '../../scheduler.utils';
 import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
@@ -52,13 +48,6 @@ const externalSubjectParts = (subjectLabel: string) => {
     subject: matched[1]?.replace(/^\d+\s*·\s*/, '').trim() || normalized,
     catedra: matched[2]?.trim() || '',
   };
-};
-
-const vacancyToneByStatus: Record<VacancyStatus, 'neutral' | 'critical' | 'warning' | 'good'> = {
-  sin_datos: 'neutral',
-  sin_cupo: 'critical',
-  cupo_bajo: 'warning',
-  cupo_disponible: 'good',
 };
 
 export const CalendarEventCard = ({
@@ -136,13 +125,9 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
-  const vacancySubtitle =
+  const vacancyDisplay =
     !event.isExternal && event.tipo === 'prac'
-      ? vacancySummaryLine(event.vacantes ?? null)
-      : undefined;
-  const vacancySubtitleTone =
-    !event.isExternal && event.tipo === 'prac'
-      ? vacancyToneByStatus[vacancyStatusFromVacancies(event.vacantes ?? null)]
+      ? vacancyIndicator(event.vacantes ?? null)
       : undefined;
 
   return (
@@ -296,10 +281,9 @@ export const CalendarEventCard = ({
             code={titleParts.code}
             label={titleParts.label}
             type={event.tipo}
-            canWrap={vacancySubtitle ? false : canWrapLabel}
-            wrapStyle={vacancySubtitle ? undefined : titleWrapStyle}
-            subtitle={vacancySubtitle}
-            subtitleTone={vacancySubtitleTone}
+            canWrap={vacancyDisplay ? false : canWrapLabel}
+            wrapStyle={vacancyDisplay ? undefined : titleWrapStyle}
+            vacancyIndicator={vacancyDisplay}
             hidden={hideText}
           />
           <CardTime

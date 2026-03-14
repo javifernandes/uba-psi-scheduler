@@ -3,6 +3,7 @@ import type { SubjectData } from '@/components/scheduler/scheduler.types';
 import {
   sumKnownVacancies,
   sumKnownVacanciesFromSubject,
+  vacancyIndicator,
   vacancyStatusFromVacancies,
   vacancySummaryLine,
 } from './vacancies';
@@ -71,5 +72,16 @@ describe('vacancies domain', () => {
     expect(vacancySummaryLine(9)).toBe('9 vacantes · cupo bajo');
     expect(vacancySummaryLine(14)).toBe('14 vacantes · cupo disponible');
     expect(vacancySummaryLine(0)).toBe('0 vacantes · sin cupo');
+  });
+
+  it('arma indicador compacto de barras para la tarjeta', () => {
+    expect(vacancyIndicator(null)).toEqual({ countLabel: '?', status: 'sin_datos', filledBars: 0 });
+    expect(vacancyIndicator(0)).toEqual({ countLabel: '0', status: 'sin_cupo', filledBars: 0 });
+    expect(vacancyIndicator(5)).toEqual({ countLabel: '5', status: 'cupo_bajo', filledBars: 1 });
+    expect(vacancyIndicator(14)).toEqual({
+      countLabel: '14',
+      status: 'cupo_disponible',
+      filledBars: 3,
+    });
   });
 });
