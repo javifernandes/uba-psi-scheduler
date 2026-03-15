@@ -25,6 +25,13 @@ const axisLabelFormatter = (value: number) =>
 const tooltipDateTime = (value: number) =>
   new Date(value).toLocaleString('es-AR', { hour12: false });
 
+const STATUS_COLORS = {
+  sinCupo: '#d04870',
+  cupoBajo: '#cf8d00',
+  cupoDisponible: '#2f9b65',
+  sinDatos: '#8c7a8a',
+} as const;
+
 type OfferAnalyticsChartsProps = {
   analytics: VacancyAnalytics | null;
 };
@@ -203,6 +210,12 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
 
   const statusStackedOption = useMemo<EChartsOption>(
     () => ({
+      color: [
+        STATUS_COLORS.sinCupo,
+        STATUS_COLORS.cupoBajo,
+        STATUS_COLORS.cupoDisponible,
+        STATUS_COLORS.sinDatos,
+      ],
       tooltip: { trigger: 'axis' },
       legend: {
         top: 0,
@@ -232,7 +245,8 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           smooth: true,
           showSymbol: false,
           data: statusData.sinCupo,
-          lineStyle: { color: '#d04870' },
+          lineStyle: { color: STATUS_COLORS.sinCupo },
+          itemStyle: { color: STATUS_COLORS.sinCupo },
           areaStyle: { color: 'rgba(208, 72, 112, 0.16)' },
           markArea: markAreaData.length
             ? {
@@ -248,7 +262,8 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           smooth: true,
           showSymbol: false,
           data: statusData.cupoBajo,
-          lineStyle: { color: '#cf8d00' },
+          lineStyle: { color: STATUS_COLORS.cupoBajo },
+          itemStyle: { color: STATUS_COLORS.cupoBajo },
           areaStyle: { color: 'rgba(207, 141, 0, 0.18)' },
         },
         {
@@ -258,7 +273,8 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           smooth: true,
           showSymbol: false,
           data: statusData.cupoDisponible,
-          lineStyle: { color: '#2f9b65' },
+          lineStyle: { color: STATUS_COLORS.cupoDisponible },
+          itemStyle: { color: STATUS_COLORS.cupoDisponible },
           areaStyle: { color: 'rgba(47, 155, 101, 0.16)' },
         },
         {
@@ -268,7 +284,8 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           smooth: true,
           showSymbol: false,
           data: statusData.sinDatos,
-          lineStyle: { color: '#8c7a8a' },
+          lineStyle: { color: STATUS_COLORS.sinDatos },
+          itemStyle: { color: STATUS_COLORS.sinDatos },
           areaStyle: { color: 'rgba(140, 122, 138, 0.16)' },
         },
       ],

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   getOfferSubjects,
@@ -98,6 +98,7 @@ export const OfferAnalyticsPageClient = () => {
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
   const [error, setError] = useState('');
+  const lastProbeAtRef = useRef<string | null>(null);
 
   const queryCareer = searchParams.get('career') || '';
   const queryPeriod = normalizePeriod(searchParams.get('period') || '');
@@ -192,6 +193,7 @@ export const OfferAnalyticsPageClient = () => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
         setSubjects(subjectsPayload);
+        lastProbeAtRef.current = analyticsPayload.lastProbeAt || null;
       })
       .catch((err) => {
         if (cancelled) return;
@@ -212,13 +214,15 @@ export const OfferAnalyticsPageClient = () => {
   useEffect(() => {
     const interval = window.setInterval(() => {
       if (!selectedCareer || !selectedPeriod) return;
-      Promise.all([
-        getVacancyAnalytics(selectedCareer, selectedPeriod, range),
-        getOfferSubjects(selectedCareer, selectedPeriod),
-      ])
-        .then(([analyticsPayload, subjectsPayload]) => {
+      getVacancyAnalytics(selectedCareer, selectedPeriod, range)
+        .then(async (analyticsPayload) => {
           setAnalytics(analyticsPayload);
+          const nextProbeAt = analyticsPayload.lastProbeAt || null;
+          if (nextProbeAt && nextProbeAt === lastProbeAtRef.current) return;
+
+          const subjectsPayload = await getOfferSubjects(selectedCareer, selectedPeriod);
           setSubjects(subjectsPayload);
+          lastProbeAtRef.current = nextProbeAt;
         })
         .catch(() => undefined);
     }, 60_000);
@@ -268,9 +272,6 @@ export const OfferAnalyticsPageClient = () => {
               >
                 Horarios
               </Link>
-              <span className="rounded-md border border-white/25 bg-white/10 px-2 py-1 font-semibold">
-                Auto-refresh 60s
-              </span>
             </div>
           </div>
         </div>
