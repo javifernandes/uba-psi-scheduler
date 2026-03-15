@@ -6,10 +6,12 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import {
   getOfferSubjects,
   getVacancyAnalytics,
+  getVacancyTrends,
   listCareersWithLatestPeriod,
   listPeriodsByCareer,
   type CareerWithLatestPeriod,
   type VacancyAnalytics,
+  type VacancyTrends,
 } from '@/lib/offer-api';
 import { normalizePeriod, type PeriodId } from '@/lib/period';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
@@ -93,6 +95,7 @@ export const OfferAnalyticsPageClient = () => {
   const [periods, setPeriods] = useState<PeriodId[]>([]);
   const [range, setRange] = useState<(typeof ANALYTICS_RANGES)[number]['value']>('24h');
   const [analytics, setAnalytics] = useState<VacancyAnalytics | null>(null);
+  const [trends, setTrends] = useState<VacancyTrends | null>(null);
   const [subjects, setSubjects] = useState<SubjectData[]>([]);
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
@@ -188,11 +191,13 @@ export const OfferAnalyticsPageClient = () => {
     Promise.all([
       getVacancyAnalytics(selectedCareer, selectedPeriod, range),
       getOfferSubjects(selectedCareer, selectedPeriod),
+      getVacancyTrends(selectedCareer, selectedPeriod, range),
     ])
-      .then(([analyticsPayload, subjectsPayload]) => {
+      .then(([analyticsPayload, subjectsPayload, trendsPayload]) => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
         setSubjects(subjectsPayload);
+        setTrends(trendsPayload);
         lastProbeAtRef.current = analyticsPayload.lastProbeAt || null;
       })
       .catch((err) => {
@@ -200,6 +205,7 @@ export const OfferAnalyticsPageClient = () => {
         setError(err instanceof Error ? err.message : 'No se pudieron cargar analíticas.');
         setAnalytics(null);
         setSubjects([]);
+        setTrends(null);
       })
       .finally(() => {
         if (cancelled) return;
@@ -220,8 +226,12 @@ export const OfferAnalyticsPageClient = () => {
           const nextProbeAt = analyticsPayload.lastProbeAt || null;
           if (nextProbeAt && nextProbeAt === lastProbeAtRef.current) return;
 
-          const subjectsPayload = await getOfferSubjects(selectedCareer, selectedPeriod);
+          const [subjectsPayload, trendsPayload] = await Promise.all([
+            getOfferSubjects(selectedCareer, selectedPeriod),
+            getVacancyTrends(selectedCareer, selectedPeriod, range),
+          ]);
           setSubjects(subjectsPayload);
+          setTrends(trendsPayload);
           lastProbeAtRef.current = nextProbeAt;
         })
         .catch(() => undefined);
@@ -327,7 +337,7 @@ export const OfferAnalyticsPageClient = () => {
 
         <AnalyticsKpiGrid analytics={analytics} />
         <OfferAnalyticsCharts analytics={analytics} />
-        <OfferSubjectVacancyTable subjects={subjects} loading={loadingSubjects} />
+        <OfferSubjectVacancyTable subjects={subjects} trends={trends} loading={loadingSubjects} />
         <AnalyticsSeriesTable series={analytics?.series || []} />
         <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
       </section>

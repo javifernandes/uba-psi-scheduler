@@ -109,6 +109,33 @@ router.route({
 });
 
 router.route({
+  path: '/getVacancyTrends',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getVacancyTrends',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const range = typeof body.range === 'string' ? body.range : '24h';
+    const maxPoints = typeof body.maxPoints === 'number' ? body.maxPoints : undefined;
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getVacancyTrends, {
+      careerSlug,
+      period,
+      range,
+      maxPoints,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
   path: '/getEnrollmentWindow',
   method: 'OPTIONS',
   handler: httpAction(async () => handleOptions()),

@@ -22,6 +22,39 @@ const rangeStart = (range: string, nowMs: number) => {
   return '';
 };
 
+const materiaIdFromLabel = (subjectLabel: string, fallbackSubjectId: string) =>
+  subjectLabel.match(/^\((\d+)\)/)?.[1] || fallbackSubjectId;
+
+const vacancyNumber = (value: number | null) => (typeof value === 'number' ? value : 0);
+
+type TrendPoint = { t: number; v: number };
+
+const downsampleTrend = (points: TrendPoint[], maxPoints: number) => {
+  if (points.length <= maxPoints) return points;
+  const sampled: TrendPoint[] = [];
+  const steps = maxPoints - 1;
+  for (let i = 0; i <= steps; i += 1) {
+    const index = Math.round((i * (points.length - 1)) / steps);
+    const point = points[index];
+    if (point) sampled.push(point);
+  }
+  return sampled;
+};
+
+const upsertTrendPoint = (
+  byEntity: Map<string, TrendPoint[]>,
+  entityId: string,
+  timestampMs: number,
+  value: number
+) => {
+  const rows = byEntity.get(entityId) || [];
+  const last = rows[rows.length - 1];
+  if (!last || last.t !== timestampMs || last.v !== value) {
+    rows.push({ t: timestampMs, v: value });
+    byEntity.set(entityId, rows);
+  }
+};
+
 export const listCareersWithLatestPeriod = query({
   args: {},
   handler: async (ctx) => {
@@ -214,6 +247,183 @@ export const getVacancyAnalytics = query({
         sinDatos: run.totals.sinDatos,
       })),
       topDrops,
+    };
+  },
+});
+
+export const getVacancyTrends = query({
+  args: {
+    careerSlug: v.string(),
+    period: v.string(),
+    range: v.string(),
+    maxPoints: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+    const requestedMax = typeof args.maxPoints === 'number' ? Math.floor(args.maxPoints) : 18;
+    const maxPoints = Math.max(8, Math.min(requestedMax, 40));
+
+    const [current, changes, runs, allWindows] = await Promise.all([
+      ctx.db
+        .query('vacancyCurrent')
+        .withIndex('by_career_period', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('vacancyChanges')
+        .withIndex('by_career_period_capturedAt', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('vacancyProbeRuns')
+        .withIndex('by_career_period_capturedAt', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('enrollmentWindows')
+        .withIndex('by_period', (q) => q.eq('period', args.period))
+        .collect(),
+    ]);
+
+    const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
+    const timeBounds = resolveTimeBounds(windows, now);
+    const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
+    const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
+    const rangeStartMs = parseIsoMs(rangeStart(args.range, now));
+    const effectiveStartMs =
+      typeof rangeStartMs === 'number' && typeof cycleStartMs === 'number'
+        ? Math.max(rangeStartMs, cycleStartMs)
+        : typeof rangeStartMs === 'number'
+          ? rangeStartMs
+          : cycleStartMs;
+
+    const inRange = (capturedAt: string) => {
+      const capturedAtMs = parseIsoMs(capturedAt);
+      if (typeof capturedAtMs !== 'number') return false;
+      if (typeof effectiveStartMs === 'number' && capturedAtMs < effectiveStartMs) return false;
+      if (typeof cycleEndMs === 'number' && capturedAtMs > cycleEndMs) return false;
+      return true;
+    };
+
+    const filteredRuns = runs.filter((item) => inRange(item.capturedAt));
+    const filteredChanges = changes.filter((item) => inRange(item.capturedAt));
+
+    const anchorIso = filteredRuns.length
+      ? filteredRuns[filteredRuns.length - 1]!.capturedAt
+      : new Date(now).toISOString();
+    const anchorMs = parseIsoMs(anchorIso) || now;
+
+    const subjectTotals = new Map<string, number>();
+    const materiaTotals = new Map<string, number>();
+    const subjectToMateria = new Map<string, string>();
+    const commissionState = new Map<
+      string,
+      { subjectId: string; materiaId: string; vacantes: number | null }
+    >();
+
+    current.forEach((row) => {
+      const materiaId = materiaIdFromLabel(row.subjectLabel, row.subjectId);
+      const value = vacancyNumber(row.vacantes);
+      subjectTotals.set(row.subjectId, (subjectTotals.get(row.subjectId) || 0) + value);
+      materiaTotals.set(materiaId, (materiaTotals.get(materiaId) || 0) + value);
+      subjectToMateria.set(row.subjectId, materiaId);
+      commissionState.set(row.key, {
+        subjectId: row.subjectId,
+        materiaId,
+        vacantes: row.vacantes,
+      });
+    });
+
+    const subjectTrends = new Map<string, TrendPoint[]>();
+    const materiaTrends = new Map<string, TrendPoint[]>();
+
+    subjectTotals.forEach((value, subjectId) =>
+      upsertTrendPoint(subjectTrends, subjectId, anchorMs, value)
+    );
+    materiaTotals.forEach((value, materiaId) =>
+      upsertTrendPoint(materiaTrends, materiaId, anchorMs, value)
+    );
+
+    const changesByTimestamp = new Map<string, typeof filteredChanges>();
+    filteredChanges.forEach((row) => {
+      const existing = changesByTimestamp.get(row.capturedAt);
+      if (existing) {
+        existing.push(row);
+      } else {
+        changesByTimestamp.set(row.capturedAt, [row]);
+      }
+    });
+
+    const timestampsDesc = Array.from(changesByTimestamp.keys()).sort((a, b) =>
+      b.localeCompare(a, 'en')
+    );
+
+    timestampsDesc.forEach((capturedAt) => {
+      const capturedAtMs = parseIsoMs(capturedAt);
+      if (typeof capturedAtMs !== 'number') return;
+      const group = changesByTimestamp.get(capturedAt) || [];
+      if (!group.length) return;
+
+      const changedSubjects = new Set<string>();
+      const changedMaterias = new Set<string>();
+      group.forEach((change) => {
+        const tracked = commissionState.get(change.key);
+        const subjectId = tracked?.subjectId || change.subjectId;
+        const materiaId =
+          tracked?.materiaId ||
+          subjectToMateria.get(subjectId) ||
+          materiaIdFromLabel(change.subjectLabel, subjectId);
+        subjectToMateria.set(subjectId, materiaId);
+        changedSubjects.add(subjectId);
+        changedMaterias.add(materiaId);
+      });
+
+      changedSubjects.forEach((subjectId) =>
+        upsertTrendPoint(subjectTrends, subjectId, capturedAtMs, subjectTotals.get(subjectId) || 0)
+      );
+      changedMaterias.forEach((materiaId) =>
+        upsertTrendPoint(materiaTrends, materiaId, capturedAtMs, materiaTotals.get(materiaId) || 0)
+      );
+
+      group.forEach((change) => {
+        const tracked = commissionState.get(change.key);
+        const subjectId = tracked?.subjectId || change.subjectId;
+        const materiaId =
+          tracked?.materiaId ||
+          subjectToMateria.get(subjectId) ||
+          materiaIdFromLabel(change.subjectLabel, subjectId);
+
+        const currentVacantes = tracked ? tracked.vacantes : change.vacantes;
+        commissionState.set(change.key, {
+          subjectId,
+          materiaId,
+          vacantes: change.prevVacantes,
+        });
+
+        const delta = vacancyNumber(change.prevVacantes) - vacancyNumber(currentVacantes);
+        subjectTotals.set(subjectId, (subjectTotals.get(subjectId) || 0) + delta);
+        materiaTotals.set(materiaId, (materiaTotals.get(materiaId) || 0) + delta);
+      });
+    });
+
+    const toSeriesObject = (source: Map<string, TrendPoint[]>) => {
+      const entries = Array.from(source.entries()).map(([entityId, points]) => {
+        const sortedPoints = [...points].sort((a, b) => a.t - b.t);
+        const sampled = downsampleTrend(sortedPoints, maxPoints).map((point) =>
+          Math.max(0, Math.round(point.v))
+        );
+        return [entityId, sampled] as const;
+      });
+      return Object.fromEntries(entries);
+    };
+
+    return {
+      anchorAt: anchorIso,
+      subject: toSeriesObject(subjectTrends),
+      materia: toSeriesObject(materiaTrends),
     };
   },
 });

@@ -59,6 +59,12 @@ export type VacancyAnalytics = {
   topDrops: VacancyDropItem[];
 };
 
+export type VacancyTrends = {
+  anchorAt: string;
+  subject: Record<string, number[]>;
+  materia: Record<string, number[]>;
+};
+
 const assertApiBase = () => {
   const apiBase = process.env.NEXT_PUBLIC_CONVEX_API_BASE || '';
   if (apiBase) return apiBase.replace(/\/$/, '');
@@ -132,4 +138,17 @@ export const getVacancyAnalytics = async (
     careerSlug,
     period,
     range,
+  });
+
+export const getVacancyTrends = async (
+  careerSlug: string,
+  period: PeriodId,
+  range: string,
+  maxPoints = 18
+): Promise<VacancyTrends> =>
+  postJson<VacancyTrends>('/getVacancyTrends', {
+    careerSlug,
+    period,
+    range,
+    maxPoints,
   });
