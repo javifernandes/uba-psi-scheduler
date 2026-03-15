@@ -108,7 +108,7 @@
         "aula": "452"
       },
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -188,7 +188,7 @@
         "aula": "021"
       },
       "tipo": "prac",
-      "vacantes": 32,
+      "vacantes": 31,
       "slotsAsociados": [
         {
           "slotId": "III",
@@ -269,7 +269,7 @@
         "aula": "210"
       },
       "tipo": "prac",
-      "vacantes": 34,
+      "vacantes": 33,
       "slotsAsociados": [
         {
           "slotId": "II",
@@ -330,7 +330,7 @@
         "aula": "021"
       },
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "I",
@@ -430,7 +430,7 @@
         "aula": "021"
       },
       "tipo": "prac",
-      "vacantes": 35,
+      "vacantes": 34,
       "slotsAsociados": [
         {
           "slotId": "I",
