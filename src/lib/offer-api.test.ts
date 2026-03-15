@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
+  getVacancyCapacity,
   getOfferSubjects,
   getVacancyAnalytics,
   getVacancyTrends,
@@ -115,5 +116,33 @@ describe('offer-api', () => {
     const trends = await getVacancyTrends('lic-psicologia', '2026-01', '24h');
     expect(trends.subject['10212-810']).toEqual([40, 35, 30]);
     expect(trends.materia['10212']).toEqual([120, 110, 95]);
+  });
+
+  it('retorna capacidad por comisión', async () => {
+    process.env.NEXT_PUBLIC_CONVEX_API_BASE = 'https://api.example.com';
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          items: [
+            {
+              careerSlug: 'lic-psicologia',
+              period: '2026-01',
+              subjectId: '10212-c810',
+              commissionId: '1',
+              initialVacantesObserved: 34,
+              initialSourceRunId: 'git:abc',
+              initialBaselineQuality: 'post_window',
+              maxVacantesObserved: 40,
+              maxSourceRunId: 'git:def',
+            },
+          ],
+        }),
+      })
+    );
+
+    const response = await getVacancyCapacity('lic-psicologia', '2026-01', true);
+    expect(response.items[0]?.maxVacantesObserved).toBe(40);
   });
 });

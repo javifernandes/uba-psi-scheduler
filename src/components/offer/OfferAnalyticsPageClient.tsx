@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
+  getVacancyCapacity,
   getOfferSubjects,
   getVacancyAnalytics,
   getVacancyTrends,
   listCareersWithLatestPeriod,
   listPeriodsByCareer,
+  type VacancyCapacityResponse,
   type CareerWithLatestPeriod,
   type VacancyAnalytics,
   type VacancyTrends,
@@ -96,6 +98,7 @@ export const OfferAnalyticsPageClient = () => {
   const [range, setRange] = useState<(typeof ANALYTICS_RANGES)[number]['value']>('24h');
   const [analytics, setAnalytics] = useState<VacancyAnalytics | null>(null);
   const [trends, setTrends] = useState<VacancyTrends | null>(null);
+  const [capacity, setCapacity] = useState<VacancyCapacityResponse | null>(null);
   const [subjects, setSubjects] = useState<SubjectData[]>([]);
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
@@ -192,12 +195,14 @@ export const OfferAnalyticsPageClient = () => {
       getVacancyAnalytics(selectedCareer, selectedPeriod, range),
       getOfferSubjects(selectedCareer, selectedPeriod),
       getVacancyTrends(selectedCareer, selectedPeriod, range),
+      getVacancyCapacity(selectedCareer, selectedPeriod, true),
     ])
-      .then(([analyticsPayload, subjectsPayload, trendsPayload]) => {
+      .then(([analyticsPayload, subjectsPayload, trendsPayload, capacityPayload]) => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
         setSubjects(subjectsPayload);
         setTrends(trendsPayload);
+        setCapacity(capacityPayload);
         lastProbeAtRef.current = analyticsPayload.lastProbeAt || null;
       })
       .catch((err) => {
@@ -206,6 +211,7 @@ export const OfferAnalyticsPageClient = () => {
         setAnalytics(null);
         setSubjects([]);
         setTrends(null);
+        setCapacity(null);
       })
       .finally(() => {
         if (cancelled) return;
@@ -226,12 +232,14 @@ export const OfferAnalyticsPageClient = () => {
           const nextProbeAt = analyticsPayload.lastProbeAt || null;
           if (nextProbeAt && nextProbeAt === lastProbeAtRef.current) return;
 
-          const [subjectsPayload, trendsPayload] = await Promise.all([
+          const [subjectsPayload, trendsPayload, capacityPayload] = await Promise.all([
             getOfferSubjects(selectedCareer, selectedPeriod),
             getVacancyTrends(selectedCareer, selectedPeriod, range),
+            getVacancyCapacity(selectedCareer, selectedPeriod, true),
           ]);
           setSubjects(subjectsPayload);
           setTrends(trendsPayload);
+          setCapacity(capacityPayload);
           lastProbeAtRef.current = nextProbeAt;
         })
         .catch(() => undefined);
@@ -337,7 +345,12 @@ export const OfferAnalyticsPageClient = () => {
 
         <AnalyticsKpiGrid analytics={analytics} />
         <OfferAnalyticsCharts analytics={analytics} />
-        <OfferSubjectVacancyTable subjects={subjects} trends={trends} loading={loadingSubjects} />
+        <OfferSubjectVacancyTable
+          subjects={subjects}
+          trends={trends}
+          capacity={capacity}
+          loading={loadingSubjects}
+        />
         <AnalyticsSeriesTable series={analytics?.series || []} />
         <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
       </section>

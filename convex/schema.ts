@@ -48,6 +48,7 @@ export default defineSchema({
     ingestedAt: v.string(),
   })
     .index('by_source_run_id', ['sourceRunId'])
+    .index('by_probe_id', ['probeId'])
     .index('by_career_period_capturedAt', ['careerSlug', 'period', 'capturedAt']),
 
   vacancyChanges: defineTable({
@@ -67,6 +68,24 @@ export default defineSchema({
   })
     .index('by_career_period_capturedAt', ['careerSlug', 'period', 'capturedAt'])
     .index('by_key_capturedAt', ['key', 'capturedAt']),
+
+  vacancyCapacity: defineTable({
+    careerSlug: v.string(),
+    period: v.string(),
+    subjectId: v.string(),
+    commissionId: v.string(),
+    initialVacantesObserved: v.union(v.number(), v.null()),
+    initialSourceRunId: v.union(v.string(), v.null()),
+    initialBaselineQuality: v.union(
+      v.literal('pre_window'),
+      v.literal('post_window'),
+      v.literal('unknown')
+    ),
+    maxVacantesObserved: v.union(v.number(), v.null()),
+    maxSourceRunId: v.union(v.string(), v.null()),
+  })
+    .index('by_career_period', ['careerSlug', 'period'])
+    .index('by_commission', ['careerSlug', 'period', 'subjectId', 'commissionId']),
 
   enrollmentWindows: defineTable({
     key: v.string(),

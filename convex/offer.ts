@@ -104,7 +104,7 @@ export const getOfferSubjects = query({
     period: v.string(),
   },
   handler: async (ctx, args) => {
-    const [subjects, vacancies] = await Promise.all([
+    const [subjects, vacancies, capacities] = await Promise.all([
       ctx.db
         .query('offerSubjects')
         .withIndex('by_career_period', (q) =>
@@ -117,10 +117,19 @@ export const getOfferSubjects = query({
           q.eq('careerSlug', args.careerSlug).eq('period', args.period)
         )
         .collect(),
+      ctx.db
+        .query('vacancyCapacity')
+        .withIndex('by_career_period', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
     ]);
 
     const byKey = new Map<string, number | null>();
     vacancies.forEach((item) => byKey.set(`${item.subjectId}|${item.commissionId}`, item.vacantes));
+    const capacityByKey = new Map(
+      capacities.map((item) => [`${item.subjectId}|${item.commissionId}`, item])
+    );
 
     return subjects
       .map((subject) => ({
@@ -131,10 +140,16 @@ export const getOfferSubjects = query({
         slots: subject.slots.map((slot: any) => {
           if (slot.tipo !== 'prac') return slot;
           const current = byKey.get(`${subject.subjectId}|${slot.id}`);
-          if (typeof current === 'undefined') return slot;
+          const capacity = capacityByKey.get(`${subject.subjectId}|${slot.id}`);
+          if (typeof current === 'undefined' && !capacity) return slot;
           return {
             ...slot,
-            vacantes: current,
+            vacantes: typeof current === 'undefined' ? (slot.vacantes ?? null) : current,
+            vacantesInicialesObservadas: capacity?.initialVacantesObserved ?? null,
+            vacantesInicialesSourceRunId: capacity?.initialSourceRunId ?? null,
+            vacantesInicialesQuality: capacity?.initialBaselineQuality ?? 'unknown',
+            vacantesMaximasObservadas: capacity?.maxVacantesObserved ?? null,
+            vacantesMaximasSourceRunId: capacity?.maxSourceRunId ?? null,
           };
         }),
       }))
@@ -143,6 +158,66 @@ export const getOfferSubjects = query({
         const nB = Number.parseInt(b.label.match(/Cátedra\s+(\d+)/i)?.[1] || '999999', 10);
         return nA - nB;
       });
+  },
+});
+
+export const getVacancyCapacity = query({
+  args: {
+    careerSlug: v.string(),
+    period: v.string(),
+    includeProbeTimes: v.optional(v.boolean()),
+  },
+  handler: async (ctx, args) => {
+    const rows = await ctx.db
+      .query('vacancyCapacity')
+      .withIndex('by_career_period', (q) =>
+        q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+      )
+      .collect();
+
+    if (!args.includeProbeTimes) {
+      return {
+        items: rows.map((row) => ({
+          careerSlug: row.careerSlug,
+          period: row.period,
+          subjectId: row.subjectId,
+          commissionId: row.commissionId,
+          initialVacantesObserved: row.initialVacantesObserved,
+          initialSourceRunId: row.initialSourceRunId,
+          initialBaselineQuality: row.initialBaselineQuality,
+          maxVacantesObserved: row.maxVacantesObserved,
+          maxSourceRunId: row.maxSourceRunId,
+        })),
+      };
+    }
+
+    const runs = await ctx.db
+      .query('vacancyProbeRuns')
+      .withIndex('by_career_period_capturedAt', (q) =>
+        q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+      )
+      .collect();
+    const runBySource = new Map(runs.map((run) => [run.sourceRunId, run]));
+
+    return {
+      items: rows.map((row) => ({
+        careerSlug: row.careerSlug,
+        period: row.period,
+        subjectId: row.subjectId,
+        commissionId: row.commissionId,
+        initialVacantesObserved: row.initialVacantesObserved,
+        initialSourceRunId: row.initialSourceRunId,
+        initialBaselineQuality: row.initialBaselineQuality,
+        initialCapturedAt: row.initialSourceRunId
+          ? runBySource.get(row.initialSourceRunId)?.capturedAt || null
+          : null,
+        maxVacantesObserved: row.maxVacantesObserved,
+        maxSourceRunId: row.maxSourceRunId,
+        maxCapturedAt: row.maxSourceRunId
+          ? runBySource.get(row.maxSourceRunId)?.capturedAt || null
+          : null,
+      })),
+    };
   },
 });
 

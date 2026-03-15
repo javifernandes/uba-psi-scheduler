@@ -34,6 +34,11 @@ export type Seminario = Omit<BaseSlot, 'tipo'> & { tipo: 'sem' };
 export type Comision = Omit<BaseSlot, 'tipo'> & {
   tipo: 'prac';
   vacantes: number | null;
+  vacantesInicialesObservadas?: number | null;
+  vacantesInicialesSourceRunId?: string | null;
+  vacantesInicialesQuality?: 'pre_window' | 'post_window' | 'unknown';
+  vacantesMaximasObservadas?: number | null;
+  vacantesMaximasSourceRunId?: string | null;
   slotsAsociados: SlotAsociado[];
 };
 
@@ -48,6 +53,7 @@ export type CalendarEvent = {
   aula: string;
   title: string;
   vacantes?: number | null;
+  vacantesMaximasObservadas?: number | null;
   linkedCommissionId?: string;
   linkedCommissionIds?: string[];
   linkedSlotId?: string;

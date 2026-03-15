@@ -91,6 +91,7 @@ export const CardTitle = ({
               />
             ))}
           </span>
+          {vacancyIndicator.hintLabel ? <span>{vacancyIndicator.hintLabel}</span> : null}
         </span>
       </>
     ) : (
