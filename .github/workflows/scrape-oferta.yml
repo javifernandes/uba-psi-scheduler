@@ -3,15 +3,6 @@ name: Scrape Oferta
 on:
   workflow_dispatch:
     inputs:
-      publish_mode:
-        description: 'Cómo publicar cambios'
-        required: true
-        default: 'pr'
-        type: choice
-        options:
-          - pr
-          - commit
-          - none
       operation:
         description: 'Operación'
         required: true
@@ -32,8 +23,7 @@ on:
         type: string
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: scrape-oferta-${{ github.ref }}
@@ -47,8 +37,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -59,112 +47,46 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Resolve execution parameters
-        id: params
-        shell: bash
-        run: |
-          echo "publish_mode=${{ inputs.publish_mode }}" >> "$GITHUB_OUTPUT"
-          echo "operation=${{ inputs.operation }}" >> "$GITHUB_OUTPUT"
-          echo "force_run=${{ inputs.force_run }}" >> "$GITHUB_OUTPUT"
-          echo "trigger=manual" >> "$GITHUB_OUTPUT"
-          echo "window_id=${{ inputs.window_id }}" >> "$GITHUB_OUTPUT"
-
       - name: Evaluate scrape window status
         id: status
-        if: steps.params.outputs.operation == 'scrape'
+        if: inputs.operation == 'scrape'
+        env:
+          CONVEX_INGEST_URL: ${{ vars.CONVEX_INGEST_URL }}
         run: |
           npm run scrape:window:status -- \
-            --config config/scraper-windows.json \
-            --trigger "${{ steps.params.outputs.trigger }}" \
-            --force "${{ steps.params.outputs.force_run }}"
+            --trigger "manual" \
+            --force "${{ inputs.force_run }}"
 
       - name: Skip run outside active window
-        if: steps.params.outputs.operation == 'scrape' && steps.status.outputs.should_run != 'true'
+        if: inputs.operation == 'scrape' && steps.status.outputs.should_run != 'true'
         run: |
           echo "Scrape omitido: ${{ steps.status.outputs.status_reason }}"
           echo "Ventana activa: ${{ steps.status.outputs.active_window_id }}"
 
-      - name: Run scraper
-        if: steps.params.outputs.operation == 'scrape' && steps.status.outputs.should_run == 'true'
-        run: npm run scrape:catalog -- --career all
+      - name: Run scraper to temporary output
+        if: inputs.operation == 'scrape' && steps.status.outputs.should_run == 'true'
+        run: npm run scrape:catalog -- --career all --output-dir ./tmp/probe-data
 
-      - name: Close active window
-        if: steps.params.outputs.operation == 'close_window'
-        shell: bash
+      - name: Push probe payloads to Convex
+        if: inputs.operation == 'scrape' && steps.status.outputs.should_run == 'true'
+        env:
+          CONVEX_INGEST_URL: ${{ vars.CONVEX_INGEST_URL }}
+          VACANCY_INGEST_TOKEN: ${{ secrets.VACANCY_INGEST_TOKEN }}
         run: |
-          if [[ -n "${{ steps.params.outputs.window_id }}" ]]; then
-            npm run scrape:window:close -- \
-              --config config/scraper-windows.json \
-              --window-id "${{ steps.params.outputs.window_id }}"
+          npm run probe:push-convex -- \
+            --input-dir ./tmp/probe-data \
+            --source-run-id "gha:${{ github.run_id }}:${{ github.run_attempt }}" \
+            --captured-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+      - name: Close active window in Convex
+        if: inputs.operation == 'close_window'
+        env:
+          CONVEX_INGEST_URL: ${{ vars.CONVEX_INGEST_URL }}
+          CONVEX_ADMIN_TOKEN: ${{ secrets.CONVEX_ADMIN_TOKEN }}
+          VACANCY_INGEST_TOKEN: ${{ secrets.VACANCY_INGEST_TOKEN }}
+        run: |
+          if [[ -n "${{ inputs.window_id }}" ]]; then
+            npm run scrape:window:close -- --window-id "${{ inputs.window_id }}"
           else
-            npm run scrape:window:close -- \
-              --config config/scraper-windows.json
+            npm run scrape:window:close
           fi
-
-      - name: Prepare publication metadata
-        id: publish_meta
-        shell: bash
-        run: |
-          if [[ "${{ steps.params.outputs.operation }}" == "close_window" ]]; then
-            echo "commit_message=chore(data): close scraper window" >> "$GITHUB_OUTPUT"
-            echo "title=chore(data): close scraper window" >> "$GITHUB_OUTPUT"
-            echo "body=Este PR cierra una ventana activa de scraping en config/scraper-windows.json." >> "$GITHUB_OUTPUT"
-          else
-            echo "commit_message=chore(data): refresh oferta scrape" >> "$GITHUB_OUTPUT"
-            echo "title=chore(data): refresh oferta scrape" >> "$GITHUB_OUTPUT"
-            echo "body=Actualización automática de oferta académica scrapeada desde UBA Psi." >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Detect changes
-        id: changes
-        shell: bash
-        run: |
-          CHANGED=$(git status --porcelain -- config/scraper-windows.json)
-          if [[ -z "$CHANGED" ]]; then
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
-            echo "No hay cambios para publicar."
-          else
-            echo "has_changes=true" >> "$GITHUB_OUTPUT"
-            echo "Cambios detectados:"
-            echo "$CHANGED"
-          fi
-
-      - name: Commit directly to main
-        if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'commit'
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/scraper-windows.json
-          git commit -m "${{ steps.publish_meta.outputs.commit_message }}"
-          git push
-
-      - name: Create pull request
-        id: create_pr
-        if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'pr'
-        continue-on-error: true
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.CI_PR_TOKEN != '' && secrets.CI_PR_TOKEN || github.token }}
-          branch: codex/auto-scrape-${{ github.run_id }}
-          delete-branch: true
-          commit-message: ${{ steps.publish_meta.outputs.commit_message }}
-          title: ${{ steps.publish_meta.outputs.title }}
-          body: ${{ steps.publish_meta.outputs.body }}
-          add-paths: |
-            config/scraper-windows.json
-
-      - name: Explain PR permission failure
-        if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'pr' && steps.create_pr.outcome == 'failure'
-        run: |
-          echo "No se pudo crear PR desde GitHub Actions."
-          echo "Opciones de solución:"
-          echo "1) Habilitar en repo Settings > Actions > General: 'Allow GitHub Actions to create and approve pull requests'."
-          echo "2) Configurar secret CI_PR_TOKEN con un PAT que tenga permisos de repo/pull_request."
-          echo "3) Reintentar workflow con publish_mode=commit."
-          exit 1
-
-      - name: No publish mode
-        if: steps.changes.outputs.has_changes == 'true' && steps.params.outputs.publish_mode == 'none'
-        run: |
-          echo "publish_mode=none: cambios detectados pero no publicados."
