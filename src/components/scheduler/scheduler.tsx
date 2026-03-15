@@ -381,7 +381,12 @@ const SchedulerContent = ({
       data-testid="scheduler-root"
     >
       <section className="mx-auto flex h-full w-full max-w-[1800px] min-h-0 flex-col gap-2">
-        <SchedulerHeader title={schedulerTitle} onStartTour={() => startTour(true)} />
+        <SchedulerHeader
+          title={schedulerTitle}
+          careerSlug={careerSlug}
+          period={period}
+          onStartTour={() => startTour(true)}
+        />
         <MobileDesktopWarning />
 
         <div className="grid min-h-0 flex-1 gap-3 xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-2">

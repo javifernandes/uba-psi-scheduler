@@ -1,10 +1,37 @@
-import Link from 'next/link';
-import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
-import { loadCareers, resolvePreferredPeriod } from '@/lib/uba-careers';
+'use client';
 
-const HomePage = async () => {
-  const preferredPeriod = await resolvePreferredPeriod();
-  const careers = await loadCareers(preferredPeriod);
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { MobileDesktopWarning } from '@/components/mobile-desktop-warning';
+import { listCareersWithLatestPeriod, type CareerWithLatestPeriod } from '@/lib/offer-api';
+
+const buildOfertaHref = (careerSlug: string, period: string) =>
+  `/oferta?career=${encodeURIComponent(careerSlug)}&period=${encodeURIComponent(period)}`;
+
+const HomePage = () => {
+  const [careers, setCareers] = useState<CareerWithLatestPeriod[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let cancelled = false;
+    listCareersWithLatestPeriod()
+      .then((rows) => {
+        if (cancelled) return;
+        setCareers(rows);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        setError(err instanceof Error ? err.message : 'No se pudo cargar la oferta.');
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <main className="h-full bg-[radial-gradient(circle_at_10%_10%,#f8dde7_0%,transparent_35%),radial-gradient(circle_at_90%_15%,#f6ebce_0%,transparent_28%),radial-gradient(circle_at_50%_100%,#f7e7f3_0%,transparent_35%),#faf5f7] px-5 py-10 dark:bg-[radial-gradient(circle_at_10%_10%,#3a1b2c_0%,transparent_35%),radial-gradient(circle_at_90%_15%,#4f3e1f_0%,transparent_28%),radial-gradient(circle_at_50%_100%,#2a1e33_0%,transparent_35%),#0f0b12]">
@@ -47,11 +74,21 @@ const HomePage = async () => {
         </p>
         <MobileDesktopWarning className="mx-auto mt-5 max-w-2xl" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {loading && (
+            <p className="col-span-full rounded-xl border border-[#e8d8e1] bg-white/90 px-4 py-3 text-sm text-[#5a1740] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
+              Cargando carreras...
+            </p>
+          )}
+          {error && (
+            <p className="col-span-full rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900 dark:border-red-500/30 dark:bg-red-950/30 dark:text-red-100">
+              {error}
+            </p>
+          )}
           {careers.map((career) => (
             <Link
               key={career.slug}
               className="group inline-flex min-h-20 items-center justify-between rounded-2xl border border-[#dcbfd0] bg-gradient-to-br from-[#fff8fc] to-[#fff0f6] px-5 py-4 text-base font-bold text-[#5a1740] shadow-sm transition hover:-translate-y-0.5 hover:border-[#c791af] hover:shadow-md dark:border-zinc-600 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-500 dark:hover:from-zinc-700 dark:hover:to-zinc-800"
-              href={`/oferta/${career.slug}/${preferredPeriod}`}
+              href={buildOfertaHref(career.slug, career.latestPeriod)}
             >
               <span className="pr-3">{career.label}</span>
               <span className="rounded-full bg-[#861f5c]/10 px-2.5 py-1 text-xs font-bold text-[#7d2457] dark:bg-zinc-700 dark:text-zinc-200">

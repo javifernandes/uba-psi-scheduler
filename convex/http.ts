@@ -1,0 +1,186 @@
+import { httpRouter } from 'convex/server';
+import { httpAction } from './_generated/server';
+import { api, internal } from './_generated/api';
+
+const router = httpRouter();
+
+const jsonResponse = (status: number, body: unknown) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'access-control-allow-origin': '*',
+      'access-control-allow-headers': 'content-type,authorization',
+      'access-control-allow-methods': 'POST,OPTIONS',
+    },
+  });
+
+const handleOptions = () => jsonResponse(200, { ok: true });
+
+const parseJson = async (request: Request) => {
+  try {
+    return (await request.json()) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+};
+
+const hasBearer = (request: Request, token: string) => {
+  if (!token) return false;
+  return request.headers.get('authorization') === `Bearer ${token}`;
+};
+
+router.route({
+  path: '/listCareersWithLatestPeriod',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/listCareersWithLatestPeriod',
+  method: 'POST',
+  handler: httpAction(async (ctx) => {
+    const payload = await ctx.runQuery(api.offer.listCareersWithLatestPeriod, {});
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/listPeriodsByCareer',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/listPeriodsByCareer',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    if (!careerSlug) return jsonResponse(400, { error: 'careerSlug es requerido' });
+    const payload = await ctx.runQuery(api.offer.listPeriodsByCareer, { careerSlug });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/getOfferSubjects',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getOfferSubjects',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getOfferSubjects, { careerSlug, period });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/getVacancyAnalytics',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getVacancyAnalytics',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const range = typeof body.range === 'string' ? body.range : '24h';
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getVacancyAnalytics, {
+      careerSlug,
+      period,
+      range,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/ingestOfferProbe',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/ingestOfferProbe',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) {
+      return jsonResponse(401, { error: 'unauthorized' });
+    }
+    const body = await parseJson(request);
+
+    const sourceRunId = typeof body.sourceRunId === 'string' ? body.sourceRunId : '';
+    const capturedAt = typeof body.capturedAt === 'string' ? body.capturedAt : '';
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const careerLabel = typeof body.careerLabel === 'string' ? body.careerLabel : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const subjects = Array.isArray(body.subjects) ? body.subjects : [];
+
+    if (!sourceRunId || !capturedAt || !careerSlug || !period || !subjects.length) {
+      return jsonResponse(400, { error: 'payload inválido' });
+    }
+
+    const payload = await ctx.runMutation(internal.ingest.ingestOfferProbe, {
+      sourceRunId,
+      capturedAt,
+      careerSlug,
+      careerLabel,
+      period,
+      subjects,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/admin/getStats',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/admin/getStats',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.CONVEX_ADMIN_TOKEN || process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) return jsonResponse(401, { error: 'unauthorized' });
+    const payload = await ctx.runQuery(api.admin.getStats, {});
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/admin/resetAllData',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/admin/resetAllData',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.CONVEX_ADMIN_TOKEN || process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) return jsonResponse(401, { error: 'unauthorized' });
+    const body = await parseJson(request);
+    const confirm = typeof body.confirm === 'string' ? body.confirm : '';
+    const payload = await ctx.runMutation(api.admin.resetAllData, { confirm });
+    return jsonResponse(200, payload);
+  }),
+});
+
+export default router;

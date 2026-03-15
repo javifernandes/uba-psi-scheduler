@@ -99,7 +99,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DEFAULT_CATALOG_URL = 'http://academica.psi.uba.ar/Psi/Ope154_.php';
-const DEFAULT_OUTPUT_DIR = path.resolve(__dirname, '../src/data/uba/psicologia/oferta');
+const DEFAULT_OUTPUT_DIR = path.resolve(__dirname, '../tmp/probe-data');
 
 const CAREERS: CareerConfig[] = [
   { code: 'PS', slug: 'lic-psicologia', label: 'Licenciatura en Psicología' },

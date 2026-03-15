@@ -1,0 +1,63 @@
+name: Probe Oferta to Convex
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: probe-offer-convex-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Evaluate scrape window status
+        id: status
+        env:
+          TRIGGER: ${{ github.event_name == 'workflow_dispatch' && 'manual' || 'schedule' }}
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+        run: |
+          npm run scrape:window:status -- \
+            --config config/scraper-windows.json \
+            --trigger "$TRIGGER" \
+            --force "$FORCE_RUN"
+
+      - name: Skip run outside active window
+        if: steps.status.outputs.should_run != 'true'
+        run: |
+          echo "Probe omitida: ${{ steps.status.outputs.status_reason }}"
+          echo "Ventana activa: ${{ steps.status.outputs.active_window_id }}"
+
+      - name: Run scraper to temporary output
+        if: steps.status.outputs.should_run == 'true'
+        run: npm run scrape:catalog -- --career all --output-dir ./tmp/probe-data
+
+      - name: Push probe payloads to Convex
+        if: steps.status.outputs.should_run == 'true'
+        env:
+          CONVEX_INGEST_URL: ${{ vars.CONVEX_INGEST_URL }}
+          VACANCY_INGEST_TOKEN: ${{ secrets.VACANCY_INGEST_TOKEN }}
+        run: |
+          npm run probe:push-convex -- \
+            --input-dir ./tmp/probe-data \
+            --source-run-id "gha:${{ github.run_id }}:${{ github.run_attempt }}" \
+            --captured-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"

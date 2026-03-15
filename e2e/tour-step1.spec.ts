@@ -1,12 +1,14 @@
 import { expect, test } from '@playwright/test';
 
+const OFFER_URL = '/oferta?career=lic-psicologia&period=2026-01';
+
 test.describe('Tour - Paso 1', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1680, height: 1120 });
   });
 
   test('abre dropdown de catedras al iniciar el recorrido', async ({ page }) => {
-    await page.goto('/oferta/lic-psicologia');
+    await page.goto(OFFER_URL);
 
     await page.getByRole('button', { name: 'Tour' }).click();
 
@@ -44,10 +46,13 @@ test.describe('Tour - Paso 1', () => {
   test('con estado previo persiste paso 1 usable y abierto', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem('uba_psico_scheduler_tour_seen_v1', '1');
-      localStorage.setItem('uba_psico_planner_v2:lic-psicologia', JSON.stringify({ random_subject: '999' }));
+      localStorage.setItem(
+        'uba_psico_planner_v2:lic-psicologia',
+        JSON.stringify({ random_subject: '999' })
+      );
     });
 
-    await page.goto('/oferta/lic-psicologia');
+    await page.goto(OFFER_URL);
     await page.getByRole('button', { name: 'Tour' }).click();
     await page.getByRole('button', { name: 'Comenzar' }).click();
 
@@ -61,7 +66,7 @@ test.describe('Tour - Paso 1', () => {
   });
 
   test('no avanza al paso 2 sin elegir cátedra en paso 1', async ({ page }) => {
-    await page.goto('/oferta/lic-psicologia');
+    await page.goto(OFFER_URL);
 
     await page.getByRole('button', { name: 'Tour' }).click();
     await expect(page.getByText('Bienvenido al planificador')).toBeVisible();
@@ -80,7 +85,7 @@ test.describe('Tour - Paso 1', () => {
   });
 
   test('flechas del teclado no deben navegar pasos del tour', async ({ page }) => {
-    await page.goto('/oferta/lic-psicologia');
+    await page.goto(OFFER_URL);
 
     await page.getByRole('button', { name: 'Tour' }).click();
     await expect(page.getByText('Bienvenido al planificador')).toBeVisible();
