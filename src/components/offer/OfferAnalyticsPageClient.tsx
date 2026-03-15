@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
+  getOfferSubjects,
   getVacancyAnalytics,
   listCareersWithLatestPeriod,
   listPeriodsByCareer,
@@ -11,12 +12,15 @@ import {
   type VacancyAnalytics,
 } from '@/lib/offer-api';
 import { normalizePeriod, type PeriodId } from '@/lib/period';
+import type { SubjectData } from '@/components/scheduler/scheduler.types';
 import {
   AnalyticsKpiGrid,
   AnalyticsSeriesTable,
   AnalyticsTopDropsTable,
   formatTimestamp,
 } from '@/components/offer/OfferAnalyticsTables';
+import { OfferAnalyticsCharts } from '@/components/offer/OfferAnalyticsCharts';
+import { OfferSubjectVacancyTable } from '@/components/offer/OfferSubjectVacancyTable';
 
 const ANALYTICS_RANGES = [
   { value: '6h', label: '6h' },
@@ -40,8 +44,10 @@ export const OfferAnalyticsPageClient = () => {
   const [periods, setPeriods] = useState<PeriodId[]>([]);
   const [range, setRange] = useState<(typeof ANALYTICS_RANGES)[number]['value']>('24h');
   const [analytics, setAnalytics] = useState<VacancyAnalytics | null>(null);
+  const [subjects, setSubjects] = useState<SubjectData[]>([]);
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
+  const [loadingSubjects, setLoadingSubjects] = useState(false);
   const [error, setError] = useState('');
 
   const queryCareer = searchParams.get('career') || '';
@@ -110,20 +116,27 @@ export const OfferAnalyticsPageClient = () => {
     if (!selectedCareer || !selectedPeriod) return;
     let cancelled = false;
     setLoadingAnalytics(true);
+    setLoadingSubjects(true);
     setError('');
-    getVacancyAnalytics(selectedCareer, selectedPeriod, range)
-      .then((payload) => {
+    Promise.all([
+      getVacancyAnalytics(selectedCareer, selectedPeriod, range),
+      getOfferSubjects(selectedCareer, selectedPeriod),
+    ])
+      .then(([analyticsPayload, subjectsPayload]) => {
         if (cancelled) return;
-        setAnalytics(payload);
+        setAnalytics(analyticsPayload);
+        setSubjects(subjectsPayload);
       })
       .catch((err) => {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'No se pudieron cargar analíticas.');
         setAnalytics(null);
+        setSubjects([]);
       })
       .finally(() => {
         if (cancelled) return;
         setLoadingAnalytics(false);
+        setLoadingSubjects(false);
       });
     return () => {
       cancelled = true;
@@ -133,8 +146,14 @@ export const OfferAnalyticsPageClient = () => {
   useEffect(() => {
     const interval = window.setInterval(() => {
       if (!selectedCareer || !selectedPeriod) return;
-      getVacancyAnalytics(selectedCareer, selectedPeriod, range)
-        .then((payload) => setAnalytics(payload))
+      Promise.all([
+        getVacancyAnalytics(selectedCareer, selectedPeriod, range),
+        getOfferSubjects(selectedCareer, selectedPeriod),
+      ])
+        .then(([analyticsPayload, subjectsPayload]) => {
+          setAnalytics(analyticsPayload);
+          setSubjects(subjectsPayload);
+        })
         .catch(() => undefined);
     }, 60_000);
     return () => window.clearInterval(interval);
@@ -217,6 +236,8 @@ export const OfferAnalyticsPageClient = () => {
         )}
 
         <AnalyticsKpiGrid analytics={analytics} />
+        <OfferAnalyticsCharts analytics={analytics} />
+        <OfferSubjectVacancyTable subjects={subjects} loading={loadingSubjects} />
         <AnalyticsSeriesTable series={analytics?.series || []} />
         <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
       </section>
