@@ -67,4 +67,21 @@ export default defineSchema({
   })
     .index('by_career_period_capturedAt', ['careerSlug', 'period', 'capturedAt'])
     .index('by_key_capturedAt', ['key', 'capturedAt']),
+
+  enrollmentWindows: defineTable({
+    key: v.string(),
+    windowId: v.string(),
+    label: v.string(),
+    careerSlug: v.string(),
+    period: v.string(),
+    startAt: v.string(),
+    endAt: v.string(),
+    kind: v.string(),
+    enabled: v.boolean(),
+    source: v.string(),
+    updatedAt: v.string(),
+  })
+    .index('by_key', ['key'])
+    .index('by_period', ['period'])
+    .index('by_period_career', ['period', 'careerSlug']),
 });

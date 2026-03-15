@@ -15,6 +15,7 @@
     "inspect:catalog": "tsx scripts/inspect-uba-psi-catalog.ts",
     "scrape:catalog": "tsx scripts/scrape-uba-psi-oferta.ts",
     "probe:push-convex": "tsx scripts/push-offer-probe-to-convex.ts",
+    "windows:push-convex": "tsx scripts/push-enrollment-windows-to-convex.ts",
     "convex:admin": "tsx scripts/convex-admin.ts",
     "backfill:vacancies": "tsx scripts/backfill-vacancies-from-git.ts",
     "migrate:subject-schema-v2": "tsx scripts/migrate-subject-schema-v2.ts",
