@@ -17,6 +17,7 @@ import {
   AnalyticsTopDropsTable,
   formatTimestamp,
 } from '@/components/offer/OfferAnalyticsTables';
+import { OfferAnalyticsCharts } from '@/components/offer/OfferAnalyticsCharts';
 
 const ANALYTICS_RANGES = [
   { value: '6h', label: '6h' },
@@ -217,6 +218,7 @@ export const OfferAnalyticsPageClient = () => {
         )}
 
         <AnalyticsKpiGrid analytics={analytics} />
+        <OfferAnalyticsCharts analytics={analytics} />
         <AnalyticsSeriesTable series={analytics?.series || []} />
         <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
       </section>
