@@ -29,6 +29,19 @@ type OfferAnalyticsChartsProps = {
   analytics: VacancyAnalytics | null;
 };
 
+type MarkAreaRange = [
+  {
+    name: string;
+    xAxis: number;
+    itemStyle: {
+      color: string;
+    };
+  },
+  {
+    xAxis: number;
+  },
+];
+
 export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) => {
   const points = useMemo(() => analytics?.series || [], [analytics]);
   const sortedPoints = useMemo(
@@ -86,14 +99,55 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
   const xMin = cycleStartMs ?? dataMinMs;
   const xMax = cycleEndMs ?? dataMaxMs;
   const hasXAxisBounds = typeof xMin === 'number' && typeof xMax === 'number';
-  const futureStartMs =
-    typeof xMin === 'number' && nowMs < xMin
-      ? xMin
-      : hasXAxisBounds
-        ? Math.min(nowMs, xMax!)
-        : null;
-  const showFutureArea =
-    typeof futureStartMs === 'number' && typeof xMax === 'number' && futureStartMs < xMax;
+  const futureWindowAreas = useMemo(
+    () =>
+      (analytics?.windows || [])
+        .filter((window) => window.enabled)
+        .map((window) => {
+          const startMs = parseIsoMs(window.startAt);
+          const endMs = parseIsoMs(window.endAt);
+          if (typeof startMs !== 'number' || typeof endMs !== 'number') return null;
+          if (endMs <= nowMs) return null;
+
+          let segmentStart = Math.max(startMs, nowMs);
+          let segmentEnd = endMs;
+          if (typeof xMin === 'number') segmentStart = Math.max(segmentStart, xMin);
+          if (typeof xMax === 'number') segmentEnd = Math.min(segmentEnd, xMax);
+          if (segmentEnd <= segmentStart) return null;
+
+          return {
+            label: window.label,
+            kind: window.kind,
+            segmentStart,
+            segmentEnd,
+          };
+        })
+        .filter(
+          (
+            area
+          ): area is { label: string; kind: string; segmentStart: number; segmentEnd: number } =>
+            Boolean(area)
+        ),
+    [analytics?.windows, nowMs, xMax, xMin]
+  );
+
+  const markAreaData = useMemo<MarkAreaRange[]>(
+    () =>
+      futureWindowAreas.map((area) => [
+        {
+          name: area.label,
+          xAxis: area.segmentStart,
+          itemStyle: {
+            color:
+              area.kind === 'supplementary'
+                ? 'rgba(92, 113, 149, 0.12)'
+                : 'rgba(123, 74, 101, 0.10)',
+          },
+        },
+        { xAxis: area.segmentEnd },
+      ]),
+    [futureWindowAreas]
+  );
 
   const knownVacanciesOption = useMemo<EChartsOption>(
     () => ({
@@ -135,17 +189,16 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
                 data: [{ xAxis: nowMs }],
               }
             : undefined,
-          markArea: showFutureArea
+          markArea: markAreaData.length
             ? {
                 silent: true,
-                itemStyle: { color: 'rgba(123, 74, 101, 0.10)' },
-                data: [[{ xAxis: futureStartMs }, { xAxis: xMax! }]],
+                data: markAreaData,
               }
             : undefined,
         },
       ],
     }),
-    [knownVacanciesData, nowMs, showFutureArea, xMax, xMin, hasXAxisBounds, futureStartMs]
+    [knownVacanciesData, nowMs, xMax, xMin, hasXAxisBounds, markAreaData]
   );
 
   const statusStackedOption = useMemo<EChartsOption>(
@@ -181,6 +234,12 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           data: statusData.sinCupo,
           lineStyle: { color: '#d04870' },
           areaStyle: { color: 'rgba(208, 72, 112, 0.16)' },
+          markArea: markAreaData.length
+            ? {
+                silent: true,
+                data: markAreaData,
+              }
+            : undefined,
         },
         {
           name: 'Cupo bajo',
@@ -214,7 +273,7 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
         },
       ],
     }),
-    [statusData, xMax, xMin]
+    [statusData, xMax, xMin, markAreaData]
   );
 
   const topDrops = useMemo(
@@ -269,6 +328,9 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
       <article className="rounded-xl border border-[#ead9e2] bg-white p-4">
         <h2 className="text-sm font-bold text-[#4f1237]">Evolución de vacantes totales</h2>
         <ReactECharts option={knownVacanciesOption} style={{ height: 280 }} />
+        <p className="mt-2 text-xs text-[#6f3b58]">
+          Franjas sombreadas: ventanas futuras de inscripción (principal y suplementaria).
+        </p>
       </article>
 
       <article className="rounded-xl border border-[#ead9e2] bg-white p-4">

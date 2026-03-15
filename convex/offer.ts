@@ -141,6 +141,7 @@ export const getVacancyAnalytics = query({
     ]);
 
     const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
+    const sortedWindows = [...windows].sort((a, b) => a.startAt.localeCompare(b.startAt));
     const timeBounds = resolveTimeBounds(windows, now);
     const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
     const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
@@ -192,6 +193,14 @@ export const getVacancyAnalytics = query({
     return {
       lastProbeAt: filteredRuns.length ? filteredRuns[filteredRuns.length - 1]!.capturedAt : null,
       totals,
+      windows: sortedWindows.map((window) => ({
+        windowId: window.windowId,
+        label: window.label,
+        startAt: window.startAt,
+        endAt: window.endAt,
+        kind: window.kind,
+        enabled: window.enabled,
+      })),
       timeBounds: {
         ...timeBounds,
         nowAt: new Date(now).toISOString(),

@@ -36,6 +36,14 @@ export type VacancyAnalytics = {
     cupoDisponible: number;
     sinDatos: number;
   };
+  windows: Array<{
+    windowId: string;
+    label: string;
+    startAt: string;
+    endAt: string;
+    kind: string;
+    enabled: boolean;
+  }>;
   timeBounds: {
     startAt: string | null;
     endAt: string | null;
