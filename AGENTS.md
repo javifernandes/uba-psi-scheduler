@@ -13,8 +13,8 @@ Before making changes in this repository, read and follow:
 2. Avoid introducing backend/runtime complexity unless explicitly needed.
 3. Keep routes, naming, and docs aligned with the current app shape:
    - `/` = home
-   - `/oferta/[career]/[period]` = scheduler canónico por carrera/período
-   - `/oferta/[career]` = alias con redirect al período actual
+   - `/oferta?career=<slug>&period=<YYYY-01|YYYY-02>` = scheduler canónico por carrera/período
+   - `/oferta/analytics?career=<slug>&period=<YYYY-01|YYYY-02>` = analíticas de vacantes
    - `src/components/scheduler/*` = módulo principal del scheduler
 4. Refactors are expected to be full migrations by default:
    - Do not leave temporary aliases, compatibility exports, or backward-compatible imports unless the user explicitly requests it.

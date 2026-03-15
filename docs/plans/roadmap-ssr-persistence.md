@@ -10,6 +10,7 @@ Future backend capabilities should be introduced only when required by concrete 
 - Static export deployment on Cloudflare Pages.
 - Branch previews enabled.
 - Client-side state in `localStorage`.
+- Oferta y vacantes servidas desde Convex (DB-only) vía fetch HTTP desde frontend estático.
 
 ## Potential trigger points for backend adoption
 
@@ -20,9 +21,9 @@ Future backend capabilities should be introduced only when required by concrete 
 
 ## Migration strategy (incremental)
 
-1. Keep the current routes and UI stable.
-2. Move from static export to Next runtime (Workers-compatible) only when needed.
-3. Introduce authentication first, then persistence entities.
+1. Keep static export and Convex API as default production path.
+2. Move from static export to Next runtime (Workers-compatible) only if server-side rendering/use-cases demand it.
+3. Introduce authentication first, then user-owned persistence entities.
 4. Keep preview/prod separation strict during rollout.
 
 ## Data model direction (high-level)

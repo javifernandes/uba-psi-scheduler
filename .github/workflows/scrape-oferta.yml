@@ -30,8 +30,6 @@ on:
         required: false
         default: ''
         type: string
-  schedule:
-    - cron: '*/15 * * * *'
 
 permissions:
   contents: write
@@ -65,19 +63,11 @@ jobs:
         id: params
         shell: bash
         run: |
-          if [[ "${GITHUB_EVENT_NAME}" == "schedule" ]]; then
-            echo "publish_mode=commit" >> "$GITHUB_OUTPUT"
-            echo "operation=scrape" >> "$GITHUB_OUTPUT"
-            echo "force_run=false" >> "$GITHUB_OUTPUT"
-            echo "trigger=schedule" >> "$GITHUB_OUTPUT"
-            echo "window_id=" >> "$GITHUB_OUTPUT"
-          else
-            echo "publish_mode=${{ inputs.publish_mode }}" >> "$GITHUB_OUTPUT"
-            echo "operation=${{ inputs.operation }}" >> "$GITHUB_OUTPUT"
-            echo "force_run=${{ inputs.force_run }}" >> "$GITHUB_OUTPUT"
-            echo "trigger=manual" >> "$GITHUB_OUTPUT"
-            echo "window_id=${{ inputs.window_id }}" >> "$GITHUB_OUTPUT"
-          fi
+          echo "publish_mode=${{ inputs.publish_mode }}" >> "$GITHUB_OUTPUT"
+          echo "operation=${{ inputs.operation }}" >> "$GITHUB_OUTPUT"
+          echo "force_run=${{ inputs.force_run }}" >> "$GITHUB_OUTPUT"
+          echo "trigger=manual" >> "$GITHUB_OUTPUT"
+          echo "window_id=${{ inputs.window_id }}" >> "$GITHUB_OUTPUT"
 
       - name: Evaluate scrape window status
         id: status
@@ -129,7 +119,7 @@ jobs:
         id: changes
         shell: bash
         run: |
-          CHANGED=$(git status --porcelain -- src/data/uba/psicologia/oferta config/scraper-windows.json)
+          CHANGED=$(git status --porcelain -- config/scraper-windows.json)
           if [[ -z "$CHANGED" ]]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "No hay cambios para publicar."
@@ -145,7 +135,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/uba/psicologia/oferta config/scraper-windows.json
+          git add config/scraper-windows.json
           git commit -m "${{ steps.publish_meta.outputs.commit_message }}"
           git push
 
@@ -162,7 +152,6 @@ jobs:
           title: ${{ steps.publish_meta.outputs.title }}
           body: ${{ steps.publish_meta.outputs.body }}
           add-paths: |
-            src/data/uba/psicologia/oferta
             config/scraper-windows.json
 
       - name: Explain PR permission failure

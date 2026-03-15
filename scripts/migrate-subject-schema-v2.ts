@@ -51,7 +51,7 @@ type SubjectLegacy = {
   comisiones: string[];
 };
 
-const DATA_ROOT = path.resolve(process.cwd(), 'src/data/uba/psicologia/oferta');
+const DATA_ROOT = path.resolve(process.cwd(), 'tmp/probe-data');
 const DAY_ORDER = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 const SLOT_KIND_ORDER: Record<SlotTipo, number> = { teo: 0, sem: 1, prac: 2 };
 

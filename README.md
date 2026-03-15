@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Abrir: `http://localhost:3000/oferta/lic-psicologia/2026-01`
+Abrir: `http://localhost:3000/oferta?career=lic-psicologia&period=2026-01`
 
 ## Analytics (PostHog)
 
@@ -30,11 +30,70 @@ npm run build
 
 Genera salida en `out/`.
 
-## Scraper de oferta (todas las carreras)
+## Pipeline de oferta hacia Convex
+
+El scraper ya no versiona datasets de oferta en el repo. El flujo recomendado es:
+
+1. scrape a carpeta temporal (`tmp/probe-data`)
+2. push a Convex por endpoint HTTP protegido (`/ingestOfferProbe`)
+
+Comando local integrado:
 
 ```bash
-npm run scrape:catalog
+npm run scrape:catalog -- --career all --output-dir ./tmp/probe-data
+npm run probe:push-convex -- --input-dir ./tmp/probe-data --endpoint "$CONVEX_INGEST_URL"
 ```
+
+## Probar local end-to-end (Convex)
+
+1. Terminal A:
+
+```bash
+npx convex dev
+```
+
+2. Configurar variables (Terminal B):
+
+```bash
+export NEXT_PUBLIC_CONVEX_API_BASE="https://<deployment>.convex.site"
+export CONVEX_INGEST_URL="$NEXT_PUBLIC_CONVEX_API_BASE"
+export VACANCY_INGEST_TOKEN="dev-ingest-token"
+export CONVEX_ADMIN_TOKEN="dev-admin-token"
+```
+
+3. Ingestar probe local:
+
+```bash
+npm run scrape:catalog -- --career all --output-dir ./tmp/probe-data
+npm run probe:push-convex -- --input-dir ./tmp/probe-data
+```
+
+Los scripts CLI cargan automáticamente variables desde `.env` y `.env.local`.
+
+En GitHub Actions (`probe-offer-convex.yml`):
+
+- `CONVEX_INGEST_URL` en **Repository Variables** (`vars`).
+- `VACANCY_INGEST_TOKEN` en **Repository Secrets** (`secrets`).
+
+4. Verificar estado en Convex:
+
+```bash
+npm run convex:admin -- stats
+```
+
+5. Drop total de tablas (reset) y volver a seedear:
+
+```bash
+npm run convex:admin -- reset --confirm DROP_ALL_DATA
+npm run probe:push-convex -- --input-dir ./tmp/probe-data
+```
+
+## Migrations y seed en Convex
+
+- **Schema migration**: editar `convex/schema.ts` y aplicar con `npx convex dev` / `npx convex deploy`.
+- **Data migration**: crear mutation(s) puntuales en `convex/` y ejecutarlas con `npx convex run ...`.
+- **Seed funcional**: usar el mismo pipeline de ingesta (`scrape:catalog` + `probe:push-convex`).
+- **Backfill histórico**: `npm run backfill:vacancies -- --dry-run` y luego ejecución real por batches.
 
 Opciones:
 
@@ -57,15 +116,15 @@ npm run migrate:subject-schema-v2
 
 Guardrails:
 
-- Escritura atómica por período (`.staging` + swap): ante error no se pisa el dataset vigente.
+- Escritura atómica por período (`.staging` + swap) dentro del output temporal.
 - Sanity check (default 80%): si una carrera cae por debajo de `subjects_new >= 80% subjects_prev`, el scrape falla y no publica.
 - Si una carrera configurada no trae filas/materias, el scrape falla completo.
 
-Salida (por defecto):
+Salida (default actual):
 
-- `src/data/uba/psicologia/oferta/<period>/<career-slug>/materias/*.json`
-- `src/data/uba/psicologia/oferta/<period>/careers.generated.json`
-- `src/data/uba/psicologia/oferta/periods.generated.json`
+- `tmp/probe-data/<period>/<career-slug>/materias/*.json`
+- `tmp/probe-data/<period>/careers.generated.json`
+- `tmp/probe-data/periods.generated.json`
 
 Formato de materias (schema v2):
 
@@ -89,11 +148,13 @@ npm run scrape:window:close -- --window-id 2026-1c-main
 
 ## Estructura
 
-- `src/data/uba/psicologia/oferta`: datasets scrapeados por período y carrera.
-- `src/app/oferta/[career]/[period]/page.tsx`: entrypoint canónico del scheduler.
-- `src/app/oferta/[career]/page.tsx`: redirect automático al último período disponible para esa carrera.
+- `convex/*`: schema + queries + HTTP actions (DB-only).
+- `src/app/oferta/page.tsx`: entrypoint canónico del scheduler con query params.
+- `src/app/oferta/analytics/page.tsx`: analíticas de vacantes por carrera/período.
 - `src/components/scheduler/*`: módulo UI/estado del scheduler.
 - `scripts/scrape-uba-psi-oferta.ts`: scraper para regenerar datos.
+- `scripts/push-offer-probe-to-convex.ts`: push de probes scrapeados a Convex.
+- `scripts/backfill-vacancies-from-git.ts`: backfill histórico desde commits de git.
 - `scripts/scraper-window-control.ts`: utilidades de status/cierre de ventanas de scraping.
 
 ## Deploy (Cloudflare Pages)
