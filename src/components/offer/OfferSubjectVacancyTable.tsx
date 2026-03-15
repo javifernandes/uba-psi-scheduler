@@ -3,21 +3,33 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ChevronDown, ChevronRight, X } from 'lucide-react';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
-import type { VacancyTrends } from '@/lib/offer-api';
+import type { VacancyCapacityItem, VacancyCapacityResponse, VacancyTrends } from '@/lib/offer-api';
 import {
   catedraFragmentFromLabel,
   catedraNumberFromLabel,
   catedraProfessorFromHeader,
   materiaGroupFromLabel,
 } from '@/components/scheduler/scheduler.utils';
+import { vacancyStatusFromCapacity, type VacancyStatus } from '@/domain/vacancies';
 
 type SortDirection = 'asc' | 'desc';
 type SortKey = 'id' | 'name' | 'vacancies';
+type BaselineQuality = 'pre_window' | 'post_window' | 'unknown';
 
 type SubjectVacancyTableProps = {
   subjects: SubjectData[];
   trends: VacancyTrends | null;
+  capacity: VacancyCapacityResponse | null;
   loading: boolean;
+};
+
+type CapacityMetrics = {
+  current: number;
+  max: number | null;
+  initial: number | null;
+  quality: BaselineQuality;
+  initialCapturedAt: string | null;
+  maxCapturedAt: string | null;
 };
 
 type CatedraVacancyRow = {
@@ -25,16 +37,16 @@ type CatedraVacancyRow = {
   key: string;
   catedra: string;
   professor: string;
-  vacancies: number;
   catedraOrder: number;
+  metrics: CapacityMetrics;
 };
 
 type MateriaVacancyRow = {
   id: string;
   key: string;
   name: string;
-  vacancies: number;
   catedras: CatedraVacancyRow[];
+  metrics: CapacityMetrics;
 };
 
 type DisplayVacancyRow =
@@ -46,8 +58,8 @@ type SelectedDetail =
   | { kind: 'catedra'; catedra: CatedraVacancyRow; materia: MateriaVacancyRow | null };
 
 type VacanciesCellProps = {
-  vacancies: number;
-  maxVacancies: number;
+  metrics: CapacityMetrics;
+  fallbackMax: number;
 };
 
 type SparklineMiniProps = {
@@ -56,14 +68,21 @@ type SparklineMiniProps = {
   height?: number;
 };
 
-const barClassByVacancy = (vacancies: number) => {
-  if (vacancies === 0) return 'bg-[#d04870]';
-  if (vacancies <= 10) return 'bg-[#cf8d00]';
-  return 'bg-[#2f9b65]';
-};
-
 const headerButtonClass =
   'inline-flex items-center gap-1 font-semibold text-[#7b4a65] hover:text-[#4f1237]';
+
+const baselineQualityLabel: Record<BaselineQuality, string> = {
+  pre_window: 'Inicial observado antes de apertura',
+  post_window: 'Inicial observado con ventana abierta',
+  unknown: 'Sin referencia de apertura',
+};
+
+const statusToneClass: Record<VacancyStatus, string> = {
+  sin_datos: 'bg-[#8c7a8a]',
+  sin_cupo: 'bg-[#d04870]',
+  cupo_bajo: 'bg-[#cf8d00]',
+  cupo_disponible: 'bg-[#2f9b65]',
+};
 
 const nextDirection = (current: SortDirection, active: boolean): SortDirection =>
   !active ? 'desc' : current === 'desc' ? 'asc' : 'desc';
@@ -99,40 +118,140 @@ const parseMateriaIdentity = (subject: SubjectData) => {
   };
 };
 
-const sumComisionVacancies = (subject: SubjectData) =>
-  subject.slots.reduce((total, slot) => {
-    if (slot.tipo !== 'prac') return total;
-    return typeof slot.vacantes === 'number' ? total + slot.vacantes : total;
-  }, 0);
+const combineQuality = (current: BaselineQuality, next: BaselineQuality): BaselineQuality => {
+  if (current === 'pre_window' || next === 'pre_window') return 'pre_window';
+  if (current === 'post_window' || next === 'post_window') return 'post_window';
+  return 'unknown';
+};
 
-const toCatedraVacancyRow = (subject: SubjectData, materiaId: string): CatedraVacancyRow => ({
+const formatTimestamp = (iso: string | null) => {
+  if (!iso) return 's/d';
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return 's/d';
+  return date.toLocaleString('es-AR', {
+    day: '2-digit',
+    month: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+};
+
+const sumOptional = (acc: number | null, value: number | null) => {
+  if (typeof value !== 'number') return acc;
+  if (typeof acc !== 'number') return value;
+  return acc + value;
+};
+
+const capacityMetricsForSubject = (
+  subject: SubjectData,
+  capacityByCommission: Map<string, VacancyCapacityItem>
+): CapacityMetrics => {
+  let current = 0;
+  let max: number | null = null;
+  let initial: number | null = null;
+  let quality: BaselineQuality = 'unknown';
+  let initialCapturedAt: string | null = null;
+  let maxCapturedAt: string | null = null;
+
+  subject.slots.forEach((slot) => {
+    if (slot.tipo !== 'prac') return;
+    if (typeof slot.vacantes === 'number') current += slot.vacantes;
+    const key = `${subject.id}|${slot.id}`;
+    const mappedCapacity = capacityByCommission.get(key);
+    const maxValue =
+      typeof slot.vacantesMaximasObservadas === 'number'
+        ? slot.vacantesMaximasObservadas
+        : (mappedCapacity?.maxVacantesObserved ?? null);
+    const initialValue =
+      typeof slot.vacantesInicialesObservadas === 'number'
+        ? slot.vacantesInicialesObservadas
+        : (mappedCapacity?.initialVacantesObserved ?? null);
+    const slotQuality =
+      slot.vacantesInicialesQuality || mappedCapacity?.initialBaselineQuality || 'unknown';
+    max = sumOptional(max, maxValue);
+    initial = sumOptional(initial, initialValue);
+    quality = combineQuality(quality, slotQuality);
+
+    const slotInitialCapturedAt = mappedCapacity?.initialCapturedAt || null;
+    if (slotInitialCapturedAt) {
+      if (!initialCapturedAt || slotInitialCapturedAt < initialCapturedAt) {
+        initialCapturedAt = slotInitialCapturedAt;
+      }
+    }
+    const slotMaxCapturedAt = mappedCapacity?.maxCapturedAt || null;
+    if (slotMaxCapturedAt) {
+      if (!maxCapturedAt || slotMaxCapturedAt > maxCapturedAt) {
+        maxCapturedAt = slotMaxCapturedAt;
+      }
+    }
+  });
+
+  return {
+    current,
+    max,
+    initial,
+    quality,
+    initialCapturedAt,
+    maxCapturedAt,
+  };
+};
+
+const toCatedraVacancyRow = (
+  subject: SubjectData,
+  materiaId: string,
+  capacityByCommission: Map<string, VacancyCapacityItem>
+): CatedraVacancyRow => ({
   id: materiaId,
   key: subject.id,
   catedra: catedraFragmentFromLabel(subject.label),
   professor: catedraProfessorFromHeader(subject.header),
-  vacancies: sumComisionVacancies(subject),
   catedraOrder: catedraNumberFromLabel(subject.label),
+  metrics: capacityMetricsForSubject(subject, capacityByCommission),
 });
 
-const toMateriaVacancyRows = (subjects: SubjectData[]) => {
+const mergeMetrics = (left: CapacityMetrics, right: CapacityMetrics): CapacityMetrics => ({
+  current: left.current + right.current,
+  max: sumOptional(left.max, right.max),
+  initial: sumOptional(left.initial, right.initial),
+  quality: combineQuality(left.quality, right.quality),
+  initialCapturedAt:
+    left.initialCapturedAt && right.initialCapturedAt
+      ? left.initialCapturedAt < right.initialCapturedAt
+        ? left.initialCapturedAt
+        : right.initialCapturedAt
+      : left.initialCapturedAt || right.initialCapturedAt || null,
+  maxCapturedAt:
+    left.maxCapturedAt && right.maxCapturedAt
+      ? left.maxCapturedAt > right.maxCapturedAt
+        ? left.maxCapturedAt
+        : right.maxCapturedAt
+      : left.maxCapturedAt || right.maxCapturedAt || null,
+});
+
+const toMateriaVacancyRows = (
+  subjects: SubjectData[],
+  capacityByCommission: Map<string, VacancyCapacityItem>
+) => {
   const byMateria = new Map<string, MateriaVacancyRow>();
 
   subjects.forEach((subject) => {
     const materia = parseMateriaIdentity(subject);
     const groupKey = `${materia.id}::${materia.name}`;
-    const catedraRow = toCatedraVacancyRow(subject, materia.id);
+    const catedraRow = toCatedraVacancyRow(subject, materia.id, capacityByCommission);
     const existing = byMateria.get(groupKey);
     if (existing) {
       existing.catedras.push(catedraRow);
-      existing.vacancies += catedraRow.vacancies;
+      existing.metrics = mergeMetrics(existing.metrics, catedraRow.metrics);
       return;
     }
     byMateria.set(groupKey, {
       id: materia.id,
       key: groupKey,
       name: materia.name,
-      vacancies: catedraRow.vacancies,
       catedras: [catedraRow],
+      metrics: catedraRow.metrics,
     });
   });
 
@@ -151,19 +270,37 @@ const asNumericId = (id: string) => {
   return Number.isNaN(numeric) ? null : numeric;
 };
 
-const VacanciesCell = ({ vacancies, maxVacancies }: VacanciesCellProps) => {
-  const ratio = maxVacancies > 0 ? (vacancies / maxVacancies) * 100 : 0;
-  const barWidth = ratio > 0 ? Math.max(6, ratio) : 0;
+const formatCurrentOverMax = (metrics: CapacityMetrics) =>
+  typeof metrics.max === 'number' && metrics.max > 0
+    ? `${metrics.current}/${metrics.max}`
+    : String(metrics.current);
+
+const formatPercent = (metrics: CapacityMetrics) => {
+  if (typeof metrics.max !== 'number' || metrics.max <= 0) return null;
+  return `${Math.round((Math.max(0, Math.min(metrics.current, metrics.max)) / metrics.max) * 100)}%`;
+};
+
+const VacanciesCell = ({ metrics, fallbackMax }: VacanciesCellProps) => {
+  const status = vacancyStatusFromCapacity(metrics.current, metrics.max);
+  const barWidth =
+    typeof metrics.max === 'number' && metrics.max > 0
+      ? Math.max(0, Math.min(100, (metrics.current / metrics.max) * 100))
+      : fallbackMax > 0
+        ? Math.max(0, Math.min(100, (metrics.current / fallbackMax) * 100))
+        : 0;
+  const maxLabel = formatCurrentOverMax(metrics);
+  const percentLabel = formatPercent(metrics);
 
   return (
     <div className="flex items-center gap-2">
-      <span className="w-10 text-right font-semibold">{vacancies}</span>
+      <span className="w-[84px] text-right font-semibold tabular-nums">{maxLabel}</span>
       <div className="h-2.5 w-full min-w-[120px] overflow-hidden rounded-full bg-[#f3e8ef]">
         <div
-          className={`h-full rounded-full ${barClassByVacancy(vacancies)}`}
+          className={`h-full rounded-full ${statusToneClass[status]}`}
           style={{ width: `${barWidth}%` }}
         />
       </div>
+      <span className="w-10 text-right text-[11px] text-[#7b4a65]">{percentLabel || 's/d'}</span>
     </div>
   );
 };
@@ -218,6 +355,7 @@ const SparklineMini = ({ points, width = 98, height = 26 }: SparklineMiniProps) 
 export const OfferSubjectVacancyTable = ({
   subjects,
   trends,
+  capacity,
   loading,
 }: SubjectVacancyTableProps) => {
   const [sortKey, setSortKey] = useState<SortKey>('id');
@@ -225,7 +363,18 @@ export const OfferSubjectVacancyTable = ({
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(() => new Set());
   const [selectedDetail, setSelectedDetail] = useState<SelectedDetail | null>(null);
 
-  const materiaRows = useMemo(() => toMateriaVacancyRows(subjects), [subjects]);
+  const capacityByCommission = useMemo(
+    () =>
+      new Map(
+        (capacity?.items || []).map((item) => [`${item.subjectId}|${item.commissionId}`, item])
+      ),
+    [capacity?.items]
+  );
+
+  const materiaRows = useMemo(
+    () => toMateriaVacancyRows(subjects, capacityByCommission),
+    [capacityByCommission, subjects]
+  );
 
   const sortedMaterias = useMemo(() => {
     const direction = sortDirection === 'desc' ? -1 : 1;
@@ -234,15 +383,11 @@ export const OfferSubjectVacancyTable = ({
       if (sortKey === 'id') {
         const aNumeric = asNumericId(a.id);
         const bNumeric = asNumericId(b.id);
-        if (aNumeric !== null && bNumeric !== null) {
-          return (aNumeric - bNumeric) * direction;
-        }
+        if (aNumeric !== null && bNumeric !== null) return (aNumeric - bNumeric) * direction;
         return a.id.localeCompare(b.id, 'es') * direction;
       }
-      if (sortKey === 'name') {
-        return a.name.localeCompare(b.name, 'es') * direction;
-      }
-      return (a.vacancies - b.vacancies) * direction;
+      if (sortKey === 'name') return a.name.localeCompare(b.name, 'es') * direction;
+      return (a.metrics.current - b.metrics.current) * direction;
     });
     return copy;
   }, [materiaRows, sortDirection, sortKey]);
@@ -266,9 +411,8 @@ export const OfferSubjectVacancyTable = ({
     () => new Map(sortedMaterias.map((materia) => [materia.key, materia])),
     [sortedMaterias]
   );
-
-  const maxVacancies = useMemo(
-    () => displayRows.reduce((acc, row) => Math.max(acc, row.row.vacancies), 0),
+  const globalFallbackMax = useMemo(
+    () => displayRows.reduce((acc, entry) => Math.max(acc, entry.row.metrics.current), 0),
     [displayRows]
   );
 
@@ -281,11 +425,8 @@ export const OfferSubjectVacancyTable = ({
   const toggleMateria = (materiaKey: string) => {
     setExpandedMaterias((previous) => {
       const next = new Set(previous);
-      if (next.has(materiaKey)) {
-        next.delete(materiaKey);
-      } else {
-        next.add(materiaKey);
-      }
+      if (next.has(materiaKey)) next.delete(materiaKey);
+      else next.add(materiaKey);
       return next;
     });
   };
@@ -311,7 +452,7 @@ export const OfferSubjectVacancyTable = ({
           <colgroup>
             <col className="w-[72px]" />
             <col />
-            <col className="w-[260px]" />
+            <col className="w-[310px]" />
             <col className="w-[126px]" />
           </colgroup>
           <thead className="text-left text-[#7b4a65]">
@@ -336,7 +477,7 @@ export const OfferSubjectVacancyTable = ({
                   className={headerButtonClass}
                   onClick={() => applySort('vacancies')}
                 >
-                  Vacantes {sortIndicator(sortKey === 'vacancies', sortDirection)}
+                  Vacantes (actual/max) {sortIndicator(sortKey === 'vacancies', sortDirection)}
                 </button>
               </th>
               <th className="sticky top-0 z-10 bg-[#faf1f6] px-2 py-2 font-semibold text-[#7b4a65]">
@@ -390,7 +531,7 @@ export const OfferSubjectVacancyTable = ({
                     </div>
                   </td>
                   <td className="px-3 py-2">
-                    <VacanciesCell vacancies={entry.row.vacancies} maxVacancies={maxVacancies} />
+                    <VacanciesCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
                   </td>
                   <td className="px-2 py-2">
                     <SparklineMini points={materiaTrendMap.get(entry.row.id)} />
@@ -431,7 +572,7 @@ export const OfferSubjectVacancyTable = ({
                     </div>
                   </td>
                   <td className="px-3 py-2">
-                    <VacanciesCell vacancies={entry.row.vacancies} maxVacancies={maxVacancies} />
+                    <VacanciesCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
                   </td>
                   <td className="px-2 py-2">
                     <SparklineMini points={subjectTrendMap.get(entry.row.key)} />
@@ -481,37 +622,31 @@ export const OfferSubjectVacancyTable = ({
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
-                    <p className="text-xs text-[#7b4a65]">Vacantes</p>
-                    <p className="text-lg font-black">{selectedDetail.materia.vacancies}</p>
+                    <p className="text-xs text-[#7b4a65]">Actual</p>
+                    <p className="text-lg font-black">{selectedDetail.materia.metrics.current}</p>
                   </div>
                   <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
-                    <p className="text-xs text-[#7b4a65]">Cátedras</p>
-                    <p className="text-lg font-black">{selectedDetail.materia.catedras.length}</p>
+                    <p className="text-xs text-[#7b4a65]">Máximo observado</p>
+                    <p className="text-lg font-black">
+                      {selectedDetail.materia.metrics.max ?? 's/d'}
+                    </p>
                   </div>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#7b4a65]">Tendencia</p>
-                  <div className="mt-1 rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
-                    <SparklineMini
-                      points={materiaTrendMap.get(selectedDetail.materia.id)}
-                      width={220}
-                      height={46}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#7b4a65]">Cátedras</p>
-                  <ul className="mt-1 divide-y divide-[#f0e4eb] rounded-lg border border-[#ead9e2]">
-                    {selectedDetail.materia.catedras.map((catedra) => (
-                      <li key={catedra.key} className="px-2 py-2 text-xs">
-                        <p className="font-semibold text-[#5b2e46]">{catedra.catedra}</p>
-                        {catedra.professor ? (
-                          <p className="text-[#7b4a65]">{catedra.professor}</p>
-                        ) : null}
-                        <p className="mt-0.5 text-[#4f1237]">{catedra.vacancies} vacantes</p>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                  <p className="text-xs text-[#7b4a65]">Inicial observado</p>
+                  <p className="text-lg font-black">
+                    {selectedDetail.materia.metrics.initial ?? 's/d'}
+                  </p>
+                  <p className="mt-1 text-xs text-[#7b4a65]">
+                    {baselineQualityLabel[selectedDetail.materia.metrics.quality]}
+                  </p>
+                  <p className="text-xs text-[#7b4a65]">
+                    Captura inicial:{' '}
+                    {formatTimestamp(selectedDetail.materia.metrics.initialCapturedAt)}
+                  </p>
+                  <p className="text-xs text-[#7b4a65]">
+                    Captura máximo: {formatTimestamp(selectedDetail.materia.metrics.maxCapturedAt)}
+                  </p>
                 </div>
               </div>
             ) : (
@@ -521,13 +656,6 @@ export const OfferSubjectVacancyTable = ({
                   <p className="font-semibold">{selectedDetail.materia?.name || 's/d'}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[#7b4a65]">ID materia</p>
-                  <p className="font-medium">
-                    {compactEntityId(selectedDetail.catedra.id)}{' '}
-                    <span className="text-xs text-[#7b4a65]">({selectedDetail.catedra.id})</span>
-                  </p>
-                </div>
-                <div>
                   <p className="text-xs font-semibold text-[#7b4a65]">Cátedra</p>
                   <p className="font-semibold">{selectedDetail.catedra.catedra}</p>
                 </div>
@@ -535,19 +663,33 @@ export const OfferSubjectVacancyTable = ({
                   <p className="text-xs font-semibold text-[#7b4a65]">Profesor</p>
                   <p>{selectedDetail.catedra.professor || 's/d'}</p>
                 </div>
-                <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
-                  <p className="text-xs text-[#7b4a65]">Vacantes</p>
-                  <p className="text-lg font-black">{selectedDetail.catedra.vacancies}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#7b4a65]">Tendencia</p>
-                  <div className="mt-1 rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
-                    <SparklineMini
-                      points={subjectTrendMap.get(selectedDetail.catedra.key)}
-                      width={220}
-                      height={46}
-                    />
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <p className="text-xs text-[#7b4a65]">Actual</p>
+                    <p className="text-lg font-black">{selectedDetail.catedra.metrics.current}</p>
                   </div>
+                  <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <p className="text-xs text-[#7b4a65]">Máximo observado</p>
+                    <p className="text-lg font-black">
+                      {selectedDetail.catedra.metrics.max ?? 's/d'}
+                    </p>
+                  </div>
+                </div>
+                <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                  <p className="text-xs text-[#7b4a65]">Inicial observado</p>
+                  <p className="text-lg font-black">
+                    {selectedDetail.catedra.metrics.initial ?? 's/d'}
+                  </p>
+                  <p className="mt-1 text-xs text-[#7b4a65]">
+                    {baselineQualityLabel[selectedDetail.catedra.metrics.quality]}
+                  </p>
+                  <p className="text-xs text-[#7b4a65]">
+                    Captura inicial:{' '}
+                    {formatTimestamp(selectedDetail.catedra.metrics.initialCapturedAt)}
+                  </p>
+                  <p className="text-xs text-[#7b4a65]">
+                    Captura máximo: {formatTimestamp(selectedDetail.catedra.metrics.maxCapturedAt)}
+                  </p>
                 </div>
               </div>
             )}

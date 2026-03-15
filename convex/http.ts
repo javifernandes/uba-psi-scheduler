@@ -136,6 +136,31 @@ router.route({
 });
 
 router.route({
+  path: '/getVacancyCapacity',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getVacancyCapacity',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const includeProbeTimes = body.includeProbeTimes === true;
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getVacancyCapacity, {
+      careerSlug,
+      period,
+      includeProbeTimes,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
   path: '/getEnrollmentWindow',
   method: 'OPTIONS',
   handler: httpAction(async () => handleOptions()),
@@ -293,6 +318,35 @@ router.route({
     const body = await parseJson(request);
     const confirm = typeof body.confirm === 'string' ? body.confirm : '';
     const payload = await ctx.runMutation(api.admin.resetAllData, { confirm });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/admin/recomputeVacancyCapacity',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/admin/recomputeVacancyCapacity',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.CONVEX_ADMIN_TOKEN || process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) return jsonResponse(401, { error: 'unauthorized' });
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const cursor = typeof body.cursor === 'string' && body.cursor ? body.cursor : undefined;
+    const batchSize = typeof body.batchSize === 'number' ? body.batchSize : undefined;
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runMutation(api.admin.recomputeVacancyCapacity, {
+      careerSlug,
+      period,
+      cursor,
+      batchSize,
+    });
     return jsonResponse(200, payload);
   }),
 });

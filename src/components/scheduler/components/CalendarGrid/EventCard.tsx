@@ -127,7 +127,7 @@ export const CalendarEventCard = ({
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
   const vacancyDisplay =
     !event.isExternal && event.tipo === 'prac'
-      ? vacancyIndicator(event.vacantes ?? null)
+      ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
       : undefined;
 
   return (

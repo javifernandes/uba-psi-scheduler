@@ -1,5 +1,6 @@
 import { internalMutation } from './_generated/server';
 import { v } from 'convex/values';
+import { parseIsoMs, windowsForCareer, type EnrollmentWindowRecord } from './windows';
 
 type SubjectInput = {
   id: string;
@@ -21,6 +22,17 @@ const vacancyStatus = (vacantes: number | null) => {
   if (vacantes === 0) return 'sin_cupo';
   if (vacantes <= 10) return 'cupo_bajo';
   return 'cupo_disponible';
+};
+
+type InitialBaselineQuality = 'pre_window' | 'post_window' | 'unknown';
+
+const resolveInitialQuality = (
+  capturedAt: string,
+  firstWindowStartMs: number | null
+): InitialBaselineQuality => {
+  const capturedAtMs = parseIsoMs(capturedAt);
+  if (typeof capturedAtMs !== 'number' || typeof firstWindowStartMs !== 'number') return 'unknown';
+  return capturedAtMs < firstWindowStartMs ? 'pre_window' : 'post_window';
 };
 
 export const ingestOfferProbe = internalMutation({
@@ -47,6 +59,20 @@ export const ingestOfferProbe = internalMutation({
     const parsedSubjects = args.subjects as SubjectInput[];
     const probeId = `${args.careerSlug}:${args.period}:${args.capturedAt}`;
     const ingestedAt = new Date().toISOString();
+    const windows = await ctx.db
+      .query('enrollmentWindows')
+      .withIndex('by_period', (q) => q.eq('period', args.period))
+      .collect();
+    const windowsForCurrentCareer = windowsForCareer(
+      windows as EnrollmentWindowRecord[],
+      args.careerSlug
+    ).filter((window) => window.enabled);
+    const firstWindowStartMs = windowsForCurrentCareer.reduce<number | null>((acc, window) => {
+      const startMs = parseIsoMs(window.startAt);
+      if (typeof startMs !== 'number') return acc;
+      if (typeof acc !== 'number') return startMs;
+      return Math.min(acc, startMs);
+    }, null);
 
     const existingSubjects = await ctx.db
       .query('offerSubjects')
@@ -82,6 +108,18 @@ export const ingestOfferProbe = internalMutation({
       )
       .collect();
     const currentByKey = new Map(existingCurrent.map((item) => [item.key, item]));
+    const existingCapacity = await ctx.db
+      .query('vacancyCapacity')
+      .withIndex('by_career_period', (q) =>
+        q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+      )
+      .collect();
+    const capacityByCommissionKey = new Map(
+      existingCapacity.map((item) => [
+        buildKey(args.careerSlug, args.period, item.subjectId, item.commissionId),
+        item,
+      ])
+    );
 
     const nextRows = parsedSubjects.flatMap((subject) =>
       subject.slots
@@ -144,6 +182,46 @@ export const ingestOfferProbe = internalMutation({
         await ctx.db.patch(prev._id, payload);
       } else {
         await ctx.db.insert('vacancyCurrent', payload);
+      }
+
+      const currentCapacity = capacityByCommissionKey.get(row.key);
+      const isNumericVacancy = typeof nextVacantes === 'number';
+      if (!currentCapacity) {
+        await ctx.db.insert('vacancyCapacity', {
+          careerSlug: args.careerSlug,
+          period: args.period,
+          subjectId: row.subjectId,
+          commissionId: row.commissionId,
+          initialVacantesObserved: isNumericVacancy ? nextVacantes : null,
+          initialSourceRunId: isNumericVacancy ? args.sourceRunId : null,
+          initialBaselineQuality: isNumericVacancy
+            ? resolveInitialQuality(args.capturedAt, firstWindowStartMs)
+            : 'unknown',
+          maxVacantesObserved: isNumericVacancy ? nextVacantes : null,
+          maxSourceRunId: isNumericVacancy ? args.sourceRunId : null,
+        });
+        continue;
+      }
+
+      const capacityPatch: Record<string, unknown> = {};
+      if (isNumericVacancy && currentCapacity.initialVacantesObserved === null) {
+        capacityPatch.initialVacantesObserved = nextVacantes;
+        capacityPatch.initialSourceRunId = args.sourceRunId;
+        capacityPatch.initialBaselineQuality = resolveInitialQuality(
+          args.capturedAt,
+          firstWindowStartMs
+        );
+      }
+      if (
+        isNumericVacancy &&
+        (currentCapacity.maxVacantesObserved === null ||
+          nextVacantes > currentCapacity.maxVacantesObserved)
+      ) {
+        capacityPatch.maxVacantesObserved = nextVacantes;
+        capacityPatch.maxSourceRunId = args.sourceRunId;
+      }
+      if (Object.keys(capacityPatch).length > 0) {
+        await ctx.db.patch(currentCapacity._id, capacityPatch);
       }
     }
 

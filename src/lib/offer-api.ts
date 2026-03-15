@@ -65,6 +65,24 @@ export type VacancyTrends = {
   materia: Record<string, number[]>;
 };
 
+export type VacancyCapacityItem = {
+  careerSlug: string;
+  period: string;
+  subjectId: string;
+  commissionId: string;
+  initialVacantesObserved: number | null;
+  initialSourceRunId: string | null;
+  initialBaselineQuality: 'pre_window' | 'post_window' | 'unknown';
+  initialCapturedAt?: string | null;
+  maxVacantesObserved: number | null;
+  maxSourceRunId: string | null;
+  maxCapturedAt?: string | null;
+};
+
+export type VacancyCapacityResponse = {
+  items: VacancyCapacityItem[];
+};
+
 const assertApiBase = () => {
   const apiBase = process.env.NEXT_PUBLIC_CONVEX_API_BASE || '';
   if (apiBase) return apiBase.replace(/\/$/, '');
@@ -151,4 +169,15 @@ export const getVacancyTrends = async (
     period,
     range,
     maxPoints,
+  });
+
+export const getVacancyCapacity = async (
+  careerSlug: string,
+  period: PeriodId,
+  includeProbeTimes = false
+): Promise<VacancyCapacityResponse> =>
+  postJson<VacancyCapacityResponse>('/getVacancyCapacity', {
+    careerSlug,
+    period,
+    includeProbeTimes,
   });

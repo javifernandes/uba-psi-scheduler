@@ -4,6 +4,7 @@ import {
   sumKnownVacancies,
   sumKnownVacanciesFromSubject,
   vacancyIndicator,
+  vacancyStatusFromCapacity,
   vacancyStatusFromVacancies,
   vacancySummaryLine,
 } from './vacancies';
@@ -72,6 +73,7 @@ describe('vacancies domain', () => {
     expect(vacancySummaryLine(9)).toBe('9 vacantes · cupo bajo');
     expect(vacancySummaryLine(14)).toBe('14 vacantes · cupo disponible');
     expect(vacancySummaryLine(0)).toBe('0 vacantes · sin cupo');
+    expect(vacancySummaryLine(9, 30)).toBe('9 vacantes/30 · 30% · cupo disponible');
   });
 
   it('arma indicador compacto de barras para la tarjeta', () => {
@@ -83,5 +85,17 @@ describe('vacancies domain', () => {
       status: 'cupo_disponible',
       filledBars: 3,
     });
+    expect(vacancyIndicator(9, 30)).toEqual({
+      countLabel: '9/30',
+      status: 'cupo_disponible',
+      filledBars: 2,
+      hintLabel: '30%',
+    });
+  });
+
+  it('clasifica estado relativo cuando hay cupo máximo observado', () => {
+    expect(vacancyStatusFromCapacity(0, 40)).toBe('sin_cupo');
+    expect(vacancyStatusFromCapacity(8, 40)).toBe('cupo_bajo');
+    expect(vacancyStatusFromCapacity(9, 40)).toBe('cupo_disponible');
   });
 });
