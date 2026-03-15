@@ -96,8 +96,8 @@ const compactEntityId = (rawId: string) => {
   const clean = rawId.trim();
   if (!clean) return 's/d';
   if (/^\d+$/.test(clean)) return clean;
-  const cTailMatch = clean.match(/(?:^|[-_])(c\d{1,5})$/i);
-  if (cTailMatch?.[1]) return cTailMatch[1].toLowerCase();
+  const cMatches = [...clean.matchAll(/(?:^|[-_])(c\d{1,5})(?=$|[-_])/gi)];
+  if (cMatches.length) return (cMatches[cMatches.length - 1]?.[1] || '').toLowerCase();
   const numericTailMatch = clean.match(/(?:^|[-_])(\d{1,5})$/);
   if (numericTailMatch?.[1]) return numericTailMatch[1];
   return clean.length > 12 ? `${clean.slice(0, 12)}…` : clean;
@@ -272,7 +272,7 @@ const asNumericId = (id: string) => {
 
 const formatCurrentOverMax = (metrics: CapacityMetrics) =>
   typeof metrics.max === 'number' && metrics.max > 0
-    ? `${metrics.current}/${metrics.max}`
+    ? `${metrics.current} / ${metrics.max}`
     : String(metrics.current);
 
 const formatPercent = (metrics: CapacityMetrics) => {
@@ -280,7 +280,7 @@ const formatPercent = (metrics: CapacityMetrics) => {
   return `${Math.round((Math.max(0, Math.min(metrics.current, metrics.max)) / metrics.max) * 100)}%`;
 };
 
-const VacanciesCell = ({ metrics, fallbackMax }: VacanciesCellProps) => {
+const VacanciesBarCell = ({ metrics, fallbackMax }: VacanciesCellProps) => {
   const status = vacancyStatusFromCapacity(metrics.current, metrics.max);
   const barWidth =
     typeof metrics.max === 'number' && metrics.max > 0
@@ -288,19 +288,19 @@ const VacanciesCell = ({ metrics, fallbackMax }: VacanciesCellProps) => {
       : fallbackMax > 0
         ? Math.max(0, Math.min(100, (metrics.current / fallbackMax) * 100))
         : 0;
-  const maxLabel = formatCurrentOverMax(metrics);
   const percentLabel = formatPercent(metrics);
 
   return (
     <div className="flex items-center gap-2">
-      <span className="w-[84px] text-right font-semibold tabular-nums">{maxLabel}</span>
       <div className="h-2.5 w-full min-w-[120px] overflow-hidden rounded-full bg-[#f3e8ef]">
         <div
           className={`h-full rounded-full ${statusToneClass[status]}`}
           style={{ width: `${barWidth}%` }}
         />
       </div>
-      <span className="w-10 text-right text-[11px] text-[#7b4a65]">{percentLabel || 's/d'}</span>
+      <span className="w-10 text-right text-[11px] text-[#7b4a65] tabular-nums">
+        {percentLabel || 's/d'}
+      </span>
     </div>
   );
 };
@@ -450,9 +450,10 @@ export const OfferSubjectVacancyTable = ({
       <div className="mt-3 max-h-80 overflow-auto rounded-lg border border-[#ead9e2]">
         <table className="w-full table-fixed border-collapse text-xs">
           <colgroup>
-            <col className="w-[72px]" />
+            <col className="w-[60px]" />
             <col />
-            <col className="w-[310px]" />
+            <col className="w-[118px]" />
+            <col className="w-[320px]" />
             <col className="w-[126px]" />
           </colgroup>
           <thead className="text-left text-[#7b4a65]">
@@ -471,13 +472,13 @@ export const OfferSubjectVacancyTable = ({
                   Materia / Cátedra {sortIndicator(sortKey === 'name', sortDirection)}
                 </button>
               </th>
-              <th className="sticky top-0 z-10 bg-[#faf1f6] px-3 py-2">
+              <th className="sticky top-0 z-10 bg-[#faf1f6] px-2 py-2" colSpan={2}>
                 <button
                   type="button"
                   className={headerButtonClass}
                   onClick={() => applySort('vacancies')}
                 >
-                  Vacantes (actual/max) {sortIndicator(sortKey === 'vacancies', sortDirection)}
+                  Vacantes (actual / max) {sortIndicator(sortKey === 'vacancies', sortDirection)}
                 </button>
               </th>
               <th className="sticky top-0 z-10 bg-[#faf1f6] px-2 py-2 font-semibold text-[#7b4a65]">
@@ -497,7 +498,7 @@ export const OfferSubjectVacancyTable = ({
                       {compactEntityId(entry.row.id)}
                     </span>
                   </td>
-                  <td className="px-3 py-2">
+                  <td className="px-2 py-2">
                     <div className="inline-flex items-center gap-1">
                       <button
                         type="button"
@@ -530,8 +531,11 @@ export const OfferSubjectVacancyTable = ({
                       </span>
                     </div>
                   </td>
-                  <td className="px-3 py-2">
-                    <VacanciesCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
+                  <td className="px-2 py-2 text-right font-semibold tabular-nums text-[#4f1237]">
+                    {formatCurrentOverMax(entry.row.metrics)}
+                  </td>
+                  <td className="px-2 py-2">
+                    <VacanciesBarCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
                   </td>
                   <td className="px-2 py-2">
                     <SparklineMini points={materiaTrendMap.get(entry.row.id)} />
@@ -547,7 +551,7 @@ export const OfferSubjectVacancyTable = ({
                       {compactEntityId(entry.row.id)}
                     </span>
                   </td>
-                  <td className="px-3 py-2">
+                  <td className="px-2 py-2">
                     <div className="pl-5">
                       <button
                         type="button"
@@ -571,8 +575,11 @@ export const OfferSubjectVacancyTable = ({
                       ) : null}
                     </div>
                   </td>
-                  <td className="px-3 py-2">
-                    <VacanciesCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
+                  <td className="px-2 py-2 text-right font-semibold tabular-nums text-[#4f1237]">
+                    {formatCurrentOverMax(entry.row.metrics)}
+                  </td>
+                  <td className="px-2 py-2">
+                    <VacanciesBarCell metrics={entry.row.metrics} fallbackMax={globalFallbackMax} />
                   </td>
                   <td className="px-2 py-2">
                     <SparklineMini points={subjectTrendMap.get(entry.row.key)} />

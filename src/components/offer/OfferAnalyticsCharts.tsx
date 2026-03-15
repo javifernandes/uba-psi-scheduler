@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import type { EChartsOption } from 'echarts';
 import type { VacancyAnalytics } from '@/lib/offer-api';
-import { formatTimestamp } from '@/components/offer/OfferAnalyticsTables';
 
 const ReactECharts = dynamic(async () => (await import('echarts-for-react')).default, {
   ssr: false,
@@ -293,45 +292,6 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
     [statusData, xMax, xMin, markAreaData]
   );
 
-  const topDrops = useMemo(
-    () =>
-      (analytics?.topDrops || []).slice(0, 10).map((item) => ({
-        label: trimLabel(`${item.commissionId} · ${item.subjectLabel}`, 52),
-        drop: Math.abs(item.delta),
-      })),
-    [analytics]
-  );
-
-  const topDropsOption = useMemo<EChartsOption>(
-    () => ({
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: { type: 'shadow' },
-      },
-      grid: { top: 16, left: 230, right: 18, bottom: 16, containLabel: false },
-      xAxis: {
-        type: 'value',
-        axisLabel: { color: '#6f3b58', fontSize: 11 },
-        splitLine: { lineStyle: { color: '#f1e5ed' } },
-      },
-      yAxis: {
-        type: 'category',
-        data: topDrops.map((item) => item.label),
-        axisLabel: { color: '#6f3b58', fontSize: 11, width: 220, overflow: 'truncate' },
-      },
-      series: [
-        {
-          name: 'Caída',
-          type: 'bar',
-          data: topDrops.map((item) => item.drop),
-          barWidth: 14,
-          itemStyle: { color: '#d04870', borderRadius: [0, 6, 6, 0] },
-        },
-      ],
-    }),
-    [topDrops]
-  );
-
   if (!points.length && !hasXAxisBounds) {
     return (
       <section className="rounded-xl border border-[#ead9e2] bg-white p-4 text-sm text-[#4f1237]">
@@ -354,17 +314,64 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
         <h2 className="text-sm font-bold text-[#4f1237]">Estado del cupo en el tiempo</h2>
         <ReactECharts option={statusStackedOption} style={{ height: 280 }} />
       </article>
-
-      <article className="rounded-xl border border-[#ead9e2] bg-white p-4 xl:col-span-2">
-        <h2 className="text-sm font-bold text-[#4f1237]">Top caídas de vacantes</h2>
-        {topDrops.length ? (
-          <ReactECharts option={topDropsOption} style={{ height: 320 }} />
-        ) : (
-          <p className="mt-3 text-sm text-[#6f3b58]">
-            No hay caídas registradas en el rango elegido.
-          </p>
-        )}
-      </article>
     </section>
+  );
+};
+
+export const OfferTopDropsChart = ({ analytics }: OfferAnalyticsChartsProps) => {
+  const topDrops = useMemo(
+    () =>
+      [...(analytics?.topDrops || [])]
+        .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
+        .slice(0, 10)
+        .map((item) => ({
+          label: trimLabel(`${item.commissionId} · ${item.subjectLabel}`, 52),
+          drop: Math.abs(item.delta),
+        })),
+    [analytics]
+  );
+
+  const topDropsOption = useMemo<EChartsOption>(
+    () => ({
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+      },
+      grid: { top: 16, left: 230, right: 18, bottom: 16, containLabel: false },
+      xAxis: {
+        type: 'value',
+        axisLabel: { color: '#6f3b58', fontSize: 11 },
+        splitLine: { lineStyle: { color: '#f1e5ed' } },
+      },
+      yAxis: {
+        type: 'category',
+        inverse: true,
+        data: topDrops.map((item) => item.label),
+        axisLabel: { color: '#6f3b58', fontSize: 11, width: 220, overflow: 'truncate' },
+      },
+      series: [
+        {
+          name: 'Caída',
+          type: 'bar',
+          data: topDrops.map((item) => item.drop),
+          barWidth: 14,
+          itemStyle: { color: '#d04870', borderRadius: [0, 6, 6, 0] },
+        },
+      ],
+    }),
+    [topDrops]
+  );
+
+  return (
+    <article className="rounded-xl border border-[#ead9e2] bg-white p-4">
+      <h2 className="text-sm font-bold text-[#4f1237]">Top caídas de vacantes</h2>
+      {topDrops.length ? (
+        <ReactECharts option={topDropsOption} style={{ height: 320 }} />
+      ) : (
+        <p className="mt-3 text-sm text-[#6f3b58]">
+          No hay caídas registradas en el rango elegido.
+        </p>
+      )}
+    </article>
   );
 };
