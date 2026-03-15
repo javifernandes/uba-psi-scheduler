@@ -30,6 +30,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Sync enrollment windows to Convex
+        env:
+          CONVEX_INGEST_URL: ${{ vars.CONVEX_INGEST_URL }}
+          VACANCY_INGEST_TOKEN: ${{ secrets.VACANCY_INGEST_TOKEN }}
+        run: |
+          npm run windows:push-convex -- \
+            --config config/scraper-windows.json \
+            --source "config/scraper-windows.json"
+
       - name: Evaluate scrape window status
         id: status
         env:

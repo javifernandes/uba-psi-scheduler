@@ -36,6 +36,17 @@ export type VacancyAnalytics = {
     cupoDisponible: number;
     sinDatos: number;
   };
+  timeBounds: {
+    startAt: string | null;
+    endAt: string | null;
+    nowAt: string;
+    phase: 'before' | 'open' | 'closed' | 'unknown';
+    daysTotal: number | null;
+    daysElapsed: number | null;
+    daysRemaining: number | null;
+    activeWindowId: string | null;
+    activeWindowLabel: string | null;
+  };
   series: VacancyAnalyticsPoint[];
   topDrops: VacancyDropItem[];
 };

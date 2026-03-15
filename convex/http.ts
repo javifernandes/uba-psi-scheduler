@@ -109,6 +109,26 @@ router.route({
 });
 
 router.route({
+  path: '/getEnrollmentWindow',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getEnrollmentWindow',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getEnrollmentWindow, { careerSlug, period });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
   path: '/ingestOfferProbe',
   method: 'OPTIONS',
   handler: httpAction(async () => handleOptions()),
@@ -142,6 +162,35 @@ router.route({
       careerLabel,
       period,
       subjects,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/upsertEnrollmentWindows',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/upsertEnrollmentWindows',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) {
+      return jsonResponse(401, { error: 'unauthorized' });
+    }
+    const body = await parseJson(request);
+    const source = typeof body.source === 'string' ? body.source : 'unknown';
+    const windows = Array.isArray(body.windows) ? body.windows : [];
+    if (!windows.length) {
+      return jsonResponse(400, { error: 'windows es requerido' });
+    }
+
+    const payload = await ctx.runMutation(api.offer.upsertEnrollmentWindows, {
+      source,
+      windows,
     });
     return jsonResponse(200, payload);
   }),

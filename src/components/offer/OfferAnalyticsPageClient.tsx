@@ -36,6 +36,18 @@ const buildOfferHref = (career: string, period: PeriodId) =>
 const buildAnalyticsHref = (career: string, period: PeriodId) =>
   `/oferta/analytics?career=${encodeURIComponent(career)}&period=${encodeURIComponent(period)}`;
 
+const cyclePhaseLabel: Record<'before' | 'open' | 'closed' | 'unknown', string> = {
+  before: 'Aún no abrió',
+  open: 'Inscripción abierta',
+  closed: 'Inscripción cerrada',
+  unknown: 'Sin ventana definida',
+};
+
+const formatCycleDays = (value: number | null) => {
+  if (typeof value !== 'number') return 's/d';
+  return `${value.toLocaleString('es-AR', { maximumFractionDigits: 1 })} días`;
+};
+
 export const OfferAnalyticsPageClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -226,6 +238,19 @@ export const OfferAnalyticsPageClient = () => {
           ))}
           <span className="ml-auto text-xs text-[#6f3b58]">
             Última captura: {formatTimestamp(analytics?.lastProbeAt || null)}
+          </span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 text-xs text-[#6f3b58]">
+          <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
+            {cyclePhaseLabel[analytics?.timeBounds.phase || 'unknown']}
+          </span>
+          <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
+            Ventana: {formatTimestamp(analytics?.timeBounds.startAt || null)} →{' '}
+            {formatTimestamp(analytics?.timeBounds.endAt || null)}
+          </span>
+          <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
+            Restan: {formatCycleDays(analytics?.timeBounds.daysRemaining ?? null)}
           </span>
         </div>
 
