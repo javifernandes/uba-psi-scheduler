@@ -36,6 +36,14 @@ export type VacancyAnalytics = {
     cupoDisponible: number;
     sinDatos: number;
   };
+  windows: Array<{
+    windowId: string;
+    label: string;
+    startAt: string;
+    endAt: string;
+    kind: string;
+    enabled: boolean;
+  }>;
   timeBounds: {
     startAt: string | null;
     endAt: string | null;
@@ -49,6 +57,12 @@ export type VacancyAnalytics = {
   };
   series: VacancyAnalyticsPoint[];
   topDrops: VacancyDropItem[];
+};
+
+export type VacancyTrends = {
+  anchorAt: string;
+  subject: Record<string, number[]>;
+  materia: Record<string, number[]>;
 };
 
 const assertApiBase = () => {
@@ -124,4 +138,17 @@ export const getVacancyAnalytics = async (
     careerSlug,
     period,
     range,
+  });
+
+export const getVacancyTrends = async (
+  careerSlug: string,
+  period: PeriodId,
+  range: string,
+  maxPoints = 18
+): Promise<VacancyTrends> =>
+  postJson<VacancyTrends>('/getVacancyTrends', {
+    careerSlug,
+    period,
+    range,
+    maxPoints,
   });

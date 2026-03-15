@@ -12,6 +12,7 @@ import type * as admin from "../admin.js";
 import type * as http from "../http.js";
 import type * as ingest from "../ingest.js";
 import type * as offer from "../offer.js";
+import type * as windows from "../windows.js";
 
 import type {
   ApiFromModules,
@@ -24,6 +25,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   ingest: typeof ingest;
   offer: typeof offer;
+  windows: typeof windows;
 }>;
 
 /**

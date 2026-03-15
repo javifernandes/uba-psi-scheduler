@@ -109,6 +109,33 @@ router.route({
 });
 
 router.route({
+  path: '/getVacancyTrends',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getVacancyTrends',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const range = typeof body.range === 'string' ? body.range : '24h';
+    const maxPoints = typeof body.maxPoints === 'number' ? body.maxPoints : undefined;
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getVacancyTrends, {
+      careerSlug,
+      period,
+      range,
+      maxPoints,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
   path: '/getEnrollmentWindow',
   method: 'OPTIONS',
   handler: httpAction(async () => handleOptions()),
@@ -123,7 +150,7 @@ router.route({
     const period = typeof body.period === 'string' ? body.period : '';
     if (!careerSlug || !period)
       return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
-    const payload = await ctx.runQuery(api.offer.getEnrollmentWindow, { careerSlug, period });
+    const payload = await ctx.runQuery(api.windows.getEnrollmentWindow, { careerSlug, period });
     return jsonResponse(200, payload);
   }),
 });
@@ -188,10 +215,48 @@ router.route({
       return jsonResponse(400, { error: 'windows es requerido' });
     }
 
-    const payload = await ctx.runMutation(api.offer.upsertEnrollmentWindows, {
+    const payload = await ctx.runMutation(api.windows.upsertEnrollmentWindows, {
       source,
       windows,
     });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/getScrapeWindowStatus',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getScrapeWindowStatus',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const trigger = body.trigger === 'schedule' ? 'schedule' : 'manual';
+    const force = body.force === true;
+    const payload = await ctx.runQuery(api.windows.getScrapeWindowStatus, { trigger, force });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
+  path: '/closeEnrollmentWindow',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/closeEnrollmentWindow',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const token = process.env.CONVEX_ADMIN_TOKEN || process.env.VACANCY_INGEST_TOKEN || '';
+    if (!hasBearer(request, token)) return jsonResponse(401, { error: 'unauthorized' });
+    const body = await parseJson(request);
+    const windowId = typeof body.windowId === 'string' && body.windowId ? body.windowId : undefined;
+    const source = typeof body.source === 'string' && body.source ? body.source : undefined;
+    const payload = await ctx.runMutation(api.windows.closeEnrollmentWindow, { windowId, source });
     return jsonResponse(200, payload);
   }),
 });

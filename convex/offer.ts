@@ -1,5 +1,11 @@
-import { mutation, query } from './_generated/server';
+import { query } from './_generated/server';
 import { v } from 'convex/values';
+import {
+  parseIsoMs,
+  resolveTimeBounds,
+  windowsForCareer,
+  type EnrollmentWindowRecord,
+} from './windows';
 
 const vacancyStatus = (vacantes: number | null) => {
   if (vacantes === null) return 'sin_datos';
@@ -16,190 +22,38 @@ const rangeStart = (range: string, nowMs: number) => {
   return '';
 };
 
-type EnrollmentWindowRecord = {
-  key: string;
-  windowId: string;
-  label: string;
-  careerSlug: string;
-  period: string;
-  startAt: string;
-  endAt: string;
-  kind: string;
-  enabled: boolean;
-  source: string;
-  updatedAt: string;
-};
+const materiaIdFromLabel = (subjectLabel: string, fallbackSubjectId: string) =>
+  subjectLabel.match(/^\((\d+)\)/)?.[1] || fallbackSubjectId;
 
-const dayMs = 24 * 60 * 60 * 1000;
+const vacancyNumber = (value: number | null) => (typeof value === 'number' ? value : 0);
 
-const parseIsoMs = (iso: string) => {
-  const parsed = Date.parse(iso);
-  return Number.isFinite(parsed) ? parsed : null;
-};
+type TrendPoint = { t: number; v: number };
 
-const round1 = (value: number) => Math.round(value * 10) / 10;
-
-const resolveTimeBounds = (windows: EnrollmentWindowRecord[], nowMs: number) => {
-  const enabledWindows = windows.filter((window) => window.enabled);
-  const ranges = enabledWindows
-    .map((window) => ({
-      ...window,
-      startMs: parseIsoMs(window.startAt),
-      endMs: parseIsoMs(window.endAt),
-    }))
-    .filter(
-      (window): window is EnrollmentWindowRecord & { startMs: number; endMs: number } =>
-        typeof window.startMs === 'number' && typeof window.endMs === 'number'
-    );
-
-  if (!ranges.length) {
-    return {
-      startAt: null as string | null,
-      endAt: null as string | null,
-      phase: 'unknown' as 'before' | 'open' | 'closed' | 'unknown',
-      daysTotal: null as number | null,
-      daysElapsed: null as number | null,
-      daysRemaining: null as number | null,
-      activeWindowId: null as string | null,
-      activeWindowLabel: null as string | null,
-    };
+const downsampleTrend = (points: TrendPoint[], maxPoints: number) => {
+  if (points.length <= maxPoints) return points;
+  const sampled: TrendPoint[] = [];
+  const steps = maxPoints - 1;
+  for (let i = 0; i <= steps; i += 1) {
+    const index = Math.round((i * (points.length - 1)) / steps);
+    const point = points[index];
+    if (point) sampled.push(point);
   }
-
-  const startMs = Math.min(...ranges.map((window) => window.startMs));
-  const endMs = Math.max(...ranges.map((window) => window.endMs));
-  const totalDays = Math.max(0, (endMs - startMs) / dayMs);
-  const elapsedDays = Math.min(totalDays, Math.max(0, (nowMs - startMs) / dayMs));
-  const remainingDays = Math.max(0, (endMs - nowMs) / dayMs);
-  const active = ranges.find((window) => window.startMs <= nowMs && nowMs <= window.endMs) || null;
-
-  let phase: 'before' | 'open' | 'closed' = 'open';
-  if (nowMs < startMs) phase = 'before';
-  else if (nowMs > endMs) phase = 'closed';
-
-  return {
-    startAt: new Date(startMs).toISOString(),
-    endAt: new Date(endMs).toISOString(),
-    phase,
-    daysTotal: round1(totalDays),
-    daysElapsed: round1(elapsedDays),
-    daysRemaining: round1(remainingDays),
-    activeWindowId: active?.windowId || null,
-    activeWindowLabel: active?.label || null,
-  };
+  return sampled;
 };
 
-const windowsForCareer = (windows: EnrollmentWindowRecord[], careerSlug: string) => {
-  const specific = windows.filter((window) => window.careerSlug === careerSlug);
-  if (specific.length) return specific;
-  return windows.filter((window) => window.careerSlug === '*');
+const upsertTrendPoint = (
+  byEntity: Map<string, TrendPoint[]>,
+  entityId: string,
+  timestampMs: number,
+  value: number
+) => {
+  const rows = byEntity.get(entityId) || [];
+  const last = rows[rows.length - 1];
+  if (!last || last.t !== timestampMs || last.v !== value) {
+    rows.push({ t: timestampMs, v: value });
+    byEntity.set(entityId, rows);
+  }
 };
-
-export const upsertEnrollmentWindows = mutation({
-  args: {
-    source: v.string(),
-    windows: v.array(
-      v.object({
-        windowId: v.string(),
-        label: v.string(),
-        careerSlug: v.optional(v.string()),
-        period: v.string(),
-        startAt: v.string(),
-        endAt: v.string(),
-        kind: v.string(),
-        enabled: v.boolean(),
-      })
-    ),
-  },
-  handler: async (ctx, args) => {
-    const nowIso = new Date().toISOString();
-    const incoming = args.windows.map((window) => {
-      const careerSlug = window.careerSlug || '*';
-      return {
-        key: `${careerSlug}:${window.period}:${window.windowId}`,
-        windowId: window.windowId,
-        label: window.label,
-        careerSlug,
-        period: window.period,
-        startAt: window.startAt,
-        endAt: window.endAt,
-        kind: window.kind,
-        enabled: window.enabled,
-        source: args.source,
-      };
-    });
-
-    const incomingKeys = new Set(incoming.map((window) => window.key));
-    const existing = await ctx.db.query('enrollmentWindows').collect();
-    let removed = 0;
-    for (const row of existing) {
-      if (row.source !== args.source) continue;
-      if (incomingKeys.has(row.key)) continue;
-      await ctx.db.delete(row._id);
-      removed += 1;
-    }
-
-    let inserted = 0;
-    let patched = 0;
-    for (const window of incoming) {
-      const current = await ctx.db
-        .query('enrollmentWindows')
-        .withIndex('by_key', (q) => q.eq('key', window.key))
-        .first();
-      if (current) {
-        await ctx.db.patch(current._id, {
-          ...window,
-          updatedAt: nowIso,
-        });
-        patched += 1;
-      } else {
-        await ctx.db.insert('enrollmentWindows', {
-          ...window,
-          updatedAt: nowIso,
-        });
-        inserted += 1;
-      }
-    }
-
-    return {
-      status: 'ok',
-      source: args.source,
-      incoming: incoming.length,
-      inserted,
-      patched,
-      removed,
-      updatedAt: nowIso,
-    };
-  },
-});
-
-export const getEnrollmentWindow = query({
-  args: {
-    careerSlug: v.string(),
-    period: v.string(),
-  },
-  handler: async (ctx, args) => {
-    const allWindows = await ctx.db
-      .query('enrollmentWindows')
-      .withIndex('by_period', (q) => q.eq('period', args.period))
-      .collect();
-    const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug).sort(
-      (a, b) => a.startAt.localeCompare(b.startAt)
-    );
-    return {
-      period: args.period,
-      careerSlug: args.careerSlug,
-      windows: windows.map((window) => ({
-        windowId: window.windowId,
-        label: window.label,
-        startAt: window.startAt,
-        endAt: window.endAt,
-        kind: window.kind,
-        enabled: window.enabled,
-      })),
-      timeBounds: resolveTimeBounds(windows, Date.now()),
-    };
-  },
-});
 
 export const listCareersWithLatestPeriod = query({
   args: {},
@@ -320,6 +174,7 @@ export const getVacancyAnalytics = query({
     ]);
 
     const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
+    const sortedWindows = [...windows].sort((a, b) => a.startAt.localeCompare(b.startAt));
     const timeBounds = resolveTimeBounds(windows, now);
     const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
     const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
@@ -371,6 +226,14 @@ export const getVacancyAnalytics = query({
     return {
       lastProbeAt: filteredRuns.length ? filteredRuns[filteredRuns.length - 1]!.capturedAt : null,
       totals,
+      windows: sortedWindows.map((window) => ({
+        windowId: window.windowId,
+        label: window.label,
+        startAt: window.startAt,
+        endAt: window.endAt,
+        kind: window.kind,
+        enabled: window.enabled,
+      })),
       timeBounds: {
         ...timeBounds,
         nowAt: new Date(now).toISOString(),
@@ -384,6 +247,183 @@ export const getVacancyAnalytics = query({
         sinDatos: run.totals.sinDatos,
       })),
       topDrops,
+    };
+  },
+});
+
+export const getVacancyTrends = query({
+  args: {
+    careerSlug: v.string(),
+    period: v.string(),
+    range: v.string(),
+    maxPoints: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+    const requestedMax = typeof args.maxPoints === 'number' ? Math.floor(args.maxPoints) : 18;
+    const maxPoints = Math.max(8, Math.min(requestedMax, 40));
+
+    const [current, changes, runs, allWindows] = await Promise.all([
+      ctx.db
+        .query('vacancyCurrent')
+        .withIndex('by_career_period', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('vacancyChanges')
+        .withIndex('by_career_period_capturedAt', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('vacancyProbeRuns')
+        .withIndex('by_career_period_capturedAt', (q) =>
+          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
+        )
+        .collect(),
+      ctx.db
+        .query('enrollmentWindows')
+        .withIndex('by_period', (q) => q.eq('period', args.period))
+        .collect(),
+    ]);
+
+    const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
+    const timeBounds = resolveTimeBounds(windows, now);
+    const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
+    const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
+    const rangeStartMs = parseIsoMs(rangeStart(args.range, now));
+    const effectiveStartMs =
+      typeof rangeStartMs === 'number' && typeof cycleStartMs === 'number'
+        ? Math.max(rangeStartMs, cycleStartMs)
+        : typeof rangeStartMs === 'number'
+          ? rangeStartMs
+          : cycleStartMs;
+
+    const inRange = (capturedAt: string) => {
+      const capturedAtMs = parseIsoMs(capturedAt);
+      if (typeof capturedAtMs !== 'number') return false;
+      if (typeof effectiveStartMs === 'number' && capturedAtMs < effectiveStartMs) return false;
+      if (typeof cycleEndMs === 'number' && capturedAtMs > cycleEndMs) return false;
+      return true;
+    };
+
+    const filteredRuns = runs.filter((item) => inRange(item.capturedAt));
+    const filteredChanges = changes.filter((item) => inRange(item.capturedAt));
+
+    const anchorIso = filteredRuns.length
+      ? filteredRuns[filteredRuns.length - 1]!.capturedAt
+      : new Date(now).toISOString();
+    const anchorMs = parseIsoMs(anchorIso) || now;
+
+    const subjectTotals = new Map<string, number>();
+    const materiaTotals = new Map<string, number>();
+    const subjectToMateria = new Map<string, string>();
+    const commissionState = new Map<
+      string,
+      { subjectId: string; materiaId: string; vacantes: number | null }
+    >();
+
+    current.forEach((row) => {
+      const materiaId = materiaIdFromLabel(row.subjectLabel, row.subjectId);
+      const value = vacancyNumber(row.vacantes);
+      subjectTotals.set(row.subjectId, (subjectTotals.get(row.subjectId) || 0) + value);
+      materiaTotals.set(materiaId, (materiaTotals.get(materiaId) || 0) + value);
+      subjectToMateria.set(row.subjectId, materiaId);
+      commissionState.set(row.key, {
+        subjectId: row.subjectId,
+        materiaId,
+        vacantes: row.vacantes,
+      });
+    });
+
+    const subjectTrends = new Map<string, TrendPoint[]>();
+    const materiaTrends = new Map<string, TrendPoint[]>();
+
+    subjectTotals.forEach((value, subjectId) =>
+      upsertTrendPoint(subjectTrends, subjectId, anchorMs, value)
+    );
+    materiaTotals.forEach((value, materiaId) =>
+      upsertTrendPoint(materiaTrends, materiaId, anchorMs, value)
+    );
+
+    const changesByTimestamp = new Map<string, typeof filteredChanges>();
+    filteredChanges.forEach((row) => {
+      const existing = changesByTimestamp.get(row.capturedAt);
+      if (existing) {
+        existing.push(row);
+      } else {
+        changesByTimestamp.set(row.capturedAt, [row]);
+      }
+    });
+
+    const timestampsDesc = Array.from(changesByTimestamp.keys()).sort((a, b) =>
+      b.localeCompare(a, 'en')
+    );
+
+    timestampsDesc.forEach((capturedAt) => {
+      const capturedAtMs = parseIsoMs(capturedAt);
+      if (typeof capturedAtMs !== 'number') return;
+      const group = changesByTimestamp.get(capturedAt) || [];
+      if (!group.length) return;
+
+      const changedSubjects = new Set<string>();
+      const changedMaterias = new Set<string>();
+      group.forEach((change) => {
+        const tracked = commissionState.get(change.key);
+        const subjectId = tracked?.subjectId || change.subjectId;
+        const materiaId =
+          tracked?.materiaId ||
+          subjectToMateria.get(subjectId) ||
+          materiaIdFromLabel(change.subjectLabel, subjectId);
+        subjectToMateria.set(subjectId, materiaId);
+        changedSubjects.add(subjectId);
+        changedMaterias.add(materiaId);
+      });
+
+      changedSubjects.forEach((subjectId) =>
+        upsertTrendPoint(subjectTrends, subjectId, capturedAtMs, subjectTotals.get(subjectId) || 0)
+      );
+      changedMaterias.forEach((materiaId) =>
+        upsertTrendPoint(materiaTrends, materiaId, capturedAtMs, materiaTotals.get(materiaId) || 0)
+      );
+
+      group.forEach((change) => {
+        const tracked = commissionState.get(change.key);
+        const subjectId = tracked?.subjectId || change.subjectId;
+        const materiaId =
+          tracked?.materiaId ||
+          subjectToMateria.get(subjectId) ||
+          materiaIdFromLabel(change.subjectLabel, subjectId);
+
+        const currentVacantes = tracked ? tracked.vacantes : change.vacantes;
+        commissionState.set(change.key, {
+          subjectId,
+          materiaId,
+          vacantes: change.prevVacantes,
+        });
+
+        const delta = vacancyNumber(change.prevVacantes) - vacancyNumber(currentVacantes);
+        subjectTotals.set(subjectId, (subjectTotals.get(subjectId) || 0) + delta);
+        materiaTotals.set(materiaId, (materiaTotals.get(materiaId) || 0) + delta);
+      });
+    });
+
+    const toSeriesObject = (source: Map<string, TrendPoint[]>) => {
+      const entries = Array.from(source.entries()).map(([entityId, points]) => {
+        const sortedPoints = [...points].sort((a, b) => a.t - b.t);
+        const sampled = downsampleTrend(sortedPoints, maxPoints).map((point) =>
+          Math.max(0, Math.round(point.v))
+        );
+        return [entityId, sampled] as const;
+      });
+      return Object.fromEntries(entries);
+    };
+
+    return {
+      anchorAt: anchorIso,
+      subject: toSeriesObject(subjectTrends),
+      materia: toSeriesObject(materiaTrends),
     };
   },
 });

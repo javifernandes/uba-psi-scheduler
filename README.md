@@ -133,18 +133,21 @@ Formato de materias (schema v2):
 - slots con `lugar: { anexo, aula }`
 - comisiones con `vacantes` y `slotsAsociados[]`
 
-## Ventanas de ejecución
+## Ventanas de ejecución (DB-only)
 
-Configuración versionada en:
-
-- `config/scraper-windows.json`
+Las ventanas viven en Convex (`enrollmentWindows`) y no se versionan en archivos JSON del repo.
 
 Comandos locales:
 
 ```bash
-npm run scrape:window:status
+npm run scrape:window:status -- --trigger schedule
 npm run scrape:window:close -- --window-id 2026-1c-main
 ```
+
+Para cargar/editar ventanas:
+
+- usar Convex Dashboard/Data, o
+- correr `npx convex run windows:upsertEnrollmentWindows ...` con payload explícito.
 
 ## Estructura
 
@@ -155,7 +158,7 @@ npm run scrape:window:close -- --window-id 2026-1c-main
 - `scripts/scrape-uba-psi-oferta.ts`: scraper para regenerar datos.
 - `scripts/push-offer-probe-to-convex.ts`: push de probes scrapeados a Convex.
 - `scripts/backfill-vacancies-from-git.ts`: backfill histórico desde commits de git.
-- `scripts/scraper-window-control.ts`: utilidades de status/cierre de ventanas de scraping.
+- `scripts/scraper-window-control.ts`: utilidades de status/cierre de ventanas de scraping (Convex DB-only).
 
 ## Deploy (Cloudflare Pages)
 

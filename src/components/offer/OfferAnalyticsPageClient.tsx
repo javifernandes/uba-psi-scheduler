@@ -1,15 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   getOfferSubjects,
   getVacancyAnalytics,
+  getVacancyTrends,
   listCareersWithLatestPeriod,
   listPeriodsByCareer,
   type CareerWithLatestPeriod,
   type VacancyAnalytics,
+  type VacancyTrends,
 } from '@/lib/offer-api';
 import { normalizePeriod, type PeriodId } from '@/lib/period';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
@@ -48,6 +50,43 @@ const formatCycleDays = (value: number | null) => {
   return `${value.toLocaleString('es-AR', { maximumFractionDigits: 1 })} días`;
 };
 
+const parseIsoMs = (iso: string | null) => {
+  if (!iso) return null;
+  const parsed = Date.parse(iso);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
+const formatWindowDateTime = (iso: string | null) => {
+  const ms = parseIsoMs(iso);
+  if (typeof ms !== 'number') return 's/d';
+  return new Date(ms).toLocaleString('es-AR', {
+    day: '2-digit',
+    month: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+};
+
+const formatCloseCountdown = (nowIso: string | null, endIso: string | null) => {
+  const nowMs = parseIsoMs(nowIso);
+  const endMs = parseIsoMs(endIso);
+  if (typeof nowMs !== 'number' || typeof endMs !== 'number' || endMs <= nowMs) return null;
+  const remainingMs = endMs - nowMs;
+  const remainingHours = remainingMs / (60 * 60 * 1000);
+  if (remainingHours >= 48) {
+    return `${Math.ceil(remainingHours / 24)} días para cierre`;
+  }
+  if (remainingHours >= 1) {
+    return `${Math.ceil(remainingHours)} hs para cierre`;
+  }
+  return `${Math.max(1, Math.ceil(remainingMs / (60 * 1000)))} min para cierre`;
+};
+
+const windowKindLabel = (kind: string) =>
+  kind === 'supplementary' ? 'Inscripción suplementaria' : 'Inscripción principal';
+
 export const OfferAnalyticsPageClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -56,11 +95,13 @@ export const OfferAnalyticsPageClient = () => {
   const [periods, setPeriods] = useState<PeriodId[]>([]);
   const [range, setRange] = useState<(typeof ANALYTICS_RANGES)[number]['value']>('24h');
   const [analytics, setAnalytics] = useState<VacancyAnalytics | null>(null);
+  const [trends, setTrends] = useState<VacancyTrends | null>(null);
   const [subjects, setSubjects] = useState<SubjectData[]>([]);
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
   const [error, setError] = useState('');
+  const lastProbeAtRef = useRef<string | null>(null);
 
   const queryCareer = searchParams.get('career') || '';
   const queryPeriod = normalizePeriod(searchParams.get('period') || '');
@@ -118,6 +159,23 @@ export const OfferAnalyticsPageClient = () => {
     return periods[0] || null;
   }, [careers, periods, queryPeriod, selectedCareer]);
 
+  const enrollmentWindows = useMemo(() => analytics?.windows || [], [analytics?.windows]);
+  const activeWindow = useMemo(
+    () =>
+      enrollmentWindows.find(
+        (window) => window.windowId === analytics?.timeBounds.activeWindowId
+      ) || null,
+    [analytics?.timeBounds.activeWindowId, enrollmentWindows]
+  );
+  const closeCountdown = useMemo(
+    () =>
+      formatCloseCountdown(
+        analytics?.timeBounds.nowAt || null,
+        activeWindow ? activeWindow.endAt : analytics?.timeBounds.endAt || null
+      ),
+    [activeWindow, analytics?.timeBounds.endAt, analytics?.timeBounds.nowAt]
+  );
+
   useEffect(() => {
     if (!selectedCareer || !selectedPeriod) return;
     if (queryCareer === selectedCareer && queryPeriod === selectedPeriod) return;
@@ -133,17 +191,21 @@ export const OfferAnalyticsPageClient = () => {
     Promise.all([
       getVacancyAnalytics(selectedCareer, selectedPeriod, range),
       getOfferSubjects(selectedCareer, selectedPeriod),
+      getVacancyTrends(selectedCareer, selectedPeriod, range),
     ])
-      .then(([analyticsPayload, subjectsPayload]) => {
+      .then(([analyticsPayload, subjectsPayload, trendsPayload]) => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
         setSubjects(subjectsPayload);
+        setTrends(trendsPayload);
+        lastProbeAtRef.current = analyticsPayload.lastProbeAt || null;
       })
       .catch((err) => {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'No se pudieron cargar analíticas.');
         setAnalytics(null);
         setSubjects([]);
+        setTrends(null);
       })
       .finally(() => {
         if (cancelled) return;
@@ -158,13 +220,19 @@ export const OfferAnalyticsPageClient = () => {
   useEffect(() => {
     const interval = window.setInterval(() => {
       if (!selectedCareer || !selectedPeriod) return;
-      Promise.all([
-        getVacancyAnalytics(selectedCareer, selectedPeriod, range),
-        getOfferSubjects(selectedCareer, selectedPeriod),
-      ])
-        .then(([analyticsPayload, subjectsPayload]) => {
+      getVacancyAnalytics(selectedCareer, selectedPeriod, range)
+        .then(async (analyticsPayload) => {
           setAnalytics(analyticsPayload);
+          const nextProbeAt = analyticsPayload.lastProbeAt || null;
+          if (nextProbeAt && nextProbeAt === lastProbeAtRef.current) return;
+
+          const [subjectsPayload, trendsPayload] = await Promise.all([
+            getOfferSubjects(selectedCareer, selectedPeriod),
+            getVacancyTrends(selectedCareer, selectedPeriod, range),
+          ]);
           setSubjects(subjectsPayload);
+          setTrends(trendsPayload);
+          lastProbeAtRef.current = nextProbeAt;
         })
         .catch(() => undefined);
     }, 60_000);
@@ -214,9 +282,6 @@ export const OfferAnalyticsPageClient = () => {
               >
                 Horarios
               </Link>
-              <span className="rounded-md border border-white/25 bg-white/10 px-2 py-1 font-semibold">
-                Auto-refresh 60s
-              </span>
             </div>
           </div>
         </div>
@@ -246,12 +311,22 @@ export const OfferAnalyticsPageClient = () => {
             {cyclePhaseLabel[analytics?.timeBounds.phase || 'unknown']}
           </span>
           <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
-            Ventana: {formatTimestamp(analytics?.timeBounds.startAt || null)} →{' '}
-            {formatTimestamp(analytics?.timeBounds.endAt || null)}
-          </span>
-          <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
             Restan: {formatCycleDays(analytics?.timeBounds.daysRemaining ?? null)}
           </span>
+          {closeCountdown ? (
+            <span className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold">
+              {closeCountdown}
+            </span>
+          ) : null}
+          {enrollmentWindows.map((window) => (
+            <span
+              key={window.windowId}
+              className="rounded-md border border-[#dbc7d3] bg-white px-2 py-1 font-semibold"
+            >
+              {windowKindLabel(window.kind)}: {formatWindowDateTime(window.startAt)} →{' '}
+              {formatWindowDateTime(window.endAt)}
+            </span>
+          ))}
         </div>
 
         {loadingAnalytics && (
@@ -262,7 +337,7 @@ export const OfferAnalyticsPageClient = () => {
 
         <AnalyticsKpiGrid analytics={analytics} />
         <OfferAnalyticsCharts analytics={analytics} />
-        <OfferSubjectVacancyTable subjects={subjects} loading={loadingSubjects} />
+        <OfferSubjectVacancyTable subjects={subjects} trends={trends} loading={loadingSubjects} />
         <AnalyticsSeriesTable series={analytics?.series || []} />
         <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
       </section>
