@@ -9,6 +9,7 @@ type CliOptions = {
   endpoint: string;
   token: string;
   confirm: string;
+  batchSize: number;
 };
 
 const parseArgs = (): CliOptions => {
@@ -20,13 +21,16 @@ const parseArgs = (): CliOptions => {
   };
 
   if (command !== 'stats' && command !== 'reset') {
-    throw new Error('Uso: npm run convex:admin -- <stats|reset> [--endpoint ...] [--token ...]');
+    throw new Error(
+      'Uso: npm run convex:admin -- <stats|reset> [--endpoint ...] [--token ...] [--batch-size ...]'
+    );
   }
 
   const endpoint = byName('--endpoint') || process.env.CONVEX_INGEST_URL || '';
   const token =
     byName('--token') || process.env.CONVEX_ADMIN_TOKEN || process.env.VACANCY_INGEST_TOKEN || '';
   const confirm = byName('--confirm') || '';
+  const batchSizeRaw = Number.parseInt(byName('--batch-size') || '200', 10);
 
   if (!endpoint) {
     throw new Error('Falta endpoint. Usá --endpoint o CONVEX_INGEST_URL.');
@@ -40,6 +44,7 @@ const parseArgs = (): CliOptions => {
     endpoint,
     token,
     confirm,
+    batchSize: Number.isFinite(batchSizeRaw) && batchSizeRaw > 0 ? batchSizeRaw : 200,
   };
 };
 
@@ -75,10 +80,59 @@ const main = async () => {
   }
 
   const confirm = options.confirm || 'DROP_ALL_DATA';
-  const result = await postJson(withPath(options.endpoint, '/admin/resetAllData'), options.token, {
-    confirm,
-  });
-  console.log(JSON.stringify(result, null, 2));
+  const totals: Record<string, number> = {};
+  let pass = 0;
+
+  while (true) {
+    pass += 1;
+    const result = (await postJson(
+      withPath(options.endpoint, '/admin/resetAllData'),
+      options.token,
+      {
+        confirm,
+        batchSize: options.batchSize,
+      }
+    )) as {
+      deleted?: Record<string, number>;
+      deletedTotal?: number;
+      hasMore?: boolean;
+      batchSize?: number;
+      status?: string;
+    };
+
+    const deleted = result.deleted || {};
+    for (const [table, count] of Object.entries(deleted)) {
+      totals[table] = (totals[table] || 0) + count;
+    }
+
+    console.log(
+      `[reset pass ${pass}] status=${result.status || 'unknown'} batchSize=${
+        result.batchSize || options.batchSize
+      } deletedTotal=${result.deletedTotal || 0}`
+    );
+
+    if (!result.hasMore) {
+      console.log(
+        JSON.stringify(
+          {
+            status: 'ok',
+            passes: pass,
+            deleted: totals,
+            deletedTotal: Object.values(totals).reduce((acc, n) => acc + n, 0),
+          },
+          null,
+          2
+        )
+      );
+      break;
+    }
+
+    if ((result.deletedTotal || 0) === 0) {
+      throw new Error(
+        'Reset quedó en loop sin borrar filas. Revisar endpoint /admin/resetAllData.'
+      );
+    }
+  }
 };
 
 main().catch((error) => {
