@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { ChevronDown, ChevronRight, X } from 'lucide-react';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
 import type { VacancyTrends } from '@/lib/offer-api';
 import {
@@ -41,6 +41,10 @@ type DisplayVacancyRow =
   | { kind: 'materia'; row: MateriaVacancyRow }
   | { kind: 'catedra'; row: CatedraVacancyRow; parentKey: string };
 
+type SelectedDetail =
+  | { kind: 'materia'; materia: MateriaVacancyRow }
+  | { kind: 'catedra'; catedra: CatedraVacancyRow; materia: MateriaVacancyRow | null };
+
 type VacanciesCellProps = {
   vacancies: number;
   maxVacancies: number;
@@ -48,6 +52,8 @@ type VacanciesCellProps = {
 
 type SparklineMiniProps = {
   points: number[] | undefined;
+  width?: number;
+  height?: number;
 };
 
 const barClassByVacancy = (vacancies: number) => {
@@ -65,6 +71,17 @@ const nextDirection = (current: SortDirection, active: boolean): SortDirection =
 const sortIndicator = (active: boolean, direction: SortDirection) => {
   if (!active) return '↕';
   return direction === 'desc' ? '↓' : '↑';
+};
+
+const compactEntityId = (rawId: string) => {
+  const clean = rawId.trim();
+  if (!clean) return 's/d';
+  if (/^\d+$/.test(clean)) return clean;
+  const cTailMatch = clean.match(/(?:^|[-_])(c\d{1,5})$/i);
+  if (cTailMatch?.[1]) return cTailMatch[1].toLowerCase();
+  const numericTailMatch = clean.match(/(?:^|[-_])(\d{1,5})$/);
+  if (numericTailMatch?.[1]) return numericTailMatch[1];
+  return clean.length > 12 ? `${clean.slice(0, 12)}…` : clean;
 };
 
 const parseMateriaIdentity = (subject: SubjectData) => {
@@ -183,11 +200,9 @@ const sparklineGeometry = (points: number[], width: number, height: number) => {
   };
 };
 
-const SparklineMini = ({ points }: SparklineMiniProps) => {
+const SparklineMini = ({ points, width = 98, height = 26 }: SparklineMiniProps) => {
   if (!points?.length) return <span className="text-[11px] text-[#9c8392]">s/d</span>;
   const normalized = points.length > 1 ? points : [points[0]!, points[0]!];
-  const width = 98;
-  const height = 26;
   const geometry = sparklineGeometry(normalized, width, height);
   if (!geometry) return <span className="text-[11px] text-[#9c8392]">s/d</span>;
   const stroke = trendStrokeColor(normalized);
@@ -208,6 +223,7 @@ export const OfferSubjectVacancyTable = ({
   const [sortKey, setSortKey] = useState<SortKey>('id');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(() => new Set());
+  const [selectedDetail, setSelectedDetail] = useState<SelectedDetail | null>(null);
 
   const materiaRows = useMemo(() => toMateriaVacancyRows(subjects), [subjects]);
 
@@ -246,6 +262,10 @@ export const OfferSubjectVacancyTable = ({
 
   const subjectTrendMap = useMemo(() => new Map(Object.entries(trends?.subject || {})), [trends]);
   const materiaTrendMap = useMemo(() => new Map(Object.entries(trends?.materia || {})), [trends]);
+  const materiaByKey = useMemo(
+    () => new Map(sortedMaterias.map((materia) => [materia.key, materia])),
+    [sortedMaterias]
+  );
 
   const maxVacancies = useMemo(
     () => displayRows.reduce((acc, row) => Math.max(acc, row.row.vacancies), 0),
@@ -270,6 +290,15 @@ export const OfferSubjectVacancyTable = ({
     });
   };
 
+  useEffect(() => {
+    if (!selectedDetail) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedDetail(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [selectedDetail]);
+
   return (
     <section className="rounded-xl border border-[#ead9e2] bg-white p-4">
       <div className="flex items-center justify-between gap-2">
@@ -280,7 +309,7 @@ export const OfferSubjectVacancyTable = ({
       <div className="mt-3 max-h-80 overflow-auto rounded-lg border border-[#ead9e2]">
         <table className="w-full table-fixed border-collapse text-xs">
           <colgroup>
-            <col className="w-[84px]" />
+            <col className="w-[72px]" />
             <col />
             <col className="w-[260px]" />
             <col className="w-[126px]" />
@@ -322,24 +351,43 @@ export const OfferSubjectVacancyTable = ({
                   key={entry.row.key}
                   className="border-t border-[#f0e4eb] bg-[#fcf7fa] text-[#4f1237]"
                 >
-                  <td className="whitespace-nowrap px-2 py-2 font-semibold">{entry.row.id}</td>
+                  <td className="px-2 py-2 font-semibold">
+                    <span className="block truncate" title={entry.row.id}>
+                      {compactEntityId(entry.row.id)}
+                    </span>
+                  </td>
                   <td className="px-3 py-2">
-                    <button
-                      type="button"
-                      className="inline-flex items-center gap-1 text-left"
-                      onClick={() => toggleMateria(entry.row.key)}
-                      aria-expanded={expandedMaterias.has(entry.row.key)}
-                    >
-                      {expandedMaterias.has(entry.row.key) ? (
-                        <ChevronDown size={14} className="text-[#7b4a65]" />
-                      ) : (
-                        <ChevronRight size={14} className="text-[#7b4a65]" />
-                      )}
-                      <span className="font-semibold text-[#4f1237]">{entry.row.name}</span>
+                    <div className="inline-flex items-center gap-1">
+                      <button
+                        type="button"
+                        className="inline-flex items-center"
+                        onClick={() => toggleMateria(entry.row.key)}
+                        aria-expanded={expandedMaterias.has(entry.row.key)}
+                        aria-label={
+                          expandedMaterias.has(entry.row.key)
+                            ? 'Contraer cátedras'
+                            : 'Expandir cátedras'
+                        }
+                      >
+                        {expandedMaterias.has(entry.row.key) ? (
+                          <ChevronDown size={14} className="text-[#7b4a65]" />
+                        ) : (
+                          <ChevronRight size={14} className="text-[#7b4a65]" />
+                        )}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedDetail({ kind: 'materia', materia: entry.row })}
+                        className="inline-flex items-center gap-1 text-left"
+                      >
+                        <span className="font-semibold text-[#4f1237] hover:underline">
+                          {entry.row.name}
+                        </span>
+                      </button>
                       <span className="text-[11px] text-[#7b4a65]">
                         ({entry.row.catedras.length} cátedras)
                       </span>
-                    </button>
+                    </div>
                   </td>
                   <td className="px-3 py-2">
                     <VacanciesCell vacancies={entry.row.vacancies} maxVacancies={maxVacancies} />
@@ -353,10 +401,28 @@ export const OfferSubjectVacancyTable = ({
                   key={`${entry.parentKey}::${entry.row.key}`}
                   className="border-t border-[#f0e4eb] text-[#4f1237]"
                 >
-                  <td className="whitespace-nowrap px-2 py-2 text-[#7b4a65]">{entry.row.id}</td>
+                  <td className="px-2 py-2 text-[#7b4a65]">
+                    <span className="block truncate" title={entry.row.id}>
+                      {compactEntityId(entry.row.id)}
+                    </span>
+                  </td>
                   <td className="px-3 py-2">
                     <div className="pl-5">
-                      <p className="font-medium text-[#5b2e46]">{entry.row.catedra}</p>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setSelectedDetail({
+                            kind: 'catedra',
+                            catedra: entry.row,
+                            materia: materiaByKey.get(entry.parentKey) || null,
+                          })
+                        }
+                        className="block text-left"
+                      >
+                        <p className="font-medium text-[#5b2e46] hover:underline">
+                          {entry.row.catedra}
+                        </p>
+                      </button>
                       {entry.row.professor ? (
                         <p className="text-[11px] text-[#7b4a65]">
                           Profesor: {entry.row.professor}
@@ -376,6 +442,118 @@ export const OfferSubjectVacancyTable = ({
           </tbody>
         </table>
       </div>
+
+      {selectedDetail ? (
+        <div className="fixed inset-0 z-50 flex">
+          <button
+            type="button"
+            className="flex-1 bg-black/30"
+            onClick={() => setSelectedDetail(null)}
+            aria-label="Cerrar detalle"
+          />
+          <aside className="h-full w-full max-w-[460px] overflow-auto border-l border-[#dbc7d3] bg-white p-4 shadow-xl">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-base font-bold text-[#4f1237]">
+                {selectedDetail.kind === 'materia' ? 'Detalle de materia' : 'Detalle de cátedra'}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setSelectedDetail(null)}
+                className="rounded-md p-1 text-[#7b4a65] hover:bg-[#f4e7ee]"
+                aria-label="Cerrar"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            {selectedDetail.kind === 'materia' ? (
+              <div className="mt-3 space-y-3 text-sm text-[#4f1237]">
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">ID</p>
+                  <p className="font-medium">
+                    {compactEntityId(selectedDetail.materia.id)}{' '}
+                    <span className="text-xs text-[#7b4a65]">({selectedDetail.materia.id})</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Materia</p>
+                  <p className="font-semibold">{selectedDetail.materia.name}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <p className="text-xs text-[#7b4a65]">Vacantes</p>
+                    <p className="text-lg font-black">{selectedDetail.materia.vacancies}</p>
+                  </div>
+                  <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <p className="text-xs text-[#7b4a65]">Cátedras</p>
+                    <p className="text-lg font-black">{selectedDetail.materia.catedras.length}</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Tendencia</p>
+                  <div className="mt-1 rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <SparklineMini
+                      points={materiaTrendMap.get(selectedDetail.materia.id)}
+                      width={220}
+                      height={46}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Cátedras</p>
+                  <ul className="mt-1 divide-y divide-[#f0e4eb] rounded-lg border border-[#ead9e2]">
+                    {selectedDetail.materia.catedras.map((catedra) => (
+                      <li key={catedra.key} className="px-2 py-2 text-xs">
+                        <p className="font-semibold text-[#5b2e46]">{catedra.catedra}</p>
+                        {catedra.professor ? (
+                          <p className="text-[#7b4a65]">{catedra.professor}</p>
+                        ) : null}
+                        <p className="mt-0.5 text-[#4f1237]">{catedra.vacancies} vacantes</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="mt-3 space-y-3 text-sm text-[#4f1237]">
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Materia</p>
+                  <p className="font-semibold">{selectedDetail.materia?.name || 's/d'}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">ID materia</p>
+                  <p className="font-medium">
+                    {compactEntityId(selectedDetail.catedra.id)}{' '}
+                    <span className="text-xs text-[#7b4a65]">({selectedDetail.catedra.id})</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Cátedra</p>
+                  <p className="font-semibold">{selectedDetail.catedra.catedra}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Profesor</p>
+                  <p>{selectedDetail.catedra.professor || 's/d'}</p>
+                </div>
+                <div className="rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                  <p className="text-xs text-[#7b4a65]">Vacantes</p>
+                  <p className="text-lg font-black">{selectedDetail.catedra.vacancies}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#7b4a65]">Tendencia</p>
+                  <div className="mt-1 rounded-lg border border-[#ead9e2] bg-[#fcf7fa] p-2">
+                    <SparklineMini
+                      points={subjectTrendMap.get(selectedDetail.catedra.key)}
+                      width={220}
+                      height={46}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+          </aside>
+        </div>
+      ) : null}
     </section>
   );
 };
