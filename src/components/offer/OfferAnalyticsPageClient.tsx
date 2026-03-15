@@ -23,7 +23,7 @@ import {
   AnalyticsTopDropsTable,
   formatTimestamp,
 } from '@/components/offer/OfferAnalyticsTables';
-import { OfferAnalyticsCharts } from '@/components/offer/OfferAnalyticsCharts';
+import { OfferAnalyticsCharts, OfferTopDropsChart } from '@/components/offer/OfferAnalyticsCharts';
 import { OfferSubjectVacancyTable } from '@/components/offer/OfferSubjectVacancyTable';
 
 const ANALYTICS_RANGES = [
@@ -352,7 +352,10 @@ export const OfferAnalyticsPageClient = () => {
           loading={loadingSubjects}
         />
         <AnalyticsSeriesTable series={analytics?.series || []} />
-        <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
+        <section className="grid gap-3 xl:grid-cols-2">
+          <OfferTopDropsChart analytics={analytics} />
+          <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
+        </section>
       </section>
     </main>
   );
