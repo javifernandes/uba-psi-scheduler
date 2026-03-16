@@ -376,6 +376,12 @@ export const SavedElectionsPanel = ({
                       <div className="pr-5 text-[15px] font-semibold text-[#4f1237] dark:text-zinc-100">
                         {displaySubjectLabel(item.subject.label)}
                       </div>
+                      {item.commission.vacantes === 0 ? (
+                        <div className="mt-1 inline-flex items-center gap-1 rounded border border-[#efafc3] bg-[#fff1f5] px-1.5 py-0.5 text-[11px] font-bold text-[#b72f5c] dark:border-rose-400/40 dark:bg-rose-500/20 dark:text-rose-100">
+                          <AlertTriangle size={12} />
+                          <span>Comisión {item.commission.id} sin vacantes</span>
+                        </div>
+                      ) : null}
                       {[
                         {
                           kind: 'prac' as const,
