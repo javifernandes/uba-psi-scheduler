@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import type { EChartsOption } from 'echarts';
-import type { VacancyAnalytics } from '@/lib/offer-api';
+import type { VacancyAnalytics, VacancyDropItem } from '@/lib/offer-api';
 
 const ReactECharts = dynamic(async () => (await import('echarts-for-react')).default, {
   ssr: false,
@@ -122,7 +122,7 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
           if (segmentEnd <= segmentStart) return null;
 
           return {
-            label: window.label,
+            label: window.kind === 'supplementary' ? 'sup.' : 'ppal',
             kind: window.kind,
             segmentStart,
             segmentEnd,
@@ -306,7 +306,7 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
         <h2 className="text-sm font-bold text-[#4f1237]">Evolución de vacantes totales</h2>
         <ReactECharts option={knownVacanciesOption} style={{ height: 280 }} />
         <p className="mt-2 text-xs text-[#6f3b58]">
-          Franjas sombreadas: ventanas futuras de inscripción (principal y suplementaria).
+          Franjas: <abbr title="principal">ppal</abbr> / <abbr title="suplementaria">sup.</abbr>
         </p>
       </article>
 
@@ -318,17 +318,22 @@ export const OfferAnalyticsCharts = ({ analytics }: OfferAnalyticsChartsProps) =
   );
 };
 
-export const OfferTopDropsChart = ({ analytics }: OfferAnalyticsChartsProps) => {
-  const topDrops = useMemo(
+type OfferTopDropsChartProps = {
+  topDrops: VacancyDropItem[];
+  loading?: boolean;
+};
+
+export const OfferTopDropsChart = ({ topDrops, loading }: OfferTopDropsChartProps) => {
+  const topDropBars = useMemo(
     () =>
-      [...(analytics?.topDrops || [])]
+      [...topDrops]
         .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
         .slice(0, 10)
         .map((item) => ({
           label: trimLabel(`${item.commissionId} · ${item.subjectLabel}`, 52),
           drop: Math.abs(item.delta),
         })),
-    [analytics]
+    [topDrops]
   );
 
   const topDropsOption = useMemo<EChartsOption>(
@@ -346,32 +351,33 @@ export const OfferTopDropsChart = ({ analytics }: OfferAnalyticsChartsProps) => 
       yAxis: {
         type: 'category',
         inverse: true,
-        data: topDrops.map((item) => item.label),
+        data: topDropBars.map((item) => item.label),
         axisLabel: { color: '#6f3b58', fontSize: 11, width: 220, overflow: 'truncate' },
       },
       series: [
         {
           name: 'Caída',
           type: 'bar',
-          data: topDrops.map((item) => item.drop),
+          data: topDropBars.map((item) => item.drop),
           barWidth: 14,
           itemStyle: { color: '#d04870', borderRadius: [0, 6, 6, 0] },
         },
       ],
     }),
-    [topDrops]
+    [topDropBars]
   );
 
   return (
     <article className="rounded-xl border border-[#ead9e2] bg-white p-4">
       <h2 className="text-sm font-bold text-[#4f1237]">Top caídas de vacantes</h2>
-      {topDrops.length ? (
+      {loading ? <p className="mt-3 text-sm text-[#6f3b58]">Cargando top caídas...</p> : null}
+      {!loading && topDropBars.length ? (
         <ReactECharts option={topDropsOption} style={{ height: 320 }} />
-      ) : (
+      ) : !loading ? (
         <p className="mt-3 text-sm text-[#6f3b58]">
           No hay caídas registradas en el rango elegido.
         </p>
-      )}
+      ) : null}
     </article>
   );
 };

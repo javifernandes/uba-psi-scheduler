@@ -142,6 +142,7 @@ export const SchedulerFiltersPanel = ({
   toggleCommission,
 }: SchedulerFiltersPanelProps) => {
   const canToggleOtherSubjects = Boolean(selectedSubjectId);
+  const hasSelectedSubject = Boolean(selectedSubjectId);
   const { tourStepId } = useSchedulerTourStep();
   const materiaOptionsRef = useRef<HTMLDivElement | null>(null);
   const [showMateriaScrollHint, setShowMateriaScrollHint] = useState(false);
@@ -392,7 +393,9 @@ export const SchedulerFiltersPanel = ({
           <div className="flex items-center gap-2">
             {!isComisionesPanelOpen ? (
               <span className="text-[11px] text-[#9f8695] dark:text-zinc-400">
-                {collapsedComisionesSummary(selectedComisionesLength, filteredComisionesLength)}
+                {hasSelectedSubject
+                  ? collapsedComisionesSummary(selectedComisionesLength, filteredComisionesLength)
+                  : 'Seleccioná materia/cátedra'}
               </span>
             ) : null}
             <button
@@ -412,22 +415,34 @@ export const SchedulerFiltersPanel = ({
           <>
             <button
               type="button"
-              onClick={() => setIsCommissionDropdownOpen((v) => !v)}
-              className="w-full rounded-lg border border-[#d7b8c9] bg-[#fff8fc] px-3 py-2 text-left text-sm font-medium text-[#5a1740] dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100"
+              onClick={() => {
+                if (!hasSelectedSubject) return;
+                setIsCommissionDropdownOpen((v) => !v);
+              }}
+              className={cn(
+                'w-full rounded-lg border px-3 py-2 text-left text-sm font-medium',
+                hasSelectedSubject
+                  ? 'border-[#d7b8c9] bg-[#fff8fc] text-[#5a1740] dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100'
+                  : 'border-[#e6d5de] bg-[#f9f3f7] text-[#9f8695] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400'
+              )}
+              disabled={!hasSelectedSubject}
             >
-              Comisiones ({selectedComisionesLength}/{filteredComisionesLength}) · Vacantes{' '}
-              {filteredComisionesVacancies}
+              {hasSelectedSubject
+                ? `Comisiones (${selectedComisionesLength}/${filteredComisionesLength}) · Vacantes ${filteredComisionesVacancies}`
+                : 'Seleccioná materia/cátedra primero'}
             </button>
-            <label className="mt-2 flex items-center gap-2 text-[11px] font-medium text-[#6d5162] dark:text-zinc-300">
-              <input
-                type="checkbox"
-                checked={showOnlyWithVacancies}
-                onChange={() => setShowOnlyWithVacancies((v) => !v)}
-                className="h-4 w-4 accent-[#861f5c]"
-              />
-              Solo con vacantes
-            </label>
-            {isCommissionDropdownOpen ? (
+            {hasSelectedSubject ? (
+              <label className="mt-2 flex items-center gap-2 text-[11px] font-medium text-[#6d5162] dark:text-zinc-300">
+                <input
+                  type="checkbox"
+                  checked={showOnlyWithVacancies}
+                  onChange={() => setShowOnlyWithVacancies((v) => !v)}
+                  className="h-4 w-4 accent-[#861f5c]"
+                />
+                Solo con vacantes
+              </label>
+            ) : null}
+            {isCommissionDropdownOpen && hasSelectedSubject ? (
               <div className="mt-2 space-y-2 rounded-lg border border-[#ead9e2] bg-[#fffafe] p-2 dark:border-zinc-700 dark:bg-zinc-900">
                 <div className="flex items-center gap-1">
                   <button

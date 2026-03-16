@@ -136,6 +136,33 @@ router.route({
 });
 
 router.route({
+  path: '/getVacancyTopDrops',
+  method: 'OPTIONS',
+  handler: httpAction(async () => handleOptions()),
+});
+
+router.route({
+  path: '/getVacancyTopDrops',
+  method: 'POST',
+  handler: httpAction(async (ctx, request) => {
+    const body = await parseJson(request);
+    const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
+    const period = typeof body.period === 'string' ? body.period : '';
+    const range = typeof body.range === 'string' ? body.range : '24h';
+    const limit = typeof body.limit === 'number' ? body.limit : undefined;
+    if (!careerSlug || !period)
+      return jsonResponse(400, { error: 'careerSlug y period son requeridos' });
+    const payload = await ctx.runQuery(api.offer.getVacancyTopDrops, {
+      careerSlug,
+      period,
+      range,
+      limit,
+    });
+    return jsonResponse(200, payload);
+  }),
+});
+
+router.route({
   path: '/getVacancyCapacity',
   method: 'OPTIONS',
   handler: httpAction(async () => handleOptions()),

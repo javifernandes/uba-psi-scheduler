@@ -1,18 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   getVacancyCapacity,
   getOfferSubjects,
   getVacancyAnalytics,
+  getVacancyTopDrops,
   getVacancyTrends,
   listCareersWithLatestPeriod,
   listPeriodsByCareer,
   type VacancyCapacityResponse,
   type CareerWithLatestPeriod,
   type VacancyAnalytics,
+  type VacancyDropItem,
   type VacancyTrends,
 } from '@/lib/offer-api';
 import { normalizePeriod, type PeriodId } from '@/lib/period';
@@ -89,6 +91,12 @@ const formatCloseCountdown = (nowIso: string | null, endIso: string | null) => {
 const windowKindLabel = (kind: string) =>
   kind === 'supplementary' ? 'Inscripción suplementaria' : 'Inscripción principal';
 
+const formatAnalyticsPeriodLabel = (period: PeriodId) => {
+  const [year, term] = period.split('-');
+  const cycle = term === '02' ? '2C' : '1C';
+  return `${year} · ${cycle}`;
+};
+
 export const OfferAnalyticsPageClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -98,13 +106,16 @@ export const OfferAnalyticsPageClient = () => {
   const [range, setRange] = useState<(typeof ANALYTICS_RANGES)[number]['value']>('24h');
   const [analytics, setAnalytics] = useState<VacancyAnalytics | null>(null);
   const [trends, setTrends] = useState<VacancyTrends | null>(null);
+  const [topDrops, setTopDrops] = useState<VacancyDropItem[]>([]);
   const [capacity, setCapacity] = useState<VacancyCapacityResponse | null>(null);
   const [subjects, setSubjects] = useState<SubjectData[]>([]);
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
+  const [loadingTrends, setLoadingTrends] = useState(false);
+  const [loadingTopDrops, setLoadingTopDrops] = useState(false);
+  const [refreshTick, setRefreshTick] = useState(0);
   const [error, setError] = useState('');
-  const lastProbeAtRef = useRef<string | null>(null);
 
   const queryCareer = searchParams.get('career') || '';
   const queryPeriod = normalizePeriod(searchParams.get('period') || '');
@@ -162,6 +173,11 @@ export const OfferAnalyticsPageClient = () => {
     return periods[0] || null;
   }, [careers, periods, queryPeriod, selectedCareer]);
 
+  const periodLabel = useMemo(
+    () => (selectedPeriod ? formatAnalyticsPeriodLabel(selectedPeriod) : ''),
+    [selectedPeriod]
+  );
+
   const enrollmentWindows = useMemo(() => analytics?.windows || [], [analytics?.windows]);
   const activeWindow = useMemo(
     () =>
@@ -179,6 +195,12 @@ export const OfferAnalyticsPageClient = () => {
     [activeWindow, analytics?.timeBounds.endAt, analytics?.timeBounds.nowAt]
   );
 
+  const isRefreshingHeavy = loadingTopDrops || loadingTrends;
+
+  const handleManualRefresh = useCallback(() => {
+    setRefreshTick((prev) => prev + 1);
+  }, []);
+
   useEffect(() => {
     if (!selectedCareer || !selectedPeriod) return;
     if (queryCareer === selectedCareer && queryPeriod === selectedPeriod) return;
@@ -194,23 +216,19 @@ export const OfferAnalyticsPageClient = () => {
     Promise.all([
       getVacancyAnalytics(selectedCareer, selectedPeriod, range),
       getOfferSubjects(selectedCareer, selectedPeriod),
-      getVacancyTrends(selectedCareer, selectedPeriod, range),
       getVacancyCapacity(selectedCareer, selectedPeriod, true),
     ])
-      .then(([analyticsPayload, subjectsPayload, trendsPayload, capacityPayload]) => {
+      .then(([analyticsPayload, subjectsPayload, capacityPayload]) => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
         setSubjects(subjectsPayload);
-        setTrends(trendsPayload);
         setCapacity(capacityPayload);
-        lastProbeAtRef.current = analyticsPayload.lastProbeAt || null;
       })
       .catch((err) => {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'No se pudieron cargar analíticas.');
         setAnalytics(null);
         setSubjects([]);
-        setTrends(null);
         setCapacity(null);
       })
       .finally(() => {
@@ -221,31 +239,49 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer, selectedPeriod, range]);
+  }, [selectedCareer, selectedPeriod, range, refreshTick]);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      if (!selectedCareer || !selectedPeriod) return;
-      getVacancyAnalytics(selectedCareer, selectedPeriod, range)
-        .then(async (analyticsPayload) => {
-          setAnalytics(analyticsPayload);
-          const nextProbeAt = analyticsPayload.lastProbeAt || null;
-          if (nextProbeAt && nextProbeAt === lastProbeAtRef.current) return;
+    if (!selectedCareer || !selectedPeriod) return;
+    let cancelled = false;
+    setLoadingTrends(true);
+    getVacancyTrends(selectedCareer, selectedPeriod, range)
+      .then((payload) => {
+        if (cancelled) return;
+        setTrends(payload);
+      })
+      .catch(() => {
+        if (cancelled) return;
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoadingTrends(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedCareer, selectedPeriod, range, refreshTick]);
 
-          const [subjectsPayload, trendsPayload, capacityPayload] = await Promise.all([
-            getOfferSubjects(selectedCareer, selectedPeriod),
-            getVacancyTrends(selectedCareer, selectedPeriod, range),
-            getVacancyCapacity(selectedCareer, selectedPeriod, true),
-          ]);
-          setSubjects(subjectsPayload);
-          setTrends(trendsPayload);
-          setCapacity(capacityPayload);
-          lastProbeAtRef.current = nextProbeAt;
-        })
-        .catch(() => undefined);
-    }, 60_000);
-    return () => window.clearInterval(interval);
-  }, [range, selectedCareer, selectedPeriod]);
+  useEffect(() => {
+    if (!selectedCareer || !selectedPeriod) return;
+    let cancelled = false;
+    setLoadingTopDrops(true);
+    getVacancyTopDrops(selectedCareer, selectedPeriod, range, 30)
+      .then((payload) => {
+        if (cancelled) return;
+        setTopDrops(payload);
+      })
+      .catch(() => {
+        if (cancelled) return;
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoadingTopDrops(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedCareer, selectedPeriod, range, refreshTick]);
 
   if (loadingCatalog) {
     return (
@@ -282,7 +318,7 @@ export const OfferAnalyticsPageClient = () => {
       <section className="mx-auto flex w-full max-w-[1400px] flex-col gap-3">
         <div className="rounded-2xl bg-[#861f5c] px-4 py-3 text-white">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h1 className="text-lg font-bold md:text-xl">Analíticas de Vacantes</h1>
+            <h1 className="text-lg font-bold md:text-xl">Analíticas de Vacantes · {periodLabel}</h1>
             <div className="flex items-center gap-2 text-xs">
               <Link
                 href={buildOfferHref(selectedCareer, selectedPeriod)}
@@ -309,6 +345,14 @@ export const OfferAnalyticsPageClient = () => {
               {entry.label}
             </button>
           ))}
+          <button
+            type="button"
+            onClick={handleManualRefresh}
+            disabled={loadingAnalytics || loadingSubjects || isRefreshingHeavy}
+            className="rounded-md border border-[#dbc7d3] bg-white px-3 py-1.5 text-xs font-semibold text-[#5a1740] disabled:opacity-50"
+          >
+            Actualizar
+          </button>
           <span className="ml-auto text-xs text-[#6f3b58]">
             Última captura: {formatTimestamp(analytics?.lastProbeAt || null)}
           </span>
@@ -345,16 +389,23 @@ export const OfferAnalyticsPageClient = () => {
 
         <AnalyticsKpiGrid analytics={analytics} />
         <OfferAnalyticsCharts analytics={analytics} />
+
         <OfferSubjectVacancyTable
           subjects={subjects}
           trends={trends}
           capacity={capacity}
           loading={loadingSubjects}
         />
+        {loadingTrends ? (
+          <div className="rounded-xl border border-[#ead9e2] bg-white px-4 py-2 text-xs text-[#6f3b58]">
+            Cargando tendencias...
+          </div>
+        ) : null}
         <AnalyticsSeriesTable series={analytics?.series || []} />
+
         <section className="grid gap-3 xl:grid-cols-2">
-          <OfferTopDropsChart analytics={analytics} />
-          <AnalyticsTopDropsTable topDrops={analytics?.topDrops || []} />
+          <OfferTopDropsChart topDrops={topDrops} loading={loadingTopDrops} />
+          <AnalyticsTopDropsTable topDrops={topDrops} />
         </section>
       </section>
     </main>
