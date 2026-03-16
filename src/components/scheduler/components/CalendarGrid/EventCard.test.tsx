@@ -280,6 +280,43 @@ describe('CalendarEventCard', () => {
     expect(screen.getByText('Sin cupo')).toBeInTheDocument();
   });
 
+  it('no muestra cupo en externos de tipo teórico aunque tengan vacantes en payload', () => {
+    const externalTeorico: VisibleEventSlot = {
+      ...externalSlot,
+      event: {
+        ...externalSlot.event,
+        tipo: 'teo',
+        id: 'ext-36-teo-v',
+        vacantes: 9,
+      },
+    };
+
+    render(
+      <CalendarEventCard
+        slot={externalTeorico}
+        activeCommission={null}
+        selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        onCalendarOnlyExternalEnter={vi.fn()}
+        onCalendarOnlyExternalLeave={vi.fn()}
+        enrolledBySubject={{ '36': '21' }}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setHoveredLinkedTeoricoId={vi.fn()}
+        setHoveredLinkedSeminarioId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.queryByTestId('external-vacancy-indicator')).not.toBeInTheDocument();
+    expect(screen.queryByText('Vac 9')).not.toBeInTheDocument();
+  });
+
   it('en modo mi calendario muestra horas en eventos externos', () => {
     render(
       <CalendarEventCard

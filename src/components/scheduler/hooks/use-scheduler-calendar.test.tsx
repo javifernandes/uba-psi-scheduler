@@ -26,7 +26,7 @@ const subjectBData: SubjectData = subjectFromLegacyFixture({
   header: 'header',
   teoricos: ['X|miércoles|08:00|09:30|Teorico Externo|IN-301|'],
   seminarios: ['Z|jueves|12:00|13:30|Seminario Externo|SI-020|'],
-  comisiones: ['9|viernes|14:00|15:30|Comision Externa|X - Z|IN-401|'],
+  comisiones: ['9|viernes|14:00|15:30|Comision Externa|X - Z|IN-401||12'],
 });
 
 const subjectA = parseSubject(subjectAData);
@@ -180,25 +180,10 @@ describe('useSchedulerCalendar', () => {
 
     expect(eventIds(result.current)).toEqual(['ext-s2-prac-9', 'ext-s2-teo-X', 'ext-s2-sem-Z']);
     expect(result.current.events.every((event) => event.isExternal)).toBe(true);
-  });
-
-  it('propaga datos de vacantes de la comisión externa a eventos teórico/seminario vinculados', () => {
-    const { result } = renderHook(() =>
-      useSchedulerCalendar(
-        baseParams({
-          showComisiones: false,
-          showTeoricos: false,
-          showSeminarios: false,
-          showOtherSubjects: true,
-          enrolledBySubject: { s2: '9' },
-        })
-      )
-    );
-
     const byEventId = Object.fromEntries(result.current.events.map((event) => [event.id, event]));
-    expect(byEventId['ext-s2-prac-9']?.vacantes).toBeNull();
-    expect(byEventId['ext-s2-teo-X']?.vacantes).toBeNull();
-    expect(byEventId['ext-s2-sem-Z']?.vacantes).toBeNull();
+    expect(byEventId['ext-s2-prac-9']?.vacantes).toBe(12);
+    expect(byEventId['ext-s2-teo-X']?.vacantes).toBeUndefined();
+    expect(byEventId['ext-s2-sem-Z']?.vacantes).toBeUndefined();
   });
 
   it('prioriza evento de comisión activa en slot superpuesto por encima del índice almacenado', () => {

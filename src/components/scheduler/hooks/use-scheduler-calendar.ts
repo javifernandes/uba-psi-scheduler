@@ -34,8 +34,6 @@ type EventOptions = {
   isExternal?: boolean;
   linkedCommissionId?: string;
   linkedCommissionIds?: string[];
-  linkedCommissionVacantes?: number | null;
-  linkedCommissionVacantesMaximasObservadas?: number | null;
 };
 
 const matchesLinkedRoleSlot = (
@@ -79,8 +77,6 @@ const buildTeoEvent = (
   fin: teorico.fin,
   aula: formatSlotLugar(teorico.lugar),
   title: buildTitle(teorico.id, teorico.profesor),
-  vacantes: options.linkedCommissionVacantes,
-  vacantesMaximasObservadas: options.linkedCommissionVacantesMaximasObservadas,
   linkedSlotId: options.linkedSlotId || teorico.id,
   linkedSlotRole: 'teo',
   linkedCommissionId: options.linkedCommissionId,
@@ -102,8 +98,6 @@ const buildSemEvent = (
   fin: seminario.fin,
   aula: formatSlotLugar(seminario.lugar),
   title: buildTitle(seminario.id, seminario.profesor),
-  vacantes: options.linkedCommissionVacantes,
-  vacantesMaximasObservadas: options.linkedCommissionVacantesMaximasObservadas,
   linkedSlotId: options.linkedSlotId || seminario.id,
   linkedSlotRole: 'sem',
   linkedCommissionId: options.linkedCommissionId,
@@ -134,8 +128,6 @@ const pushCommissionBundle = ({
         ...options,
         linkedCommissionId: commission.id,
         linkedSlotId: teoricoId,
-        linkedCommissionVacantes: commission.vacantes,
-        linkedCommissionVacantesMaximasObservadas: commission.vacantesMaximasObservadas ?? null,
       })
     );
   }
@@ -148,8 +140,6 @@ const pushCommissionBundle = ({
         ...options,
         linkedCommissionId: commission.id,
         linkedSlotId: seminarioId,
-        linkedCommissionVacantes: commission.vacantes,
-        linkedCommissionVacantesMaximasObservadas: commission.vacantesMaximasObservadas ?? null,
       })
     );
   }

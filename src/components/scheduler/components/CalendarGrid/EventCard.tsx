@@ -149,12 +149,13 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
-  const externalVacancyDisplay = event.isExternal
-    ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
-    : undefined;
+  const externalVacancyDisplay =
+    event.isExternal && event.tipo === 'prac'
+      ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
+      : undefined;
   const showExternalVacancyIndicator = Boolean(externalVacancyDisplay) && !showExternalTimes;
   const showExternalNoVacancyWarning =
-    event.isExternal && event.vacantes === 0 && !showExternalTimes;
+    event.isExternal && event.tipo === 'prac' && event.vacantes === 0 && !showExternalTimes;
   const vacancyDisplay =
     !event.isExternal && event.tipo === 'prac'
       ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
