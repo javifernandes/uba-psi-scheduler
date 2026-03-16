@@ -22,6 +22,35 @@ const rangeStart = (range: string, nowMs: number) => {
   return '';
 };
 
+const effectiveCapturedAtBounds = ({
+  range,
+  now,
+  windows,
+}: {
+  range: string;
+  now: number;
+  windows: EnrollmentWindowRecord[];
+}) => {
+  const timeBounds = resolveTimeBounds(windows, now);
+  const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
+  const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
+  const rangeStartMs = parseIsoMs(rangeStart(range, now));
+  const effectiveStartMs =
+    typeof rangeStartMs === 'number' && typeof cycleStartMs === 'number'
+      ? Math.max(rangeStartMs, cycleStartMs)
+      : typeof rangeStartMs === 'number'
+        ? rangeStartMs
+        : cycleStartMs;
+  const effectiveEndMs = typeof cycleEndMs === 'number' ? cycleEndMs : null;
+  return {
+    timeBounds,
+    effectiveStartIso:
+      typeof effectiveStartMs === 'number' ? new Date(effectiveStartMs).toISOString() : null,
+    effectiveEndIso:
+      typeof effectiveEndMs === 'number' ? new Date(effectiveEndMs).toISOString() : null,
+  };
+};
+
 const materiaIdFromLabel = (subjectLabel: string, fallbackSubjectId: string) =>
   subjectLabel.match(/^\((\d+)\)/)?.[1] || fallbackSubjectId;
 
@@ -229,48 +258,28 @@ export const getVacancyAnalytics = query({
   },
   handler: async (ctx, args) => {
     const now = Date.now();
-    const [runs, changes, allWindows] = await Promise.all([
-      ctx.db
-        .query('vacancyProbeRuns')
-        .withIndex('by_career_period_capturedAt', (q) =>
-          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
-        )
-        .collect(),
-      ctx.db
-        .query('vacancyChanges')
-        .withIndex('by_career_period_capturedAt', (q) =>
-          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
-        )
-        .collect(),
-      ctx.db
-        .query('enrollmentWindows')
-        .withIndex('by_period', (q) => q.eq('period', args.period))
-        .collect(),
-    ]);
-
+    const allWindows = await ctx.db
+      .query('enrollmentWindows')
+      .withIndex('by_period', (q) => q.eq('period', args.period))
+      .collect();
     const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
     const sortedWindows = [...windows].sort((a, b) => a.startAt.localeCompare(b.startAt));
-    const timeBounds = resolveTimeBounds(windows, now);
-    const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
-    const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
-    const rangeStartMs = parseIsoMs(rangeStart(args.range, now));
-    const effectiveStartMs =
-      typeof rangeStartMs === 'number' && typeof cycleStartMs === 'number'
-        ? Math.max(rangeStartMs, cycleStartMs)
-        : typeof rangeStartMs === 'number'
-          ? rangeStartMs
-          : cycleStartMs;
-
-    const inRange = (capturedAt: string) => {
-      const capturedAtMs = parseIsoMs(capturedAt);
-      if (typeof capturedAtMs !== 'number') return false;
-      if (typeof effectiveStartMs === 'number' && capturedAtMs < effectiveStartMs) return false;
-      if (typeof cycleEndMs === 'number' && capturedAtMs > cycleEndMs) return false;
-      return true;
-    };
-
-    const filteredRuns = runs.filter((item) => inRange(item.capturedAt));
-    const filteredChanges = changes.filter((item) => inRange(item.capturedAt));
+    const { timeBounds, effectiveStartIso, effectiveEndIso } = effectiveCapturedAtBounds({
+      range: args.range,
+      now,
+      windows,
+    });
+    const filteredRuns = await ctx.db
+      .query('vacancyProbeRuns')
+      .withIndex('by_career_period_capturedAt', (q) => {
+        const base = q.eq('careerSlug', args.careerSlug).eq('period', args.period);
+        if (effectiveStartIso && effectiveEndIso)
+          return base.gte('capturedAt', effectiveStartIso).lte('capturedAt', effectiveEndIso);
+        if (effectiveStartIso) return base.gte('capturedAt', effectiveStartIso);
+        if (effectiveEndIso) return base.lte('capturedAt', effectiveEndIso);
+        return base;
+      })
+      .collect();
 
     const totals = filteredRuns.length
       ? filteredRuns[filteredRuns.length - 1]!.totals
@@ -282,21 +291,6 @@ export const getVacancyAnalytics = query({
           sinDatos: 0,
           totalCommissions: 0,
         };
-
-    const topDrops = filteredChanges
-      .filter((item) => typeof item.delta === 'number' && item.delta < 0)
-      .sort((a, b) => (a.delta as number) - (b.delta as number))
-      .slice(0, 30)
-      .map((item) => ({
-        key: item.key,
-        subjectId: item.subjectId,
-        subjectLabel: item.subjectLabel,
-        commissionId: item.commissionId,
-        delta: item.delta as number,
-        vacantes: item.vacantes,
-        capturedAt: item.capturedAt,
-        status: vacancyStatus(item.vacantes),
-      }));
 
     return {
       lastProbeAt: filteredRuns.length ? filteredRuns[filteredRuns.length - 1]!.capturedAt : null,
@@ -321,8 +315,61 @@ export const getVacancyAnalytics = query({
         cupoDisponible: run.totals.cupoDisponible,
         sinDatos: run.totals.sinDatos,
       })),
-      topDrops,
+      topDrops: [],
     };
+  },
+});
+
+export const getVacancyTopDrops = query({
+  args: {
+    careerSlug: v.string(),
+    period: v.string(),
+    range: v.string(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+    const allWindows = await ctx.db
+      .query('enrollmentWindows')
+      .withIndex('by_period', (q) => q.eq('period', args.period))
+      .collect();
+    const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
+    const { effectiveStartIso, effectiveEndIso } = effectiveCapturedAtBounds({
+      range: args.range,
+      now,
+      windows,
+    });
+    const requestedLimit = typeof args.limit === 'number' ? Math.floor(args.limit) : 30;
+    const limit = Math.max(5, Math.min(requestedLimit, 50));
+    const candidateLimit = Math.max(limit * 40, 400);
+
+    const candidates = await ctx.db
+      .query('vacancyChanges')
+      .withIndex('by_career_period_capturedAt', (q) => {
+        const base = q.eq('careerSlug', args.careerSlug).eq('period', args.period);
+        if (effectiveStartIso && effectiveEndIso)
+          return base.gte('capturedAt', effectiveStartIso).lte('capturedAt', effectiveEndIso);
+        if (effectiveStartIso) return base.gte('capturedAt', effectiveStartIso);
+        if (effectiveEndIso) return base.lte('capturedAt', effectiveEndIso);
+        return base;
+      })
+      .order('desc')
+      .take(candidateLimit);
+
+    return candidates
+      .filter((item) => typeof item.delta === 'number' && item.delta < 0)
+      .sort((a, b) => (a.delta as number) - (b.delta as number))
+      .slice(0, limit)
+      .map((item) => ({
+        key: item.key,
+        subjectId: item.subjectId,
+        subjectLabel: item.subjectLabel,
+        commissionId: item.commissionId,
+        delta: item.delta as number,
+        vacantes: item.vacantes,
+        capturedAt: item.capturedAt,
+        status: vacancyStatus(item.vacantes),
+      }));
   },
 });
 
@@ -335,25 +382,13 @@ export const getVacancyTrends = query({
   },
   handler: async (ctx, args) => {
     const now = Date.now();
-    const requestedMax = typeof args.maxPoints === 'number' ? Math.floor(args.maxPoints) : 18;
-    const maxPoints = Math.max(8, Math.min(requestedMax, 40));
+    const requestedMax = typeof args.maxPoints === 'number' ? Math.floor(args.maxPoints) : 12;
+    const maxPoints = Math.max(8, Math.min(requestedMax, 24));
 
-    const [current, changes, runs, allWindows] = await Promise.all([
+    const [current, allWindows] = await Promise.all([
       ctx.db
         .query('vacancyCurrent')
         .withIndex('by_career_period', (q) =>
-          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
-        )
-        .collect(),
-      ctx.db
-        .query('vacancyChanges')
-        .withIndex('by_career_period_capturedAt', (q) =>
-          q.eq('careerSlug', args.careerSlug).eq('period', args.period)
-        )
-        .collect(),
-      ctx.db
-        .query('vacancyProbeRuns')
-        .withIndex('by_career_period_capturedAt', (q) =>
           q.eq('careerSlug', args.careerSlug).eq('period', args.period)
         )
         .collect(),
@@ -362,29 +397,36 @@ export const getVacancyTrends = query({
         .withIndex('by_period', (q) => q.eq('period', args.period))
         .collect(),
     ]);
-
     const windows = windowsForCareer(allWindows as EnrollmentWindowRecord[], args.careerSlug);
-    const timeBounds = resolveTimeBounds(windows, now);
-    const cycleStartMs = timeBounds.startAt ? parseIsoMs(timeBounds.startAt) : null;
-    const cycleEndMs = timeBounds.endAt ? parseIsoMs(timeBounds.endAt) : null;
-    const rangeStartMs = parseIsoMs(rangeStart(args.range, now));
-    const effectiveStartMs =
-      typeof rangeStartMs === 'number' && typeof cycleStartMs === 'number'
-        ? Math.max(rangeStartMs, cycleStartMs)
-        : typeof rangeStartMs === 'number'
-          ? rangeStartMs
-          : cycleStartMs;
-
-    const inRange = (capturedAt: string) => {
-      const capturedAtMs = parseIsoMs(capturedAt);
-      if (typeof capturedAtMs !== 'number') return false;
-      if (typeof effectiveStartMs === 'number' && capturedAtMs < effectiveStartMs) return false;
-      if (typeof cycleEndMs === 'number' && capturedAtMs > cycleEndMs) return false;
-      return true;
-    };
-
-    const filteredRuns = runs.filter((item) => inRange(item.capturedAt));
-    const filteredChanges = changes.filter((item) => inRange(item.capturedAt));
+    const { effectiveStartIso, effectiveEndIso } = effectiveCapturedAtBounds({
+      range: args.range,
+      now,
+      windows,
+    });
+    const [filteredRuns, filteredChanges] = await Promise.all([
+      ctx.db
+        .query('vacancyProbeRuns')
+        .withIndex('by_career_period_capturedAt', (q) => {
+          const base = q.eq('careerSlug', args.careerSlug).eq('period', args.period);
+          if (effectiveStartIso && effectiveEndIso)
+            return base.gte('capturedAt', effectiveStartIso).lte('capturedAt', effectiveEndIso);
+          if (effectiveStartIso) return base.gte('capturedAt', effectiveStartIso);
+          if (effectiveEndIso) return base.lte('capturedAt', effectiveEndIso);
+          return base;
+        })
+        .collect(),
+      ctx.db
+        .query('vacancyChanges')
+        .withIndex('by_career_period_capturedAt', (q) => {
+          const base = q.eq('careerSlug', args.careerSlug).eq('period', args.period);
+          if (effectiveStartIso && effectiveEndIso)
+            return base.gte('capturedAt', effectiveStartIso).lte('capturedAt', effectiveEndIso);
+          if (effectiveStartIso) return base.gte('capturedAt', effectiveStartIso);
+          if (effectiveEndIso) return base.lte('capturedAt', effectiveEndIso);
+          return base;
+        })
+        .collect(),
+    ]);
 
     const anchorIso = filteredRuns.length
       ? filteredRuns[filteredRuns.length - 1]!.capturedAt

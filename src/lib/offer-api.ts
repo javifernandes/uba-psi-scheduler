@@ -162,13 +162,26 @@ export const getVacancyTrends = async (
   careerSlug: string,
   period: PeriodId,
   range: string,
-  maxPoints = 18
+  maxPoints = 12
 ): Promise<VacancyTrends> =>
   postJson<VacancyTrends>('/getVacancyTrends', {
     careerSlug,
     period,
     range,
     maxPoints,
+  });
+
+export const getVacancyTopDrops = async (
+  careerSlug: string,
+  period: PeriodId,
+  range: string,
+  limit = 20
+): Promise<VacancyDropItem[]> =>
+  postJson<VacancyDropItem[]>('/getVacancyTopDrops', {
+    careerSlug,
+    period,
+    range,
+    limit,
   });
 
 export const getVacancyCapacity = async (

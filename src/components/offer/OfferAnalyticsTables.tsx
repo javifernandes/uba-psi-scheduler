@@ -6,6 +6,9 @@ import type { VacancyAnalytics } from '@/lib/offer-api';
 type VacancyAnalyticsPoint = VacancyAnalytics['series'][number];
 type VacancyDropItem = VacancyAnalytics['topDrops'][number];
 type SortDirection = 'asc' | 'desc';
+type AnalyticsSeriesRow = VacancyAnalyticsPoint & {
+  deltaKnownVacancies: number | null;
+};
 
 export const formatTimestamp = (iso: string | null) => {
   if (!iso) return 's/d';
@@ -58,22 +61,40 @@ export const AnalyticsKpiGrid = ({ analytics }: { analytics: VacancyAnalytics | 
 );
 
 export const AnalyticsSeriesTable = ({ series }: { series: VacancyAnalyticsPoint[] }) => {
-  const [sortKey, setSortKey] = useState<keyof VacancyAnalyticsPoint>('timestamp');
+  const [sortKey, setSortKey] = useState<keyof AnalyticsSeriesRow>('timestamp');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
 
+  const seriesWithDelta = useMemo<AnalyticsSeriesRow[]>(() => {
+    const rows = [...series].sort(
+      (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    );
+    return rows.map((row, index) => {
+      const previous = rows[index - 1];
+      return {
+        ...row,
+        deltaKnownVacancies: previous ? row.knownVacancies - previous.knownVacancies : null,
+      };
+    });
+  }, [series]);
+
   const sortedSeries = useMemo(() => {
-    const rows = [...series];
+    const rows = [...seriesWithDelta];
     rows.sort((a, b) => {
       const direction = sortDirection === 'desc' ? -1 : 1;
       if (sortKey === 'timestamp') {
         return (new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()) * direction;
       }
+      if (sortKey === 'deltaKnownVacancies') {
+        const aValue = a.deltaKnownVacancies ?? Number.NEGATIVE_INFINITY;
+        const bValue = b.deltaKnownVacancies ?? Number.NEGATIVE_INFINITY;
+        return (aValue - bValue) * direction;
+      }
       return (a[sortKey] - b[sortKey]) * direction;
     });
     return rows;
-  }, [series, sortDirection, sortKey]);
+  }, [seriesWithDelta, sortDirection, sortKey]);
 
-  const applySort = (nextKey: keyof VacancyAnalyticsPoint) => {
+  const applySort = (nextKey: keyof AnalyticsSeriesRow) => {
     const active = sortKey === nextKey;
     setSortDirection(nextDirection(sortDirection, active));
     setSortKey(nextKey);
@@ -102,6 +123,15 @@ export const AnalyticsSeriesTable = ({ series }: { series: VacancyAnalyticsPoint
                   onClick={() => applySort('knownVacancies')}
                 >
                   Vacantes {sortIndicator(sortKey === 'knownVacancies', sortDirection)}
+                </button>
+              </th>
+              <th className="sticky top-0 z-10 bg-[#faf1f6] px-3 py-2">
+                <button
+                  type="button"
+                  className={headerButtonClass}
+                  onClick={() => applySort('deltaKnownVacancies')}
+                >
+                  Δ vacantes {sortIndicator(sortKey === 'deltaKnownVacancies', sortDirection)}
                 </button>
               </th>
               <th className="sticky top-0 z-10 bg-[#faf1f6] px-3 py-2">
@@ -147,6 +177,23 @@ export const AnalyticsSeriesTable = ({ series }: { series: VacancyAnalyticsPoint
               <tr key={point.timestamp} className="border-t border-[#f0e4eb] text-[#4f1237]">
                 <td className="px-3 py-2">{formatTimestamp(point.timestamp)}</td>
                 <td className="px-3 py-2">{point.knownVacancies}</td>
+                <td
+                  className={`px-3 py-2 font-semibold ${
+                    point.deltaKnownVacancies === null
+                      ? 'text-[#7b4a65]'
+                      : point.deltaKnownVacancies > 0
+                        ? 'text-emerald-700'
+                        : point.deltaKnownVacancies < 0
+                          ? 'text-red-700'
+                          : 'text-[#4f1237]'
+                  }`}
+                >
+                  {point.deltaKnownVacancies === null
+                    ? '—'
+                    : point.deltaKnownVacancies > 0
+                      ? `+${point.deltaKnownVacancies}`
+                      : String(point.deltaKnownVacancies)}
+                </td>
                 <td className="px-3 py-2">{point.sinCupo}</td>
                 <td className="px-3 py-2">{point.cupoBajo}</td>
                 <td className="px-3 py-2">{point.cupoDisponible}</td>
@@ -193,7 +240,7 @@ export const AnalyticsTopDropsTable = ({ topDrops }: { topDrops: VacancyDropItem
   return (
     <section className="rounded-xl border border-[#ead9e2] bg-white p-4">
       <h2 className="text-sm font-bold text-[#4f1237]">Top caídas de vacantes</h2>
-      <div className="mt-3 max-h-64 overflow-auto rounded-lg border border-[#ead9e2]">
+      <div className="mt-3 max-h-[320px] overflow-auto rounded-lg border border-[#ead9e2]">
         <table className="w-full border-collapse text-xs">
           <thead className="text-left text-[#7b4a65]">
             <tr>
