@@ -1,6 +1,7 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
 import { vacancyIndicator } from '@/domain/vacancies';
+import { UserRound } from 'lucide-react';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import { displaySubjectLabel } from '../../scheduler.utils';
 import { eventTypeClass, externalEventAccentClass, externalEventCardClass } from './styles';
@@ -49,6 +50,29 @@ const externalSubjectParts = (subjectLabel: string) => {
     catedra: matched[2]?.trim() || '',
   };
 };
+
+const externalIndicatorToneClass = {
+  sin_datos: {
+    text: 'text-[#9a6f89]',
+    barOn: 'bg-[#b39aa9]',
+    barOff: 'border border-[#cdb8c6] bg-[#f7eef4]',
+  },
+  sin_cupo: {
+    text: 'text-[#b72f5c]',
+    barOn: 'bg-[#e57ea2]',
+    barOff: 'border border-[#efafc3] bg-[#fff1f5]',
+  },
+  cupo_bajo: {
+    text: 'text-[#b96b00]',
+    barOn: 'bg-[#e6a54a]',
+    barOff: 'border border-[#eac89a] bg-[#fff6eb]',
+  },
+  cupo_disponible: {
+    text: 'text-[#247e53]',
+    barOn: 'bg-[#41a976]',
+    barOff: 'border border-[#9fd2ba] bg-[#eef8f3]',
+  },
+} as const;
 
 export const CalendarEventCard = ({
   slot,
@@ -125,8 +149,12 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
+  const externalVacancyDisplay = event.isExternal
+    ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
+    : undefined;
+  const showExternalVacancyIndicator = Boolean(externalVacancyDisplay) && !showExternalTimes;
   const showExternalNoVacancyWarning =
-    event.isExternal && event.tipo === 'prac' && event.vacantes === 0;
+    event.isExternal && event.vacantes === 0 && !showExternalTimes;
   const vacancyDisplay =
     !event.isExternal && event.tipo === 'prac'
       ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
@@ -228,8 +256,8 @@ export const CalendarEventCard = ({
           />
           <span
             className={cn(
-              'absolute left-4 right-10 flex min-w-0 flex-col items-start justify-center',
-              showExternalTimes ? 'top-5 bottom-5' : 'inset-y-1',
+              'absolute left-4 flex min-w-0 flex-col items-start justify-center',
+              showExternalTimes ? 'right-10 top-5 bottom-5' : 'right-2 inset-y-1',
               hideText && 'opacity-0'
             )}
           >
@@ -239,6 +267,38 @@ export const CalendarEventCard = ({
             {externalParts.catedra ? (
               <span className="block w-full truncate text-[10px] font-medium leading-tight text-[#9a6f89]">
                 {externalParts.catedra}
+              </span>
+            ) : null}
+            {showExternalVacancyIndicator && externalVacancyDisplay ? (
+              <span
+                className={cn(
+                  'mt-0.5 inline-flex w-full items-center gap-1 whitespace-nowrap text-[9px] font-semibold leading-tight',
+                  externalIndicatorToneClass[externalVacancyDisplay.status].text
+                )}
+                data-testid="external-vacancy-indicator"
+              >
+                <span className="shrink-0 tabular-nums">
+                  Vac {externalVacancyDisplay.countLabel}
+                </span>
+                <UserRound size={8} strokeWidth={2.5} aria-hidden="true" className="shrink-0" />
+                <span className="inline-flex shrink-0 items-center gap-0.5">
+                  {[0, 1, 2].map((index) => (
+                    <span
+                      key={`external-vacancy-bar-${index}`}
+                      className={cn(
+                        'h-1.5 w-3 rounded-sm',
+                        index < externalVacancyDisplay.filledBars
+                          ? externalIndicatorToneClass[externalVacancyDisplay.status].barOn
+                          : externalIndicatorToneClass[externalVacancyDisplay.status].barOff
+                      )}
+                    />
+                  ))}
+                </span>
+                {externalVacancyDisplay.hintLabel ? (
+                  <span className="ml-auto shrink-0 tabular-nums">
+                    {externalVacancyDisplay.hintLabel}
+                  </span>
+                ) : null}
               </span>
             ) : null}
           </span>

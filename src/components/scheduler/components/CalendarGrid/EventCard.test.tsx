@@ -236,6 +236,8 @@ describe('CalendarEventCard', () => {
 
     expect(screen.getByText('Psicología Social')).toBeInTheDocument();
     expect(screen.getByText('Cátedra 36 (II)')).toBeInTheDocument();
+    expect(screen.getByText('Vac 9')).toBeInTheDocument();
+    expect(screen.getByTestId('external-vacancy-indicator')).toBeInTheDocument();
     expect(screen.getByText('IN')).toBeInTheDocument();
     expect(
       screen.queryByLabelText('Guardar o quitar esta comisión elegida')
@@ -303,5 +305,44 @@ describe('CalendarEventCard', () => {
 
     expect(screen.getByText('14:30')).toBeInTheDocument();
     expect(screen.getByText('16:00')).toBeInTheDocument();
+    expect(screen.queryByTestId('external-vacancy-indicator')).not.toBeInTheDocument();
+    expect(screen.queryByText('Vac 9')).not.toBeInTheDocument();
+  });
+
+  it('en modo mi calendario oculta badge de sin cupo en externos para priorizar horarios', () => {
+    const externalWithoutVacancies: VisibleEventSlot = {
+      ...externalSlot,
+      event: {
+        ...externalSlot.event,
+        vacantes: 0,
+      },
+    };
+
+    render(
+      <CalendarEventCard
+        slot={externalWithoutVacancies}
+        activeCommission={null}
+        selectedSubjectId=""
+        showCalendarOnlyTimes={true}
+        onCalendarOnlyExternalEnter={vi.fn()}
+        onCalendarOnlyExternalLeave={vi.fn()}
+        enrolledBySubject={{ '36': '21' }}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setHoveredLinkedTeoricoId={vi.fn()}
+        setHoveredLinkedSeminarioId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText('14:30')).toBeInTheDocument();
+    expect(screen.getByText('16:00')).toBeInTheDocument();
+    expect(screen.queryByText('Sin cupo')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('external-vacancy-indicator')).not.toBeInTheDocument();
   });
 });

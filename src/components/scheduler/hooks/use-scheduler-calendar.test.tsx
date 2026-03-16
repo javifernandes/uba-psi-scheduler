@@ -182,6 +182,25 @@ describe('useSchedulerCalendar', () => {
     expect(result.current.events.every((event) => event.isExternal)).toBe(true);
   });
 
+  it('propaga datos de vacantes de la comisión externa a eventos teórico/seminario vinculados', () => {
+    const { result } = renderHook(() =>
+      useSchedulerCalendar(
+        baseParams({
+          showComisiones: false,
+          showTeoricos: false,
+          showSeminarios: false,
+          showOtherSubjects: true,
+          enrolledBySubject: { s2: '9' },
+        })
+      )
+    );
+
+    const byEventId = Object.fromEntries(result.current.events.map((event) => [event.id, event]));
+    expect(byEventId['ext-s2-prac-9']?.vacantes).toBeNull();
+    expect(byEventId['ext-s2-teo-X']?.vacantes).toBeNull();
+    expect(byEventId['ext-s2-sem-Z']?.vacantes).toBeNull();
+  });
+
   it('prioriza evento de comisión activa en slot superpuesto por encima del índice almacenado', () => {
     const { result, rerender } = renderHook(
       ({ params }: { params: HookParams }) => useSchedulerCalendar(params),
