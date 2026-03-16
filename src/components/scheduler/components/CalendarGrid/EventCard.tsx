@@ -125,6 +125,8 @@ export const CalendarEventCard = ({
     onToggleEnrollment,
   });
   const externalParts = event.isExternal ? externalSubjectParts(event.sourceSubjectLabel) : null;
+  const showExternalNoVacancyWarning =
+    event.isExternal && event.tipo === 'prac' && event.vacantes === 0;
   const vacancyDisplay =
     !event.isExternal && event.tipo === 'prac'
       ? vacancyIndicator(event.vacantes ?? null, event.vacantesMaximasObservadas ?? null)
@@ -268,6 +270,16 @@ export const CalendarEventCard = ({
           >
             {aulaParts.prefix}
           </span>
+          {showExternalNoVacancyWarning ? (
+            <span
+              className={cn(
+                'absolute right-2 top-1 rounded border border-[#efafc3] bg-[#fff1f5] px-1 py-0.5 text-[9px] font-black uppercase tracking-wide text-[#b72f5c]',
+                hideText && 'opacity-0'
+              )}
+            >
+              Sin cupo
+            </span>
+          ) : null}
         </>
       ) : (
         <>

@@ -137,6 +137,27 @@ describe('SavedElectionsPanel', () => {
     expect(onRemoveSavedSubject).toHaveBeenCalledWith('34');
   });
 
+  it('muestra warning cuando la comisión guardada quedó sin vacantes', () => {
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(createViewModel());
+    render(
+      <SavedElectionsPanel
+        {...createProps({
+          savedElectionDetails: [
+            {
+              ...savedDetail,
+              commission: {
+                ...savedDetail.commission,
+                vacantes: 0,
+              },
+            },
+          ],
+        })}
+      />
+    );
+
+    expect(screen.getByText('Comisión 21 sin vacantes')).toBeInTheDocument();
+  });
+
   it('permite borrar todas las elecciones con confirmación', () => {
     const onRemoveAllSavedSubjects = vi.fn();
     vi.mocked(useSavedElectionsViewModel).mockReturnValue(

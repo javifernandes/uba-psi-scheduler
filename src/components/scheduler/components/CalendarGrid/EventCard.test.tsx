@@ -244,6 +244,40 @@ describe('CalendarEventCard', () => {
     expect(screen.queryByText('10:45')).not.toBeInTheDocument();
   });
 
+  it('en comisión externa sin vacantes muestra badge de sin cupo', () => {
+    const externalWithoutVacancies: VisibleEventSlot = {
+      ...externalSlot,
+      event: {
+        ...externalSlot.event,
+        vacantes: 0,
+      },
+    };
+
+    render(
+      <CalendarEventCard
+        slot={externalWithoutVacancies}
+        activeCommission={null}
+        selectedSubjectId="34"
+        showCalendarOnlyTimes={false}
+        onCalendarOnlyExternalEnter={vi.fn()}
+        onCalendarOnlyExternalLeave={vi.fn()}
+        enrolledBySubject={{ '36': '21' }}
+        enrolledCurrentCommissionId={undefined}
+        conflictByEventId={{}}
+        hoveredConflictEventId={null}
+        setHoveredConflictEventId={vi.fn()}
+        setHoveredCommissionId={vi.fn()}
+        setHoveredLinkedTeoricoId={vi.fn()}
+        setHoveredLinkedSeminarioId={vi.fn()}
+        setPinnedCommissionId={vi.fn()}
+        setStackIndexBySlot={vi.fn()}
+        onToggleEnrollment={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText('Sin cupo')).toBeInTheDocument();
+  });
+
   it('en modo mi calendario muestra horas en eventos externos', () => {
     render(
       <CalendarEventCard
