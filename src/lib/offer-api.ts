@@ -91,12 +91,17 @@ const assertApiBase = () => {
   );
 };
 
-const postJson = async <T>(path: string, body: unknown): Promise<T> => {
+const postJson = async <T>(path: string, body: unknown, authToken?: string): Promise<T> => {
+  const headers: Record<string, string> = {
+    'content-type': 'application/json',
+  };
+  if (authToken) {
+    headers.authorization = `Bearer ${authToken}`;
+  }
+
   const response = await fetch(`${assertApiBase()}${path}`, {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
+    headers,
     body: JSON.stringify(body),
     cache: 'no-store',
   });
@@ -150,47 +155,67 @@ export const getOfferSubjects = async (
 export const getVacancyAnalytics = async (
   careerSlug: string,
   period: PeriodId,
-  range: string
+  range: string,
+  authToken?: string
 ): Promise<VacancyAnalytics> =>
-  postJson<VacancyAnalytics>('/getVacancyAnalytics', {
-    careerSlug,
-    period,
-    range,
-  });
+  postJson<VacancyAnalytics>(
+    '/getVacancyAnalytics',
+    {
+      careerSlug,
+      period,
+      range,
+    },
+    authToken
+  );
 
 export const getVacancyTrends = async (
   careerSlug: string,
   period: PeriodId,
   range: string,
-  maxPoints = 12
+  maxPoints = 12,
+  authToken?: string
 ): Promise<VacancyTrends> =>
-  postJson<VacancyTrends>('/getVacancyTrends', {
-    careerSlug,
-    period,
-    range,
-    maxPoints,
-  });
+  postJson<VacancyTrends>(
+    '/getVacancyTrends',
+    {
+      careerSlug,
+      period,
+      range,
+      maxPoints,
+    },
+    authToken
+  );
 
 export const getVacancyTopDrops = async (
   careerSlug: string,
   period: PeriodId,
   range: string,
-  limit = 20
+  limit = 20,
+  authToken?: string
 ): Promise<VacancyDropItem[]> =>
-  postJson<VacancyDropItem[]>('/getVacancyTopDrops', {
-    careerSlug,
-    period,
-    range,
-    limit,
-  });
+  postJson<VacancyDropItem[]>(
+    '/getVacancyTopDrops',
+    {
+      careerSlug,
+      period,
+      range,
+      limit,
+    },
+    authToken
+  );
 
 export const getVacancyCapacity = async (
   careerSlug: string,
   period: PeriodId,
-  includeProbeTimes = false
+  includeProbeTimes = false,
+  authToken?: string
 ): Promise<VacancyCapacityResponse> =>
-  postJson<VacancyCapacityResponse>('/getVacancyCapacity', {
-    careerSlug,
-    period,
-    includeProbeTimes,
-  });
+  postJson<VacancyCapacityResponse>(
+    '/getVacancyCapacity',
+    {
+      careerSlug,
+      period,
+      includeProbeTimes,
+    },
+    authToken
+  );

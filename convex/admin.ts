@@ -125,12 +125,16 @@ export const recomputeVacancyCapacity = mutation({
         .withIndex('by_key_capturedAt', (q) => q.eq('key', current.key))
         .collect();
 
-      const observations = changeRows
+      const observations: Array<{
+        vacantes: number;
+        capturedAt: string;
+        sourceRunId: string | null;
+      }> = changeRows
         .filter((row) => typeof row.vacantes === 'number')
         .map((row) => ({
           vacantes: row.vacantes as number,
           capturedAt: row.capturedAt,
-          sourceRunId: row.sourceRunId,
+          sourceRunId: row.sourceRunId ?? null,
         }));
 
       if (typeof current.vacantes === 'number') {
@@ -138,7 +142,7 @@ export const recomputeVacancyCapacity = mutation({
         observations.push({
           vacantes: current.vacantes,
           capturedAt: current.updatedAt,
-          sourceRunId: currentRun?.sourceRunId || null,
+          sourceRunId: currentRun?.sourceRunId ?? null,
         });
       }
 

@@ -93,6 +93,8 @@ router.route({
   path: '/getVacancyAnalytics',
   method: 'POST',
   handler: httpAction(async (ctx, request) => {
+    const isAdmin = await ctx.runQuery(api.users.isCurrentUserAdmin, {});
+    if (!isAdmin) return jsonResponse(403, { error: 'admin_required' });
     const body = await parseJson(request);
     const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
     const period = typeof body.period === 'string' ? body.period : '';
@@ -118,6 +120,8 @@ router.route({
   path: '/getVacancyTrends',
   method: 'POST',
   handler: httpAction(async (ctx, request) => {
+    const isAdmin = await ctx.runQuery(api.users.isCurrentUserAdmin, {});
+    if (!isAdmin) return jsonResponse(403, { error: 'admin_required' });
     const body = await parseJson(request);
     const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
     const period = typeof body.period === 'string' ? body.period : '';
@@ -145,6 +149,8 @@ router.route({
   path: '/getVacancyTopDrops',
   method: 'POST',
   handler: httpAction(async (ctx, request) => {
+    const isAdmin = await ctx.runQuery(api.users.isCurrentUserAdmin, {});
+    if (!isAdmin) return jsonResponse(403, { error: 'admin_required' });
     const body = await parseJson(request);
     const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
     const period = typeof body.period === 'string' ? body.period : '';
@@ -172,6 +178,8 @@ router.route({
   path: '/getVacancyCapacity',
   method: 'POST',
   handler: httpAction(async (ctx, request) => {
+    const isAdmin = await ctx.runQuery(api.users.isCurrentUserAdmin, {});
+    if (!isAdmin) return jsonResponse(403, { error: 'admin_required' });
     const body = await parseJson(request);
     const careerSlug = typeof body.careerSlug === 'string' ? body.careerSlug : '';
     const period = typeof body.period === 'string' ? body.period : '';

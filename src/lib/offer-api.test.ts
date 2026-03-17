@@ -99,6 +99,42 @@ describe('offer-api', () => {
     expect(analytics.totals.knownVacancies).toBe(0);
   });
 
+  it('envía bearer token en endpoints protegidos cuando se provee authToken', async () => {
+    process.env.NEXT_PUBLIC_CONVEX_API_BASE = 'https://api.example.com';
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        lastProbeAt: null,
+        totals: {
+          knownVacancies: 0,
+          sinCupo: 0,
+          cupoBajo: 0,
+          cupoDisponible: 0,
+          sinDatos: 0,
+        },
+        series: [],
+        topDrops: [],
+      }),
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    await getVacancyAnalytics('lic-psicologia', '2026-01', '24h', 'token-123');
+
+    expect(fetchMock).toHaveBeenCalledWith('https://api.example.com/getVacancyAnalytics', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer token-123',
+      },
+      body: JSON.stringify({
+        careerSlug: 'lic-psicologia',
+        period: '2026-01',
+        range: '24h',
+      }),
+      cache: 'no-store',
+    });
+  });
+
   it('retorna series de tendencia por materia y cátedra', async () => {
     process.env.NEXT_PUBLIC_CONVEX_API_BASE = 'https://api.example.com';
     vi.stubGlobal(

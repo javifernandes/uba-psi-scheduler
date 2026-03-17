@@ -22,13 +22,25 @@ La integración de PostHog es opcional y funciona solo si configurás variables 
 
 Sin `NEXT_PUBLIC_POSTHOG_KEY`, la app no envía eventos.
 
-## Build estático
+## Build de producción
 
 ```bash
 npm run build
 ```
 
-Genera salida en `out/`.
+Genera salida de Next.js para runtime (`.next/`).
+
+## Autenticación (Clerk)
+
+La app integra Clerk con App Router y `middleware.ts`.
+Nota: Clerk en Next.js requiere runtime; por eso este proyecto ya no usa `output: 'export'`.
+
+Configuracion MVP actual:
+
+- `Google` + `Email/Password` habilitados en Clerk Dashboard.
+- En local se puede usar modo keyless.
+- En entornos desplegados se recomienda setear `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` y `CLERK_SECRET_KEY`.
+- Para persistencia de usuario en Convex, configurar `CLERK_JWT_ISSUER_DOMAIN` en variables de entorno de Convex.
 
 ## Pipeline de oferta hacia Convex
 
@@ -56,9 +68,12 @@ npx convex dev
 
 ```bash
 export NEXT_PUBLIC_CONVEX_API_BASE="https://<deployment>.convex.site"
+export NEXT_PUBLIC_CONVEX_URL="https://<deployment>.convex.cloud"
 export CONVEX_INGEST_URL="$NEXT_PUBLIC_CONVEX_API_BASE"
 export VACANCY_INGEST_TOKEN="dev-ingest-token"
 export CONVEX_ADMIN_TOKEN="dev-admin-token"
+# Si no usas keyless local, fijar también:
+# export CLERK_JWT_ISSUER_DOMAIN="https://<tu-instancia>.clerk.accounts.dev"
 ```
 
 3. Ingestar probe local:
@@ -160,10 +175,8 @@ Para cargar/editar ventanas:
 - `scripts/backfill-vacancies-from-git.ts`: backfill histórico desde commits de git.
 - `scripts/scraper-window-control.ts`: utilidades de status/cierre de ventanas de scraping (Convex DB-only).
 
-## Deploy (Cloudflare Pages)
+## Deploy
 
-- Framework: Next.js (static export)
+- Framework: Next.js runtime
 - Build command: `npm run build`
-- Output directory: `out`
-- Production branch: `main`
-- Preview deployments: habilitados para branches/PRs.
+- Start command: `npm run start`

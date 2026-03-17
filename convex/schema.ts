@@ -2,6 +2,26 @@ import { defineSchema, defineTable } from 'convex/server';
 import { v } from 'convex/values';
 
 export default defineSchema({
+  users: defineTable({
+    tokenIdentifier: v.string(),
+    subject: v.string(),
+    issuer: v.string(),
+    roles: v.optional(v.array(v.string())),
+    email: v.optional(v.string()),
+    emailVerified: v.optional(v.boolean()),
+    name: v.optional(v.string()),
+    givenName: v.optional(v.string()),
+    familyName: v.optional(v.string()),
+    nickname: v.optional(v.string()),
+    preferredUsername: v.optional(v.string()),
+    pictureUrl: v.optional(v.string()),
+    createdAt: v.string(),
+    updatedAt: v.string(),
+    lastSeenAt: v.string(),
+  })
+    .index('by_token_identifier', ['tokenIdentifier'])
+    .index('by_subject_issuer', ['subject', 'issuer']),
+
   offerSubjects: defineTable({
     careerSlug: v.string(),
     careerLabel: v.string(),
