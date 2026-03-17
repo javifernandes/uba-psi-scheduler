@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useAuth } from '@clerk/nextjs';
+import { useQuery } from 'convex/react';
 import {
   getVacancyCapacity,
   getOfferSubjects,
@@ -19,6 +21,7 @@ import {
 } from '@/lib/offer-api';
 import { normalizePeriod, type PeriodId } from '@/lib/period';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
+import { api } from '../../../convex/_generated/api';
 import {
   AnalyticsKpiGrid,
   AnalyticsSeriesTable,
@@ -27,6 +30,7 @@ import {
 } from '@/components/offer/OfferAnalyticsTables';
 import { OfferAnalyticsCharts, OfferTopDropsChart } from '@/components/offer/OfferAnalyticsCharts';
 import { OfferSubjectVacancyTable } from '@/components/offer/OfferSubjectVacancyTable';
+import { AuthNav } from '@/components/auth/auth-nav';
 
 const ANALYTICS_RANGES = [
   { value: '6h', label: '6h' },
@@ -100,6 +104,8 @@ const formatAnalyticsPeriodLabel = (period: PeriodId) => {
 export const OfferAnalyticsPageClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { getToken } = useAuth();
+  const isCurrentUserAdmin = useQuery(api.users.isCurrentUserAdmin);
 
   const [careers, setCareers] = useState<CareerWithLatestPeriod[]>([]);
   const [periods, setPeriods] = useState<PeriodId[]>([]);
@@ -121,6 +127,7 @@ export const OfferAnalyticsPageClient = () => {
   const queryPeriod = normalizePeriod(searchParams.get('period') || '');
 
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     let cancelled = false;
     setLoadingCatalog(true);
     setError('');
@@ -140,7 +147,7 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [isCurrentUserAdmin]);
 
   const selectedCareer = useMemo(() => {
     if (!careers.length) return '';
@@ -149,6 +156,7 @@ export const OfferAnalyticsPageClient = () => {
   }, [careers, queryCareer]);
 
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     if (!selectedCareer) return;
     let cancelled = false;
     listPeriodsByCareer(selectedCareer)
@@ -163,7 +171,7 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer]);
+  }, [isCurrentUserAdmin, selectedCareer]);
 
   const selectedPeriod = useMemo(() => {
     if (!periods.length) return null;
@@ -201,23 +209,36 @@ export const OfferAnalyticsPageClient = () => {
     setRefreshTick((prev) => prev + 1);
   }, []);
 
+  const getConvexAuthToken = useCallback(async () => {
+    const token = await getToken({ template: 'convex' });
+    if (!token) {
+      throw new Error('No se pudo autenticar sesión para analíticas.');
+    }
+    return token;
+  }, [getToken]);
+
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     if (!selectedCareer || !selectedPeriod) return;
     if (queryCareer === selectedCareer && queryPeriod === selectedPeriod) return;
     router.replace(buildAnalyticsHref(selectedCareer, selectedPeriod), { scroll: false });
-  }, [queryCareer, queryPeriod, router, selectedCareer, selectedPeriod]);
+  }, [isCurrentUserAdmin, queryCareer, queryPeriod, router, selectedCareer, selectedPeriod]);
 
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     if (!selectedCareer || !selectedPeriod) return;
     let cancelled = false;
     setLoadingAnalytics(true);
     setLoadingSubjects(true);
     setError('');
-    Promise.all([
-      getVacancyAnalytics(selectedCareer, selectedPeriod, range),
-      getOfferSubjects(selectedCareer, selectedPeriod),
-      getVacancyCapacity(selectedCareer, selectedPeriod, true),
-    ])
+    getConvexAuthToken()
+      .then((token) =>
+        Promise.all([
+          getVacancyAnalytics(selectedCareer, selectedPeriod, range, token),
+          getOfferSubjects(selectedCareer, selectedPeriod),
+          getVacancyCapacity(selectedCareer, selectedPeriod, true, token),
+        ])
+      )
       .then(([analyticsPayload, subjectsPayload, capacityPayload]) => {
         if (cancelled) return;
         setAnalytics(analyticsPayload);
@@ -239,13 +260,15 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer, selectedPeriod, range, refreshTick]);
+  }, [getConvexAuthToken, isCurrentUserAdmin, selectedCareer, selectedPeriod, range, refreshTick]);
 
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     if (!selectedCareer || !selectedPeriod) return;
     let cancelled = false;
     setLoadingTrends(true);
-    getVacancyTrends(selectedCareer, selectedPeriod, range)
+    getConvexAuthToken()
+      .then((token) => getVacancyTrends(selectedCareer, selectedPeriod, range, 12, token))
       .then((payload) => {
         if (cancelled) return;
         setTrends(payload);
@@ -260,13 +283,15 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer, selectedPeriod, range, refreshTick]);
+  }, [getConvexAuthToken, isCurrentUserAdmin, selectedCareer, selectedPeriod, range, refreshTick]);
 
   useEffect(() => {
+    if (isCurrentUserAdmin !== true) return;
     if (!selectedCareer || !selectedPeriod) return;
     let cancelled = false;
     setLoadingTopDrops(true);
-    getVacancyTopDrops(selectedCareer, selectedPeriod, range, 30)
+    getConvexAuthToken()
+      .then((token) => getVacancyTopDrops(selectedCareer, selectedPeriod, range, 30, token))
       .then((payload) => {
         if (cancelled) return;
         setTopDrops(payload);
@@ -281,7 +306,35 @@ export const OfferAnalyticsPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer, selectedPeriod, range, refreshTick]);
+  }, [getConvexAuthToken, isCurrentUserAdmin, selectedCareer, selectedPeriod, range, refreshTick]);
+
+  if (typeof isCurrentUserAdmin === 'undefined') {
+    return (
+      <main className="min-h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4">
+        <section className="mx-auto w-full max-w-[1400px] rounded-2xl border border-[#ead9e2] bg-white p-6 text-[#4f1237]">
+          Validando permisos...
+        </section>
+      </main>
+    );
+  }
+
+  if (!isCurrentUserAdmin) {
+    return (
+      <main className="min-h-dvh bg-[radial-gradient(circle_at_0%_0%,#f4dde9_0%,transparent_35%),radial-gradient(circle_at_100%_100%,#f9edf4_0%,transparent_35%),#f8f2f5] px-3 py-4">
+        <section className="mx-auto w-full max-w-[1400px] rounded-2xl border border-amber-300 bg-amber-50 p-6 text-amber-900">
+          Acceso restringido. Analíticas está habilitado solo para admins.
+          <div className="mt-3">
+            <Link
+              href="/oferta"
+              className="inline-flex rounded-md border border-amber-500/40 bg-white px-3 py-1.5 text-xs font-semibold text-amber-900"
+            >
+              Ir a Horarios
+            </Link>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   if (loadingCatalog) {
     return (
@@ -326,6 +379,7 @@ export const OfferAnalyticsPageClient = () => {
               >
                 Horarios
               </Link>
+              <AuthNav mode="scheduler" />
             </div>
           </div>
         </div>

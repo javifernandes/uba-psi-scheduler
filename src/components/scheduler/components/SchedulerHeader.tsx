@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CircleHelp } from 'lucide-react';
+import { AuthNav } from '@/components/auth/auth-nav';
 
 type SchedulerHeaderProps = {
   title: string;
@@ -59,6 +60,7 @@ export const SchedulerHeader = ({
           <CircleHelp size={13} />
           Tour
         </button>
+        <AuthNav mode="scheduler" />
       </div>
     </div>
   </div>

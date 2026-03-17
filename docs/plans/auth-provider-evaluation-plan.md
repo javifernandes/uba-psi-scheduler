@@ -11,12 +11,19 @@ Necesitamos evaluar opciones para agregar:
 
 Fecha de evaluacion: **2026-03-16**.
 
+## Decision actualizada (2026-03-16)
+
+- Provider elegido: **Clerk**.
+- Alcance MVP de login: **Google + Email/Password**.
+- Facebook/X quedan para una fase posterior.
+- Estado tecnico actual: migracion aplicada a Next runtime + middleware de Clerk (se removio `output: 'export'`).
+
 ## Requisitos
 
 ### Funcionales
 
 - Registro e inicio de sesion con email y password.
-- OAuth social con Google, Facebook y X/Twitter.
+- OAuth social con Google.
 - Recuperacion de password y verificacion de email.
 - Soportar linking de cuentas (mismo email entre social + password).
 
@@ -38,8 +45,8 @@ Fecha de evaluacion: **2026-03-16**.
 - `Apple`: util para usuarios iOS/macOS y compliance en ecosistema Apple.
 - `Microsoft`: util para cuentas institucionales.
 
-Recomendacion de MVP: **Google + Facebook + GitHub + Email/Password**.
-`X/Twitter` dejarlo opcional de fase 2 por politicas cambiantes del proveedor.
+Recomendacion de MVP (actual): **Google + Email/Password**.
+`Facebook`, `X/Twitter`, `GitHub`, `Apple` y `Microsoft` quedan como providers opcionales de fase 2.
 
 ## Opciones evaluadas
 
@@ -145,7 +152,7 @@ Recomendacion de MVP: **Google + Facebook + GitHub + Email/Password**.
 Por equilibrio entre:
 
 - Rapidez de implementacion.
-- Cobertura de providers pedidos.
+- Cobertura del alcance pedido (Google + Email).
 - Free tier amplio.
 - Integracion ya documentada por Convex para Next.js.
 
@@ -165,7 +172,7 @@ Elegir WorkOS si:
 
 ### Fase 0 - Decision y spike (1-2 dias)
 
-- Elegir proveedor final (`Clerk` recomendado).
+- Proveedor final: `Clerk`.
 - Hacer PoC de:
   - login Google,
   - signup email/password,
@@ -185,7 +192,7 @@ Elegir WorkOS si:
 ### Fase 2 - Flujos UX de auth (2-4 dias)
 
 - Pantallas: sign up, sign in, sign out, reset password.
-- Agregar social buttons (Google/Facebook/X o set final de MVP).
+- Agregar social button de Google y flujo email/password.
 - Manejo de errores comunes (email ya usado, cuenta bloqueada, callback invalido).
 
 **Criterio de salida**: suite de flujos manuales completos en desktop y mobile.
@@ -208,8 +215,8 @@ Elegir WorkOS si:
 
 ## Riesgos y mitigaciones
 
-- `X/Twitter` puede tener cambios frecuentes en politicas/retorno de email.
-  - Mitigacion: no depender de X como unico metodo; mantener email/password y Google.
+- Cambios de alcance social despues del MVP (agregar Facebook/X).
+  - Mitigacion: desacoplar provider UI de la logica de perfil/usuario en Convex.
 - Doble backend de identidad (si Supabase/Firebase).
   - Mitigacion: priorizar integraciones nativas con Convex.
 - Scope creep (MFA, orgs, RBAC avanzado demasiado pronto).
@@ -217,7 +224,7 @@ Elegir WorkOS si:
 
 ## Decision sugerida
 
-- Avanzar con **Clerk + Convex** para MVP.
+- Avanzar con **Clerk + Convex** para MVP (Google + Email).
 - Definir desde inicio la interfaz interna `AuthUser` para no acoplar toda la app a un vendor.
 - Revisar costo/uso al llegar al 60-70% del free tier.
 

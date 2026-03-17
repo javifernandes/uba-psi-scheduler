@@ -12,3 +12,6 @@ pnpm-debug.log*
 tmp
 test-results
 .convex
+
+# clerk configuration (can include secrets)
+/.clerk/
