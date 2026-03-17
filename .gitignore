@@ -15,3 +15,8 @@ test-results
 
 # clerk configuration (can include secrets)
 /.clerk/
+
+# OpenNext
+.open-next
+.dev.vars
+.wrangler

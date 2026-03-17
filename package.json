@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start",
     "preview:static": "next start -p 4173",
-    "lint": "next lint",
+    "lint": "eslint . --no-warn-ignored",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
@@ -20,19 +20,24 @@
     "migrate:subject-schema-v2": "tsx scripts/migrate-subject-schema-v2.ts",
     "scrape:window:status": "tsx scripts/scraper-window-control.ts status",
     "scrape:window:close": "tsx scripts/scraper-window-control.ts close",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.39.0",
+    "@opennextjs/cloudflare": "^1.17.1",
     "clsx": "^2.1.1",
     "convex": "^1.23.0",
     "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.6",
     "lucide-react": "^0.575.0",
-    "next": "^14.2.0",
+    "next": "^16.1.7",
     "posthog-js": "^1.359.1",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "shepherd.js": "^15.2.1",
     "tailwind-merge": "^2.3.0",
     "zustand": "^5.0.8"
@@ -43,11 +48,11 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20.0.0",
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.27",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.35",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.7",
     "husky": "^9.1.7",
     "jsdom": "^28.1.0",
     "lint-staged": "^16.3.3",
@@ -56,15 +61,16 @@
     "tailwindcss": "^3.4.0",
     "tsx": "^4.21.0",
     "typescript": "^5.4.0",
-    "vitest": "^4.0.18"
+    "vitest": "^4.0.18",
+    "wrangler": "^4.74.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix --max-warnings=0"
+      "eslint --fix --max-warnings=0 --no-warn-ignored"
     ],
     "*.{mjs,cjs,json,md,css}": [
       "prettier --write"

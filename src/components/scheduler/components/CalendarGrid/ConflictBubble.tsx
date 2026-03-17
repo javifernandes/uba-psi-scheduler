@@ -9,7 +9,7 @@ type ConflictBubbleProps = {
   eventId: string;
   eventType: 'prac' | 'teo' | 'sem';
   eventConflicts: ReservedSlot[];
-  anchorRef?: RefObject<HTMLDivElement>;
+  anchorRef?: RefObject<HTMLDivElement | null>;
 };
 
 const bubbleLabelByType: Record<'prac' | 'teo' | 'sem', string> = {
@@ -103,7 +103,7 @@ export const ConflictBubble = ({
       <div className="mb-3 text-[13px] leading-relaxed opacity-95">
         Si seleccionás este {bubbleLabelByType[eventType]} va a solapar con:
       </div>
-      {conflicts.map(conflict => (
+      {conflicts.map((conflict) => (
         <div
           key={`${eventId}-${conflict.subjectId}-${conflict.slotId}`}
           className="mb-2.5 last:mb-0 leading-relaxed"
