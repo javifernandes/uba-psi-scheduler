@@ -5,6 +5,7 @@ describe('buildSavedConflictOverlay', () => {
   it('retorna null si no hay conflictos o segmentos conectados', () => {
     const overlay = buildSavedConflictOverlay({
       hoveredSavedConflictSlotId: '34|prac|21',
+      panelWidth: 320,
       panelHeight: 500,
       conflictDetails: [],
       slotCenters: [{ slotId: '34|prac|21', y: 100 }],
@@ -25,6 +26,7 @@ describe('buildSavedConflictOverlay', () => {
   it('calcula geometría y rangos de solapamiento para el bubble', () => {
     const overlay = buildSavedConflictOverlay({
       hoveredSavedConflictSlotId: '34|prac|21',
+      panelWidth: 320,
       panelHeight: 220,
       conflictDetails: [
         {
@@ -56,6 +58,7 @@ describe('buildSavedConflictOverlay', () => {
     });
 
     expect(overlay).not.toBeNull();
+    expect(overlay?.panelWidth).toBe(320);
     expect(overlay?.bubbleWidth).toBe(276);
     expect(overlay?.trunkX).toBe(-16);
     expect(overlay?.segments).toHaveLength(2);

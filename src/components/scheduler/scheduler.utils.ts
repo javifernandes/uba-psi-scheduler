@@ -188,6 +188,13 @@ export const splitAula = (aulaOrLugar: string | SlotLugar) => {
   };
 };
 
+export const compactLugarLabel = (aulaOrLugar: string | SlotLugar) => {
+  const { prefix, room } = splitAula(aulaOrLugar);
+  if (prefix && room) return `${prefix} ${room}`;
+  if (room) return room;
+  return prefix;
+};
+
 export const splitEventTitle = (title: string) => {
   const [code, ...rest] = title.split(' - ');
   return { code, label: rest.join(' - ') };
@@ -420,7 +427,8 @@ export const parseSubject = (subject: SubjectData): ParsedSubject => {
     const rawSlot = slot as SubjectSlot & { aula?: string };
     if (slot.lugar) return slot;
     const parsedLugar = parseSlotLugar(rawSlot.aula || '');
-    const { aula: _legacyAula, ...rest } = rawSlot;
+    const { aula: legacyAula, ...rest } = rawSlot;
+    void legacyAula;
     return {
       ...rest,
       lugar: parsedLugar,
