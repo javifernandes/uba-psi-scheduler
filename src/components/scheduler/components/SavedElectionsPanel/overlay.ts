@@ -17,6 +17,8 @@ type SlotCenter = {
 };
 
 export type SavedConflictOverlayData = {
+  panelWidth: number;
+  panelHeight: number;
   bubbleTop: number;
   bubbleHeight: number;
   bubbleLeft: number;
@@ -35,6 +37,7 @@ export type SavedConflictOverlayData = {
 
 type BuildSavedConflictOverlayParams = {
   hoveredSavedConflictSlotId: string;
+  panelWidth: number;
   panelHeight: number;
   conflictDetails: ReservedSlot[];
   slotCenters: SlotCenter[];
@@ -43,6 +46,7 @@ type BuildSavedConflictOverlayParams = {
 
 export const buildSavedConflictOverlay = ({
   hoveredSavedConflictSlotId,
+  panelWidth,
   panelHeight,
   conflictDetails,
   slotCenters,
@@ -52,13 +56,13 @@ export const buildSavedConflictOverlay = ({
 
   const connectedSlotIds = new Set([
     hoveredSavedConflictSlotId,
-    ...conflictDetails.map(item => item.slotId),
+    ...conflictDetails.map((item) => item.slotId),
   ]);
-  const segments = slotCenters.filter(item => connectedSlotIds.has(item.slotId));
+  const segments = slotCenters.filter((item) => connectedSlotIds.has(item.slotId));
   if (!segments.length) return null;
 
-  const minY = Math.min(...segments.map(segment => segment.y));
-  const maxY = Math.max(...segments.map(segment => segment.y));
+  const minY = Math.min(...segments.map((segment) => segment.y));
+  const maxY = Math.max(...segments.map((segment) => segment.y));
   const bubbleWidth = 276;
   const bubbleHeight = Math.max(98, 58 + Math.min(3, conflictDetails.length) * 38);
   const bubbleLeft = -bubbleWidth - 44;
@@ -69,6 +73,8 @@ export const buildSavedConflictOverlay = ({
   const bubbleAnchorY = bubbleTop + bubbleHeight / 2;
 
   return {
+    panelWidth,
+    panelHeight,
     bubbleTop,
     bubbleHeight,
     bubbleLeft,
@@ -77,7 +83,7 @@ export const buildSavedConflictOverlay = ({
     branchStartX: -2,
     bubbleAnchorY,
     segments,
-    conflicts: conflictDetails.map(conflict => {
+    conflicts: conflictDetails.map((conflict) => {
       const range = overlapRange(hoveredSlot.start, hoveredSlot.end, conflict.start, conflict.end);
       return {
         ...conflict,

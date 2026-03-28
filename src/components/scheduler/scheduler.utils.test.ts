@@ -7,6 +7,7 @@ import {
   catedraNumberFromLabel,
   commissionSummaryLabel,
   catedraProfessorFromHeader,
+  compactLugarLabel,
   dayShort,
   displayHeaderLabel,
   displaySubjectLabel,
@@ -132,6 +133,9 @@ describe('scheduler.utils', () => {
     expect(venueCodeFromAula('ZZ-1')).toBe('ZZ');
     expect(venueCodeFromAula('AV 028')).toBe('AV');
     expect(splitAula('IN-123')).toEqual({ prefix: 'IN', room: '123' });
+    expect(compactLugarLabel('IN-123')).toBe('IN 123');
+    expect(compactLugarLabel({ anexo: 'HY', aula: '005' })).toBe('HY 005');
+    expect(compactLugarLabel({ anexo: 'IN', aula: null })).toBe('IN');
     expect(splitEventTitle('63 - BLANK Sofia')).toEqual({
       code: '63',
       label: 'BLANK Sofia',

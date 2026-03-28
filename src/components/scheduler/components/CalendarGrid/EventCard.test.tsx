@@ -239,6 +239,7 @@ describe('CalendarEventCard', () => {
     expect(screen.getByText('Vac 9')).toBeInTheDocument();
     expect(screen.getByTestId('external-vacancy-indicator')).toBeInTheDocument();
     expect(screen.getByText('IN')).toBeInTheDocument();
+    expect(screen.getByText('444')).toBeInTheDocument();
     expect(
       screen.queryByLabelText('Guardar o quitar esta comisión elegida')
     ).not.toBeInTheDocument();
@@ -342,6 +343,7 @@ describe('CalendarEventCard', () => {
 
     expect(screen.getByText('14:30')).toBeInTheDocument();
     expect(screen.getByText('16:00')).toBeInTheDocument();
+    expect(screen.getByText('444')).toBeInTheDocument();
     expect(screen.queryByTestId('external-vacancy-indicator')).not.toBeInTheDocument();
     expect(screen.queryByText('Vac 9')).not.toBeInTheDocument();
   });

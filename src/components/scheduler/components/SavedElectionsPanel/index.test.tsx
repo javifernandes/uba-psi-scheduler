@@ -61,6 +61,32 @@ const savedDetail: SavedElectionDetail = {
   },
 };
 
+const secondSubject: SubjectData = {
+  schemaVersion: 2,
+  id: '36',
+  label: '(2) Psicología Social - Cátedra 36 (I)',
+  header: 'header 36',
+  slots: [],
+};
+
+const secondSavedDetail: SavedElectionDetail = {
+  subject: secondSubject,
+  commission: {
+    tipo: 'prac',
+    id: '7',
+    dia: 'martes',
+    inicio: '09:15',
+    fin: '10:45',
+    profesor: 'Ferrari Maria Laura',
+    slotsAsociados: [],
+    lugar: {
+      anexo: 'SI',
+      aula: '12',
+    },
+    vacantes: 9,
+  },
+};
+
 const createProps = (overrides: Partial<Parameters<typeof SavedElectionsPanel>[0]> = {}) => ({
   isOpen: true,
   savedElectionDetails: [savedDetail],
@@ -132,9 +158,55 @@ describe('SavedElectionsPanel', () => {
 
     expect(screen.getByText('1 · Historia de la Psicología - Cátedra 34 (II)')).toBeInTheDocument();
     expect(screen.getByText('21')).toBeInTheDocument();
+    expect(screen.getByText('IN 444')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Quitar elección'));
     fireEvent.click(screen.getByRole('button', { name: 'Quitar materia' }));
     expect(onRemoveSavedSubject).toHaveBeenCalledWith('34');
+  });
+
+  it('muestra por defecto la vista por materia y permite cambiar a vista por día', () => {
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(createViewModel());
+    render(
+      <SavedElectionsPanel
+        {...createProps({
+          savedElectionDetails: [savedDetail, secondSavedDetail],
+        })}
+      />
+    );
+
+    expect(screen.getByText('1 · Historia de la Psicología - Cátedra 34 (II)')).toBeInTheDocument();
+    expect(screen.queryByText('Martes')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Ver elecciones por día' }));
+
+    expect(screen.getByRole('button', { name: 'Ver elecciones por materia' })).toBeInTheDocument();
+    expect(screen.getByText('Martes')).toBeInTheDocument();
+    expect(screen.getByText('Miércoles')).toBeInTheDocument();
+    expect(screen.getByText('Jueves')).toBeInTheDocument();
+    expect(screen.getByText('09:15 10:45')).toBeInTheDocument();
+    expect(screen.getAllByText('14:30 16:00')).toHaveLength(2);
+    expect(screen.getByText('Comisión 7')).toBeInTheDocument();
+    expect(screen.getByText('Comisión 21')).toBeInTheDocument();
+    expect(screen.getByText('SI 12')).toBeInTheDocument();
+    expect(screen.getByText('IN 444')).toBeInTheDocument();
+  });
+
+  it('en vista por día agrupa secciones en orden cronológico', () => {
+    vi.mocked(useSavedElectionsViewModel).mockReturnValue(createViewModel());
+    render(
+      <SavedElectionsPanel
+        {...createProps({
+          savedElectionDetails: [savedDetail, secondSavedDetail],
+        })}
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Ver elecciones por día' }));
+
+    const dayHeadings = screen
+      .getAllByRole('heading', { level: 3 })
+      .map((node) => node.textContent);
+    expect(dayHeadings).toEqual(['Martes', 'Miércoles', 'Jueves']);
   });
 
   it('muestra warning cuando la comisión guardada quedó sin vacantes', () => {

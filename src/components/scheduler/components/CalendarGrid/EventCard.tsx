@@ -325,11 +325,14 @@ export const CalendarEventCard = ({
           ) : null}
           <span
             className={cn(
-              'absolute bottom-0.5 right-2 text-[10px] font-black tracking-wide text-[#9a6f89]',
+              'absolute bottom-0.5 right-2 flex items-end gap-1 text-[#9a6f89]',
               hideText && 'opacity-0'
             )}
           >
-            {aulaParts.prefix}
+            <span className="text-[10px] font-black tracking-wide">{aulaParts.prefix}</span>
+            {aulaParts.room ? (
+              <span className="text-[10px] font-semibold tabular-nums">{aulaParts.room}</span>
+            ) : null}
           </span>
           {showExternalNoVacancyWarning ? (
             <span
