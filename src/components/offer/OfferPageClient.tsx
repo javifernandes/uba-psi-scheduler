@@ -4,6 +4,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Scheduler } from '@/components/scheduler/scheduler';
 import type { SubjectData } from '@/components/scheduler/scheduler.types';
+import { enrollmentStorageKeyForScope } from '@/components/scheduler/scheduler.utils';
+import { buildAnnualCarryOver, previousPeriodForAnnualCarryOver } from '@/domain/annual-enrollment';
+import { useLocalStorage } from '@/hooks/use-local-storage';
 import {
   getOfferSubjects,
   listCareersWithLatestPeriod,
@@ -34,10 +37,12 @@ const buildOfertaHref = (career: string, period: PeriodId) =>
 export const OfferPageClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { getJSON } = useLocalStorage();
 
   const [careers, setCareers] = useState<CareerWithLatestPeriod[]>([]);
   const [periods, setPeriods] = useState<PeriodId[]>([]);
   const [subjects, setSubjects] = useState<SubjectData[]>([]);
+  const [carryOverEnrollments, setCarryOverEnrollments] = useState<Record<string, string>>({});
   const [loadingCatalog, setLoadingCatalog] = useState(true);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
   const [error, setError] = useState<string>('');
@@ -110,15 +115,36 @@ export const OfferPageClient = () => {
     let cancelled = false;
     setLoadingSubjects(true);
     setError('');
-    getOfferSubjects(selectedCareer, selectedPeriod)
-      .then((rows) => {
+    const previousPeriod = previousPeriodForAnnualCarryOver(selectedPeriod);
+    const previousSubjectsPromise = previousPeriod
+      ? getOfferSubjects(selectedCareer, previousPeriod).catch(() => [])
+      : Promise.resolve([]);
+
+    Promise.all([getOfferSubjects(selectedCareer, selectedPeriod), previousSubjectsPromise])
+      .then(([rows, previousSubjects]) => {
         if (cancelled) return;
-        setSubjects(rows);
+        const previousEnrollments = previousPeriod
+          ? normalizeStoredEnrollments(
+              getJSON<unknown>(enrollmentStorageKeyForScope(selectedCareer, previousPeriod))
+            )
+          : {};
+        const carryOver = buildAnnualCarryOver({
+          careerSlug: selectedCareer,
+          previousSubjects,
+          previousEnrollments,
+        });
+        const currentSubjectIds = new Set(rows.map((subject) => subject.id));
+        setSubjects([
+          ...rows,
+          ...carryOver.subjects.filter((subject) => !currentSubjectIds.has(subject.id)),
+        ]);
+        setCarryOverEnrollments(carryOver.enrollments);
       })
       .catch((err) => {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'No se pudo cargar la oferta.');
         setSubjects([]);
+        setCarryOverEnrollments({});
       })
       .finally(() => {
         if (cancelled) return;
@@ -127,7 +153,7 @@ export const OfferPageClient = () => {
     return () => {
       cancelled = true;
     };
-  }, [selectedCareer, selectedPeriod]);
+  }, [getJSON, selectedCareer, selectedPeriod]);
 
   if (loadingCatalog) return <LoadingState message="Cargando carreras y períodos..." />;
   if (error) return <ErrorState message={error} />;
@@ -143,6 +169,17 @@ export const OfferPageClient = () => {
       careerLabel={selectedCareerMeta.label}
       careerSlug={selectedCareerMeta.slug}
       period={selectedPeriod}
+      carryOverEnrollments={carryOverEnrollments}
     />
+  );
+};
+
+const normalizeStoredEnrollments = (value: unknown): Record<string, string> => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  return Object.fromEntries(
+    Object.entries(value).filter(
+      (entry): entry is [string, string] =>
+        typeof entry[0] === 'string' && typeof entry[1] === 'string'
+    )
   );
 };
