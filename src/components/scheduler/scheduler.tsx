@@ -33,6 +33,7 @@ type SchedulerProps = {
   period: PeriodId;
   careerLabel?: string;
   careerSlug?: string;
+  carryOverEnrollments?: Record<string, string>;
 };
 
 const EmptySubjectsState = () => (
@@ -57,6 +58,7 @@ const SchedulerContent = ({
   period,
   careerLabel = 'Lic. Psicología UBA',
   careerSlug = 'lic-psicologia',
+  carryOverEnrollments,
 }: SchedulerProps) => {
   const currentPeriod = useAppStore((state) => state.currentPeriod);
   const [showComisiones, setShowComisiones] = useState(true);
@@ -90,6 +92,7 @@ const SchedulerContent = ({
     subjects,
     period: currentPeriod || period,
     careerSlug,
+    carryOverEnrollments,
   });
 
   const resetSelectionState = useCallback(() => {
@@ -441,6 +444,7 @@ export const Scheduler = (props: SchedulerProps) => {
       careerLabel={careerLabel}
       careerSlug={careerSlug}
       period={period}
+      carryOverEnrollments={props.carryOverEnrollments}
     />
   );
 };

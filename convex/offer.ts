@@ -104,7 +104,12 @@ export const listCareersWithLatestPeriod = query({
         });
         return;
       }
-      if (item.period > prev.latestPeriod) prev.latestPeriod = item.period;
+      if (item.period > prev.latestPeriod) {
+        prev.latestPeriod = item.period;
+        prev.label = item.careerLabel;
+        prev.subjects = 1;
+        return;
+      }
       if (item.period === prev.latestPeriod) prev.subjects += 1;
     });
 

@@ -120,6 +120,28 @@ describe('useSchedulerPersistence', () => {
     });
   });
 
+  it('combina una elección anual anterior sin pisar elecciones del período actual', async () => {
+    storage.set(
+      TEST_STORAGE_KEY,
+      JSON.stringify({
+        '60': '3',
+      })
+    );
+    const { result } = renderHook(() =>
+      useSchedulerPersistence({
+        subjects,
+        period: TEST_PERIOD,
+        careerSlug: TEST_CAREER,
+        carryOverEnrollments: { '35': '4' },
+      })
+    );
+
+    await waitFor(() => {
+      expect(result.current.enrolledBySubject).toEqual({ '35': '4', '60': '3' });
+      expect(storage.get(TEST_STORAGE_KEY)).toBe(JSON.stringify({ '35': '4', '60': '3' }));
+    });
+  });
+
   it('hidrata enrollments cuando subjects llega después del primer render', async () => {
     storage.set(
       TEST_STORAGE_KEY,

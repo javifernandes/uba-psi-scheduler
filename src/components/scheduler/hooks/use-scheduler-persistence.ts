@@ -14,6 +14,7 @@ type UseSchedulerPersistenceParams = {
   subjects: SubjectData[];
   period: string;
   careerSlug: string;
+  carryOverEnrollments?: Record<string, string>;
 };
 
 type UseSchedulerPersistenceResult = {
@@ -33,10 +34,13 @@ export const useSchedulerPersistence = ({
   subjects,
   period,
   careerSlug,
+  carryOverEnrollments = EMPTY_ENROLLMENTS,
 }: UseSchedulerPersistenceParams): UseSchedulerPersistenceResult => {
   const subjectIdSet = new Set(subjects.map((subject) => subject.id));
   const materiaCodeBySubjectId = indexMaterias(subjects);
-  const rehydrateToken = subjects.map((subject) => `${subject.id}:${subject.label}`).join('|');
+  const rehydrateToken = `${subjects
+    .map((subject) => `${subject.id}:${subject.label}`)
+    .join('|')}::${JSON.stringify(carryOverEnrollments)}`;
   const storageKey = enrollmentStorageKeyForScope(careerSlug, period);
   const enrolledBySubject = useAppStore((state) => state.enrolledBySubject);
   const setEnrolledBySubjectStore = useAppStore((state) => state.setEnrolledBySubject);
@@ -53,7 +57,8 @@ export const useSchedulerPersistence = ({
     key: storageKey,
     defaultValue: EMPTY_ENROLLMENTS,
     enabled: subjects.length > 0,
-    normalize: (raw) => normalizeEnrollmentMap(raw, materiaCodeBySubjectId),
+    normalize: (raw) =>
+      normalizeEnrollmentMap({ ...carryOverEnrollments, ...raw }, materiaCodeBySubjectId),
     isEqual: sameRecord,
     rehydrateToken,
   });
