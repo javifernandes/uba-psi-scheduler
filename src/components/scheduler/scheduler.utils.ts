@@ -158,7 +158,12 @@ export const catedraProfessorFromHeader = (header: string) =>
 
 export const displaySubjectLabel = (label: string) => label.replace(/^\((\d+)\)\s*/, '$1 · ');
 
-export const displayHeaderLabel = (header: string) => header.replace(/-\s*\((\d+)\)\s*/, '- $1 · ');
+export const displayHeaderLabel = (header: string) =>
+  header
+    .replace(/^Psicología UBA\s*-\s*/i, '')
+    .replace(/^Licenciatura en Psicología\s*-\s*/i, 'Lic. Psicología - ')
+    .replace(/^\((\d+)\)\s*/, '$1 · ')
+    .replace(/-\s*\((\d+)\)\s*/, '- $1 · ');
 
 export const materiaGroupFromLabel = (label: string) => {
   const match = label.match(/^\((\d+)\)\s*(.*?)\s*-\s*Cátedra/i);

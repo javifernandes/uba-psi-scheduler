@@ -46,6 +46,9 @@ const buildOfferHref = (career: string, period: PeriodId) =>
 const buildAnalyticsHref = (career: string, period: PeriodId) =>
   `/oferta/analytics?career=${encodeURIComponent(career)}&period=${encodeURIComponent(period)}`;
 
+const buildPlanHref = (career: string, period: PeriodId) =>
+  `/oferta/plan?career=${encodeURIComponent(career)}&period=${encodeURIComponent(period)}`;
+
 const cyclePhaseLabel: Record<'before' | 'open' | 'closed' | 'unknown', string> = {
   before: 'Aún no abrió',
   open: 'Inscripción abierta',
@@ -378,6 +381,12 @@ export const OfferAnalyticsPageClient = () => {
                 className="rounded-md border border-white/25 bg-white/10 px-2 py-1 font-semibold hover:bg-white/15"
               >
                 Horarios
+              </Link>
+              <Link
+                href={buildPlanHref(selectedCareer, selectedPeriod)}
+                className="rounded-md border border-white/25 bg-white/10 px-2 py-1 font-semibold hover:bg-white/15"
+              >
+                Plan
               </Link>
               <AuthNav mode="scheduler" />
             </div>

@@ -22,6 +22,16 @@ export default defineSchema({
     .index('by_token_identifier', ['tokenIdentifier'])
     .index('by_subject_issuer', ['subject', 'issuer']),
 
+  planProgress: defineTable({
+    tokenIdentifier: v.string(),
+    planVersion: v.string(),
+    courseId: v.string(),
+    status: v.union(v.literal('in_progress'), v.literal('regularized'), v.literal('approved')),
+    updatedAt: v.string(),
+  })
+    .index('by_user_plan', ['tokenIdentifier', 'planVersion'])
+    .index('by_user_plan_course', ['tokenIdentifier', 'planVersion', 'courseId']),
+
   offerSubjects: defineTable({
     careerSlug: v.string(),
     careerLabel: v.string(),

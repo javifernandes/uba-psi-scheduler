@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuth, useUser } from '@clerk/nextjs';
-import { ConvexReactClient, useMutation } from 'convex/react';
+import { ConvexReactClient, useConvexAuth, useMutation } from 'convex/react';
 import { ConvexProviderWithClerk } from 'convex/react-clerk';
 import { useEffect, useRef } from 'react';
 import { api } from '../../../convex/_generated/api';
@@ -13,13 +13,15 @@ let didWarnMissingConvexUrl = false;
 
 const ConvexAuthSync = () => {
   const { isLoaded, isSignedIn } = useAuth();
+  const { isAuthenticated: isConvexAuthenticated, isLoading: isConvexAuthLoading } =
+    useConvexAuth();
   const { user } = useUser();
   const upsertCurrentUser = useMutation(api.users.upsertCurrentUser);
   const lastSyncedUserId = useRef<string | null>(null);
 
   useEffect(() => {
-    if (!isLoaded) return;
-    if (!isSignedIn || !user?.id) {
+    if (!isLoaded || isConvexAuthLoading) return;
+    if (!isSignedIn || !isConvexAuthenticated || !user?.id) {
       lastSyncedUserId.current = null;
       return;
     }
@@ -31,7 +33,7 @@ const ConvexAuthSync = () => {
       }
       lastSyncedUserId.current = null;
     });
-  }, [isLoaded, isSignedIn, user, upsertCurrentUser]);
+  }, [isConvexAuthLoading, isConvexAuthenticated, isLoaded, isSignedIn, user, upsertCurrentUser]);
 
   return null;
 };

@@ -15,6 +15,9 @@ const buildOfferHref = (careerSlug: string, period: string) =>
 const buildAnalyticsHref = (careerSlug: string, period: string) =>
   `/oferta/analytics?career=${encodeURIComponent(careerSlug)}&period=${encodeURIComponent(period)}`;
 
+const buildPlanHref = (careerSlug: string, period: string) =>
+  `/oferta/plan?career=${encodeURIComponent(careerSlug)}&period=${encodeURIComponent(period)}`;
+
 export const SchedulerHeader = ({
   title,
   careerSlug,
@@ -42,6 +45,13 @@ export const SchedulerHeader = ({
           aria-label="Ir a Horarios"
         >
           Horarios
+        </Link>
+        <Link
+          href={buildPlanHref(careerSlug, period)}
+          className="inline-flex items-center gap-1 rounded-md border border-white/25 bg-white/10 px-2 py-1 text-[11px] font-semibold text-white hover:bg-white/15"
+          aria-label="Ir al Plan"
+        >
+          Plan
         </Link>
         <Link
           href={buildAnalyticsHref(careerSlug, period)}

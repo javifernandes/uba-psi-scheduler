@@ -124,7 +124,12 @@ describe('scheduler.utils', () => {
       displayHeaderLabel(
         'Psicología UBA - (1) Historia de la Psicología - Cátedra 34 - II - Ibarra'
       )
-    ).toBe('Psicología UBA - 1 · Historia de la Psicología - Cátedra 34 - II - Ibarra');
+    ).toBe('1 · Historia de la Psicología - Cátedra 34 - II - Ibarra');
+    expect(
+      displayHeaderLabel(
+        'Psicología UBA - Licenciatura en Psicología - 10350 · Procesos Psicológicos Básicos - Cátedra 544 - I - Gonzalez'
+      )
+    ).toBe('Lic. Psicología - 10350 · Procesos Psicológicos Básicos - Cátedra 544 - I - Gonzalez');
   });
 
   it('resuelve sedes/split/title y resumen de comisión', () => {
