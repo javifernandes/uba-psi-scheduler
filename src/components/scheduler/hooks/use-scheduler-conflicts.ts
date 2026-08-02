@@ -6,7 +6,7 @@ import {
   buildSavedSlotsForConflictAnalysis,
 } from '@/domain/saved-elections';
 import {
-  findPrimaryAssociatedSlotId,
+  findPreferredAssociatedSlotIds,
   rangesOverlap,
   slotById,
   shortTeacherName,
@@ -71,10 +71,9 @@ export const useSchedulerConflicts = ({
           end: c.fin,
           title: `${c.id} - ${shortTeacherName(c.profesor, 30)}`,
         });
-        const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
-        const teoricoSlot = teoricoId ? slotById(subject, teoricoId) : undefined;
-        const t = teoricoSlot?.tipo === 'teo' ? teoricoSlot : undefined;
-        if (t) {
+        findPreferredAssociatedSlotIds(c, 'teo').forEach((slotId) => {
+          const t = slotById(subject, slotId);
+          if (t?.tipo !== 'teo') return;
           reserved.push({
             slotId: `${subject.id}|teo|${t.id}`,
             subjectId: subject.id,
@@ -87,11 +86,10 @@ export const useSchedulerConflicts = ({
             end: t.fin,
             title: `${t.id} - ${shortTeacherName(t.profesor, 30)}`,
           });
-        }
-        const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
-        const seminarioSlot = seminarioId ? slotById(subject, seminarioId) : undefined;
-        const s = seminarioSlot?.tipo === 'sem' ? seminarioSlot : undefined;
-        if (s) {
+        });
+        findPreferredAssociatedSlotIds(c, 'sem').forEach((slotId) => {
+          const s = slotById(subject, slotId);
+          if (s?.tipo !== 'sem') return;
           reserved.push({
             slotId: `${subject.id}|sem|${s.id}`,
             subjectId: subject.id,
@@ -104,7 +102,7 @@ export const useSchedulerConflicts = ({
             end: s.fin,
             title: `${s.id} - ${shortTeacherName(s.profesor, 30)}`,
           });
-        }
+        });
       });
     return reserved;
   }, [parsedSubjects, selectedSubjectId, enrolledBySubject]);

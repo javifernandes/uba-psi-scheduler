@@ -83,7 +83,11 @@ export type ParsedSubject = {
 export type SavedElectionDetail = {
   subject: SubjectData;
   commission: Comision;
+  teoricos?: Teorico[];
+  seminarios?: Seminario[];
+  /** @deprecated Use teoricos. Kept while callers migrate from the single-slot shape. */
   teorico?: Teorico;
+  /** @deprecated Use seminarios. Kept while callers migrate from the single-slot shape. */
   seminario?: Seminario;
 };
 

@@ -91,14 +91,14 @@ export const findAssociatedSlotIds = (
   return sortSlotAssociations(filtered).map((association) => association.slotId);
 };
 
-export const findPrimaryAssociatedSlotId = (
+export const findPreferredAssociatedSlotIds = (
   commission: Pick<Comision, 'id' | 'slotsAsociados'>,
   role: SlotAssociationRole
 ) => {
   const required = findAssociatedSlotIds(commission, role, 'obligatorio');
-  if (required.length > 0) return required[0];
-  const optional = findAssociatedSlotIds(commission, role, 'opcional');
-  return optional[0];
+  return required.length > 0
+    ? required
+    : findAssociatedSlotIds(commission, role, 'opcional').slice(0, 1);
 };
 
 export const h2m = (hhmm: string) => {
