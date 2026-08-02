@@ -341,28 +341,23 @@ const h2m = (hhmm: string) => {
   return h * 60 + m;
 };
 
-const normalizeComisionAssociations = (obligRaw: string): SlotAsociadoOut[] => {
+const normalizeComisionAssociations = (
+  obligRaw: string,
+  availableSlots: { teoricoIds: Set<string>; seminarioIds: Set<string> }
+): SlotAsociadoOut[] => {
   const clean = normalizeText(obligRaw);
   if (!clean) return [];
   const parts = clean
     .split('-')
     .map((part) => normalizeText(part))
     .filter(Boolean);
-  const next: SlotAsociadoOut[] = [];
-  if (parts[0]) {
-    next.push({
-      slotId: parts[0],
-      rol: 'teo',
-      condicion: 'obligatorio',
-    });
-  }
-  if (parts[1]) {
-    next.push({
-      slotId: parts[1],
-      rol: 'sem',
-      condicion: 'obligatorio',
-    });
-  }
+  const next = parts.map<SlotAsociadoOut>((slotId, index) => {
+    const isTeorico = availableSlots.teoricoIds.has(slotId);
+    const isSeminario = availableSlots.seminarioIds.has(slotId);
+    const rol =
+      isTeorico !== isSeminario ? (isTeorico ? 'teo' : 'sem') : index === 0 ? 'teo' : 'sem';
+    return { slotId, rol, condicion: 'obligatorio' };
+  });
   return next.sort((a, b) => {
     const roleDiff = a.rol.localeCompare(b.rol, 'es');
     if (roleDiff !== 0) return roleDiff;
@@ -390,12 +385,15 @@ const rowToSeminarioSlot = (row: SectionRow): SeminarioOut => ({
   tipo: 'sem',
 });
 
-const rowToComisionSlot = (row: SectionRow): ComisionOut => {
+const rowToComisionSlot = (
+  row: SectionRow,
+  availableSlots: { teoricoIds: Set<string>; seminarioIds: Set<string> }
+): ComisionOut => {
   return {
     ...rowToSlotBase(row),
     tipo: 'prac',
     vacantes: row.vacantes ? Number.parseInt(row.vacantes, 10) : null,
-    slotsAsociados: normalizeComisionAssociations(row.oblig),
+    slotsAsociados: normalizeComisionAssociations(row.oblig, availableSlots),
   };
 };
 
@@ -736,10 +734,14 @@ const main = async () => {
       const teoricos = detail.teoricos.map(normalizeRow).filter((item) => item.id && item.dia);
       const seminarios = detail.seminarios.map(normalizeRow).filter((item) => item.id && item.dia);
       const comisiones = detail.comisiones.map(normalizeRow).filter((item) => item.id && item.dia);
+      const availableSlots = {
+        teoricoIds: new Set(teoricos.map((item) => item.id)),
+        seminarioIds: new Set(seminarios.map((item) => item.id)),
+      };
       const slots = sortSlots([
         ...teoricos.map(rowToTeoricoSlot),
         ...seminarios.map(rowToSeminarioSlot),
-        ...comisiones.map(rowToComisionSlot),
+        ...comisiones.map((row) => rowToComisionSlot(row, availableSlots)),
       ]);
 
       subjects.push({

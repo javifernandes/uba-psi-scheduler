@@ -71,4 +71,56 @@ describe('saved elections domain', () => {
     const conflicts = buildSavedConflicts(slots);
     expect(Object.keys(conflicts)).not.toHaveLength(0);
   });
+
+  it('reserva todos los teóricos obligatorios de una elección', () => {
+    const subject: SubjectData = {
+      schemaVersion: 2,
+      id: '544',
+      label: '(10350) Procesos Psicológicos Básicos - Cátedra 544 (I)',
+      header: 'header 544',
+      slots: [
+        {
+          id: 'I',
+          tipo: 'teo',
+          dia: 'martes',
+          inicio: '11:00',
+          fin: '12:30',
+          profesor: 'Teórico Uno',
+          lugar: { anexo: 'IN', aula: 'MAY' },
+        },
+        {
+          id: 'VI',
+          tipo: 'teo',
+          dia: 'martes',
+          inicio: '09:15',
+          fin: '10:45',
+          profesor: 'Teórico Seis',
+          lugar: { anexo: 'IN', aula: 'MAY' },
+        },
+        {
+          id: '1',
+          tipo: 'prac',
+          dia: 'lunes',
+          inicio: '09:15',
+          fin: '10:45',
+          profesor: 'Vattimo Silvana',
+          lugar: { anexo: 'HY', aula: '023' },
+          vacantes: 24,
+          slotsAsociados: [
+            { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
+            { slotId: 'VI', rol: 'teo', condicion: 'obligatorio' },
+          ],
+        },
+      ],
+    };
+    const parsed = parseSubject(subject);
+
+    const details = buildSavedElectionDetails([parsed], { '544': '1' }, [subject]);
+    expect(details[0]?.teoricos?.map((slot) => slot.id)).toEqual(['I', 'VI']);
+    expect(buildSavedSlotsForConflictAnalysis(details).map((slot) => slot.slotId)).toEqual([
+      '544|prac|1',
+      '544|teo|I',
+      '544|teo|VI',
+    ]);
+  });
 });

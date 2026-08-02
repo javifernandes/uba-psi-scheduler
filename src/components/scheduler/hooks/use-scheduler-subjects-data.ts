@@ -8,7 +8,7 @@ import type {
   VenueCode,
 } from '../scheduler.types';
 import {
-  findPrimaryAssociatedSlotId,
+  findPreferredAssociatedSlotIds,
   matchesCommissionQuery,
   parseSubject,
   sameSetValues,
@@ -94,18 +94,16 @@ export const useSchedulerSubjectsData = ({
         );
         if (!enrolledCommission) return;
         found.add(venueCodeFromAula(enrolledCommission.lugar));
-        const teoricoId = findPrimaryAssociatedSlotId(enrolledCommission, 'teo');
-        if (teoricoId) {
+        findPreferredAssociatedSlotIds(enrolledCommission, 'teo').forEach((teoricoId) => {
           const linkedSlot = slotById(subject, teoricoId);
           const teorico = linkedSlot?.tipo === 'teo' ? linkedSlot : undefined;
           if (teorico) found.add(venueCodeFromAula(teorico.lugar));
-        }
-        const seminarioId = findPrimaryAssociatedSlotId(enrolledCommission, 'sem');
-        if (seminarioId) {
+        });
+        findPreferredAssociatedSlotIds(enrolledCommission, 'sem').forEach((seminarioId) => {
           const linkedSlot = slotById(subject, seminarioId);
           const seminario = linkedSlot?.tipo === 'sem' ? linkedSlot : undefined;
           if (seminario) found.add(venueCodeFromAula(seminario.lugar));
-        }
+        });
       });
     return sortVenueCodes(found);
   }, [comisiones, enrolledBySubject, parsedSubjects, selectedSubjectId, seminarios, teoricos]);

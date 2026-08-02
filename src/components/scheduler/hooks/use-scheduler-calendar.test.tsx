@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { useSchedulerCalendar } from './use-scheduler-calendar';
 import { parseSubject, slotsByTipo } from '../scheduler.utils';
-import type { ParsedSubject, SubjectData } from '../scheduler.types';
+import type { SubjectData } from '../scheduler.types';
 import { subjectFromLegacyFixture } from '@/test/subject-fixture';
 
 const subjectAData: SubjectData = subjectFromLegacyFixture({
@@ -68,6 +68,46 @@ const subjectSharedSeminarioData: SubjectData = subjectFromLegacyFixture({
     '42|martes|08:00|09:30|Comision S B|T2 - S1|IN-732|',
   ],
 });
+const subjectMultipleTeoricos = parseSubject({
+  schemaVersion: 2,
+  id: 's-multi-teo',
+  label: '(10350) Procesos Psicológicos Básicos - Cátedra 544 (I)',
+  header: 'header',
+  slots: [
+    {
+      id: 'VI',
+      tipo: 'teo',
+      dia: 'martes',
+      inicio: '09:15',
+      fin: '10:45',
+      profesor: 'Gonzalez Federico',
+      lugar: { anexo: 'IN', aula: 'MAY' },
+    },
+    {
+      id: 'I',
+      tipo: 'teo',
+      dia: 'martes',
+      inicio: '11:00',
+      fin: '12:30',
+      profesor: 'Irrazabal Natalia',
+      lugar: { anexo: 'IN', aula: 'MAY' },
+    },
+    {
+      id: '1',
+      tipo: 'prac',
+      dia: 'lunes',
+      inicio: '09:15',
+      fin: '10:45',
+      profesor: 'Vattimo Silvana',
+      lugar: { anexo: 'HY', aula: '023' },
+      vacantes: 24,
+      slotsAsociados: [
+        { slotId: 'VI', rol: 'teo', condicion: 'obligatorio' },
+        { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
+      ],
+    },
+  ],
+});
 
 type HookParams = Parameters<typeof useSchedulerCalendar>[0];
 
@@ -129,6 +169,24 @@ describe('useSchedulerCalendar', () => {
 
     expect(result.current.activeCommission?.id).toBe('1');
     expect(eventIds(result.current)).toEqual(['prac-1', 'teo-I', 'sem-A']);
+  });
+
+  it('muestra todos los teóricos obligatorios de una comisión', () => {
+    const { result } = renderHook(() =>
+      useSchedulerCalendar(
+        baseParams({
+          selectedSubject: subjectMultipleTeoricos,
+          selectedComisiones: subjectMultipleTeoricos.comisiones,
+          filteredTeoricos: slotsByTipo(subjectMultipleTeoricos, 'teo'),
+          filteredSeminarios: [],
+          parsedSubjects: [subjectMultipleTeoricos],
+          showComisiones: false,
+          hoveredCommissionId: '1',
+        })
+      )
+    );
+
+    expect(eventIds(result.current)).toEqual(['prac-1', 'teo-I', 'teo-VI']);
   });
 
   it('prioriza hoveredCommissionId por encima de pinnedCommissionId', () => {

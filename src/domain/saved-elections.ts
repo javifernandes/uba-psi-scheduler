@@ -6,7 +6,7 @@ import type {
 } from '@/components/scheduler/scheduler.types';
 import {
   catedraNumberFromLabel,
-  findPrimaryAssociatedSlotId,
+  findPreferredAssociatedSlotIds,
   rangesOverlap,
   shortTeacherName,
   slotById,
@@ -64,15 +64,21 @@ export const buildSavedElectionDetails = (
     if (!parsed || !commissionId) return;
     const c = parsed.comisiones.find((item) => item.id === commissionId);
     if (!c) return;
-    const teoricoId = findPrimaryAssociatedSlotId(c, 'teo');
-    const seminarioId = findPrimaryAssociatedSlotId(c, 'sem');
-    const linkedTeoricoSlot = teoricoId ? slotById(parsed, teoricoId) : undefined;
-    const linkedSeminarioSlot = seminarioId ? slotById(parsed, seminarioId) : undefined;
+    const teoricos = findPreferredAssociatedSlotIds(c, 'teo').flatMap((slotId) => {
+      const slot = slotById(parsed, slotId);
+      return slot?.tipo === 'teo' ? [slot] : [];
+    });
+    const seminarios = findPreferredAssociatedSlotIds(c, 'sem').flatMap((slotId) => {
+      const slot = slotById(parsed, slotId);
+      return slot?.tipo === 'sem' ? [slot] : [];
+    });
     built.push({
       subject,
       commission: c,
-      teorico: linkedTeoricoSlot?.tipo === 'teo' ? linkedTeoricoSlot : undefined,
-      seminario: linkedSeminarioSlot?.tipo === 'sem' ? linkedSeminarioSlot : undefined,
+      teoricos,
+      seminarios,
+      teorico: teoricos[0],
+      seminario: seminarios[0],
     });
   });
   return built;
@@ -93,34 +99,34 @@ export const buildSavedSlotsForConflictAnalysis = (savedElectionDetails: SavedEl
       end: item.commission.fin,
       title: `${item.commission.id} - ${shortTeacherName(item.commission.profesor, 30)}`,
     });
-    if (item.teorico) {
+    (item.teoricos || (item.teorico ? [item.teorico] : [])).forEach((teorico) => {
       savedSlots.push({
-        slotId: `${item.subject.id}|teo|${item.teorico.id}`,
+        slotId: `${item.subject.id}|teo|${teorico.id}`,
         subjectId: item.subject.id,
         subjectLabel: item.subject.label,
         slotKind: 'Teórico',
-        slotCode: item.teorico.id,
-        venue: splitAula(item.teorico.lugar).prefix,
-        day: item.teorico.dia,
-        start: item.teorico.inicio,
-        end: item.teorico.fin,
-        title: `${item.teorico.id} - ${shortTeacherName(item.teorico.profesor, 30)}`,
+        slotCode: teorico.id,
+        venue: splitAula(teorico.lugar).prefix,
+        day: teorico.dia,
+        start: teorico.inicio,
+        end: teorico.fin,
+        title: `${teorico.id} - ${shortTeacherName(teorico.profesor, 30)}`,
       });
-    }
-    if (item.seminario) {
+    });
+    (item.seminarios || (item.seminario ? [item.seminario] : [])).forEach((seminario) => {
       savedSlots.push({
-        slotId: `${item.subject.id}|sem|${item.seminario.id}`,
+        slotId: `${item.subject.id}|sem|${seminario.id}`,
         subjectId: item.subject.id,
         subjectLabel: item.subject.label,
         slotKind: 'Seminario',
-        slotCode: item.seminario.id,
-        venue: splitAula(item.seminario.lugar).prefix,
-        day: item.seminario.dia,
-        start: item.seminario.inicio,
-        end: item.seminario.fin,
-        title: `${item.seminario.id} - ${shortTeacherName(item.seminario.profesor, 30)}`,
+        slotCode: seminario.id,
+        venue: splitAula(seminario.lugar).prefix,
+        day: seminario.dia,
+        start: seminario.inicio,
+        end: seminario.fin,
+        title: `${seminario.id} - ${shortTeacherName(seminario.profesor, 30)}`,
       });
-    }
+    });
   });
   return savedSlots;
 };

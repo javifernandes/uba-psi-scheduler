@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { CalendarEvent, ParsedSubject, Seminario, Teorico } from '../scheduler.types';
 import {
   buildLinkedCommissionIdsMap,
-  findPrimaryAssociatedSlotId,
+  findPreferredAssociatedSlotIds,
   formatSlotLugar,
   slotById,
   shortTeacherName,
@@ -119,30 +119,28 @@ const pushCommissionBundle = ({
   options?: EventOptions;
 }) => {
   pushEvent(buildPracEvent(subject, commission, options));
-  const teoricoId = findPrimaryAssociatedSlotId(commission, 'teo');
-  const teoricoSlot = teoricoId ? slotById(subject, teoricoId) : undefined;
-  const teorico = teoricoSlot?.tipo === 'teo' ? teoricoSlot : undefined;
-  if (teorico) {
+  findPreferredAssociatedSlotIds(commission, 'teo').forEach((teoricoId) => {
+    const teoricoSlot = slotById(subject, teoricoId);
+    if (teoricoSlot?.tipo !== 'teo') return;
     pushEvent(
-      buildTeoEvent(subject, teorico, {
+      buildTeoEvent(subject, teoricoSlot, {
         ...options,
         linkedCommissionId: commission.id,
         linkedSlotId: teoricoId,
       })
     );
-  }
-  const seminarioId = findPrimaryAssociatedSlotId(commission, 'sem');
-  const seminarioSlot = seminarioId ? slotById(subject, seminarioId) : undefined;
-  const seminario = seminarioSlot?.tipo === 'sem' ? seminarioSlot : undefined;
-  if (seminario) {
+  });
+  findPreferredAssociatedSlotIds(commission, 'sem').forEach((seminarioId) => {
+    const seminarioSlot = slotById(subject, seminarioId);
+    if (seminarioSlot?.tipo !== 'sem') return;
     pushEvent(
-      buildSemEvent(subject, seminario, {
+      buildSemEvent(subject, seminarioSlot, {
         ...options,
         linkedCommissionId: commission.id,
         linkedSlotId: seminarioId,
       })
     );
-  }
+  });
 };
 
 export const useSchedulerCalendar = ({
@@ -300,32 +298,32 @@ export const useSchedulerCalendar = ({
       const normalizedStoredIndex = ((storedIndex % stackSize) + stackSize) % stackSize;
       const activeMatchIndex = activeCommission
         ? (() => {
-            const activeTeoricoId = findPrimaryAssociatedSlotId(activeCommission, 'teo');
-            const activeSeminarioId = findPrimaryAssociatedSlotId(activeCommission, 'sem');
+            const activeTeoricoIds = findPreferredAssociatedSlotIds(activeCommission, 'teo');
+            const activeSeminarioIds = findPreferredAssociatedSlotIds(activeCommission, 'sem');
             return slotEvents.findIndex(
               (ev) =>
                 ev.linkedCommissionId === activeCommission.id ||
-                matchesLinkedRoleSlot(ev, 'teo', activeTeoricoId) ||
-                matchesLinkedRoleSlot(ev, 'sem', activeSeminarioId)
+                activeTeoricoIds.some((id) => matchesLinkedRoleSlot(ev, 'teo', id)) ||
+                activeSeminarioIds.some((id) => matchesLinkedRoleSlot(ev, 'sem', id))
             );
           })()
         : -1;
       const enrolledMatchIndex =
         !activeCommission && enrolledCurrentCommission
           ? slotEvents.findIndex((ev) => {
-              const enrolledTeoricoId = findPrimaryAssociatedSlotId(
+              const enrolledTeoricoIds = findPreferredAssociatedSlotIds(
                 enrolledCurrentCommission,
                 'teo'
               );
-              const enrolledSeminarioId = findPrimaryAssociatedSlotId(
+              const enrolledSeminarioIds = findPreferredAssociatedSlotIds(
                 enrolledCurrentCommission,
                 'sem'
               );
               return (
                 ev.sourceSubjectId === selectedSubject.id &&
                 (ev.linkedCommissionId === enrolledCurrentCommission.id ||
-                  matchesLinkedRoleSlot(ev, 'teo', enrolledTeoricoId) ||
-                  matchesLinkedRoleSlot(ev, 'sem', enrolledSeminarioId))
+                  enrolledTeoricoIds.some((id) => matchesLinkedRoleSlot(ev, 'teo', id)) ||
+                  enrolledSeminarioIds.some((id) => matchesLinkedRoleSlot(ev, 'sem', id)))
               );
             })
           : -1;

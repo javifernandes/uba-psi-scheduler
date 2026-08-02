@@ -71,37 +71,37 @@ const buildRowsForSubject = (item: SavedElectionDetail): SavedElectionRow[] => {
     },
   ];
 
-  if (item.teorico) {
+  (item.teoricos || (item.teorico ? [item.teorico] : [])).forEach((teorico) => {
     rows.push({
-      key: `${item.subject.id}|teo|${item.teorico.id}`,
+      key: `${item.subject.id}|teo|${teorico.id}`,
       subjectId: item.subject.id,
       subjectLabel: item.subject.label,
       kind: 'teo',
-      code: item.teorico.id,
-      profesor: item.teorico.profesor,
-      day: item.teorico.dia,
-      start: item.teorico.inicio,
-      end: item.teorico.fin,
-      venue: compactLugarLabel(item.teorico.lugar),
-      teacherLabel: shortTeacherName(item.teorico.profesor, 24),
+      code: teorico.id,
+      profesor: teorico.profesor,
+      day: teorico.dia,
+      start: teorico.inicio,
+      end: teorico.fin,
+      venue: compactLugarLabel(teorico.lugar),
+      teacherLabel: shortTeacherName(teorico.profesor, 24),
     });
-  }
+  });
 
-  if (item.seminario) {
+  (item.seminarios || (item.seminario ? [item.seminario] : [])).forEach((seminario) => {
     rows.push({
-      key: `${item.subject.id}|sem|${item.seminario.id}`,
+      key: `${item.subject.id}|sem|${seminario.id}`,
       subjectId: item.subject.id,
       subjectLabel: item.subject.label,
       kind: 'sem',
-      code: item.seminario.id,
-      profesor: item.seminario.profesor,
-      day: item.seminario.dia,
-      start: item.seminario.inicio,
-      end: item.seminario.fin,
-      venue: compactLugarLabel(item.seminario.lugar),
-      teacherLabel: shortTeacherName(item.seminario.profesor, 24),
+      code: seminario.id,
+      profesor: seminario.profesor,
+      day: seminario.dia,
+      start: seminario.inicio,
+      end: seminario.fin,
+      venue: compactLugarLabel(seminario.lugar),
+      teacherLabel: shortTeacherName(seminario.profesor, 24),
     });
-  }
+  });
 
   return sortSavedElectionRows(rows);
 };

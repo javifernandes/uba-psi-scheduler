@@ -84,6 +84,13 @@ const detailHtml = () => `<!doctype html>
     <h2>Listado horarios de cátedra 34 - I - Prof. Docente* Materia (1 - Historia)</h2>
     <table>
       <tr>
+        <th>Teoricos</th><th>Dia</th><th>Inicio</th><th>Fin</th><th>Profesor</th><th>Aula</th>
+      </tr>
+      <tr><td>I</td><td>martes</td><td>11:00</td><td>12:30</td><td>Teórico Uno</td><td>IN-MAY</td></tr>
+      <tr><td>VI</td><td>martes</td><td>09:15</td><td>10:45</td><td>Teórico Seis</td><td>IN-MAY</td></tr>
+    </table>
+    <table>
+      <tr>
         <th>Comisiones</th>
         <th>Dia</th>
         <th>Inicio</th>
@@ -100,7 +107,7 @@ const detailHtml = () => `<!doctype html>
         <td>14:30</td>
         <td>16:00</td>
         <td>Docente, Uno</td>
-        <td>I</td>
+        <td>VI - I</td>
         <td>IN-444</td>
         <td></td>
         <td>35</td>
@@ -185,6 +192,36 @@ afterEach(async () => {
 });
 
 describe('scrape-uba-psi-oferta robustness', () => {
+  it('infiere dos teóricos obligatorios cuando ambos códigos pertenecen a teóricos', async () => {
+    const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), 'scrape-psi-multi-teo-'));
+    tempDirs.push(outputDir);
+    const { subjectPath } = await seedPreviousDataset(outputDir, 1);
+    const server = await startServer('detail_ok');
+
+    try {
+      const result = await runScraper([
+        '--catalog-url',
+        `${server.baseUrl}/Psi/Ope154_.php`,
+        '--output-dir',
+        outputDir,
+        '--career',
+        'PS',
+        '--period',
+        PERIOD,
+      ]);
+
+      expect(result.code).toBe(0);
+      const subject = JSON.parse(await fs.readFile(subjectPath, 'utf8'));
+      const commission = subject.slots.find((slot: { tipo: string }) => slot.tipo === 'prac');
+      expect(commission.slotsAsociados).toEqual([
+        { slotId: 'I', rol: 'teo', condicion: 'obligatorio' },
+        { slotId: 'VI', rol: 'teo', condicion: 'obligatorio' },
+      ]);
+    } finally {
+      await server.close();
+    }
+  }, 30000);
+
   it('preserva dataset vigente si falla el scrape de detalle', async () => {
     const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), 'scrape-psi-fail-'));
     tempDirs.push(outputDir);

@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react';
 import type { Comision, ReservedSlot } from '../../scheduler.types';
 import {
   DAYS,
-  findPrimaryAssociatedSlotId,
+  findPreferredAssociatedSlotIds,
   h2m,
   headerHeightPx,
   hourHeightPx,
@@ -42,12 +42,12 @@ export const useCalendarEventCardState = ({
   const topPx = headerHeightPx + (from - startHour * 60) * minuteHeightPx;
   const heightPx = (to - from) * minuteHeightPx;
   const canWrapLabel = heightPx >= 92;
-  const activeTeoricoId = activeCommission
-    ? findPrimaryAssociatedSlotId(activeCommission, 'teo')
-    : null;
-  const activeSeminarioId = activeCommission
-    ? findPrimaryAssociatedSlotId(activeCommission, 'sem')
-    : null;
+  const activeTeoricoIds = activeCommission
+    ? findPreferredAssociatedSlotIds(activeCommission, 'teo')
+    : [];
+  const activeSeminarioIds = activeCommission
+    ? findPreferredAssociatedSlotIds(activeCommission, 'sem')
+    : [];
   const canSaveFromCard =
     !event.isExternal && event.sourceSubjectId === selectedSubjectId && !!event.linkedCommissionId;
   const isSavedFromCard =
@@ -58,10 +58,10 @@ export const useCalendarEventCardState = ({
     ((event.tipo === 'prac' && event.linkedCommissionId === activeCommission?.id) ||
       (event.tipo === 'teo' &&
         event.linkedSlotRole === 'teo' &&
-        event.linkedSlotId === activeTeoricoId) ||
+        activeTeoricoIds.includes(event.linkedSlotId || '')) ||
       (event.tipo === 'sem' &&
         event.linkedSlotRole === 'sem' &&
-        event.linkedSlotId === activeSeminarioId));
+        activeSeminarioIds.includes(event.linkedSlotId || '')));
   const isEnrolledCurrent =
     event.sourceSubjectId === selectedSubjectId &&
     !!enrolledCurrentCommissionId &&
